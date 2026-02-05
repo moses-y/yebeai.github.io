@@ -1,53 +1,19 @@
 const fs = require('fs');
 
-const GITHUB_USERNAME = 'yebeai';
-const FORKS_TO_SHOW = 9;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
-// Topic to Unsplash keyword mapping
-const topicKeywords = {
-  'ai': 'artificial-intelligence,neural',
-  'machine-learning': 'data-science,algorithm',
-  'python': 'code,programming',
-  'javascript': 'web-development,code',
-  'typescript': 'software,technology',
-  'react': 'interface,design',
-  'data': 'analytics,visualization',
-  'blockchain': 'cryptocurrency,digital',
-  'web': 'website,digital',
-  'mobile': 'smartphone,app',
-  'game': 'gaming,controller',
-  'security': 'cybersecurity,lock',
-  'cloud': 'server,cloud-computing',
-  'database': 'server,data',
-  'api': 'connection,network',
-  'automation': 'robot,technology',
-  'bot': 'robot,ai',
-  'agent': 'ai,futuristic',
-  'llm': 'brain,artificial-intelligence',
-  'gpt': 'chat,ai',
-  'neural': 'brain,network',
-  'deep-learning': 'neural,brain',
-  'kubernetes': 'container,cloud',
-  'docker': 'container,server',
-  'devops': 'infrastructure,code'
-};
-
-function getImageKeyword(repo) {
-  const text = `${repo.name} ${repo.description || ''} ${(repo.topics || []).join(' ')}`.toLowerCase();
-
-  for (const [topic, keywords] of Object.entries(topicKeywords)) {
-    if (text.includes(topic)) {
-      return keywords;
-    }
+// Configuration
+const CONFIG = {
+  username: 'yebeai',
+  reposToShow: 9,
+  apiDelay: 500, // ms between requests
+  models: {
+    endpoint: 'https://models.github.ai/inference/chat/completions',
+    model: 'openai/gpt-4o-mini',
+    maxTokens: 150,
+    temperature: 0.7
   }
-
-  return 'technology,code';
-}
-
-function getUnsplashUrl(keyword, seed) {
-  return `https://images.unsplash.com/photo-${seed}?w=800&h=400&fit=crop&q=80`;
-}
+};
 
 // Curated Unsplash photo IDs for tech/coding themes
 const unsplashPhotos = [
@@ -85,19 +51,17 @@ Topics: ${(repo.topics || []).join(', ') || 'None'}
 
 Write only the summary, nothing else:`;
 
-    const response = await fetch('https://models.github.ai/inference/chat/completions', {
+    const response = await fetch(CONFIG.models.endpoint, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${GITHUB_TOKEN}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'openai/gpt-4o-mini',
-        messages: [
-          { role: 'user', content: prompt }
-        ],
-        max_tokens: 150,
-        temperature: 0.7
+        model: CONFIG.models.model,
+        messages: [{ role: 'user', content: prompt }],
+        max_tokens: CONFIG.models.maxTokens,
+        temperature: CONFIG.models.temperature
       })
     });
 
@@ -141,7 +105,7 @@ function generateFallbackSummary(repo) {
 async function fetchRepos() {
   // Fetch all repos (includes both owned and forks)
   const response = await fetch(
-    `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`,
+    `https://api.github.com/users/${CONFIG.username}/repos?sort=updated&per_page=100`,
     {
       headers: {
         'Accept': 'application/vnd.github.v3+json',
@@ -221,7 +185,7 @@ async function main() {
   const ownedCount = repos.filter(r => r._type === 'original').length;
   console.log(`Found ${repos.length} repos (${forkCount} forks, ${ownedCount} original)`);
 
-  const recentForks = repos.slice(0, FORKS_TO_SHOW);
+  const recentForks = repos.slice(0, CONFIG.reposToShow);
 
   console.log('Fetching repo details and generating summaries...');
 
@@ -253,8 +217,8 @@ async function main() {
       readTime: estimateReadTime(summary)
     });
 
-    // Small delay to avoid rate limiting
-    await new Promise(r => setTimeout(r, 500));
+    // Rate limiting delay
+    await new Promise(r => setTimeout(r, CONFIG.apiDelay));
   }
 
   const output = {
