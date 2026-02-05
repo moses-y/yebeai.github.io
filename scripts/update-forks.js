@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const GITHUB_USERNAME = 'moses-y';
+const GITHUB_USERNAME = 'yebeai';
 const FORKS_TO_SHOW = 9;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
