@@ -6,14 +6,31 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const CONFIG = {
   username: 'yebeai',
   reposToShow: 999, // All repos - no limit
-  apiDelay: 7000, // 7 seconds between AI requests (rate limit: 10 per 60s)
+  apiDelay: 3000, // 3 seconds between AI requests (rotating models)
   models: {
     endpoint: 'https://models.inference.ai.azure.com/chat/completions',
-    model: 'gpt-4o',
+    // Rotate between models to maximize rate limits (50/day each)
+    available: ['gpt-4o', 'gpt-4o-mini', 'gpt-4.1'],
     maxTokens: 2000,
     temperature: 0.7
   }
 };
+
+// Track rate limits per model
+const modelRateLimits = {};
+let currentModelIndex = 0;
+
+function getNextModel() {
+  // Try to find a model that hasn't hit rate limit
+  for (let i = 0; i < CONFIG.models.available.length; i++) {
+    const model = CONFIG.models.available[(currentModelIndex + i) % CONFIG.models.available.length];
+    if (!modelRateLimits[model]) {
+      currentModelIndex = (currentModelIndex + i + 1) % CONFIG.models.available.length;
+      return model;
+    }
+  }
+  return null; // All models rate limited
+}
 
 // Curated Unsplash photo IDs for tech/coding themes
 const unsplashPhotos = [
@@ -107,6 +124,12 @@ async function generateBlogArticle(repo, readme, fileTree) {
     return generateFallbackSummary(repo);
   }
 
+  const model = getNextModel();
+  if (!model) {
+    console.log(`  All models rate limited`);
+    return null;
+  }
+
   try {
     const context = `
 REPOSITORY: ${repo.name}
@@ -138,6 +161,7 @@ Style: Senior engineer sharing insights. Reference specific files/patterns. No e
 
 Write the full article, no title or headers:`;
 
+    console.log(`  Using model: ${model}`);
     const response = await fetch(CONFIG.models.endpoint, {
       method: 'POST',
       headers: {
@@ -145,7 +169,7 @@ Write the full article, no title or headers:`;
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: CONFIG.models.model,
+        model: model,
         messages: [
           { role: 'system', content: 'You are a senior developer and tech writer creating insightful blog content about open source projects.' },
           { role: 'user', content: prompt }
@@ -157,8 +181,16 @@ Write the full article, no title or headers:`;
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.log(`AI API returned ${response.status}: ${errorText.slice(0, 100)}`);
-      return null; // Return null to indicate failure, don't use fallback
+      console.log(`  ${model} returned ${response.status}: ${errorText.slice(0, 80)}`);
+
+      // Mark model as rate limited if 429
+      if (response.status === 429) {
+        modelRateLimits[model] = true;
+        console.log(`  Model ${model} rate limited, trying next...`);
+        // Retry with next model
+        return generateBlogArticle(repo, readme, fileTree);
+      }
+      return null;
     }
 
     const data = await response.json();
