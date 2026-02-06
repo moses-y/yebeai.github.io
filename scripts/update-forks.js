@@ -6,6 +6,7 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const CONFIG = {
   username: 'yebeai',
   reposToShow: 999, // All repos - no limit
+  batchSize: 50, // Process 50 articles per run, then commit
   apiDelay: 3000, // 3 seconds between AI requests (rotating models)
   models: {
     endpoint: 'https://models.inference.ai.azure.com/chat/completions',
@@ -319,7 +320,16 @@ async function main() {
 
   console.log(`Articles status:`);
   console.log(`  - Already have good articles: ${hasArticle.length}`);
-  console.log(`  - Need AI generation: ${needsGeneration.length}\n`);
+  console.log(`  - Need AI generation: ${needsGeneration.length}`);
+
+  // Batch processing: only process up to batchSize per run
+  const batchToProcess = needsGeneration.slice(0, CONFIG.batchSize);
+  const remaining = needsGeneration.length - batchToProcess.length;
+
+  if (batchToProcess.length < needsGeneration.length) {
+    console.log(`  - This batch: ${batchToProcess.length} (${remaining} remaining for next run)`);
+  }
+  console.log('');
 
   const forks = [];
   let aiCallCount = 0;
@@ -342,17 +352,17 @@ async function main() {
   }
   console.log(`Preserved ${hasArticle.length} existing articles\n`);
 
-  // Generate articles only for repos that need it
-  if (needsGeneration.length > 0) {
-    console.log(`Generating articles for ${needsGeneration.length} repos (7s delay between AI calls)...\n`);
+  // Generate articles only for repos in this batch
+  if (batchToProcess.length > 0) {
+    console.log(`Generating articles for ${batchToProcess.length} repos (batch ${Math.ceil((hasArticle.length + batchToProcess.length) / CONFIG.batchSize)} of ${Math.ceil(recentRepos.length / CONFIG.batchSize)})...\n`);
 
     let consecutiveRateLimits = 0;
     let aiSuccessCount = 0;
     let rateLimitHit = false;
 
-    for (let i = 0; i < needsGeneration.length; i++) {
-      const repo = needsGeneration[i];
-      console.log(`Processing ${i + 1}/${needsGeneration.length}: ${repo.name}`);
+    for (let i = 0; i < batchToProcess.length; i++) {
+      const repo = batchToProcess[i];
+      console.log(`Processing ${i + 1}/${batchToProcess.length}: ${repo.name}`);
 
       const [detailed, readme, fileTree] = await Promise.all([
         fetchRepoDetails(repo),
@@ -376,7 +386,7 @@ async function main() {
           consecutiveRateLimits++;
           // Stop trying AI after 3 consecutive failures (likely rate limited)
           if (consecutiveRateLimits >= 3) {
-            console.log(`\n⚠️  Rate limit detected. Skipping AI for remaining ${needsGeneration.length - i - 1} repos.`);
+            console.log(`\n⚠️  Rate limit detected. Skipping AI for remaining ${batchToProcess.length - i - 1} repos in batch.`);
             console.log(`   Successfully generated ${aiSuccessCount} AI articles before limit.\n`);
             rateLimitHit = true;
           }
@@ -406,30 +416,46 @@ async function main() {
       });
 
       // Rate limiting delay (only between AI calls, skip if rate limited)
-      if (!rateLimitHit && i < needsGeneration.length - 1) {
+      if (!rateLimitHit && i < batchToProcess.length - 1) {
         await new Promise(r => setTimeout(r, CONFIG.apiDelay));
       }
     }
 
-    console.log(`\nAI generation summary: ${aiSuccessCount} successful, ${needsGeneration.length - aiSuccessCount} fallback`);
+    console.log(`\nBatch summary: ${aiSuccessCount} AI generated, ${batchToProcess.length - aiSuccessCount} fallback`);
   }
 
   // Sort by updated date
   forks.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
 
+  // Count how many have AI articles vs fallback
+  const aiArticleCount = forks.filter(f => !isFallbackArticle(f.summary)).length;
+  const fallbackCount = forks.length - aiArticleCount;
+  const pendingCount = needsGeneration.length - batchToProcess.length;
+
   const output = {
     lastUpdated: new Date().toISOString(),
-    generatedWith: 'GitHub Models API (GPT-4o)',
+    generatedWith: 'GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)',
     totalRepos: forks.length,
-    aiGeneratedCount: aiCallCount,
+    progress: {
+      aiGenerated: aiArticleCount,
+      fallback: fallbackCount,
+      pending: pendingCount,
+      complete: pendingCount === 0
+    },
     forks
   };
 
   fs.writeFileSync('forks.json', JSON.stringify(output, null, 2));
   console.log(`\n=== Complete ===`);
   console.log(`Total repos: ${forks.length}`);
-  console.log(`AI calls made: ${aiCallCount}`);
-  console.log(`Preserved existing: ${hasArticle.length}`);
+  console.log(`AI articles: ${aiArticleCount}`);
+  console.log(`Fallback articles: ${fallbackCount}`);
+  console.log(`Pending (next run): ${pendingCount}`);
+  if (pendingCount > 0) {
+    console.log(`\n→ Run workflow again to process next batch of ${Math.min(CONFIG.batchSize, pendingCount)} repos`);
+  } else {
+    console.log(`\n✓ All repos have been processed!`);
+  }
 }
 
 main().catch(err => {
