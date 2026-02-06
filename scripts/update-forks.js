@@ -64,18 +64,30 @@ function loadExistingArticles() {
   return new Map();
 }
 
-// Check if article is a fallback (not AI-generated)
+// Check if article needs regeneration (fallback or AI-sounding)
 function isFallbackArticle(article) {
   if (!article || article.length < 400) return true;
 
-  const fallbackPhrases = [
+  const badPhrases = [
+    // Fallback phrases
     'demonstrates thoughtful software design',
     'caught my attention for its practical approach',
     'Worth investigating if you\'re working with',
-    'patterns and implementations that could accelerate'
+    'patterns and implementations that could accelerate',
+    // AI-sounding phrases to regenerate
+    'In the rapidly evolving',
+    'In the world of',
+    'In today\'s landscape',
+    'is paramount',
+    'aims to streamline',
+    'comprehensive solution',
+    'It\'s worth noting',
+    'leveraging the power',
+    'game-changer',
+    'cutting-edge'
   ];
 
-  return fallbackPhrases.some(phrase => article.includes(phrase));
+  return badPhrases.some(phrase => article.toLowerCase().includes(phrase.toLowerCase()));
 }
 
 // Fetch README content from repo
@@ -147,20 +159,25 @@ README EXCERPT:
 ${readme || 'No README available'}
 `.trim();
 
-    const prompt = `You are a tech blogger writing an insightful article about a GitHub repository.
+    const prompt = `You're a developer writing a quick technical post about this repo for your blog.
 
 ${context}
 
-Write an in-depth technical blog article (4-5 paragraphs) that:
-1. HOOK: Start with a compelling problem statement or use case
-2. WHAT IT IS: Explain the project's purpose and what makes it unique
-3. TECHNICAL DEEP DIVE: Analyze architecture, technologies, patterns from the file structure
-4. USE CASES: 2-3 specific scenarios where developers would benefit
-5. TAKEAWAY: Insight about why this matters
+Write 4-5 paragraphs. Rules:
+- Start with a specific problem this solves or why you'd actually use it. No "In the world of..." or "In today's landscape..." openings.
+- Be concrete: mention actual files, functions, or patterns you see in the structure
+- Write like you're explaining to a coworker, not writing marketing copy
+- Include a real use case from your experience or an obvious practical scenario
+- End with your honest take - what's good, what could be better
 
-Style: Senior engineer sharing insights. Reference specific files/patterns. No emojis, no fluff. Be opinionated.
+AVOID these AI-sounding phrases:
+- "rapidly evolving", "paramount", "leverage", "streamline", "robust"
+- "In the realm of...", "It's worth noting...", "This project aims to..."
+- "comprehensive solution", "cutting-edge", "game-changer", "seamlessly"
+- Starting sentences with "This" repeatedly
+- Vague praise without specifics
 
-Write the full article, no title or headers:`;
+Write like a tired engineer who actually uses this stuff, not a marketing person. Be direct. Be specific. Have opinions.`;
 
     console.log(`  Using model: ${model}`);
     const response = await fetch(CONFIG.models.endpoint, {
@@ -172,7 +189,7 @@ Write the full article, no title or headers:`;
       body: JSON.stringify({
         model: model,
         messages: [
-          { role: 'system', content: 'You are a senior developer and tech writer creating insightful blog content about open source projects.' },
+          { role: 'system', content: 'You write like a real developer - direct, practical, occasionally sarcastic. You hate corporate jargon and AI-sounding fluff. You reference specific code and have strong opinions.' },
           { role: 'user', content: prompt }
         ],
         max_tokens: CONFIG.models.maxTokens,
