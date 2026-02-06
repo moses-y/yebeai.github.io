@@ -421,10 +421,22 @@
         }
 
         .bento-card .icon {
-            font-size: 2.5rem;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-subtle);
+            border-radius: 10px;
+            margin-bottom: 16px;
             position: relative;
             z-index: 1;
-            margin-bottom: 16px;
+        }
+
+        .bento-card .icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent);
         }
 
         .bento-card .info {
@@ -1077,42 +1089,54 @@
             </div>
             <div class="bento-grid">
                 <div class="bento-card">
-                    <span class="icon">🐍</span>
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
                     <div class="info">
                         <h3>Python & ML</h3>
                         <p>TensorFlow, PyTorch, scikit-learn, Pandas, NumPy</p>
                     </div>
                 </div>
                 <div class="bento-card">
-                    <span class="icon">🤖</span>
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/><path d="M9 14v2m6-2v2"/></svg>
+                    </div>
                     <div class="info">
                         <h3>AI Agents & LLMs</h3>
                         <p>LangChain, OpenAI, Anthropic, RAG, Fine-tuning</p>
                     </div>
                 </div>
                 <div class="bento-card">
-                    <span class="icon">☁️</span>
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                    </div>
                     <div class="info">
                         <h3>Cloud & MLOps</h3>
                         <p>AWS, GCP, Docker, Kubernetes, MLflow</p>
                     </div>
                 </div>
                 <div class="bento-card">
-                    <span class="icon">📊</span>
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    </div>
                     <div class="info">
                         <h3>Data Visualization</h3>
                         <p>Plotly, D3.js, Tableau, Apache Superset</p>
                     </div>
                 </div>
                 <div class="bento-card">
-                    <span class="icon">🔗</span>
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </div>
                     <div class="info">
                         <h3>Full-Stack & APIs</h3>
                         <p>FastAPI, Next.js, PostgreSQL, Redis</p>
                     </div>
                 </div>
                 <div class="bento-card">
-                    <span class="icon">📈</span>
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
                     <div class="info">
                         <h3>Statistics & Analytics</h3>
                         <p>Statistical modeling, A/B testing, forecasting</p>
