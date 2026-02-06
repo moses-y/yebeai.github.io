@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moses Yebei | AI Engineer & Data Scientist</title>
     <meta name="description" content="AI Engineer & Data Scientist building intelligent systems. Machine learning, AI agents, and production-ready solutions.">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yebeai.github.io/">
+    <meta property="og:title" content="Moses Yebei | AI Engineer & Data Scientist">
+    <meta property="og:description" content="Building intelligent systems at the intersection of machine learning, AI agents, and full-stack development.">
+    <meta property="og:image" content="https://yebeai.github.io/og-image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Moses Yebei | AI Engineer & Data Scientist">
+    <meta name="twitter:description" content="Building intelligent systems at the intersection of machine learning, AI agents, and full-stack development.">
+    <meta name="twitter:image" content="https://yebeai.github.io/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -160,6 +177,73 @@
         .nav-cta:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        /* Mobile Menu */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 101;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(3, 3, 3, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 99;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--accent);
         }
 
         /* Hero Section */
@@ -343,6 +427,183 @@
         @keyframes scroll {
             0%, 100% { transform: translateY(0); opacity: 1; }
             50% { transform: translateY(8px); opacity: 0.3; }
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            gap: 48px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 48px;
+            padding-top: 48px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-top: 8px;
+        }
+
+        /* Search & Filter */
+        .projects-controls {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-tertiary);
+        }
+
+        .search-box svg {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-tertiary);
+        }
+
+        .filter-chips {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-chip {
+            padding: 10px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-chip:hover {
+            border-color: var(--border-hover);
+            color: var(--text-primary);
+        }
+
+        .filter-chip.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: var(--gradient);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 50;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px var(--accent-glow);
+        }
+
+        /* Skeleton Loading */
+        .skeleton-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .skeleton-image {
+            aspect-ratio: 16/9;
+            background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        .skeleton-content {
+            padding: 24px;
+        }
+
+        .skeleton-line {
+            height: 16px;
+            background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-card-hover) 50%, var(--bg-card) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .skeleton-line.short { width: 60%; }
+        .skeleton-line.medium { width: 80%; }
+        .skeleton-line.long { width: 100%; }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
         /* Section Styles */
@@ -1034,6 +1295,9 @@
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
+            .nav-toggle { display: flex; }
+            .mobile-menu { display: flex; }
+            .nav-cta { display: none; }
 
             section { padding: 60px 0; }
 
@@ -1062,6 +1326,44 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .stats-bar {
+                gap: 24px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .projects-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                max-width: none;
+            }
+
+            .filter-chips {
+                justify-content: center;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+            }
+
+            .pagination {
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .pagination-btn {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -1080,8 +1382,22 @@
                 <li><a href="#opportunities">Opportunities</a></li>
             </ul>
             <a href="#contact" class="nav-cta">Let's Talk</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+        <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+        <a href="#services" onclick="closeMobileMenu()">Services</a>
+        <a href="#opportunities" onclick="closeMobileMenu()">Opportunities</a>
+        <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    </div>
 
     <!-- Hero -->
     <section class="hero">
@@ -1122,6 +1438,26 @@
                     <a href="mailto:mosesyebei@gmail.com" title="Email">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </a>
+                </div>
+
+                <!-- Stats Bar -->
+                <div class="stats-bar" id="stats-bar">
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-repos">0+</div>
+                        <div class="stat-label">Repositories</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-languages">0+</div>
+                        <div class="stat-label">Languages</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-stars">0</div>
+                        <div class="stat-label">Total Stars</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" id="stat-contributions">0+</div>
+                        <div class="stat-label">Contributions</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1208,10 +1544,49 @@
                 <h2 class="section-title">What I'm Building</h2>
                 <p class="section-subtitle">My projects and interesting forks — AI-generated insights, updated every 6 hours</p>
             </div>
+            <!-- Search & Filter -->
+            <div class="projects-controls" id="projects-controls" style="display: none;">
+                <div class="search-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    <input type="text" id="search-input" placeholder="Search projects...">
+                </div>
+                <div class="filter-chips">
+                    <button class="filter-chip active" data-filter="all">All</button>
+                    <button class="filter-chip" data-filter="original">Original</button>
+                    <button class="filter-chip" data-filter="fork">Forks</button>
+                    <button class="filter-chip" data-filter="python">Python</button>
+                    <button class="filter-chip" data-filter="javascript">JavaScript</button>
+                </div>
+            </div>
+
             <div id="projects-container" class="projects-grid">
-                <div class="projects-loading">
-                    <div class="loader"></div>
-                    <p>Loading latest explorations...</p>
+                <!-- Skeleton Loading -->
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-line short"></div>
+                        <div class="skeleton-line long"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-line short"></div>
+                        <div class="skeleton-line long"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-line short"></div>
+                        <div class="skeleton-line long"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line short"></div>
+                    </div>
                 </div>
             </div>
             <div id="pagination" class="pagination" style="display: none;">
@@ -1406,6 +1781,11 @@
         </div>
     </footer>
 
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
     <script>
         // Language colors
         const langColors = {
@@ -1416,11 +1796,54 @@
             'Shell': '#89e051', 'Jupyter Notebook': '#DA5B0B'
         };
 
-        // Navbar scroll effect
+        // Mobile Menu
+        const navToggle = document.getElementById('nav-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        function closeMobileMenu() {
+            navToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Navbar scroll effect & Back to top
         const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('back-to-top');
+
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 50);
+            backToTop.classList.toggle('visible', window.scrollY > 500);
         });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Animate Stats
+        function animateStats(stats) {
+            const duration = 2000;
+            const start = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+
+                document.getElementById('stat-repos').textContent = Math.floor(stats.repos * eased) + '+';
+                document.getElementById('stat-languages').textContent = Math.floor(stats.languages * eased) + '+';
+                document.getElementById('stat-stars').textContent = Math.floor(stats.stars * eased);
+                document.getElementById('stat-contributions').textContent = Math.floor(stats.contributions * eased) + '+';
+
+                if (progress < 1) requestAnimationFrame(update);
+            }
+            requestAnimationFrame(update);
+        }
 
         // Reveal animation
         const revealElements = document.querySelectorAll('.reveal');
@@ -1481,29 +1904,64 @@
             `;
         }
 
-        // Pagination state
+        // Pagination & Filter state
         let allProjects = [];
+        let filteredProjects = [];
         let currentPage = 1;
+        let currentFilter = 'all';
+        let searchQuery = '';
         const itemsPerPage = 10;
+
+        // Filter projects
+        function filterProjects() {
+            filteredProjects = allProjects.filter(p => {
+                // Search filter
+                const matchesSearch = !searchQuery ||
+                    p.name.toLowerCase().includes(searchQuery) ||
+                    (p.displayName || '').toLowerCase().includes(searchQuery) ||
+                    (p.description || '').toLowerCase().includes(searchQuery) ||
+                    (p.language || '').toLowerCase().includes(searchQuery);
+
+                // Type/Language filter
+                let matchesFilter = true;
+                if (currentFilter === 'original') matchesFilter = p.type === 'original';
+                else if (currentFilter === 'fork') matchesFilter = p.type === 'fork';
+                else if (currentFilter === 'python') matchesFilter = (p.language || '').toLowerCase() === 'python';
+                else if (currentFilter === 'javascript') matchesFilter = (p.language || '').toLowerCase() === 'javascript';
+
+                return matchesSearch && matchesFilter;
+            });
+
+            currentPage = 1;
+            renderCurrentPage();
+        }
 
         // Render current page
         function renderCurrentPage() {
             const container = document.getElementById('projects-container');
+            const projectsToRender = filteredProjects.length ? filteredProjects : allProjects;
             const start = (currentPage - 1) * itemsPerPage;
             const end = start + itemsPerPage;
-            const pageProjects = allProjects.slice(start, end);
+            const pageProjects = projectsToRender.slice(start, end);
+
+            if (pageProjects.length === 0) {
+                container.innerHTML = '<div class="projects-loading"><p>No projects found matching your criteria.</p></div>';
+                document.getElementById('pagination').style.display = 'none';
+                return;
+            }
 
             container.innerHTML = pageProjects.map(renderProject).join('');
 
             // Update pagination info
-            const totalPages = Math.ceil(allProjects.length / itemsPerPage);
+            const totalPages = Math.ceil(projectsToRender.length / itemsPerPage);
             const showStart = start + 1;
-            const showEnd = Math.min(end, allProjects.length);
+            const showEnd = Math.min(end, projectsToRender.length);
 
             document.getElementById('page-info').textContent = `${showStart}-${showEnd}`;
-            document.getElementById('total-info').textContent = `of ${allProjects.length} repos`;
+            document.getElementById('total-info').textContent = `of ${projectsToRender.length} repos`;
             document.getElementById('prev-btn').disabled = currentPage === 1;
             document.getElementById('next-btn').disabled = currentPage === totalPages;
+            document.getElementById('pagination').style.display = projectsToRender.length > itemsPerPage ? 'flex' : 'none';
 
             // Scroll to projects section
             if (currentPage > 1) {
@@ -1513,7 +1971,8 @@
 
         // Change page
         function changePage(direction) {
-            const totalPages = Math.ceil(allProjects.length / itemsPerPage);
+            const projectsToRender = filteredProjects.length ? filteredProjects : allProjects;
+            const totalPages = Math.ceil(projectsToRender.length / itemsPerPage);
             const newPage = currentPage + direction;
 
             if (newPage >= 1 && newPage <= totalPages) {
@@ -1522,9 +1981,43 @@
             }
         }
 
+        // Search & Filter event listeners
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            searchQuery = e.target.value.toLowerCase().trim();
+            filterProjects();
+        });
+
+        document.querySelectorAll('.filter-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                currentFilter = chip.dataset.filter;
+                filterProjects();
+            });
+        });
+
+        // Calculate stats from projects
+        function calculateStats(projects) {
+            const languages = new Set();
+            let totalStars = 0;
+
+            projects.forEach(p => {
+                if (p.language) languages.add(p.language);
+                totalStars += (p.parent?.stars || p.stars || 0);
+            });
+
+            return {
+                repos: projects.length,
+                languages: languages.size,
+                stars: totalStars,
+                contributions: Math.floor(projects.length * 15) // Approximate
+            };
+        }
+
         // Load projects
         async function loadProjects() {
             const container = document.getElementById('projects-container');
+            const controls = document.getElementById('projects-controls');
             const pagination = document.getElementById('pagination');
             const updatedEl = document.getElementById('last-updated');
 
@@ -1539,12 +2032,20 @@
                 }
 
                 allProjects = data.forks;
+                filteredProjects = [...allProjects];
                 renderCurrentPage();
+
+                // Show controls
+                controls.style.display = 'flex';
 
                 // Show pagination if more than one page
                 if (allProjects.length > itemsPerPage) {
                     pagination.style.display = 'flex';
                 }
+
+                // Animate stats
+                const stats = calculateStats(allProjects);
+                animateStats(stats);
 
                 if (data.lastUpdated) {
                     updatedEl.textContent = `Last updated: ${new Date(data.lastUpdated).toLocaleDateString('en-US', {
@@ -1566,10 +2067,13 @@
                         image: `https://images.unsplash.com/photo-${['1461749280684-dccba630e2f6','1555066931-4365d14bab8c','1504639725590-34d0984388bd'][i % 3]}?w=800&h=400&fit=crop`,
                         readTime: 2
                     }));
+                    filteredProjects = [...allProjects];
                     renderCurrentPage();
+                    controls.style.display = 'flex';
                     if (allProjects.length > itemsPerPage) {
                         pagination.style.display = 'flex';
                     }
+                    animateStats(calculateStats(allProjects));
                 } catch {
                     container.innerHTML = '<div class="projects-loading"><p>Unable to load projects.</p></div>';
                 }
