@@ -6,11 +6,11 @@ const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const CONFIG = {
   username: 'yebeai',
   reposToShow: 999, // All repos - no limit
-  apiDelay: 2000, // ms between requests
+  apiDelay: 1500, // ms between requests
   models: {
     endpoint: 'https://models.inference.ai.azure.com/chat/completions',
-    model: 'claude-3-5-sonnet', // Claude Sonnet 3.5 for best writing
-    maxTokens: 5000, // Full in-depth blog articles
+    model: 'gpt-4o', // GPT-4o - works with GitHub Models
+    maxTokens: 2000, // In-depth blog articles
     temperature: 0.7
   }
 };
