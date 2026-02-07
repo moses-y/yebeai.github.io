@@ -1,14 +1,36 @@
 {
-  "lastUpdated": "2026-02-06T18:21:15.439Z",
+  "lastUpdated": "2026-02-07T00:12:34.152Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 192,
+  "totalRepos": 206,
   "progress": {
-    "aiGenerated": 191,
-    "fallback": 1,
-    "pending": 10,
-    "complete": false
+    "aiGenerated": 196,
+    "fallback": 10,
+    "pending": 0,
+    "complete": true
   },
   "forks": [
+    {
+      "id": 1151407364,
+      "name": "knowledge_graph",
+      "displayName": "knowledge graph",
+      "description": "Convert any text to a graph of knowledge. This can be used for Graph Augmented Generation or Knowledge Graph based QnA",
+      "summary": "## The Problem\nText is a messy beast, especially when you want to pull out meaningful relationships and insights. Traditional methods of extracting knowledge often fall flat, leaving you with a jumble of data that’s hard to interpret. If you’ve ever wished for a way to visualize connections between concepts in a straightforward manner, you’re not alone.\n\n## What This Does\nThe `knowledge_graph` repository offers a no-nonsense approach to transforming text into a knowledge graph. It breaks down your text corpus into digestible chunks, processes them, and spits out a graph that represents the relationships between different concepts. The magic happens in `extract_graph.ipynb`, where you chunk your text, extract concepts, and determine their relationships based on co-occurrences. \n\nYou can find your input files in the `data_input` folder—like `cureus-0015-00000040274.txt`—and after processing, the output lives in `data_output/cureus/graph.csv`. This is where you’ll find your neatly organized graph data, ready for exploration. The whole setup runs locally, which means you’re not at the mercy of any API limits or costs. \n\n## Real-World Use\nImagine you have a research paper and want to analyze its key concepts and their interrelations. Pull your text into the pipeline by placing it in `data_input`. Then, fire up `extract_graph.ipynb`, tweak the parameters as needed, and watch as it processes your text to populate `data_output/cureus/graph.csv`. You’ll end up with a CSV file that neatly outlines the relationships, which can then be visualized using any graph library of your choice—no special tools required.\n\n```python\nimport pandas as pd\ngraph_data = pd.read_csv('data_output/cureus/graph.csv')\n# Now visualize or analyze your graph_data as needed\n```\n\n## The Bottom Line\nThis repository is solid if you need a straightforward way to create knowledge graphs from text. It's not for every use case, especially if you’re working with small datasets or need complex natural language processing. However, if you’re delving into larger bodies of work and want to visualize connections, this tool is worth a look. Just be prepared to roll up your sleeves and tweak the `extract_graph.ipynb` notebook to suit your needs.",
+      "url": "https://github.com/yebeai/knowledge_graph",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "rahulnyk/knowledge_graph",
+        "url": "https://github.com/rahulnyk/knowledge_graph",
+        "stars": 2278
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 6, 2026",
+      "updatedAt": "February 6, 2026",
+      "readTime": 2
+    },
     {
       "id": 1151344423,
       "name": "sokuji",
@@ -45,7 +67,7 @@
       "parent": {
         "name": "antirez/voxtral.c",
         "url": "https://github.com/antirez/voxtral.c",
-        "stars": 257
+        "stars": 289
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -89,7 +111,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 6320
+        "stars": 6422
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -111,7 +133,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1362
+        "stars": 1378
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -133,7 +155,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 370
+        "stars": 375
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -142,23 +164,89 @@
       "readTime": 3
     },
     {
-      "id": 1151407364,
-      "name": "knowledge_graph",
-      "displayName": "knowledge graph",
-      "description": "Convert any text to a graph of knowledge. This can be used for Graph Augmented Generation or Knowledge Graph based QnA",
-      "summary": "## The Problem\nText is a messy beast, especially when you want to pull out meaningful relationships and insights. Traditional methods of extracting knowledge often fall flat, leaving you with a jumble of data that’s hard to interpret. If you’ve ever wished for a way to visualize connections between concepts in a straightforward manner, you’re not alone.\n\n## What This Does\nThe `knowledge_graph` repository offers a no-nonsense approach to transforming text into a knowledge graph. It breaks down your text corpus into digestible chunks, processes them, and spits out a graph that represents the relationships between different concepts. The magic happens in `extract_graph.ipynb`, where you chunk your text, extract concepts, and determine their relationships based on co-occurrences. \n\nYou can find your input files in the `data_input` folder—like `cureus-0015-00000040274.txt`—and after processing, the output lives in `data_output/cureus/graph.csv`. This is where you’ll find your neatly organized graph data, ready for exploration. The whole setup runs locally, which means you’re not at the mercy of any API limits or costs. \n\n## Real-World Use\nImagine you have a research paper and want to analyze its key concepts and their interrelations. Pull your text into the pipeline by placing it in `data_input`. Then, fire up `extract_graph.ipynb`, tweak the parameters as needed, and watch as it processes your text to populate `data_output/cureus/graph.csv`. You’ll end up with a CSV file that neatly outlines the relationships, which can then be visualized using any graph library of your choice—no special tools required.\n\n```python\nimport pandas as pd\ngraph_data = pd.read_csv('data_output/cureus/graph.csv')\n# Now visualize or analyze your graph_data as needed\n```\n\n## The Bottom Line\nThis repository is solid if you need a straightforward way to create knowledge graphs from text. It's not for every use case, especially if you’re working with small datasets or need complex natural language processing. However, if you’re delving into larger bodies of work and want to visualize connections, this tool is worth a look. Just be prepared to roll up your sleeves and tweak the `extract_graph.ipynb` notebook to suit your needs.",
-      "url": "https://github.com/yebeai/knowledge_graph",
+      "id": 1151728663,
+      "name": "awesome-llm-apps",
+      "displayName": "awesome llm apps",
+      "description": "Collection of awesome LLM apps with AI Agents and RAG using OpenAI, Anthropic, Gemini and opensource models.",
+      "summary": "## The Problem\nBuilding intelligent applications that harness the power of large language models (LLMs) can be a hassle. You’ve got to wrangle various models, configure them correctly, and then figure out how to make them work together. It’s a lot of effort for something that should be straightforward.\n\n## What This Does\nThe `awesome-llm-apps` repository is like a buffet of LLM-powered applications, offering a collection of projects that utilize models from OpenAI, Anthropic, Google’s Gemini, and more. You’ll find everything from autonomous game-playing agents in the `advanced_ai_agents/autonomous_game_playing_agent_apps/` directory, to multi-agent teams in `advanced_ai_agents/multi_agent_apps/`. Each project comes with a `README.md`, which is your guide to understanding how to set it up and what dependencies are required, often listed in the `requirements.txt` files. \n\nFor instance, if you dive into `ai_chess_agent/ai_chess_agent.py`, you’ll see how this agent plays chess using a combination of LLMs and custom logic. Want to build a finance bot? Check out `ai_finance_agent_team/finance_agent_team.py`, where you can see how to set it up for financial analysis.\n\n## Real-World Use\nImagine you’re tasked with creating a simple AI chess app. You clone the repo, navigate to `advanced_ai_agents/autonomous_game_playing_agent_apps/ai_chess_agent/`, and run the provided `requirements.txt` with `pip install -r requirements.txt`. You tweak `ai_chess_agent.py` to fit your needs, maybe integrating it with a web app using Flask to expose an API for your chess game. Before you know it, you’ve got a working prototype up and running.\n\n## The Bottom Line\nThis repo is a solid starting point for anyone looking to play around with LLMs and AI agents, especially for those with a bit of coding know-how. It’s not a one-size-fits-all solution—some projects might feel overly complex for simple tasks. But if you’re in the market for inspiration or a quick jumpstart on an LLM app, it’s worth a look. Just remember, you’re still going to need to roll up your sleeves and do some coding.",
+      "url": "https://github.com/yebeai/awesome-llm-apps",
       "language": null,
       "stars": 0,
       "forks": 0,
       "topics": [],
       "parent": {
-        "name": "rahulnyk/knowledge_graph",
-        "url": "https://github.com/rahulnyk/knowledge_graph",
-        "stars": 2179
+        "name": "Shubhamsaboo/awesome-llm-apps",
+        "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+        "stars": 92440
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 6, 2026",
+      "updatedAt": "February 6, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1151727435,
+      "name": "agentql",
+      "displayName": "agentql",
+      "description": "AgentQL is a suite of tools for connecting your AI to the web. Featuring a query language and Playwright integrations for interacting with elements and extracting data quickly, precisely, and at scale. Includes REST API, Python and JavaScript SDKs, browser debugger.",
+      "summary": "## The Problem\nWeb scraping is a pain. Websites change their structure all the time, and if you're not careful, your carefully crafted scraping scripts break faster than you can say “HTTP error.” Plus, dealing with authentication and dynamic content can make the whole process feel like pulling teeth. If you've ever spent hours tweaking your selectors just to get a single data point, you know what I mean.\n\n## What This Does\nEnter `AgentQL`. This suite of tools lets you connect your AI to web data without losing your sanity. It provides a natural language query language to extract data from live sites, even if they’re behind a login or dynamic content. The `README.md` does a decent job of laying out the features, but the real magic happens in the `examples` folder, which contains Jupyter notebooks that demonstrate various use cases, like logging into sites and collecting paginated data.\n\nThe integration with `Playwright` is a standout feature. You can easily run automation scripts using the `Python SDK` or `JavaScript SDK`, both of which have their respective installation guides linked in the README. The `templates/python/template_sync.py` gives you a solid starting point to build your own queries, while the `examples/googlecolab` directory provides practical scenarios to get you up and running with minimal fuss.\n\n## Real-World Use\nImagine you need to scrape product prices from a competitor's site that requires login and has infinite scroll. With `AgentQL`, you can define a natural language query to pull that data, and the built-in resilience means it won't break as the site updates. Here's a quick snippet to illustrate:\n\n```python\nfrom agentql import AgentQL\n\nquery = AgentQL(\"Get all product prices from the electronics section\")\ndata = query.run(url=\"https://competitorsite.com/electronics\", login_required=True)\nprint(data)\n```\n\nThis lets you focus on extracting the data you need rather than wrestling with HTML selectors.\n\n## The Bottom Line\n`AgentQL` is a solid tool for developers looking to scrape data from the web without the usual headaches. It's not for small projects since it brings in some complexity and overhead. But if you're regularly scraping data or automating workflows, this could save you a lot of time. Just be prepared to dig into the docs if you want to get the most out of it.",
+      "url": "https://github.com/yebeai/agentql",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "tinyfish-io/agentql",
+        "url": "https://github.com/tinyfish-io/agentql",
+        "stars": 1188
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 6, 2026",
+      "updatedAt": "February 6, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1151722325,
+      "name": "call-center-ai",
+      "displayName": "call center ai",
+      "description": "Send a phone call from AI agent, in an API call. Or, directly call the bot from the configured phone number!",
+      "summary": "## The Problem\nCall centers are often bogged down by repetitive inquiries and lengthy wait times. Customers get frustrated, agents get overwhelmed, and the whole experience is a mess. You need a way to handle calls efficiently without adding more human resources to the mix.\n\n## What This Does\nThe `call-center-ai` repo lets you send calls from an AI agent via a simple API call. Just look at the `app/helpers/call_llm.py` file for the logic behind the AI's call handling. It uses Azure and OpenAI's GPT to manage conversations intelligently, and it can handle low to medium complexity calls without breaking a sweat.\n\nYou can customize the AI’s responses and behavior by tweaking files in the `app/helpers/config_models/` directory. Want to change how the bot interacts based on the type of inquiry? Just update the relevant model. The bot even stores conversation history for future reference, which is handy for improving accuracy over time.\n\n## Real-World Use\nImagine you run an IT support call center. A user calls in needing help with a software issue. You send a POST request to the `/call` endpoint, passing in the required details like `phone_number`, `task`, and `claim` attributes. Here's how that looks:\n\n```bash\ndata='{\n  \"bot_company\": \"Contoso\",\n  \"bot_name\": \"Amélie\",\n  \"phone_number\": \"+11234567890\",\n  \"task\": \"Help the customer with their software issue.\",\n  \"agent_phone_number\": \"+33612345678\",\n  \"claim\": [\n    {\n      \"name\": \"issue_description\",\n      \"type\": \"text\"\n    }\n  ]\n}'\n\ncurl --header 'Content-Type: application/json' --request POST --url https://xxx/call --data $data\n```\n\nThe bot interacts with the customer, gathers the necessary information, and even creates a to-do list for follow-up—all while you kick back with your coffee.\n\n## The Bottom Line\nThis repo is a solid choice for medium to large call centers looking to reduce workload and improve customer experience. The AI's ability to handle calls is impressive, but it might be overkill for smaller operations. If you're in a high-volume environment and want a customizable solution, give this a shot. Just keep an eye on Azure costs; they can creep up on you.",
+      "url": "https://github.com/yebeai/call-center-ai",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "microsoft/call-center-ai",
+        "url": "https://github.com/microsoft/call-center-ai",
+        "stars": 6201
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 6, 2026",
+      "updatedAt": "February 6, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1151697939,
+      "name": "tview",
+      "displayName": "tview",
+      "description": "Terminal UI library with rich, interactive widgets — written in Golang",
+      "summary": "## The Problem\nBuilding terminal UIs can be a pain in the neck. You often end up reinventing the wheel with basic components like buttons, checkboxes, or even layouts. If you’ve ever spent hours fighting with ASCII art to align elements on the screen, you know exactly what I mean.\n\n## What This Does\nEnter `tview`, a Go package that gives you interactive widgets for terminal-based user interfaces. It’s like someone took all the common UI elements you need and wrapped them up in a neat little package. You can find everything from `checkboxes` in `checkbox.go` to `buttons` in `button.go`. The `application.go` file is the real MVP here—it sets up your app's main loop and manages the UI components.\n\nWant to create a simple box with a title? Check out the `Hello World` example in `README.md`. Just whip up a few lines of code, and you’ve got a bordered box titled “Hello, world!” without breaking a sweat. The `demos` folder is packed with examples to get you started—pick any of the `main.go` files, run them, and watch your terminal come alive.\n\n## Real-World Use\nLet’s say you’re building a CLI tool to manage server configurations. Instead of crafting your own UI components, you can use `tview` to create a user-friendly interface. For instance, use `tview.NewForm()` to gather user inputs effortlessly, making it easy to get values for different configuration parameters. Your users will appreciate not having to remember command-line flags when they can just check a box or fill out a field.\n\nHere’s a snippet that shows how you might set up a form:\n\n```go\nform := tview.NewForm().\n    AddInputField(\"Host\", \"\", 20, nil).\n    AddInputField(\"Port\", \"\", 5, nil).\n    AddButton(\"Save\", func() {\n        // Handle saving logic\n    })\n```\n\n## The Bottom Line\n`tview` is a solid choice if you need to whip up a terminal UI quickly without dealing with the grunt work of layout management. It’s feature-rich and has a decent number of demo applications to get your creative juices flowing. However, if your project is small and straightforward, this might feel like overkill. Save it for times when you need a polished interface that doesn’t look like it was designed in the ‘80s.",
+      "url": "https://github.com/yebeai/tview",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "rivo/tview",
+        "url": "https://github.com/rivo/tview",
+        "stars": 13478
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
       "forkedAt": "February 6, 2026",
       "updatedAt": "February 6, 2026",
       "readTime": 2
@@ -195,7 +283,7 @@
       "parent": {
         "name": "abhinavxd/libredesk",
         "url": "https://github.com/abhinavxd/libredesk",
-        "stars": 2258
+        "stars": 2270
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -217,7 +305,7 @@
       "parent": {
         "name": "Kocoro-lab/Shannon",
         "url": "https://github.com/Kocoro-lab/Shannon",
-        "stars": 926
+        "stars": 928
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -239,7 +327,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 20208
+        "stars": 20219
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -261,7 +349,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44194
+        "stars": 44198
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -305,7 +393,7 @@
       "parent": {
         "name": "callstackincubator/agent-device",
         "url": "https://github.com/callstackincubator/agent-device",
-        "stars": 436
+        "stars": 448
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -349,7 +437,7 @@
       "parent": {
         "name": "davidgeorgehope/elasticsearch-skill",
         "url": "https://github.com/davidgeorgehope/elasticsearch-skill",
-        "stars": 20
+        "stars": 21
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -393,7 +481,7 @@
       "parent": {
         "name": "fastrepl/hyprnote",
         "url": "https://github.com/fastrepl/hyprnote",
-        "stars": 7654
+        "stars": 7655
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -415,7 +503,7 @@
       "parent": {
         "name": "antirez/tgterm",
         "url": "https://github.com/antirez/tgterm",
-        "stars": 171
+        "stars": 175
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -459,7 +547,7 @@
       "parent": {
         "name": "timoncool/videosos",
         "url": "https://github.com/timoncool/videosos",
-        "stars": 855
+        "stars": 874
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -503,7 +591,7 @@
       "parent": {
         "name": "ar51an/unbound-dashboard",
         "url": "https://github.com/ar51an/unbound-dashboard",
-        "stars": 573
+        "stars": 577
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -525,7 +613,7 @@
       "parent": {
         "name": "agentic-mcp-tools/memora",
         "url": "https://github.com/agentic-mcp-tools/memora",
-        "stars": 247
+        "stars": 248
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -547,7 +635,7 @@
       "parent": {
         "name": "AtsushiSakai/PythonRobotics",
         "url": "https://github.com/AtsushiSakai/PythonRobotics",
-        "stars": 28577
+        "stars": 28580
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -569,7 +657,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 29389
+        "stars": 29397
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -591,7 +679,7 @@
       "parent": {
         "name": "0xSojalSec/airllm",
         "url": "https://github.com/0xSojalSec/airllm",
-        "stars": 2566
+        "stars": 2567
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -613,7 +701,7 @@
       "parent": {
         "name": "dair-ai/ML-Papers-Explained",
         "url": "https://github.com/dair-ai/ML-Papers-Explained",
-        "stars": 8499
+        "stars": 8502
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -635,7 +723,7 @@
       "parent": {
         "name": "Dogacel/deepseek-ocr-client-macos",
         "url": "https://github.com/Dogacel/deepseek-ocr-client-macos",
-        "stars": 29
+        "stars": 30
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -679,7 +767,7 @@
       "parent": {
         "name": "anvaka/city-roads",
         "url": "https://github.com/anvaka/city-roads",
-        "stars": 8887
+        "stars": 8892
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -723,7 +811,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6519
+        "stars": 6520
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -789,7 +877,7 @@
       "parent": {
         "name": "jgarzik/botmaker",
         "url": "https://github.com/jgarzik/botmaker",
-        "stars": 184
+        "stars": 189
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -811,7 +899,7 @@
       "parent": {
         "name": "clarsbyte/onshape-mcp",
         "url": "https://github.com/clarsbyte/onshape-mcp",
-        "stars": 126
+        "stars": 127
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -855,7 +943,7 @@
       "parent": {
         "name": "supermemoryai/claude-supermemory",
         "url": "https://github.com/supermemoryai/claude-supermemory",
-        "stars": 2107
+        "stars": 2112
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -921,7 +1009,7 @@
       "parent": {
         "name": "xenodium/agent-shell",
         "url": "https://github.com/xenodium/agent-shell",
-        "stars": 647
+        "stars": 650
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -943,7 +1031,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 170777
+        "stars": 171246
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -965,7 +1053,7 @@
       "parent": {
         "name": "commaai/openpilot",
         "url": "https://github.com/commaai/openpilot",
-        "stars": 60013
+        "stars": 60014
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -987,7 +1075,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 14171
+        "stars": 14180
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -1009,7 +1097,7 @@
       "parent": {
         "name": "latitude-dev/latitude-llm",
         "url": "https://github.com/latitude-dev/latitude-llm",
-        "stars": 3880
+        "stars": 3881
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1031,7 +1119,7 @@
       "parent": {
         "name": "OpenCoder-llm/OpenCoder-llm",
         "url": "https://github.com/OpenCoder-llm/OpenCoder-llm",
-        "stars": 2037
+        "stars": 2038
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -1075,7 +1163,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 4907
+        "stars": 4909
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -1097,7 +1185,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 7978
+        "stars": 7984
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -1141,7 +1229,7 @@
       "parent": {
         "name": "going-doer/Paper2Code",
         "url": "https://github.com/going-doer/Paper2Code",
-        "stars": 4100
+        "stars": 4104
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -1161,9 +1249,9 @@
       "forks": 0,
       "topics": [],
       "parent": {
-        "name": "Orchestra-Research/AI-research-SKILLs",
-        "url": "https://github.com/Orchestra-Research/AI-research-SKILLs",
-        "stars": 2455
+        "name": "Orchestra-Research/AI-Research-SKILLs",
+        "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
+        "stars": 2470
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -1185,7 +1273,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 27961
+        "stars": 27965
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1229,7 +1317,7 @@
       "parent": {
         "name": "clidey/whodb",
         "url": "https://github.com/clidey/whodb",
-        "stars": 4538
+        "stars": 4544
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -1251,7 +1339,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 123147
+        "stars": 123165
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -1273,7 +1361,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 3641
+        "stars": 3647
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1317,7 +1405,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 5567
+        "stars": 5583
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1361,7 +1449,7 @@
       "parent": {
         "name": "zampierilucas/scx_horoscope",
         "url": "https://github.com/zampierilucas/scx_horoscope",
-        "stars": 1085
+        "stars": 1087
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1383,7 +1471,7 @@
       "parent": {
         "name": "unicodeveloper/globalthreatmap",
         "url": "https://github.com/unicodeveloper/globalthreatmap",
-        "stars": 1048
+        "stars": 1053
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -1405,7 +1493,7 @@
       "parent": {
         "name": "Nutlope/self.so",
         "url": "https://github.com/Nutlope/self.so",
-        "stars": 2869
+        "stars": 2870
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -1427,7 +1515,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 23929
+        "stars": 23932
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1603,7 +1691,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 35855
+        "stars": 35856
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -1669,7 +1757,7 @@
       "parent": {
         "name": "aiming-lab/SimpleMem",
         "url": "https://github.com/aiming-lab/SimpleMem",
-        "stars": 2731
+        "stars": 2723
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -1691,7 +1779,7 @@
       "parent": {
         "name": "learning-at-home/hivemind",
         "url": "https://github.com/learning-at-home/hivemind",
-        "stars": 2373
+        "stars": 2374
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -1713,7 +1801,7 @@
       "parent": {
         "name": "antirez/flux2.c",
         "url": "https://github.com/antirez/flux2.c",
-        "stars": 1680
+        "stars": 1682
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1757,7 +1845,7 @@
       "parent": {
         "name": "freelensapp/freelens",
         "url": "https://github.com/freelensapp/freelens",
-        "stars": 4565
+        "stars": 4566
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1779,7 +1867,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5304
+        "stars": 5306
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -1801,7 +1889,7 @@
       "parent": {
         "name": "rdumasia303/deepseek_ocr_app",
         "url": "https://github.com/rdumasia303/deepseek_ocr_app",
-        "stars": 1717
+        "stars": 1718
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -1845,7 +1933,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 113532
+        "stars": 113554
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -1867,7 +1955,7 @@
       "parent": {
         "name": "adrianhajdin/uber",
         "url": "https://github.com/adrianhajdin/uber",
-        "stars": 1690
+        "stars": 1692
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1955,7 +2043,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15014
+        "stars": 15022
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1999,7 +2087,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 9726
+        "stars": 9762
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2021,7 +2109,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 18845
+        "stars": 18848
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2065,7 +2153,7 @@
       "parent": {
         "name": "EthanLipnik/MirageKit",
         "url": "https://github.com/EthanLipnik/MirageKit",
-        "stars": 450
+        "stars": 451
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2109,7 +2197,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 6256
+        "stars": 6261
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2153,7 +2241,7 @@
       "parent": {
         "name": "Liquid4All/cookbook",
         "url": "https://github.com/Liquid4All/cookbook",
-        "stars": 1080
+        "stars": 1081
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2175,7 +2263,7 @@
       "parent": {
         "name": "ln-dev7/square-ui",
         "url": "https://github.com/ln-dev7/square-ui",
-        "stars": 4718
+        "stars": 4719
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -2263,7 +2351,7 @@
       "parent": {
         "name": "kalil0321/map",
         "url": "https://github.com/kalil0321/map",
-        "stars": 18
+        "stars": 19
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2329,7 +2417,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 6831
+        "stars": 6843
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -2351,7 +2439,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51464
+        "stars": 51465
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2395,7 +2483,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 22492
+        "stars": 22502
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -2527,7 +2615,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 21574
+        "stars": 21577
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -2659,7 +2747,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39268
+        "stars": 39272
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2813,7 +2901,7 @@
       "parent": {
         "name": "probberechts/soccerdata",
         "url": "https://github.com/probberechts/soccerdata",
-        "stars": 1491
+        "stars": 1492
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -2857,7 +2945,7 @@
       "parent": {
         "name": "memodb-io/Acontext",
         "url": "https://github.com/memodb-io/Acontext",
-        "stars": 2850
+        "stars": 2861
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -2879,7 +2967,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 181465
+        "stars": 181475
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2901,7 +2989,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 10060
+        "stars": 10067
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2945,7 +3033,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 11987
+        "stars": 12009
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3143,7 +3231,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16282
+        "stars": 16288
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3187,7 +3275,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 55925
+        "stars": 55930
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3209,7 +3297,7 @@
       "parent": {
         "name": "Qloapps/QloApps",
         "url": "https://github.com/Qloapps/QloApps",
-        "stars": 11949
+        "stars": 11950
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3231,7 +3319,7 @@
       "parent": {
         "name": "HiEventsDev/Hi.Events",
         "url": "https://github.com/HiEventsDev/Hi.Events",
-        "stars": 3508
+        "stars": 3509
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3257,28 +3345,6 @@
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "January 15, 2026",
-      "updatedAt": "January 15, 2026",
-      "readTime": 2
-    },
-    {
-      "id": 1134786455,
-      "name": "Awesome-AI-Agents-for-Healthcare",
-      "displayName": "Awesome AI Agents for Healthcare",
-      "description": "Latest Advances on Agentic AI & AI Agents for Healthcare",
-      "summary": "## The Problem\nHealthcare is drowning in data, and sifting through it to make informed decisions is a nightmare. Clinicians need efficient tools to analyze medical records, images, and patient dialogues without getting lost in the weeds. The stakes are high, and the current solutions often fall short, leading to wasted time and poor patient outcomes.\n\n## What This Does\nThe `Awesome-AI-Agents-for-Healthcare` repository offers a curated list of resources focused on **Agentic AI** applications in healthcare. You’ll find everything from research papers to practical projects that tackle various tasks like medical image analysis and electronic health record (EHR) manipulation. The `README.md` provides a solid overview, including insights from the `landscape.png` and `statistics.png` images that summarize the current state of the field.\n\nThe quantitative analysis in the `statistics.png` highlights trends in data modalities and technologies, showing that textual data is still a heavy player. If you're into multi-agent systems or high-level frameworks, this repo points you to the right papers without needing a degree in data science.\n\n## Real-World Use\nImagine you’re a healthcare provider trying to improve patient outcomes using AI. You start by diving into the `Latest Papers` section. You come across a study on `Multi-Modal Clinical Agents`. You implement a prototype system that integrates EHR data with real-time patient dialogue analysis. The AI agent processes incoming patient queries and provides relevant clinical recommendations, drastically cutting down your response time and improving care quality. Just like that, you’re using cutting-edge research to make a tangible impact.\n\n## The Bottom Line\nThis repo is a solid starting point for anyone looking to harness AI in healthcare. It’s well-organized and offers a wealth of resources, but the lack of stars suggests it might not have caught on just yet. If you’re serious about diving into Agentic AI, this repo is worth your time. Just be prepared to sift through a lot of academic jargon to find the gems.",
-      "url": "https://github.com/yebeai/Awesome-AI-Agents-for-Healthcare",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "url": "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "stars": 614
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2
@@ -3363,7 +3429,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 12391
+        "stars": 12403
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -3385,7 +3451,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 99108
+        "stars": 99230
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -3429,7 +3495,7 @@
       "parent": {
         "name": "0xSojalSec/LLMs-local",
         "url": "https://github.com/0xSojalSec/LLMs-local",
-        "stars": 545
+        "stars": 547
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3473,7 +3539,7 @@
       "parent": {
         "name": "piratuks/invoice-builder",
         "url": "https://github.com/piratuks/invoice-builder",
-        "stars": 157
+        "stars": 160
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3636,6 +3702,28 @@
       "readTime": 2
     },
     {
+      "id": 1134786455,
+      "name": "Awesome-AI-Agents-for-Healthcare",
+      "displayName": "Awesome AI Agents for Healthcare",
+      "description": "Latest Advances on Agentic AI & AI Agents for Healthcare",
+      "summary": "## The Problem\nHealthcare is drowning in data, and extracting actionable insights can feel like finding a needle in a haystack. Clinicians need tools that can sift through mountains of research and patient data, but traditional systems fall short. The gap between data availability and practical application is a pain point that nobody seems to address effectively.\n\n## What This Does\nEnter the `Awesome-AI-Agents-for-Healthcare` repository, which is a curated collection of research papers, projects, and resources focused on AI agents tailored for healthcare. The `README.md` provides a solid overview of what’s included, from medical image analysis to patient dialogue systems. It’s not just a bunch of links; the repository is structured to help you navigate through topics like `Doctor-facing Agents` and `Genomics & Biomarker Agents`.\n\nYou’ll find visual aids like `landscape.png`, which lays out the entire conceptual framework, showing how these AI agents can integrate within the healthcare ecosystem. The `statistics.png` offers a snapshot of recent trends in the field, highlighting where the action is—spoiler: it’s in textual data and multi-agent systems.\n\n## Real-World Use\nImagine you’re a clinician looking for the latest developments in AI-assisted radiology. You could dive into the `Latest Papers` section, filter for `Radiology Agents`, and quickly access papers that cover the latest algorithms and tools. You could even fork the repo and customize it to your specific needs if you want to build on the existing framework. \n\nFor a quick code snippet, if you were to analyze a new dataset, you could implement an agent that uses existing frameworks listed in the repo to automate the extraction of insights based on the latest research.\n\n## The Bottom Line\nThis repo is a solid resource for anyone in healthcare looking to integrate AI solutions. It’s got potential, but it’s still in its infancy with zero stars—meaning it’s not exactly blowing up yet. If you’re in research or a developer looking to dive into healthcare AI, keep an eye on it. Otherwise, it might be overkill for smaller projects.",
+      "url": "https://github.com/yebeai/Awesome-AI-Agents-for-Healthcare",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "url": "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
+        "stars": 615
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "January 15, 2026",
+      "updatedAt": "January 15, 2026",
+      "readTime": 2
+    },
+    {
       "id": 1134563577,
       "name": "seedbox-lite",
       "displayName": "seedbox lite",
@@ -3671,7 +3759,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 27358
+        "stars": 27365
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3715,7 +3803,7 @@
       "parent": {
         "name": "muratcankoylan/ralph-wiggum-marketer",
         "url": "https://github.com/muratcankoylan/ralph-wiggum-marketer",
-        "stars": 617
+        "stars": 618
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3737,7 +3825,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 12936
+        "stars": 12967
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3759,7 +3847,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 19261
+        "stars": 19282
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3847,7 +3935,7 @@
       "parent": {
         "name": "DevAgentForge/Claude-Cowork",
         "url": "https://github.com/DevAgentForge/Claude-Cowork",
-        "stars": 2775
+        "stars": 2776
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -3913,7 +4001,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 94518
+        "stars": 94535
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -3935,7 +4023,7 @@
       "parent": {
         "name": "bensadeh/tailspin",
         "url": "https://github.com/bensadeh/tailspin",
-        "stars": 7644
+        "stars": 7643
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4183,6 +4271,197 @@
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
       "forkedAt": "August 13, 2023",
       "updatedAt": "August 13, 2023",
+      "readTime": 2
+    },
+    {
+      "id": 649106325,
+      "name": "TradeDataCoinbase",
+      "displayName": "TradeDataCoinbase",
+      "description": "a process for fetching real-time trade data from the Coinbase Websocket API, transforming the trade data into OHLC (Open, High, Low, Close) data using Bytewax, and then plotting the OHLC data using Bokeh and Streamlit.",
+      "summary": "a process for fetching real-time trade data from the Coinbase Websocket API, transforming the trade data into OHLC (Open, High, Low, Close) data using Bytewax, and then plotting the OHLC data using Bokeh and Streamlit.\n\nThis HTML project caught my attention for its practical approach to solving real developer problems. The codebase offers patterns worth studying for anyone working in this space.",
+      "url": "https://github.com/yebeai/TradeDataCoinbase",
+      "language": "HTML",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": null,
+      "type": "original",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "June 3, 2023",
+      "updatedAt": "June 3, 2023",
+      "readTime": 2
+    },
+    {
+      "id": 625041724,
+      "name": "Auto-GPT",
+      "displayName": "Auto GPT",
+      "description": "An experimental open-source attempt to make GPT-4 fully autonomous.",
+      "summary": "Auto GPT is a various technologies project that demonstrates thoughtful software design. While exploring the codebase, I found patterns and implementations that could accelerate similar projects. Worth investigating if you're working with various technologies or interested in clean, maintainable code architecture.",
+      "url": "https://github.com/yebeai/Auto-GPT",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "Significant-Gravitas/AutoGPT",
+        "url": "https://github.com/Significant-Gravitas/AutoGPT",
+        "stars": 181685
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "April 7, 2023",
+      "updatedAt": "April 7, 2023",
+      "readTime": 2
+    },
+    {
+      "id": 597005930,
+      "name": "ObjectCountingYOLOv8DeepSORT",
+      "displayName": "ObjectCountingYOLOv8DeepSORT",
+      "description": "Counting cars using Yolov8 and DeepSORT",
+      "summary": "ObjectCountingYOLOv8DeepSORT is a Jupyter Notebook project that demonstrates thoughtful software design. While exploring the codebase, I found patterns and implementations that could accelerate similar projects. Worth investigating if you're working with Jupyter Notebook or interested in clean, maintainable code architecture.",
+      "url": "https://github.com/yebeai/ObjectCountingYOLOv8DeepSORT",
+      "language": "Jupyter Notebook",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": null,
+      "type": "original",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 3, 2023",
+      "updatedAt": "February 3, 2023",
+      "readTime": 2
+    },
+    {
+      "id": 594873631,
+      "name": "YOLOv8_Segmentation_DeepSORT_TRACKING_Colab",
+      "displayName": "YOLOv8 Segmentation DeepSORT TRACKING Colab",
+      "description": "Using Yolov8 and Deep Sort for Computer Vision",
+      "summary": "YOLOv8 Segmentation DeepSORT TRACKING Colab is a various technologies project that demonstrates thoughtful software design. While exploring the codebase, I found patterns and implementations that could accelerate similar projects. Worth investigating if you're working with various technologies or interested in clean, maintainable code architecture.",
+      "url": "https://github.com/yebeai/YOLOv8_Segmentation_DeepSORT_TRACKING_Colab",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": null,
+      "type": "original",
+      "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "January 29, 2023",
+      "updatedAt": "January 29, 2023",
+      "readTime": 2
+    },
+    {
+      "id": 590887739,
+      "name": "Object-Detection-in-YOLOv8",
+      "displayName": "Object Detection in YOLOv8",
+      "description": "No description available",
+      "summary": "Object Detection in YOLOv8 is a Jupyter Notebook project that demonstrates thoughtful software design. While exploring the codebase, I found patterns and implementations that could accelerate similar projects. Worth investigating if you're working with Jupyter Notebook or interested in clean, maintainable code architecture.",
+      "url": "https://github.com/yebeai/Object-Detection-in-YOLOv8",
+      "language": "Jupyter Notebook",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": null,
+      "type": "original",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "January 19, 2023",
+      "updatedAt": "January 19, 2023",
+      "readTime": 2
+    },
+    {
+      "id": 498430066,
+      "name": "Object-Detection-using-Yolov7",
+      "displayName": "Object Detection using Yolov7",
+      "description": "Config files for my GitHub profile.",
+      "summary": "Object Detection using Yolov7 is a Jupyter Notebook project that demonstrates thoughtful software design. While exploring the codebase, I found patterns and implementations that could accelerate similar projects. Worth investigating if you're working with Jupyter Notebook or interested in clean, maintainable code architecture.",
+      "url": "https://github.com/yebeai/Object-Detection-using-Yolov7",
+      "language": "Jupyter Notebook",
+      "stars": 0,
+      "forks": 0,
+      "topics": [
+        "config",
+        "github-config"
+      ],
+      "parent": null,
+      "type": "original",
+      "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "May 31, 2022",
+      "updatedAt": "January 11, 2023",
+      "readTime": 2
+    },
+    {
+      "id": 582018627,
+      "name": "Drawing-a-Christmas-Tree-in-Python",
+      "displayName": "Drawing a Christmas Tree in Python",
+      "description": "No description available",
+      "summary": "Drawing a Christmas Tree in Python is a Python project that demonstrates thoughtful software design. While exploring the codebase, I found patterns and implementations that could accelerate similar projects. Worth investigating if you're working with Python or interested in clean, maintainable code architecture.",
+      "url": "https://github.com/yebeai/Drawing-a-Christmas-Tree-in-Python",
+      "language": "Python",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": null,
+      "type": "original",
+      "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "December 25, 2022",
+      "updatedAt": "December 25, 2022",
+      "readTime": 2
+    },
+    {
+      "id": 580938057,
+      "name": "Neural-Networks",
+      "displayName": "Neural Networks",
+      "description": "No description available",
+      "summary": "Neural Networks is a Jupyter Notebook project that demonstrates thoughtful software design. While exploring the codebase, I found patterns and implementations that could accelerate similar projects. Worth investigating if you're working with Jupyter Notebook or interested in clean, maintainable code architecture.",
+      "url": "https://github.com/yebeai/Neural-Networks",
+      "language": "Jupyter Notebook",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": null,
+      "type": "original",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "December 21, 2022",
+      "updatedAt": "December 21, 2022",
+      "readTime": 2
+    },
+    {
+      "id": 517570318,
+      "name": "qwiklabs_challenges",
+      "displayName": "qwiklabs challenges",
+      "description": "Qwiklabs challenges helper guide",
+      "summary": "qwiklabs challenges is a various technologies project that demonstrates thoughtful software design. While exploring the codebase, I found patterns and implementations that could accelerate similar projects. Worth investigating if you're working with various technologies or interested in clean, maintainable code architecture.",
+      "url": "https://github.com/yebeai/qwiklabs_challenges",
+      "language": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "GDSC-IIIT-Kalyani/qwiklabs_challenges",
+        "url": "https://github.com/GDSC-IIIT-Kalyani/qwiklabs_challenges",
+        "stars": 133
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "July 25, 2022",
+      "updatedAt": "July 25, 2022",
+      "readTime": 2
+    },
+    {
+      "id": 482038562,
+      "name": "Data-Science-Machine-Learning",
+      "displayName": "Data Science Machine Learning",
+      "description": "data science with python.",
+      "summary": "Data Science Machine Learning is a Jupyter Notebook project that demonstrates thoughtful software design. While exploring the codebase, I found patterns and implementations that could accelerate similar projects. Worth investigating if you're working with Jupyter Notebook or interested in clean, maintainable code architecture.",
+      "url": "https://github.com/yebeai/Data-Science-Machine-Learning",
+      "language": "Jupyter Notebook",
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": null,
+      "type": "original",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "April 15, 2022",
+      "updatedAt": "April 15, 2022",
       "readTime": 2
     }
   ]
