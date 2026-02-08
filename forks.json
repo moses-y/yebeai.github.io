@@ -1,36 +1,14 @@
 {
-  "lastUpdated": "2026-02-08T12:06:00.355Z",
+  "lastUpdated": "2026-02-08T18:06:32.447Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 229,
+  "totalRepos": 237,
   "progress": {
-    "aiGenerated": 229,
+    "aiGenerated": 237,
     "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
-    {
-      "id": 1152043556,
-      "name": "VisionClaw",
-      "displayName": "VisionClaw",
-      "description": "Real-time AI assistant for Meta Ray-Ban smart glasses -- voice + vision + agentic actions via Gemini Live and OpenClaw",
-      "summary": "## The Problem\n\nVoice assistants suck at context. Siri or Alexa can't see what you're looking at, can't handle your shopping list, and definitely can't send a WhatsApp message while you're walking around. If you've ever wished your smart glasses could actually act smart, VisionClaw is the fix.\n\n## What This Does\n\nVisionClaw wires Meta Ray-Ban smart glasses to real-time AI via the Gemini Live API. The `samples/CameraAccess/CameraAccess.xcodeproj` is the iOS app—think camera stream + mic audio piped straight to Gemini, so the assistant knows what you see and hear. If you want actual actions (not just talking), plug in OpenClaw. That’s a local gateway (`openclaw.json` config) that exposes 56+ tools: messaging, web search, smart home, reminders.\n\nSetup is dead simple: clone, drop your Gemini API key into `GeminiConfig.swift`, and run. Want to test? Use your iPhone camera instead (no glasses needed). The pipeline is all here—audio, video, WebSocket to Gemini, and optional tool calls routed through OpenClaw.\n\n## Real-World Use\n\nSay you’re in the kitchen, wearing your Ray-Bans. You tap the AI button and mumble, “Add milk to my shopping list.” The camera snaps a frame, the mic grabs your voice, everything zips to Gemini Live. Gemini figures out you want to update your shopping list, triggers OpenClaw, which then hits your app (maybe Todoist or Apple Reminders). You get confirmation spoken back—no hands, no phone, just glasses.\n\nHere's the setup in code:\n\n```swift\n// samples/CameraAccess/CameraAccess/Gemini/GeminiConfig.swift\nstatic let apiKey = \"YOUR_GEMINI_API_KEY\"\n```\n\n## The Bottom Line\n\nVisionClaw finally makes smart glasses actually useful, as long as you’re comfortable fiddling with API keys and local gateways. The iOS app is straightforward, the OpenClaw integration is powerful but a bit much if you only want basic voice/vision. If you want real agentic AI—actions, not just answers—this is worth your time. If you’re just after “describe what I’m seeing,” stick with Gemini alone.",
-      "url": "https://github.com/yebeai/VisionClaw",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "sseanliu/VisionClaw",
-        "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 341
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 7, 2026",
-      "updatedAt": "February 8, 2026",
-      "readTime": 2
-    },
     {
       "id": 1152662479,
       "name": "GraphGen",
@@ -45,7 +23,7 @@
       "parent": {
         "name": "InternScience/GraphGen",
         "url": "https://github.com/InternScience/GraphGen",
-        "stars": 878
+        "stars": 890
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -67,7 +45,7 @@
       "parent": {
         "name": "RedPlanetHQ/core",
         "url": "https://github.com/RedPlanetHQ/core",
-        "stars": 1313
+        "stars": 1332
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -89,7 +67,7 @@
       "parent": {
         "name": "OpenBMB/VoxCPM",
         "url": "https://github.com/OpenBMB/VoxCPM",
-        "stars": 5787
+        "stars": 5801
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -111,11 +89,33 @@
       "parent": {
         "name": "Blaizzy/mlx-audio-swift",
         "url": "https://github.com/Blaizzy/mlx-audio-swift",
-        "stars": 103
+        "stars": 118
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
       "forkedAt": "February 8, 2026",
+      "updatedAt": "February 8, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1152043556,
+      "name": "VisionClaw",
+      "displayName": "VisionClaw",
+      "description": "Real-time AI assistant for Meta Ray-Ban smart glasses -- voice + vision + agentic actions via Gemini Live and OpenClaw",
+      "summary": "## The Problem\n\nVoice assistants suck at context. Siri or Alexa can't see what you're looking at, can't handle your shopping list, and definitely can't send a WhatsApp message while you're walking around. If you've ever wished your smart glasses could actually act smart, VisionClaw is the fix.\n\n## What This Does\n\nVisionClaw wires Meta Ray-Ban smart glasses to real-time AI via the Gemini Live API. The `samples/CameraAccess/CameraAccess.xcodeproj` is the iOS app—think camera stream + mic audio piped straight to Gemini, so the assistant knows what you see and hear. If you want actual actions (not just talking), plug in OpenClaw. That’s a local gateway (`openclaw.json` config) that exposes 56+ tools: messaging, web search, smart home, reminders.\n\nSetup is dead simple: clone, drop your Gemini API key into `GeminiConfig.swift`, and run. Want to test? Use your iPhone camera instead (no glasses needed). The pipeline is all here—audio, video, WebSocket to Gemini, and optional tool calls routed through OpenClaw.\n\n## Real-World Use\n\nSay you’re in the kitchen, wearing your Ray-Bans. You tap the AI button and mumble, “Add milk to my shopping list.” The camera snaps a frame, the mic grabs your voice, everything zips to Gemini Live. Gemini figures out you want to update your shopping list, triggers OpenClaw, which then hits your app (maybe Todoist or Apple Reminders). You get confirmation spoken back—no hands, no phone, just glasses.\n\nHere's the setup in code:\n\n```swift\n// samples/CameraAccess/CameraAccess/Gemini/GeminiConfig.swift\nstatic let apiKey = \"YOUR_GEMINI_API_KEY\"\n```\n\n## The Bottom Line\n\nVisionClaw finally makes smart glasses actually useful, as long as you’re comfortable fiddling with API keys and local gateways. The iOS app is straightforward, the OpenClaw integration is powerful but a bit much if you only want basic voice/vision. If you want real agentic AI—actions, not just answers—this is worth your time. If you’re just after “describe what I’m seeing,” stick with Gemini alone.",
+      "url": "https://github.com/yebeai/VisionClaw",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "sseanliu/VisionClaw",
+        "url": "https://github.com/sseanliu/VisionClaw",
+        "stars": 421
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 7, 2026",
       "updatedAt": "February 8, 2026",
       "readTime": 2
     },
@@ -133,7 +133,7 @@
       "parent": {
         "name": "Polymarket/agents",
         "url": "https://github.com/Polymarket/agents",
-        "stars": 2065
+        "stars": 2085
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -155,7 +155,7 @@
       "parent": {
         "name": "bubblelabai/BubbleLab",
         "url": "https://github.com/bubblelabai/BubbleLab",
-        "stars": 1035
+        "stars": 1036
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -177,7 +177,7 @@
       "parent": {
         "name": "m0n0x41d/quint-code",
         "url": "https://github.com/m0n0x41d/quint-code",
-        "stars": 1133
+        "stars": 1138
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -199,7 +199,7 @@
       "parent": {
         "name": "rotki/rotki",
         "url": "https://github.com/rotki/rotki",
-        "stars": 3686
+        "stars": 3692
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -221,10 +221,186 @@
       "parent": {
         "name": "aiplanethub/openagi",
         "url": "https://github.com/aiplanethub/openagi",
-        "stars": 535
+        "stars": 542
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 8, 2026",
+      "updatedAt": "February 8, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1152963873,
+      "name": "awesome-ai-apps",
+      "displayName": "awesome ai apps",
+      "description": "A collection of projects showcasing RAG, agents, workflows, and other AI use cases",
+      "summary": "# Building Smarter Apps with `awesome-ai-apps`\n\n## The Problem\n\nAI is cool, but let’s face it—building anything beyond \"Hello, World\" is a pain. You’ve got a bazillion tools, libraries, and concepts like RAG (Retrieval Augmented Generation) and agents that sound fancy but leave you digging through mediocre docs and GitHub issues. If you’ve ever Googled \"AI agent tutorial\" and ended up with a 15-minute YouTube video that didn’t actually explain anything, this repo might save you.\n\n## What This Does\n\n`awesome-ai-apps` is basically a buffet of AI projects, organized into categories like `starter_agents`, `memory_agents`, and `rag_applications`. Think of it as a cookbook for AI apps: some recipes are simple, some are Michelin-star-level complicated. \n\nFor example, the `advance_ai_agents/ai-hedgefund` folder is an actual use case—a hedge fund agent. It includes a `docker-compose.yml` to spin up services, `config/company-mappings.json` to map companies to tickers, and even sample output images (`public/sample-output.png`). It’s opinionated but complete enough to get you started or give you ideas for your own projects.\n\nThe `.github/workflows/lint.yml` file is a nice touch, ensuring your PRs stay clean. And if you’re into contributing, the `CONTRIBUTING.md` is one of the better ones I’ve seen, with actual guidelines instead of boilerplate fluff.\n\n## Real-World Use\n\nLet’s say you want to build a \"smart\" trading bot. You could start with the `ai-hedgefund` example. Clone the repo, tweak the `config/company-mappings.json` to match your stocks, and customize the `FinanceDataService.ts` file in the `services` folder to pull your proprietary data. Then, use the `docker-compose.yml` to spin up your environment. Boom, you’ve got a basic prototype without needing to spend weeks piecing random libraries together.\n\n```typescript\n// Example from FinanceDataService.ts\nexport const getStockData = async (ticker: string): Promise<any> => {\n  const response = await fetch(`https://api.example.com/stock/${ticker}`);\n  return response.json();\n};\n```\n\nThis is the kind of scaffolding that saves you hours of Googling and debugging.\n\n## The Bottom Line\n\n`awesome-ai-apps` is a fork of a popular repo, so it has decent lineage. It’s perfect for anyone who wants to stop *thinking* about building AI apps and actually start *doing* it. That said, the \"awesome\" might be overselling it a bit—it’s not going to hold your hand, and some projects are more polished than others. If you’re a developer who knows what you’re doing and needs a jumpstart, it’s a solid resource. If you’re a total beginner, you’ll still need to Google stuff, but hey, that’s part of the job.",
+      "url": "https://github.com/yebeai/awesome-ai-apps",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "Arindam200/awesome-ai-apps",
+        "url": "https://github.com/Arindam200/awesome-ai-apps",
+        "stars": 8815
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 8, 2026",
+      "updatedAt": "February 8, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1152918010,
+      "name": "onionshare",
+      "displayName": "onionshare",
+      "description": "Securely and anonymously share files, host websites, and chat with friends using the Tor network",
+      "summary": "## The Problem\nIn a world where data privacy is a joke and sharing files can expose you to unwanted attention, OnionShare steps in to save the day. It lets you send files, host websites, and chat with friends all while keeping your identity under wraps using the Tor network. No more worrying about who’s snooping on your shared files.\n\n## What This Does\nOnionShare is straightforward: you set it up, and it handles the heavy lifting of secure file sharing and anonymous communication. The main script, `cli/onionshare_cli/onionshare.py`, is where the magic happens. It orchestrates everything from file transfers to creating hidden services on Tor. \n\nNeed to customize your setup? Check out `cli/onionshare_cli/mode_settings.py` for configuration options. If you want to dive deeper into the inner workings, `cli/onionshare_cli/censorship.py` deals with bypassing restrictions—because sometimes you just can't trust your ISP.\n\n## Real-World Use\nImagine you're sending sensitive documents to a colleague. Instead of using email (which is basically waving a red flag), you fire up OnionShare. Run a command like `python onionshare.py /path/to/your/file`, and it generates a Tor link. Your colleague opens it in their Tor browser, downloads the file, and you both breathe a sigh of relief knowing no one's eavesdropping. For chatting, `resources/static/js/chat.js` handles the real-time communication, making it feel like any other messaging app—but without the prying eyes.\n\n## The Bottom Line\nOnionShare is a solid tool for anyone serious about privacy. It’s not overkill if you frequently share files or need to communicate securely. However, if you're just sending the occasional meme, this might be more than you need. Overall, it’s a practical solution for those who value anonymity in their digital interactions. Just remember, you’re still responsible for what you share—Tor won’t save your hide if you’re careless.",
+      "url": "https://github.com/yebeai/onionshare",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "onionshare/onionshare",
+        "url": "https://github.com/onionshare/onionshare",
+        "stars": 6875
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 8, 2026",
+      "updatedAt": "February 8, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1152917032,
+      "name": "sheets-cli",
+      "displayName": "sheets cli",
+      "description": "Composable Google Sheets CLI for humans and agents. Read, write, update cells by key—with Agent Skills for Claude Code and OpenAI Codex.",
+      "summary": "## The Problem\n\nWrangling Google Sheets from the terminal sucks. You either hack together fragile scripts, babysit APIs, or click around the UI like a chump. Most CLI tools spit out CSVs, choke on OAuth, or assume you want to work with row indices (which break the second you add a new row). If you want to automate sheets or feed them to an AI agent, good luck.\n\n## What This Does\n\n`sheets-cli` gives you a dead-simple CLI to read, write, and update Google Sheets—by key columns, not just row numbers. The `src/cli.ts` handles parsing arguments and maps them to the actual sheet ops in `src/sheets.ts`. Auth is not a disaster: `src/auth.ts` manages OAuth via a local redirect, so you don’t have to manually copy tokens. Everything outputs clean JSON; no weird CSV parsing.\n\nAgent integration is baked in. Drop the skill files from `.claude/skills/sheets-cli.md` into Claude or Codex, and AI agents can invoke the CLI directly. That means you can mention “spreadsheet” in a prompt, and the agent finds and uses `sheets-cli` without extra glue.\n\n## Real-World Use\n\nSay you’re tracking projects and want to update the “Status” column for “Acme” to “Done”. No need to hunt for row numbers:\n\n```bash\nsheets-cli update key --sheet \"Projects\" --key-col \"Name\" --key \"Acme\" --set '{\"Status\":\"Done\"}'\n```\n\nWant to read the top 10 rows as structured JSON to feed your script or agent?\n\n```bash\nsheets-cli read table --sheet \"Projects\" --limit 10\n```\n\nOAuth is a one-liner: `sheets-cli auth login --credentials ./client_secret.json` opens the browser, grabs the token, done.\n\n## The Bottom Line\n\nIf you need to automate Google Sheets, especially for agent workflows, this gets out of your way and Just Works. Bun-only is a weird flex, but setup is quick. No fancy dashboards, no CSV hell—just CLI commands with sane output. Overkill for tiny scripts, but perfect if you want deterministic sheet ops or AI integration.",
+      "url": "https://github.com/yebeai/sheets-cli",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "gmickel/sheets-cli",
+        "url": "https://github.com/gmickel/sheets-cli",
+        "stars": 25
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 8, 2026",
+      "updatedAt": "February 8, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1152877899,
+      "name": "macrodata",
+      "displayName": "macrodata",
+      "description": "Give Claude Code and OpenCode persistent, self-refining memory and autonomous scheduling.",
+      "summary": "# Macrodata: Persistent Memory and Scheduling for Claude Code and OpenCode\n\n## The Problem\n\nAI agents are great at answering questions and coding, but they're goldfish when it comes to memory. Every session starts fresh, with zero context about who you are, what you're working on, or what you did last week. It's frustrating to repeat yourself, re-upload files, or re-explain your workflow every single time. If the agent could remember and refine its understanding of you, it would be way more useful — and way less annoying.\n\n## What This Does\n\n`macrodata` solves the memory problem with a local-first, layered architecture that tracks your identity, projects, and ongoing tasks. It stores everything in markdown and JSON files (`identity.md`, `human.md`, `today.md`, etc.), which are updated and referenced during each session. Need yesterday's notes or a decision you made last month? No problem — the journal system logs everything and lets you search across conversations using semantic indexing (`plugins/macrodata/opencode/search.ts`).\n\nThe scheduling feature is powered by a lightweight daemon (`plugins/macrodata/bin/macrodata-daemon.ts`) and uses cron jobs to trigger autonomous tasks. These include \"dream time\" reflections (`macrodata-dreamtime/SKILL.md`) and memory distillation (`macrodata-distill/SKILL.md`), which refine messy session data into structured knowledge files. Everything runs locally, respecting your existing security setup — no shady API calls or third-party nonsense.\n\nThe `opencode/context.ts` file handles context injection at the start of each session, pulling relevant state files to make the agent smarter about who you are and what you're working on. It's like giving your AI an actual brain — one that doesn't forget things every time you close the tab.\n\n## Real-World Use\n\nSay you're working on a long-term project. At the start of your day, `macrodata` injects project context (`workspace.md`) and your daily priorities (`today.md`) into Claude Code or OpenCode. You ask for a feature idea, and the agent recalls your previous conversations about the same topic using semantic search. Overnight, dreamtime runs, analyzing patterns in your work and updating your state files with distilled insights. The next day, the agent is smarter — it remembers what worked, what didn't, and what you're trying to achieve long-term.\n\nHere's an example of the journal entry format (`plugins/macrodata/opencode/journal.ts`):\n\n```markdown\n# 2023-10-17\n## Observations\n- Debugged `index-conversations.ts` script. Issue was missing config parameter.\n## Decisions\n- Use `macrodata-hook.sh` to automate script deployment in the future.\n```\n\nNow, when you hit a similar bug in two weeks, the agent can pull this entry and remind you what you did last time.\n\n## The Bottom Line\n\nIf you’re constantly annoyed by your AI’s short-term memory, `macrodata` is worth a look. It’s not set-and-forget — you’ll need to manage the markdown files and tweak the workflows. It’s also Linux/macOS-focused, so Windows users may struggle. But if you’re already using Claude Code or OpenCode and want your agent to feel less like a chatbot and more like an actual assistant, this is a smart solution. Just don’t expect polish — it’s experimental software, not a finished product.",
+      "url": "https://github.com/yebeai/macrodata",
+      "language": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "ascorbic/macrodata",
+        "url": "https://github.com/ascorbic/macrodata",
+        "stars": 53
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 8, 2026",
+      "updatedAt": "February 8, 2026",
+      "readTime": 3
+    },
+    {
+      "id": 1152874229,
+      "name": "CyberScraper-2077",
+      "displayName": "CyberScraper 2077",
+      "description": "A Powerful web scraper powered by LLM | OpenAI, Gemini & Ollama",
+      "summary": "## The Problem\nWeb scraping is a necessary evil for developers and data analysts, but traditional scrapers often get flagged by anti-bot measures. You need a tool that can pull data efficiently without raising alarms, especially when dealing with dynamic content or websites protected by CAPTCHAs. Enter CyberScraper 2077, which aims to mitigate these headaches.\n\n## What This Does\nCyberScraper 2077 is built to scrape the web using AI models like OpenAI and Gemini. You’ll find its core functionality in `src/scrapers/base_scraper.py`, which sets the foundation for various scraping methods. For example, the `playwright_scraper.py` utilizes Playwright for dynamic sites, while `http_client.py` handles requests and responses, ensuring a smooth data extraction process.\n\nThe app structure includes `app/streamlit_web_scraper_chat.py`, which provides a sleek Streamlit interface for user interaction. You can easily export your scraped data in formats like JSON or CSV, thanks to the utility functions neatly tucked away in `app/utils.py`. Plus, with support for the Tor network and a stealth mode to bypass bot detection, you're covered on the anonymity front.\n\n## Real-World Use\nImagine you’re tasked with scraping product prices from a competitor’s website. You fire up CyberScraper 2077, configure your environment with the required API keys, and run the scraper with a simple command. The `main.py` file orchestrates the entire process, so you don’t have to worry about the nitty-gritty. After the run, your data is exported to a CSV file with a single click, ready for analysis. If the site throws a CAPTCHA at you, just append `-captcha` to your URL, and let the scraper handle it.\n\n## The Bottom Line\nCyberScraper 2077 packs a punch for anyone serious about web scraping. It's feature-rich and designed to tackle modern anti-bot technologies. However, for small projects or simple tasks, it might feel like using a sledgehammer to crack a nut. If you’re scraping large datasets or need to bypass strict measures, this tool could save you a lot of headaches. Just keep in mind that setting it up requires a bit of legwork—especially if you’re not familiar with Docker or virtual environments.",
+      "url": "https://github.com/yebeai/CyberScraper-2077",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "itsOwen/CyberScraper-2077",
+        "url": "https://github.com/itsOwen/CyberScraper-2077",
+        "stars": 2759
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 8, 2026",
+      "updatedAt": "February 8, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1152873511,
+      "name": "input-overlay",
+      "displayName": "input overlay",
+      "description": "Show keyboard, gamepad and mouse input on stream",
+      "summary": "## The Problem\n\nEver watched a tutorial or a speedrun and thought, \"What the hell key did they just press?\" Yeah, me too. Viewers have no clue what’s happening on your keyboard, mouse, or gamepad unless you spell it out for them—painful for both sides. Streamers and content creators need an easy way to put their actual inputs on screen, in real time.\n\n## What This Does\n\n`input-overlay` is a plugin for OBS Studio that throws your keyboard, mouse, and gamepad inputs directly onto your stream. It’s available for Windows and Linux, and judging from the `github/scripts` mess, the build process is handled for you—just grab a release unless you like pain.\n\nThe config is all about flexibility. You’ll be mucking around with JSON files (see the [Config creation tool](https://univrsal.github.io/input-overlay/cct/)), and the plugin pulls in heavy lifters like `libuiohook` for input capture and SDL2 for rendering, so you get low-level input tracking without rolling your own C++ horror show. The `.github/actions` and build scripts in `scripts/` handle packaging, building, and code formatting, so if you do want to hack on it, you won’t lose your mind right away.\n\n## Real-World Use\n\nLet’s say you’re streaming a rhythm game and want chat to stop accusing you of cheating. Install the plugin, drop the overlay source into OBS, and point it to your JSON config. Now, every time you bash your keyboard or flick your mouse, the audience sees it live. For bonus points, use the [converter tool](https://univrsal.github.io/input-overlay/converter/) to migrate any old `.ini` configs. No more “what button was that?” in chat.\n\n## The Bottom Line\n\nIf you’re serious about streaming and want to show your inputs, `input-overlay` is hard to beat—unless you like duct-taping a webcam to your hands. The setup is way less annoying than rolling your own overlay, but if you’re allergic to JSON or OBS plugins, look elsewhere. For most streamers, though, it’s a no-brainer.",
+      "url": "https://github.com/yebeai/input-overlay",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "univrsal/input-overlay",
+        "url": "https://github.com/univrsal/input-overlay",
+        "stars": 3837
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 8, 2026",
+      "updatedAt": "February 8, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1152873003,
+      "name": "computer-science",
+      "displayName": "computer science",
+      "description": "🎓 Path to a free self-taught education in Computer Science!",
+      "summary": "# Free Computer Science Education: OSSU Fork Review  \n\n## The Problem  \nLearning computer science on your own is like trying to assemble IKEA furniture without the manual—possible, but painful. Most free online resources are scattered, incomplete, or just plain bad. If you want a structured, self-paced CS education that doesn’t cost a dime, you’re usually stuck cobbling together random YouTube tutorials and lecture notes. Enter OSSU: a curated, fully mapped-out curriculum that doesn’t waste your time.  \n\n## What This Does  \nThis repo is a fork of [ossu/computer-science](https://github.com/ossu/computer-science), the OG free CS curriculum with over 200k stars. It provides a clear learning path that mimics a traditional undergrad CS degree, minus the fluff like \"Introduction to Philosophy.\" The curriculum is split into sections (`Intro CS`, `Core CS`, `Advanced CS`, and `Final Project`) and is backed by top-tier courses from places like MIT and Harvard.  \n\nFiles like `CURRICULAR_GUIDELINES.md` ensure the coursework aligns with ACM’s CS 2013 standards—aka, it’s legit. The `coursepages` folder is where you’ll find readmes guiding you through individual courses, with some projects (e.g., `Project-1B-initial-xv6.md` for OS concepts) to get your hands dirty. The `extras/courses.md` file lists other resources for those who want to go beyond the core curriculum.  \n\nThe repo also includes a ton of community-focused features: the `FAQ.md` answers common questions, `CONTRIBUTING.md` explains how to get involved, and `HELP.md` offers tips for when you inevitably get stuck. There’s even a `delete-empty-issues.yml` workflow in `.github/workflows` to auto-clean up spammy GitHub issues. Nice touch.  \n\n## Real-World Use  \nLet’s say you’re tired of feeling like an impostor in technical meetings and want to level up. You could start with `coursepages/intro-programming/README.md`, which links to beginner-friendly courses like Harvard’s famous CS50. Once you’re comfortable with programming basics, you might move to `coursepages/ostep/README.md` for operating systems or tackle a project like `Project-2A-processes-shell.md`. By the end, you can complete the `Final Project` to showcase your skills to potential employers—or just brag to your friends.  \n\n## The Bottom Line  \nIf you’re serious about learning computer science but don’t want to fork over $50k for a degree, this repo (and its parent) is a goldmine. It’s well-organized, community-driven, and free. That said, it’s not for dabblers—the curriculum is challenging and requires real commitment. If you’re ready to put in the work, OSSU can take you from clueless beginner to someone who actually understands how a CPU scheduler works.",
+      "url": "https://github.com/yebeai/computer-science",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "ossu/computer-science",
+        "url": "https://github.com/ossu/computer-science",
+        "stars": 201112
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 8, 2026",
+      "updatedAt": "February 8, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1152870275,
+      "name": "verifiers",
+      "displayName": "verifiers",
+      "description": "Our library for RL environments + evals",
+      "summary": "## The Problem\nTraining and evaluating large language models (LLMs) can be a pain. You need to manage datasets, monitor performance, and create a structured environment for testing. It’s not just about throwing data at a model; without a well-defined setup, you risk a lot of wasted time and computing resources.\n\n## What This Does\nEnter the `verifiers` repo, a library designed to create and manage environments for LLM reinforcement learning. Everything you need is in here: datasets, model harnesses, and reward functions. For instance, check out the `.codex/environments/environment.toml` file, which outlines the environment configuration. It’s straightforward and sets the stage for what your model will encounter during training.\n\nThe repo also includes various workflows located in the `.github/workflows` directory. Want automated testing? The `test.yml` file has you covered. Need to publish environments? Look at `publish-envs.yml`. These workflows mean you can focus on building and testing rather than worrying about deployment.\n\n## Real-World Use\nImagine you’re building a new LLM capable of generating jokes (because why not?). You’ll want a specific environment to evaluate its humor. You’d start by running `prime lab setup`, which creates a local workspace and sets up the necessary files. Then you can modify `configs/endpoints.py` to connect to your model and define your evaluation criteria. Once that's in place, kick off training, and let the model learn from your dataset while you sip coffee.\n\n```bash\n# Set up your workspace\nprime lab setup\n\n# Start training with your configured environment\nuv train --env my_joke_env\n```\n\n## The Bottom Line\nThe `verifiers` library is a solid foundation for anyone serious about training LLMs. It’s well-structured, with clear workflows and configuration files that make setup a breeze. The downside? If you’re just tinkering or working on small projects, this might feel like overkill. But for serious development, especially in an academic or research context, it’s a useful toolkit that saves time and headaches.",
+      "url": "https://github.com/yebeai/verifiers",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "PrimeIntellect-ai/verifiers",
+        "url": "https://github.com/PrimeIntellect-ai/verifiers",
+        "stars": 3813
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
       "forkedAt": "February 8, 2026",
       "updatedAt": "February 8, 2026",
       "readTime": 2
@@ -243,7 +419,7 @@
       "parent": {
         "name": "echolon-app/echolon",
         "url": "https://github.com/echolon-app/echolon",
-        "stars": 25
+        "stars": 32
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -265,7 +441,7 @@
       "parent": {
         "name": "hrishioa/lumentis",
         "url": "https://github.com/hrishioa/lumentis",
-        "stars": 1692
+        "stars": 1693
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -287,7 +463,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2127
+        "stars": 2134
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -309,7 +485,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 12054
+        "stars": 12385
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -331,7 +507,7 @@
       "parent": {
         "name": "miantiao-me/awesome-homelab",
         "url": "https://github.com/miantiao-me/awesome-homelab",
-        "stars": 1654
+        "stars": 1657
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -375,7 +551,7 @@
       "parent": {
         "name": "yoheinakajima/babyagi3",
         "url": "https://github.com/yoheinakajima/babyagi3",
-        "stars": 70
+        "stars": 82
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -397,7 +573,7 @@
       "parent": {
         "name": "madnanrizqu/vibe-cv-resume",
         "url": "https://github.com/madnanrizqu/vibe-cv-resume",
-        "stars": 26
+        "stars": 31
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -441,7 +617,7 @@
       "parent": {
         "name": "Beingpax/VoiceInk",
         "url": "https://github.com/Beingpax/VoiceInk",
-        "stars": 3628
+        "stars": 3629
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -463,7 +639,7 @@
       "parent": {
         "name": "CoreWorxLab/CAAL",
         "url": "https://github.com/CoreWorxLab/CAAL",
-        "stars": 294
+        "stars": 295
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -529,7 +705,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 92756
+        "stars": 92828
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -551,7 +727,7 @@
       "parent": {
         "name": "tinyfish-io/agentql",
         "url": "https://github.com/tinyfish-io/agentql",
-        "stars": 1208
+        "stars": 1210
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -573,7 +749,7 @@
       "parent": {
         "name": "microsoft/call-center-ai",
         "url": "https://github.com/microsoft/call-center-ai",
-        "stars": 6235
+        "stars": 6237
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -595,7 +771,7 @@
       "parent": {
         "name": "rivo/tview",
         "url": "https://github.com/rivo/tview",
-        "stars": 13488
+        "stars": 13489
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -617,7 +793,7 @@
       "parent": {
         "name": "rahulnyk/knowledge_graph",
         "url": "https://github.com/rahulnyk/knowledge_graph",
-        "stars": 2554
+        "stars": 2604
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -661,7 +837,7 @@
       "parent": {
         "name": "antirez/voxtral.c",
         "url": "https://github.com/antirez/voxtral.c",
-        "stars": 412
+        "stars": 431
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -705,7 +881,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 6668
+        "stars": 6687
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -727,7 +903,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1439
+        "stars": 1448
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -749,7 +925,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 394
+        "stars": 429
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -789,7 +965,7 @@
       "parent": {
         "name": "abhinavxd/libredesk",
         "url": "https://github.com/abhinavxd/libredesk",
-        "stars": 2287
+        "stars": 2288
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -811,7 +987,7 @@
       "parent": {
         "name": "Kocoro-lab/Shannon",
         "url": "https://github.com/Kocoro-lab/Shannon",
-        "stars": 930
+        "stars": 931
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -833,7 +1009,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 20263
+        "stars": 20274
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -855,7 +1031,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44225
+        "stars": 44229
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -899,7 +1075,7 @@
       "parent": {
         "name": "callstackincubator/agent-device",
         "url": "https://github.com/callstackincubator/agent-device",
-        "stars": 485
+        "stars": 488
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -965,7 +1141,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20464
+        "stars": 20470
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -987,7 +1163,7 @@
       "parent": {
         "name": "fastrepl/hyprnote",
         "url": "https://github.com/fastrepl/hyprnote",
-        "stars": 7669
+        "stars": 7671
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1053,7 +1229,7 @@
       "parent": {
         "name": "timoncool/videosos",
         "url": "https://github.com/timoncool/videosos",
-        "stars": 1041
+        "stars": 1046
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -1075,7 +1251,7 @@
       "parent": {
         "name": "spieglt/FlyingCarpet",
         "url": "https://github.com/spieglt/FlyingCarpet",
-        "stars": 4944
+        "stars": 4945
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -1097,7 +1273,7 @@
       "parent": {
         "name": "ar51an/unbound-dashboard",
         "url": "https://github.com/ar51an/unbound-dashboard",
-        "stars": 592
+        "stars": 593
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -1119,7 +1295,7 @@
       "parent": {
         "name": "agentic-mcp-tools/memora",
         "url": "https://github.com/agentic-mcp-tools/memora",
-        "stars": 259
+        "stars": 260
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1141,7 +1317,7 @@
       "parent": {
         "name": "AtsushiSakai/PythonRobotics",
         "url": "https://github.com/AtsushiSakai/PythonRobotics",
-        "stars": 28591
+        "stars": 28597
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1163,7 +1339,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 29481
+        "stars": 29508
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1185,7 +1361,7 @@
       "parent": {
         "name": "0xSojalSec/airllm",
         "url": "https://github.com/0xSojalSec/airllm",
-        "stars": 2590
+        "stars": 2596
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1207,7 +1383,7 @@
       "parent": {
         "name": "dair-ai/ML-Papers-Explained",
         "url": "https://github.com/dair-ai/ML-Papers-Explained",
-        "stars": 8510
+        "stars": 8512
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -1273,7 +1449,7 @@
       "parent": {
         "name": "anvaka/city-roads",
         "url": "https://github.com/anvaka/city-roads",
-        "stars": 8899
+        "stars": 8902
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1295,7 +1471,7 @@
       "parent": {
         "name": "nobig-deals/exportdash.cam",
         "url": "https://github.com/nobig-deals/exportdash.cam",
-        "stars": 83
+        "stars": 84
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1317,7 +1493,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6643
+        "stars": 6660
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -1427,7 +1603,7 @@
       "parent": {
         "name": "reconurge/flowsint",
         "url": "https://github.com/reconurge/flowsint",
-        "stars": 2530
+        "stars": 2532
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1449,7 +1625,7 @@
       "parent": {
         "name": "supermemoryai/claude-supermemory",
         "url": "https://github.com/supermemoryai/claude-supermemory",
-        "stars": 2124
+        "stars": 2125
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1515,7 +1691,7 @@
       "parent": {
         "name": "xenodium/agent-shell",
         "url": "https://github.com/xenodium/agent-shell",
-        "stars": 657
+        "stars": 659
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1537,7 +1713,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 175204
+        "stars": 175949
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1559,7 +1735,7 @@
       "parent": {
         "name": "commaai/openpilot",
         "url": "https://github.com/commaai/openpilot",
-        "stars": 60025
+        "stars": 60031
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -1581,7 +1757,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 14266
+        "stars": 14281
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -1625,7 +1801,7 @@
       "parent": {
         "name": "OpenCoder-llm/OpenCoder-llm",
         "url": "https://github.com/OpenCoder-llm/OpenCoder-llm",
-        "stars": 2038
+        "stars": 2039
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -1647,7 +1823,7 @@
       "parent": {
         "name": "snwfdhmp/awesome-ralph",
         "url": "https://github.com/snwfdhmp/awesome-ralph",
-        "stars": 681
+        "stars": 682
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1669,7 +1845,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 4966
+        "stars": 4988
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -1691,7 +1867,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8019
+        "stars": 8027
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -1713,7 +1889,7 @@
       "parent": {
         "name": "hpcaitech/ColossalAI",
         "url": "https://github.com/hpcaitech/ColossalAI",
-        "stars": 41342
+        "stars": 41344
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1735,7 +1911,7 @@
       "parent": {
         "name": "going-doer/Paper2Code",
         "url": "https://github.com/going-doer/Paper2Code",
-        "stars": 4124
+        "stars": 4129
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -1757,7 +1933,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 2552
+        "stars": 2578
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -1779,7 +1955,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 28092
+        "stars": 28143
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1823,7 +1999,7 @@
       "parent": {
         "name": "clidey/whodb",
         "url": "https://github.com/clidey/whodb",
-        "stars": 4548
+        "stars": 4550
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -1845,7 +2021,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 123273
+        "stars": 123301
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -1867,7 +2043,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 3673
+        "stars": 3676
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1911,7 +2087,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 5628
+        "stars": 5640
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1955,7 +2131,7 @@
       "parent": {
         "name": "zampierilucas/scx_horoscope",
         "url": "https://github.com/zampierilucas/scx_horoscope",
-        "stars": 1097
+        "stars": 1100
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1977,7 +2153,7 @@
       "parent": {
         "name": "unicodeveloper/globalthreatmap",
         "url": "https://github.com/unicodeveloper/globalthreatmap",
-        "stars": 1133
+        "stars": 1143
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -2021,7 +2197,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 23948
+        "stars": 23952
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2197,7 +2373,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 35865
+        "stars": 35867
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2263,7 +2439,7 @@
       "parent": {
         "name": "aiming-lab/SimpleMem",
         "url": "https://github.com/aiming-lab/SimpleMem",
-        "stars": 2736
+        "stars": 2742
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -2307,7 +2483,7 @@
       "parent": {
         "name": "antirez/flux2.c",
         "url": "https://github.com/antirez/flux2.c",
-        "stars": 1719
+        "stars": 1728
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2351,7 +2527,7 @@
       "parent": {
         "name": "freelensapp/freelens",
         "url": "https://github.com/freelensapp/freelens",
-        "stars": 4568
+        "stars": 4570
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -2439,7 +2615,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 113724
+        "stars": 113760
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -2505,7 +2681,7 @@
       "parent": {
         "name": "IndAlok/rzweb",
         "url": "https://github.com/IndAlok/rzweb",
-        "stars": 584
+        "stars": 585
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -2549,7 +2725,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15105
+        "stars": 15122
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2593,7 +2769,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 9959
+        "stars": 10010
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2615,7 +2791,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 18869
+        "stars": 18873
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2659,7 +2835,7 @@
       "parent": {
         "name": "EthanLipnik/MirageKit",
         "url": "https://github.com/EthanLipnik/MirageKit",
-        "stars": 453
+        "stars": 454
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2703,7 +2879,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 6294
+        "stars": 6297
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2923,7 +3099,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 6893
+        "stars": 6901
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -2945,7 +3121,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51470
+        "stars": 51473
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2989,7 +3165,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 22534
+        "stars": 22540
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -3099,7 +3275,7 @@
       "parent": {
         "name": "Ramakm/AI-ML-Book-References",
         "url": "https://github.com/Ramakm/AI-ML-Book-References",
-        "stars": 319
+        "stars": 320
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -3121,7 +3297,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 21598
+        "stars": 21604
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -3209,7 +3385,7 @@
       "parent": {
         "name": "hanebox/ekphos",
         "url": "https://github.com/hanebox/ekphos",
-        "stars": 796
+        "stars": 797
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3231,7 +3407,7 @@
       "parent": {
         "name": "TradeMaster-NTU/TradeMaster",
         "url": "https://github.com/TradeMaster-NTU/TradeMaster",
-        "stars": 2471
+        "stars": 2473
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3253,7 +3429,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39321
+        "stars": 39327
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3407,7 +3583,7 @@
       "parent": {
         "name": "probberechts/soccerdata",
         "url": "https://github.com/probberechts/soccerdata",
-        "stars": 1500
+        "stars": 1501
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -3451,7 +3627,7 @@
       "parent": {
         "name": "memodb-io/Acontext",
         "url": "https://github.com/memodb-io/Acontext",
-        "stars": 2892
+        "stars": 2894
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -3473,7 +3649,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 181512
+        "stars": 181519
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3495,7 +3671,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 10106
+        "stars": 10108
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3539,7 +3715,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12120
+        "stars": 12129
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3715,7 +3891,7 @@
       "parent": {
         "name": "midday-ai/midday",
         "url": "https://github.com/midday-ai/midday",
-        "stars": 13662
+        "stars": 13664
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -3737,7 +3913,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16311
+        "stars": 16313
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3781,7 +3957,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 55951
+        "stars": 55952
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3803,7 +3979,7 @@
       "parent": {
         "name": "Qloapps/QloApps",
         "url": "https://github.com/Qloapps/QloApps",
-        "stars": 11963
+        "stars": 11969
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3847,7 +4023,7 @@
       "parent": {
         "name": "frappe/crm",
         "url": "https://github.com/frappe/crm",
-        "stars": 2325
+        "stars": 2326
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3869,7 +4045,7 @@
       "parent": {
         "name": "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "url": "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "stars": 617
+        "stars": 618
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3957,7 +4133,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 12901
+        "stars": 13052
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -3979,7 +4155,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 100058
+        "stars": 100259
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -4001,7 +4177,7 @@
       "parent": {
         "name": "burakorkmez/expo-ecommerce",
         "url": "https://github.com/burakorkmez/expo-ecommerce",
-        "stars": 335
+        "stars": 334
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4133,7 +4309,7 @@
       "parent": {
         "name": "themesberg/flowbite-admin-dashboard",
         "url": "https://github.com/themesberg/flowbite-admin-dashboard",
-        "stars": 2801
+        "stars": 2802
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4243,7 +4419,7 @@
       "parent": {
         "name": "hotheadhacker/seedbox-lite",
         "url": "https://github.com/hotheadhacker/seedbox-lite",
-        "stars": 4480
+        "stars": 4482
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -4265,7 +4441,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 27443
+        "stars": 27458
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4331,7 +4507,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 13200
+        "stars": 13248
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4353,7 +4529,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 19441
+        "stars": 19462
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4441,7 +4617,7 @@
       "parent": {
         "name": "DevAgentForge/Open-Claude-Cowork",
         "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
-        "stars": 2802
+        "stars": 2806
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4507,7 +4683,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 94621
+        "stars": 94640
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -4811,7 +4987,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 181716
+        "stars": 181721
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
