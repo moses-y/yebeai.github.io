@@ -1,123 +1,35 @@
 {
-  "lastUpdated": "2026-02-09T18:16:53.986Z",
+  "lastUpdated": "2026-02-10T00:17:18.535Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 251,
+  "totalRepos": 260,
   "progress": {
-    "aiGenerated": 251,
+    "aiGenerated": 260,
     "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
     {
-      "id": 1153433491,
-      "name": "hal-voice-assistant",
-      "displayName": "hal voice assistant",
-      "description": "A voice-activated AI assistant modeled after HAL 9000, built with Raspberry Pi and self-hosted services for speech-to-text, language generation, and text-to-speech.",
-      "summary": "## The Problem\nVoice-activated assistants are everywhere, but most rely on cloud services, which means privacy concerns and inconsistent performance. If you’re looking for a DIY solution that runs locally, giving you control over your data while channeling your inner HAL 9000, this project is for you.\n\n## What This Does\nThe `hal-voice-assistant` repo provides a voice assistant using a Raspberry Pi Zero 2 W. It listens for the wake phrase “Hey HAL,” thanks to `Porcupine` in the `models/porcupine` folder. Once activated, it processes speech through a series of self-hosted services: `Vosk` for speech-to-text, `Ollama` for language generation, and `Piper` for text-to-speech. The brains of the operation is in `app.py`, where all the magic happens. \n\nYou’ll find your audio processing needs covered with `requirements.txt` managing dependencies. The `drivers/apa102.py` file handles LED controls, giving that authentic HAL vibe when your assistant is active. \n\n## Real-World Use\nImagine this: you’re in the kitchen, hands full of flour, and you want to set a timer or ask for a recipe without touching your phone. Just say “Hey HAL,” and your voice assistant responds with the information you need, all while the Raspberry Pi handles everything locally. Here's a snippet to give you an idea of how the integration works in `app.py`:\n\n```python\ndef main():\n    while True:\n        if detect_wake_word():\n            command = listen()\n            response = generate_response(command)\n            speak(response)\n```\nThis loop runs indefinitely, keeping your assistant ready for action without any cloud dependency.\n\n## The Bottom Line\nThis project is a neat way to create a voice assistant while learning about hardware and software integration. If you’re comfortable with Python and want a fun DIY project, jump in. Just be aware that if you’re looking for something plug-and-play, this is overkill. For the tinkerers and hobbyists, though, it's a solid base to build your own digital companion.",
-      "url": "https://github.com/yebeai/hal-voice-assistant",
-      "language": null,
-      "stars": 0,
+      "id": 1135469037,
+      "name": "clawdbot",
+      "displayName": "clawdbot",
+      "description": "Your own personal AI assistant. Any OS. Any Platform.",
+      "summary": "In an era where productivity tools are proliferating yet often fail to integrate seamlessly across platforms, the challenge of managing personal tasks and communications has never been more pressing. Developers often find themselves juggling multiple applications to handle messages, reminders, and workflows, leading to fragmentation and inefficiency. Enter Clawdbot, a personal AI assistant that aims to centralize this experience by allowing users to interact with their devices through familiar channels—whether it's WhatsApp, Slack, or Discord—while maintaining full control over their data and the AI's capabilities.\n\nClawdbot is built on the foundation of OpenClaw, a well-regarded open-source project that has garnered significant attention with over 168,000 stars on GitHub. What sets Clawdbot apart is its commitment to providing a self-hosted solution, empowering users to run their personal AI assistant on any operating system or platform that supports Node.js. This flexibility, combined with its robust multi-channel communication capabilities, allows users to interact with their assistant in a way that feels natural and immediate. The onboarding wizard simplifies the setup process, guiding users through the configuration of the gateway, workspace, channels, and skills, making it accessible even for those who are not technically inclined.\n\nA closer look at Clawdbot's architecture reveals a thoughtful design that promotes modularity and maintainability. The presence of multiple GitHub workflows, such as `.github/workflows/ci.yml` for continuous integration and `.github/workflows/docker-release.yml` for Docker deployments, indicates a strong emphasis on quality assurance and deployment flexibility. The use of TypeScript as the primary programming language not only enhances type safety but also facilitates a more robust development experience. The configuration files, such as `.npmrc` and `.prettierignore`, suggest an intention to maintain a clean codebase while ensuring that dependencies are managed effectively. Additionally, the inclusion of `.detect-secrets.cfg` implies a proactive approach to security, ensuring sensitive information does not make its way into the codebase.\n\nClawdbot opens the door to numerous practical applications that developers can leverage. For instance, a development team could utilize Clawdbot to manage deployment notifications across Slack and Discord, ensuring that all team members are aligned without needing to switch between multiple applications. Moreover, a freelance developer may find value in using Clawdbot to automate reminders for upcoming deadlines or meetings, integrating seamlessly with their existing communication tools. Lastly, organizations looking to enhance their customer support can implement Clawdbot to handle queries via WhatsApp or Telegram, streamlining their interactions with clients while providing a consistent experience.\n\nUltimately, Clawdbot represents a significant step toward a future where personal AI assistants are not just tools but integral components of our daily workflows. By offering a self-hosted, multi-channel solution, it empowers users to take control of their interactions in a way that aligns with their preferences and security needs. As the demand for personalized, efficient tools continues to grow, projects like Clawdbot highlight the importance of open-source solutions that prioritize user autonomy and integration, paving the way for more intelligent and cohesive digital ecosystems.",
+      "url": "https://github.com/yebeai/clawdbot",
+      "language": "TypeScript",
+      "stars": 1,
       "forks": 0,
       "topics": [],
       "parent": {
-        "name": "campwill/hal-voice-assistant",
-        "url": "https://github.com/campwill/hal-voice-assistant",
-        "stars": 44
+        "name": "openclaw/openclaw",
+        "url": "https://github.com/openclaw/openclaw",
+        "stars": 179534
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 9, 2026",
-      "updatedAt": "February 9, 2026",
-      "readTime": 2
-    },
-    {
-      "id": 1153337154,
-      "name": "natively-cluely-ai-assistant",
-      "displayName": "natively cluely ai assistant",
-      "description": "The Open Source Alternative to Cluely - A lightning-fast, privacy-first AI assistant that works seamlessly during meetings, interviews, and conversations without anyone knowing. Completely undetectable in video calls, screen shares, and recordings.",
-      "summary": "## The Problem\n\nYou’re in a meeting, interview, or live call and need instant help—summaries, context, follow-ups—without tipping anyone off that you’re using an AI. Most tools are either bulky, cloud-dependent, or straight-up violate your privacy. Screen shares and recordings make your “assistant” obvious, which is not ideal if you want to keep your edge (or just not look like a robot).\n\n## What This Does\n\n`natively-cluely-ai-assistant` is a desktop AI sidekick that stays invisible and runs locally. It hooks into your mic and screen using files like `electron/audio/MicrophoneCapture.ts` and `electron/ScreenshotHelper.ts`, grabs context, and feeds it to your chosen LLM (local via Ollama or BYOK for Gemini). Everything is handled on your machine—check out `electron/LLMHelper.ts` for the actual prompt/response magic, and `electron/IntelligenceManager.ts` for orchestration. Privacy isn’t just a checkbox; the repo literally won’t work without your own Google STT credentials (see `.env.example`). No telemetry, no shady uploads.\n\nThe UI is always-on-top but invisible during screen shares and recordings. That’s handled by `electron/WindowHelper.ts` and some clever window flagging. Global shortcuts (see `electron/SettingsWindowHelper.ts`) mean you can summon magic in any app—PowerPoint, Zoom, whatever.\n\n## Real-World Use\n\nSay you’re in a technical interview on Zoom. You hit your shortcut, and Natively grabs your mic audio (`MicrophoneCapture.ts`), transcribes it locally (`GoogleSTT.ts`), and analyzes the question. Then it generates a succinct answer or a follow-up prompt using your local Ollama model (no cloud unless you opt-in). No one sees a floating window, no popups in your recording—just context-aware help piped straight to your clipboard or text box.\n\n```typescript\n// Example: Grab audio, transcribe, get reply\nconst audio = await MicrophoneCapture.start();\nconst transcript = await GoogleSTT.transcribe(audio);\nconst reply = await LLMHelper.generate(transcript, screenshotContext);\n```\n\n## The Bottom Line\n\nIf you want privacy-first, instant AI help during calls—without exposing yourself or your data—this is what you’re looking for. Setup’s a bit annoying (Google Cloud keys, Rust for audio), but you’re trading convenience for actual privacy. Not for casual users, but if you care about local control and undetectable help, Natively delivers.",
-      "url": "https://github.com/yebeai/natively-cluely-ai-assistant",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "evinjohnn/natively-cluely-ai-assistant",
-        "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
-        "stars": 371
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 9, 2026",
-      "updatedAt": "February 9, 2026",
-      "readTime": 2
-    },
-    {
-      "id": 1153308661,
-      "name": "awesome-openclaw-usecases",
-      "displayName": "awesome openclaw usecases",
-      "description": "A community collection of OpenClaw use cases for making life easier.",
-      "summary": "# OpenClaw Use Cases: Stop Guessing, Start Building  \n\nAlright, let’s talk OpenClaw. If you’re here, you probably already know that OpenClaw (formerly ClawdBot, MoltBot—pick a name and stick to it, please) is one of those automation tools that can do *everything*... but figuring out what to actually *do* with it is the real headache.  \n\nThe repo, [awesome-openclaw-usecases](https://github.com/hesamsheikh/awesome-openclaw-usecases), is essentially a cheat sheet for real-world use cases. It’s crowdsourced, opinionated, and refreshingly light on the fluff. Instead of vague promises about \"transformative workflows\" (ugh), you get actionable examples with clear problem definitions and solutions that don’t make you want to rage-quit halfway through.  \n\n---\n\n## What’s Inside  \n\nThe repo is neatly organized into categories: Social Media, Productivity, Creative & Building, and Research & Learning. The use cases are Markdown files in the `usecases/` folder, each with a structure that actually respects your time:  \n\n- **The Problem**: The pain point it solves.  \n- **What This Does**: A breakdown of how it works, with references to specific files or relevant OpenClaw functions.  \n- **Real-World Use**: Where the magic happens—actual scenarios or code snippets.  \n- **The Bottom Line**: Honest pros and cons. Spoiler: Some of these ideas are gold; others are meh.  \n\nExamples? Sure.  \n\n### Daily Reddit Digest  \nThis one pulls highlights from your favorite subreddits and summarizes them into a customized daily email. It’s like having an intern filter Reddit for you (but less annoying). The setup is straightforward: configure subreddit preferences, schedule the digest, done. Perfect if you spend way too much time doomscrolling.  \n\n### Personal CRM  \nThis is my favorite. It scans your email and calendar to auto-build a contact database. You can query it in plain English—\"Who did I meet in August?\"—and get instant answers. The implementation is clean, but let’s be honest, if you work in sales or networking-heavy roles, this is a no-brainer. If you don’t, use it once and forget about it.  \n\n### Overnight Mini-App Builder  \nThis one’s ambitious. Drop an idea into the system, and wake up to a ready-to-test micro-app. Cool, but feels like overkill unless you’re prototyping a lot. You’ll probably spend more time tweaking the output than if you just built the app yourself.  \n\n---\n\n## Why This Repo Matters  \n\nOpenClaw’s biggest hurdle isn’t technical—it’s figuring out where it fits into your workflow without wasting a week tinkering with YAML files. This repo skips the BS and delivers practical ideas that actually work.  \n\nSome use cases are genuinely useful (Personal CRM, Inbox De-clutter), while others feel niche or experimental (YouTube Content Pipeline, X Account Analysis). But hey, that’s the beauty of it: pick what works for you, ignore the rest.  \n\nBottom line: If you’ve got OpenClaw installed and no clue what to do next, start here. It might just save you from a weekend of aimless Googling. Or it might make you realize OpenClaw isn’t for you—and that’s fine, too.",
-      "url": "https://github.com/yebeai/awesome-openclaw-usecases",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "hesamsheikh/awesome-openclaw-usecases",
-        "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 509
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 9, 2026",
+      "forkedAt": "January 16, 2026",
       "updatedAt": "February 9, 2026",
       "readTime": 3
-    },
-    {
-      "id": 1153306528,
-      "name": "tvscreener",
-      "displayName": "tvscreener",
-      "description": "TradingView Screener API - Stock, Crypto, Forex, Bond, Futures, Coin",
-      "summary": "## The Problem\nIf you’re knee-deep in trading data, you know the struggle of sifting through multiple APIs or scraping websites to get stock, crypto, or forex data. It’s tedious, error-prone, and often leads to outdated information. You want a single solution that can pull this data and serve it up neatly, but most solutions either cost an arm and a leg or simply don’t cut it.\n\n## What This Does\nEnter the `tvscreener` library. This Python package acts as a middleman to fetch data from TradingView’s Screener. You can access various market types like stocks, crypto, bonds, and futures with a straightforward API. The project structure has a `codegen` directory that contains everything you need to build queries visually using Jupyter notebooks, specifically `Generate FilterFields.ipynb` and `Generate.ipynb`. It also generates the necessary Python code for you, so you don’t have to wrestle with constructing queries manually.\n\nYou’ll find a plethora of predefined fields in the `.dev/codegen/data` folder, covering everything from `country.json` to `symbol type.json`. These fields cover over 13,000 options, giving you the flexibility to refine your queries based on your unique needs.\n\n## Real-World Use\nLet’s say you’re a trader looking for stocks with a price above $100 and a market cap between $1 billion and $50 billion. Here’s how you’d do it:\n\n```python\nfrom tvscreener import StockScreener, StockField\n\nss = StockScreener()\nss.where(StockField.PRICE > 100)\nss.where(StockField.MARKET_CAPITALIZATION.between(1e9, 50e9))\ndf = ss.get()\n```\n\nThis code snippet pulls the relevant stock data into a Pandas DataFrame. You can then analyze, visualize, or export the data as needed. If you want to build queries visually, just fire up the Jupyter notebooks in the `.dev/codegen` folder.\n\n## The Bottom Line\n`tvscreener` is a solid choice for anyone dealing with trading data who wants to cut down on the manual work. It’s not perfect—some might find the learning curve steep if they’re not familiar with Python or Jupyter notebooks. Still, if you need to integrate market data into your applications efficiently, this library is worth a look. Just remember: it's unofficial, so use it at your own risk.",
-      "url": "https://github.com/yebeai/tvscreener",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "deepentropy/tvscreener",
-        "url": "https://github.com/deepentropy/tvscreener",
-        "stars": 573
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 9, 2026",
-      "updatedAt": "February 9, 2026",
-      "readTime": 2
-    },
-    {
-      "id": 1153304836,
-      "name": "wg-easy",
-      "displayName": "wg easy",
-      "description": "The easiest way to run WireGuard VPN + Web-based Admin UI.",
-      "summary": "## The Problem\n\nSetting up WireGuard VPN is a pain. You’re stuck fiddling with config files, praying you typed the right CIDR, and then you realize you forgot to enable IP forwarding. Want a user-friendly admin UI? Good luck, because WireGuard doesn’t ship with one. Managing clients, handing out configs, and tracking connections is usually a mess—especially if you’re not a CLI junkie.\n\n## What This Does\n\n`wg-easy` wraps WireGuard in a Docker container and slaps a web UI on top. You get everything in one place: VPN server, client management, QR codes for configs, stats, and even 2FA. The real magic sits in `docker-compose.yml`—spin it up and you’ve got a WireGuard server plus a web admin, no manual config hell required. The UI assets live in `assets/screenshot.png` and the docs hang out in `docs/content/advanced/api.md` if you want to dig deeper.\n\nNo need to touch `/etc/wireguard` or memorize systemd commands. Just run `docker-compose up`, pop open the browser, and manage clients like a sane person. It even handles “one-time links” for sharing configs securely (which, frankly, should be standard for VPN tools).\n\n## Real-World Use\n\nLet’s say you want to give your friend VPN access. Fire up `wg-easy` with Docker Compose:\n\n```shell\ndocker-compose up -d\n```\n\nLog into the web UI, click “Add Client,” scan the QR code from your phone, and you’re done. Need to see who’s connected? The UI spits out client stats and usage charts. Want to revoke access? Click “Disable” or “Delete”—no SSH, no nano, just point and click. For nerds: you can automate stuff via the API documented in `docs/content/advanced/api.md`.\n\n## The Bottom Line\n\n`wg-easy` is what WireGuard should have shipped with. Installation is dead simple, and the web UI kills the need for manual config wrangling. If you’re running a VPN for family, work, or just want to avoid command-line headaches, use this. Downsides? If you hate Docker or need custom networking magic, you might hit a wall. Otherwise, it’s stupidly easy—and that’s a compliment.",
-      "url": "https://github.com/yebeai/wg-easy",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "wg-easy/wg-easy",
-        "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24404
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 9, 2026",
-      "updatedAt": "February 9, 2026",
-      "readTime": 2
     },
     {
       "id": 1153672280,
@@ -133,7 +45,7 @@
       "parent": {
         "name": "BrowserOperator/browser-operator-core",
         "url": "https://github.com/BrowserOperator/browser-operator-core",
-        "stars": 442
+        "stars": 448
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -155,10 +67,318 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 3693
+        "stars": 3926
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1153433491,
+      "name": "hal-voice-assistant",
+      "displayName": "hal voice assistant",
+      "description": "A voice-activated AI assistant modeled after HAL 9000, built with Raspberry Pi and self-hosted services for speech-to-text, language generation, and text-to-speech.",
+      "summary": "## The Problem\nVoice-activated assistants are everywhere, but most rely on cloud services, which means privacy concerns and inconsistent performance. If you’re looking for a DIY solution that runs locally, giving you control over your data while channeling your inner HAL 9000, this project is for you.\n\n## What This Does\nThe `hal-voice-assistant` repo provides a voice assistant using a Raspberry Pi Zero 2 W. It listens for the wake phrase “Hey HAL,” thanks to `Porcupine` in the `models/porcupine` folder. Once activated, it processes speech through a series of self-hosted services: `Vosk` for speech-to-text, `Ollama` for language generation, and `Piper` for text-to-speech. The brains of the operation is in `app.py`, where all the magic happens. \n\nYou’ll find your audio processing needs covered with `requirements.txt` managing dependencies. The `drivers/apa102.py` file handles LED controls, giving that authentic HAL vibe when your assistant is active. \n\n## Real-World Use\nImagine this: you’re in the kitchen, hands full of flour, and you want to set a timer or ask for a recipe without touching your phone. Just say “Hey HAL,” and your voice assistant responds with the information you need, all while the Raspberry Pi handles everything locally. Here's a snippet to give you an idea of how the integration works in `app.py`:\n\n```python\ndef main():\n    while True:\n        if detect_wake_word():\n            command = listen()\n            response = generate_response(command)\n            speak(response)\n```\nThis loop runs indefinitely, keeping your assistant ready for action without any cloud dependency.\n\n## The Bottom Line\nThis project is a neat way to create a voice assistant while learning about hardware and software integration. If you’re comfortable with Python and want a fun DIY project, jump in. Just be aware that if you’re looking for something plug-and-play, this is overkill. For the tinkerers and hobbyists, though, it's a solid base to build your own digital companion.",
+      "url": "https://github.com/yebeai/hal-voice-assistant",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "campwill/hal-voice-assistant",
+        "url": "https://github.com/campwill/hal-voice-assistant",
+        "stars": 45
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1153337154,
+      "name": "natively-cluely-ai-assistant",
+      "displayName": "natively cluely ai assistant",
+      "description": "The Open Source Alternative to Cluely - A lightning-fast, privacy-first AI assistant that works seamlessly during meetings, interviews, and conversations without anyone knowing. Completely undetectable in video calls, screen shares, and recordings.",
+      "summary": "## The Problem\n\nYou’re in a meeting, interview, or live call and need instant help—summaries, context, follow-ups—without tipping anyone off that you’re using an AI. Most tools are either bulky, cloud-dependent, or straight-up violate your privacy. Screen shares and recordings make your “assistant” obvious, which is not ideal if you want to keep your edge (or just not look like a robot).\n\n## What This Does\n\n`natively-cluely-ai-assistant` is a desktop AI sidekick that stays invisible and runs locally. It hooks into your mic and screen using files like `electron/audio/MicrophoneCapture.ts` and `electron/ScreenshotHelper.ts`, grabs context, and feeds it to your chosen LLM (local via Ollama or BYOK for Gemini). Everything is handled on your machine—check out `electron/LLMHelper.ts` for the actual prompt/response magic, and `electron/IntelligenceManager.ts` for orchestration. Privacy isn’t just a checkbox; the repo literally won’t work without your own Google STT credentials (see `.env.example`). No telemetry, no shady uploads.\n\nThe UI is always-on-top but invisible during screen shares and recordings. That’s handled by `electron/WindowHelper.ts` and some clever window flagging. Global shortcuts (see `electron/SettingsWindowHelper.ts`) mean you can summon magic in any app—PowerPoint, Zoom, whatever.\n\n## Real-World Use\n\nSay you’re in a technical interview on Zoom. You hit your shortcut, and Natively grabs your mic audio (`MicrophoneCapture.ts`), transcribes it locally (`GoogleSTT.ts`), and analyzes the question. Then it generates a succinct answer or a follow-up prompt using your local Ollama model (no cloud unless you opt-in). No one sees a floating window, no popups in your recording—just context-aware help piped straight to your clipboard or text box.\n\n```typescript\n// Example: Grab audio, transcribe, get reply\nconst audio = await MicrophoneCapture.start();\nconst transcript = await GoogleSTT.transcribe(audio);\nconst reply = await LLMHelper.generate(transcript, screenshotContext);\n```\n\n## The Bottom Line\n\nIf you want privacy-first, instant AI help during calls—without exposing yourself or your data—this is what you’re looking for. Setup’s a bit annoying (Google Cloud keys, Rust for audio), but you’re trading convenience for actual privacy. Not for casual users, but if you care about local control and undetectable help, Natively delivers.",
+      "url": "https://github.com/yebeai/natively-cluely-ai-assistant",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "evinjohnn/natively-cluely-ai-assistant",
+        "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
+        "stars": 406
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1153308661,
+      "name": "awesome-openclaw-usecases",
+      "displayName": "awesome openclaw usecases",
+      "description": "A community collection of OpenClaw use cases for making life easier.",
+      "summary": "# OpenClaw Use Cases: Stop Guessing, Start Building  \n\nAlright, let’s talk OpenClaw. If you’re here, you probably already know that OpenClaw (formerly ClawdBot, MoltBot—pick a name and stick to it, please) is one of those automation tools that can do *everything*... but figuring out what to actually *do* with it is the real headache.  \n\nThe repo, [awesome-openclaw-usecases](https://github.com/hesamsheikh/awesome-openclaw-usecases), is essentially a cheat sheet for real-world use cases. It’s crowdsourced, opinionated, and refreshingly light on the fluff. Instead of vague promises about \"transformative workflows\" (ugh), you get actionable examples with clear problem definitions and solutions that don’t make you want to rage-quit halfway through.  \n\n---\n\n## What’s Inside  \n\nThe repo is neatly organized into categories: Social Media, Productivity, Creative & Building, and Research & Learning. The use cases are Markdown files in the `usecases/` folder, each with a structure that actually respects your time:  \n\n- **The Problem**: The pain point it solves.  \n- **What This Does**: A breakdown of how it works, with references to specific files or relevant OpenClaw functions.  \n- **Real-World Use**: Where the magic happens—actual scenarios or code snippets.  \n- **The Bottom Line**: Honest pros and cons. Spoiler: Some of these ideas are gold; others are meh.  \n\nExamples? Sure.  \n\n### Daily Reddit Digest  \nThis one pulls highlights from your favorite subreddits and summarizes them into a customized daily email. It’s like having an intern filter Reddit for you (but less annoying). The setup is straightforward: configure subreddit preferences, schedule the digest, done. Perfect if you spend way too much time doomscrolling.  \n\n### Personal CRM  \nThis is my favorite. It scans your email and calendar to auto-build a contact database. You can query it in plain English—\"Who did I meet in August?\"—and get instant answers. The implementation is clean, but let’s be honest, if you work in sales or networking-heavy roles, this is a no-brainer. If you don’t, use it once and forget about it.  \n\n### Overnight Mini-App Builder  \nThis one’s ambitious. Drop an idea into the system, and wake up to a ready-to-test micro-app. Cool, but feels like overkill unless you’re prototyping a lot. You’ll probably spend more time tweaking the output than if you just built the app yourself.  \n\n---\n\n## Why This Repo Matters  \n\nOpenClaw’s biggest hurdle isn’t technical—it’s figuring out where it fits into your workflow without wasting a week tinkering with YAML files. This repo skips the BS and delivers practical ideas that actually work.  \n\nSome use cases are genuinely useful (Personal CRM, Inbox De-clutter), while others feel niche or experimental (YouTube Content Pipeline, X Account Analysis). But hey, that’s the beauty of it: pick what works for you, ignore the rest.  \n\nBottom line: If you’ve got OpenClaw installed and no clue what to do next, start here. It might just save you from a weekend of aimless Googling. Or it might make you realize OpenClaw isn’t for you—and that’s fine, too.",
+      "url": "https://github.com/yebeai/awesome-openclaw-usecases",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "hesamsheikh/awesome-openclaw-usecases",
+        "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
+        "stars": 615
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 3
+    },
+    {
+      "id": 1153306528,
+      "name": "tvscreener",
+      "displayName": "tvscreener",
+      "description": "TradingView Screener API - Stock, Crypto, Forex, Bond, Futures, Coin",
+      "summary": "## The Problem\nIf you’re knee-deep in trading data, you know the struggle of sifting through multiple APIs or scraping websites to get stock, crypto, or forex data. It’s tedious, error-prone, and often leads to outdated information. You want a single solution that can pull this data and serve it up neatly, but most solutions either cost an arm and a leg or simply don’t cut it.\n\n## What This Does\nEnter the `tvscreener` library. This Python package acts as a middleman to fetch data from TradingView’s Screener. You can access various market types like stocks, crypto, bonds, and futures with a straightforward API. The project structure has a `codegen` directory that contains everything you need to build queries visually using Jupyter notebooks, specifically `Generate FilterFields.ipynb` and `Generate.ipynb`. It also generates the necessary Python code for you, so you don’t have to wrestle with constructing queries manually.\n\nYou’ll find a plethora of predefined fields in the `.dev/codegen/data` folder, covering everything from `country.json` to `symbol type.json`. These fields cover over 13,000 options, giving you the flexibility to refine your queries based on your unique needs.\n\n## Real-World Use\nLet’s say you’re a trader looking for stocks with a price above $100 and a market cap between $1 billion and $50 billion. Here’s how you’d do it:\n\n```python\nfrom tvscreener import StockScreener, StockField\n\nss = StockScreener()\nss.where(StockField.PRICE > 100)\nss.where(StockField.MARKET_CAPITALIZATION.between(1e9, 50e9))\ndf = ss.get()\n```\n\nThis code snippet pulls the relevant stock data into a Pandas DataFrame. You can then analyze, visualize, or export the data as needed. If you want to build queries visually, just fire up the Jupyter notebooks in the `.dev/codegen` folder.\n\n## The Bottom Line\n`tvscreener` is a solid choice for anyone dealing with trading data who wants to cut down on the manual work. It’s not perfect—some might find the learning curve steep if they’re not familiar with Python or Jupyter notebooks. Still, if you need to integrate market data into your applications efficiently, this library is worth a look. Just remember: it's unofficial, so use it at your own risk.",
+      "url": "https://github.com/yebeai/tvscreener",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "deepentropy/tvscreener",
+        "url": "https://github.com/deepentropy/tvscreener",
+        "stars": 627
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1153304836,
+      "name": "wg-easy",
+      "displayName": "wg easy",
+      "description": "The easiest way to run WireGuard VPN + Web-based Admin UI.",
+      "summary": "## The Problem\n\nSetting up WireGuard VPN is a pain. You’re stuck fiddling with config files, praying you typed the right CIDR, and then you realize you forgot to enable IP forwarding. Want a user-friendly admin UI? Good luck, because WireGuard doesn’t ship with one. Managing clients, handing out configs, and tracking connections is usually a mess—especially if you’re not a CLI junkie.\n\n## What This Does\n\n`wg-easy` wraps WireGuard in a Docker container and slaps a web UI on top. You get everything in one place: VPN server, client management, QR codes for configs, stats, and even 2FA. The real magic sits in `docker-compose.yml`—spin it up and you’ve got a WireGuard server plus a web admin, no manual config hell required. The UI assets live in `assets/screenshot.png` and the docs hang out in `docs/content/advanced/api.md` if you want to dig deeper.\n\nNo need to touch `/etc/wireguard` or memorize systemd commands. Just run `docker-compose up`, pop open the browser, and manage clients like a sane person. It even handles “one-time links” for sharing configs securely (which, frankly, should be standard for VPN tools).\n\n## Real-World Use\n\nLet’s say you want to give your friend VPN access. Fire up `wg-easy` with Docker Compose:\n\n```shell\ndocker-compose up -d\n```\n\nLog into the web UI, click “Add Client,” scan the QR code from your phone, and you’re done. Need to see who’s connected? The UI spits out client stats and usage charts. Want to revoke access? Click “Disable” or “Delete”—no SSH, no nano, just point and click. For nerds: you can automate stuff via the API documented in `docs/content/advanced/api.md`.\n\n## The Bottom Line\n\n`wg-easy` is what WireGuard should have shipped with. Installation is dead simple, and the web UI kills the need for manual config wrangling. If you’re running a VPN for family, work, or just want to avoid command-line headaches, use this. Downsides? If you hate Docker or need custom networking magic, you might hit a wall. Otherwise, it’s stupidly easy—and that’s a compliment.",
+      "url": "https://github.com/yebeai/wg-easy",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "wg-easy/wg-easy",
+        "url": "https://github.com/wg-easy/wg-easy",
+        "stars": 24441
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1154009932,
+      "name": "worktrunk",
+      "displayName": "worktrunk",
+      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "summary": "# Managing Git Worktrees with Worktrunk: A CLI for the Sane Developer\n\n## The Problem\n\nGit worktrees are amazing—when you’re juggling multiple branches or, as in this case, running a bunch of parallel AI agents, they save you from the nightmare of cloning a repo ten times. But here’s the catch: Git’s native worktree UX is trash. Even simple tasks like creating a new worktree or switching between them feel like a typing test for advanced keyboard masochists. And automating workflows? Yeah, good luck with that. \n\n## What This Does\n\n`Worktrunk` makes `git worktree` as easy to use as `git branch`. Think of it as a modern, streamlined CLI wrapper that spares you from Git’s clunky syntax and injects much-needed developer sanity into your workflow. The repo is packed with features, but the core focus is on three commands: `wt switch`, `wt remove`, and `wt list`.\n\nThe `wt switch` command is the standout here. Need a new worktree for a feature? Just run `wt switch -c feat` and you’re off to the races. If you’re spinning up an AI agent alongside, add `-x claude` for instant integration. Want to clean up? `wt remove` takes care of deleting the worktree *and* the branch, sparing you from the usual multi-step dance of `git worktree remove` and `git branch -d`. Meanwhile, `wt list` gives you a readable, status-inclusive overview of all your active worktrees—none of that raw, path-only nonsense from `git worktree list`.\n\nThe repo isn’t just a CLI; it’s a full ecosystem. Check out the `.claude-plugin/` directory for tight coupling with tools like Claude, including hooks (`hooks.json`) and skills (`skills/worktrunk/SKILL.md`) that automate workflows. There’s also a `.config/wt.toml`, which lets you define a path template for worktrees—no more hardcoding paths like a caveman. \n\n## Real-World Use\n\nLet’s say you’re managing 5 AI agents, each working on a different feature. With native Git, you’d be running commands like:\n\n```bash\ngit worktree add -b feat-1 ../repo.feat-1 && cd ../repo.feat-1 && agent\ngit worktree add -b feat-2 ../repo.feat-2 && cd ../repo.feat-2 && agent\n```\n\nRepeat this for every agent, and hope you don’t typo yourself into a rage spiral. With `Worktrunk`:\n\n```bash\nwt switch -c -x agent feat-1\nwt switch -c -x agent feat-2\n```\n\nDone. Oh, and when you’re done? `wt remove` cleans up the entire mess for you.\n\n## The Bottom Line\n\n`Worktrunk` is a no-brainer if you’re using Git worktrees, especially if you’re working with AI agents or juggling multiple branches. The CLI is clean, the commands make sense, and it saves you from Git’s abysmal worktree ergonomics. That said, if you’re just hacking on one branch at a time, this might be overkill. But if you’re scaling workflows or automating tasks, you’ll never want to go back.",
+      "url": "https://github.com/yebeai/worktrunk",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "max-sixty/worktrunk",
+        "url": "https://github.com/max-sixty/worktrunk",
+        "stars": 1900
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 3
+    },
+    {
+      "id": 1154009614,
+      "name": "maple-font",
+      "displayName": "maple font",
+      "description": "Maple Mono: Open source monospace font with round corner, ligatures and Nerd-Font icons for IDE and terminal, fine-grained customization options. 带连字和控制台图标的圆角等宽字体，中英文宽度完美2:1，细粒度的自定义选项",
+      "summary": "## The Problem\nTired of the same old boring monospace fonts? You know, the ones that make your code look like a jumbled mess? Especially when you're working with mixed languages like English and Chinese, it can be a nightmare to keep things aligned. Enter Maple Mono: a font designed to smooth out your coding experience while making your IDE and terminal look like a million bucks.\n\n## What This Does\nMaple Mono isn't just another font; it's a thoughtfully crafted monospace font with features that actually matter. The `build.py` script automates the font generation, and the `config.json` allows for fine-tuning based on your preferences. You can toggle features on or off, making it customizable to suit your workflow. \n\nWant to see how it looks? Check out `resources/showcase.png` for a preview. The font supports a plethora of ligatures, detailed in `source/features/README.md`, which means less eye strain and more focus on your code. Plus, it comes with Nerd Font icons, so your terminal can actually look interesting instead of like a bland text dump.\n\n## Real-World Use\nImagine you're coding a multilingual application and need a font that keeps everything aligned and readable. You can simply install Maple Mono via Scoop on Windows like this:\n\n```sh\nscoop bucket add nerd-fonts\nscoop install Maple-Mono\n```\n\nNow, you’ve got a font that ensures your Chinese and English characters are perfectly aligned in a 2:1 ratio. Perfect for those Markdown tables that usually look like they were formatted by a toddler.\n\n## The Bottom Line\nMaple Mono is a solid choice for developers looking to upgrade their font game without the hassle. It’s visually appealing and functional, especially for those juggling multiple languages. But if you’re just after a simple monospace font and don’t care about customization or aesthetics, you might find this overkill. For everyone else, it’s worth giving Maple Mono a try.",
+      "url": "https://github.com/yebeai/maple-font",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "subframe7536/maple-font",
+        "url": "https://github.com/subframe7536/maple-font",
+        "stars": 23511
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1154003465,
+      "name": "kafka-training",
+      "displayName": "kafka training",
+      "description": " This repository contains labs, lectures, and reference material used to train developers and operations how to use Apache Kafka.",
+      "summary": "## The Problem\n\nGetting started with Apache Kafka is usually a headache: outdated blogs, cryptic docs, and a mess of half-baked tutorials that assume you’re already a distributed systems wizard. Most folks just want to spin up Kafka, poke around, and actually see what happens when you send a message or screw up a config—not read a whitepaper.\n\n## What This Does\n\nThe `kafka-training` repo is basically a hands-on crash course for devs and ops folks who want to *do* things with Kafka, not just read about them. Each `labs/LabXX_*` directory is a focused, self-contained unit. For example, `labs/Lab01_Setup/steps_local.md` hands you the exact steps to get Kafka running on your laptop, while `labs/Lab03_Messages/steps.md` walks you through sending and consuming real messages.\n\nEvery lab comes with its own config (`server.properties`, `log4j.properties`) and questions so you can actually break stuff and learn. You’re not left guessing what to do next—the `steps.md` files are blunt and to the point. Need to see what happens when you mess with authentication? There’s even an LDAP lab (`labs/Lab08_LDAP/`).\n\n## Real-World Use\n\nSay you’ve got a new team member who’s never touched Kafka. Instead of hand-waving through a 60-slide deck, just point them to `labs/Lab02_Tools/steps.md`. They’ll learn how to use Kafka’s CLI tools, spin up a broker, and send messages—all in a throwaway local environment. For example, the lab walks through commands like:\n\n```bash\nbin/kafka-topics.sh --create --topic test --bootstrap-server localhost:9092\nbin/kafka-console-producer.sh --topic test --bootstrap-server localhost:9092\n```\n\nThey’ll see exactly what happens and why, without taking down your prod cluster or getting lost in theory.\n\n## The Bottom Line\n\nIf you actually want to understand Kafka by pushing real buttons, this repo beats yet another documentation binge. The lab structure is old-school but effective—just follow the steps, break stuff, and learn. Great for onboarding or brushing up, but don’t expect fancy UIs or production-ready scripts. This is for people who learn by doing, not by sitting through another “Kafka 101” webinar.",
+      "url": "https://github.com/yebeai/kafka-training",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "sassoftware/kafka-training",
+        "url": "https://github.com/sassoftware/kafka-training",
+        "stars": 10
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1154000837,
+      "name": "echo-tts",
+      "displayName": "echo tts",
+      "description": "Echo-TTS inference codebase",
+      "summary": "## The Problem\n\nGenerating high-quality, multi-speaker text-to-speech (TTS) audio has always been a pain, especially when you need speaker-specific outputs. Most TTS models are either too generic, require massive compute, or don't provide much room to tweak and fine-tune the outputs. If you've ever struggled with unreliable speaker conditioning or models that butcher long-form text, you’ll appreciate what `echo-tts` brings to the table.\n\n## What This Does\n\n`echo-tts` is an inference pipeline for a multi-speaker TTS model that uses speaker reference conditioning. You feed it audio of a speaker, some text, and it spits out audio that sounds like that speaker saying the text. To get started, clone the repo, install the dependencies with `requirements.txt`, and fire up the Gradio interface using `gradio_app.py`. It’s all there in the `README.md`.\n\nThe heavy lifting happens in `inference.py` and the associated sampling functions, like `sample_pipeline`. The model itself is pulled from Hugging Face (`jordand/echo-tts-base`), and it’s powered by a TPU-trained architecture with some fancy extras like \"blockwise generation\" (`inference_blockwise.py`) for handling long sequences without burning through VRAM. \n\nWant to tweak things? Edit `sampler_presets.json` to customize the sampling behavior or adjust settings like `FISH_AE_DTYPE` in `gradio_app.py` to make it less of a VRAM hog.\n\n## Real-World Use\n\nLet’s say you want your app to generate bedtime stories in your voice. Record a 10-second sample of yourself, save it as `speaker.wav`, and load it in your script with `load_audio`. Use the `sample_pipeline` function to generate audio, adjusting parameters like `cfg_scale_speaker` to lock in your voice or tweak the output style. Run the script, and voilà, you now have a custom audio file (`output.wav`) of you narrating a story.\n\nIf you’re lazy (no judgment), just use the Gradio app (`gradio_app.py`). Upload your audio sample, type your text, hit \"Generate,\" and download the result.\n\n## The Bottom Line\n\n`echo-tts` is solid if you want advanced TTS with speaker conditioning and are okay with some setup. It’s not plug-and-play for non-technical folks, and you’ll need decent hardware (8GB+ VRAM & a CUDA GPU). But if you’re a developer who loves tinkering with audio generation, this repo is worth a shot. Just don’t use it to fake Elon Musk interviews, okay?",
+      "url": "https://github.com/yebeai/echo-tts",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "jordandare/echo-tts",
+        "url": "https://github.com/jordandare/echo-tts",
+        "stars": 108
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1153990980,
+      "name": "PDF-Extract-Kit",
+      "displayName": "PDF Extract Kit",
+      "description": "A Comprehensive Toolkit for High-Quality PDF Content Extraction",
+      "summary": "## The Problem\nExtracting content from PDFs can feel like wrestling an octopus. You’ve got complex layouts, mixed media, and inconsistent formatting. Trying to get data out of these documents often leads to a frustrating experience where you’re left with half-baked results or, worse, nothing at all.\n\n## What This Does\n`PDF-Extract-Kit` is a toolkit that tackles these issues head-on. It integrates various models for different extraction tasks, from layout detection to OCR. Want to identify tables in a financial report? Check out the `assets/demo/layout_detection` folder, which hosts examples like `financial_report.png`. Need to convert formula images into LaTeX? The `formula_recognition` folder has you covered with models like `UniMERNet`.\n\nThe modular design is a big plus; you can tweak configurations in `config.yaml` to mix and match functionalities. For example, if your PDF has tables and images, you can set up the toolkit to run both `PaddleOCR+TableMaster` and `YOLO-v10_ft` without rewriting the wheel.\n\n## Real-World Use\nImagine you receive a PDF report with a mix of text, images, and tables. You want to extract this data into a structured format for analysis. Simply point the toolkit to your PDF, configure your extraction settings in the `config.yaml`, and run the extraction script. The output could be a Markdown file, neatly organized and ready for whatever you need—be it analysis, translation, or just for sharing with your team.\n\n```bash\npython extract.py --input my_report.pdf --output my_report.md --config config.yaml\n```\n\n## The Bottom Line\n`PDF-Extract-Kit` isn’t perfect for every scenario—if you’re just extracting text from simple PDFs, it might be overkill. However, if you deal with complex documents regularly, this toolkit is a solid choice. It’s flexible, integrates well with existing models, and can save you a ton of time. Just be ready to invest some effort in configuration.",
+      "url": "https://github.com/yebeai/PDF-Extract-Kit",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "opendatalab/PDF-Extract-Kit",
+        "url": "https://github.com/opendatalab/PDF-Extract-Kit",
+        "stars": 9237
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1153990720,
+      "name": "langextract",
+      "displayName": "langextract",
+      "description": "A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.",
+      "summary": "## The Problem\n\nExtracting structured data from messy text is a pain. You’re staring at a wall of clinical notes or some novel, and need actual fields—dates, names, relationships—mapped back to the original. Doing this reliably (and traceably) with LLMs is usually a hacky mess: outputs are inconsistent, source mapping is vague, and “visualization” means dumping JSON somewhere.\n\n## What This Does\n\n`langextract` is a Python library that lets you wrangle unstructured text into structured, source-grounded data using LLMs. The magic is in the way it ties each extracted entity to its exact spot in the text, so you can highlight and verify right in your browser. The `README.md` walks you through setting up extraction tasks with a prompt plus few-shot examples. The actual guts live in `benchmarks/benchmark.py` if you want to see how chunking and parallel processing work for big documents. You can plug in different models (cloud or local via Ollama) without rewriting everything. There’s a self-contained HTML visualization that shows thousands of entities in context—not some half-baked dashboard.\n\n## Real-World Use\n\nSuppose you have a radiology report and need to pull out medications mentioned, mapped to their source sentences. You set up a prompt, give a few examples, and run:\n\n```python\nimport langextract as lx\n\nprompt = \"Extract all medications and their dosages from the report.\"\nexample = {\"medication\": \"Ibuprofen\", \"dosage\": \"200mg\"}\nresults = lx.extract(text, prompt, examples=[example], model=\"gemini-pro\")\nlx.visualize(results, output_file=\"medications.html\")\n```\n\nNow you’ve got interactive highlighting in `medications.html`—not just a CSV dump.\n\n## The Bottom Line\n\n`langextract` actually solves the traceability and schema headaches for LLM-based extraction. The source-grounding and visualization are genuinely useful; the parallel chunking is smart for big docs. Downsides: it’s overkill if you’re just scraping tweets, and LLM output is only as sane as your prompts/examples. If you care about reliability and auditability, especially on complex documents, this is worth your time.",
+      "url": "https://github.com/yebeai/langextract",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "google/langextract",
+        "url": "https://github.com/google/langextract",
+        "stars": 26003
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1153977114,
+      "name": "skills",
+      "displayName": "skills",
+      "description": "The open agent skills tool - npx skills",
+      "summary": "# The Open Agent Skills Tool: What Even Is This?\n\n## The Problem\n\nSo you've got your snazzy AI agent setup—maybe it's OpenAI, Claude, or some other fancy \"AI for everything\" tool. But here's the headache: building and managing skills (aka specific capabilities) for these agents is a mess. You end up hacking together scripts, duplicating code across projects, and wrestling with version control like it's 2005. What if you could just plug in skills from GitHub, GitLab, or even your local machine and have them \"just work\"? Yeah, that’s where `npx skills` comes in.\n\n## What This Does\n\nAt its core, `npx skills` is a CLI tool for managing skills in the so-called \"open agent skills ecosystem.\" Fancy buzzwords aside, it’s a way to install, list, and manage skills for AI agents with a single command. The star here is the `skills` command, which you’ll find in `bin/cli.mjs`. This thing is the backbone of the tool, handling everything from parsing GitHub URLs (`src/cli.ts`) to slapping skills into the right project directories (`src/add.ts`).\n\nThe CLI supports a ton of source formats: GitHub shorthands like `owner/repo`, full URLs, GitLab links, raw git URLs, and even local paths. Want to install one skill? Cool. Want to install every skill in a repo to every agent you’re running? Sure, go nuts with `--all`. It’s brutally simple and surprisingly flexible. And the `--list` flag? Pure gold if you want to see what’s available without committing to anything.\n\nThe `.github/` directory is packed with workflow automation (`ci.yml`, `publish.yml`) and issue templates for feature requests or bug reports. It’s clear this repo is designed for collaboration, even if the fork has zero stars. \n\n## Real-World Use\n\nSay you’re building a chatbot with OpenAI’s API, and you want to slap in a skill for \"frontend-design\" from the `vercel-labs/agent-skills` repo. Here’s what you’d do:\n\n```bash\nnpx skills add vercel-labs/agent-skills --skill frontend-design -a opencode\n```\n\nDone. No manual cloning, no copy-pasting, no \"Wait, where do I put these files again?\" nonsense. If you’re running multiple agents, you can even target them individually (`-a`) or just YOLO it and install everything to everyone (`--all`).\n\nIt’s also CI/CD-friendly. Need to set up a workflow to add skills automatically? Pair the `--yes` flag with `-g` to install globally and skip all the annoying prompts.\n\n## The Bottom Line\n\n`npx skills` is one of those tools that makes you wonder why it didn’t exist before. It’s not perfect (global installs aren’t always ideal, and the \"open agent skills ecosystem\" sounds like marketing fluff), but it’s a time-saver for anyone building modular AI agents. If you’re tired of duct-taping skills into your agents, give it a spin. Just don’t expect miracles—this is a pragmatic tool, not a magic wand.",
+      "url": "https://github.com/yebeai/skills",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "vercel-labs/skills",
+        "url": "https://github.com/vercel-labs/skills",
+        "stars": 5286
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 3
+    },
+    {
+      "id": 1153974469,
+      "name": "MiniCPM-o",
+      "displayName": "MiniCPM o",
+      "description": "A Gemini 2.5 Flash Level MLLM for Vision, Speech, and Full-Duplex Multimodal Live Streaming on Your Phone",
+      "summary": "## The Problem\nEver tried using a voice assistant that stutters when you're streaming video? Or worse, when it stops responding mid-conversation? It's maddening. The issue lies in handling multiple streams—audio, video, and text—simultaneously without choking. Enter MiniCPM-o, which is designed to tackle this pain point head-on.\n\n## What This Does\nMiniCPM-o is a multimodal large language model (MLLM) that can process images, text, audio, and video at the same time. It’s built on the MiniCPM framework, specifically the `MiniCPM-o 4.5` model, which packs a punch with 9 billion parameters. Check out the `README.md` for an overview, but the real magic happens with its full-duplex streaming capabilities. \n\nTo get started, you'll find various issue templates in the `.github/ISSUE_TEMPLATE` directory, like `bug_report.yaml` and `feature_request.yaml`, making it easy to report problems or suggest new features. Want to deploy it locally? There’s a guide in the `demo/web_demo/WebRTC_Demo/README.md` that walks you through using Docker to set up a low-latency experience on your Mac.\n\n## Real-World Use\nImagine you're at a café, engaging in a bilingual conversation while watching a live video. You can see the captions on-screen, hear the audio, and even get real-time translations—all without any hiccups. With MiniCPM-o, you could write a simple script to handle the input and output streams, like this:\n\n```python\nfrom minicpm import MiniCPM\n\nmodel = MiniCPM.load(\"MiniCPM-o-4.5\")\nresponse = model.process(input_video=\"path/to/video.mp4\", input_audio=\"path/to/audio.wav\")\nprint(response)\n```\n\nThis code snippet illustrates how you can process video and audio inputs in one go. Just plug in your paths, and you're set.\n\n## The Bottom Line\nMiniCPM-o is powerful, but it’s probably overkill for simple apps. If you're building something that needs to juggle multiple media types in real-time, this is your go-to. Just be prepared for the learning curve, especially if you're new to MLLMs. For experienced developers, this is a fun playground with tons of potential.",
+      "url": "https://github.com/yebeai/MiniCPM-o",
+      "language": null,
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "OpenBMB/MiniCPM-o",
+        "url": "https://github.com/OpenBMB/MiniCPM-o",
+        "stars": 23592
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 9, 2026",
+      "updatedAt": "February 9, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1153904554,
+      "name": "ComfyUI_FL-HeartMuLa",
+      "displayName": "ComfyUI FL HeartMuLa",
+      "description": "FL HeartMuLa - Multilingual AI music generation nodes for ComfyUI. Generate full songs with lyrics using HeartMuLa.",
+      "summary": "## The Problem\n\nMost AI music generators spit out generic instrumental tracks or mangle vocals so badly you’d think your headphones broke. If you want full songs—with actual lyrics, vocals, and control over genre, mood, and structure—you're out of luck. Especially if you want anything other than English.\n\n## What This Does\n\n`ComfyUI_FL-HeartMuLa` drops a set of nodes into ComfyUI that actually spit out full songs with lyrics in five languages (English, Chinese, Japanese, Korean, Spanish). The `fl_nodes/model_loader.py` grabs and caches the HeartMuLa models for you, so no wrestling with weights. `fl_nodes/conditioning.py` turns your lyrics and tags into model input, handling those `[Verse]`, `[Chorus]`, etc. markers—finally, control over song sections.\n\nWant to tweak style? `fl_nodes/tags_builder.py` lets you pick genre, vocal type, mood, tempo, and instruments. The pipeline is modular: `fl_nodes/sampler.py` generates audio tokens (with CFG and temperature if you care), then `fl_nodes/decode.py` turns those tokens into actual waveforms using HeartCodec. There’s even a `fl_nodes/transcribe.py` for extracting lyrics from existing audio, which is surprisingly handy.\n\n## Real-World Use\n\nLet’s say you want an energetic pop song with female vocals, in Japanese, about your cat. You toss your lyrics into the Conditioning node:\n\n```\n[Verse]\nネコが窓辺で夢を見ている\n\n[Chorus]\n君と私、ずっと一緒\n```\n\nAdd style tags: `pop, female vocal, energetic`. Connect `Model Loader` → `Conditioning` → `Sampler` → `Decode` → preview. The song structure markers actually matter—HeartMuLa pays attention, so you can force a real chorus and verse. You don’t need to fine-tune or mess with model weights. Models auto-download to `ComfyUI/models/heartmula/` the first time you pick them.\n\n## The Bottom Line\n\nIf you want to crank out full songs with real lyrics and vocals—and not just generic background music—this is worth your time. The node system is modular but not bloated. VRAM requirements are hefty (12GB+), so laptop users are out of luck. Anyone building music workflows in ComfyUI and sick of half-baked instrumentals should try it.",
+      "url": "https://github.com/yebeai/ComfyUI_FL-HeartMuLa",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "filliptm/ComfyUI_FL-HeartMuLa",
+        "url": "https://github.com/filliptm/ComfyUI_FL-HeartMuLa",
+        "stars": 111
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
       "forkedAt": "February 9, 2026",
       "updatedAt": "February 9, 2026",
       "readTime": 2
@@ -199,7 +419,7 @@
       "parent": {
         "name": "needle-tools/md-browse",
         "url": "https://github.com/needle-tools/md-browse",
-        "stars": 141
+        "stars": 144
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -221,7 +441,7 @@
       "parent": {
         "name": "rohunvora/x-research-skill",
         "url": "https://github.com/rohunvora/x-research-skill",
-        "stars": 448
+        "stars": 483
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -265,7 +485,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 14818
+        "stars": 14988
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -287,7 +507,7 @@
       "parent": {
         "name": "MiniCodeMonkey/chief",
         "url": "https://github.com/MiniCodeMonkey/chief",
-        "stars": 115
+        "stars": 120
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -309,7 +529,7 @@
       "parent": {
         "name": "ComposioHQ/composio",
         "url": "https://github.com/ComposioHQ/composio",
-        "stars": 26534
+        "stars": 26536
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -331,7 +551,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 8859
+        "stars": 8862
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -397,7 +617,7 @@
       "parent": {
         "name": "ascorbic/macrodata",
         "url": "https://github.com/ascorbic/macrodata",
-        "stars": 61
+        "stars": 64
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -419,7 +639,7 @@
       "parent": {
         "name": "itsOwen/CyberScraper-2077",
         "url": "https://github.com/itsOwen/CyberScraper-2077",
-        "stars": 2813
+        "stars": 2815
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -441,7 +661,7 @@
       "parent": {
         "name": "univrsal/input-overlay",
         "url": "https://github.com/univrsal/input-overlay",
-        "stars": 3851
+        "stars": 3852
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -463,7 +683,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 201151
+        "stars": 201162
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -485,7 +705,7 @@
       "parent": {
         "name": "PrimeIntellect-ai/verifiers",
         "url": "https://github.com/PrimeIntellect-ai/verifiers",
-        "stars": 3820
+        "stars": 3823
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -507,7 +727,7 @@
       "parent": {
         "name": "InternScience/GraphGen",
         "url": "https://github.com/InternScience/GraphGen",
-        "stars": 903
+        "stars": 905
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -529,7 +749,7 @@
       "parent": {
         "name": "RedPlanetHQ/core",
         "url": "https://github.com/RedPlanetHQ/core",
-        "stars": 1349
+        "stars": 1350
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -551,7 +771,7 @@
       "parent": {
         "name": "OpenBMB/VoxCPM",
         "url": "https://github.com/OpenBMB/VoxCPM",
-        "stars": 5837
+        "stars": 5843
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -573,7 +793,7 @@
       "parent": {
         "name": "Blaizzy/mlx-audio-swift",
         "url": "https://github.com/Blaizzy/mlx-audio-swift",
-        "stars": 136
+        "stars": 146
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -595,7 +815,7 @@
       "parent": {
         "name": "sseanliu/VisionClaw",
         "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 576
+        "stars": 587
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -617,7 +837,7 @@
       "parent": {
         "name": "Polymarket/agents",
         "url": "https://github.com/Polymarket/agents",
-        "stars": 2118
+        "stars": 2123
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -661,7 +881,7 @@
       "parent": {
         "name": "m0n0x41d/quint-code",
         "url": "https://github.com/m0n0x41d/quint-code",
-        "stars": 1144
+        "stars": 1146
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -705,7 +925,7 @@
       "parent": {
         "name": "aiplanethub/openagi",
         "url": "https://github.com/aiplanethub/openagi",
-        "stars": 552
+        "stars": 554
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -771,7 +991,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2147
+        "stars": 2151
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -793,7 +1013,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 13395
+        "stars": 13520
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -815,7 +1035,7 @@
       "parent": {
         "name": "miantiao-me/awesome-homelab",
         "url": "https://github.com/miantiao-me/awesome-homelab",
-        "stars": 1661
+        "stars": 1662
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -859,7 +1079,7 @@
       "parent": {
         "name": "yoheinakajima/babyagi3",
         "url": "https://github.com/yoheinakajima/babyagi3",
-        "stars": 95
+        "stars": 99
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -881,7 +1101,7 @@
       "parent": {
         "name": "madnanrizqu/vibe-cv-resume",
         "url": "https://github.com/madnanrizqu/vibe-cv-resume",
-        "stars": 47
+        "stars": 49
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -903,7 +1123,7 @@
       "parent": {
         "name": "Nutlope/llamacoder",
         "url": "https://github.com/Nutlope/llamacoder",
-        "stars": 6864
+        "stars": 6865
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -925,7 +1145,7 @@
       "parent": {
         "name": "Beingpax/VoiceInk",
         "url": "https://github.com/Beingpax/VoiceInk",
-        "stars": 3649
+        "stars": 3655
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -947,7 +1167,7 @@
       "parent": {
         "name": "CoreWorxLab/CAAL",
         "url": "https://github.com/CoreWorxLab/CAAL",
-        "stars": 311
+        "stars": 315
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1013,7 +1233,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 93054
+        "stars": 93131
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1079,7 +1299,7 @@
       "parent": {
         "name": "rivo/tview",
         "url": "https://github.com/rivo/tview",
-        "stars": 13512
+        "stars": 13513
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -1101,7 +1321,7 @@
       "parent": {
         "name": "rahulnyk/knowledge_graph",
         "url": "https://github.com/rahulnyk/knowledge_graph",
-        "stars": 2753
+        "stars": 2791
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1145,7 +1365,7 @@
       "parent": {
         "name": "antirez/voxtral.c",
         "url": "https://github.com/antirez/voxtral.c",
-        "stars": 484
+        "stars": 494
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1189,7 +1409,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 6763
+        "stars": 6780
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1211,7 +1431,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1532
+        "stars": 1551
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1233,7 +1453,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 778
+        "stars": 889
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1273,7 +1493,7 @@
       "parent": {
         "name": "abhinavxd/libredesk",
         "url": "https://github.com/abhinavxd/libredesk",
-        "stars": 2292
+        "stars": 2293
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1295,7 +1515,7 @@
       "parent": {
         "name": "Kocoro-lab/Shannon",
         "url": "https://github.com/Kocoro-lab/Shannon",
-        "stars": 939
+        "stars": 942
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -1317,7 +1537,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 20320
+        "stars": 20327
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -1339,7 +1559,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44246
+        "stars": 44253
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1383,7 +1603,7 @@
       "parent": {
         "name": "callstackincubator/agent-device",
         "url": "https://github.com/callstackincubator/agent-device",
-        "stars": 496
+        "stars": 498
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1449,7 +1669,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20489
+        "stars": 20490
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -1471,7 +1691,7 @@
       "parent": {
         "name": "fastrepl/hyprnote",
         "url": "https://github.com/fastrepl/hyprnote",
-        "stars": 7681
+        "stars": 7683
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1493,7 +1713,7 @@
       "parent": {
         "name": "antirez/tgterm",
         "url": "https://github.com/antirez/tgterm",
-        "stars": 189
+        "stars": 190
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1537,7 +1757,7 @@
       "parent": {
         "name": "timoncool/videosos",
         "url": "https://github.com/timoncool/videosos",
-        "stars": 1068
+        "stars": 1072
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -1559,7 +1779,7 @@
       "parent": {
         "name": "spieglt/FlyingCarpet",
         "url": "https://github.com/spieglt/FlyingCarpet",
-        "stars": 4944
+        "stars": 4945
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -1581,7 +1801,7 @@
       "parent": {
         "name": "ar51an/unbound-dashboard",
         "url": "https://github.com/ar51an/unbound-dashboard",
-        "stars": 598
+        "stars": 599
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -1603,7 +1823,7 @@
       "parent": {
         "name": "agentic-mcp-tools/memora",
         "url": "https://github.com/agentic-mcp-tools/memora",
-        "stars": 267
+        "stars": 269
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1625,7 +1845,7 @@
       "parent": {
         "name": "AtsushiSakai/PythonRobotics",
         "url": "https://github.com/AtsushiSakai/PythonRobotics",
-        "stars": 28599
+        "stars": 28600
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1647,7 +1867,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 29585
+        "stars": 29595
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1669,7 +1889,7 @@
       "parent": {
         "name": "0xSojalSec/airllm",
         "url": "https://github.com/0xSojalSec/airllm",
-        "stars": 2629
+        "stars": 2630
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1757,7 +1977,7 @@
       "parent": {
         "name": "anvaka/city-roads",
         "url": "https://github.com/anvaka/city-roads",
-        "stars": 8914
+        "stars": 8916
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1801,7 +2021,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6703
+        "stars": 6707
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -1867,7 +2087,7 @@
       "parent": {
         "name": "jgarzik/botmaker",
         "url": "https://github.com/jgarzik/botmaker",
-        "stars": 202
+        "stars": 204
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1911,7 +2131,7 @@
       "parent": {
         "name": "reconurge/flowsint",
         "url": "https://github.com/reconurge/flowsint",
-        "stars": 2539
+        "stars": 2541
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -1933,7 +2153,7 @@
       "parent": {
         "name": "supermemoryai/claude-supermemory",
         "url": "https://github.com/supermemoryai/claude-supermemory",
-        "stars": 2132
+        "stars": 2133
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1999,35 +2219,13 @@
       "parent": {
         "name": "xenodium/agent-shell",
         "url": "https://github.com/xenodium/agent-shell",
-        "stars": 662
+        "stars": 665
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 31, 2026",
       "updatedAt": "January 31, 2026",
       "readTime": 4
-    },
-    {
-      "id": 1135469037,
-      "name": "clawdbot",
-      "displayName": "clawdbot",
-      "description": "Your own personal AI assistant. Any OS. Any Platform.",
-      "summary": "In an era where productivity tools are proliferating yet often fail to integrate seamlessly across platforms, the challenge of managing personal tasks and communications has never been more pressing. Developers often find themselves juggling multiple applications to handle messages, reminders, and workflows, leading to fragmentation and inefficiency. Enter Clawdbot, a personal AI assistant that aims to centralize this experience by allowing users to interact with their devices through familiar channels—whether it's WhatsApp, Slack, or Discord—while maintaining full control over their data and the AI's capabilities.\n\nClawdbot is built on the foundation of OpenClaw, a well-regarded open-source project that has garnered significant attention with over 168,000 stars on GitHub. What sets Clawdbot apart is its commitment to providing a self-hosted solution, empowering users to run their personal AI assistant on any operating system or platform that supports Node.js. This flexibility, combined with its robust multi-channel communication capabilities, allows users to interact with their assistant in a way that feels natural and immediate. The onboarding wizard simplifies the setup process, guiding users through the configuration of the gateway, workspace, channels, and skills, making it accessible even for those who are not technically inclined.\n\nA closer look at Clawdbot's architecture reveals a thoughtful design that promotes modularity and maintainability. The presence of multiple GitHub workflows, such as `.github/workflows/ci.yml` for continuous integration and `.github/workflows/docker-release.yml` for Docker deployments, indicates a strong emphasis on quality assurance and deployment flexibility. The use of TypeScript as the primary programming language not only enhances type safety but also facilitates a more robust development experience. The configuration files, such as `.npmrc` and `.prettierignore`, suggest an intention to maintain a clean codebase while ensuring that dependencies are managed effectively. Additionally, the inclusion of `.detect-secrets.cfg` implies a proactive approach to security, ensuring sensitive information does not make its way into the codebase.\n\nClawdbot opens the door to numerous practical applications that developers can leverage. For instance, a development team could utilize Clawdbot to manage deployment notifications across Slack and Discord, ensuring that all team members are aligned without needing to switch between multiple applications. Moreover, a freelance developer may find value in using Clawdbot to automate reminders for upcoming deadlines or meetings, integrating seamlessly with their existing communication tools. Lastly, organizations looking to enhance their customer support can implement Clawdbot to handle queries via WhatsApp or Telegram, streamlining their interactions with clients while providing a consistent experience.\n\nUltimately, Clawdbot represents a significant step toward a future where personal AI assistants are not just tools but integral components of our daily workflows. By offering a self-hosted, multi-channel solution, it empowers users to take control of their interactions in a way that aligns with their preferences and security needs. As the demand for personalized, efficient tools continues to grow, projects like Clawdbot highlight the importance of open-source solutions that prioritize user autonomy and integration, paving the way for more intelligent and cohesive digital ecosystems.",
-      "url": "https://github.com/yebeai/clawdbot",
-      "language": "TypeScript",
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "openclaw/openclaw",
-        "url": "https://github.com/openclaw/openclaw",
-        "stars": 179082
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "January 16, 2026",
-      "updatedAt": "January 30, 2026",
-      "readTime": 3
     },
     {
       "id": 1146300152,
@@ -2043,7 +2241,7 @@
       "parent": {
         "name": "commaai/openpilot",
         "url": "https://github.com/commaai/openpilot",
-        "stars": 60044
+        "stars": 60045
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -2065,7 +2263,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 14330
+        "stars": 14336
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2131,7 +2329,7 @@
       "parent": {
         "name": "snwfdhmp/awesome-ralph",
         "url": "https://github.com/snwfdhmp/awesome-ralph",
-        "stars": 689
+        "stars": 693
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -2153,7 +2351,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 5014
+        "stars": 5017
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2175,7 +2373,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8066
+        "stars": 8070
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2219,7 +2417,7 @@
       "parent": {
         "name": "going-doer/Paper2Code",
         "url": "https://github.com/going-doer/Paper2Code",
-        "stars": 4133
+        "stars": 4134
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -2241,7 +2439,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 2645
+        "stars": 2650
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -2263,7 +2461,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 28267
+        "stars": 28275
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2329,7 +2527,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 123404
+        "stars": 123424
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2351,7 +2549,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 3682
+        "stars": 3685
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2395,7 +2593,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 5679
+        "stars": 5683
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -2439,7 +2637,7 @@
       "parent": {
         "name": "zampierilucas/scx_horoscope",
         "url": "https://github.com/zampierilucas/scx_horoscope",
-        "stars": 1114
+        "stars": 1118
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -2461,7 +2659,7 @@
       "parent": {
         "name": "unicodeveloper/globalthreatmap",
         "url": "https://github.com/unicodeveloper/globalthreatmap",
-        "stars": 1161
+        "stars": 1165
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -2483,7 +2681,7 @@
       "parent": {
         "name": "Nutlope/self.so",
         "url": "https://github.com/Nutlope/self.so",
-        "stars": 2872
+        "stars": 2873
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -2505,7 +2703,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 23967
+        "stars": 23969
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2527,7 +2725,7 @@
       "parent": {
         "name": "EuniAI/Prometheus",
         "url": "https://github.com/EuniAI/Prometheus",
-        "stars": 650
+        "stars": 651
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2681,7 +2879,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 35985
+        "stars": 36007
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2791,7 +2989,7 @@
       "parent": {
         "name": "antirez/flux2.c",
         "url": "https://github.com/antirez/flux2.c",
-        "stars": 1751
+        "stars": 1755
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2857,7 +3055,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5323
+        "stars": 5324
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -2923,7 +3121,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 113911
+        "stars": 113934
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -3033,7 +3231,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15185
+        "stars": 15199
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3077,7 +3275,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 10168
+        "stars": 10191
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3099,7 +3297,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 18891
+        "stars": 18895
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3143,7 +3341,7 @@
       "parent": {
         "name": "EthanLipnik/MirageKit",
         "url": "https://github.com/EthanLipnik/MirageKit",
-        "stars": 454
+        "stars": 455
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3187,7 +3385,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 6341
+        "stars": 6354
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3231,7 +3429,7 @@
       "parent": {
         "name": "Liquid4All/cookbook",
         "url": "https://github.com/Liquid4All/cookbook",
-        "stars": 1112
+        "stars": 1115
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -3253,7 +3451,7 @@
       "parent": {
         "name": "ln-dev7/square-ui",
         "url": "https://github.com/ln-dev7/square-ui",
-        "stars": 4726
+        "stars": 4728
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -3407,7 +3605,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 6932
+        "stars": 6941
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -3429,7 +3627,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51481
+        "stars": 51482
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -3473,7 +3671,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 22554
+        "stars": 22557
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -3517,7 +3715,7 @@
       "parent": {
         "name": "Open-Finance-Lab/AgenticTrading",
         "url": "https://github.com/Open-Finance-Lab/AgenticTrading",
-        "stars": 63
+        "stars": 64
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -3605,7 +3803,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 21633
+        "stars": 21636
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -3693,7 +3891,7 @@
       "parent": {
         "name": "hanebox/ekphos",
         "url": "https://github.com/hanebox/ekphos",
-        "stars": 802
+        "stars": 803
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3737,7 +3935,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39343
+        "stars": 39348
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3891,7 +4089,7 @@
       "parent": {
         "name": "probberechts/soccerdata",
         "url": "https://github.com/probberechts/soccerdata",
-        "stars": 1507
+        "stars": 1506
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -3957,7 +4155,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 181561
+        "stars": 181564
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3979,7 +4177,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 10221
+        "stars": 10267
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4023,7 +4221,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12164
+        "stars": 12170
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4199,7 +4397,7 @@
       "parent": {
         "name": "midday-ai/midday",
         "url": "https://github.com/midday-ai/midday",
-        "stars": 13667
+        "stars": 13668
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -4221,7 +4419,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16331
+        "stars": 16335
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4265,7 +4463,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 55982
+        "stars": 55986
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4287,7 +4485,7 @@
       "parent": {
         "name": "Qloapps/QloApps",
         "url": "https://github.com/Qloapps/QloApps",
-        "stars": 11995
+        "stars": 11997
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4309,7 +4507,7 @@
       "parent": {
         "name": "HiEventsDev/Hi.Events",
         "url": "https://github.com/HiEventsDev/Hi.Events",
-        "stars": 3512
+        "stars": 3513
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4441,7 +4639,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 13691
+        "stars": 13789
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -4463,7 +4661,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 101033
+        "stars": 101123
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -4485,7 +4683,7 @@
       "parent": {
         "name": "burakorkmez/expo-ecommerce",
         "url": "https://github.com/burakorkmez/expo-ecommerce",
-        "stars": 335
+        "stars": 336
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4551,7 +4749,7 @@
       "parent": {
         "name": "piratuks/invoice-builder",
         "url": "https://github.com/piratuks/invoice-builder",
-        "stars": 165
+        "stars": 166
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4661,7 +4859,7 @@
       "parent": {
         "name": "shridarpatil/whatomate",
         "url": "https://github.com/shridarpatil/whatomate",
-        "stars": 882
+        "stars": 883
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4749,7 +4947,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 27519
+        "stars": 27530
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4815,7 +5013,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 13400
+        "stars": 13422
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4837,7 +5035,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 19592
+        "stars": 19619
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4925,7 +5123,7 @@
       "parent": {
         "name": "DevAgentForge/Open-Claude-Cowork",
         "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
-        "stars": 2817
+        "stars": 2820
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4947,7 +5145,7 @@
       "parent": {
         "name": "AojdevStudio/Finance-Guru",
         "url": "https://github.com/AojdevStudio/Finance-Guru",
-        "stars": 272
+        "stars": 273
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -4991,7 +5189,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 94712
+        "stars": 94724
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -5013,7 +5211,7 @@
       "parent": {
         "name": "bensadeh/tailspin",
         "url": "https://github.com/bensadeh/tailspin",
-        "stars": 7651
+        "stars": 7652
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5295,7 +5493,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 181751
+        "stars": 181755
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
