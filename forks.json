@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T00:12:15.525Z",
+  "lastUpdated": "2026-02-16T06:21:11.079Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
   "totalRepos": 293,
   "progress": {
@@ -9,6 +9,568 @@
     "complete": true
   },
   "forks": [
+    {
+      "id": 1135469037,
+      "name": "clawdbot",
+      "displayName": "clawdbot",
+      "description": "Your own personal AI assistant. Any OS. Any Platform.",
+      "summary": "In an era where productivity tools are proliferating yet often fail to integrate seamlessly across platforms, the challenge of managing personal tasks and communications has never been more pressing. Developers often find themselves juggling multiple applications to handle messages, reminders, and workflows, leading to fragmentation and inefficiency. Enter Clawdbot, a personal AI assistant that aims to centralize this experience by allowing users to interact with their devices through familiar channels—whether it's WhatsApp, Slack, or Discord—while maintaining full control over their data and the AI's capabilities.\n\nClawdbot is built on the foundation of OpenClaw, a well-regarded open-source project that has garnered significant attention with over 168,000 stars on GitHub. What sets Clawdbot apart is its commitment to providing a self-hosted solution, empowering users to run their personal AI assistant on any operating system or platform that supports Node.js. This flexibility, combined with its robust multi-channel communication capabilities, allows users to interact with their assistant in a way that feels natural and immediate. The onboarding wizard simplifies the setup process, guiding users through the configuration of the gateway, workspace, channels, and skills, making it accessible even for those who are not technically inclined.\n\nA closer look at Clawdbot's architecture reveals a thoughtful design that promotes modularity and maintainability. The presence of multiple GitHub workflows, such as `.github/workflows/ci.yml` for continuous integration and `.github/workflows/docker-release.yml` for Docker deployments, indicates a strong emphasis on quality assurance and deployment flexibility. The use of TypeScript as the primary programming language not only enhances type safety but also facilitates a more robust development experience. The configuration files, such as `.npmrc` and `.prettierignore`, suggest an intention to maintain a clean codebase while ensuring that dependencies are managed effectively. Additionally, the inclusion of `.detect-secrets.cfg` implies a proactive approach to security, ensuring sensitive information does not make its way into the codebase.\n\nClawdbot opens the door to numerous practical applications that developers can leverage. For instance, a development team could utilize Clawdbot to manage deployment notifications across Slack and Discord, ensuring that all team members are aligned without needing to switch between multiple applications. Moreover, a freelance developer may find value in using Clawdbot to automate reminders for upcoming deadlines or meetings, integrating seamlessly with their existing communication tools. Lastly, organizations looking to enhance their customer support can implement Clawdbot to handle queries via WhatsApp or Telegram, streamlining their interactions with clients while providing a consistent experience.\n\nUltimately, Clawdbot represents a significant step toward a future where personal AI assistants are not just tools but integral components of our daily workflows. By offering a self-hosted, multi-channel solution, it empowers users to take control of their interactions in a way that aligns with their preferences and security needs. As the demand for personalized, efficient tools continues to grow, projects like Clawdbot highlight the importance of open-source solutions that prioritize user autonomy and integration, paving the way for more intelligent and cohesive digital ecosystems.",
+      "url": "https://github.com/yebeai/clawdbot",
+      "language": "TypeScript",
+      "stars": 1,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "openclaw/openclaw",
+        "url": "https://github.com/openclaw/openclaw",
+        "stars": 198269
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "January 16, 2026",
+      "updatedAt": "February 16, 2026",
+      "readTime": 3
+    },
+    {
+      "id": 1158702079,
+      "name": "MemOS",
+      "displayName": "MemOS",
+      "description": "AI memory OS for LLM and Agent systems(moltbot,clawdbot,openclaw), enabling persistent Skill memory for cross-task skill reuse and evolution.",
+      "summary": "# MemOS: Memory for AI Agents That Doesn't Suck\n\n## The Problem\n\nLLMs and AI agents have the memory of a goldfish. Every interaction is a reset, and they have to process the entire conversation history to \"remember\" anything. This burns compute, tokens (read: money), and your patience. If you're building multi-turn or multi-agent systems, this lack of persistent memory means you're duct-taping hacks just to make things usable.\n\n## What This Does\n\n`MemOS` is a memory operating system that gives your LLMs and AI agents long-term, structured memory. It lets you store, retrieve, manage, and even share memory across tasks and agents. Think of it as the missing hippocampus for your AI.\n\nAt its core is a **unified memory API** that handles CRUD operations on memory. Want to create a memory graph? Check out `examples/core_memories/tree_textual_memory.py`. Need a key-value cache? There's `examples/core_memories/kv_cache_memory.py`. Prefer something more basic? `examples/core_memories/naive_textual_memory.py` has you covered.\n\nIntegration with systems like `openwork-memos-integration/apps/desktop` lets you plug MemOS into other tools (like OpenClaw for multi-agent use cases). It even comes with Dockerfiles (`docker/`) and configuration files (`examples/data/config/`) to make setup straightforward—if you’re used to wrangling YAML, that is.\n\n## Real-World Use\n\nSay you're building a multi-agent system where agents need to share context (hello, OpenClaw users). Without MemOS, you'd have to build some janky custom memory manager or duplicate context across agents. With MemOS, you can use the existing `examples/mem_scheduler` to set up an intelligent memory scheduler that optimizes memory usage and enables agents to share memories through a unified `user_id`. Want to test it out? Run `examples/mem_chat/chat_w_generated_cube_explicit_memory_only.py` and watch your chatbot actually remember something for once.\n\nHere's a quick example of storing and retrieving memory:\n\n```python\nfrom examples.core_memories.kv_cache_memory import KVCacheMemory\n\nmemory = KVCacheMemory()\nmemory.store(\"favorite_color\", \"blue\")\nprint(memory.retrieve(\"favorite_color\"))  # Outputs: blue\n```\n\nNow imagine scaling that to a fleet of agents sharing multi-turn conversations. Magic.\n\n## The Bottom Line\n\nMemOS is a solid choice for anyone building complex AI systems that require persistent memory. The examples are rich, the structure is clean, and the Docker setup is a nice touch. That said, the learning curve is steep, and some parts (like the `evaluation/` folder) feel like a maze. If you're just building a simple chatbot, this is overkill. But if you're serious about memory-first AI, give it a go. Just don’t expect to set it up in 5 minutes.",
+      "url": "https://github.com/moses-y/MemOS",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "MemTensor/MemOS",
+        "url": "https://github.com/MemTensor/MemOS",
+        "stars": 5551
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 15, 2026",
+      "updatedAt": "February 15, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          ".github": 8,
+          "(root)": 5,
+          "docker": 6,
+          "docs": 3,
+          "evaluation": 53,
+          "examples": 76,
+          "openwork-memos-integration": 49
+        },
+        "languages": {
+          "YAML": 14,
+          "Markdown": 14,
+          "JSON": 15,
+          "Python": 92,
+          "Shell": 8,
+          "TypeScript": 29,
+          "TSX": 10
+        },
+        "entryPoints": [
+          "openwork-memos-integration/apps/desktop/e2e/config/index.ts",
+          "openwork-memos-integration/apps/desktop/e2e/fixtures/index.ts"
+        ],
+        "configFiles": [
+          "Makefile",
+          "docker/.env.example",
+          "docker/Dockerfile",
+          "docker/Dockerfile.krolik",
+          "docker/docker-compose.yml",
+          "docker/requirements.txt",
+          "openwork-memos-integration/apps/desktop/.eslintrc.json",
+          "openwork-memos-integration/apps/desktop/e2e/docker/Dockerfile",
+          "openwork-memos-integration/apps/desktop/e2e/docker/docker-compose.yml"
+        ],
+        "dependencies": [
+          "docker/requirements.txt"
+        ],
+        "testFiles": [
+          ".github/workflows/python-tests.yml",
+          "docs/product-api-tests.md",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/main/appSettings.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/main/opencode/cli-path.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/main/opencode/config-generator.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/main/permission-api.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/main/secureStorage.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/main/store/freshInstallCleanup.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/main/taskHistory.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/main/utils/bundled-node.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/main/utils/system-path.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/preload/preload.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/App.integration.test.tsx",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/Header.integration.test.tsx",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/SettingsDialog.integration.test.tsx",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/Sidebar.integration.test.tsx",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/StreamingText.integration.test.tsx",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/TaskHistory.integration.test.tsx",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/TaskInputBar.integration.test.tsx",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/TaskLauncher.integration.test.tsx",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/pages/Execution.integration.test.tsx",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/pages/Home.integration.test.tsx",
+          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/taskStore.integration.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/main/config.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/main/ipc/handlers-utils.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/main/ipc/validation.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/main/opencode/stream-parser.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/renderer/lib/utils.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/setup.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/unit/main/ipc/handlers.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/unit/main/opencode/adapter.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/unit/main/opencode/task-manager.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/unit/renderer/lib/accomplish.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/unit/renderer/lib/analytics.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/unit/renderer/lib/animations.unit.test.ts",
+          "openwork-memos-integration/apps/desktop/__tests__/unit/renderer/lib/waiting-detection.unit.test.ts"
+        ],
+        "docs": [
+          ".github/CONTRIBUTING",
+          "LICENSE",
+          "README.md",
+          "docs/README.md",
+          "docs/openapi.json",
+          "docs/product-api-tests.md",
+          "evaluation/README.md",
+          "evaluation/scripts/locomo/openai_memory_locomo_eval_guide.md",
+          "examples/data/mem_cube_2/README.md",
+          "examples/mem_cube/_deprecated/README.md",
+          "examples/mem_reader/README.md",
+          "openwork-memos-integration/CONTRIBUTING.md",
+          "openwork-memos-integration/LICENSE",
+          "openwork-memos-integration/README.md",
+          "openwork-memos-integration/apps/desktop/e2e/README.md"
+        ]
+      }
+    },
+    {
+      "id": 1158701617,
+      "name": "stenoai",
+      "displayName": "stenoai",
+      "description": "Privacy focused AI powered meeting notes using locally hosted Small Language Models",
+      "summary": "## The Problem\nEver tried taking notes during a meeting while also trying to engage? It's a mess. Typing away while someone’s discussing critical points is a surefire way to miss half of what’s being said. You need a solution that not only captures the discussion but respects your privacy too, especially in sensitive environments like healthcare or finance.\n\n## What This Does\nEnter StenoAI, your local AI-powered note-taker. This repo, a fork from the more popular `ruzin/stenoai`, leverages Small Language Models to transcribe and summarize meetings without sending your data to the cloud. The core functionality is split between `src/transcriber.py` for capturing audio and `src/summarizer.py` for generating concise summaries. \n\nThe app runs a macOS desktop interface located in `app/index.html`, with the heavy lifting done by models managed in `src/models.py`. If you're looking to customize or extend functionalities, check out `setup.py` to get your environment set up with the necessary dependencies listed in `requirements.txt`.\n\n## Real-World Use\nImagine you're in a critical strategy meeting, and the discussion is packed with jargon. You fire up StenoAI, hit record, and let it transcribe everything live. After the meeting, instead of sifting through pages of notes, you click the “Summarize” button in the app. Now you have a neat summary of key points, thanks to the `Ask Steno` feature, which allows you to query the notes using natural language. This setup not only saves time but ensures you capture the essence of the conversation without compromising data privacy.\n\n## The Bottom Line\nStenoAI is solid for anyone who needs to track discussions without the hassle of manual note-taking, especially in fields where confidentiality is crucial. The local processing is a win for privacy, but if you're not on macOS, you’re out of luck. Overall, it’s a neat tool with great potential, just don’t expect it to become your next full-fledged project management solution.",
+      "url": "https://github.com/moses-y/stenoai",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "ruzin/stenoai",
+        "url": "https://github.com/ruzin/stenoai",
+        "stars": 293
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 15, 2026",
+      "updatedAt": "February 15, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 12,
+          ".github": 3,
+          "app": 8,
+          "prompt_tests": 2,
+          "scripts": 4,
+          "src": 8,
+          "tests": 1,
+          "website": 24
+        },
+        "languages": {
+          "Markdown": 7,
+          "YAML": 2,
+          "JSON": 5,
+          "HTML": 6,
+          "JavaScript": 5,
+          "Python": 12,
+          "Shell": 4,
+          "CSS": 2,
+          "JSX": 2
+        },
+        "entryPoints": [
+          "app/index.html",
+          "app/main.js",
+          "setup.py",
+          "website/index.html",
+          "website/src/App.jsx"
+        ],
+        "configFiles": [
+          "app/package.json",
+          "requirements.txt",
+          "setup.py",
+          "website/package.json",
+          "website/tailwind.config.js",
+          "website/vite.config.js"
+        ],
+        "dependencies": [
+          "app/package-lock.json",
+          "app/package.json",
+          "requirements.txt",
+          "website/package-lock.json",
+          "website/package.json"
+        ],
+        "testFiles": [
+          "prompt_tests/PROMPT_TESTING.md",
+          "prompt_tests/test_prompts.py",
+          "scripts/test_dmg_fresh_install.sh",
+          "scripts/test_first_time_setup.sh",
+          "stenoai.spec",
+          "tests/__init__.py"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "website/README.md"
+        ]
+      }
+    },
+    {
+      "id": 1158686133,
+      "name": "cc-wf-studio",
+      "displayName": "cc wf studio",
+      "description": "CC Workflow Studio",
+      "summary": "## The Problem\n\nBuilding and maintaining AI workflow automation is a pain. You end up juggling dozens of YAML files, half-baked scripts, and brittle prompt templates. Want to tweak your workflow? Prepare for a mess of manual edits, copy-paste bugs, and guesswork. Visual tools barely exist, and integrating with Copilot or Claude usually means duct-taping config files together.\n\n## What CC Workflow Studio Does\n\nCC Workflow Studio gives you a visual editor for AI workflows—drag-and-drop, tweak nodes, and wire up conditional logic without writing code. The real meat lives in `src/extension/` (see `extension.ts` for entrypoint), where commands like `open-editor.ts`, `save-workflow.ts`, and `export-workflow.ts` handle the grunt work. Integration with Claude, Copilot, Codex, and Roo is handled via dedicated services: check out `ai-provider.ts`, `claude-code-service.ts`, `copilot-skill-export-service.ts`, and their friends.\n\nSpecs in `specs/` and contracts in `contracts/` make it clear: this thing is built for exporting workflows to whatever flavor you need—`.claude`, `.github/prompts/`, `.codex/skills/`, etc. Want to run a workflow? Demo GIFs in `resources/` show you can do it straight from the editor. There's a pile of i18n files (`i18n/translations/`) if you're tired of English-only tools.\n\n## Real-World Use\n\nSay you want to automate PR reviews with Claude. Open the editor, wire up a workflow with MCP nodes and conditional branches, add your skill nodes, and talk to the AI via natural language to refine logic. Hit \"Export\"—your workflow lands in `.claude/commands/` and `.claude/agents/`. If you want Copilot support, flip the toolbar toggle, and now your export goes to `.github/prompts/` or `.github/skills/`. Example:  \n\n```typescript\n// src/extension/commands/save-workflow.ts\nexport async function saveWorkflow(workflowData) {\n  // Validates and writes workflow to .claude/commands/\n}\n```\n\n## The Bottom Line\n\nIf you're tired of wrangling config files and want to actually see your AI workflows, CC Workflow Studio is worth a look. It’s overkill for tiny automations but great for teams building complex, multi-agent flows. Setup isn’t trivial—expect to read the docs and mess with some settings. But once it’s running, exporting and editing workflows is way less annoying. If you’re serious about AI automation, skip the manual editing and use this.",
+      "url": "https://github.com/moses-y/cc-wf-studio",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "breaking-brake/cc-wf-studio",
+        "url": "https://github.com/breaking-brake/cc-wf-studio",
+        "stars": 3872
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 15, 2026",
+      "updatedAt": "February 15, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          ".claude": 13,
+          ".github": 7,
+          "(root)": 12,
+          ".specify": 11,
+          ".vscode": 5,
+          "contracts": 3,
+          "docs": 3,
+          "resources": 22,
+          "scripts": 2,
+          "specs": 78,
+          "src": 44
+        },
+        "languages": {
+          "Markdown": 100,
+          "YAML": 7,
+          "JSON": 20,
+          "Shell": 5,
+          "TypeScript": 47
+        },
+        "entryPoints": [],
+        "configFiles": [
+          "package.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          ".claude/commands/speckit.analyze.md",
+          ".claude/commands/speckit.checklist.md",
+          ".claude/commands/speckit.clarify.md",
+          ".claude/commands/speckit.constitution.md",
+          ".claude/commands/speckit.implement.md",
+          ".claude/commands/speckit.plan.md",
+          ".claude/commands/speckit.specify.md",
+          ".claude/commands/speckit.tasks.md",
+          ".specify/memory/constitution.md",
+          ".specify/scripts/bash/check-prerequisites.sh",
+          ".specify/scripts/bash/common.sh",
+          ".specify/scripts/bash/create-new-feature.sh",
+          ".specify/scripts/bash/setup-plan.sh",
+          ".specify/scripts/bash/update-agent-context.sh",
+          ".specify/templates/agent-file-template.md",
+          ".specify/templates/checklist-template.md",
+          ".specify/templates/plan-template.md",
+          ".specify/templates/spec-template.md",
+          ".specify/templates/tasks-template.md",
+          "specs/001-ai-skill-generation/checklists/requirements.md",
+          "specs/001-ai-skill-generation/contracts/skill-scanning-api.md",
+          "specs/001-ai-skill-generation/data-model.md",
+          "specs/001-ai-skill-generation/plan.md",
+          "specs/001-ai-skill-generation/quickstart.md",
+          "specs/001-ai-skill-generation/research.md",
+          "specs/001-ai-skill-generation/spec.md",
+          "specs/001-ai-skill-generation/tasks.md",
+          "specs/001-ai-workflow-generation/checklists/requirements.md",
+          "specs/001-ai-workflow-generation/contracts/ai-generation-messages.md",
+          "specs/001-ai-workflow-generation/data-model.md",
+          "specs/001-ai-workflow-generation/plan.md",
+          "specs/001-ai-workflow-generation/quickstart.md",
+          "specs/001-ai-workflow-generation/research.md",
+          "specs/001-ai-workflow-generation/spec.md",
+          "specs/001-ai-workflow-generation/tasks.md",
+          "specs/001-ai-workflow-refinement/checklists/requirements.md",
+          "specs/001-ai-workflow-refinement/contracts/refinement-messages.json",
+          "specs/001-ai-workflow-refinement/data-model.md",
+          "specs/001-ai-workflow-refinement/plan.md",
+          "specs/001-ai-workflow-refinement/quickstart.md",
+          "specs/001-ai-workflow-refinement/research.md",
+          "specs/001-ai-workflow-refinement/spec.md",
+          "specs/001-ai-workflow-refinement/tasks.md",
+          "specs/001-cc-wf-studio/checklists/requirements.md",
+          "specs/001-cc-wf-studio/contracts/extension-webview-api.md",
+          "specs/001-cc-wf-studio/contracts/vscode-extension-api.md",
+          "specs/001-cc-wf-studio/data-model.md",
+          "specs/001-cc-wf-studio/plan.md",
+          "specs/001-cc-wf-studio/quickstart.md",
+          "specs/001-cc-wf-studio/research.md",
+          "specs/001-cc-wf-studio/spec.md",
+          "specs/001-cc-wf-studio/tasks.md",
+          "specs/001-mcp-natural-language-mode/checklists/requirements.md",
+          "specs/001-mcp-natural-language-mode/contracts/export-metadata.schema.json",
+          "specs/001-mcp-natural-language-mode/contracts/mcp-node-extended.schema.json",
+          "specs/001-mcp-natural-language-mode/data-model.md",
+          "specs/001-mcp-natural-language-mode/extension-points.md",
+          "specs/001-mcp-natural-language-mode/i18n-keys-plan.md",
+          "specs/001-mcp-natural-language-mode/plan.md",
+          "specs/001-mcp-natural-language-mode/quickstart.md",
+          "specs/001-mcp-natural-language-mode/research.md",
+          "specs/001-mcp-natural-language-mode/spec.md",
+          "specs/001-mcp-natural-language-mode/tasks.md",
+          "specs/001-mcp-node/checklists/requirements.md",
+          "specs/001-mcp-node/contracts/extension-webview-messages.schema.json",
+          "specs/001-mcp-node/contracts/mcp-cli.schema.json",
+          "specs/001-mcp-node/contracts/workflow-mcp-node.schema.json",
+          "specs/001-mcp-node/data-model.md",
+          "specs/001-mcp-node/plan.md",
+          "specs/001-mcp-node/quickstart.md",
+          "specs/001-mcp-node/research.md",
+          "specs/001-mcp-node/spec.md",
+          "specs/001-mcp-node/tasks.md",
+          "specs/001-node-types-extension/checklists/requirements.md",
+          "specs/001-node-types-extension/data-model.md",
+          "specs/001-node-types-extension/plan.md",
+          "specs/001-node-types-extension/quickstart.md",
+          "specs/001-node-types-extension/research.md",
+          "specs/001-node-types-extension/spec.md",
+          "specs/001-node-types-extension/tasks.md",
+          "specs/001-skill-node/checklists/requirements.md",
+          "specs/001-skill-node/contracts/skill-messages.ts",
+          "specs/001-skill-node/data-model.md",
+          "specs/001-skill-node/plan.md",
+          "specs/001-skill-node/quickstart.md",
+          "specs/001-skill-node/research.md",
+          "specs/001-skill-node/spec.md",
+          "specs/001-skill-node/tasks.md",
+          "specs/001-slack-workflow-sharing/checklists/requirements.md",
+          "specs/001-slack-workflow-sharing/contracts/extension-host-api-contracts.md",
+          "specs/001-slack-workflow-sharing/contracts/slack-api-contracts.md",
+          "specs/001-slack-workflow-sharing/data-model.md",
+          "specs/001-slack-workflow-sharing/plan.md",
+          "specs/001-slack-workflow-sharing/quickstart.md",
+          "specs/001-slack-workflow-sharing/research.md",
+          "specs/001-slack-workflow-sharing/spec.md",
+          "specs/001-slack-workflow-sharing/tasks.md"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "LICENSE",
+          "README.md",
+          "docs/ai-coding-tools-config-reference.md",
+          "docs/release-automation.md",
+          "docs/schema-maintenance.md",
+          "resources/README.md"
+        ]
+      }
+    },
+    {
+      "id": 1158670052,
+      "name": "Infographic",
+      "displayName": "Infographic",
+      "description": "🦋 An Infographic Generation and Rendering Framework, bring words to life with AI!",
+      "summary": "# Making Data Look Fancy with AntV Infographic\n\nYou know that one project where your manager asks you to \"make it look more attractive\"? Well, meet **AntV Infographic**, the fancy tool that turns boring data into visual masterpieces. This framework is all about creating high-quality infographics with AI-driven simplicity, SVG precision, and more templates than you’ll ever need.\n\n---\n\n## The Problem\n\nBuilding infographics manually is a soul-sucking experience. Do you really want to wrestle with CSS, SVG paths, and endless iterations to make your pie chart look slightly less like a sad pancake? Or worse, spend hours googling “best infographic tools” only to sign up for yet another subscription-based service that locks half the features behind a paywall?\n\n---\n\n## What This Does\n\nAntV Infographic is essentially a **declarative infographic rendering engine**—fancy words for \"it takes text-based syntax and turns it into great-looking visuals\". The framework brings a blend of AI-friendly syntax, pre-built templates, and professional-grade SVG rendering to make the infographic-building process borderline painless.\n\nHere’s the cool part: there’s a bunch of `infographic syntax` that acts like magic shorthand for AI or humans to describe layouts, themes, and data structures. For example:\n\n```ts\ninfographic.render(`\ninfographic list-row-simple-horizontal-arrow\ndata\n  lists\n    - label Step 1\n      desc Start\n    - label Step 2\n      desc In Progress\n    - label Step 3\n`);\n```\n\nNo need to fuss over pixel-perfect design. AntV handles it. Want hand-drawn visuals or gradient themes? That’s built-in too. And if your AI-generated infographic has a typo or looks weird, the framework ships with an editor to make quick manual tweaks. Check out the `site/src/components/AIPlayground` folder for the editor implementation—it’s React-based, so you can extend it if needed.\n\nThe repo is packed with ~200 templates, which means you can probably find something that fits your use case without reinventing the wheel. Templates live in the `shared` folder, while rendering logic is scattered across `site` and `dev`. The framework also supports SVG outputs, making further editing in tools like Figma or Adobe Illustrator a breeze.\n\n---\n\n## Real-World Use\n\nImagine you’re tasked with visualizing quarterly revenue in a report. Instead of fiddling with Excel charts, you could use AntV like this:\n\n```ts\nimport { Infographic } from '@antv/infographic';\n\nconst infographic = new Infographic({\n  container: '#container',\n  width: '100%',\n  height: '100%',\n});\n\ninfographic.render(`\ninfographic chart-pie\ndata\n  items\n    - label Q1\n      value 100000\n    - label Q2\n      value 120000\n    - label Q3\n      value 90000\n    - label Q4\n      value 150000\n`);\n```\n\nThe framework spits out a polished pie chart in SVG format that looks like you spent hours designing it. Bonus: you can use the built-in editor (`site/src/components/AIPlayground`) to tweak labels, colors, or layout without diving into code.\n\nIf you’re building something more dynamic, like a real-time dashboard, the `dev` folder has React hooks (`usePreviewData`, `usePreviewSettings`) to handle interactions and live updates. For example, `dev/src/ItemPreview.tsx` is one of the core components for previewing individual infographic items dynamically.\n\n---\n\n## The Bottom Line\n\nAntV Infographic is pretty slick if you need visually appealing infographics without wasting hours on design. It’s AI-friendly, packed with templates, and outputs clean SVGs. But let’s be real—this isn’t something you’ll use for simple bar charts or small projects. It’s more for enterprise-level data storytelling or client presentations.\n\nIf you’re already knee-deep in the AntV ecosystem, this fits like a glove. Otherwise, the learning curve might feel steep, especially with the custom syntax. But hey, if you want infographics that look like money, this is worth a shot.",
+      "url": "https://github.com/moses-y/Infographic",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "antvis/Infographic",
+        "url": "https://github.com/antvis/Infographic",
+        "stars": 4356
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 15, 2026",
+      "updatedAt": "February 15, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 7,
+          ".github": 3,
+          ".husky": 2,
+          ".skills": 8,
+          "__tests__": 110,
+          "dev": 18,
+          "scripts": 1,
+          "shared": 2,
+          "site": 49
+        },
+        "languages": {
+          "YAML": 4,
+          "Markdown": 11,
+          "TypeScript": 94,
+          "JSON": 5,
+          "TSX": 21,
+          "HTML": 2,
+          "JavaScript": 15
+        },
+        "entryPoints": [
+          "__tests__/utils/index.ts",
+          "dev/index.html",
+          "dev/src/App.tsx",
+          "site/src/components/AIPlayground/index.tsx"
+        ],
+        "configFiles": [
+          "__tests__/tsconfig.json",
+          "dev/package.json",
+          "dev/tsconfig.json",
+          "dev/vite.config.ts",
+          "package.json",
+          "site/.eslintrc",
+          "site/.prettierrc",
+          "site/next.config.js",
+          "site/package.json"
+        ],
+        "dependencies": [
+          "dev/package.json",
+          "package.json",
+          "site/package.json"
+        ],
+        "testFiles": [
+          "__tests__/setup/dom-polyfills.ts",
+          "__tests__/tsconfig.json",
+          "__tests__/unit/designs/structures/chart-pie.test.ts",
+          "__tests__/unit/designs/utils/color.test.ts",
+          "__tests__/unit/designs/utils/hierarchy-color.test.ts",
+          "__tests__/unit/designs/utils/item.test.ts",
+          "__tests__/unit/dev/ItemPreview.test.tsx",
+          "__tests__/unit/editor/commands/batch.test.ts",
+          "__tests__/unit/editor/commands/update-element.test.ts",
+          "__tests__/unit/editor/commands/update-options.test.ts",
+          "__tests__/unit/editor/commands/update-text.test.ts",
+          "__tests__/unit/editor/interactions/brush-select.test.ts",
+          "__tests__/unit/editor/interactions/click-select.test.ts",
+          "__tests__/unit/editor/interactions/dblclick-edit-text.test.ts",
+          "__tests__/unit/editor/interactions/drag-canvas.test.ts",
+          "__tests__/unit/editor/interactions/drag-element.test.ts",
+          "__tests__/unit/editor/interactions/hotkey-history.test.ts",
+          "__tests__/unit/editor/interactions/select-highlight.test.ts",
+          "__tests__/unit/editor/interactions/zoom-wheel.test.ts",
+          "__tests__/unit/editor/managers/command-manager.test.ts",
+          "__tests__/unit/editor/managers/interaction-manager.test.ts",
+          "__tests__/unit/editor/managers/plugin-manager.test.ts",
+          "__tests__/unit/editor/managers/state-manager.test.ts",
+          "__tests__/unit/editor/managers/sync-registry.test.ts",
+          "__tests__/unit/editor/plugins/core-sync.test.ts",
+          "__tests__/unit/editor/plugins/reset-viewbox.test.ts",
+          "__tests__/unit/editor/plugins/resize-element.test.ts",
+          "__tests__/unit/editor/utils/click-handler.test.ts",
+          "__tests__/unit/editor/utils/coordinate.test.ts",
+          "__tests__/unit/editor/utils/data.test.ts",
+          "__tests__/unit/editor/utils/element.test.ts",
+          "__tests__/unit/editor/utils/event.test.ts",
+          "__tests__/unit/editor/utils/extension.test.ts",
+          "__tests__/unit/editor/utils/hotkey.test.ts",
+          "__tests__/unit/exporter/svg.test.ts",
+          "__tests__/unit/jsx/animate-examples.test.tsx",
+          "__tests__/unit/jsx/animate.test.tsx",
+          "__tests__/unit/jsx/components/text.test.tsx",
+          "__tests__/unit/jsx/defs.test.tsx",
+          "__tests__/unit/jsx/jsx.test.tsx",
+          "__tests__/unit/jsx/layout.test.tsx",
+          "__tests__/unit/jsx/utils/bounds.test.ts",
+          "__tests__/unit/jsx/utils/bounds.test.tsx",
+          "__tests__/unit/jsx/utils/children.test.ts",
+          "__tests__/unit/jsx/utils/children.test.tsx",
+          "__tests__/unit/jsx/utils/clone.test.ts",
+          "__tests__/unit/jsx/utils/context.test.ts",
+          "__tests__/unit/jsx/utils/defs.test.tsx",
+          "__tests__/unit/jsx/utils/element.test.ts",
+          "__tests__/unit/jsx/utils/escape.test.ts",
+          "__tests__/unit/jsx/utils/is-fragment.test.ts",
+          "__tests__/unit/jsx/utils/is-jsx-element.test.ts",
+          "__tests__/unit/jsx/utils/is-number.test.ts",
+          "__tests__/unit/jsx/utils/svg.test.ts",
+          "__tests__/unit/options/parse-options.test.ts",
+          "__tests__/unit/renderer/palette.test.ts",
+          "__tests__/unit/renderer/utils/attrs.test.ts",
+          "__tests__/unit/renderer/utils/id.test.ts",
+          "__tests__/unit/resource/loaders/svg.test.ts",
+          "__tests__/unit/resource/utils/data-uri.test.ts",
+          "__tests__/unit/resource/utils/parser.test.ts",
+          "__tests__/unit/resource/utils/ref.test.ts",
+          "__tests__/unit/runtime/utils.test.ts",
+          "__tests__/unit/site/live-editor/templateManager.test.ts",
+          "__tests__/unit/ssr/examples.test.ts",
+          "__tests__/unit/ssr/examples/01-basic-list.txt",
+          "__tests__/unit/ssr/examples/02-list-with-icons.txt",
+          "__tests__/unit/ssr/examples/03-timeline.txt",
+          "__tests__/unit/ssr/examples/04-themed-dark.txt",
+          "__tests__/unit/ssr/examples/05-quarterly-revenue.txt",
+          "__tests__/unit/ssr/examples/06-comparison.txt",
+          "__tests__/unit/ssr/examples/07-hierarchy.txt",
+          "__tests__/unit/ssr/examples/08-quadrant.txt",
+          "__tests__/unit/ssr/examples/09-chart-bars.txt",
+          "__tests__/unit/ssr/examples/10-swot-analysis.txt",
+          "__tests__/unit/ssr/examples/11-list-with-icons-hand-drawn.txt",
+          "__tests__/unit/ssr/output/01-basic-list.svg",
+          "__tests__/unit/ssr/output/02-list-with-icons.svg",
+          "__tests__/unit/ssr/output/03-timeline.svg",
+          "__tests__/unit/ssr/output/04-themed-dark.svg",
+          "__tests__/unit/ssr/output/05-quarterly-revenue.svg",
+          "__tests__/unit/ssr/output/06-comparison.svg",
+          "__tests__/unit/ssr/output/07-hierarchy.svg",
+          "__tests__/unit/ssr/output/08-quadrant.svg",
+          "__tests__/unit/ssr/output/09-chart-bars.svg",
+          "__tests__/unit/ssr/output/10-swot-analysis.svg",
+          "__tests__/unit/ssr/output/11-list-with-icons-hand-drawn.svg",
+          "__tests__/unit/syntax/parse-syntax.test.ts",
+          "__tests__/unit/utils/color.test.ts",
+          "__tests__/unit/utils/data.test.ts",
+          "__tests__/unit/utils/design.test.ts",
+          "__tests__/unit/utils/font.test.ts",
+          "__tests__/unit/utils/get-types.test.ts",
+          "__tests__/unit/utils/hash.test.ts",
+          "__tests__/unit/utils/icon.test.ts",
+          "__tests__/unit/utils/is-browser.test.ts",
+          "__tests__/unit/utils/is-node.test.ts",
+          "__tests__/unit/utils/item.test.ts",
+          "__tests__/unit/utils/join.test.ts",
+          "__tests__/unit/utils/measure-text.test.ts",
+          "__tests__/unit/utils/object.test.ts",
+          "__tests__/unit/utils/padding.test.ts",
+          "__tests__/unit/utils/recognizer.test.ts",
+          "__tests__/unit/utils/svg.test.ts",
+          "__tests__/unit/utils/text.test.ts",
+          "__tests__/unit/utils/uuid.test.ts",
+          "__tests__/unit/utils/viewbox.test.ts",
+          "__tests__/unit/version.test.ts",
+          "__tests__/utils/index.ts",
+          "__tests__/utils/svg.ts"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "README.zh-CN.md",
+          "site/README.md"
+        ]
+      }
+    },
     {
       "id": 1158607874,
       "name": "gpt-play-pokemon-firered",
@@ -23,7 +585,7 @@
       "parent": {
         "name": "Clad3815/gpt-play-pokemon-firered",
         "url": "https://github.com/Clad3815/gpt-play-pokemon-firered",
-        "stars": 39
+        "stars": 45
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -84,7 +646,7 @@
       "parent": {
         "name": "harlan-zw/mdream",
         "url": "https://github.com/harlan-zw/mdream",
-        "stars": 765
+        "stars": 769
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -330,7 +892,7 @@
       "parent": {
         "name": "CoppingEthan/Brisk-Budget",
         "url": "https://github.com/CoppingEthan/Brisk-Budget",
-        "stars": 15
+        "stars": 16
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -511,7 +1073,7 @@
       "parent": {
         "name": "thanhkeke97/RSTGameTranslation",
         "url": "https://github.com/thanhkeke97/RSTGameTranslation",
-        "stars": 416
+        "stars": 419
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -552,546 +1114,6 @@
       }
     },
     {
-      "id": 1158702079,
-      "name": "MemOS",
-      "displayName": "MemOS",
-      "description": "AI memory OS for LLM and Agent systems(moltbot,clawdbot,openclaw), enabling persistent Skill memory for cross-task skill reuse and evolution.",
-      "summary": "# MemOS: Memory for AI Agents That Doesn't Suck\n\n## The Problem\n\nLLMs and AI agents have the memory of a goldfish. Every interaction is a reset, and they have to process the entire conversation history to \"remember\" anything. This burns compute, tokens (read: money), and your patience. If you're building multi-turn or multi-agent systems, this lack of persistent memory means you're duct-taping hacks just to make things usable.\n\n## What This Does\n\n`MemOS` is a memory operating system that gives your LLMs and AI agents long-term, structured memory. It lets you store, retrieve, manage, and even share memory across tasks and agents. Think of it as the missing hippocampus for your AI.\n\nAt its core is a **unified memory API** that handles CRUD operations on memory. Want to create a memory graph? Check out `examples/core_memories/tree_textual_memory.py`. Need a key-value cache? There's `examples/core_memories/kv_cache_memory.py`. Prefer something more basic? `examples/core_memories/naive_textual_memory.py` has you covered.\n\nIntegration with systems like `openwork-memos-integration/apps/desktop` lets you plug MemOS into other tools (like OpenClaw for multi-agent use cases). It even comes with Dockerfiles (`docker/`) and configuration files (`examples/data/config/`) to make setup straightforward—if you’re used to wrangling YAML, that is.\n\n## Real-World Use\n\nSay you're building a multi-agent system where agents need to share context (hello, OpenClaw users). Without MemOS, you'd have to build some janky custom memory manager or duplicate context across agents. With MemOS, you can use the existing `examples/mem_scheduler` to set up an intelligent memory scheduler that optimizes memory usage and enables agents to share memories through a unified `user_id`. Want to test it out? Run `examples/mem_chat/chat_w_generated_cube_explicit_memory_only.py` and watch your chatbot actually remember something for once.\n\nHere's a quick example of storing and retrieving memory:\n\n```python\nfrom examples.core_memories.kv_cache_memory import KVCacheMemory\n\nmemory = KVCacheMemory()\nmemory.store(\"favorite_color\", \"blue\")\nprint(memory.retrieve(\"favorite_color\"))  # Outputs: blue\n```\n\nNow imagine scaling that to a fleet of agents sharing multi-turn conversations. Magic.\n\n## The Bottom Line\n\nMemOS is a solid choice for anyone building complex AI systems that require persistent memory. The examples are rich, the structure is clean, and the Docker setup is a nice touch. That said, the learning curve is steep, and some parts (like the `evaluation/` folder) feel like a maze. If you're just building a simple chatbot, this is overkill. But if you're serious about memory-first AI, give it a go. Just don’t expect to set it up in 5 minutes.",
-      "url": "https://github.com/moses-y/MemOS",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "MemTensor/MemOS",
-        "url": "https://github.com/MemTensor/MemOS",
-        "stars": 5545
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 15, 2026",
-      "updatedAt": "February 15, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "directories": {
-          ".github": 8,
-          "(root)": 5,
-          "docker": 6,
-          "docs": 3,
-          "evaluation": 53,
-          "examples": 76,
-          "openwork-memos-integration": 49
-        },
-        "languages": {
-          "YAML": 14,
-          "Markdown": 14,
-          "JSON": 15,
-          "Python": 92,
-          "Shell": 8,
-          "TypeScript": 29,
-          "TSX": 10
-        },
-        "entryPoints": [
-          "openwork-memos-integration/apps/desktop/e2e/config/index.ts",
-          "openwork-memos-integration/apps/desktop/e2e/fixtures/index.ts"
-        ],
-        "configFiles": [
-          "Makefile",
-          "docker/.env.example",
-          "docker/Dockerfile",
-          "docker/Dockerfile.krolik",
-          "docker/docker-compose.yml",
-          "docker/requirements.txt",
-          "openwork-memos-integration/apps/desktop/.eslintrc.json",
-          "openwork-memos-integration/apps/desktop/e2e/docker/Dockerfile",
-          "openwork-memos-integration/apps/desktop/e2e/docker/docker-compose.yml"
-        ],
-        "dependencies": [
-          "docker/requirements.txt"
-        ],
-        "testFiles": [
-          ".github/workflows/python-tests.yml",
-          "docs/product-api-tests.md",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/main/appSettings.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/main/opencode/cli-path.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/main/opencode/config-generator.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/main/permission-api.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/main/secureStorage.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/main/store/freshInstallCleanup.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/main/taskHistory.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/main/utils/bundled-node.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/main/utils/system-path.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/preload/preload.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/App.integration.test.tsx",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/Header.integration.test.tsx",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/SettingsDialog.integration.test.tsx",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/Sidebar.integration.test.tsx",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/StreamingText.integration.test.tsx",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/TaskHistory.integration.test.tsx",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/TaskInputBar.integration.test.tsx",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/components/TaskLauncher.integration.test.tsx",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/pages/Execution.integration.test.tsx",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/pages/Home.integration.test.tsx",
-          "openwork-memos-integration/apps/desktop/__tests__/integration/renderer/taskStore.integration.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/main/config.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/main/ipc/handlers-utils.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/main/ipc/validation.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/main/opencode/stream-parser.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/renderer/lib/utils.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/setup.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/unit/main/ipc/handlers.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/unit/main/opencode/adapter.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/unit/main/opencode/task-manager.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/unit/renderer/lib/accomplish.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/unit/renderer/lib/analytics.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/unit/renderer/lib/animations.unit.test.ts",
-          "openwork-memos-integration/apps/desktop/__tests__/unit/renderer/lib/waiting-detection.unit.test.ts"
-        ],
-        "docs": [
-          ".github/CONTRIBUTING",
-          "LICENSE",
-          "README.md",
-          "docs/README.md",
-          "docs/openapi.json",
-          "docs/product-api-tests.md",
-          "evaluation/README.md",
-          "evaluation/scripts/locomo/openai_memory_locomo_eval_guide.md",
-          "examples/data/mem_cube_2/README.md",
-          "examples/mem_cube/_deprecated/README.md",
-          "examples/mem_reader/README.md",
-          "openwork-memos-integration/CONTRIBUTING.md",
-          "openwork-memos-integration/LICENSE",
-          "openwork-memos-integration/README.md",
-          "openwork-memos-integration/apps/desktop/e2e/README.md"
-        ]
-      }
-    },
-    {
-      "id": 1158701617,
-      "name": "stenoai",
-      "displayName": "stenoai",
-      "description": "Privacy focused AI powered meeting notes using locally hosted Small Language Models",
-      "summary": "## The Problem\nEver tried taking notes during a meeting while also trying to engage? It's a mess. Typing away while someone’s discussing critical points is a surefire way to miss half of what’s being said. You need a solution that not only captures the discussion but respects your privacy too, especially in sensitive environments like healthcare or finance.\n\n## What This Does\nEnter StenoAI, your local AI-powered note-taker. This repo, a fork from the more popular `ruzin/stenoai`, leverages Small Language Models to transcribe and summarize meetings without sending your data to the cloud. The core functionality is split between `src/transcriber.py` for capturing audio and `src/summarizer.py` for generating concise summaries. \n\nThe app runs a macOS desktop interface located in `app/index.html`, with the heavy lifting done by models managed in `src/models.py`. If you're looking to customize or extend functionalities, check out `setup.py` to get your environment set up with the necessary dependencies listed in `requirements.txt`.\n\n## Real-World Use\nImagine you're in a critical strategy meeting, and the discussion is packed with jargon. You fire up StenoAI, hit record, and let it transcribe everything live. After the meeting, instead of sifting through pages of notes, you click the “Summarize” button in the app. Now you have a neat summary of key points, thanks to the `Ask Steno` feature, which allows you to query the notes using natural language. This setup not only saves time but ensures you capture the essence of the conversation without compromising data privacy.\n\n## The Bottom Line\nStenoAI is solid for anyone who needs to track discussions without the hassle of manual note-taking, especially in fields where confidentiality is crucial. The local processing is a win for privacy, but if you're not on macOS, you’re out of luck. Overall, it’s a neat tool with great potential, just don’t expect it to become your next full-fledged project management solution.",
-      "url": "https://github.com/moses-y/stenoai",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "ruzin/stenoai",
-        "url": "https://github.com/ruzin/stenoai",
-        "stars": 292
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 15, 2026",
-      "updatedAt": "February 15, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "directories": {
-          "(root)": 12,
-          ".github": 3,
-          "app": 8,
-          "prompt_tests": 2,
-          "scripts": 4,
-          "src": 8,
-          "tests": 1,
-          "website": 24
-        },
-        "languages": {
-          "Markdown": 7,
-          "YAML": 2,
-          "JSON": 5,
-          "HTML": 6,
-          "JavaScript": 5,
-          "Python": 12,
-          "Shell": 4,
-          "CSS": 2,
-          "JSX": 2
-        },
-        "entryPoints": [
-          "app/index.html",
-          "app/main.js",
-          "setup.py",
-          "website/index.html",
-          "website/src/App.jsx"
-        ],
-        "configFiles": [
-          "app/package.json",
-          "requirements.txt",
-          "setup.py",
-          "website/package.json",
-          "website/tailwind.config.js",
-          "website/vite.config.js"
-        ],
-        "dependencies": [
-          "app/package-lock.json",
-          "app/package.json",
-          "requirements.txt",
-          "website/package-lock.json",
-          "website/package.json"
-        ],
-        "testFiles": [
-          "prompt_tests/PROMPT_TESTING.md",
-          "prompt_tests/test_prompts.py",
-          "scripts/test_dmg_fresh_install.sh",
-          "scripts/test_first_time_setup.sh",
-          "stenoai.spec",
-          "tests/__init__.py"
-        ],
-        "docs": [
-          "CONTRIBUTING.md",
-          "LICENSE",
-          "README.md",
-          "website/README.md"
-        ]
-      }
-    },
-    {
-      "id": 1158686133,
-      "name": "cc-wf-studio",
-      "displayName": "cc wf studio",
-      "description": "CC Workflow Studio",
-      "summary": "## The Problem\n\nBuilding and maintaining AI workflow automation is a pain. You end up juggling dozens of YAML files, half-baked scripts, and brittle prompt templates. Want to tweak your workflow? Prepare for a mess of manual edits, copy-paste bugs, and guesswork. Visual tools barely exist, and integrating with Copilot or Claude usually means duct-taping config files together.\n\n## What CC Workflow Studio Does\n\nCC Workflow Studio gives you a visual editor for AI workflows—drag-and-drop, tweak nodes, and wire up conditional logic without writing code. The real meat lives in `src/extension/` (see `extension.ts` for entrypoint), where commands like `open-editor.ts`, `save-workflow.ts`, and `export-workflow.ts` handle the grunt work. Integration with Claude, Copilot, Codex, and Roo is handled via dedicated services: check out `ai-provider.ts`, `claude-code-service.ts`, `copilot-skill-export-service.ts`, and their friends.\n\nSpecs in `specs/` and contracts in `contracts/` make it clear: this thing is built for exporting workflows to whatever flavor you need—`.claude`, `.github/prompts/`, `.codex/skills/`, etc. Want to run a workflow? Demo GIFs in `resources/` show you can do it straight from the editor. There's a pile of i18n files (`i18n/translations/`) if you're tired of English-only tools.\n\n## Real-World Use\n\nSay you want to automate PR reviews with Claude. Open the editor, wire up a workflow with MCP nodes and conditional branches, add your skill nodes, and talk to the AI via natural language to refine logic. Hit \"Export\"—your workflow lands in `.claude/commands/` and `.claude/agents/`. If you want Copilot support, flip the toolbar toggle, and now your export goes to `.github/prompts/` or `.github/skills/`. Example:  \n\n```typescript\n// src/extension/commands/save-workflow.ts\nexport async function saveWorkflow(workflowData) {\n  // Validates and writes workflow to .claude/commands/\n}\n```\n\n## The Bottom Line\n\nIf you're tired of wrangling config files and want to actually see your AI workflows, CC Workflow Studio is worth a look. It’s overkill for tiny automations but great for teams building complex, multi-agent flows. Setup isn’t trivial—expect to read the docs and mess with some settings. But once it’s running, exporting and editing workflows is way less annoying. If you’re serious about AI automation, skip the manual editing and use this.",
-      "url": "https://github.com/moses-y/cc-wf-studio",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "breaking-brake/cc-wf-studio",
-        "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 3855
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 15, 2026",
-      "updatedAt": "February 15, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "directories": {
-          ".claude": 13,
-          ".github": 7,
-          "(root)": 12,
-          ".specify": 11,
-          ".vscode": 5,
-          "contracts": 3,
-          "docs": 3,
-          "resources": 22,
-          "scripts": 2,
-          "specs": 78,
-          "src": 44
-        },
-        "languages": {
-          "Markdown": 100,
-          "YAML": 7,
-          "JSON": 20,
-          "Shell": 5,
-          "TypeScript": 47
-        },
-        "entryPoints": [],
-        "configFiles": [
-          "package.json"
-        ],
-        "dependencies": [
-          "package-lock.json",
-          "package.json"
-        ],
-        "testFiles": [
-          ".claude/commands/speckit.analyze.md",
-          ".claude/commands/speckit.checklist.md",
-          ".claude/commands/speckit.clarify.md",
-          ".claude/commands/speckit.constitution.md",
-          ".claude/commands/speckit.implement.md",
-          ".claude/commands/speckit.plan.md",
-          ".claude/commands/speckit.specify.md",
-          ".claude/commands/speckit.tasks.md",
-          ".specify/memory/constitution.md",
-          ".specify/scripts/bash/check-prerequisites.sh",
-          ".specify/scripts/bash/common.sh",
-          ".specify/scripts/bash/create-new-feature.sh",
-          ".specify/scripts/bash/setup-plan.sh",
-          ".specify/scripts/bash/update-agent-context.sh",
-          ".specify/templates/agent-file-template.md",
-          ".specify/templates/checklist-template.md",
-          ".specify/templates/plan-template.md",
-          ".specify/templates/spec-template.md",
-          ".specify/templates/tasks-template.md",
-          "specs/001-ai-skill-generation/checklists/requirements.md",
-          "specs/001-ai-skill-generation/contracts/skill-scanning-api.md",
-          "specs/001-ai-skill-generation/data-model.md",
-          "specs/001-ai-skill-generation/plan.md",
-          "specs/001-ai-skill-generation/quickstart.md",
-          "specs/001-ai-skill-generation/research.md",
-          "specs/001-ai-skill-generation/spec.md",
-          "specs/001-ai-skill-generation/tasks.md",
-          "specs/001-ai-workflow-generation/checklists/requirements.md",
-          "specs/001-ai-workflow-generation/contracts/ai-generation-messages.md",
-          "specs/001-ai-workflow-generation/data-model.md",
-          "specs/001-ai-workflow-generation/plan.md",
-          "specs/001-ai-workflow-generation/quickstart.md",
-          "specs/001-ai-workflow-generation/research.md",
-          "specs/001-ai-workflow-generation/spec.md",
-          "specs/001-ai-workflow-generation/tasks.md",
-          "specs/001-ai-workflow-refinement/checklists/requirements.md",
-          "specs/001-ai-workflow-refinement/contracts/refinement-messages.json",
-          "specs/001-ai-workflow-refinement/data-model.md",
-          "specs/001-ai-workflow-refinement/plan.md",
-          "specs/001-ai-workflow-refinement/quickstart.md",
-          "specs/001-ai-workflow-refinement/research.md",
-          "specs/001-ai-workflow-refinement/spec.md",
-          "specs/001-ai-workflow-refinement/tasks.md",
-          "specs/001-cc-wf-studio/checklists/requirements.md",
-          "specs/001-cc-wf-studio/contracts/extension-webview-api.md",
-          "specs/001-cc-wf-studio/contracts/vscode-extension-api.md",
-          "specs/001-cc-wf-studio/data-model.md",
-          "specs/001-cc-wf-studio/plan.md",
-          "specs/001-cc-wf-studio/quickstart.md",
-          "specs/001-cc-wf-studio/research.md",
-          "specs/001-cc-wf-studio/spec.md",
-          "specs/001-cc-wf-studio/tasks.md",
-          "specs/001-mcp-natural-language-mode/checklists/requirements.md",
-          "specs/001-mcp-natural-language-mode/contracts/export-metadata.schema.json",
-          "specs/001-mcp-natural-language-mode/contracts/mcp-node-extended.schema.json",
-          "specs/001-mcp-natural-language-mode/data-model.md",
-          "specs/001-mcp-natural-language-mode/extension-points.md",
-          "specs/001-mcp-natural-language-mode/i18n-keys-plan.md",
-          "specs/001-mcp-natural-language-mode/plan.md",
-          "specs/001-mcp-natural-language-mode/quickstart.md",
-          "specs/001-mcp-natural-language-mode/research.md",
-          "specs/001-mcp-natural-language-mode/spec.md",
-          "specs/001-mcp-natural-language-mode/tasks.md",
-          "specs/001-mcp-node/checklists/requirements.md",
-          "specs/001-mcp-node/contracts/extension-webview-messages.schema.json",
-          "specs/001-mcp-node/contracts/mcp-cli.schema.json",
-          "specs/001-mcp-node/contracts/workflow-mcp-node.schema.json",
-          "specs/001-mcp-node/data-model.md",
-          "specs/001-mcp-node/plan.md",
-          "specs/001-mcp-node/quickstart.md",
-          "specs/001-mcp-node/research.md",
-          "specs/001-mcp-node/spec.md",
-          "specs/001-mcp-node/tasks.md",
-          "specs/001-node-types-extension/checklists/requirements.md",
-          "specs/001-node-types-extension/data-model.md",
-          "specs/001-node-types-extension/plan.md",
-          "specs/001-node-types-extension/quickstart.md",
-          "specs/001-node-types-extension/research.md",
-          "specs/001-node-types-extension/spec.md",
-          "specs/001-node-types-extension/tasks.md",
-          "specs/001-skill-node/checklists/requirements.md",
-          "specs/001-skill-node/contracts/skill-messages.ts",
-          "specs/001-skill-node/data-model.md",
-          "specs/001-skill-node/plan.md",
-          "specs/001-skill-node/quickstart.md",
-          "specs/001-skill-node/research.md",
-          "specs/001-skill-node/spec.md",
-          "specs/001-skill-node/tasks.md",
-          "specs/001-slack-workflow-sharing/checklists/requirements.md",
-          "specs/001-slack-workflow-sharing/contracts/extension-host-api-contracts.md",
-          "specs/001-slack-workflow-sharing/contracts/slack-api-contracts.md",
-          "specs/001-slack-workflow-sharing/data-model.md",
-          "specs/001-slack-workflow-sharing/plan.md",
-          "specs/001-slack-workflow-sharing/quickstart.md",
-          "specs/001-slack-workflow-sharing/research.md",
-          "specs/001-slack-workflow-sharing/spec.md",
-          "specs/001-slack-workflow-sharing/tasks.md"
-        ],
-        "docs": [
-          "CHANGELOG.md",
-          "LICENSE",
-          "README.md",
-          "docs/ai-coding-tools-config-reference.md",
-          "docs/release-automation.md",
-          "docs/schema-maintenance.md",
-          "resources/README.md"
-        ]
-      }
-    },
-    {
-      "id": 1158670052,
-      "name": "Infographic",
-      "displayName": "Infographic",
-      "description": "🦋 An Infographic Generation and Rendering Framework, bring words to life with AI!",
-      "summary": "# Making Data Look Fancy with AntV Infographic\n\nYou know that one project where your manager asks you to \"make it look more attractive\"? Well, meet **AntV Infographic**, the fancy tool that turns boring data into visual masterpieces. This framework is all about creating high-quality infographics with AI-driven simplicity, SVG precision, and more templates than you’ll ever need.\n\n---\n\n## The Problem\n\nBuilding infographics manually is a soul-sucking experience. Do you really want to wrestle with CSS, SVG paths, and endless iterations to make your pie chart look slightly less like a sad pancake? Or worse, spend hours googling “best infographic tools” only to sign up for yet another subscription-based service that locks half the features behind a paywall?\n\n---\n\n## What This Does\n\nAntV Infographic is essentially a **declarative infographic rendering engine**—fancy words for \"it takes text-based syntax and turns it into great-looking visuals\". The framework brings a blend of AI-friendly syntax, pre-built templates, and professional-grade SVG rendering to make the infographic-building process borderline painless.\n\nHere’s the cool part: there’s a bunch of `infographic syntax` that acts like magic shorthand for AI or humans to describe layouts, themes, and data structures. For example:\n\n```ts\ninfographic.render(`\ninfographic list-row-simple-horizontal-arrow\ndata\n  lists\n    - label Step 1\n      desc Start\n    - label Step 2\n      desc In Progress\n    - label Step 3\n`);\n```\n\nNo need to fuss over pixel-perfect design. AntV handles it. Want hand-drawn visuals or gradient themes? That’s built-in too. And if your AI-generated infographic has a typo or looks weird, the framework ships with an editor to make quick manual tweaks. Check out the `site/src/components/AIPlayground` folder for the editor implementation—it’s React-based, so you can extend it if needed.\n\nThe repo is packed with ~200 templates, which means you can probably find something that fits your use case without reinventing the wheel. Templates live in the `shared` folder, while rendering logic is scattered across `site` and `dev`. The framework also supports SVG outputs, making further editing in tools like Figma or Adobe Illustrator a breeze.\n\n---\n\n## Real-World Use\n\nImagine you’re tasked with visualizing quarterly revenue in a report. Instead of fiddling with Excel charts, you could use AntV like this:\n\n```ts\nimport { Infographic } from '@antv/infographic';\n\nconst infographic = new Infographic({\n  container: '#container',\n  width: '100%',\n  height: '100%',\n});\n\ninfographic.render(`\ninfographic chart-pie\ndata\n  items\n    - label Q1\n      value 100000\n    - label Q2\n      value 120000\n    - label Q3\n      value 90000\n    - label Q4\n      value 150000\n`);\n```\n\nThe framework spits out a polished pie chart in SVG format that looks like you spent hours designing it. Bonus: you can use the built-in editor (`site/src/components/AIPlayground`) to tweak labels, colors, or layout without diving into code.\n\nIf you’re building something more dynamic, like a real-time dashboard, the `dev` folder has React hooks (`usePreviewData`, `usePreviewSettings`) to handle interactions and live updates. For example, `dev/src/ItemPreview.tsx` is one of the core components for previewing individual infographic items dynamically.\n\n---\n\n## The Bottom Line\n\nAntV Infographic is pretty slick if you need visually appealing infographics without wasting hours on design. It’s AI-friendly, packed with templates, and outputs clean SVGs. But let’s be real—this isn’t something you’ll use for simple bar charts or small projects. It’s more for enterprise-level data storytelling or client presentations.\n\nIf you’re already knee-deep in the AntV ecosystem, this fits like a glove. Otherwise, the learning curve might feel steep, especially with the custom syntax. But hey, if you want infographics that look like money, this is worth a shot.",
-      "url": "https://github.com/moses-y/Infographic",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "antvis/Infographic",
-        "url": "https://github.com/antvis/Infographic",
-        "stars": 4334
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 15, 2026",
-      "updatedAt": "February 15, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "directories": {
-          "(root)": 7,
-          ".github": 3,
-          ".husky": 2,
-          ".skills": 8,
-          "__tests__": 110,
-          "dev": 18,
-          "scripts": 1,
-          "shared": 2,
-          "site": 49
-        },
-        "languages": {
-          "YAML": 4,
-          "Markdown": 11,
-          "TypeScript": 94,
-          "JSON": 5,
-          "TSX": 21,
-          "HTML": 2,
-          "JavaScript": 15
-        },
-        "entryPoints": [
-          "__tests__/utils/index.ts",
-          "dev/index.html",
-          "dev/src/App.tsx",
-          "site/src/components/AIPlayground/index.tsx"
-        ],
-        "configFiles": [
-          "__tests__/tsconfig.json",
-          "dev/package.json",
-          "dev/tsconfig.json",
-          "dev/vite.config.ts",
-          "package.json",
-          "site/.eslintrc",
-          "site/.prettierrc",
-          "site/next.config.js",
-          "site/package.json"
-        ],
-        "dependencies": [
-          "dev/package.json",
-          "package.json",
-          "site/package.json"
-        ],
-        "testFiles": [
-          "__tests__/setup/dom-polyfills.ts",
-          "__tests__/tsconfig.json",
-          "__tests__/unit/designs/structures/chart-pie.test.ts",
-          "__tests__/unit/designs/utils/color.test.ts",
-          "__tests__/unit/designs/utils/hierarchy-color.test.ts",
-          "__tests__/unit/designs/utils/item.test.ts",
-          "__tests__/unit/dev/ItemPreview.test.tsx",
-          "__tests__/unit/editor/commands/batch.test.ts",
-          "__tests__/unit/editor/commands/update-element.test.ts",
-          "__tests__/unit/editor/commands/update-options.test.ts",
-          "__tests__/unit/editor/commands/update-text.test.ts",
-          "__tests__/unit/editor/interactions/brush-select.test.ts",
-          "__tests__/unit/editor/interactions/click-select.test.ts",
-          "__tests__/unit/editor/interactions/dblclick-edit-text.test.ts",
-          "__tests__/unit/editor/interactions/drag-canvas.test.ts",
-          "__tests__/unit/editor/interactions/drag-element.test.ts",
-          "__tests__/unit/editor/interactions/hotkey-history.test.ts",
-          "__tests__/unit/editor/interactions/select-highlight.test.ts",
-          "__tests__/unit/editor/interactions/zoom-wheel.test.ts",
-          "__tests__/unit/editor/managers/command-manager.test.ts",
-          "__tests__/unit/editor/managers/interaction-manager.test.ts",
-          "__tests__/unit/editor/managers/plugin-manager.test.ts",
-          "__tests__/unit/editor/managers/state-manager.test.ts",
-          "__tests__/unit/editor/managers/sync-registry.test.ts",
-          "__tests__/unit/editor/plugins/core-sync.test.ts",
-          "__tests__/unit/editor/plugins/reset-viewbox.test.ts",
-          "__tests__/unit/editor/plugins/resize-element.test.ts",
-          "__tests__/unit/editor/utils/click-handler.test.ts",
-          "__tests__/unit/editor/utils/coordinate.test.ts",
-          "__tests__/unit/editor/utils/data.test.ts",
-          "__tests__/unit/editor/utils/element.test.ts",
-          "__tests__/unit/editor/utils/event.test.ts",
-          "__tests__/unit/editor/utils/extension.test.ts",
-          "__tests__/unit/editor/utils/hotkey.test.ts",
-          "__tests__/unit/exporter/svg.test.ts",
-          "__tests__/unit/jsx/animate-examples.test.tsx",
-          "__tests__/unit/jsx/animate.test.tsx",
-          "__tests__/unit/jsx/components/text.test.tsx",
-          "__tests__/unit/jsx/defs.test.tsx",
-          "__tests__/unit/jsx/jsx.test.tsx",
-          "__tests__/unit/jsx/layout.test.tsx",
-          "__tests__/unit/jsx/utils/bounds.test.ts",
-          "__tests__/unit/jsx/utils/bounds.test.tsx",
-          "__tests__/unit/jsx/utils/children.test.ts",
-          "__tests__/unit/jsx/utils/children.test.tsx",
-          "__tests__/unit/jsx/utils/clone.test.ts",
-          "__tests__/unit/jsx/utils/context.test.ts",
-          "__tests__/unit/jsx/utils/defs.test.tsx",
-          "__tests__/unit/jsx/utils/element.test.ts",
-          "__tests__/unit/jsx/utils/escape.test.ts",
-          "__tests__/unit/jsx/utils/is-fragment.test.ts",
-          "__tests__/unit/jsx/utils/is-jsx-element.test.ts",
-          "__tests__/unit/jsx/utils/is-number.test.ts",
-          "__tests__/unit/jsx/utils/svg.test.ts",
-          "__tests__/unit/options/parse-options.test.ts",
-          "__tests__/unit/renderer/palette.test.ts",
-          "__tests__/unit/renderer/utils/attrs.test.ts",
-          "__tests__/unit/renderer/utils/id.test.ts",
-          "__tests__/unit/resource/loaders/svg.test.ts",
-          "__tests__/unit/resource/utils/data-uri.test.ts",
-          "__tests__/unit/resource/utils/parser.test.ts",
-          "__tests__/unit/resource/utils/ref.test.ts",
-          "__tests__/unit/runtime/utils.test.ts",
-          "__tests__/unit/site/live-editor/templateManager.test.ts",
-          "__tests__/unit/ssr/examples.test.ts",
-          "__tests__/unit/ssr/examples/01-basic-list.txt",
-          "__tests__/unit/ssr/examples/02-list-with-icons.txt",
-          "__tests__/unit/ssr/examples/03-timeline.txt",
-          "__tests__/unit/ssr/examples/04-themed-dark.txt",
-          "__tests__/unit/ssr/examples/05-quarterly-revenue.txt",
-          "__tests__/unit/ssr/examples/06-comparison.txt",
-          "__tests__/unit/ssr/examples/07-hierarchy.txt",
-          "__tests__/unit/ssr/examples/08-quadrant.txt",
-          "__tests__/unit/ssr/examples/09-chart-bars.txt",
-          "__tests__/unit/ssr/examples/10-swot-analysis.txt",
-          "__tests__/unit/ssr/examples/11-list-with-icons-hand-drawn.txt",
-          "__tests__/unit/ssr/output/01-basic-list.svg",
-          "__tests__/unit/ssr/output/02-list-with-icons.svg",
-          "__tests__/unit/ssr/output/03-timeline.svg",
-          "__tests__/unit/ssr/output/04-themed-dark.svg",
-          "__tests__/unit/ssr/output/05-quarterly-revenue.svg",
-          "__tests__/unit/ssr/output/06-comparison.svg",
-          "__tests__/unit/ssr/output/07-hierarchy.svg",
-          "__tests__/unit/ssr/output/08-quadrant.svg",
-          "__tests__/unit/ssr/output/09-chart-bars.svg",
-          "__tests__/unit/ssr/output/10-swot-analysis.svg",
-          "__tests__/unit/ssr/output/11-list-with-icons-hand-drawn.svg",
-          "__tests__/unit/syntax/parse-syntax.test.ts",
-          "__tests__/unit/utils/color.test.ts",
-          "__tests__/unit/utils/data.test.ts",
-          "__tests__/unit/utils/design.test.ts",
-          "__tests__/unit/utils/font.test.ts",
-          "__tests__/unit/utils/get-types.test.ts",
-          "__tests__/unit/utils/hash.test.ts",
-          "__tests__/unit/utils/icon.test.ts",
-          "__tests__/unit/utils/is-browser.test.ts",
-          "__tests__/unit/utils/is-node.test.ts",
-          "__tests__/unit/utils/item.test.ts",
-          "__tests__/unit/utils/join.test.ts",
-          "__tests__/unit/utils/measure-text.test.ts",
-          "__tests__/unit/utils/object.test.ts",
-          "__tests__/unit/utils/padding.test.ts",
-          "__tests__/unit/utils/recognizer.test.ts",
-          "__tests__/unit/utils/svg.test.ts",
-          "__tests__/unit/utils/text.test.ts",
-          "__tests__/unit/utils/uuid.test.ts",
-          "__tests__/unit/utils/viewbox.test.ts",
-          "__tests__/unit/version.test.ts",
-          "__tests__/utils/index.ts",
-          "__tests__/utils/svg.ts"
-        ],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "README.zh-CN.md",
-          "site/README.md"
-        ]
-      }
-    },
-    {
       "id": 1157755557,
       "name": "trackers",
       "displayName": "trackers",
@@ -1105,7 +1127,7 @@
       "parent": {
         "name": "roboflow/trackers",
         "url": "https://github.com/roboflow/trackers",
-        "stars": 2442
+        "stars": 2444
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1201,7 +1223,7 @@
       "parent": {
         "name": "Serial-Studio/Serial-Studio",
         "url": "https://github.com/Serial-Studio/Serial-Studio",
-        "stars": 6485
+        "stars": 6486
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1251,7 +1273,7 @@
       "parent": {
         "name": "gosom/google-maps-scraper",
         "url": "https://github.com/gosom/google-maps-scraper",
-        "stars": 3096
+        "stars": 3104
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1375,7 +1397,7 @@
       "parent": {
         "name": "openrundev/openrun",
         "url": "https://github.com/openrundev/openrun",
-        "stars": 772
+        "stars": 773
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1397,7 +1419,7 @@
       "parent": {
         "name": "crowdsecurity/crowdsec",
         "url": "https://github.com/crowdsecurity/crowdsec",
-        "stars": 12549
+        "stars": 12550
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -1419,7 +1441,7 @@
       "parent": {
         "name": "ruvnet/wifi-densepose",
         "url": "https://github.com/ruvnet/wifi-densepose",
-        "stars": 6479
+        "stars": 6566
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -1441,7 +1463,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 21949
+        "stars": 21954
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -1485,7 +1507,7 @@
       "parent": {
         "name": "JPCERTCC/LogonTracer",
         "url": "https://github.com/JPCERTCC/LogonTracer",
-        "stars": 3126
+        "stars": 3127
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1507,7 +1529,7 @@
       "parent": {
         "name": "TencentARC/MotionCrafter",
         "url": "https://github.com/TencentARC/MotionCrafter",
-        "stars": 70
+        "stars": 71
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1551,7 +1573,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 14941
+        "stars": 14950
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1573,7 +1595,7 @@
       "parent": {
         "name": "jlia0/tinyclaw",
         "url": "https://github.com/jlia0/tinyclaw",
-        "stars": 1716
+        "stars": 1775
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1639,7 +1661,7 @@
       "parent": {
         "name": "R44VC0RP/pgrok",
         "url": "https://github.com/R44VC0RP/pgrok",
-        "stars": 473
+        "stars": 474
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1683,35 +1705,13 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 10832
+        "stars": 11440
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
       "forkedAt": "February 10, 2026",
       "updatedAt": "February 10, 2026",
       "readTime": 2
-    },
-    {
-      "id": 1135469037,
-      "name": "clawdbot",
-      "displayName": "clawdbot",
-      "description": "Your own personal AI assistant. Any OS. Any Platform.",
-      "summary": "In an era where productivity tools are proliferating yet often fail to integrate seamlessly across platforms, the challenge of managing personal tasks and communications has never been more pressing. Developers often find themselves juggling multiple applications to handle messages, reminders, and workflows, leading to fragmentation and inefficiency. Enter Clawdbot, a personal AI assistant that aims to centralize this experience by allowing users to interact with their devices through familiar channels—whether it's WhatsApp, Slack, or Discord—while maintaining full control over their data and the AI's capabilities.\n\nClawdbot is built on the foundation of OpenClaw, a well-regarded open-source project that has garnered significant attention with over 168,000 stars on GitHub. What sets Clawdbot apart is its commitment to providing a self-hosted solution, empowering users to run their personal AI assistant on any operating system or platform that supports Node.js. This flexibility, combined with its robust multi-channel communication capabilities, allows users to interact with their assistant in a way that feels natural and immediate. The onboarding wizard simplifies the setup process, guiding users through the configuration of the gateway, workspace, channels, and skills, making it accessible even for those who are not technically inclined.\n\nA closer look at Clawdbot's architecture reveals a thoughtful design that promotes modularity and maintainability. The presence of multiple GitHub workflows, such as `.github/workflows/ci.yml` for continuous integration and `.github/workflows/docker-release.yml` for Docker deployments, indicates a strong emphasis on quality assurance and deployment flexibility. The use of TypeScript as the primary programming language not only enhances type safety but also facilitates a more robust development experience. The configuration files, such as `.npmrc` and `.prettierignore`, suggest an intention to maintain a clean codebase while ensuring that dependencies are managed effectively. Additionally, the inclusion of `.detect-secrets.cfg` implies a proactive approach to security, ensuring sensitive information does not make its way into the codebase.\n\nClawdbot opens the door to numerous practical applications that developers can leverage. For instance, a development team could utilize Clawdbot to manage deployment notifications across Slack and Discord, ensuring that all team members are aligned without needing to switch between multiple applications. Moreover, a freelance developer may find value in using Clawdbot to automate reminders for upcoming deadlines or meetings, integrating seamlessly with their existing communication tools. Lastly, organizations looking to enhance their customer support can implement Clawdbot to handle queries via WhatsApp or Telegram, streamlining their interactions with clients while providing a consistent experience.\n\nUltimately, Clawdbot represents a significant step toward a future where personal AI assistants are not just tools but integral components of our daily workflows. By offering a self-hosted, multi-channel solution, it empowers users to take control of their interactions in a way that aligns with their preferences and security needs. As the demand for personalized, efficient tools continues to grow, projects like Clawdbot highlight the importance of open-source solutions that prioritize user autonomy and integration, paving the way for more intelligent and cohesive digital ecosystems.",
-      "url": "https://github.com/yebeai/clawdbot",
-      "language": "TypeScript",
-      "stars": 1,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "openclaw/openclaw",
-        "url": "https://github.com/openclaw/openclaw",
-        "stars": 197118
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "January 16, 2026",
-      "updatedAt": "February 10, 2026",
-      "readTime": 3
     },
     {
       "id": 1154378356,
@@ -1727,7 +1727,7 @@
       "parent": {
         "name": "The-Vibe-Company/companion",
         "url": "https://github.com/The-Vibe-Company/companion",
-        "stars": 1859
+        "stars": 1871
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1771,7 +1771,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2098
+        "stars": 2106
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1793,7 +1793,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 23827
+        "stars": 23833
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1881,7 +1881,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 32527
+        "stars": 32573
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -1903,7 +1903,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 6006
+        "stars": 6022
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1925,7 +1925,7 @@
       "parent": {
         "name": "OpenBMB/MiniCPM-o",
         "url": "https://github.com/OpenBMB/MiniCPM-o",
-        "stars": 23811
+        "stars": 23815
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -1969,7 +1969,7 @@
       "parent": {
         "name": "BrowserOperator/browser-operator-core",
         "url": "https://github.com/BrowserOperator/browser-operator-core",
-        "stars": 454
+        "stars": 455
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1991,7 +1991,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 5321
+        "stars": 5340
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2057,7 +2057,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 2775
+        "stars": 2956
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2145,7 +2145,7 @@
       "parent": {
         "name": "needle-tools/md-browse",
         "url": "https://github.com/needle-tools/md-browse",
-        "stars": 193
+        "stars": 194
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2167,7 +2167,7 @@
       "parent": {
         "name": "rohunvora/x-research-skill",
         "url": "https://github.com/rohunvora/x-research-skill",
-        "stars": 758
+        "stars": 759
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2211,7 +2211,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 19487
+        "stars": 19688
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -2255,7 +2255,7 @@
       "parent": {
         "name": "ComposioHQ/composio",
         "url": "https://github.com/ComposioHQ/composio",
-        "stars": 26569
+        "stars": 26573
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -2277,7 +2277,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 8932
+        "stars": 8935
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2343,7 +2343,7 @@
       "parent": {
         "name": "ascorbic/macrodata",
         "url": "https://github.com/ascorbic/macrodata",
-        "stars": 82
+        "stars": 85
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2387,7 +2387,7 @@
       "parent": {
         "name": "univrsal/input-overlay",
         "url": "https://github.com/univrsal/input-overlay",
-        "stars": 3866
+        "stars": 3867
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2431,7 +2431,7 @@
       "parent": {
         "name": "PrimeIntellect-ai/verifiers",
         "url": "https://github.com/PrimeIntellect-ai/verifiers",
-        "stars": 3833
+        "stars": 3835
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2453,7 +2453,7 @@
       "parent": {
         "name": "InternScience/GraphGen",
         "url": "https://github.com/InternScience/GraphGen",
-        "stars": 931
+        "stars": 933
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2475,7 +2475,7 @@
       "parent": {
         "name": "RedPlanetHQ/core",
         "url": "https://github.com/RedPlanetHQ/core",
-        "stars": 1361
+        "stars": 1363
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2497,7 +2497,7 @@
       "parent": {
         "name": "OpenBMB/VoxCPM",
         "url": "https://github.com/OpenBMB/VoxCPM",
-        "stars": 5901
+        "stars": 5903
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2519,7 +2519,7 @@
       "parent": {
         "name": "Blaizzy/mlx-audio-swift",
         "url": "https://github.com/Blaizzy/mlx-audio-swift",
-        "stars": 209
+        "stars": 211
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2541,7 +2541,7 @@
       "parent": {
         "name": "sseanliu/VisionClaw",
         "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 949
+        "stars": 954
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2563,7 +2563,7 @@
       "parent": {
         "name": "Polymarket/agents",
         "url": "https://github.com/Polymarket/agents",
-        "stars": 2158
+        "stars": 2160
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -2629,7 +2629,7 @@
       "parent": {
         "name": "rotki/rotki",
         "url": "https://github.com/rotki/rotki",
-        "stars": 3702
+        "stars": 3703
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2717,7 +2717,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2197
+        "stars": 2199
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2739,7 +2739,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 15355
+        "stars": 15399
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2761,7 +2761,7 @@
       "parent": {
         "name": "miantiao-me/awesome-homelab",
         "url": "https://github.com/miantiao-me/awesome-homelab",
-        "stars": 1675
+        "stars": 1677
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2871,7 +2871,7 @@
       "parent": {
         "name": "Beingpax/VoiceInk",
         "url": "https://github.com/Beingpax/VoiceInk",
-        "stars": 3755
+        "stars": 3758
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -2915,7 +2915,7 @@
       "parent": {
         "name": "Hawksight-AI/semantica",
         "url": "https://github.com/Hawksight-AI/semantica",
-        "stars": 692
+        "stars": 693
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2959,7 +2959,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 95296
+        "stars": 95359
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2981,7 +2981,7 @@
       "parent": {
         "name": "tinyfish-io/agentql",
         "url": "https://github.com/tinyfish-io/agentql",
-        "stars": 1227
+        "stars": 1228
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3025,7 +3025,7 @@
       "parent": {
         "name": "rivo/tview",
         "url": "https://github.com/rivo/tview",
-        "stars": 13551
+        "stars": 13554
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3047,7 +3047,7 @@
       "parent": {
         "name": "rahulnyk/knowledge_graph",
         "url": "https://github.com/rahulnyk/knowledge_graph",
-        "stars": 2950
+        "stars": 2951
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3091,7 +3091,7 @@
       "parent": {
         "name": "antirez/voxtral.c",
         "url": "https://github.com/antirez/voxtral.c",
-        "stars": 1283
+        "stars": 1290
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3135,7 +3135,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 7054
+        "stars": 7058
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3157,7 +3157,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1646
+        "stars": 1648
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3179,7 +3179,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 2696
+        "stars": 2777
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3241,7 +3241,7 @@
       "parent": {
         "name": "Kocoro-lab/Shannon",
         "url": "https://github.com/Kocoro-lab/Shannon",
-        "stars": 972
+        "stars": 973
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3263,7 +3263,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 20500
+        "stars": 20502
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3285,7 +3285,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44342
+        "stars": 44351
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -3329,7 +3329,7 @@
       "parent": {
         "name": "callstackincubator/agent-device",
         "url": "https://github.com/callstackincubator/agent-device",
-        "stars": 603
+        "stars": 605
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -3373,7 +3373,7 @@
       "parent": {
         "name": "davidgeorgehope/elasticsearch-skill",
         "url": "https://github.com/davidgeorgehope/elasticsearch-skill",
-        "stars": 21
+        "stars": 22
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3395,7 +3395,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20552
+        "stars": 20554
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -3549,7 +3549,7 @@
       "parent": {
         "name": "agentic-mcp-tools/memora",
         "url": "https://github.com/agentic-mcp-tools/memora",
-        "stars": 283
+        "stars": 284
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -3571,7 +3571,7 @@
       "parent": {
         "name": "AtsushiSakai/PythonRobotics",
         "url": "https://github.com/AtsushiSakai/PythonRobotics",
-        "stars": 28647
+        "stars": 28649
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -3593,7 +3593,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 30035
+        "stars": 30042
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -3703,7 +3703,7 @@
       "parent": {
         "name": "anvaka/city-roads",
         "url": "https://github.com/anvaka/city-roads",
-        "stars": 8940
+        "stars": 8942
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3747,7 +3747,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6766
+        "stars": 6768
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3967,7 +3967,7 @@
       "parent": {
         "name": "commaai/openpilot",
         "url": "https://github.com/commaai/openpilot",
-        "stars": 60071
+        "stars": 60073
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3989,7 +3989,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 14760
+        "stars": 14766
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4011,7 +4011,7 @@
       "parent": {
         "name": "latitude-dev/latitude-llm",
         "url": "https://github.com/latitude-dev/latitude-llm",
-        "stars": 3891
+        "stars": 3892
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4077,7 +4077,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 5867
+        "stars": 5870
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -4099,7 +4099,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8268
+        "stars": 8272
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -4121,7 +4121,7 @@
       "parent": {
         "name": "hpcaitech/ColossalAI",
         "url": "https://github.com/hpcaitech/ColossalAI",
-        "stars": 41342
+        "stars": 41343
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4165,7 +4165,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 3481
+        "stars": 3495
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -4187,7 +4187,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 28453
+        "stars": 28458
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4209,7 +4209,7 @@
       "parent": {
         "name": "droidrun/droidrun",
         "url": "https://github.com/droidrun/droidrun",
-        "stars": 7667
+        "stars": 7668
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4253,7 +4253,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 124022
+        "stars": 124040
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4275,7 +4275,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 6037
+        "stars": 6121
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4319,7 +4319,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 5866
+        "stars": 5869
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4363,7 +4363,7 @@
       "parent": {
         "name": "zampierilucas/scx_horoscope",
         "url": "https://github.com/zampierilucas/scx_horoscope",
-        "stars": 1141
+        "stars": 1143
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4385,7 +4385,7 @@
       "parent": {
         "name": "unicodeveloper/globalthreatmap",
         "url": "https://github.com/unicodeveloper/globalthreatmap",
-        "stars": 1201
+        "stars": 1203
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -4429,7 +4429,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24120
+        "stars": 24124
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4495,7 +4495,7 @@
       "parent": {
         "name": "Avaiga/taipy",
         "url": "https://github.com/Avaiga/taipy",
-        "stars": 19067
+        "stars": 19068
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4605,7 +4605,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 36607
+        "stars": 36606
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -4759,7 +4759,7 @@
       "parent": {
         "name": "freelensapp/freelens",
         "url": "https://github.com/freelensapp/freelens",
-        "stars": 4607
+        "stars": 4609
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4847,7 +4847,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 114636
+        "stars": 114666
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -4957,7 +4957,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15464
+        "stars": 15468
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5001,7 +5001,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 10657
+        "stars": 10666
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5023,7 +5023,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 19291
+        "stars": 19425
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5111,7 +5111,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 8432
+        "stars": 8459
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -5331,7 +5331,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7152
+        "stars": 7155
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -5353,7 +5353,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51492
+        "stars": 51493
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -5375,7 +5375,7 @@
       "parent": {
         "name": "firecrawl/open-researcher",
         "url": "https://github.com/firecrawl/open-researcher",
-        "stars": 603
+        "stars": 604
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -5397,7 +5397,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 22644
+        "stars": 22649
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -5661,7 +5661,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39447
+        "stars": 39457
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5815,7 +5815,7 @@
       "parent": {
         "name": "probberechts/soccerdata",
         "url": "https://github.com/probberechts/soccerdata",
-        "stars": 1534
+        "stars": 1535
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -5859,7 +5859,7 @@
       "parent": {
         "name": "memodb-io/Acontext",
         "url": "https://github.com/memodb-io/Acontext",
-        "stars": 3005
+        "stars": 3008
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -5881,7 +5881,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 181716
+        "stars": 181726
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5903,7 +5903,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 10838
+        "stars": 10845
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5947,7 +5947,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12459
+        "stars": 12467
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6101,7 +6101,7 @@
       "parent": {
         "name": "robert-mcdermott/ai-knowledge-graph",
         "url": "https://github.com/robert-mcdermott/ai-knowledge-graph",
-        "stars": 1891
+        "stars": 1894
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -6123,7 +6123,7 @@
       "parent": {
         "name": "midday-ai/midday",
         "url": "https://github.com/midday-ai/midday",
-        "stars": 13917
+        "stars": 13926
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -6145,7 +6145,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16443
+        "stars": 16448
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6189,7 +6189,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56109
+        "stars": 56115
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6277,7 +6277,7 @@
       "parent": {
         "name": "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "url": "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "stars": 630
+        "stars": 631
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6365,7 +6365,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 15975
+        "stars": 16015
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -6387,7 +6387,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 105101
+        "stars": 105209
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -6475,7 +6475,7 @@
       "parent": {
         "name": "piratuks/invoice-builder",
         "url": "https://github.com/piratuks/invoice-builder",
-        "stars": 170
+        "stars": 171
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6651,7 +6651,7 @@
       "parent": {
         "name": "hotheadhacker/seedbox-lite",
         "url": "https://github.com/hotheadhacker/seedbox-lite",
-        "stars": 4484
+        "stars": 4485
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -6673,7 +6673,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 27898
+        "stars": 27912
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6695,7 +6695,7 @@
       "parent": {
         "name": "fstandhartinger/ralph-wiggum",
         "url": "https://github.com/fstandhartinger/ralph-wiggum",
-        "stars": 167
+        "stars": 168
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6717,7 +6717,7 @@
       "parent": {
         "name": "muratcankoylan/ralph-wiggum-marketer",
         "url": "https://github.com/muratcankoylan/ralph-wiggum-marketer",
-        "stars": 629
+        "stars": 630
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6739,7 +6739,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 14171
+        "stars": 14192
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6761,7 +6761,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 20442
+        "stars": 20455
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6849,7 +6849,7 @@
       "parent": {
         "name": "DevAgentForge/Open-Claude-Cowork",
         "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
-        "stars": 2873
+        "stars": 2872
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6915,7 +6915,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 95075
+        "stars": 95088
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -7219,7 +7219,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 181825
+        "stars": 181828
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
