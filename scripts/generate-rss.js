@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const SITE_URL = 'https://yebeai.github.io';
+const SITE_URL = 'https://moses-y.github.io';
 const SITE_TITLE = 'Moses Yebei - Blog';
 const SITE_DESCRIPTION = 'Technical articles and project deep-dives by Moses Yebei';
 

@@ -24,7 +24,7 @@ function generateBlogPostHTML(post) {
     <meta property="og:description" content="${(post.description || '').replace(/"/g, '&quot;').slice(0, 160)}">
     <meta property="og:image" content="${post.image}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://yebeai.github.io/blog/${post.name}.html">
+    <meta property="og:url" content="https://moses-y.github.io/blog/${post.name}.html">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -32,7 +32,7 @@ function generateBlogPostHTML(post) {
     <meta name="twitter:description" content="${(post.description || '').replace(/"/g, '&quot;').slice(0, 160)}">
     <meta name="twitter:image" content="${post.image}">
 
-    <link rel="canonical" href="https://yebeai.github.io/blog/${post.name}.html">
+    <link rel="canonical" href="https://moses-y.github.io/blog/${post.name}.html">
 
     <style>
         :root {
@@ -360,7 +360,7 @@ function generateBlogPostHTML(post) {
     <footer>
         <div class="container">
             <p>&copy; ${new Date().getFullYear()} Moses Yebei. Built with automation and coffee.</p>
-            <p style="margin-top: 8px;"><a href="../index.html">yebeai.github.io</a></p>
+            <p style="margin-top: 8px;"><a href="../index.html">moses-y.github.io</a></p>
         </div>
     </footer>
 
@@ -662,7 +662,7 @@ function generateBlogIndexHTML(posts, lastUpdated) {
     <footer>
         <div class="container">
             <p>&copy; ${new Date().getFullYear()} Moses Yebei</p>
-            <p style="margin-top: 8px;"><a href="../index.html">yebeai.github.io</a></p>
+            <p style="margin-top: 8px;"><a href="../index.html">moses-y.github.io</a></p>
         </div>
     </footer>
 
