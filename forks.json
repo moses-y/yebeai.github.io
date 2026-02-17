@@ -1,14 +1,303 @@
 {
-  "lastUpdated": "2026-02-17T06:19:05.341Z",
+  "lastUpdated": "2026-02-17T12:10:46.522Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 304,
+  "totalRepos": 307,
   "progress": {
-    "aiGenerated": 304,
+    "aiGenerated": 307,
     "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
+    {
+      "id": 1159908867,
+      "name": "graphrag-rs",
+      "displayName": "graphrag rs",
+      "description": "GraphRAG-rs is a high-performance, state-of-the-art Rust implementation of GraphRAG (Graph-based Retrieval Augmented Generation) that builds knowledge graphs from documents and enables natural language querying with configurable entity extraction and local LLM integration",
+      "summary": "## The Problem\n\nRetrieval-Augmented Generation (RAG) is powerful, but most implementations are either glued together Python scripts with questionable performance or SaaS products that lock you into their stack. Need a knowledge graph from your documents? Want to query it using natural language? Oh, and maybe you'd like to run it locally, in your browser, or scale it up to production servers? Good luck. Most solutions fall apart the second you need fine-grained control or care about performance.\n\n## What This Does\n\n`GraphRAG-rs` is a Rust implementation of RAG that actually respects your need for speed, modularity, and deployment flexibility. It's split into several components:  \n- The core logic lives in `graphrag-core/`, handling entity extraction, knowledge graph creation, and query pipelines.  \n- For folks who hate setup, the `graphrag-cli/` provides a command-line interface to run queries, test embeddings, or benchmark pipelines.  \n- Want to see it in action? Check out `examples/graphrag-leptos-demo/` for a WASM-based browser app or `examples/multi_document_pipeline.rs` for a server-side pipeline.\n\nIt supports three deployment modes: a traditional server (`cargo run --bin graphrag-server`), a WASM-only client (`trunk serve`), and a hybrid architecture that combines both. Need GPU acceleration? There's WebGPU support baked in. Prefer local embeddings to keep your data private? Integrate with Ollama or ONNX runtime. It's all configurable via various `*.toml` and `*.json5` files in `config/templates/`.\n\n## Real-World Use\n\nLet's say you're building a privacy-focused research app. You have a pile of academic papers in PDF format. Using `GraphRAG-rs`, you can:  \n1. Parse documents and extract entities with `graphrag-core/examples/advanced_nlp_demo.rs`.  \n2. Build a knowledge graph using the `GraphBuilder` in `graphrag-core/src/builder/mod.rs`.  \n3. Serve it in a browser with the WASM-based demo in `examples/graphrag-leptos-demo/`.  \n4. Run a query like \"Show connections between quantum mechanics and entropy\" and get meaningful results right in your browser.  \n\nFor extra credit, you can add Ollama for local embeddings or plug in Qdrant for vector search.\n\n## The Bottom Line\n\n`GraphRAG-rs` is fast, flexible, and overkill (in a good way). If you're hacking together a weekend project, this probably isn't for you. But if you need serious performance, local-first options, and full control over your RAG pipeline, it's worth your time. Just be ready to dig into the docs—this isn't a plug-and-play toy.",
+      "url": "https://github.com/moses-y/graphrag-rs",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "automataIA/graphrag-rs",
+        "url": "https://github.com/automataIA/graphrag-rs",
+        "stars": 149
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          ".cargo": 1,
+          "(root)": 9,
+          ".vscode": 1,
+          "benches": 7,
+          "config": 33,
+          "docs-example": 2,
+          "examples": 46,
+          "graphrag-cli": 32,
+          "graphrag-core": 69
+        },
+        "languages": {
+          "TOML": 26,
+          "JSON": 2,
+          "Markdown": 33,
+          "Rust": 97,
+          "HTML": 4,
+          "Shell": 4,
+          "JavaScript": 4,
+          "CSS": 1
+        },
+        "entryPoints": [
+          "examples/graphrag-leptos-demo/index.html",
+          "examples/graphrag-leptos-demo/src/lib.rs",
+          "examples/graphrag-leptos-demo/src/main.rs",
+          "examples/wasm-multi-doc-demo/app.js",
+          "examples/wasm-multi-doc-demo/index.html",
+          "examples/web-app/dist/index.html",
+          "examples/web-app/index.html",
+          "examples/web-app/src/lib.rs",
+          "examples/web-app/src/main.rs",
+          "graphrag-cli/src/main.rs"
+        ],
+        "configFiles": [
+          "Cargo.toml",
+          "examples/graphrag-leptos-demo/Cargo.toml",
+          "examples/web-app/Cargo.toml",
+          "graphrag-cli/Cargo.toml",
+          "graphrag-core/Cargo.toml"
+        ],
+        "dependencies": [
+          "Cargo.toml",
+          "examples/graphrag-leptos-demo/Cargo.toml",
+          "examples/web-app/Cargo.toml",
+          "graphrag-cli/Cargo.toml",
+          "graphrag-core/Cargo.toml"
+        ],
+        "testFiles": [
+          "examples/graphrag-leptos-demo/RUNTIME_TESTING_GUIDE.md",
+          "examples/graphrag-leptos-demo/test-helpers.js",
+          "examples/symposium_test.rs",
+          "examples/test_multi_doc_server.sh",
+          "examples/test_real_embeddings.rs",
+          "graphrag-core/src/api/tests.rs",
+          "graphrag-core/src/caching_test.rs"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "README.md",
+          "config/JSON5_CONFIG_GUIDE.md",
+          "config/templates/README.md",
+          "docs-example/Readme-First.txt",
+          "examples/graphrag-leptos-demo/README.md",
+          "examples/graphrag-leptos-demo/RUNTIME_TESTING_GUIDE.md",
+          "examples/readme.jpg",
+          "examples/wasm-multi-doc-demo/README.md",
+          "examples/web-app/README.md",
+          "graphrag-cli/README.md",
+          "graphrag-cli/USER_GUIDE.md",
+          "graphrag-core/README.md",
+          "graphrag-core/examples/README_symposium_trait_based_chunking.md"
+        ]
+      }
+    },
+    {
+      "id": 1159890860,
+      "name": "spacebot",
+      "displayName": "spacebot",
+      "description": "An AI agent for teams, communities, and multi-user environments.",
+      "summary": "## The Problem\nMost AI frameworks stall when faced with multiple users. You ask a question, and the AI goes quiet while it processes. This single-threaded approach can’t keep up in busy environments like Discord or Slack, where people expect instant responses. It’s frustrating when you're waiting for an AI to think while your teammates keep chatting.\n\n## What This Does\nSpacebot flips the script. It splits tasks into specialized processes so that conversations can happen concurrently without blocking. Check out the `interface/src/App.tsx` for the entry point, where it initializes multiple user interactions. The `interface/src/hooks` contains hooks like `useCortexChat` that manage chat states independently, allowing simultaneous conversations without a hitch.\n\nWant to run multiple agents? The setup in `docs/content/docs/(features)/multi-agent.mdx` explains how to deploy a friendly Discord bot alongside a no-nonsense dev assistant in Slack—all under one umbrella. Each agent operates with its own memory and identity, thanks to the architecture in `interface/src/lib`.\n\n## Real-World Use\nImagine a chaotic Discord server where five users are throwing questions at the bot. Thanks to Spacebot's batching system, it can coalesce those messages and respond intelligently. For example, using the `ChannelDetail.tsx` component, it can provide context-specific answers without losing track of ongoing conversations. \n\nIf you're coding in a Slack channel, Spacebot can handle long-running tasks via workers, letting other users ask quick questions in parallel. The `interface/src/routes/AgentConfig.tsx` manages agent settings, allowing quick adjustments on the fly.\n\n## The Bottom Line\nSpacebot is a solid choice for teams and communities that need an AI that doesn't go dark while processing tasks. It’s a bit heavy for small projects—if you’re just looking for a simple Q&A bot for personal use, this might be overkill. But for larger groups where multiple conversations are the norm, this setup could save a lot of frustration.",
+      "url": "https://github.com/moses-y/spacebot",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "spacedriveapp/spacebot",
+        "url": "https://github.com/spacedriveapp/spacebot",
+        "stars": 153
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 12,
+          ".github": 3,
+          "docs": 64,
+          "interface": 80,
+          "migrations": 14,
+          "prompts": 27
+        },
+        "languages": {
+          "YAML": 2,
+          "Markdown": 16,
+          "TOML": 2,
+          "Rust": 1,
+          "Shell": 1,
+          "TSX": 66,
+          "TypeScript": 16,
+          "CSS": 1,
+          "JSON": 14,
+          "HTML": 1,
+          "JavaScript": 1,
+          "SCSS": 2,
+          "SQL": 14
+        },
+        "entryPoints": [
+          "interface/index.html",
+          "interface/src/App.tsx",
+          "interface/src/ui/forms/index.ts",
+          "interface/src/ui/index.ts"
+        ],
+        "configFiles": [
+          "Cargo.toml",
+          "Dockerfile",
+          "docs/next.config.mjs",
+          "docs/package.json",
+          "docs/tsconfig.json",
+          "interface/package.json",
+          "interface/tailwind.config.ts",
+          "interface/tsconfig.json",
+          "interface/vite.config.ts"
+        ],
+        "dependencies": [
+          "Cargo.toml",
+          "docs/package.json",
+          "interface/package-lock.json",
+          "interface/package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "RUST_STYLE_GUIDE.md",
+          "docs/.gitignore",
+          "docs/README.md",
+          "docs/app/[[...slug]]/layout.tsx",
+          "docs/app/[[...slug]]/page.tsx",
+          "docs/app/api/search/route.ts",
+          "docs/app/global.css",
+          "docs/app/layout.tsx",
+          "docs/app/llms-full.txt/route.ts",
+          "docs/app/llms.mdx/docs/[[...slug]]/route.ts",
+          "docs/app/llms.txt/route.ts",
+          "docs/app/og/docs/[...slug]/route.tsx",
+          "docs/biome.json",
+          "docs/components/ai/page-actions.tsx",
+          "docs/content/docs/(configuration)/config.mdx",
+          "docs/content/docs/(configuration)/meta.json",
+          "docs/content/docs/(configuration)/permissions.mdx",
+          "docs/content/docs/(core)/agents.mdx",
+          "docs/content/docs/(core)/channels.mdx",
+          "docs/content/docs/(core)/compaction.mdx",
+          "docs/content/docs/(core)/cortex.mdx",
+          "docs/content/docs/(core)/memory.mdx",
+          "docs/content/docs/(core)/meta.json",
+          "docs/content/docs/(core)/philosophy.mdx",
+          "docs/content/docs/(core)/prompts.mdx",
+          "docs/content/docs/(core)/routing.mdx",
+          "docs/content/docs/(deployment)/meta.json",
+          "docs/content/docs/(deployment)/roadmap.mdx",
+          "docs/content/docs/(features)/browser.mdx",
+          "docs/content/docs/(features)/cron.mdx",
+          "docs/content/docs/(features)/ingestion.mdx",
+          "docs/content/docs/(features)/meta.json",
+          "docs/content/docs/(features)/opencode.mdx",
+          "docs/content/docs/(features)/tools.mdx",
+          "docs/content/docs/(features)/workers.mdx",
+          "docs/content/docs/(getting-started)/docker.mdx",
+          "docs/content/docs/(getting-started)/meta.json",
+          "docs/content/docs/(getting-started)/quickstart.mdx",
+          "docs/content/docs/(messaging)/discord-setup.mdx",
+          "docs/content/docs/(messaging)/messaging.mdx",
+          "docs/content/docs/(messaging)/meta.json",
+          "docs/content/docs/(messaging)/slack-setup.mdx",
+          "docs/content/docs/(messaging)/telegram-setup.mdx",
+          "docs/content/docs/index.mdx",
+          "docs/content/docs/meta.json",
+          "docs/design-docs/branch-and-spawn.md",
+          "docs/design-docs/cortex-chat.md",
+          "docs/design-docs/cortex-history.md",
+          "docs/design-docs/cortex-implementation.md",
+          "docs/design-docs/launch-script.md",
+          "docs/design-docs/launch-tweet.md",
+          "docs/design-docs/production-worker-failures.md",
+          "docs/design-docs/prompt-routing.md",
+          "docs/design-docs/user-scoped-memories.md",
+          "docs/docker.md",
+          "docs/lib/cn.ts",
+          "docs/lib/layout.shared.tsx",
+          "docs/lib/source.ts",
+          "docs/mdx-components.tsx",
+          "docs/next.config.mjs",
+          "docs/package.json",
+          "docs/pnpm-lock.yaml",
+          "docs/postcss.config.mjs",
+          "docs/source.config.ts",
+          "docs/tsconfig.json"
+        ]
+      }
+    },
+    {
+      "id": 1159778456,
+      "name": "VerseCrafter",
+      "displayName": "VerseCrafter",
+      "description": "VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control",
+      "summary": "## The Problem\n\nWorking with video generation that actually respects camera motion and object trajectories sucks. Most video diffusion models spit out pretty clips, but as soon as you want to control the camera path or object movement—forget it. You end up with janky results, or you hack together some control system that barely works. If you want real, direct geometric control over both camera and multiple objects, you’re out of luck with almost everything out there.\n\n## What This Does\n\n`VerseCrafter` gives you explicit 4D geometric control over video generation—camera motion, object motion, and their interaction. The key magic lives in `versecrafter/pipeline/pipeline_wan_versecrafter.py` where the pipeline wires up a frozen Wan2.1 video diffusion backbone and then injects geometry via a `GeoAdapter`. Everything related to 4D control—camera paths, 3D Gaussian object motion—is handled through JSON and NPZ files (see `demo_data/` and `config/`).\n\nYou get Blender integration (`blender_addon/`) for hands-on editing and trajectory export, plus a pile of scripts in `inference/` for fitting Gaussians (`fit_3D_gaussian.py`), running segmentation (`grounded_sam2_infer.py`), and full pipeline inference (`versecrafter_inference.py`). The project isn’t hiding the data: check `demo_data/` for real examples, from camera paths to rendered videos and masks.\n\n## Real-World Use\n\nSay you want to generate a street scene where the camera orbits a car and a person walks across the frame. You’d prep your control files (camera path as an NPZ, object trajectories as JSONs). Then you’d run something like:\n\n```bash\npython inference/versecrafter_inference.py --config config/wan2.1/wan_civitai.yaml \\\n  --camera-trajectory demo_data/.../custom_camera_trajectory.npz \\\n  --object-trajectories demo_data/.../custom_3D_gaussian_trajectory.json\n```\n\nEdit anything in Blender (using the `blender_addon`), re-export, and re-run. All your outputs—depths, masks, videos—land in `demo_data/` for inspection. No black box nonsense.\n\n## The Bottom Line\n\nIf you actually need precise camera and object motion control in video generation, VerseCrafter is one of the few open options that doesn’t lie to you about what’s possible. It’s fiddly to set up, eats VRAM for breakfast, and isn’t for quick experiments—but if you want explicit geometry in your video synthesis, this is the toolkit. If you just want pretty TikTok clips, look elsewhere.",
+      "url": "https://github.com/moses-y/VerseCrafter",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "TencentARC/VerseCrafter",
+        "url": "https://github.com/TencentARC/VerseCrafter",
+        "stars": 281
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 9,
+          "asset": 17,
+          "blender_addon": 4,
+          "config": 8,
+          "demo_data": 47,
+          "inference": 7,
+          "versecrafter": 6
+        },
+        "languages": {
+          "Markdown": 2,
+          "Python": 19,
+          "YAML": 5,
+          "JSON": 7,
+          "Shell": 1
+        },
+        "entryPoints": [],
+        "configFiles": [
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "README_BLENDER.md"
+        ]
+      }
+    },
     {
       "id": 1159567990,
       "name": "pinchtab",
@@ -23,7 +312,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 205
+        "stars": 238
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -90,7 +379,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 225
+        "stars": 318
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -133,7 +422,7 @@
       "parent": {
         "name": "HKUDS/AI-Trader",
         "url": "https://github.com/HKUDS/AI-Trader",
-        "stars": 11264
+        "stars": 11272
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -185,7 +474,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 3872
+        "stars": 4207
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -273,7 +562,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 7634
+        "stars": 7700
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -402,7 +691,7 @@
       "parent": {
         "name": "unitedbyai/droidclaw",
         "url": "https://github.com/unitedbyai/droidclaw",
-        "stars": 359
+        "stars": 423
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -527,7 +816,7 @@
       "parent": {
         "name": "philschmid/ia-agents",
         "url": "https://github.com/philschmid/ia-agents",
-        "stars": 17
+        "stars": 19
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -672,7 +961,7 @@
       "parent": {
         "name": "memvid/claude-brain",
         "url": "https://github.com/memvid/claude-brain",
-        "stars": 244
+        "stars": 254
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -734,7 +1023,7 @@
       "parent": {
         "name": "PurpleAILAB/Decepticon",
         "url": "https://github.com/PurpleAILAB/Decepticon",
-        "stars": 496
+        "stars": 512
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -800,7 +1089,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 60730
+        "stars": 60766
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -876,7 +1165,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 202418
+        "stars": 203368
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -898,7 +1187,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 5586
+        "stars": 5587
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1013,7 +1302,7 @@
       "parent": {
         "name": "ruzin/stenoai",
         "url": "https://github.com/ruzin/stenoai",
-        "stars": 314
+        "stars": 315
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1094,7 +1383,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 3909
+        "stars": 3913
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1254,7 +1543,7 @@
       "parent": {
         "name": "antvis/Infographic",
         "url": "https://github.com/antvis/Infographic",
-        "stars": 4382
+        "stars": 4385
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -1499,7 +1788,7 @@
       "parent": {
         "name": "harlan-zw/mdream",
         "url": "https://github.com/harlan-zw/mdream",
-        "stars": 784
+        "stars": 785
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1980,7 +2269,7 @@
       "parent": {
         "name": "roboflow/trackers",
         "url": "https://github.com/roboflow/trackers",
-        "stars": 2452
+        "stars": 2455
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2076,7 +2365,7 @@
       "parent": {
         "name": "Serial-Studio/Serial-Studio",
         "url": "https://github.com/Serial-Studio/Serial-Studio",
-        "stars": 6490
+        "stars": 6491
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2126,7 +2415,7 @@
       "parent": {
         "name": "gosom/google-maps-scraper",
         "url": "https://github.com/gosom/google-maps-scraper",
-        "stars": 3139
+        "stars": 3147
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2250,7 +2539,7 @@
       "parent": {
         "name": "openrundev/openrun",
         "url": "https://github.com/openrundev/openrun",
-        "stars": 774
+        "stars": 777
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2272,7 +2561,7 @@
       "parent": {
         "name": "crowdsecurity/crowdsec",
         "url": "https://github.com/crowdsecurity/crowdsec",
-        "stars": 12556
+        "stars": 12558
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2294,7 +2583,7 @@
       "parent": {
         "name": "ruvnet/wifi-densepose",
         "url": "https://github.com/ruvnet/wifi-densepose",
-        "stars": 6863
+        "stars": 6932
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -2316,7 +2605,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 21986
+        "stars": 21998
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2360,7 +2649,7 @@
       "parent": {
         "name": "JPCERTCC/LogonTracer",
         "url": "https://github.com/JPCERTCC/LogonTracer",
-        "stars": 3134
+        "stars": 3135
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2382,7 +2671,7 @@
       "parent": {
         "name": "TencentARC/MotionCrafter",
         "url": "https://github.com/TencentARC/MotionCrafter",
-        "stars": 72
+        "stars": 73
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2426,7 +2715,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 14979
+        "stars": 14984
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2448,7 +2737,7 @@
       "parent": {
         "name": "jlia0/tinyclaw",
         "url": "https://github.com/jlia0/tinyclaw",
-        "stars": 1983
+        "stars": 2003
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2514,7 +2803,7 @@
       "parent": {
         "name": "R44VC0RP/pgrok",
         "url": "https://github.com/R44VC0RP/pgrok",
-        "stars": 487
+        "stars": 497
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2558,7 +2847,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 13778
+        "stars": 14104
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2580,7 +2869,7 @@
       "parent": {
         "name": "The-Vibe-Company/companion",
         "url": "https://github.com/The-Vibe-Company/companion",
-        "stars": 1926
+        "stars": 1945
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2624,7 +2913,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2146
+        "stars": 2151
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2646,7 +2935,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 23854
+        "stars": 23860
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2734,7 +3023,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 32744
+        "stars": 32778
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2756,7 +3045,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 6100
+        "stars": 6121
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -2778,7 +3067,7 @@
       "parent": {
         "name": "OpenBMB/MiniCPM-o",
         "url": "https://github.com/OpenBMB/MiniCPM-o",
-        "stars": 23825
+        "stars": 23826
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2844,7 +3133,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 5420
+        "stars": 5432
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2888,7 +3177,7 @@
       "parent": {
         "name": "evinjohnn/natively-cluely-ai-assistant",
         "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
-        "stars": 492
+        "stars": 495
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2910,7 +3199,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 3740
+        "stars": 3879
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2932,7 +3221,7 @@
       "parent": {
         "name": "deepentropy/tvscreener",
         "url": "https://github.com/deepentropy/tvscreener",
-        "stars": 744
+        "stars": 747
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -2954,7 +3243,7 @@
       "parent": {
         "name": "wg-easy/wg-easy",
         "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24601
+        "stars": 24603
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3020,7 +3309,7 @@
       "parent": {
         "name": "rohunvora/x-research-skill",
         "url": "https://github.com/rohunvora/x-research-skill",
-        "stars": 769
+        "stars": 771
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3064,7 +3353,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 20523
+        "stars": 20693
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3086,7 +3375,7 @@
       "parent": {
         "name": "MiniCodeMonkey/chief",
         "url": "https://github.com/MiniCodeMonkey/chief",
-        "stars": 157
+        "stars": 161
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3108,7 +3397,7 @@
       "parent": {
         "name": "ComposioHQ/composio",
         "url": "https://github.com/ComposioHQ/composio",
-        "stars": 26597
+        "stars": 26603
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -3130,7 +3419,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 8943
+        "stars": 8948
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3196,7 +3485,7 @@
       "parent": {
         "name": "ascorbic/macrodata",
         "url": "https://github.com/ascorbic/macrodata",
-        "stars": 94
+        "stars": 93
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3262,7 +3551,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 201317
+        "stars": 201328
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -3284,7 +3573,7 @@
       "parent": {
         "name": "PrimeIntellect-ai/verifiers",
         "url": "https://github.com/PrimeIntellect-ai/verifiers",
-        "stars": 3838
+        "stars": 3839
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -3394,7 +3683,7 @@
       "parent": {
         "name": "sseanliu/VisionClaw",
         "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 983
+        "stars": 985
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3416,7 +3705,7 @@
       "parent": {
         "name": "Polymarket/agents",
         "url": "https://github.com/Polymarket/agents",
-        "stars": 2172
+        "stars": 2176
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3460,7 +3749,7 @@
       "parent": {
         "name": "m0n0x41d/quint-code",
         "url": "https://github.com/m0n0x41d/quint-code",
-        "stars": 1160
+        "stars": 1161
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -3570,7 +3859,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2221
+        "stars": 2225
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3592,7 +3881,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 15544
+        "stars": 15576
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3614,7 +3903,7 @@
       "parent": {
         "name": "miantiao-me/awesome-homelab",
         "url": "https://github.com/miantiao-me/awesome-homelab",
-        "stars": 1678
+        "stars": 1676
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3636,7 +3925,7 @@
       "parent": {
         "name": "tom-doerr/repo_posts",
         "url": "https://github.com/tom-doerr/repo_posts",
-        "stars": 231
+        "stars": 230
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3724,7 +4013,7 @@
       "parent": {
         "name": "Beingpax/VoiceInk",
         "url": "https://github.com/Beingpax/VoiceInk",
-        "stars": 3800
+        "stars": 3809
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3768,7 +4057,7 @@
       "parent": {
         "name": "Hawksight-AI/semantica",
         "url": "https://github.com/Hawksight-AI/semantica",
-        "stars": 695
+        "stars": 697
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3812,7 +4101,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 95560
+        "stars": 95601
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3834,7 +4123,7 @@
       "parent": {
         "name": "tinyfish-io/agentql",
         "url": "https://github.com/tinyfish-io/agentql",
-        "stars": 1228
+        "stars": 1229
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3878,7 +4167,7 @@
       "parent": {
         "name": "rivo/tview",
         "url": "https://github.com/rivo/tview",
-        "stars": 13558
+        "stars": 13563
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3922,7 +4211,7 @@
       "parent": {
         "name": "kizuna-ai-lab/sokuji",
         "url": "https://github.com/kizuna-ai-lab/sokuji",
-        "stars": 842
+        "stars": 843
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3944,7 +4233,7 @@
       "parent": {
         "name": "antirez/voxtral.c",
         "url": "https://github.com/antirez/voxtral.c",
-        "stars": 1315
+        "stars": 1326
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3988,7 +4277,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 7084
+        "stars": 7086
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4010,7 +4299,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1656
+        "stars": 1659
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4032,7 +4321,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 2962
+        "stars": 2987
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4116,7 +4405,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 20521
+        "stars": 20527
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4138,7 +4427,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44371
+        "stars": 44375
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4248,7 +4537,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20569
+        "stars": 20570
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -4270,7 +4559,7 @@
       "parent": {
         "name": "fastrepl/char",
         "url": "https://github.com/fastrepl/char",
-        "stars": 7717
+        "stars": 7721
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4336,7 +4625,7 @@
       "parent": {
         "name": "timoncool/videosos",
         "url": "https://github.com/timoncool/videosos",
-        "stars": 1107
+        "stars": 1106
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -4402,7 +4691,7 @@
       "parent": {
         "name": "agentic-mcp-tools/memora",
         "url": "https://github.com/agentic-mcp-tools/memora",
-        "stars": 285
+        "stars": 286
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4424,7 +4713,7 @@
       "parent": {
         "name": "AtsushiSakai/PythonRobotics",
         "url": "https://github.com/AtsushiSakai/PythonRobotics",
-        "stars": 28652
+        "stars": 28653
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4446,7 +4735,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 30091
+        "stars": 30097
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4490,7 +4779,7 @@
       "parent": {
         "name": "dair-ai/ML-Papers-Explained",
         "url": "https://github.com/dair-ai/ML-Papers-Explained",
-        "stars": 8527
+        "stars": 8528
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -4556,7 +4845,7 @@
       "parent": {
         "name": "anvaka/city-roads",
         "url": "https://github.com/anvaka/city-roads",
-        "stars": 8950
+        "stars": 8951
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4600,7 +4889,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6775
+        "stars": 6776
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4622,7 +4911,7 @@
       "parent": {
         "name": "fluffyriot/rpsync",
         "url": "https://github.com/fluffyriot/rpsync",
-        "stars": 19
+        "stars": 20
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4666,7 +4955,7 @@
       "parent": {
         "name": "jgarzik/botmaker",
         "url": "https://github.com/jgarzik/botmaker",
-        "stars": 219
+        "stars": 220
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4688,7 +4977,7 @@
       "parent": {
         "name": "clarsbyte/onshape-mcp",
         "url": "https://github.com/clarsbyte/onshape-mcp",
-        "stars": 136
+        "stars": 135
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4710,7 +4999,7 @@
       "parent": {
         "name": "reconurge/flowsint",
         "url": "https://github.com/reconurge/flowsint",
-        "stars": 2580
+        "stars": 2579
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4732,7 +5021,7 @@
       "parent": {
         "name": "supermemoryai/claude-supermemory",
         "url": "https://github.com/supermemoryai/claude-supermemory",
-        "stars": 2156
+        "stars": 2157
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4798,7 +5087,7 @@
       "parent": {
         "name": "xenodium/agent-shell",
         "url": "https://github.com/xenodium/agent-shell",
-        "stars": 692
+        "stars": 693
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4820,7 +5109,7 @@
       "parent": {
         "name": "commaai/openpilot",
         "url": "https://github.com/commaai/openpilot",
-        "stars": 60079
+        "stars": 60080
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4842,7 +5131,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 14799
+        "stars": 14805
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4930,7 +5219,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 5910
+        "stars": 5917
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -4952,7 +5241,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8299
+        "stars": 8303
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -4974,7 +5263,7 @@
       "parent": {
         "name": "hpcaitech/ColossalAI",
         "url": "https://github.com/hpcaitech/ColossalAI",
-        "stars": 41345
+        "stars": 41347
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -5018,7 +5307,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 3529
+        "stars": 3540
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -5040,7 +5329,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 28474
+        "stars": 28480
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5062,7 +5351,7 @@
       "parent": {
         "name": "droidrun/droidrun",
         "url": "https://github.com/droidrun/droidrun",
-        "stars": 7674
+        "stars": 7675
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5106,7 +5395,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 124111
+        "stars": 124139
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5128,7 +5417,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 6269
+        "stars": 6299
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5172,7 +5461,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 5892
+        "stars": 5899
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -5216,7 +5505,7 @@
       "parent": {
         "name": "zampierilucas/scx_horoscope",
         "url": "https://github.com/zampierilucas/scx_horoscope",
-        "stars": 1148
+        "stars": 1150
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -5282,7 +5571,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24153
+        "stars": 24154
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5458,7 +5747,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 36614
+        "stars": 36616
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -5524,7 +5813,7 @@
       "parent": {
         "name": "aiming-lab/SimpleMem",
         "url": "https://github.com/aiming-lab/SimpleMem",
-        "stars": 2885
+        "stars": 2905
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -5568,7 +5857,7 @@
       "parent": {
         "name": "antirez/iris.c",
         "url": "https://github.com/antirez/iris.c",
-        "stars": 1832
+        "stars": 1833
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5612,7 +5901,7 @@
       "parent": {
         "name": "freelensapp/freelens",
         "url": "https://github.com/freelensapp/freelens",
-        "stars": 4615
+        "stars": 4616
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -5634,7 +5923,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5364
+        "stars": 5371
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -5700,7 +5989,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 114830
+        "stars": 114866
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -5766,7 +6055,7 @@
       "parent": {
         "name": "IndAlok/rzweb",
         "url": "https://github.com/IndAlok/rzweb",
-        "stars": 624
+        "stars": 626
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -5810,7 +6099,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15493
+        "stars": 15500
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5854,7 +6143,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 10727
+        "stars": 10743
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5876,7 +6165,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 19847
+        "stars": 19929
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5964,7 +6253,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 8585
+        "stars": 8610
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -6008,7 +6297,7 @@
       "parent": {
         "name": "Liquid4All/cookbook",
         "url": "https://github.com/Liquid4All/cookbook",
-        "stars": 1148
+        "stars": 1150
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6030,7 +6319,7 @@
       "parent": {
         "name": "ln-dev7/square-ui",
         "url": "https://github.com/ln-dev7/square-ui",
-        "stars": 4785
+        "stars": 4793
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6184,7 +6473,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7175
+        "stars": 7178
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -6206,7 +6495,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51489
+        "stars": 51490
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6228,7 +6517,7 @@
       "parent": {
         "name": "firecrawl/open-researcher",
         "url": "https://github.com/firecrawl/open-researcher",
-        "stars": 606
+        "stars": 607
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6250,7 +6539,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 22661
+        "stars": 22668
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -6382,7 +6671,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 21716
+        "stars": 21722
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6514,7 +6803,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39475
+        "stars": 39480
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6668,7 +6957,7 @@
       "parent": {
         "name": "probberechts/soccerdata",
         "url": "https://github.com/probberechts/soccerdata",
-        "stars": 1540
+        "stars": 1543
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -6734,7 +7023,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 181734
+        "stars": 181744
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6756,7 +7045,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 10877
+        "stars": 10890
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6800,7 +7089,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12487
+        "stars": 12488
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6954,7 +7243,7 @@
       "parent": {
         "name": "robert-mcdermott/ai-knowledge-graph",
         "url": "https://github.com/robert-mcdermott/ai-knowledge-graph",
-        "stars": 1897
+        "stars": 1898
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -6976,7 +7265,7 @@
       "parent": {
         "name": "midday-ai/midday",
         "url": "https://github.com/midday-ai/midday",
-        "stars": 13986
+        "stars": 13995
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -6998,7 +7287,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16470
+        "stars": 16473
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7042,7 +7331,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56135
+        "stars": 56141
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -7064,7 +7353,7 @@
       "parent": {
         "name": "Qloapps/QloApps",
         "url": "https://github.com/Qloapps/QloApps",
-        "stars": 12104
+        "stars": 12115
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -7108,7 +7397,7 @@
       "parent": {
         "name": "frappe/crm",
         "url": "https://github.com/frappe/crm",
-        "stars": 2351
+        "stars": 2352
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -7218,7 +7507,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 16132
+        "stars": 16156
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -7240,7 +7529,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 105693
+        "stars": 105825
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -7350,7 +7639,7 @@
       "parent": {
         "name": "HQarroum/awesome-iot",
         "url": "https://github.com/HQarroum/awesome-iot",
-        "stars": 3842
+        "stars": 3843
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -7526,7 +7815,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 27951
+        "stars": 27961
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7592,7 +7881,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 14270
+        "stars": 14296
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -7614,7 +7903,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 20534
+        "stars": 20551
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -7702,7 +7991,7 @@
       "parent": {
         "name": "DevAgentForge/Open-Claude-Cowork",
         "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
-        "stars": 2876
+        "stars": 2877
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7768,7 +8057,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 95149
+        "stars": 95171
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -8072,7 +8361,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 181835
+        "stars": 181839
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
