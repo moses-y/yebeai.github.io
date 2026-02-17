@@ -372,8 +372,25 @@
         }
 
         .panel-section .file-list li {
-            padding: 0.2rem 0;
+            padding: 0.3rem 0.4rem;
             font-family: 'SF Mono', 'Fira Code', monospace;
+            border-radius: 4px;
+            transition: background 0.15s;
+        }
+
+        .panel-section .file-list li:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .panel-section .bar {
+            border-radius: 4px;
+            padding: 0.2rem 0.4rem;
+            margin: 0 -0.4rem;
+            transition: background 0.15s;
+        }
+
+        .panel-section .bar:hover {
+            background: var(--bg-card-hover);
         }
 
         /* Loading */
@@ -1007,16 +1024,25 @@
 
         // Directory nodes
         Object.entries(kg.directories || {}).sort((a, b) => b[1] - a[1]).slice(0, 12).forEach(([dir, count]) => {
-            const n = { id: 'dir-' + dir, name: dir + '/', type: 'directory', count, radius: 8 + Math.sqrt(count) * 2 };
+            const n = { id: 'dir-' + dir, name: dir + '/', dirName: dir, type: 'directory', count, radius: 8 + Math.sqrt(count) * 2 };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: count });
         });
 
-        // Language nodes
+        // Language nodes - include repo count info
         Object.entries(kg.languages || {}).sort((a, b) => b[1] - a[1]).slice(0, 10).forEach(([lang, count]) => {
-            const n = { id: 'lang-' + lang, name: lang, type: 'language', count, radius: 8 + Math.sqrt(count) * 2 };
+            // Count how many repos use this language
+            const reposWithLang = allData.filter(r => r.knowledgeGraph?.languages?.[lang]).length;
+            const n = { id: 'lang-' + lang, name: lang, type: 'language', count, reposWithLang, radius: 8 + Math.sqrt(count) * 2 };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: count });
+        });
+
+        // Framework nodes (if available)
+        (kg.frameworks || []).slice(0, 6).forEach((fw, i) => {
+            const n = { id: 'fw-' + i, name: fw, type: 'framework', radius: 10 };
+            nodes.push(n);
+            links.push({ source: 'center', target: n.id, value: 2 });
         });
 
         // Entry point nodes
@@ -1033,8 +1059,19 @@
             links.push({ source: 'center', target: n.id, value: 1 });
         });
 
-        // Link dirs to languages (if possible)
-        // This creates a richer graph by connecting directories to languages
+        // CI/CD node if present
+        if (kg.hasCI && kg.ciPlatform) {
+            const n = { id: 'ci', name: kg.ciPlatform, type: 'ci', radius: 8 };
+            nodes.push(n);
+            links.push({ source: 'center', target: n.id, value: 1 });
+        }
+
+        // Docker node if present
+        if (kg.hasDocker) {
+            const n = { id: 'docker', name: 'Docker', type: 'docker', radius: 8 };
+            nodes.push(n);
+            links.push({ source: 'center', target: n.id, value: 1 });
+        }
 
         const svg = d3.select(container).append('svg')
             .attr('width', width)
@@ -1055,8 +1092,11 @@
             repo: 'var(--accent)',
             directory: '#22c55e',
             language: null, // uses langColors
+            framework: '#8b5cf6',
             entry: '#f59e0b',
-            config: '#ef4444'
+            config: '#ef4444',
+            ci: '#3b82f6',
+            docker: '#0ea5e9'
         };
 
         const link = g.append('g')
@@ -1097,12 +1137,31 @@
                 event.stopPropagation();
                 createRipple(g, d.x, d.y, d.type === 'language' ? getColor(d.name) : typeColors[d.type]);
 
+                const repoUrl = repo.url || `https://github.com/moses-y/${repo.name}`;
+
                 if (d.type === 'repo') {
                     // Open GitHub
-                    window.open(repo.url || `https://github.com/moses-y/${repo.name}`, '_blank');
+                    window.open(repoUrl, '_blank');
+                } else if (d.type === 'directory') {
+                    // Open directory on GitHub
+                    const dirPath = d.dirName === '(root)' ? '' : d.dirName;
+                    window.open(`${repoUrl}/tree/main/${dirPath}`, '_blank');
+                } else if (d.type === 'language') {
+                    // Go back and filter by this language
+                    goBack();
+                    setTimeout(() => filterByLanguage(d.name), 200);
                 } else if (d.type === 'entry' || d.type === 'config') {
                     // Open file on GitHub
-                    window.open(`${repo.url || `https://github.com/moses-y/${repo.name}`}/blob/main/${d.name}`, '_blank');
+                    window.open(`${repoUrl}/blob/main/${d.name}`, '_blank');
+                } else if (d.type === 'ci') {
+                    // Open workflows folder
+                    window.open(`${repoUrl}/tree/main/.github/workflows`, '_blank');
+                } else if (d.type === 'docker') {
+                    // Open Dockerfile
+                    window.open(`${repoUrl}/blob/main/Dockerfile`, '_blank');
+                } else if (d.type === 'framework') {
+                    // Search for framework on the repo
+                    window.open(`${repoUrl}/search?q=${encodeURIComponent(d.name)}`, '_blank');
                 }
             });
 
@@ -1129,7 +1188,7 @@
         node.filter(d => d.type !== 'repo')
             .append('text')
             .text(d => {
-                const labels = { directory: '📁', language: '💻', entry: '🚀', config: '⚙️' };
+                const labels = { directory: '📁', language: '💻', framework: '🔧', entry: '🚀', config: '⚙️', ci: '🔄', docker: '🐳' };
                 return labels[d.type] || '';
             })
             .attr('text-anchor', 'middle')
@@ -1159,11 +1218,27 @@
 
             let html = `<h4>${d.name}</h4>`;
             if (d.count) html += `<div class="detail">${d.count} files</div>`;
-            if (d.type !== 'repo') html += `<div class="detail" style="margin-top:2px">Type: ${d.type}</div>`;
+
+            // Type-specific info
+            if (d.type === 'language' && d.reposWithLang) {
+                html += `<div class="detail" style="margin-top:4px">${d.reposWithLang} repos use ${d.name}</div>`;
+            }
+
+            // Click hints based on type
             if (d.type === 'repo') {
                 html += `<div class="click-hint">Click to open on GitHub</div>`;
+            } else if (d.type === 'directory') {
+                html += `<div class="click-hint">Click to browse folder</div>`;
+            } else if (d.type === 'language') {
+                html += `<div class="click-hint">Click to filter all repos by ${d.name}</div>`;
             } else if (d.type === 'entry' || d.type === 'config') {
                 html += `<div class="click-hint">Click to view file</div>`;
+            } else if (d.type === 'framework') {
+                html += `<div class="click-hint">Click to search in repo</div>`;
+            } else if (d.type === 'ci') {
+                html += `<div class="click-hint">Click to view workflows</div>`;
+            } else if (d.type === 'docker') {
+                html += `<div class="click-hint">Click to view Dockerfile</div>`;
             }
             tooltip.innerHTML = html;
             tooltip.style.left = (event.clientX + 12) + 'px';
@@ -1209,6 +1284,21 @@
         </a>`;
         if (d.description) html += `<p style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:1rem">${d.description}</p>`;
 
+        // Tech stack badges
+        const badges = [];
+        if (kg.frameworks && kg.frameworks.length > 0) {
+            kg.frameworks.forEach(fw => badges.push(`<span class="tag" style="background:rgba(139,92,246,0.2);border-color:rgba(139,92,246,0.4)">🔧 ${fw}</span>`));
+        }
+        if (kg.hasDocker) badges.push(`<span class="tag" style="background:rgba(14,165,233,0.2);border-color:rgba(14,165,233,0.4)">🐳 Docker</span>`);
+        if (kg.hasCI) badges.push(`<span class="tag" style="background:rgba(59,130,246,0.2);border-color:rgba(59,130,246,0.4)">🔄 ${kg.ciPlatform}</span>`);
+        if (kg.packageManager) badges.push(`<span class="tag" style="background:rgba(34,197,94,0.2);border-color:rgba(34,197,94,0.4)">📦 ${kg.packageManager}</span>`);
+
+        if (badges.length > 0) {
+            html += '<div class="panel-section"><h4>Tech Stack</h4>';
+            html += '<div style="display:flex;flex-wrap:wrap;gap:4px">' + badges.join('') + '</div>';
+            html += '</div>';
+        }
+
         // Languages
         if (kg.languages && Object.keys(kg.languages).length > 0) {
             const sorted = Object.entries(kg.languages).sort((a, b) => b[1] - a[1]);
@@ -1228,7 +1318,9 @@
             html += '<div class="panel-section"><h4>Directories</h4>';
             sorted.slice(0, 8).forEach(([dir, count]) => {
                 const pct = Math.round(count / max * 100);
-                html += `<div class="bar"><span class="bar-label">${dir}/</span><div class="bar-fill" style="width:${pct}px;background:#22c55e"></div><span class="bar-count">${count}</span></div>`;
+                const ghUrl = repoUrl || `https://github.com/moses-y/${d.repoName}`;
+                const dirLink = dir === '(root)' ? ghUrl : `${ghUrl}/tree/main/${dir}`;
+                html += `<div class="bar" style="cursor:pointer" onclick="window.open('${dirLink}','_blank')"><span class="bar-label">${dir}/</span><div class="bar-fill" style="width:${pct}px;background:#22c55e"></div><span class="bar-count">${count}</span></div>`;
             });
             html += '</div>';
         }
@@ -1236,27 +1328,36 @@
         // Entry points
         if (kg.entryPoints && kg.entryPoints.length > 0) {
             html += '<div class="panel-section"><h4>Entry Points</h4><ul class="file-list">';
-            kg.entryPoints.slice(0, 6).forEach(f => { html += `<li>🚀 ${f}</li>`; });
+            kg.entryPoints.slice(0, 6).forEach(f => {
+                const ghUrl = repoUrl || `https://github.com/moses-y/${d.repoName}`;
+                html += `<li style="cursor:pointer" onclick="window.open('${ghUrl}/blob/main/${f}','_blank')">🚀 ${f}</li>`;
+            });
             html += '</ul></div>';
         }
 
         // Config files
         if (kg.configFiles && kg.configFiles.length > 0) {
             html += '<div class="panel-section"><h4>Config & Build</h4><ul class="file-list">';
-            kg.configFiles.slice(0, 8).forEach(f => { html += `<li>⚙️ ${f}</li>`; });
+            kg.configFiles.slice(0, 8).forEach(f => {
+                const ghUrl = repoUrl || `https://github.com/moses-y/${d.repoName}`;
+                html += `<li style="cursor:pointer" onclick="window.open('${ghUrl}/blob/main/${f}','_blank')">⚙️ ${f}</li>`;
+            });
             html += '</ul></div>';
         }
 
         // Dependencies
         if (kg.dependencies && kg.dependencies.length > 0) {
             html += '<div class="panel-section"><h4>Dependency Files</h4><ul class="file-list">';
-            kg.dependencies.forEach(f => { html += `<li>📦 ${f}</li>`; });
+            kg.dependencies.forEach(f => {
+                const ghUrl = repoUrl || `https://github.com/moses-y/${d.repoName}`;
+                html += `<li style="cursor:pointer" onclick="window.open('${ghUrl}/blob/main/${f}','_blank')">📦 ${f}</li>`;
+            });
             html += '</ul></div>';
         }
 
         // Stats
         html += '<div class="panel-section"><h4>Stats</h4>';
-        html += `<div class="detail">Total files: ${d.totalFiles || '—'}</div>`;
+        html += `<div class="detail">Total files: ${kg.totalFiles || d.totalFiles || '—'}</div>`;
         html += `<div class="detail">Tests: ${kg.testFiles?.length || 0} files</div>`;
         html += `<div class="detail">Docs: ${kg.docs?.length || 0} files</div>`;
         if (d.stars !== undefined) html += `<div class="detail">Stars: ★ ${d.stars}</div>`;

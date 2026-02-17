@@ -136,13 +136,20 @@ async function fetchRepoTree(repo) {
 // Build knowledge graph from file tree to extract structured relationships
 function buildKnowledgeGraph(fileTree) {
   const graph = {
+    totalFiles: fileTree.length,
     directories: {},
     languages: {},
+    frameworks: [],
+    packageManager: null,
+    hasDocker: false,
+    hasCI: false,
+    ciPlatform: null,
     entryPoints: [],
     configFiles: [],
     dependencies: [],
     testFiles: [],
-    docs: []
+    docs: [],
+    fileTypes: {}
   };
 
   const extToLang = {
@@ -190,20 +197,73 @@ function buildKnowledgeGraph(fileTree) {
   const testPatterns = ['test', 'spec', '__test__', '__tests__', '_test.'];
   const docPatterns = ['doc/', 'docs/', 'readme', 'changelog', 'contributing', 'license', 'guide'];
 
+  // Framework detection patterns
+  const frameworkIndicators = {
+    'React': ['package.json', () => fileTree.some(f => f.includes('react') || f.endsWith('.jsx') || f.endsWith('.tsx'))],
+    'Next.js': ['next.config.js', 'next.config.ts', 'next.config.mjs'],
+    'Vue': ['.vue', 'vue.config.js', 'nuxt.config.js', 'nuxt.config.ts'],
+    'Svelte': ['.svelte', 'svelte.config.js'],
+    'Angular': ['angular.json', '.angular'],
+    'Django': ['manage.py', 'settings.py', 'wsgi.py'],
+    'Flask': ['app.py', () => fileTree.some(f => f.includes('flask'))],
+    'FastAPI': [() => fileTree.some(f => f.includes('fastapi'))],
+    'Express': ['app.js', 'server.js', () => fileTree.some(f => f.includes('express'))],
+    'NestJS': ['nest-cli.json'],
+    'Rails': ['Gemfile', 'config/routes.rb'],
+    'Spring': ['pom.xml', () => fileTree.some(f => f.includes('spring'))],
+    'Laravel': ['artisan', 'composer.json'],
+    'Tailwind': ['tailwind.config.js', 'tailwind.config.ts'],
+    'Docker': ['Dockerfile', 'docker-compose.yml', 'docker-compose.yaml'],
+    'Kubernetes': [() => fileTree.some(f => f.endsWith('.yaml') && (f.includes('deployment') || f.includes('service') || f.includes('k8s')))],
+    'Terraform': ['.tf'],
+    'GraphQL': ['.graphql', 'schema.graphql'],
+  };
+
+  // CI/CD detection
+  const ciIndicators = {
+    'GitHub Actions': ['.github/workflows'],
+    'GitLab CI': ['.gitlab-ci.yml'],
+    'CircleCI': ['.circleci/config.yml'],
+    'Travis CI': ['.travis.yml'],
+    'Jenkins': ['Jenkinsfile'],
+    'Azure Pipelines': ['azure-pipelines.yml'],
+  };
+
+  // Package manager detection
+  const pmIndicators = {
+    'npm': ['package-lock.json'],
+    'yarn': ['yarn.lock'],
+    'pnpm': ['pnpm-lock.yaml'],
+    'pip': ['requirements.txt'],
+    'poetry': ['poetry.lock'],
+    'cargo': ['Cargo.lock'],
+    'go modules': ['go.sum'],
+    'composer': ['composer.lock'],
+    'bundler': ['Gemfile.lock'],
+    'maven': ['pom.xml'],
+    'gradle': ['build.gradle', 'build.gradle.kts'],
+  };
+
   for (const filePath of fileTree) {
     const parts = filePath.split('/');
     const fileName = parts[parts.length - 1].toLowerCase();
+    const originalFileName = parts[parts.length - 1];
     const dotIndex = fileName.lastIndexOf('.');
     const ext = dotIndex > 0 ? fileName.substring(dotIndex) : '';
     const dirPath = parts.length > 1 ? parts.slice(0, -1).join('/') : '(root)';
 
-    // Count directory distribution
+    // Count directory distribution (all levels)
     const topDir = parts.length > 1 ? parts[0] : '(root)';
     graph.directories[topDir] = (graph.directories[topDir] || 0) + 1;
 
     // Language distribution
     if (ext && extToLang[ext]) {
       graph.languages[extToLang[ext]] = (graph.languages[extToLang[ext]] || 0) + 1;
+    }
+
+    // File type distribution
+    if (ext) {
+      graph.fileTypes[ext] = (graph.fileTypes[ext] || 0) + 1;
     }
 
     // Entry points
@@ -230,7 +290,43 @@ function buildKnowledgeGraph(fileTree) {
     if (docPatterns.some(p => filePath.toLowerCase().includes(p))) {
       graph.docs.push(filePath);
     }
+
+    // Docker detection
+    if (fileName === 'dockerfile' || fileName.startsWith('docker-compose')) {
+      graph.hasDocker = true;
+    }
+
+    // CI detection
+    for (const [ci, patterns] of Object.entries(ciIndicators)) {
+      if (patterns.some(p => filePath.toLowerCase().includes(p.toLowerCase()))) {
+        graph.hasCI = true;
+        graph.ciPlatform = ci;
+      }
+    }
+
+    // Package manager detection
+    for (const [pm, patterns] of Object.entries(pmIndicators)) {
+      if (patterns.some(p => fileName === p.toLowerCase())) {
+        graph.packageManager = pm;
+      }
+    }
   }
+
+  // Framework detection (run after file loop for function-based checks)
+  for (const [framework, indicators] of Object.entries(frameworkIndicators)) {
+    const detected = indicators.some(indicator => {
+      if (typeof indicator === 'function') {
+        return indicator();
+      }
+      return fileTree.some(f => f.toLowerCase().includes(indicator.toLowerCase()));
+    });
+    if (detected) {
+      graph.frameworks.push(framework);
+    }
+  }
+
+  // Dedupe frameworks
+  graph.frameworks = [...new Set(graph.frameworks)];
 
   return graph;
 }
@@ -238,6 +334,23 @@ function buildKnowledgeGraph(fileTree) {
 // Format knowledge graph as structured context for AI prompt
 function formatKnowledgeGraph(graph) {
   const sections = [];
+
+  // Overview
+  sections.push(`OVERVIEW: ${graph.totalFiles} files total`);
+
+  // Frameworks detected
+  if (graph.frameworks.length > 0) {
+    sections.push('FRAMEWORKS/TOOLS DETECTED:\n  ' + graph.frameworks.join(', '));
+  }
+
+  // Tech stack info
+  const stackInfo = [];
+  if (graph.packageManager) stackInfo.push(`Package Manager: ${graph.packageManager}`);
+  if (graph.hasDocker) stackInfo.push('Docker: Yes');
+  if (graph.hasCI) stackInfo.push(`CI/CD: ${graph.ciPlatform}`);
+  if (stackInfo.length > 0) {
+    sections.push('TECH STACK:\n  ' + stackInfo.join('\n  '));
+  }
 
   // Top directories by file count
   const sortedDirs = Object.entries(graph.directories)
