@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knowledge Graph | Moses Yebei</title>
-    <meta name="description" content="Interactive knowledge graph visualization of repository structures, languages, and relationships.">
+    <title>Code Graph | Moses Yebei</title>
+    <meta name="description" content="Interactive visualization of repository structures, languages, and relationships.">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔗</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,7 +178,7 @@
             gap: 0.4rem;
         }
 
-        .view-btn {
+        .back-btn {
             background: var(--bg-card);
             border: 1px solid var(--border);
             color: var(--text-secondary);
@@ -188,10 +188,30 @@
             font-family: inherit;
             font-size: 0.8rem;
             transition: all 0.2s;
+            display: none;
+            align-items: center;
+            gap: 0.4rem;
         }
 
-        .view-btn:hover { border-color: var(--border-hover); color: var(--text-primary); }
-        .view-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .back-btn:hover { border-color: var(--accent); color: var(--text-primary); background: var(--bg-card-hover); }
+        .back-btn.visible { display: flex; }
+
+        .current-repo {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .current-repo.visible { display: flex; }
+
+        .current-repo .repo-name {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
         .stats-bar {
             margin-left: auto;
@@ -212,6 +232,11 @@
             left: 0;
             right: 0;
             bottom: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #graph-container.transitioning {
+            opacity: 0;
         }
 
         #graph-container svg {
@@ -388,7 +413,7 @@
     <nav>
         <div class="nav-left">
             <a href="index.html" class="nav-logo">MY</a>
-            <span class="nav-title">Knowledge Graph Explorer</span>
+            <span class="nav-title">Code Graph</span>
             <ul class="nav-links">
                 <li><a href="index.html">← Portfolio</a></li>
                 <li><a href="index.html#projects">Projects</a></li>
@@ -408,25 +433,24 @@
 
     <!-- Controls -->
     <div class="controls">
-        <label>
-            View:
-            <select id="view-mode">
-                <option value="ecosystem">Ecosystem Overview</option>
-                <option value="single">Single Repo</option>
-            </select>
-        </label>
-        <label id="repo-select-wrapper" style="display:none">
-            Repo:
-            <select id="repo-select"></select>
-        </label>
-        <label>
+        <button class="back-btn" id="back-btn" onclick="goBack()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            All Repos
+        </button>
+        <div class="current-repo" id="current-repo">
+            <span>Viewing:</span>
+            <span class="repo-name" id="current-repo-name"></span>
+        </div>
+        <label id="search-wrapper">
             Search:
             <input type="text" id="search" placeholder="Filter repos..." style="width:140px">
         </label>
         <div class="stats-bar" id="stats-bar">
             <span>Repos: <strong id="stat-repos">0</strong></span>
             <span>Languages: <strong id="stat-langs">0</strong></span>
-            <span>With KG: <strong id="stat-kg">0</strong></span>
+            <span>With Data: <strong id="stat-kg">0</strong></span>
         </div>
     </div>
 
@@ -434,7 +458,7 @@
     <div id="graph-container">
         <div class="loading" id="loading">
             <div class="spinner"></div>
-            <span>Loading knowledge graphs...</span>
+            <span>Loading code graph...</span>
         </div>
     </div>
 
@@ -488,6 +512,7 @@
     // State
     let allData = [];
     let currentView = 'ecosystem';
+    let currentRepo = null;
 
     // Load data
     async function loadData() {
@@ -507,45 +532,71 @@
             });
             document.getElementById('stat-langs').textContent = allLangs.size;
 
-            // Populate repo selector
-            const sel = document.getElementById('repo-select');
-            allData.sort((a, b) => a.name.localeCompare(b.name)).forEach(f => {
-                const opt = document.createElement('option');
-                opt.value = f.name;
-                opt.textContent = f.displayName || f.name;
-                sel.appendChild(opt);
-            });
-
             document.getElementById('loading').style.display = 'none';
             renderGraph();
         } catch (e) {
             document.getElementById('loading').innerHTML =
-                '<span style="color:#ef4444">Knowledge graphs are not yet available. They will be generated during the next data update.</span>';
+                '<span style="color:#ef4444">Code graph data is not yet available. It will be generated during the next data update.</span>';
             console.error('Load error:', e);
         }
     }
 
     // Event listeners
-    document.getElementById('view-mode').addEventListener('change', (e) => {
-        currentView = e.target.value;
-        document.getElementById('repo-select-wrapper').style.display =
-            currentView === 'single' ? '' : 'none';
-        renderGraph();
-    });
-
-    document.getElementById('repo-select').addEventListener('change', () => renderGraph());
-
     document.getElementById('search').addEventListener('input', (e) => {
-        renderGraph(e.target.value.toLowerCase());
+        if (currentView === 'ecosystem') {
+            renderGraph(e.target.value.toLowerCase());
+        }
     });
+
+    function updateUI() {
+        const backBtn = document.getElementById('back-btn');
+        const currentRepoEl = document.getElementById('current-repo');
+        const searchWrapper = document.getElementById('search-wrapper');
+
+        if (currentView === 'single' && currentRepo) {
+            backBtn.classList.add('visible');
+            currentRepoEl.classList.add('visible');
+            document.getElementById('current-repo-name').textContent = currentRepo.displayName || currentRepo.name;
+            searchWrapper.style.display = 'none';
+        } else {
+            backBtn.classList.remove('visible');
+            currentRepoEl.classList.remove('visible');
+            searchWrapper.style.display = '';
+        }
+    }
+
+    function drillIntoRepo(repo) {
+        const container = document.getElementById('graph-container');
+        container.classList.add('transitioning');
+
+        setTimeout(() => {
+            currentView = 'single';
+            currentRepo = repo;
+            updateUI();
+            renderSingleRepoGraph(repo);
+            container.classList.remove('transitioning');
+        }, 150);
+    }
+
+    function goBack() {
+        const container = document.getElementById('graph-container');
+        container.classList.add('transitioning');
+        closeSidePanel();
+
+        setTimeout(() => {
+            currentView = 'ecosystem';
+            currentRepo = null;
+            updateUI();
+            renderGraph(document.getElementById('search').value.toLowerCase());
+            container.classList.remove('transitioning');
+        }, 150);
+    }
 
     function renderGraph(filter) {
         if (currentView === 'ecosystem') {
             renderEcosystemGraph(filter);
-        } else {
-            const name = document.getElementById('repo-select').value;
-            const repo = allData.find(f => f.name === name);
-            if (repo) renderSingleRepoGraph(repo);
+        } else if (currentRepo) {
+            renderSingleRepoGraph(currentRepo);
         }
     }
 
@@ -683,9 +734,12 @@
             })
             .attr('stroke', d => d.type === 'language' ? getColor(d.name) : 'var(--border)')
             .attr('stroke-width', d => d.type === 'language' ? 2 : 1)
-            .attr('cursor', 'pointer')
+            .attr('cursor', d => (d.type === 'repo' && d.kg) ? 'pointer' : 'default')
             .on('click', (event, d) => {
-                if (d.type === 'repo' && d.kg) openSidePanel(d);
+                if (d.type === 'repo' && d.kg) {
+                    const repo = allData.find(f => f.name === d.repoName);
+                    if (repo) drillIntoRepo(repo);
+                }
             });
 
         // Labels for language hubs
