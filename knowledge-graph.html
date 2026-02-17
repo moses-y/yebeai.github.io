@@ -398,6 +398,109 @@
 
         @keyframes spin { to { transform: rotate(360deg); } }
 
+        /* Node interactions */
+        .node-circle {
+            transition: filter 0.2s, transform 0.2s;
+        }
+
+        .node-circle.clickable {
+            cursor: pointer;
+        }
+
+        .node-circle.clickable:hover {
+            filter: brightness(1.2) drop-shadow(0 0 8px currentColor);
+        }
+
+        .node-group.dimmed .node-circle {
+            opacity: 0.15;
+        }
+
+        .node-group.dimmed text {
+            opacity: 0.15;
+        }
+
+        .link-line.dimmed {
+            opacity: 0.05 !important;
+        }
+
+        .link-line.highlighted {
+            opacity: 0.8 !important;
+            stroke-width: 3px !important;
+        }
+
+        /* Ripple effect */
+        @keyframes ripple {
+            0% { r: 0; opacity: 0.6; }
+            100% { r: 50; opacity: 0; }
+        }
+
+        .ripple {
+            fill: var(--accent);
+            pointer-events: none;
+        }
+
+        /* Filter badge */
+        .filter-badge {
+            display: none;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .filter-badge.visible { display: flex; }
+
+        .filter-badge .clear-filter {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-badge .clear-filter:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* GitHub button in panel */
+        .github-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-bottom: 1rem;
+        }
+
+        .github-btn:hover {
+            border-color: var(--accent);
+            background: var(--bg-card-hover);
+        }
+
+        /* Clickable hint */
+        .click-hint {
+            font-size: 0.7rem;
+            color: var(--text-tertiary);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav { padding: 0.75rem 1rem; }
@@ -442,6 +545,10 @@
         <div class="current-repo" id="current-repo">
             <span>Viewing:</span>
             <span class="repo-name" id="current-repo-name"></span>
+        </div>
+        <div class="filter-badge" id="filter-badge">
+            <span id="filter-label">JavaScript</span>
+            <button class="clear-filter" onclick="clearLanguageFilter()">✕</button>
         </div>
         <label id="search-wrapper">
             Search:
@@ -513,6 +620,7 @@
     let allData = [];
     let currentView = 'ecosystem';
     let currentRepo = null;
+    let filterLanguage = null;
 
     // Load data
     async function loadData() {
@@ -552,17 +660,54 @@
         const backBtn = document.getElementById('back-btn');
         const currentRepoEl = document.getElementById('current-repo');
         const searchWrapper = document.getElementById('search-wrapper');
+        const filterBadge = document.getElementById('filter-badge');
 
         if (currentView === 'single' && currentRepo) {
             backBtn.classList.add('visible');
             currentRepoEl.classList.add('visible');
             document.getElementById('current-repo-name').textContent = currentRepo.displayName || currentRepo.name;
             searchWrapper.style.display = 'none';
+            filterBadge.classList.remove('visible');
         } else {
             backBtn.classList.remove('visible');
             currentRepoEl.classList.remove('visible');
             searchWrapper.style.display = '';
+
+            if (filterLanguage) {
+                filterBadge.classList.add('visible');
+                document.getElementById('filter-label').textContent = filterLanguage;
+            } else {
+                filterBadge.classList.remove('visible');
+            }
         }
+    }
+
+    function filterByLanguage(lang) {
+        filterLanguage = lang;
+        updateUI();
+        renderGraph(document.getElementById('search').value.toLowerCase());
+    }
+
+    function clearLanguageFilter() {
+        filterLanguage = null;
+        updateUI();
+        renderGraph(document.getElementById('search').value.toLowerCase());
+    }
+
+    function createRipple(g, x, y, color) {
+        const ripple = g.append('circle')
+            .attr('class', 'ripple')
+            .attr('cx', x)
+            .attr('cy', y)
+            .attr('r', 0)
+            .attr('fill', color || 'var(--accent)')
+            .attr('opacity', 0.6);
+
+        ripple.transition()
+            .duration(400)
+            .attr('r', 50)
+            .attr('opacity', 0)
+            .remove();
     }
 
     function drillIntoRepo(repo) {
@@ -606,6 +751,16 @@
         container.querySelectorAll('svg').forEach(s => s.remove());
 
         let repos = allData;
+
+        // Apply language filter
+        if (filterLanguage) {
+            repos = repos.filter(f => {
+                const kg = f.knowledgeGraph;
+                return kg?.languages && Object.keys(kg.languages).includes(filterLanguage);
+            });
+        }
+
+        // Apply search filter
         if (filter) {
             repos = repos.filter(f =>
                 f.name.toLowerCase().includes(filter) ||
@@ -703,6 +858,7 @@
             .selectAll('line')
             .data(links)
             .join('line')
+            .attr('class', 'link-line')
             .attr('stroke', d => {
                 const langName = typeof d.target === 'string' ? d.target.replace('lang-', '') : d.target.name;
                 return getColor(langName);
@@ -715,6 +871,7 @@
             .selectAll('g')
             .data(nodes)
             .join('g')
+            .attr('class', 'node-group')
             .call(d3.drag()
                 .on('start', (event, d) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
                 .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
@@ -723,6 +880,7 @@
 
         // Circles
         node.append('circle')
+            .attr('class', d => 'node-circle clickable')
             .attr('r', d => d.radius)
             .attr('fill', d => {
                 if (d.type === 'language') return getColor(d.name);
@@ -734,9 +892,15 @@
             })
             .attr('stroke', d => d.type === 'language' ? getColor(d.name) : 'var(--border)')
             .attr('stroke-width', d => d.type === 'language' ? 2 : 1)
-            .attr('cursor', d => (d.type === 'repo' && d.kg) ? 'pointer' : 'default')
+            .style('color', d => d.type === 'language' ? getColor(d.name) : 'var(--accent)')
             .on('click', (event, d) => {
-                if (d.type === 'repo' && d.kg) {
+                event.stopPropagation();
+                createRipple(g, d.x, d.y, d.type === 'language' ? getColor(d.name) : null);
+
+                if (d.type === 'language') {
+                    // Filter by this language
+                    filterByLanguage(d.name);
+                } else if (d.type === 'repo' && d.kg) {
                     const repo = allData.find(f => f.name === d.repoName);
                     if (repo) drillIntoRepo(repo);
                 }
@@ -750,16 +914,40 @@
             .attr('dy', d => d.radius + 14)
             .attr('font-size', '0.65rem')
             .attr('font-weight', 600)
-            .attr('fill', d => getColor(d.name));
+            .attr('fill', d => getColor(d.name))
+            .style('pointer-events', 'none');
 
-        // Hover tooltip
+        // Hover tooltip and highlighting
         const tooltip = document.getElementById('tooltip');
 
         node.on('mouseenter', (event, d) => {
+            // Highlight connected nodes
+            const connectedIds = new Set([d.id]);
+            links.forEach(l => {
+                const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
+                const targetId = typeof l.target === 'string' ? l.target : l.target.id;
+                if (sourceId === d.id) connectedIds.add(targetId);
+                if (targetId === d.id) connectedIds.add(sourceId);
+            });
+
+            node.classed('dimmed', n => !connectedIds.has(n.id));
+            link.classed('dimmed', l => {
+                const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
+                const targetId = typeof l.target === 'string' ? l.target : l.target.id;
+                return sourceId !== d.id && targetId !== d.id;
+            });
+            link.classed('highlighted', l => {
+                const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
+                const targetId = typeof l.target === 'string' ? l.target : l.target.id;
+                return sourceId === d.id || targetId === d.id;
+            });
+
+            // Tooltip
             let html = '';
             if (d.type === 'language') {
                 const repoCount = links.filter(l => (typeof l.target === 'string' ? l.target : l.target.id) === d.id).length;
                 html = `<h4>${d.name}</h4><div class="detail">${d.count} files across ${repoCount} repos</div>`;
+                html += `<div class="click-hint">Click to filter by ${d.name}</div>`;
             } else {
                 html = `<h4>${d.name}</h4>`;
                 if (d.description) html += `<div class="detail">${d.description}</div>`;
@@ -768,6 +956,7 @@
                     html += '<div style="margin-top:4px">' + langs.map(([l, c]) => `<span class="tag">${l}: ${c}</span>`).join('') + '</div>';
                 }
                 html += `<div class="detail" style="margin-top:4px">${d.totalFiles} files · ★ ${d.stars}</div>`;
+                html += `<div class="click-hint">Click to explore</div>`;
             }
             tooltip.innerHTML = html;
             tooltip.style.left = (event.clientX + 12) + 'px';
@@ -779,6 +968,10 @@
             tooltip.style.top = (event.clientY - 10) + 'px';
         })
         .on('mouseleave', () => {
+            // Remove highlighting
+            node.classed('dimmed', false);
+            link.classed('dimmed', false);
+            link.classed('highlighted', false);
             tooltip.classList.remove('visible');
         });
 
@@ -870,6 +1063,7 @@
             .selectAll('line')
             .data(links)
             .join('line')
+            .attr('class', 'link-line')
             .attr('stroke', 'var(--border)')
             .attr('stroke-opacity', 0.4)
             .attr('stroke-width', d => Math.max(1, Math.min(3, d.value / 3)));
@@ -878,6 +1072,7 @@
             .selectAll('g')
             .data(nodes)
             .join('g')
+            .attr('class', 'node-group')
             .call(d3.drag()
                 .on('start', (event, d) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
                 .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
@@ -885,6 +1080,7 @@
             );
 
         node.append('circle')
+            .attr('class', 'node-circle clickable')
             .attr('r', d => d.radius)
             .attr('fill', d => {
                 if (d.type === 'language') return getColor(d.name);
@@ -892,7 +1088,23 @@
             })
             .attr('stroke', 'var(--border)')
             .attr('stroke-width', 1)
-            .attr('opacity', 0.85);
+            .attr('opacity', 0.85)
+            .style('color', d => {
+                if (d.type === 'language') return getColor(d.name);
+                return typeColors[d.type] || 'var(--accent)';
+            })
+            .on('click', (event, d) => {
+                event.stopPropagation();
+                createRipple(g, d.x, d.y, d.type === 'language' ? getColor(d.name) : typeColors[d.type]);
+
+                if (d.type === 'repo') {
+                    // Open GitHub
+                    window.open(repo.url || `https://github.com/moses-y/${repo.name}`, '_blank');
+                } else if (d.type === 'entry' || d.type === 'config') {
+                    // Open file on GitHub
+                    window.open(`${repo.url || `https://github.com/moses-y/${repo.name}`}/blob/main/${d.name}`, '_blank');
+                }
+            });
 
         // Labels
         node.append('text')
@@ -910,7 +1122,8 @@
             .attr('fill', d => {
                 if (d.type === 'language') return getColor(d.name);
                 return 'var(--text-secondary)';
-            });
+            })
+            .style('pointer-events', 'none');
 
         // Type labels (small)
         node.filter(d => d.type !== 'repo')
@@ -921,15 +1134,37 @@
             })
             .attr('text-anchor', 'middle')
             .attr('dy', '0.35em')
-            .attr('font-size', d => Math.max(8, d.radius * 0.8) + 'px');
+            .attr('font-size', d => Math.max(8, d.radius * 0.8) + 'px')
+            .style('pointer-events', 'none');
 
-        // Tooltip
+        // Tooltip and highlighting
         const tooltip = document.getElementById('tooltip');
 
         node.on('mouseenter', (event, d) => {
+            // Highlight connections
+            const connectedIds = new Set([d.id, 'center']);
+            links.forEach(l => {
+                const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
+                const targetId = typeof l.target === 'string' ? l.target : l.target.id;
+                if (sourceId === d.id) connectedIds.add(targetId);
+                if (targetId === d.id) connectedIds.add(sourceId);
+            });
+
+            node.classed('dimmed', n => !connectedIds.has(n.id));
+            link.classed('dimmed', l => {
+                const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
+                const targetId = typeof l.target === 'string' ? l.target : l.target.id;
+                return sourceId !== d.id && targetId !== d.id;
+            });
+
             let html = `<h4>${d.name}</h4>`;
             if (d.count) html += `<div class="detail">${d.count} files</div>`;
             if (d.type !== 'repo') html += `<div class="detail" style="margin-top:2px">Type: ${d.type}</div>`;
+            if (d.type === 'repo') {
+                html += `<div class="click-hint">Click to open on GitHub</div>`;
+            } else if (d.type === 'entry' || d.type === 'config') {
+                html += `<div class="click-hint">Click to view file</div>`;
+            }
             tooltip.innerHTML = html;
             tooltip.style.left = (event.clientX + 12) + 'px';
             tooltip.style.top = (event.clientY - 10) + 'px';
@@ -939,7 +1174,11 @@
             tooltip.style.left = (event.clientX + 12) + 'px';
             tooltip.style.top = (event.clientY - 10) + 'px';
         })
-        .on('mouseleave', () => tooltip.classList.remove('visible'));
+        .on('mouseleave', () => {
+            node.classed('dimmed', false);
+            link.classed('dimmed', false);
+            tooltip.classList.remove('visible');
+        });
 
         simulation.on('tick', () => {
             link
@@ -951,16 +1190,23 @@
         });
 
         // Auto-open side panel
-        openSidePanel({ name: repo.displayName || repo.name, repoName: repo.name, description: repo.description, stars: repo.stars, kg, totalFiles: Object.values(kg.directories || {}).reduce((a, b) => a + b, 0) });
+        openSidePanel({ name: repo.displayName || repo.name, repoName: repo.name, description: repo.description, stars: repo.stars, kg, totalFiles: Object.values(kg.directories || {}).reduce((a, b) => a + b, 0) }, repo.url);
     }
 
     // ========== SIDE PANEL ==========
-    function openSidePanel(d) {
+    function openSidePanel(d, repoUrl) {
         const panel = document.getElementById('side-panel');
         const content = document.getElementById('panel-content');
         const kg = d.kg;
+        const ghUrl = repoUrl || `https://github.com/moses-y/${d.repoName}`;
 
         let html = `<h3>${d.name}</h3>`;
+        html += `<a href="${ghUrl}" target="_blank" class="github-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View on GitHub
+        </a>`;
         if (d.description) html += `<p style="font-size:0.8rem;color:var(--text-secondary);margin-bottom:1rem">${d.description}</p>`;
 
         // Languages
