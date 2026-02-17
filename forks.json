@@ -1,303 +1,14 @@
 {
-  "lastUpdated": "2026-02-17T18:17:42.654Z",
+  "lastUpdated": "2026-02-17T19:18:58.058Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 309,
+  "totalRepos": 311,
   "progress": {
-    "aiGenerated": 309,
+    "aiGenerated": 311,
     "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
-    {
-      "id": 1159908867,
-      "name": "graphrag-rs",
-      "displayName": "graphrag rs",
-      "description": "GraphRAG-rs is a high-performance, state-of-the-art Rust implementation of GraphRAG (Graph-based Retrieval Augmented Generation) that builds knowledge graphs from documents and enables natural language querying with configurable entity extraction and local LLM integration",
-      "summary": "## The Problem\n\nRetrieval-Augmented Generation (RAG) is powerful, but most implementations are either glued together Python scripts with questionable performance or SaaS products that lock you into their stack. Need a knowledge graph from your documents? Want to query it using natural language? Oh, and maybe you'd like to run it locally, in your browser, or scale it up to production servers? Good luck. Most solutions fall apart the second you need fine-grained control or care about performance.\n\n## What This Does\n\n`GraphRAG-rs` is a Rust implementation of RAG that actually respects your need for speed, modularity, and deployment flexibility. It's split into several components:  \n- The core logic lives in `graphrag-core/`, handling entity extraction, knowledge graph creation, and query pipelines.  \n- For folks who hate setup, the `graphrag-cli/` provides a command-line interface to run queries, test embeddings, or benchmark pipelines.  \n- Want to see it in action? Check out `examples/graphrag-leptos-demo/` for a WASM-based browser app or `examples/multi_document_pipeline.rs` for a server-side pipeline.\n\nIt supports three deployment modes: a traditional server (`cargo run --bin graphrag-server`), a WASM-only client (`trunk serve`), and a hybrid architecture that combines both. Need GPU acceleration? There's WebGPU support baked in. Prefer local embeddings to keep your data private? Integrate with Ollama or ONNX runtime. It's all configurable via various `*.toml` and `*.json5` files in `config/templates/`.\n\n## Real-World Use\n\nLet's say you're building a privacy-focused research app. You have a pile of academic papers in PDF format. Using `GraphRAG-rs`, you can:  \n1. Parse documents and extract entities with `graphrag-core/examples/advanced_nlp_demo.rs`.  \n2. Build a knowledge graph using the `GraphBuilder` in `graphrag-core/src/builder/mod.rs`.  \n3. Serve it in a browser with the WASM-based demo in `examples/graphrag-leptos-demo/`.  \n4. Run a query like \"Show connections between quantum mechanics and entropy\" and get meaningful results right in your browser.  \n\nFor extra credit, you can add Ollama for local embeddings or plug in Qdrant for vector search.\n\n## The Bottom Line\n\n`GraphRAG-rs` is fast, flexible, and overkill (in a good way). If you're hacking together a weekend project, this probably isn't for you. But if you need serious performance, local-first options, and full control over your RAG pipeline, it's worth your time. Just be ready to dig into the docs—this isn't a plug-and-play toy.",
-      "url": "https://github.com/moses-y/graphrag-rs",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "automataIA/graphrag-rs",
-        "url": "https://github.com/automataIA/graphrag-rs",
-        "stars": 151
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 17, 2026",
-      "updatedAt": "February 17, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "directories": {
-          ".cargo": 1,
-          "(root)": 9,
-          ".vscode": 1,
-          "benches": 7,
-          "config": 33,
-          "docs-example": 2,
-          "examples": 46,
-          "graphrag-cli": 32,
-          "graphrag-core": 69
-        },
-        "languages": {
-          "TOML": 26,
-          "JSON": 2,
-          "Markdown": 33,
-          "Rust": 97,
-          "HTML": 4,
-          "Shell": 4,
-          "JavaScript": 4,
-          "CSS": 1
-        },
-        "entryPoints": [
-          "examples/graphrag-leptos-demo/index.html",
-          "examples/graphrag-leptos-demo/src/lib.rs",
-          "examples/graphrag-leptos-demo/src/main.rs",
-          "examples/wasm-multi-doc-demo/app.js",
-          "examples/wasm-multi-doc-demo/index.html",
-          "examples/web-app/dist/index.html",
-          "examples/web-app/index.html",
-          "examples/web-app/src/lib.rs",
-          "examples/web-app/src/main.rs",
-          "graphrag-cli/src/main.rs"
-        ],
-        "configFiles": [
-          "Cargo.toml",
-          "examples/graphrag-leptos-demo/Cargo.toml",
-          "examples/web-app/Cargo.toml",
-          "graphrag-cli/Cargo.toml",
-          "graphrag-core/Cargo.toml"
-        ],
-        "dependencies": [
-          "Cargo.toml",
-          "examples/graphrag-leptos-demo/Cargo.toml",
-          "examples/web-app/Cargo.toml",
-          "graphrag-cli/Cargo.toml",
-          "graphrag-core/Cargo.toml"
-        ],
-        "testFiles": [
-          "examples/graphrag-leptos-demo/RUNTIME_TESTING_GUIDE.md",
-          "examples/graphrag-leptos-demo/test-helpers.js",
-          "examples/symposium_test.rs",
-          "examples/test_multi_doc_server.sh",
-          "examples/test_real_embeddings.rs",
-          "graphrag-core/src/api/tests.rs",
-          "graphrag-core/src/caching_test.rs"
-        ],
-        "docs": [
-          "CHANGELOG.md",
-          "README.md",
-          "config/JSON5_CONFIG_GUIDE.md",
-          "config/templates/README.md",
-          "docs-example/Readme-First.txt",
-          "examples/graphrag-leptos-demo/README.md",
-          "examples/graphrag-leptos-demo/RUNTIME_TESTING_GUIDE.md",
-          "examples/readme.jpg",
-          "examples/wasm-multi-doc-demo/README.md",
-          "examples/web-app/README.md",
-          "graphrag-cli/README.md",
-          "graphrag-cli/USER_GUIDE.md",
-          "graphrag-core/README.md",
-          "graphrag-core/examples/README_symposium_trait_based_chunking.md"
-        ]
-      }
-    },
-    {
-      "id": 1159890860,
-      "name": "spacebot",
-      "displayName": "spacebot",
-      "description": "An AI agent for teams, communities, and multi-user environments.",
-      "summary": "## The Problem\nMost AI frameworks stall when faced with multiple users. You ask a question, and the AI goes quiet while it processes. This single-threaded approach can’t keep up in busy environments like Discord or Slack, where people expect instant responses. It’s frustrating when you're waiting for an AI to think while your teammates keep chatting.\n\n## What This Does\nSpacebot flips the script. It splits tasks into specialized processes so that conversations can happen concurrently without blocking. Check out the `interface/src/App.tsx` for the entry point, where it initializes multiple user interactions. The `interface/src/hooks` contains hooks like `useCortexChat` that manage chat states independently, allowing simultaneous conversations without a hitch.\n\nWant to run multiple agents? The setup in `docs/content/docs/(features)/multi-agent.mdx` explains how to deploy a friendly Discord bot alongside a no-nonsense dev assistant in Slack—all under one umbrella. Each agent operates with its own memory and identity, thanks to the architecture in `interface/src/lib`.\n\n## Real-World Use\nImagine a chaotic Discord server where five users are throwing questions at the bot. Thanks to Spacebot's batching system, it can coalesce those messages and respond intelligently. For example, using the `ChannelDetail.tsx` component, it can provide context-specific answers without losing track of ongoing conversations. \n\nIf you're coding in a Slack channel, Spacebot can handle long-running tasks via workers, letting other users ask quick questions in parallel. The `interface/src/routes/AgentConfig.tsx` manages agent settings, allowing quick adjustments on the fly.\n\n## The Bottom Line\nSpacebot is a solid choice for teams and communities that need an AI that doesn't go dark while processing tasks. It’s a bit heavy for small projects—if you’re just looking for a simple Q&A bot for personal use, this might be overkill. But for larger groups where multiple conversations are the norm, this setup could save a lot of frustration.",
-      "url": "https://github.com/moses-y/spacebot",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "spacedriveapp/spacebot",
-        "url": "https://github.com/spacedriveapp/spacebot",
-        "stars": 306
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 17, 2026",
-      "updatedAt": "February 17, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "directories": {
-          "(root)": 12,
-          ".github": 3,
-          "docs": 64,
-          "interface": 80,
-          "migrations": 14,
-          "prompts": 27
-        },
-        "languages": {
-          "YAML": 2,
-          "Markdown": 16,
-          "TOML": 2,
-          "Rust": 1,
-          "Shell": 1,
-          "TSX": 66,
-          "TypeScript": 16,
-          "CSS": 1,
-          "JSON": 14,
-          "HTML": 1,
-          "JavaScript": 1,
-          "SCSS": 2,
-          "SQL": 14
-        },
-        "entryPoints": [
-          "interface/index.html",
-          "interface/src/App.tsx",
-          "interface/src/ui/forms/index.ts",
-          "interface/src/ui/index.ts"
-        ],
-        "configFiles": [
-          "Cargo.toml",
-          "Dockerfile",
-          "docs/next.config.mjs",
-          "docs/package.json",
-          "docs/tsconfig.json",
-          "interface/package.json",
-          "interface/tailwind.config.ts",
-          "interface/tsconfig.json",
-          "interface/vite.config.ts"
-        ],
-        "dependencies": [
-          "Cargo.toml",
-          "docs/package.json",
-          "interface/package-lock.json",
-          "interface/package.json"
-        ],
-        "testFiles": [],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "RUST_STYLE_GUIDE.md",
-          "docs/.gitignore",
-          "docs/README.md",
-          "docs/app/[[...slug]]/layout.tsx",
-          "docs/app/[[...slug]]/page.tsx",
-          "docs/app/api/search/route.ts",
-          "docs/app/global.css",
-          "docs/app/layout.tsx",
-          "docs/app/llms-full.txt/route.ts",
-          "docs/app/llms.mdx/docs/[[...slug]]/route.ts",
-          "docs/app/llms.txt/route.ts",
-          "docs/app/og/docs/[...slug]/route.tsx",
-          "docs/biome.json",
-          "docs/components/ai/page-actions.tsx",
-          "docs/content/docs/(configuration)/config.mdx",
-          "docs/content/docs/(configuration)/meta.json",
-          "docs/content/docs/(configuration)/permissions.mdx",
-          "docs/content/docs/(core)/agents.mdx",
-          "docs/content/docs/(core)/channels.mdx",
-          "docs/content/docs/(core)/compaction.mdx",
-          "docs/content/docs/(core)/cortex.mdx",
-          "docs/content/docs/(core)/memory.mdx",
-          "docs/content/docs/(core)/meta.json",
-          "docs/content/docs/(core)/philosophy.mdx",
-          "docs/content/docs/(core)/prompts.mdx",
-          "docs/content/docs/(core)/routing.mdx",
-          "docs/content/docs/(deployment)/meta.json",
-          "docs/content/docs/(deployment)/roadmap.mdx",
-          "docs/content/docs/(features)/browser.mdx",
-          "docs/content/docs/(features)/cron.mdx",
-          "docs/content/docs/(features)/ingestion.mdx",
-          "docs/content/docs/(features)/meta.json",
-          "docs/content/docs/(features)/opencode.mdx",
-          "docs/content/docs/(features)/tools.mdx",
-          "docs/content/docs/(features)/workers.mdx",
-          "docs/content/docs/(getting-started)/docker.mdx",
-          "docs/content/docs/(getting-started)/meta.json",
-          "docs/content/docs/(getting-started)/quickstart.mdx",
-          "docs/content/docs/(messaging)/discord-setup.mdx",
-          "docs/content/docs/(messaging)/messaging.mdx",
-          "docs/content/docs/(messaging)/meta.json",
-          "docs/content/docs/(messaging)/slack-setup.mdx",
-          "docs/content/docs/(messaging)/telegram-setup.mdx",
-          "docs/content/docs/index.mdx",
-          "docs/content/docs/meta.json",
-          "docs/design-docs/branch-and-spawn.md",
-          "docs/design-docs/cortex-chat.md",
-          "docs/design-docs/cortex-history.md",
-          "docs/design-docs/cortex-implementation.md",
-          "docs/design-docs/launch-script.md",
-          "docs/design-docs/launch-tweet.md",
-          "docs/design-docs/production-worker-failures.md",
-          "docs/design-docs/prompt-routing.md",
-          "docs/design-docs/user-scoped-memories.md",
-          "docs/docker.md",
-          "docs/lib/cn.ts",
-          "docs/lib/layout.shared.tsx",
-          "docs/lib/source.ts",
-          "docs/mdx-components.tsx",
-          "docs/next.config.mjs",
-          "docs/package.json",
-          "docs/pnpm-lock.yaml",
-          "docs/postcss.config.mjs",
-          "docs/source.config.ts",
-          "docs/tsconfig.json"
-        ]
-      }
-    },
-    {
-      "id": 1159778456,
-      "name": "VerseCrafter",
-      "displayName": "VerseCrafter",
-      "description": "VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control",
-      "summary": "## The Problem\n\nWorking with video generation that actually respects camera motion and object trajectories sucks. Most video diffusion models spit out pretty clips, but as soon as you want to control the camera path or object movement—forget it. You end up with janky results, or you hack together some control system that barely works. If you want real, direct geometric control over both camera and multiple objects, you’re out of luck with almost everything out there.\n\n## What This Does\n\n`VerseCrafter` gives you explicit 4D geometric control over video generation—camera motion, object motion, and their interaction. The key magic lives in `versecrafter/pipeline/pipeline_wan_versecrafter.py` where the pipeline wires up a frozen Wan2.1 video diffusion backbone and then injects geometry via a `GeoAdapter`. Everything related to 4D control—camera paths, 3D Gaussian object motion—is handled through JSON and NPZ files (see `demo_data/` and `config/`).\n\nYou get Blender integration (`blender_addon/`) for hands-on editing and trajectory export, plus a pile of scripts in `inference/` for fitting Gaussians (`fit_3D_gaussian.py`), running segmentation (`grounded_sam2_infer.py`), and full pipeline inference (`versecrafter_inference.py`). The project isn’t hiding the data: check `demo_data/` for real examples, from camera paths to rendered videos and masks.\n\n## Real-World Use\n\nSay you want to generate a street scene where the camera orbits a car and a person walks across the frame. You’d prep your control files (camera path as an NPZ, object trajectories as JSONs). Then you’d run something like:\n\n```bash\npython inference/versecrafter_inference.py --config config/wan2.1/wan_civitai.yaml \\\n  --camera-trajectory demo_data/.../custom_camera_trajectory.npz \\\n  --object-trajectories demo_data/.../custom_3D_gaussian_trajectory.json\n```\n\nEdit anything in Blender (using the `blender_addon`), re-export, and re-run. All your outputs—depths, masks, videos—land in `demo_data/` for inspection. No black box nonsense.\n\n## The Bottom Line\n\nIf you actually need precise camera and object motion control in video generation, VerseCrafter is one of the few open options that doesn’t lie to you about what’s possible. It’s fiddly to set up, eats VRAM for breakfast, and isn’t for quick experiments—but if you want explicit geometry in your video synthesis, this is the toolkit. If you just want pretty TikTok clips, look elsewhere.",
-      "url": "https://github.com/moses-y/VerseCrafter",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "TencentARC/VerseCrafter",
-        "url": "https://github.com/TencentARC/VerseCrafter",
-        "stars": 286
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 17, 2026",
-      "updatedAt": "February 17, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "directories": {
-          "(root)": 9,
-          "asset": 17,
-          "blender_addon": 4,
-          "config": 8,
-          "demo_data": 47,
-          "inference": 7,
-          "versecrafter": 6
-        },
-        "languages": {
-          "Markdown": 2,
-          "Python": 19,
-          "YAML": 5,
-          "JSON": 7,
-          "Shell": 1
-        },
-        "entryPoints": [],
-        "configFiles": [
-          "requirements.txt"
-        ],
-        "dependencies": [
-          "requirements.txt"
-        ],
-        "testFiles": [],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "README_BLENDER.md"
-        ]
-      }
-    },
     {
       "id": 1160206916,
       "name": "superclaw",
@@ -312,7 +23,7 @@
       "parent": {
         "name": "SuperagenticAI/superclaw",
         "url": "https://github.com/SuperagenticAI/superclaw",
-        "stars": 20
+        "stars": 21
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -580,6 +291,510 @@
       }
     },
     {
+      "id": 1159908867,
+      "name": "graphrag-rs",
+      "displayName": "graphrag rs",
+      "description": "GraphRAG-rs is a high-performance, state-of-the-art Rust implementation of GraphRAG (Graph-based Retrieval Augmented Generation) that builds knowledge graphs from documents and enables natural language querying with configurable entity extraction and local LLM integration",
+      "summary": "## The Problem\n\nRetrieval-Augmented Generation (RAG) is powerful, but most implementations are either glued together Python scripts with questionable performance or SaaS products that lock you into their stack. Need a knowledge graph from your documents? Want to query it using natural language? Oh, and maybe you'd like to run it locally, in your browser, or scale it up to production servers? Good luck. Most solutions fall apart the second you need fine-grained control or care about performance.\n\n## What This Does\n\n`GraphRAG-rs` is a Rust implementation of RAG that actually respects your need for speed, modularity, and deployment flexibility. It's split into several components:  \n- The core logic lives in `graphrag-core/`, handling entity extraction, knowledge graph creation, and query pipelines.  \n- For folks who hate setup, the `graphrag-cli/` provides a command-line interface to run queries, test embeddings, or benchmark pipelines.  \n- Want to see it in action? Check out `examples/graphrag-leptos-demo/` for a WASM-based browser app or `examples/multi_document_pipeline.rs` for a server-side pipeline.\n\nIt supports three deployment modes: a traditional server (`cargo run --bin graphrag-server`), a WASM-only client (`trunk serve`), and a hybrid architecture that combines both. Need GPU acceleration? There's WebGPU support baked in. Prefer local embeddings to keep your data private? Integrate with Ollama or ONNX runtime. It's all configurable via various `*.toml` and `*.json5` files in `config/templates/`.\n\n## Real-World Use\n\nLet's say you're building a privacy-focused research app. You have a pile of academic papers in PDF format. Using `GraphRAG-rs`, you can:  \n1. Parse documents and extract entities with `graphrag-core/examples/advanced_nlp_demo.rs`.  \n2. Build a knowledge graph using the `GraphBuilder` in `graphrag-core/src/builder/mod.rs`.  \n3. Serve it in a browser with the WASM-based demo in `examples/graphrag-leptos-demo/`.  \n4. Run a query like \"Show connections between quantum mechanics and entropy\" and get meaningful results right in your browser.  \n\nFor extra credit, you can add Ollama for local embeddings or plug in Qdrant for vector search.\n\n## The Bottom Line\n\n`GraphRAG-rs` is fast, flexible, and overkill (in a good way). If you're hacking together a weekend project, this probably isn't for you. But if you need serious performance, local-first options, and full control over your RAG pipeline, it's worth your time. Just be ready to dig into the docs—this isn't a plug-and-play toy.",
+      "url": "https://github.com/moses-y/graphrag-rs",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "automataIA/graphrag-rs",
+        "url": "https://github.com/automataIA/graphrag-rs",
+        "stars": 152
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          ".cargo": 1,
+          "(root)": 9,
+          ".vscode": 1,
+          "benches": 7,
+          "config": 33,
+          "docs-example": 2,
+          "examples": 46,
+          "graphrag-cli": 32,
+          "graphrag-core": 69
+        },
+        "languages": {
+          "TOML": 26,
+          "JSON": 2,
+          "Markdown": 33,
+          "Rust": 97,
+          "HTML": 4,
+          "Shell": 4,
+          "JavaScript": 4,
+          "CSS": 1
+        },
+        "entryPoints": [
+          "examples/graphrag-leptos-demo/index.html",
+          "examples/graphrag-leptos-demo/src/lib.rs",
+          "examples/graphrag-leptos-demo/src/main.rs",
+          "examples/wasm-multi-doc-demo/app.js",
+          "examples/wasm-multi-doc-demo/index.html",
+          "examples/web-app/dist/index.html",
+          "examples/web-app/index.html",
+          "examples/web-app/src/lib.rs",
+          "examples/web-app/src/main.rs",
+          "graphrag-cli/src/main.rs"
+        ],
+        "configFiles": [
+          "Cargo.toml",
+          "examples/graphrag-leptos-demo/Cargo.toml",
+          "examples/web-app/Cargo.toml",
+          "graphrag-cli/Cargo.toml",
+          "graphrag-core/Cargo.toml"
+        ],
+        "dependencies": [
+          "Cargo.toml",
+          "examples/graphrag-leptos-demo/Cargo.toml",
+          "examples/web-app/Cargo.toml",
+          "graphrag-cli/Cargo.toml",
+          "graphrag-core/Cargo.toml"
+        ],
+        "testFiles": [
+          "examples/graphrag-leptos-demo/RUNTIME_TESTING_GUIDE.md",
+          "examples/graphrag-leptos-demo/test-helpers.js",
+          "examples/symposium_test.rs",
+          "examples/test_multi_doc_server.sh",
+          "examples/test_real_embeddings.rs",
+          "graphrag-core/src/api/tests.rs",
+          "graphrag-core/src/caching_test.rs"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "README.md",
+          "config/JSON5_CONFIG_GUIDE.md",
+          "config/templates/README.md",
+          "docs-example/Readme-First.txt",
+          "examples/graphrag-leptos-demo/README.md",
+          "examples/graphrag-leptos-demo/RUNTIME_TESTING_GUIDE.md",
+          "examples/readme.jpg",
+          "examples/wasm-multi-doc-demo/README.md",
+          "examples/web-app/README.md",
+          "graphrag-cli/README.md",
+          "graphrag-cli/USER_GUIDE.md",
+          "graphrag-core/README.md",
+          "graphrag-core/examples/README_symposium_trait_based_chunking.md"
+        ]
+      }
+    },
+    {
+      "id": 1159890860,
+      "name": "spacebot",
+      "displayName": "spacebot",
+      "description": "An AI agent for teams, communities, and multi-user environments.",
+      "summary": "## The Problem\nMost AI frameworks stall when faced with multiple users. You ask a question, and the AI goes quiet while it processes. This single-threaded approach can’t keep up in busy environments like Discord or Slack, where people expect instant responses. It’s frustrating when you're waiting for an AI to think while your teammates keep chatting.\n\n## What This Does\nSpacebot flips the script. It splits tasks into specialized processes so that conversations can happen concurrently without blocking. Check out the `interface/src/App.tsx` for the entry point, where it initializes multiple user interactions. The `interface/src/hooks` contains hooks like `useCortexChat` that manage chat states independently, allowing simultaneous conversations without a hitch.\n\nWant to run multiple agents? The setup in `docs/content/docs/(features)/multi-agent.mdx` explains how to deploy a friendly Discord bot alongside a no-nonsense dev assistant in Slack—all under one umbrella. Each agent operates with its own memory and identity, thanks to the architecture in `interface/src/lib`.\n\n## Real-World Use\nImagine a chaotic Discord server where five users are throwing questions at the bot. Thanks to Spacebot's batching system, it can coalesce those messages and respond intelligently. For example, using the `ChannelDetail.tsx` component, it can provide context-specific answers without losing track of ongoing conversations. \n\nIf you're coding in a Slack channel, Spacebot can handle long-running tasks via workers, letting other users ask quick questions in parallel. The `interface/src/routes/AgentConfig.tsx` manages agent settings, allowing quick adjustments on the fly.\n\n## The Bottom Line\nSpacebot is a solid choice for teams and communities that need an AI that doesn't go dark while processing tasks. It’s a bit heavy for small projects—if you’re just looking for a simple Q&A bot for personal use, this might be overkill. But for larger groups where multiple conversations are the norm, this setup could save a lot of frustration.",
+      "url": "https://github.com/moses-y/spacebot",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "spacedriveapp/spacebot",
+        "url": "https://github.com/spacedriveapp/spacebot",
+        "stars": 312
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 12,
+          ".github": 3,
+          "docs": 64,
+          "interface": 80,
+          "migrations": 14,
+          "prompts": 27
+        },
+        "languages": {
+          "YAML": 2,
+          "Markdown": 16,
+          "TOML": 2,
+          "Rust": 1,
+          "Shell": 1,
+          "TSX": 66,
+          "TypeScript": 16,
+          "CSS": 1,
+          "JSON": 14,
+          "HTML": 1,
+          "JavaScript": 1,
+          "SCSS": 2,
+          "SQL": 14
+        },
+        "entryPoints": [
+          "interface/index.html",
+          "interface/src/App.tsx",
+          "interface/src/ui/forms/index.ts",
+          "interface/src/ui/index.ts"
+        ],
+        "configFiles": [
+          "Cargo.toml",
+          "Dockerfile",
+          "docs/next.config.mjs",
+          "docs/package.json",
+          "docs/tsconfig.json",
+          "interface/package.json",
+          "interface/tailwind.config.ts",
+          "interface/tsconfig.json",
+          "interface/vite.config.ts"
+        ],
+        "dependencies": [
+          "Cargo.toml",
+          "docs/package.json",
+          "interface/package-lock.json",
+          "interface/package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "RUST_STYLE_GUIDE.md",
+          "docs/.gitignore",
+          "docs/README.md",
+          "docs/app/[[...slug]]/layout.tsx",
+          "docs/app/[[...slug]]/page.tsx",
+          "docs/app/api/search/route.ts",
+          "docs/app/global.css",
+          "docs/app/layout.tsx",
+          "docs/app/llms-full.txt/route.ts",
+          "docs/app/llms.mdx/docs/[[...slug]]/route.ts",
+          "docs/app/llms.txt/route.ts",
+          "docs/app/og/docs/[...slug]/route.tsx",
+          "docs/biome.json",
+          "docs/components/ai/page-actions.tsx",
+          "docs/content/docs/(configuration)/config.mdx",
+          "docs/content/docs/(configuration)/meta.json",
+          "docs/content/docs/(configuration)/permissions.mdx",
+          "docs/content/docs/(core)/agents.mdx",
+          "docs/content/docs/(core)/channels.mdx",
+          "docs/content/docs/(core)/compaction.mdx",
+          "docs/content/docs/(core)/cortex.mdx",
+          "docs/content/docs/(core)/memory.mdx",
+          "docs/content/docs/(core)/meta.json",
+          "docs/content/docs/(core)/philosophy.mdx",
+          "docs/content/docs/(core)/prompts.mdx",
+          "docs/content/docs/(core)/routing.mdx",
+          "docs/content/docs/(deployment)/meta.json",
+          "docs/content/docs/(deployment)/roadmap.mdx",
+          "docs/content/docs/(features)/browser.mdx",
+          "docs/content/docs/(features)/cron.mdx",
+          "docs/content/docs/(features)/ingestion.mdx",
+          "docs/content/docs/(features)/meta.json",
+          "docs/content/docs/(features)/opencode.mdx",
+          "docs/content/docs/(features)/tools.mdx",
+          "docs/content/docs/(features)/workers.mdx",
+          "docs/content/docs/(getting-started)/docker.mdx",
+          "docs/content/docs/(getting-started)/meta.json",
+          "docs/content/docs/(getting-started)/quickstart.mdx",
+          "docs/content/docs/(messaging)/discord-setup.mdx",
+          "docs/content/docs/(messaging)/messaging.mdx",
+          "docs/content/docs/(messaging)/meta.json",
+          "docs/content/docs/(messaging)/slack-setup.mdx",
+          "docs/content/docs/(messaging)/telegram-setup.mdx",
+          "docs/content/docs/index.mdx",
+          "docs/content/docs/meta.json",
+          "docs/design-docs/branch-and-spawn.md",
+          "docs/design-docs/cortex-chat.md",
+          "docs/design-docs/cortex-history.md",
+          "docs/design-docs/cortex-implementation.md",
+          "docs/design-docs/launch-script.md",
+          "docs/design-docs/launch-tweet.md",
+          "docs/design-docs/production-worker-failures.md",
+          "docs/design-docs/prompt-routing.md",
+          "docs/design-docs/user-scoped-memories.md",
+          "docs/docker.md",
+          "docs/lib/cn.ts",
+          "docs/lib/layout.shared.tsx",
+          "docs/lib/source.ts",
+          "docs/mdx-components.tsx",
+          "docs/next.config.mjs",
+          "docs/package.json",
+          "docs/pnpm-lock.yaml",
+          "docs/postcss.config.mjs",
+          "docs/source.config.ts",
+          "docs/tsconfig.json"
+        ]
+      }
+    },
+    {
+      "id": 1159778456,
+      "name": "VerseCrafter",
+      "displayName": "VerseCrafter",
+      "description": "VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control",
+      "summary": "## The Problem\n\nWorking with video generation that actually respects camera motion and object trajectories sucks. Most video diffusion models spit out pretty clips, but as soon as you want to control the camera path or object movement—forget it. You end up with janky results, or you hack together some control system that barely works. If you want real, direct geometric control over both camera and multiple objects, you’re out of luck with almost everything out there.\n\n## What This Does\n\n`VerseCrafter` gives you explicit 4D geometric control over video generation—camera motion, object motion, and their interaction. The key magic lives in `versecrafter/pipeline/pipeline_wan_versecrafter.py` where the pipeline wires up a frozen Wan2.1 video diffusion backbone and then injects geometry via a `GeoAdapter`. Everything related to 4D control—camera paths, 3D Gaussian object motion—is handled through JSON and NPZ files (see `demo_data/` and `config/`).\n\nYou get Blender integration (`blender_addon/`) for hands-on editing and trajectory export, plus a pile of scripts in `inference/` for fitting Gaussians (`fit_3D_gaussian.py`), running segmentation (`grounded_sam2_infer.py`), and full pipeline inference (`versecrafter_inference.py`). The project isn’t hiding the data: check `demo_data/` for real examples, from camera paths to rendered videos and masks.\n\n## Real-World Use\n\nSay you want to generate a street scene where the camera orbits a car and a person walks across the frame. You’d prep your control files (camera path as an NPZ, object trajectories as JSONs). Then you’d run something like:\n\n```bash\npython inference/versecrafter_inference.py --config config/wan2.1/wan_civitai.yaml \\\n  --camera-trajectory demo_data/.../custom_camera_trajectory.npz \\\n  --object-trajectories demo_data/.../custom_3D_gaussian_trajectory.json\n```\n\nEdit anything in Blender (using the `blender_addon`), re-export, and re-run. All your outputs—depths, masks, videos—land in `demo_data/` for inspection. No black box nonsense.\n\n## The Bottom Line\n\nIf you actually need precise camera and object motion control in video generation, VerseCrafter is one of the few open options that doesn’t lie to you about what’s possible. It’s fiddly to set up, eats VRAM for breakfast, and isn’t for quick experiments—but if you want explicit geometry in your video synthesis, this is the toolkit. If you just want pretty TikTok clips, look elsewhere.",
+      "url": "https://github.com/moses-y/VerseCrafter",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "TencentARC/VerseCrafter",
+        "url": "https://github.com/TencentARC/VerseCrafter",
+        "stars": 289
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 9,
+          "asset": 17,
+          "blender_addon": 4,
+          "config": 8,
+          "demo_data": 47,
+          "inference": 7,
+          "versecrafter": 6
+        },
+        "languages": {
+          "Markdown": 2,
+          "Python": 19,
+          "YAML": 5,
+          "JSON": 7,
+          "Shell": 1
+        },
+        "entryPoints": [],
+        "configFiles": [
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "README_BLENDER.md"
+        ]
+      }
+    },
+    {
+      "id": 1160264409,
+      "name": "rag-api",
+      "displayName": "rag api",
+      "description": "Multi-tenant RAG API powered by LightRAG/RAG-Anything. Auto-selects best parser (DeepSeek-OCR/MinerU/Docling) via complexity scoring",
+      "summary": "# Building a Multi-Tenant RAG API with `rag-api`\n\n## The Problem\n\nDealing with document Q&A at scale is a nightmare. PDFs, images, Word files—every format demands its own parsing, and don’t get me started on OCR. Add multi-tenancy into the mix, with isolated data and custom logic per tenant, and you're drowning in complexity. Most open-source tools give you one piece of the puzzle: vector search, OCR, or maybe a knowledge graph. But what if you need all of it, and it has to just work?\n\n## What This Does\n\n`rag-api` is a multi-tenant Retrieval-Augmented Generation (RAG) service that combines **LightRAG** and **RAG-Anything** for intelligent document Q&A. It auto-selects the best parser—**DeepSeek-OCR**, **MinerU**, or **Docling**—based on document complexity (`src/smart_parser_selector.py`). No need to guess which tool to use; it figures it out.\n\nThe project is cleanly organized. The `api/` folder handles endpoints like `documents.py` (file ingestion), `query.py` (retrieval), and `tenant.py` (tenant management). The brains of the operation live in `src/`, where modules like `document_complexity.py` and `rag.py` handle parsing and retrieval. Oh, and deployment? Dead simple. There's a `Dockerfile`, `docker-compose.yml`, and even a `deploy.sh` script to get you started in minutes.\n\n## Real-World Use\n\nSay you're building a SaaS platform where businesses upload contracts, invoices, and scanned forms for Q&A. Here's what your workflow might look like:\n\n1. Deploy the service (`docker-compose up`).\n2. Upload a batch of files via the `/documents` endpoint (check out `api/documents.py`).\n3. Behind the scenes, `smart_parser_selector.py` picks the best parser (OCR for images, direct insertion for text).\n4. Query the data using `/query` (hello, hybrid retrieval with LightRAG).\n\nExample cURL request to upload files:\n\n```bash\ncurl -X POST -F \"file=@contract.pdf\" http://localhost:8000/documents\n```\n\nAnd retrieving info:\n\n```bash\ncurl -X GET \"http://localhost:8000/query?question=What%20is%20the%20contract%20value?\"\n```\n\nMulti-tenancy? Each tenant has isolated storage and config (`api/tenant_config.py`), so no cross-contamination.\n\n## The Bottom Line\n\n`rag-api` is overkill for small projects but perfect for enterprise-level document Q&A with multi-tenancy. It’s opinionated but flexible: great parser selection, hybrid retrieval, and Redis-based task persistence. Just don’t expect hand-holding—the docs are there, but you’ll need to dig in. If you're wrangling complex document processing at scale, this is your new best friend.",
+      "url": "https://github.com/moses-y/rag-api",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "BukeLy/rag-api",
+        "url": "https://github.com/BukeLy/rag-api",
+        "stars": 33
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 79,
+        "directories": {
+          ".cursor": 1,
+          "(root)": 18,
+          ".github": 1,
+          "api": 12,
+          "deploy": 1,
+          "docs": 21,
+          "scripts": 10,
+          "src": 15
+        },
+        "languages": {
+          "YAML": 3,
+          "Markdown": 27,
+          "Python": 29,
+          "Shell": 8,
+          "TOML": 2
+        },
+        "frameworks": [
+          "Docker"
+        ],
+        "packageManager": null,
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "main.py"
+        ],
+        "configFiles": [
+          "Dockerfile",
+          "Dockerfile.dev",
+          "Dockerfile.qdrant",
+          "docker-compose.dev.yml",
+          "docker-compose.yml",
+          "pyproject.toml"
+        ],
+        "dependencies": [
+          "pyproject.toml"
+        ],
+        "testFiles": [
+          "test_lightrag_doc_status_api.py"
+        ],
+        "docs": [
+          "README.md",
+          "README.zh-CN.md",
+          "api/README.md",
+          "docs/API_COMPARISON.md",
+          "docs/ARCHITECTURE.md",
+          "docs/AWS_MIGRATION_GUIDE.md",
+          "docs/DEPLOYMENT_EXTERNAL_STORAGE.md",
+          "docs/DEPLOY_MODES.md",
+          "docs/FRONTEND_API_INTEGRATION_GUIDE.md",
+          "docs/FRONTEND_BUG_FIX_REPORT.md",
+          "docs/LIGHTRAG_IMPLEMENTATION_GUIDE.md",
+          "docs/LIGHTRAG_WEBUI_INTEGRATION.md",
+          "docs/MINERU_REMOTE_API.md",
+          "docs/MULTI_TENANT_CONFIG_BEST_PRACTICES.md",
+          "docs/PR_WORKFLOW.md",
+          "docs/README.md",
+          "docs/USAGE.md",
+          "docs/async-architecture-migration-plan.md",
+          "docs/cdn_prompts_template.md",
+          "docs/deepseek-ocr-complete.md",
+          "docs/lightrag_entity_extraction_format.md",
+          "docs/parser-selection-upgrade-v1-to-v2.md",
+          "docs/smart-parser-selection-v2.md",
+          "docs/strict_grounding_mode.md",
+          "scripts/README.md",
+          "scripts/README_MIGRATION.md"
+        ],
+        "fileTypes": {
+          ".mdc": 1,
+          ".yml": 3,
+          ".md": 27,
+          ".dev": 1,
+          ".qdrant": 1,
+          ".py": 29,
+          ".sh": 8,
+          ".conf": 1,
+          ".example": 1,
+          ".toml": 2,
+          ".lock": 1
+        }
+      }
+    },
+    {
+      "id": 1160260038,
+      "name": "freemocap",
+      "displayName": "freemocap",
+      "description": "Free Motion Capture for Everyone 💀✨",
+      "summary": "## The Problem\nHave you ever tried motion capture and thought, \"Wow, this is way too expensive and complicated?\" Traditional setups require a small fortune and a PhD in engineering just to get started. FreeMoCap aims to fix that by giving you a low-cost, open-source alternative that doesn’t require a degree in rocket science.\n\n## What This Does\nFreeMoCap is a motion capture system that runs on both hardware and software you probably already have. The project is split into a few key directories, like `freemocap/`, which contains the core processes for capturing and processing motion data, and `experimental/freemocap-ui/`, which houses the React-based UI for interacting with the system. \n\nYou can kick things off with `freemocap/__main__.py`, which launches the GUI to start your motion capture sessions. If you're feeling adventurous, the `experimental/batch_process/` folder has scripts to handle batch processing of your captured videos, making it easier to analyze multiple recordings without losing your sanity.\n\n## Real-World Use\nHere’s a quick workflow: After setting up your environment and installing the package using `pip install freemocap`, you can run your capture session like this:\n\n```bash\npython -m freemocap\n```\n\nThe GUI pops up, guiding you through the capture process, where you can adjust settings directly. Once done, you can dive into the `process_motion_capture_videos` folder to tweak your data and export it for further analysis. Need to visualize your results? The integration with Blender via `export_to_blender.py` makes it a breeze to create stunning visuals.\n\n## The Bottom Line\nFreeMoCap is a solid option if you're looking to dip your toes into motion capture without drowning in costs and complexity. It's got a decent structure and clear documentation, but with only 0 stars, it might lack that warm, fuzzy community support you’d find in more established projects. If you’re a researcher, educator, or hobbyist, give it a shot—but don’t expect the polish of commercial solutions just yet.",
+      "url": "https://github.com/moses-y/freemocap",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "freemocap/freemocap",
+        "url": "https://github.com/freemocap/freemocap",
+        "stars": 4611
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 10,
+          ".github": 15,
+          "bin": 10,
+          "experimental": 91,
+          "freemocap": 74
+        },
+        "languages": {
+          "Markdown": 7,
+          "YAML": 14,
+          "Shell": 8,
+          "Python": 79,
+          "JavaScript": 1,
+          "JSON": 4,
+          "HTML": 1,
+          "CSS": 3,
+          "TSX": 29,
+          "TypeScript": 15
+        },
+        "frameworks": [
+          "React",
+          "FastAPI"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "experimental/freemocap-ui/public/index.html",
+          "experimental/freemocap-ui/src/App.tsx",
+          "experimental/freemocap-ui/src/index.tsx",
+          "freemocap/__main__.py"
+        ],
+        "configFiles": [
+          "experimental/freemocap-ui/package.json",
+          "experimental/freemocap-ui/tsconfig.json"
+        ],
+        "dependencies": [
+          "experimental/freemocap-ui/package-lock.json",
+          "experimental/freemocap-ui/package.json"
+        ],
+        "testFiles": [
+          ".github/workflows/coverage-testing.yml",
+          ".github/workflows/python-testing.yml",
+          ".github/workflows/version-testing-1.yml",
+          ".github/workflows/version-testing-2.yml",
+          "bin/linux/test.sh",
+          "experimental/freemocap-ui/src/App.test.tsx",
+          "experimental/freemocap-ui/src/features/counter/counterSlice.spec.ts",
+          "experimental/freemocap-ui/src/setupTests.ts"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "experimental/benchmark/README.md",
+          "experimental/freemocap-ui/README.md"
+        ],
+        "fileTypes": {
+          ".md": 7,
+          ".yml": 13,
+          ".yaml": 1,
+          ".cff": 1,
+          ".in": 1,
+          ".sh": 8,
+          ".cmd": 2,
+          ".py": 79,
+          ".js": 1,
+          ".json": 4,
+          ".ico": 2,
+          ".html": 1,
+          ".png": 11,
+          ".txt": 1,
+          ".css": 3,
+          ".tsx": 29,
+          ".ts": 15,
+          ".svg": 7,
+          ".xml": 1,
+          ".pdf": 4,
+          ".icns": 1,
+          ".plist": 1,
+          ".ipynb": 1
+        }
+      }
+    },
+    {
       "id": 1159567990,
       "name": "pinchtab",
       "displayName": "pinchtab",
@@ -593,7 +808,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 249
+        "stars": 254
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -660,7 +875,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 400
+        "stars": 417
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -755,7 +970,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 4357
+        "stars": 4375
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -843,7 +1058,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 7755
+        "stars": 7758
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -972,7 +1187,7 @@
       "parent": {
         "name": "unitedbyai/droidclaw",
         "url": "https://github.com/unitedbyai/droidclaw",
-        "stars": 481
+        "stars": 488
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -1370,7 +1585,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 60816
+        "stars": 60824
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1446,7 +1661,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 204479
+        "stars": 204639
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2646,7 +2861,7 @@
       "parent": {
         "name": "Serial-Studio/Serial-Studio",
         "url": "https://github.com/Serial-Studio/Serial-Studio",
-        "stars": 6493
+        "stars": 6494
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2820,7 +3035,7 @@
       "parent": {
         "name": "openrundev/openrun",
         "url": "https://github.com/openrundev/openrun",
-        "stars": 784
+        "stars": 786
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2842,7 +3057,7 @@
       "parent": {
         "name": "crowdsecurity/crowdsec",
         "url": "https://github.com/crowdsecurity/crowdsec",
-        "stars": 12561
+        "stars": 12562
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2864,7 +3079,7 @@
       "parent": {
         "name": "ruvnet/wifi-densepose",
         "url": "https://github.com/ruvnet/wifi-densepose",
-        "stars": 6951
+        "stars": 6952
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -2886,7 +3101,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22003
+        "stars": 22004
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2996,7 +3211,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 14996
+        "stars": 14999
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3018,7 +3233,7 @@
       "parent": {
         "name": "jlia0/tinyclaw",
         "url": "https://github.com/jlia0/tinyclaw",
-        "stars": 2020
+        "stars": 2023
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3084,7 +3299,7 @@
       "parent": {
         "name": "R44VC0RP/pgrok",
         "url": "https://github.com/R44VC0RP/pgrok",
-        "stars": 511
+        "stars": 514
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3128,7 +3343,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 14488
+        "stars": 14533
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3150,7 +3365,7 @@
       "parent": {
         "name": "The-Vibe-Company/companion",
         "url": "https://github.com/The-Vibe-Company/companion",
-        "stars": 1963
+        "stars": 1965
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3172,7 +3387,7 @@
       "parent": {
         "name": "unfoldadmin/django-unfold",
         "url": "https://github.com/unfoldadmin/django-unfold",
-        "stars": 3206
+        "stars": 3207
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3194,7 +3409,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2161
+        "stars": 2164
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3216,7 +3431,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 23871
+        "stars": 23872
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3304,7 +3519,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 32824
+        "stars": 32829
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3326,7 +3541,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 6153
+        "stars": 6157
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -3348,7 +3563,7 @@
       "parent": {
         "name": "OpenBMB/MiniCPM-o",
         "url": "https://github.com/OpenBMB/MiniCPM-o",
-        "stars": 23828
+        "stars": 23829
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -3414,7 +3629,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 5447
+        "stars": 5448
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3458,7 +3673,7 @@
       "parent": {
         "name": "evinjohnn/natively-cluely-ai-assistant",
         "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
-        "stars": 499
+        "stars": 500
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3480,7 +3695,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 3991
+        "stars": 3998
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3524,7 +3739,7 @@
       "parent": {
         "name": "wg-easy/wg-easy",
         "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24605
+        "stars": 24607
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3634,7 +3849,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 20842
+        "stars": 20859
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3656,7 +3871,7 @@
       "parent": {
         "name": "MiniCodeMonkey/chief",
         "url": "https://github.com/MiniCodeMonkey/chief",
-        "stars": 168
+        "stars": 170
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3832,7 +4047,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 201341
+        "stars": 201342
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4140,7 +4355,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2230
+        "stars": 2231
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4294,7 +4509,7 @@
       "parent": {
         "name": "Beingpax/VoiceInk",
         "url": "https://github.com/Beingpax/VoiceInk",
-        "stars": 3817
+        "stars": 3820
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4338,7 +4553,7 @@
       "parent": {
         "name": "Hawksight-AI/semantica",
         "url": "https://github.com/Hawksight-AI/semantica",
-        "stars": 697
+        "stars": 698
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4382,7 +4597,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 95655
+        "stars": 95667
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4426,7 +4641,7 @@
       "parent": {
         "name": "microsoft/call-center-ai",
         "url": "https://github.com/microsoft/call-center-ai",
-        "stars": 6251
+        "stars": 6253
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4448,7 +4663,7 @@
       "parent": {
         "name": "rivo/tview",
         "url": "https://github.com/rivo/tview",
-        "stars": 13564
+        "stars": 13565
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4580,7 +4795,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1661
+        "stars": 1662
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4602,7 +4817,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 3016
+        "stars": 3020
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4686,7 +4901,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 20535
+        "stars": 20536
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4818,7 +5033,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20571
+        "stars": 20570
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -4840,7 +5055,7 @@
       "parent": {
         "name": "fastrepl/char",
         "url": "https://github.com/fastrepl/char",
-        "stars": 7724
+        "stars": 7727
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5280,7 +5495,7 @@
       "parent": {
         "name": "reconurge/flowsint",
         "url": "https://github.com/reconurge/flowsint",
-        "stars": 2580
+        "stars": 2581
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -5302,7 +5517,7 @@
       "parent": {
         "name": "supermemoryai/claude-supermemory",
         "url": "https://github.com/supermemoryai/claude-supermemory",
-        "stars": 2159
+        "stars": 2158
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5412,7 +5627,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 14813
+        "stars": 14815
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -5478,7 +5693,7 @@
       "parent": {
         "name": "snwfdhmp/awesome-ralph",
         "url": "https://github.com/snwfdhmp/awesome-ralph",
-        "stars": 725
+        "stars": 726
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -5500,7 +5715,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 5936
+        "stars": 5941
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -5588,7 +5803,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 3554
+        "stars": 3555
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -5676,7 +5891,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 124166
+        "stars": 124171
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5698,7 +5913,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 6329
+        "stars": 6336
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5742,7 +5957,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 5904
+        "stars": 5905
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -5852,7 +6067,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24159
+        "stars": 24160
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6094,7 +6309,7 @@
       "parent": {
         "name": "aiming-lab/SimpleMem",
         "url": "https://github.com/aiming-lab/SimpleMem",
-        "stars": 2924
+        "stars": 2925
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -6270,7 +6485,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 114911
+        "stars": 114916
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -6380,7 +6595,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15513
+        "stars": 15515
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6446,7 +6661,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 19965
+        "stars": 19970
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6534,7 +6749,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 8644
+        "stars": 8645
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -6578,7 +6793,7 @@
       "parent": {
         "name": "Liquid4All/cookbook",
         "url": "https://github.com/Liquid4All/cookbook",
-        "stars": 1153
+        "stars": 1154
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6754,7 +6969,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7184
+        "stars": 7185
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -6776,7 +6991,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51489
+        "stars": 51488
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6952,7 +7167,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 21726
+        "stars": 21725
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7084,7 +7299,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39483
+        "stars": 39484
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -7304,7 +7519,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 181751
+        "stars": 181753
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7326,7 +7541,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 10910
+        "stars": 10914
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7370,7 +7585,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12496
+        "stars": 12499
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -7546,7 +7761,7 @@
       "parent": {
         "name": "midday-ai/midday",
         "url": "https://github.com/midday-ai/midday",
-        "stars": 14004
+        "stars": 14007
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -7568,7 +7783,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16487
+        "stars": 16488
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7788,7 +8003,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 16204
+        "stars": 16206
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -7810,7 +8025,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 105984
+        "stars": 106003
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -8096,7 +8311,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 27972
+        "stars": 27974
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8162,7 +8377,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 14320
+        "stars": 14324
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -8184,7 +8399,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 20571
+        "stars": 20574
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -8338,7 +8553,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 95189
+        "stars": 95193
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -8642,7 +8857,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 181844
+        "stars": 181845
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
