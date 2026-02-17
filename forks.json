@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-17T19:18:58.058Z",
+  "lastUpdated": "2026-02-17T19:27:34.073Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
   "totalRepos": 311,
   "progress": {
@@ -9,6 +9,221 @@
     "complete": true
   },
   "forks": [
+    {
+      "id": 1160264409,
+      "name": "rag-api",
+      "displayName": "rag api",
+      "description": "Multi-tenant RAG API powered by LightRAG/RAG-Anything. Auto-selects best parser (DeepSeek-OCR/MinerU/Docling) via complexity scoring",
+      "summary": "# Building a Multi-Tenant RAG API with `rag-api`\n\n## The Problem\n\nDealing with document Q&A at scale is a nightmare. PDFs, images, Word files—every format demands its own parsing, and don’t get me started on OCR. Add multi-tenancy into the mix, with isolated data and custom logic per tenant, and you're drowning in complexity. Most open-source tools give you one piece of the puzzle: vector search, OCR, or maybe a knowledge graph. But what if you need all of it, and it has to just work?\n\n## What This Does\n\n`rag-api` is a multi-tenant Retrieval-Augmented Generation (RAG) service that combines **LightRAG** and **RAG-Anything** for intelligent document Q&A. It auto-selects the best parser—**DeepSeek-OCR**, **MinerU**, or **Docling**—based on document complexity (`src/smart_parser_selector.py`). No need to guess which tool to use; it figures it out.\n\nThe project is cleanly organized. The `api/` folder handles endpoints like `documents.py` (file ingestion), `query.py` (retrieval), and `tenant.py` (tenant management). The brains of the operation live in `src/`, where modules like `document_complexity.py` and `rag.py` handle parsing and retrieval. Oh, and deployment? Dead simple. There's a `Dockerfile`, `docker-compose.yml`, and even a `deploy.sh` script to get you started in minutes.\n\n## Real-World Use\n\nSay you're building a SaaS platform where businesses upload contracts, invoices, and scanned forms for Q&A. Here's what your workflow might look like:\n\n1. Deploy the service (`docker-compose up`).\n2. Upload a batch of files via the `/documents` endpoint (check out `api/documents.py`).\n3. Behind the scenes, `smart_parser_selector.py` picks the best parser (OCR for images, direct insertion for text).\n4. Query the data using `/query` (hello, hybrid retrieval with LightRAG).\n\nExample cURL request to upload files:\n\n```bash\ncurl -X POST -F \"file=@contract.pdf\" http://localhost:8000/documents\n```\n\nAnd retrieving info:\n\n```bash\ncurl -X GET \"http://localhost:8000/query?question=What%20is%20the%20contract%20value?\"\n```\n\nMulti-tenancy? Each tenant has isolated storage and config (`api/tenant_config.py`), so no cross-contamination.\n\n## The Bottom Line\n\n`rag-api` is overkill for small projects but perfect for enterprise-level document Q&A with multi-tenancy. It’s opinionated but flexible: great parser selection, hybrid retrieval, and Redis-based task persistence. Just don’t expect hand-holding—the docs are there, but you’ll need to dig in. If you're wrangling complex document processing at scale, this is your new best friend.",
+      "url": "https://github.com/moses-y/rag-api",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "BukeLy/rag-api",
+        "url": "https://github.com/BukeLy/rag-api",
+        "stars": 33
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 79,
+        "directories": {
+          ".cursor": 1,
+          "(root)": 18,
+          ".github": 1,
+          "api": 12,
+          "deploy": 1,
+          "docs": 21,
+          "scripts": 10,
+          "src": 15
+        },
+        "languages": {
+          "YAML": 3,
+          "Markdown": 27,
+          "Python": 29,
+          "Shell": 8,
+          "TOML": 2
+        },
+        "frameworks": [
+          "Docker"
+        ],
+        "packageManager": null,
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "main.py"
+        ],
+        "configFiles": [
+          "Dockerfile",
+          "Dockerfile.dev",
+          "Dockerfile.qdrant",
+          "docker-compose.dev.yml",
+          "docker-compose.yml",
+          "pyproject.toml"
+        ],
+        "dependencies": [
+          "pyproject.toml"
+        ],
+        "testFiles": [
+          "test_lightrag_doc_status_api.py"
+        ],
+        "docs": [
+          "README.md",
+          "README.zh-CN.md",
+          "api/README.md",
+          "docs/API_COMPARISON.md",
+          "docs/ARCHITECTURE.md",
+          "docs/AWS_MIGRATION_GUIDE.md",
+          "docs/DEPLOYMENT_EXTERNAL_STORAGE.md",
+          "docs/DEPLOY_MODES.md",
+          "docs/FRONTEND_API_INTEGRATION_GUIDE.md",
+          "docs/FRONTEND_BUG_FIX_REPORT.md",
+          "docs/LIGHTRAG_IMPLEMENTATION_GUIDE.md",
+          "docs/LIGHTRAG_WEBUI_INTEGRATION.md",
+          "docs/MINERU_REMOTE_API.md",
+          "docs/MULTI_TENANT_CONFIG_BEST_PRACTICES.md",
+          "docs/PR_WORKFLOW.md",
+          "docs/README.md",
+          "docs/USAGE.md",
+          "docs/async-architecture-migration-plan.md",
+          "docs/cdn_prompts_template.md",
+          "docs/deepseek-ocr-complete.md",
+          "docs/lightrag_entity_extraction_format.md",
+          "docs/parser-selection-upgrade-v1-to-v2.md",
+          "docs/smart-parser-selection-v2.md",
+          "docs/strict_grounding_mode.md",
+          "scripts/README.md",
+          "scripts/README_MIGRATION.md"
+        ],
+        "fileTypes": {
+          ".mdc": 1,
+          ".yml": 3,
+          ".md": 27,
+          ".dev": 1,
+          ".qdrant": 1,
+          ".py": 29,
+          ".sh": 8,
+          ".conf": 1,
+          ".example": 1,
+          ".toml": 2,
+          ".lock": 1
+        }
+      }
+    },
+    {
+      "id": 1160260038,
+      "name": "freemocap",
+      "displayName": "freemocap",
+      "description": "Free Motion Capture for Everyone 💀✨",
+      "summary": "## The Problem\nHave you ever tried motion capture and thought, \"Wow, this is way too expensive and complicated?\" Traditional setups require a small fortune and a PhD in engineering just to get started. FreeMoCap aims to fix that by giving you a low-cost, open-source alternative that doesn’t require a degree in rocket science.\n\n## What This Does\nFreeMoCap is a motion capture system that runs on both hardware and software you probably already have. The project is split into a few key directories, like `freemocap/`, which contains the core processes for capturing and processing motion data, and `experimental/freemocap-ui/`, which houses the React-based UI for interacting with the system. \n\nYou can kick things off with `freemocap/__main__.py`, which launches the GUI to start your motion capture sessions. If you're feeling adventurous, the `experimental/batch_process/` folder has scripts to handle batch processing of your captured videos, making it easier to analyze multiple recordings without losing your sanity.\n\n## Real-World Use\nHere’s a quick workflow: After setting up your environment and installing the package using `pip install freemocap`, you can run your capture session like this:\n\n```bash\npython -m freemocap\n```\n\nThe GUI pops up, guiding you through the capture process, where you can adjust settings directly. Once done, you can dive into the `process_motion_capture_videos` folder to tweak your data and export it for further analysis. Need to visualize your results? The integration with Blender via `export_to_blender.py` makes it a breeze to create stunning visuals.\n\n## The Bottom Line\nFreeMoCap is a solid option if you're looking to dip your toes into motion capture without drowning in costs and complexity. It's got a decent structure and clear documentation, but with only 0 stars, it might lack that warm, fuzzy community support you’d find in more established projects. If you’re a researcher, educator, or hobbyist, give it a shot—but don’t expect the polish of commercial solutions just yet.",
+      "url": "https://github.com/moses-y/freemocap",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "freemocap/freemocap",
+        "url": "https://github.com/freemocap/freemocap",
+        "stars": 4611
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 10,
+          ".github": 15,
+          "bin": 10,
+          "experimental": 91,
+          "freemocap": 74
+        },
+        "languages": {
+          "Markdown": 7,
+          "YAML": 14,
+          "Shell": 8,
+          "Python": 79,
+          "JavaScript": 1,
+          "JSON": 4,
+          "HTML": 1,
+          "CSS": 3,
+          "TSX": 29,
+          "TypeScript": 15
+        },
+        "frameworks": [
+          "React",
+          "FastAPI"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "experimental/freemocap-ui/public/index.html",
+          "experimental/freemocap-ui/src/App.tsx",
+          "experimental/freemocap-ui/src/index.tsx",
+          "freemocap/__main__.py"
+        ],
+        "configFiles": [
+          "experimental/freemocap-ui/package.json",
+          "experimental/freemocap-ui/tsconfig.json"
+        ],
+        "dependencies": [
+          "experimental/freemocap-ui/package-lock.json",
+          "experimental/freemocap-ui/package.json"
+        ],
+        "testFiles": [
+          ".github/workflows/coverage-testing.yml",
+          ".github/workflows/python-testing.yml",
+          ".github/workflows/version-testing-1.yml",
+          ".github/workflows/version-testing-2.yml",
+          "bin/linux/test.sh",
+          "experimental/freemocap-ui/src/App.test.tsx",
+          "experimental/freemocap-ui/src/features/counter/counterSlice.spec.ts",
+          "experimental/freemocap-ui/src/setupTests.ts"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "experimental/benchmark/README.md",
+          "experimental/freemocap-ui/README.md"
+        ],
+        "fileTypes": {
+          ".md": 7,
+          ".yml": 13,
+          ".yaml": 1,
+          ".cff": 1,
+          ".in": 1,
+          ".sh": 8,
+          ".cmd": 2,
+          ".py": 79,
+          ".js": 1,
+          ".json": 4,
+          ".ico": 2,
+          ".html": 1,
+          ".png": 11,
+          ".txt": 1,
+          ".css": 3,
+          ".tsx": 29,
+          ".ts": 15,
+          ".svg": 7,
+          ".xml": 1,
+          ".pdf": 4,
+          ".icns": 1,
+          ".plist": 1,
+          ".ipynb": 1
+        }
+      }
+    },
     {
       "id": 1160206916,
       "name": "superclaw",
@@ -580,221 +795,6 @@
       }
     },
     {
-      "id": 1160264409,
-      "name": "rag-api",
-      "displayName": "rag api",
-      "description": "Multi-tenant RAG API powered by LightRAG/RAG-Anything. Auto-selects best parser (DeepSeek-OCR/MinerU/Docling) via complexity scoring",
-      "summary": "# Building a Multi-Tenant RAG API with `rag-api`\n\n## The Problem\n\nDealing with document Q&A at scale is a nightmare. PDFs, images, Word files—every format demands its own parsing, and don’t get me started on OCR. Add multi-tenancy into the mix, with isolated data and custom logic per tenant, and you're drowning in complexity. Most open-source tools give you one piece of the puzzle: vector search, OCR, or maybe a knowledge graph. But what if you need all of it, and it has to just work?\n\n## What This Does\n\n`rag-api` is a multi-tenant Retrieval-Augmented Generation (RAG) service that combines **LightRAG** and **RAG-Anything** for intelligent document Q&A. It auto-selects the best parser—**DeepSeek-OCR**, **MinerU**, or **Docling**—based on document complexity (`src/smart_parser_selector.py`). No need to guess which tool to use; it figures it out.\n\nThe project is cleanly organized. The `api/` folder handles endpoints like `documents.py` (file ingestion), `query.py` (retrieval), and `tenant.py` (tenant management). The brains of the operation live in `src/`, where modules like `document_complexity.py` and `rag.py` handle parsing and retrieval. Oh, and deployment? Dead simple. There's a `Dockerfile`, `docker-compose.yml`, and even a `deploy.sh` script to get you started in minutes.\n\n## Real-World Use\n\nSay you're building a SaaS platform where businesses upload contracts, invoices, and scanned forms for Q&A. Here's what your workflow might look like:\n\n1. Deploy the service (`docker-compose up`).\n2. Upload a batch of files via the `/documents` endpoint (check out `api/documents.py`).\n3. Behind the scenes, `smart_parser_selector.py` picks the best parser (OCR for images, direct insertion for text).\n4. Query the data using `/query` (hello, hybrid retrieval with LightRAG).\n\nExample cURL request to upload files:\n\n```bash\ncurl -X POST -F \"file=@contract.pdf\" http://localhost:8000/documents\n```\n\nAnd retrieving info:\n\n```bash\ncurl -X GET \"http://localhost:8000/query?question=What%20is%20the%20contract%20value?\"\n```\n\nMulti-tenancy? Each tenant has isolated storage and config (`api/tenant_config.py`), so no cross-contamination.\n\n## The Bottom Line\n\n`rag-api` is overkill for small projects but perfect for enterprise-level document Q&A with multi-tenancy. It’s opinionated but flexible: great parser selection, hybrid retrieval, and Redis-based task persistence. Just don’t expect hand-holding—the docs are there, but you’ll need to dig in. If you're wrangling complex document processing at scale, this is your new best friend.",
-      "url": "https://github.com/moses-y/rag-api",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "BukeLy/rag-api",
-        "url": "https://github.com/BukeLy/rag-api",
-        "stars": 33
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 17, 2026",
-      "updatedAt": "February 17, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 79,
-        "directories": {
-          ".cursor": 1,
-          "(root)": 18,
-          ".github": 1,
-          "api": 12,
-          "deploy": 1,
-          "docs": 21,
-          "scripts": 10,
-          "src": 15
-        },
-        "languages": {
-          "YAML": 3,
-          "Markdown": 27,
-          "Python": 29,
-          "Shell": 8,
-          "TOML": 2
-        },
-        "frameworks": [
-          "Docker"
-        ],
-        "packageManager": null,
-        "hasDocker": true,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [
-          "main.py"
-        ],
-        "configFiles": [
-          "Dockerfile",
-          "Dockerfile.dev",
-          "Dockerfile.qdrant",
-          "docker-compose.dev.yml",
-          "docker-compose.yml",
-          "pyproject.toml"
-        ],
-        "dependencies": [
-          "pyproject.toml"
-        ],
-        "testFiles": [
-          "test_lightrag_doc_status_api.py"
-        ],
-        "docs": [
-          "README.md",
-          "README.zh-CN.md",
-          "api/README.md",
-          "docs/API_COMPARISON.md",
-          "docs/ARCHITECTURE.md",
-          "docs/AWS_MIGRATION_GUIDE.md",
-          "docs/DEPLOYMENT_EXTERNAL_STORAGE.md",
-          "docs/DEPLOY_MODES.md",
-          "docs/FRONTEND_API_INTEGRATION_GUIDE.md",
-          "docs/FRONTEND_BUG_FIX_REPORT.md",
-          "docs/LIGHTRAG_IMPLEMENTATION_GUIDE.md",
-          "docs/LIGHTRAG_WEBUI_INTEGRATION.md",
-          "docs/MINERU_REMOTE_API.md",
-          "docs/MULTI_TENANT_CONFIG_BEST_PRACTICES.md",
-          "docs/PR_WORKFLOW.md",
-          "docs/README.md",
-          "docs/USAGE.md",
-          "docs/async-architecture-migration-plan.md",
-          "docs/cdn_prompts_template.md",
-          "docs/deepseek-ocr-complete.md",
-          "docs/lightrag_entity_extraction_format.md",
-          "docs/parser-selection-upgrade-v1-to-v2.md",
-          "docs/smart-parser-selection-v2.md",
-          "docs/strict_grounding_mode.md",
-          "scripts/README.md",
-          "scripts/README_MIGRATION.md"
-        ],
-        "fileTypes": {
-          ".mdc": 1,
-          ".yml": 3,
-          ".md": 27,
-          ".dev": 1,
-          ".qdrant": 1,
-          ".py": 29,
-          ".sh": 8,
-          ".conf": 1,
-          ".example": 1,
-          ".toml": 2,
-          ".lock": 1
-        }
-      }
-    },
-    {
-      "id": 1160260038,
-      "name": "freemocap",
-      "displayName": "freemocap",
-      "description": "Free Motion Capture for Everyone 💀✨",
-      "summary": "## The Problem\nHave you ever tried motion capture and thought, \"Wow, this is way too expensive and complicated?\" Traditional setups require a small fortune and a PhD in engineering just to get started. FreeMoCap aims to fix that by giving you a low-cost, open-source alternative that doesn’t require a degree in rocket science.\n\n## What This Does\nFreeMoCap is a motion capture system that runs on both hardware and software you probably already have. The project is split into a few key directories, like `freemocap/`, which contains the core processes for capturing and processing motion data, and `experimental/freemocap-ui/`, which houses the React-based UI for interacting with the system. \n\nYou can kick things off with `freemocap/__main__.py`, which launches the GUI to start your motion capture sessions. If you're feeling adventurous, the `experimental/batch_process/` folder has scripts to handle batch processing of your captured videos, making it easier to analyze multiple recordings without losing your sanity.\n\n## Real-World Use\nHere’s a quick workflow: After setting up your environment and installing the package using `pip install freemocap`, you can run your capture session like this:\n\n```bash\npython -m freemocap\n```\n\nThe GUI pops up, guiding you through the capture process, where you can adjust settings directly. Once done, you can dive into the `process_motion_capture_videos` folder to tweak your data and export it for further analysis. Need to visualize your results? The integration with Blender via `export_to_blender.py` makes it a breeze to create stunning visuals.\n\n## The Bottom Line\nFreeMoCap is a solid option if you're looking to dip your toes into motion capture without drowning in costs and complexity. It's got a decent structure and clear documentation, but with only 0 stars, it might lack that warm, fuzzy community support you’d find in more established projects. If you’re a researcher, educator, or hobbyist, give it a shot—but don’t expect the polish of commercial solutions just yet.",
-      "url": "https://github.com/moses-y/freemocap",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "freemocap/freemocap",
-        "url": "https://github.com/freemocap/freemocap",
-        "stars": 4611
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 17, 2026",
-      "updatedAt": "February 17, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          "(root)": 10,
-          ".github": 15,
-          "bin": 10,
-          "experimental": 91,
-          "freemocap": 74
-        },
-        "languages": {
-          "Markdown": 7,
-          "YAML": 14,
-          "Shell": 8,
-          "Python": 79,
-          "JavaScript": 1,
-          "JSON": 4,
-          "HTML": 1,
-          "CSS": 3,
-          "TSX": 29,
-          "TypeScript": 15
-        },
-        "frameworks": [
-          "React",
-          "FastAPI"
-        ],
-        "packageManager": "npm",
-        "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [
-          "experimental/freemocap-ui/public/index.html",
-          "experimental/freemocap-ui/src/App.tsx",
-          "experimental/freemocap-ui/src/index.tsx",
-          "freemocap/__main__.py"
-        ],
-        "configFiles": [
-          "experimental/freemocap-ui/package.json",
-          "experimental/freemocap-ui/tsconfig.json"
-        ],
-        "dependencies": [
-          "experimental/freemocap-ui/package-lock.json",
-          "experimental/freemocap-ui/package.json"
-        ],
-        "testFiles": [
-          ".github/workflows/coverage-testing.yml",
-          ".github/workflows/python-testing.yml",
-          ".github/workflows/version-testing-1.yml",
-          ".github/workflows/version-testing-2.yml",
-          "bin/linux/test.sh",
-          "experimental/freemocap-ui/src/App.test.tsx",
-          "experimental/freemocap-ui/src/features/counter/counterSlice.spec.ts",
-          "experimental/freemocap-ui/src/setupTests.ts"
-        ],
-        "docs": [
-          "CONTRIBUTING.md",
-          "LICENSE",
-          "README.md",
-          "experimental/benchmark/README.md",
-          "experimental/freemocap-ui/README.md"
-        ],
-        "fileTypes": {
-          ".md": 7,
-          ".yml": 13,
-          ".yaml": 1,
-          ".cff": 1,
-          ".in": 1,
-          ".sh": 8,
-          ".cmd": 2,
-          ".py": 79,
-          ".js": 1,
-          ".json": 4,
-          ".ico": 2,
-          ".html": 1,
-          ".png": 11,
-          ".txt": 1,
-          ".css": 3,
-          ".tsx": 29,
-          ".ts": 15,
-          ".svg": 7,
-          ".xml": 1,
-          ".pdf": 4,
-          ".icns": 1,
-          ".plist": 1,
-          ".ipynb": 1
-        }
-      }
-    },
-    {
       "id": 1159567990,
       "name": "pinchtab",
       "displayName": "pinchtab",
@@ -808,7 +808,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 254
+        "stars": 256
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -875,7 +875,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 417
+        "stars": 418
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -970,7 +970,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 4375
+        "stars": 4378
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -1519,7 +1519,7 @@
       "parent": {
         "name": "PurpleAILAB/Decepticon",
         "url": "https://github.com/PurpleAILAB/Decepticon",
-        "stars": 522
+        "stars": 523
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1661,7 +1661,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 204639
+        "stars": 204654
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3035,7 +3035,7 @@
       "parent": {
         "name": "openrundev/openrun",
         "url": "https://github.com/openrundev/openrun",
-        "stars": 786
+        "stars": 787
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3101,7 +3101,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22004
+        "stars": 22005
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3343,7 +3343,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 14533
+        "stars": 14537
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3519,7 +3519,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 32829
+        "stars": 32832
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3673,7 +3673,7 @@
       "parent": {
         "name": "evinjohnn/natively-cluely-ai-assistant",
         "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
-        "stars": 500
+        "stars": 501
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3695,7 +3695,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 3998
+        "stars": 4000
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3849,7 +3849,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 20859
+        "stars": 20865
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4179,7 +4179,7 @@
       "parent": {
         "name": "sseanliu/VisionClaw",
         "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 988
+        "stars": 990
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4355,7 +4355,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2231
+        "stars": 2232
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4597,7 +4597,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 95667
+        "stars": 95668
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4641,7 +4641,7 @@
       "parent": {
         "name": "microsoft/call-center-ai",
         "url": "https://github.com/microsoft/call-center-ai",
-        "stars": 6253
+        "stars": 6254
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4923,7 +4923,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44376
+        "stars": 44377
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -5385,7 +5385,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6780
+        "stars": 6781
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5627,7 +5627,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 14815
+        "stars": 14816
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -5913,7 +5913,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 6336
+        "stars": 6334
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6595,7 +6595,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15515
+        "stars": 15516
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6969,7 +6969,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7185
+        "stars": 7184
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -8025,7 +8025,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 106003
+        "stars": 106006
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -8377,7 +8377,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 14324
+        "stars": 14326
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -8399,7 +8399,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 20574
+        "stars": 20575
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
