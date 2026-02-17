@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-17T00:12:54.253Z",
+  "lastUpdated": "2026-02-17T06:19:05.341Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
   "totalRepos": 304,
   "progress": {
@@ -9,6 +9,444 @@
     "complete": true
   },
   "forks": [
+    {
+      "id": 1159567990,
+      "name": "pinchtab",
+      "displayName": "pinchtab",
+      "description": "No description available",
+      "summary": "## The Problem\n\nBrowser automation for AI agents is a hot mess. Most tools are either tightly coupled to their own frameworks (hi, OpenClaw, Playwright), or they rely on heavy solutions like full-page screenshots or bloated DOM snapshots that rack up token usage and costs. If you want something lightweight, framework-agnostic, and easy to integrate with your existing setup, you’re usually out of luck. \n\n## What This Does\n\n`pinchtab` is a self-contained, 12MB Go binary that spins up an HTTP server and a Chrome instance for browser automation. No external dependencies, no bloated frameworks. It’s designed for AI agents but works with **anything** that can make HTTP requests — even `curl`.\n\nThe magic happens in `main.go`, which initializes the HTTP server and Chrome bridge. The file `bridge.go` sets up the communication between the server and Chrome, leveraging Chrome DevTools Protocol (CDP) to interact with web pages. Key files like `handlers.go` and `handler_snapshot.go` handle API routes, such as `GET /snapshot` for accessibility trees or `POST /action` for interactions like clicks and typing.\n\nThe project is packed with thoughtful features: intelligent text extraction (`/text` endpoint), stealth mode (`stealth.js` spoofs bot detection signals), and persistent sessions stored at `~/.pinchtab/chrome-profile`. If you’re tired of logging in every time you restart your browser tool, this one’s got you covered.\n\nOh, and it’s dirt cheap on token usage. Instead of dumping the entire DOM, Pinchtab’s `/text` endpoint extracts clean, readable content — up to **13x fewer tokens** compared to full snapshots.\n\n## Real-World Use\n\nLet’s say you’re building an AI agent that needs to scrape product listings and click “Add to Cart” buttons. Here’s how you’d do it with `pinchtab`:\n\n1. Fire up the server:\n   ```bash\n   ./pinchtab\n   ```\n2. Open Chrome, log in to your site, and let Pinchtab handle session persistence.\n3. Use the `/snapshot` API to grab a structured accessibility tree:\n   ```bash\n   curl localhost:9867/snapshot?filter=interactive\n   ```\n4. Find the button’s reference ID and tell Pinchtab to click it:\n   ```bash\n   curl -X POST localhost:9867/action -d '{\"kind\":\"click\",\"ref\":\"e5\"}'\n   ```\n\nNo fancy SDKs or vendor lock-in. Just clean HTTP calls.\n\n## The Bottom Line\n\n`pinchtab` is like the Swiss Army knife of browser automation: simple, efficient, and versatile. It’s perfect for developers who want lightweight tools that don’t dictate how you should build your system. The trade-off? It’s not a feature circus like Playwright, so if you need deep browser testing or hyper-specific actions, look elsewhere. But for AI-driven browser tasks? It’s a steal.",
+      "url": "https://github.com/moses-y/pinchtab",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "pinchtab/pinchtab",
+        "url": "https://github.com/pinchtab/pinchtab",
+        "stars": 205
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 16, 2026",
+      "updatedAt": "February 16, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 33,
+          ".githooks": 1,
+          ".github": 3,
+          "assets": 6,
+          "docs": 1,
+          "scripts": 6,
+          "skill": 1
+        },
+        "languages": {
+          "YAML": 5,
+          "Markdown": 10,
+          "Go": 16,
+          "JavaScript": 2,
+          "Shell": 3
+        },
+        "entryPoints": [
+          "main.go"
+        ],
+        "configFiles": [
+          "Dockerfile",
+          "docker-compose.yml",
+          "go.mod"
+        ],
+        "dependencies": [
+          "go.mod"
+        ],
+        "testFiles": [
+          "QA-RETEST.md",
+          "bridge_test.go",
+          "config_test.go",
+          "handler_test.go",
+          "middleware_test.go",
+          "snapshot_test.go"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "THIRD_PARTY_LICENSES.md",
+          "docs/docker.md",
+          "scripts/README.md"
+        ]
+      }
+    },
+    {
+      "id": 1159567671,
+      "name": "visual-explainer",
+      "displayName": "visual explainer",
+      "description": "Agent skill + prompt templates that generate rich HTML pages for visual diff reviews, architecture overviews, plan audits, data tables, and project recaps",
+      "summary": "## The Problem\nTerminal output is a pain when you need to visualize complex systems. You ask your agent to generate a diagram or compare requirements, and you’re greeted with a mess of ASCII art or, worse, a wall of pipes and dashes. This works for trivial cases, but once you hit anything moderately complex, it becomes unreadable. You might as well be reading hieroglyphics.\n\n## What This Does\nEnter `visual-explainer`, a skill that transforms your terminal's dry output into elegant HTML pages. It lives in the `prompts/` directory with handy templates like `diff-review.md` and `plan-review.md`. When you run commands like `/diff-review`, it generates a full HTML page that includes everything from architecture diagrams to KPI dashboards. You don’t need a build step, and it works straight out of the box—just clone the repo into your agent's skills directory.\n\nThe templates in the `prompts/` folder are straightforward. For example, the command `/plan-review` compares a plan against your codebase, complete with risk assessments and context for future reference. Output files go into `~/.agent/diagrams/`, so you can review them later without having to wrestle with terminal scrollback.\n\n## Real-World Use\nImagine you’re reviewing a feature branch against `main`. You simply run the command:\n\n```\n/diff-review\n```\n\nThe agent generates an HTML page that shows a neat before-and-after view of your architecture, highlights good and bad code, and even provides a decision log with confidence indicators. You can then share this with your team instead of sending them a screenshot of a terminal window that looks like a cat walked across your keyboard.\n\n## The Bottom Line\n`visual-explainer` is a solid solution for anyone who regularly deals with complex terminal outputs. It’s particularly useful for teams that need to present their work clearly and concisely. However, if your projects are small and simple, this might feel like overkill. Overall, it’s a practical tool that turns your agent into a capable visual assistant without the hassle of additional dependencies. Give it a shot if you've ever cursed at your terminal's output.",
+      "url": "https://github.com/moses-y/visual-explainer",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "nicobailon/visual-explainer",
+        "url": "https://github.com/nicobailon/visual-explainer",
+        "stars": 225
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 16, 2026",
+      "updatedAt": "February 16, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 6,
+          "prompts": 5,
+          "references": 3,
+          "templates": 3
+        },
+        "languages": {
+          "Markdown": 11,
+          "HTML": 3
+        },
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "CHANGELOG.md",
+          "LICENSE",
+          "README.md"
+        ]
+      }
+    },
+    {
+      "id": 1159560064,
+      "name": "AI-Trader",
+      "displayName": "AI Trader",
+      "description": "\"AI-Trader: Can AI Beat the Market?\"  Live Trading Bench: https://ai4trade.ai Tech Report Link: https://arxiv.org/abs/2512.10971",
+      "summary": "## The Problem\n\nMost AI trading projects are smoke and mirrors: backtests, cherry-picked results, or “simulations” where the only thing real is the hype. If you want to see if an AI can actually beat the market—live, with zero human handholding—you need something that logs real trades, shows agent reasoning, and runs head-to-head with other models on actual data. Good luck finding that in the wild.\n\n## What This Does\n\n`AI-Trader` sets up a live battle royale for AI agents in markets like NASDAQ 100, SSE 50, and crypto. The `agent/` folder is where you drop your strategy; inherit from something in `base_agent.py` or `base_agent_crypto.py` to avoid reinventing the wheel. Configs live in `configs/`—each JSON file (`default_config.json`, `default_crypto_config.json`, etc.) maps your agent to market, interval, and trading specifics. Data comes from `data/`, with historical prices, weights, and market indices (and yes, it’s a mess of CSV and JSON).\n\nFor actual trading, tools in `agent_tools/` handle price fetching (`tool_get_price_local.py`), crypto orders (`tool_crypto_trade.py`), and even news scraping (`tool_alphavantage_news.py`). Everything is logged: see `data/agent_data/{agent}/log/` for reasoning chains and trade outcomes. Want to analyze agent performance? The leaderboard updates live at [ai4trade.ai](https://ai4trade.ai), and you can inspect logs directly.\n\n## Real-World Use\n\nSay you have a wild new trading strategy: make a copy of `base_agent.py`, override the `decide()` method, and drop your file into `agent/`. Add a config like `my_agent_config.json` in `configs/`. Submit a PR. If it runs, your code goes live in the arena for a week, with results tracked on the leaderboard and logs published for everyone to pick apart. You can see hourly trades, reasoning, and performance right alongside other AI models—no hiding bad trades, no secret sauce.\n\n## The Bottom Line\n\nIf you want to test AI trading in the real world—warts and all—this is the repo. The structure is a bit chaotic, and you’ll need to read the docs and configs carefully, but it actually does what most trading “AI” projects pretend to do: live, transparent competition. Great for researchers and devs who don’t mind some rough edges. If you’re just dabbling or hate JSON, look elsewhere.",
+      "url": "https://github.com/moses-y/AI-Trader",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "HKUDS/AI-Trader",
+        "url": "https://github.com/HKUDS/AI-Trader",
+        "stars": 11264
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 16, 2026",
+      "updatedAt": "February 16, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 7,
+          ".github": 1,
+          "agent": 7,
+          "agent_tools": 7,
+          "assets": 3,
+          "configs": 9,
+          "data": 166
+        },
+        "languages": {
+          "YAML": 1,
+          "Markdown": 5,
+          "Python": 21,
+          "JSON": 62
+        },
+        "entryPoints": [],
+        "configFiles": [
+          ".env.example"
+        ],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "README_CN.md",
+          "configs/README.md",
+          "configs/README_zh.md"
+        ]
+      }
+    },
+    {
+      "id": 1159559244,
+      "name": "zvec",
+      "displayName": "zvec",
+      "description": "A lightweight, lightning-fast, in-process vector database",
+      "summary": "# In-Process Vector Search with Zvec  \n\n## The Problem  \nMost vector databases are overkill for lightweight use cases. You want fast vector search embedded right into your app, but the usual suspects—like Pinecone or Milvus—make you spin up servers, manage clusters, and deal with scaling headaches. What if you just want to search a few million vectors locally without the ops overhead? That’s where `zvec` comes in.  \n\n## What This Does  \n`zvec` is an in-process vector database that lets you embed blazing-fast similarity search directly into your codebase. No servers, no containers, no nonsense—just import the library and go. The repo structure tells you how it works:  \n\n- **Core Search Logic**: Found in `src/ailego/`. This is where the heavy lifting happens—distance calculations, matrix operations, and quantization algorithms. It’s all written in C++ for speed, because Python just doesn’t cut it here.  \n- **Python Bindings**: Located in `src/binding/python/`. These files glue the C++ backend to Python, exposing APIs like `zvec.create_and_open` and `zvec.CollectionSchema`.  \n- **Examples**: The `examples/c++/` folder has some starter code for C++ usage, but let’s be real—most folks are here for Python.  \n\nIt supports dense and sparse vectors, multi-vector queries, and even hybrid search (semantic + filters). The Python API is clean and intuitive, making it painless to set up and start searching.  \n\n## Real-World Use  \nLet’s say you’re building a local recommendation engine for your app. Instead of spinning up a full-blown vector database, you can use `zvec` like this:  \n\n```python  \nimport zvec  \n\n# Define schema  \nschema = zvec.CollectionSchema(  \n    name=\"local_rec_engine\",  \n    vectors=zvec.VectorSchema(\"embedding\", zvec.DataType.VECTOR_FP32, 128),  \n)  \n\n# Create collection  \ncollection = zvec.create_and_open(path=\"./rec_data\", schema=schema)  \n\n# Insert data  \ncollection.insert([  \n    zvec.Doc(id=\"item_1\", vectors={\"embedding\": [0.1, 0.2, ...]}),  \n    zvec.Doc(id=\"item_2\", vectors={\"embedding\": [0.3, 0.4, ...]}),  \n])  \n\n# Query similar items  \nresults = collection.query({\"embedding\": [0.15, 0.25, ...]}, top_k=5)  \nfor result in results:  \n    print(result.id, result.score)  \n```  \n\nNo cluster setup. No network latency. Just fast, local vector search.  \n\n## The Bottom Line  \n`zvec` is a sharp tool for developers who need fast, lightweight vector search without infrastructure headaches. It’s perfect for local apps, prototypes, and edge deployments, but it might struggle with massive, distributed workloads—stick with Milvus for that. The codebase is well-organized and leans on solid C++ fundamentals, but Python users might feel the lack of higher-level abstractions. For the right use case, though, this is a no-brainer.",
+      "url": "https://github.com/moses-y/zvec",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "alibaba/zvec",
+        "url": "https://github.com/alibaba/zvec",
+        "stars": 3872
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 16, 2026",
+      "updatedAt": "February 16, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 10,
+          ".github": 15,
+          "cmake": 3,
+          "examples": 4,
+          "python": 60,
+          "scripts": 2,
+          "src": 106
+        },
+        "languages": {
+          "YAML": 15,
+          "Markdown": 4,
+          "TOML": 1,
+          "Python": 55,
+          "Shell": 1,
+          "C/C++ Header": 46,
+          "C": 1
+        },
+        "entryPoints": [],
+        "configFiles": [
+          ".github/workflows/docker/Dockerfile.linux_x64_glibc228",
+          "CMakeLists.txt",
+          "examples/c++/CMakeLists.txt",
+          "pyproject.toml",
+          "src/CMakeLists.txt",
+          "src/ailego/CMakeLists.txt",
+          "src/binding/CMakeLists.txt",
+          "src/binding/python/CMakeLists.txt"
+        ],
+        "dependencies": [
+          "pyproject.toml"
+        ],
+        "testFiles": [
+          ".github/workflows/build_test_wheel.yml",
+          "python/tests/detail/distance_helper.py",
+          "python/tests/detail/doc_helper.py",
+          "python/tests/detail/fixture_helper.py",
+          "python/tests/detail/params_helper.py",
+          "python/tests/detail/support_helper.py",
+          "python/tests/detail/test_collection_concurrency.py",
+          "python/tests/detail/test_collection_create_and_open.py",
+          "python/tests/detail/test_collection_ddl.py",
+          "python/tests/detail/test_collection_dml.py",
+          "python/tests/detail/test_collection_dql.py",
+          "python/tests/detail/test_collection_exception.py",
+          "python/tests/detail/test_collection_open.py",
+          "python/tests/detail/test_db_config.py",
+          "python/tests/test_collection.py",
+          "python/tests/test_convert.py",
+          "python/tests/test_doc.py",
+          "python/tests/test_embedding.py",
+          "python/tests/test_params.py",
+          "python/tests/test_query_executor.py",
+          "python/tests/test_reranker.py",
+          "python/tests/test_schema.py",
+          "python/tests/test_typing.py",
+          "python/tests/test_util.py"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "scripts/README.md"
+        ]
+      }
+    },
+    {
+      "id": 1159558387,
+      "name": "accomplish",
+      "displayName": "accomplish",
+      "description": "Accomplish™ (formerly Openwork) is the open source Al coworker that lives on your desktop",
+      "summary": "## The Problem\nManaging files, creating documents, and automating mundane tasks can be a real hassle. You know the drill: endless file sorting, document writing that eats up your time, and the constant need to connect different tools. It's frustrating when you need to shift gears between apps just to get simple tasks done. Enter Accomplish™—your AI assistant that keeps everything on your desktop.\n\n## What This Does\nAccomplish acts like a local AI coworker that automates your day-to-day tasks. It’s not just about chatting; it’s about taking action. You can find the core functionality in `apps/desktop/src/main/opencode/index.ts`, which handles the main operations. The `apps/desktop/src/main/services/summarizer.ts` file can help you quickly summarize documents, while the file management features are all over the `apps/desktop/src/main/opencode/config-generator.ts`.\n\nYou have the freedom to set rules for file management directly in the app's settings, and it uses your own API keys, meaning your data stays local. No more worrying about privacy with cloud services. Plus, you can define custom skills using the `apps/desktop/src/main/skills/SkillsManager.ts`, which allows for tailored workflows that fit your unique needs.\n\n## Real-World Use\nImagine you have a cluttered folder full of reports that need sorting. Instead of manually renaming and moving files, you could write a simple skill in Accomplish to automate this. Just set up rules based on file content or dates and let the AI handle the dirty work. For example, you could create a skill that moves all reports older than a month into an archive folder, triggered by a simple command. \n\n```typescript\nconst moveOldReports = new Skill({\n  name: \"Move Old Reports\",\n  action: () => {\n    // Logic to move files\n  }\n});\n```\n\n## The Bottom Line\nAccomplish is a solid tool for anyone looking to cut down on repetitive tasks without sacrificing privacy. It’s not for everyone—if you’re just doing simple file moves, this might feel like overkill. But for those who juggle multiple projects and tools, it’s a breath of fresh air. Just bring your own API keys and let Accomplish handle the rest.",
+      "url": "https://github.com/moses-y/accomplish",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "accomplish-ai/accomplish",
+        "url": "https://github.com/accomplish-ai/accomplish",
+        "stars": 7634
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 16, 2026",
+      "updatedAt": "February 16, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "directories": {
+          ".changeset": 3,
+          "(root)": 16,
+          ".github": 11,
+          "apps": 170
+        },
+        "languages": {
+          "Markdown": 23,
+          "JSON": 4,
+          "YAML": 9,
+          "TypeScript": 73,
+          "TSX": 11,
+          "Shell": 5,
+          "HTML": 1,
+          "JavaScript": 1
+        },
+        "entryPoints": [
+          "apps/desktop/e2e/config/index.ts",
+          "apps/desktop/e2e/fixtures/index.ts",
+          "apps/desktop/e2e/pages/index.ts",
+          "apps/desktop/e2e/provider-tests/fixtures/index.ts",
+          "apps/desktop/e2e/utils/index.ts",
+          "apps/desktop/index.html",
+          "apps/desktop/src/main/index.ts",
+          "apps/desktop/src/main/logging/index.ts",
+          "apps/desktop/src/main/opencode/index.ts",
+          "apps/desktop/src/main/providers/index.ts",
+          "apps/desktop/src/main/skills/index.ts"
+        ],
+        "configFiles": [
+          "apps/desktop/.eslintrc.json",
+          "apps/desktop/e2e/docker/Dockerfile",
+          "apps/desktop/e2e/docker/docker-compose.yml",
+          "apps/desktop/package.json"
+        ],
+        "dependencies": [
+          "apps/desktop/package.json"
+        ],
+        "testFiles": [
+          "apps/desktop/__tests__/integration/main/opencode/cli-path.integration.test.ts",
+          "apps/desktop/__tests__/integration/main/opencode/config-generator.integration.test.ts",
+          "apps/desktop/__tests__/integration/main/permission-api.integration.test.ts",
+          "apps/desktop/__tests__/integration/main/secureStorage.integration.test.ts",
+          "apps/desktop/__tests__/integration/main/taskHistory.integration.test.ts",
+          "apps/desktop/__tests__/integration/main/utils/bundled-node.integration.test.ts",
+          "apps/desktop/__tests__/integration/main/utils/system-path.integration.test.ts",
+          "apps/desktop/__tests__/integration/preload/preload.integration.test.ts",
+          "apps/desktop/__tests__/integration/renderer/App.integration.test.tsx",
+          "apps/desktop/__tests__/integration/renderer/components/Header.integration.test.tsx",
+          "apps/desktop/__tests__/integration/renderer/components/SettingsDialog.integration.test.tsx",
+          "apps/desktop/__tests__/integration/renderer/components/Sidebar.integration.test.tsx",
+          "apps/desktop/__tests__/integration/renderer/components/StreamingText.integration.test.tsx",
+          "apps/desktop/__tests__/integration/renderer/components/TaskHistory.integration.test.tsx",
+          "apps/desktop/__tests__/integration/renderer/components/TaskInputBar.integration.test.tsx",
+          "apps/desktop/__tests__/integration/renderer/components/TaskLauncher.integration.test.tsx",
+          "apps/desktop/__tests__/integration/renderer/pages/Execution.integration.test.tsx",
+          "apps/desktop/__tests__/integration/renderer/pages/Home.integration.test.tsx",
+          "apps/desktop/__tests__/integration/renderer/taskStore.integration.test.ts",
+          "apps/desktop/__tests__/main/config.unit.test.ts",
+          "apps/desktop/__tests__/main/ipc/handlers-utils.unit.test.ts",
+          "apps/desktop/__tests__/main/ipc/validation.unit.test.ts",
+          "apps/desktop/__tests__/renderer/lib/utils.unit.test.ts",
+          "apps/desktop/__tests__/setup.ts",
+          "apps/desktop/__tests__/unit/main/ipc/handlers.unit.test.ts",
+          "apps/desktop/__tests__/unit/main/opencode/adapter.unit.test.ts",
+          "apps/desktop/__tests__/unit/main/opencode/auth-browser.unit.test.ts",
+          "apps/desktop/__tests__/unit/main/opencode/task-manager.unit.test.ts",
+          "apps/desktop/__tests__/unit/renderer/components/BedrockApiKeyTab.unit.test.tsx",
+          "apps/desktop/__tests__/unit/renderer/lib/accomplish.unit.test.ts",
+          "apps/desktop/__tests__/unit/renderer/lib/animations.unit.test.ts",
+          "apps/desktop/__tests__/unit/renderer/lib/waiting-detection.unit.test.ts",
+          "apps/desktop/e2e/provider-tests/fixtures/index.ts",
+          "apps/desktop/e2e/provider-tests/fixtures/provider-app.ts",
+          "apps/desktop/e2e/provider-tests/helpers/ollama-server.ts",
+          "apps/desktop/e2e/provider-tests/provider-test-configs.ts",
+          "apps/desktop/e2e/provider-tests/secrets-loader.ts",
+          "apps/desktop/e2e/provider-tests/secrets.example.json",
+          "apps/desktop/e2e/provider-tests/specs/bedrock-api-key.spec.ts",
+          "apps/desktop/e2e/provider-tests/specs/google.spec.ts",
+          "apps/desktop/e2e/provider-tests/specs/ollama.spec.ts",
+          "apps/desktop/e2e/provider-tests/specs/openai.spec.ts",
+          "apps/desktop/e2e/provider-tests/types.ts",
+          "apps/desktop/e2e/specs/execution.spec.ts",
+          "apps/desktop/e2e/specs/home.spec.ts",
+          "apps/desktop/e2e/specs/settings-bedrock.spec.ts",
+          "apps/desktop/e2e/specs/settings-providers.spec.ts",
+          "apps/desktop/e2e/specs/settings.spec.ts",
+          "apps/desktop/e2e/specs/task-launch-guard.spec.ts",
+          "apps/desktop/scripts/test-local-agent-cli.ts",
+          "apps/desktop/scripts/test-local-agent-config.ts"
+        ],
+        "docs": [
+          ".changeset/README.md",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.ar.md",
+          "README.es.md",
+          "README.id.md",
+          "README.ja.md",
+          "README.ko.md",
+          "README.md",
+          "README.tr.md",
+          "README.zh-CN.md",
+          "apps/desktop/e2e/README.md"
+        ]
+      }
+    },
+    {
+      "id": 1159544956,
+      "name": "droidclaw",
+      "displayName": "droidclaw",
+      "description": "turn old phones into ai agents - give it a goal in plain english. it reads the screen, thinks about what to do, taps and types via adb, and repeats until the job is done. ",
+      "summary": "# Turning Old Phones Into AI Agents with `droidclaw`\n\n## The Problem  \nWe all have old Android phones lying around, and most of the time, they’re just gathering dust. They could be doing something useful, but setting up automation on these devices has always been a nightmare. You either need a million APIs, deal with janky tools, or write custom scripts for every little task. And even then, you’re stuck with rigid, predefined workflows that break as soon as an app updates its UI. What if you could just tell your phone what to do, and it would figure it out?\n\n## What This Does  \n`droidclaw` is a DIY tool that turns your old Android devices into AI-powered task runners. You give it a goal in plain English, and it reads the screen via accessibility APIs, uses a large language model (LLM) to decide what to do, and then performs actions (taps, swipes, typing) via ADB. No more hardcoding every single interaction.  \n\nAt its core, the magic happens in `src/kernel.ts` — the brains of the operation. It loops through a cycle of **think** (ask the LLM what the goal requires), **act** (send ADB commands like `input tap` or `input text`), and **repeat** until the task is done. If you need reusable automations, you can use JSON-based **workflows** (see `examples/workflows`) or YAML **flows** (see `examples/flows`).  \n\nYou can run it with just:  \n```bash\nbun run src/kernel.ts\n```  \nThen, type a goal like \"open Instagram and like the first post\" — and watch your phone do the thing.\n\n## Real-World Use  \nImagine you want to send a message to your team on Slack every morning with your daily standup update. Instead of fumbling with Slack’s API (ugh) or manually typing it in, you use the `examples/workflows/messaging/slack-standup.json`:  \n```json\n{\n  \"name\": \"slack standup\",\n  \"steps\": [\n    {\n      \"app\": \"com.Slack\",\n      \"goal\": \"open #standup channel, type the message and send it\",\n      \"formData\": { \"Message\": \"yesterday: fixed bugs\\ntoday: refactor tests\\nblockers: none\" }\n    }\n  ]\n}\n```  \nRun it with:  \n```bash\nbun run src/kernel.ts --workflow examples/workflows/messaging/slack-standup.json\n```  \nDone. No APIs, no manual inputs, no wasted time.\n\n## The Bottom Line  \n`droidclaw` is ridiculously cool if you’re into automation and have a spare Android lying around. It’s experimental, sure, and you’ll need some patience (and a willingness to debug when it screws up). But for hackers and tinkerers, this is a playground. If you’re expecting a polished, GUI-driven experience, look elsewhere. For everyone else: just install `bun`, fire up `adb`, and turn your phone into a little AI butler.",
+      "url": "https://github.com/moses-y/droidclaw",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "unitedbyai/droidclaw",
+        "url": "https://github.com/unitedbyai/droidclaw",
+        "stars": 359
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 16, 2026",
+      "updatedAt": "February 16, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "directories": {
+          "(root)": 7,
+          "docs": 3,
+          "examples": 42,
+          "site": 2,
+          "src": 10
+        },
+        "languages": {
+          "Markdown": 5,
+          "YAML": 5,
+          "JSON": 39,
+          "HTML": 1,
+          "Shell": 1,
+          "TypeScript": 11
+        },
+        "entryPoints": [
+          "site/index.html"
+        ],
+        "configFiles": [
+          ".env.example",
+          "package.json",
+          "tsconfig.json"
+        ],
+        "dependencies": [
+          "package.json"
+        ],
+        "testFiles": [
+          "test-ollama.ts"
+        ],
+        "docs": [
+          "README.md",
+          "docs/adb-commands.md",
+          "docs/capabilities-and-limitations.md",
+          "docs/use-cases.md"
+        ]
+      }
+    },
     {
       "id": 1159366394,
       "name": "computer-agent",
@@ -23,7 +461,7 @@
       "parent": {
         "name": "suitedaces/computer-agent",
         "url": "https://github.com/suitedaces/computer-agent",
-        "stars": 579
+        "stars": 581
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -89,7 +527,7 @@
       "parent": {
         "name": "philschmid/ia-agents",
         "url": "https://github.com/philschmid/ia-agents",
-        "stars": 14
+        "stars": 17
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -234,7 +672,7 @@
       "parent": {
         "name": "memvid/claude-brain",
         "url": "https://github.com/memvid/claude-brain",
-        "stars": 230
+        "stars": 244
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -296,7 +734,7 @@
       "parent": {
         "name": "PurpleAILAB/Decepticon",
         "url": "https://github.com/PurpleAILAB/Decepticon",
-        "stars": 487
+        "stars": 496
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -362,7 +800,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 60689
+        "stars": 60730
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -438,451 +876,13 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 201562
+        "stars": 202418
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 16, 2026",
       "updatedAt": "February 16, 2026",
       "readTime": 3
-    },
-    {
-      "id": 1159567990,
-      "name": "pinchtab",
-      "displayName": "pinchtab",
-      "description": "No description available",
-      "summary": "## The Problem\n\nBrowser automation for AI agents is a hot mess. Most tools are either tightly coupled to their own frameworks (hi, OpenClaw, Playwright), or they rely on heavy solutions like full-page screenshots or bloated DOM snapshots that rack up token usage and costs. If you want something lightweight, framework-agnostic, and easy to integrate with your existing setup, you’re usually out of luck. \n\n## What This Does\n\n`pinchtab` is a self-contained, 12MB Go binary that spins up an HTTP server and a Chrome instance for browser automation. No external dependencies, no bloated frameworks. It’s designed for AI agents but works with **anything** that can make HTTP requests — even `curl`.\n\nThe magic happens in `main.go`, which initializes the HTTP server and Chrome bridge. The file `bridge.go` sets up the communication between the server and Chrome, leveraging Chrome DevTools Protocol (CDP) to interact with web pages. Key files like `handlers.go` and `handler_snapshot.go` handle API routes, such as `GET /snapshot` for accessibility trees or `POST /action` for interactions like clicks and typing.\n\nThe project is packed with thoughtful features: intelligent text extraction (`/text` endpoint), stealth mode (`stealth.js` spoofs bot detection signals), and persistent sessions stored at `~/.pinchtab/chrome-profile`. If you’re tired of logging in every time you restart your browser tool, this one’s got you covered.\n\nOh, and it’s dirt cheap on token usage. Instead of dumping the entire DOM, Pinchtab’s `/text` endpoint extracts clean, readable content — up to **13x fewer tokens** compared to full snapshots.\n\n## Real-World Use\n\nLet’s say you’re building an AI agent that needs to scrape product listings and click “Add to Cart” buttons. Here’s how you’d do it with `pinchtab`:\n\n1. Fire up the server:\n   ```bash\n   ./pinchtab\n   ```\n2. Open Chrome, log in to your site, and let Pinchtab handle session persistence.\n3. Use the `/snapshot` API to grab a structured accessibility tree:\n   ```bash\n   curl localhost:9867/snapshot?filter=interactive\n   ```\n4. Find the button’s reference ID and tell Pinchtab to click it:\n   ```bash\n   curl -X POST localhost:9867/action -d '{\"kind\":\"click\",\"ref\":\"e5\"}'\n   ```\n\nNo fancy SDKs or vendor lock-in. Just clean HTTP calls.\n\n## The Bottom Line\n\n`pinchtab` is like the Swiss Army knife of browser automation: simple, efficient, and versatile. It’s perfect for developers who want lightweight tools that don’t dictate how you should build your system. The trade-off? It’s not a feature circus like Playwright, so if you need deep browser testing or hyper-specific actions, look elsewhere. But for AI-driven browser tasks? It’s a steal.",
-      "url": "https://github.com/moses-y/pinchtab",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "pinchtab/pinchtab",
-        "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 152
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 16, 2026",
-      "updatedAt": "February 16, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "directories": {
-          "(root)": 33,
-          ".githooks": 1,
-          ".github": 3,
-          "assets": 6,
-          "docs": 1,
-          "scripts": 6,
-          "skill": 1
-        },
-        "languages": {
-          "YAML": 5,
-          "Markdown": 10,
-          "Go": 16,
-          "JavaScript": 2,
-          "Shell": 3
-        },
-        "entryPoints": [
-          "main.go"
-        ],
-        "configFiles": [
-          "Dockerfile",
-          "docker-compose.yml",
-          "go.mod"
-        ],
-        "dependencies": [
-          "go.mod"
-        ],
-        "testFiles": [
-          "QA-RETEST.md",
-          "bridge_test.go",
-          "config_test.go",
-          "handler_test.go",
-          "middleware_test.go",
-          "snapshot_test.go"
-        ],
-        "docs": [
-          "CONTRIBUTING.md",
-          "LICENSE",
-          "README.md",
-          "THIRD_PARTY_LICENSES.md",
-          "docs/docker.md",
-          "scripts/README.md"
-        ]
-      }
-    },
-    {
-      "id": 1159567671,
-      "name": "visual-explainer",
-      "displayName": "visual explainer",
-      "description": "Agent skill + prompt templates that generate rich HTML pages for visual diff reviews, architecture overviews, plan audits, data tables, and project recaps",
-      "summary": "## The Problem\nTerminal output is a pain when you need to visualize complex systems. You ask your agent to generate a diagram or compare requirements, and you’re greeted with a mess of ASCII art or, worse, a wall of pipes and dashes. This works for trivial cases, but once you hit anything moderately complex, it becomes unreadable. You might as well be reading hieroglyphics.\n\n## What This Does\nEnter `visual-explainer`, a skill that transforms your terminal's dry output into elegant HTML pages. It lives in the `prompts/` directory with handy templates like `diff-review.md` and `plan-review.md`. When you run commands like `/diff-review`, it generates a full HTML page that includes everything from architecture diagrams to KPI dashboards. You don’t need a build step, and it works straight out of the box—just clone the repo into your agent's skills directory.\n\nThe templates in the `prompts/` folder are straightforward. For example, the command `/plan-review` compares a plan against your codebase, complete with risk assessments and context for future reference. Output files go into `~/.agent/diagrams/`, so you can review them later without having to wrestle with terminal scrollback.\n\n## Real-World Use\nImagine you’re reviewing a feature branch against `main`. You simply run the command:\n\n```\n/diff-review\n```\n\nThe agent generates an HTML page that shows a neat before-and-after view of your architecture, highlights good and bad code, and even provides a decision log with confidence indicators. You can then share this with your team instead of sending them a screenshot of a terminal window that looks like a cat walked across your keyboard.\n\n## The Bottom Line\n`visual-explainer` is a solid solution for anyone who regularly deals with complex terminal outputs. It’s particularly useful for teams that need to present their work clearly and concisely. However, if your projects are small and simple, this might feel like overkill. Overall, it’s a practical tool that turns your agent into a capable visual assistant without the hassle of additional dependencies. Give it a shot if you've ever cursed at your terminal's output.",
-      "url": "https://github.com/moses-y/visual-explainer",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "nicobailon/visual-explainer",
-        "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 97
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 16, 2026",
-      "updatedAt": "February 16, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "directories": {
-          "(root)": 6,
-          "prompts": 5,
-          "references": 3,
-          "templates": 3
-        },
-        "languages": {
-          "Markdown": 11,
-          "HTML": 3
-        },
-        "entryPoints": [],
-        "configFiles": [],
-        "dependencies": [],
-        "testFiles": [],
-        "docs": [
-          "CHANGELOG.md",
-          "LICENSE",
-          "README.md"
-        ]
-      }
-    },
-    {
-      "id": 1159560064,
-      "name": "AI-Trader",
-      "displayName": "AI Trader",
-      "description": "\"AI-Trader: Can AI Beat the Market?\"  Live Trading Bench: https://ai4trade.ai Tech Report Link: https://arxiv.org/abs/2512.10971",
-      "summary": "## The Problem\n\nMost AI trading projects are smoke and mirrors: backtests, cherry-picked results, or “simulations” where the only thing real is the hype. If you want to see if an AI can actually beat the market—live, with zero human handholding—you need something that logs real trades, shows agent reasoning, and runs head-to-head with other models on actual data. Good luck finding that in the wild.\n\n## What This Does\n\n`AI-Trader` sets up a live battle royale for AI agents in markets like NASDAQ 100, SSE 50, and crypto. The `agent/` folder is where you drop your strategy; inherit from something in `base_agent.py` or `base_agent_crypto.py` to avoid reinventing the wheel. Configs live in `configs/`—each JSON file (`default_config.json`, `default_crypto_config.json`, etc.) maps your agent to market, interval, and trading specifics. Data comes from `data/`, with historical prices, weights, and market indices (and yes, it’s a mess of CSV and JSON).\n\nFor actual trading, tools in `agent_tools/` handle price fetching (`tool_get_price_local.py`), crypto orders (`tool_crypto_trade.py`), and even news scraping (`tool_alphavantage_news.py`). Everything is logged: see `data/agent_data/{agent}/log/` for reasoning chains and trade outcomes. Want to analyze agent performance? The leaderboard updates live at [ai4trade.ai](https://ai4trade.ai), and you can inspect logs directly.\n\n## Real-World Use\n\nSay you have a wild new trading strategy: make a copy of `base_agent.py`, override the `decide()` method, and drop your file into `agent/`. Add a config like `my_agent_config.json` in `configs/`. Submit a PR. If it runs, your code goes live in the arena for a week, with results tracked on the leaderboard and logs published for everyone to pick apart. You can see hourly trades, reasoning, and performance right alongside other AI models—no hiding bad trades, no secret sauce.\n\n## The Bottom Line\n\nIf you want to test AI trading in the real world—warts and all—this is the repo. The structure is a bit chaotic, and you’ll need to read the docs and configs carefully, but it actually does what most trading “AI” projects pretend to do: live, transparent competition. Great for researchers and devs who don’t mind some rough edges. If you’re just dabbling or hate JSON, look elsewhere.",
-      "url": "https://github.com/moses-y/AI-Trader",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "HKUDS/AI-Trader",
-        "url": "https://github.com/HKUDS/AI-Trader",
-        "stars": 11261
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 16, 2026",
-      "updatedAt": "February 16, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "directories": {
-          "(root)": 7,
-          ".github": 1,
-          "agent": 7,
-          "agent_tools": 7,
-          "assets": 3,
-          "configs": 9,
-          "data": 166
-        },
-        "languages": {
-          "YAML": 1,
-          "Markdown": 5,
-          "Python": 21,
-          "JSON": 62
-        },
-        "entryPoints": [],
-        "configFiles": [
-          ".env.example"
-        ],
-        "dependencies": [],
-        "testFiles": [],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "README_CN.md",
-          "configs/README.md",
-          "configs/README_zh.md"
-        ]
-      }
-    },
-    {
-      "id": 1159559244,
-      "name": "zvec",
-      "displayName": "zvec",
-      "description": "A lightweight, lightning-fast, in-process vector database",
-      "summary": "# In-Process Vector Search with Zvec  \n\n## The Problem  \nMost vector databases are overkill for lightweight use cases. You want fast vector search embedded right into your app, but the usual suspects—like Pinecone or Milvus—make you spin up servers, manage clusters, and deal with scaling headaches. What if you just want to search a few million vectors locally without the ops overhead? That’s where `zvec` comes in.  \n\n## What This Does  \n`zvec` is an in-process vector database that lets you embed blazing-fast similarity search directly into your codebase. No servers, no containers, no nonsense—just import the library and go. The repo structure tells you how it works:  \n\n- **Core Search Logic**: Found in `src/ailego/`. This is where the heavy lifting happens—distance calculations, matrix operations, and quantization algorithms. It’s all written in C++ for speed, because Python just doesn’t cut it here.  \n- **Python Bindings**: Located in `src/binding/python/`. These files glue the C++ backend to Python, exposing APIs like `zvec.create_and_open` and `zvec.CollectionSchema`.  \n- **Examples**: The `examples/c++/` folder has some starter code for C++ usage, but let’s be real—most folks are here for Python.  \n\nIt supports dense and sparse vectors, multi-vector queries, and even hybrid search (semantic + filters). The Python API is clean and intuitive, making it painless to set up and start searching.  \n\n## Real-World Use  \nLet’s say you’re building a local recommendation engine for your app. Instead of spinning up a full-blown vector database, you can use `zvec` like this:  \n\n```python  \nimport zvec  \n\n# Define schema  \nschema = zvec.CollectionSchema(  \n    name=\"local_rec_engine\",  \n    vectors=zvec.VectorSchema(\"embedding\", zvec.DataType.VECTOR_FP32, 128),  \n)  \n\n# Create collection  \ncollection = zvec.create_and_open(path=\"./rec_data\", schema=schema)  \n\n# Insert data  \ncollection.insert([  \n    zvec.Doc(id=\"item_1\", vectors={\"embedding\": [0.1, 0.2, ...]}),  \n    zvec.Doc(id=\"item_2\", vectors={\"embedding\": [0.3, 0.4, ...]}),  \n])  \n\n# Query similar items  \nresults = collection.query({\"embedding\": [0.15, 0.25, ...]}, top_k=5)  \nfor result in results:  \n    print(result.id, result.score)  \n```  \n\nNo cluster setup. No network latency. Just fast, local vector search.  \n\n## The Bottom Line  \n`zvec` is a sharp tool for developers who need fast, lightweight vector search without infrastructure headaches. It’s perfect for local apps, prototypes, and edge deployments, but it might struggle with massive, distributed workloads—stick with Milvus for that. The codebase is well-organized and leans on solid C++ fundamentals, but Python users might feel the lack of higher-level abstractions. For the right use case, though, this is a no-brainer.",
-      "url": "https://github.com/moses-y/zvec",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "alibaba/zvec",
-        "url": "https://github.com/alibaba/zvec",
-        "stars": 3576
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 16, 2026",
-      "updatedAt": "February 16, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "directories": {
-          "(root)": 10,
-          ".github": 15,
-          "cmake": 3,
-          "examples": 4,
-          "python": 60,
-          "scripts": 2,
-          "src": 106
-        },
-        "languages": {
-          "YAML": 15,
-          "Markdown": 4,
-          "TOML": 1,
-          "Python": 55,
-          "Shell": 1,
-          "C/C++ Header": 46,
-          "C": 1
-        },
-        "entryPoints": [],
-        "configFiles": [
-          ".github/workflows/docker/Dockerfile.linux_x64_glibc228",
-          "CMakeLists.txt",
-          "examples/c++/CMakeLists.txt",
-          "pyproject.toml",
-          "src/CMakeLists.txt",
-          "src/ailego/CMakeLists.txt",
-          "src/binding/CMakeLists.txt",
-          "src/binding/python/CMakeLists.txt"
-        ],
-        "dependencies": [
-          "pyproject.toml"
-        ],
-        "testFiles": [
-          ".github/workflows/build_test_wheel.yml",
-          "python/tests/detail/distance_helper.py",
-          "python/tests/detail/doc_helper.py",
-          "python/tests/detail/fixture_helper.py",
-          "python/tests/detail/params_helper.py",
-          "python/tests/detail/support_helper.py",
-          "python/tests/detail/test_collection_concurrency.py",
-          "python/tests/detail/test_collection_create_and_open.py",
-          "python/tests/detail/test_collection_ddl.py",
-          "python/tests/detail/test_collection_dml.py",
-          "python/tests/detail/test_collection_dql.py",
-          "python/tests/detail/test_collection_exception.py",
-          "python/tests/detail/test_collection_open.py",
-          "python/tests/detail/test_db_config.py",
-          "python/tests/test_collection.py",
-          "python/tests/test_convert.py",
-          "python/tests/test_doc.py",
-          "python/tests/test_embedding.py",
-          "python/tests/test_params.py",
-          "python/tests/test_query_executor.py",
-          "python/tests/test_reranker.py",
-          "python/tests/test_schema.py",
-          "python/tests/test_typing.py",
-          "python/tests/test_util.py"
-        ],
-        "docs": [
-          "CONTRIBUTING.md",
-          "LICENSE",
-          "README.md",
-          "scripts/README.md"
-        ]
-      }
-    },
-    {
-      "id": 1159558387,
-      "name": "accomplish",
-      "displayName": "accomplish",
-      "description": "Accomplish™ (formerly Openwork) is the open source Al coworker that lives on your desktop",
-      "summary": "## The Problem\nManaging files, creating documents, and automating mundane tasks can be a real hassle. You know the drill: endless file sorting, document writing that eats up your time, and the constant need to connect different tools. It's frustrating when you need to shift gears between apps just to get simple tasks done. Enter Accomplish™—your AI assistant that keeps everything on your desktop.\n\n## What This Does\nAccomplish acts like a local AI coworker that automates your day-to-day tasks. It’s not just about chatting; it’s about taking action. You can find the core functionality in `apps/desktop/src/main/opencode/index.ts`, which handles the main operations. The `apps/desktop/src/main/services/summarizer.ts` file can help you quickly summarize documents, while the file management features are all over the `apps/desktop/src/main/opencode/config-generator.ts`.\n\nYou have the freedom to set rules for file management directly in the app's settings, and it uses your own API keys, meaning your data stays local. No more worrying about privacy with cloud services. Plus, you can define custom skills using the `apps/desktop/src/main/skills/SkillsManager.ts`, which allows for tailored workflows that fit your unique needs.\n\n## Real-World Use\nImagine you have a cluttered folder full of reports that need sorting. Instead of manually renaming and moving files, you could write a simple skill in Accomplish to automate this. Just set up rules based on file content or dates and let the AI handle the dirty work. For example, you could create a skill that moves all reports older than a month into an archive folder, triggered by a simple command. \n\n```typescript\nconst moveOldReports = new Skill({\n  name: \"Move Old Reports\",\n  action: () => {\n    // Logic to move files\n  }\n});\n```\n\n## The Bottom Line\nAccomplish is a solid tool for anyone looking to cut down on repetitive tasks without sacrificing privacy. It’s not for everyone—if you’re just doing simple file moves, this might feel like overkill. But for those who juggle multiple projects and tools, it’s a breath of fresh air. Just bring your own API keys and let Accomplish handle the rest.",
-      "url": "https://github.com/moses-y/accomplish",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "accomplish-ai/accomplish",
-        "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 7540
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 16, 2026",
-      "updatedAt": "February 16, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "directories": {
-          ".changeset": 3,
-          "(root)": 16,
-          ".github": 11,
-          "apps": 170
-        },
-        "languages": {
-          "Markdown": 23,
-          "JSON": 4,
-          "YAML": 9,
-          "TypeScript": 73,
-          "TSX": 11,
-          "Shell": 5,
-          "HTML": 1,
-          "JavaScript": 1
-        },
-        "entryPoints": [
-          "apps/desktop/e2e/config/index.ts",
-          "apps/desktop/e2e/fixtures/index.ts",
-          "apps/desktop/e2e/pages/index.ts",
-          "apps/desktop/e2e/provider-tests/fixtures/index.ts",
-          "apps/desktop/e2e/utils/index.ts",
-          "apps/desktop/index.html",
-          "apps/desktop/src/main/index.ts",
-          "apps/desktop/src/main/logging/index.ts",
-          "apps/desktop/src/main/opencode/index.ts",
-          "apps/desktop/src/main/providers/index.ts",
-          "apps/desktop/src/main/skills/index.ts"
-        ],
-        "configFiles": [
-          "apps/desktop/.eslintrc.json",
-          "apps/desktop/e2e/docker/Dockerfile",
-          "apps/desktop/e2e/docker/docker-compose.yml",
-          "apps/desktop/package.json"
-        ],
-        "dependencies": [
-          "apps/desktop/package.json"
-        ],
-        "testFiles": [
-          "apps/desktop/__tests__/integration/main/opencode/cli-path.integration.test.ts",
-          "apps/desktop/__tests__/integration/main/opencode/config-generator.integration.test.ts",
-          "apps/desktop/__tests__/integration/main/permission-api.integration.test.ts",
-          "apps/desktop/__tests__/integration/main/secureStorage.integration.test.ts",
-          "apps/desktop/__tests__/integration/main/taskHistory.integration.test.ts",
-          "apps/desktop/__tests__/integration/main/utils/bundled-node.integration.test.ts",
-          "apps/desktop/__tests__/integration/main/utils/system-path.integration.test.ts",
-          "apps/desktop/__tests__/integration/preload/preload.integration.test.ts",
-          "apps/desktop/__tests__/integration/renderer/App.integration.test.tsx",
-          "apps/desktop/__tests__/integration/renderer/components/Header.integration.test.tsx",
-          "apps/desktop/__tests__/integration/renderer/components/SettingsDialog.integration.test.tsx",
-          "apps/desktop/__tests__/integration/renderer/components/Sidebar.integration.test.tsx",
-          "apps/desktop/__tests__/integration/renderer/components/StreamingText.integration.test.tsx",
-          "apps/desktop/__tests__/integration/renderer/components/TaskHistory.integration.test.tsx",
-          "apps/desktop/__tests__/integration/renderer/components/TaskInputBar.integration.test.tsx",
-          "apps/desktop/__tests__/integration/renderer/components/TaskLauncher.integration.test.tsx",
-          "apps/desktop/__tests__/integration/renderer/pages/Execution.integration.test.tsx",
-          "apps/desktop/__tests__/integration/renderer/pages/Home.integration.test.tsx",
-          "apps/desktop/__tests__/integration/renderer/taskStore.integration.test.ts",
-          "apps/desktop/__tests__/main/config.unit.test.ts",
-          "apps/desktop/__tests__/main/ipc/handlers-utils.unit.test.ts",
-          "apps/desktop/__tests__/main/ipc/validation.unit.test.ts",
-          "apps/desktop/__tests__/renderer/lib/utils.unit.test.ts",
-          "apps/desktop/__tests__/setup.ts",
-          "apps/desktop/__tests__/unit/main/ipc/handlers.unit.test.ts",
-          "apps/desktop/__tests__/unit/main/opencode/adapter.unit.test.ts",
-          "apps/desktop/__tests__/unit/main/opencode/auth-browser.unit.test.ts",
-          "apps/desktop/__tests__/unit/main/opencode/task-manager.unit.test.ts",
-          "apps/desktop/__tests__/unit/renderer/components/BedrockApiKeyTab.unit.test.tsx",
-          "apps/desktop/__tests__/unit/renderer/lib/accomplish.unit.test.ts",
-          "apps/desktop/__tests__/unit/renderer/lib/animations.unit.test.ts",
-          "apps/desktop/__tests__/unit/renderer/lib/waiting-detection.unit.test.ts",
-          "apps/desktop/e2e/provider-tests/fixtures/index.ts",
-          "apps/desktop/e2e/provider-tests/fixtures/provider-app.ts",
-          "apps/desktop/e2e/provider-tests/helpers/ollama-server.ts",
-          "apps/desktop/e2e/provider-tests/provider-test-configs.ts",
-          "apps/desktop/e2e/provider-tests/secrets-loader.ts",
-          "apps/desktop/e2e/provider-tests/secrets.example.json",
-          "apps/desktop/e2e/provider-tests/specs/bedrock-api-key.spec.ts",
-          "apps/desktop/e2e/provider-tests/specs/google.spec.ts",
-          "apps/desktop/e2e/provider-tests/specs/ollama.spec.ts",
-          "apps/desktop/e2e/provider-tests/specs/openai.spec.ts",
-          "apps/desktop/e2e/provider-tests/types.ts",
-          "apps/desktop/e2e/specs/execution.spec.ts",
-          "apps/desktop/e2e/specs/home.spec.ts",
-          "apps/desktop/e2e/specs/settings-bedrock.spec.ts",
-          "apps/desktop/e2e/specs/settings-providers.spec.ts",
-          "apps/desktop/e2e/specs/settings.spec.ts",
-          "apps/desktop/e2e/specs/task-launch-guard.spec.ts",
-          "apps/desktop/scripts/test-local-agent-cli.ts",
-          "apps/desktop/scripts/test-local-agent-config.ts"
-        ],
-        "docs": [
-          ".changeset/README.md",
-          "CONTRIBUTING.md",
-          "LICENSE",
-          "README.ar.md",
-          "README.es.md",
-          "README.id.md",
-          "README.ja.md",
-          "README.ko.md",
-          "README.md",
-          "README.tr.md",
-          "README.zh-CN.md",
-          "apps/desktop/e2e/README.md"
-        ]
-      }
-    },
-    {
-      "id": 1159544956,
-      "name": "droidclaw",
-      "displayName": "droidclaw",
-      "description": "turn old phones into ai agents - give it a goal in plain english. it reads the screen, thinks about what to do, taps and types via adb, and repeats until the job is done. ",
-      "summary": "# Turning Old Phones Into AI Agents with `droidclaw`\n\n## The Problem  \nWe all have old Android phones lying around, and most of the time, they’re just gathering dust. They could be doing something useful, but setting up automation on these devices has always been a nightmare. You either need a million APIs, deal with janky tools, or write custom scripts for every little task. And even then, you’re stuck with rigid, predefined workflows that break as soon as an app updates its UI. What if you could just tell your phone what to do, and it would figure it out?\n\n## What This Does  \n`droidclaw` is a DIY tool that turns your old Android devices into AI-powered task runners. You give it a goal in plain English, and it reads the screen via accessibility APIs, uses a large language model (LLM) to decide what to do, and then performs actions (taps, swipes, typing) via ADB. No more hardcoding every single interaction.  \n\nAt its core, the magic happens in `src/kernel.ts` — the brains of the operation. It loops through a cycle of **think** (ask the LLM what the goal requires), **act** (send ADB commands like `input tap` or `input text`), and **repeat** until the task is done. If you need reusable automations, you can use JSON-based **workflows** (see `examples/workflows`) or YAML **flows** (see `examples/flows`).  \n\nYou can run it with just:  \n```bash\nbun run src/kernel.ts\n```  \nThen, type a goal like \"open Instagram and like the first post\" — and watch your phone do the thing.\n\n## Real-World Use  \nImagine you want to send a message to your team on Slack every morning with your daily standup update. Instead of fumbling with Slack’s API (ugh) or manually typing it in, you use the `examples/workflows/messaging/slack-standup.json`:  \n```json\n{\n  \"name\": \"slack standup\",\n  \"steps\": [\n    {\n      \"app\": \"com.Slack\",\n      \"goal\": \"open #standup channel, type the message and send it\",\n      \"formData\": { \"Message\": \"yesterday: fixed bugs\\ntoday: refactor tests\\nblockers: none\" }\n    }\n  ]\n}\n```  \nRun it with:  \n```bash\nbun run src/kernel.ts --workflow examples/workflows/messaging/slack-standup.json\n```  \nDone. No APIs, no manual inputs, no wasted time.\n\n## The Bottom Line  \n`droidclaw` is ridiculously cool if you’re into automation and have a spare Android lying around. It’s experimental, sure, and you’ll need some patience (and a willingness to debug when it screws up). But for hackers and tinkerers, this is a playground. If you’re expecting a polished, GUI-driven experience, look elsewhere. For everyone else: just install `bun`, fire up `adb`, and turn your phone into a little AI butler.",
-      "url": "https://github.com/moses-y/droidclaw",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "unitedbyai/droidclaw",
-        "url": "https://github.com/unitedbyai/droidclaw",
-        "stars": 322
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 16, 2026",
-      "updatedAt": "February 16, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "directories": {
-          "(root)": 7,
-          "docs": 3,
-          "examples": 42,
-          "site": 2,
-          "src": 10
-        },
-        "languages": {
-          "Markdown": 5,
-          "YAML": 5,
-          "JSON": 39,
-          "HTML": 1,
-          "Shell": 1,
-          "TypeScript": 11
-        },
-        "entryPoints": [
-          "site/index.html"
-        ],
-        "configFiles": [
-          ".env.example",
-          "package.json",
-          "tsconfig.json"
-        ],
-        "dependencies": [
-          "package.json"
-        ],
-        "testFiles": [
-          "test-ollama.ts"
-        ],
-        "docs": [
-          "README.md",
-          "docs/adb-commands.md",
-          "docs/capabilities-and-limitations.md",
-          "docs/use-cases.md"
-        ]
-      }
     },
     {
       "id": 1158702079,
@@ -898,7 +898,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 5575
+        "stars": 5586
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1013,7 +1013,7 @@
       "parent": {
         "name": "ruzin/stenoai",
         "url": "https://github.com/ruzin/stenoai",
-        "stars": 310
+        "stars": 314
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1094,7 +1094,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 3904
+        "stars": 3909
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1499,7 +1499,7 @@
       "parent": {
         "name": "harlan-zw/mdream",
         "url": "https://github.com/harlan-zw/mdream",
-        "stars": 779
+        "stars": 784
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1800,7 +1800,7 @@
       "parent": {
         "name": "simonbs/Runestone",
         "url": "https://github.com/simonbs/Runestone",
-        "stars": 3045
+        "stars": 3046
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1980,7 +1980,7 @@
       "parent": {
         "name": "roboflow/trackers",
         "url": "https://github.com/roboflow/trackers",
-        "stars": 2447
+        "stars": 2452
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2076,7 +2076,7 @@
       "parent": {
         "name": "Serial-Studio/Serial-Studio",
         "url": "https://github.com/Serial-Studio/Serial-Studio",
-        "stars": 6489
+        "stars": 6490
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2126,7 +2126,7 @@
       "parent": {
         "name": "gosom/google-maps-scraper",
         "url": "https://github.com/gosom/google-maps-scraper",
-        "stars": 3133
+        "stars": 3139
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2272,7 +2272,7 @@
       "parent": {
         "name": "crowdsecurity/crowdsec",
         "url": "https://github.com/crowdsecurity/crowdsec",
-        "stars": 12554
+        "stars": 12556
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2294,7 +2294,7 @@
       "parent": {
         "name": "ruvnet/wifi-densepose",
         "url": "https://github.com/ruvnet/wifi-densepose",
-        "stars": 6792
+        "stars": 6863
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -2316,7 +2316,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 21980
+        "stars": 21986
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2360,7 +2360,7 @@
       "parent": {
         "name": "JPCERTCC/LogonTracer",
         "url": "https://github.com/JPCERTCC/LogonTracer",
-        "stars": 3133
+        "stars": 3134
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2382,7 +2382,7 @@
       "parent": {
         "name": "TencentARC/MotionCrafter",
         "url": "https://github.com/TencentARC/MotionCrafter",
-        "stars": 71
+        "stars": 72
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2426,7 +2426,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 14974
+        "stars": 14979
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2448,7 +2448,7 @@
       "parent": {
         "name": "jlia0/tinyclaw",
         "url": "https://github.com/jlia0/tinyclaw",
-        "stars": 1951
+        "stars": 1983
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2514,7 +2514,7 @@
       "parent": {
         "name": "R44VC0RP/pgrok",
         "url": "https://github.com/R44VC0RP/pgrok",
-        "stars": 483
+        "stars": 487
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2536,7 +2536,7 @@
       "parent": {
         "name": "BAI-LAB/MemoryOS",
         "url": "https://github.com/BAI-LAB/MemoryOS",
-        "stars": 1174
+        "stars": 1175
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2558,7 +2558,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 13411
+        "stars": 13778
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2580,7 +2580,7 @@
       "parent": {
         "name": "The-Vibe-Company/companion",
         "url": "https://github.com/The-Vibe-Company/companion",
-        "stars": 1905
+        "stars": 1926
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2624,7 +2624,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2139
+        "stars": 2146
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2646,7 +2646,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 23849
+        "stars": 23854
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2734,7 +2734,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 32712
+        "stars": 32744
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2756,7 +2756,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 6078
+        "stars": 6100
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -2778,7 +2778,7 @@
       "parent": {
         "name": "OpenBMB/MiniCPM-o",
         "url": "https://github.com/OpenBMB/MiniCPM-o",
-        "stars": 23823
+        "stars": 23825
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2844,7 +2844,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 5401
+        "stars": 5420
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2866,7 +2866,7 @@
       "parent": {
         "name": "campwill/hal-voice-assistant",
         "url": "https://github.com/campwill/hal-voice-assistant",
-        "stars": 47
+        "stars": 48
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2888,7 +2888,7 @@
       "parent": {
         "name": "evinjohnn/natively-cluely-ai-assistant",
         "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
-        "stars": 490
+        "stars": 492
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2910,7 +2910,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 3583
+        "stars": 3740
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2954,7 +2954,7 @@
       "parent": {
         "name": "wg-easy/wg-easy",
         "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24600
+        "stars": 24601
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3020,7 +3020,7 @@
       "parent": {
         "name": "rohunvora/x-research-skill",
         "url": "https://github.com/rohunvora/x-research-skill",
-        "stars": 767
+        "stars": 769
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3064,7 +3064,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 20359
+        "stars": 20523
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3086,7 +3086,7 @@
       "parent": {
         "name": "MiniCodeMonkey/chief",
         "url": "https://github.com/MiniCodeMonkey/chief",
-        "stars": 150
+        "stars": 157
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3108,7 +3108,7 @@
       "parent": {
         "name": "ComposioHQ/composio",
         "url": "https://github.com/ComposioHQ/composio",
-        "stars": 26586
+        "stars": 26597
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -3130,7 +3130,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 8940
+        "stars": 8943
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3152,7 +3152,7 @@
       "parent": {
         "name": "onionshare/onionshare",
         "url": "https://github.com/onionshare/onionshare",
-        "stars": 6884
+        "stars": 6885
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3196,7 +3196,7 @@
       "parent": {
         "name": "ascorbic/macrodata",
         "url": "https://github.com/ascorbic/macrodata",
-        "stars": 93
+        "stars": 94
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3218,7 +3218,7 @@
       "parent": {
         "name": "itsOwen/CyberScraper-2077",
         "url": "https://github.com/itsOwen/CyberScraper-2077",
-        "stars": 2876
+        "stars": 2878
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3262,7 +3262,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 201311
+        "stars": 201317
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -3328,7 +3328,7 @@
       "parent": {
         "name": "RedPlanetHQ/core",
         "url": "https://github.com/RedPlanetHQ/core",
-        "stars": 1365
+        "stars": 1366
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3350,7 +3350,7 @@
       "parent": {
         "name": "OpenBMB/VoxCPM",
         "url": "https://github.com/OpenBMB/VoxCPM",
-        "stars": 5909
+        "stars": 5911
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3394,7 +3394,7 @@
       "parent": {
         "name": "sseanliu/VisionClaw",
         "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 976
+        "stars": 983
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3416,7 +3416,7 @@
       "parent": {
         "name": "Polymarket/agents",
         "url": "https://github.com/Polymarket/agents",
-        "stars": 2169
+        "stars": 2172
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3460,7 +3460,7 @@
       "parent": {
         "name": "m0n0x41d/quint-code",
         "url": "https://github.com/m0n0x41d/quint-code",
-        "stars": 1159
+        "stars": 1160
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -3570,7 +3570,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2212
+        "stars": 2221
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3592,7 +3592,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 15510
+        "stars": 15544
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3724,7 +3724,7 @@
       "parent": {
         "name": "Beingpax/VoiceInk",
         "url": "https://github.com/Beingpax/VoiceInk",
-        "stars": 3779
+        "stars": 3800
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3746,7 +3746,7 @@
       "parent": {
         "name": "CoreWorxLab/CAAL",
         "url": "https://github.com/CoreWorxLab/CAAL",
-        "stars": 332
+        "stars": 333
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3812,7 +3812,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 95523
+        "stars": 95560
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3856,7 +3856,7 @@
       "parent": {
         "name": "microsoft/call-center-ai",
         "url": "https://github.com/microsoft/call-center-ai",
-        "stars": 6244
+        "stars": 6245
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3878,7 +3878,7 @@
       "parent": {
         "name": "rivo/tview",
         "url": "https://github.com/rivo/tview",
-        "stars": 13557
+        "stars": 13558
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3900,7 +3900,7 @@
       "parent": {
         "name": "rahulnyk/knowledge_graph",
         "url": "https://github.com/rahulnyk/knowledge_graph",
-        "stars": 2958
+        "stars": 2960
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3944,7 +3944,7 @@
       "parent": {
         "name": "antirez/voxtral.c",
         "url": "https://github.com/antirez/voxtral.c",
-        "stars": 1310
+        "stars": 1315
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3988,7 +3988,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 7080
+        "stars": 7084
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4010,7 +4010,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1653
+        "stars": 1656
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4032,7 +4032,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 2929
+        "stars": 2962
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4094,7 +4094,7 @@
       "parent": {
         "name": "Kocoro-lab/Shannon",
         "url": "https://github.com/Kocoro-lab/Shannon",
-        "stars": 977
+        "stars": 978
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4116,7 +4116,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 20515
+        "stars": 20521
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4138,7 +4138,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44361
+        "stars": 44371
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4248,7 +4248,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20564
+        "stars": 20569
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -4358,7 +4358,7 @@
       "parent": {
         "name": "spieglt/FlyingCarpet",
         "url": "https://github.com/spieglt/FlyingCarpet",
-        "stars": 4947
+        "stars": 4948
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4402,7 +4402,7 @@
       "parent": {
         "name": "agentic-mcp-tools/memora",
         "url": "https://github.com/agentic-mcp-tools/memora",
-        "stars": 284
+        "stars": 285
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4446,7 +4446,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 30082
+        "stars": 30091
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4710,7 +4710,7 @@
       "parent": {
         "name": "reconurge/flowsint",
         "url": "https://github.com/reconurge/flowsint",
-        "stars": 2578
+        "stars": 2580
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -4820,7 +4820,7 @@
       "parent": {
         "name": "commaai/openpilot",
         "url": "https://github.com/commaai/openpilot",
-        "stars": 60076
+        "stars": 60079
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4842,7 +4842,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 14791
+        "stars": 14799
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4864,7 +4864,7 @@
       "parent": {
         "name": "latitude-dev/latitude-llm",
         "url": "https://github.com/latitude-dev/latitude-llm",
-        "stars": 3894
+        "stars": 3895
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4908,7 +4908,7 @@
       "parent": {
         "name": "snwfdhmp/awesome-ralph",
         "url": "https://github.com/snwfdhmp/awesome-ralph",
-        "stars": 724
+        "stars": 725
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4930,7 +4930,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 5905
+        "stars": 5910
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -4952,7 +4952,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8292
+        "stars": 8299
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -4974,7 +4974,7 @@
       "parent": {
         "name": "hpcaitech/ColossalAI",
         "url": "https://github.com/hpcaitech/ColossalAI",
-        "stars": 41344
+        "stars": 41345
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -5018,7 +5018,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 3521
+        "stars": 3529
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -5040,7 +5040,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 28469
+        "stars": 28474
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5062,7 +5062,7 @@
       "parent": {
         "name": "droidrun/droidrun",
         "url": "https://github.com/droidrun/droidrun",
-        "stars": 7673
+        "stars": 7674
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5084,7 +5084,7 @@
       "parent": {
         "name": "clidey/whodb",
         "url": "https://github.com/clidey/whodb",
-        "stars": 4570
+        "stars": 4576
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -5106,7 +5106,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 124094
+        "stars": 124111
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5128,7 +5128,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 6252
+        "stars": 6269
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5172,7 +5172,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 5890
+        "stars": 5892
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -5282,7 +5282,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24151
+        "stars": 24153
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5458,7 +5458,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 36611
+        "stars": 36614
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -5524,7 +5524,7 @@
       "parent": {
         "name": "aiming-lab/SimpleMem",
         "url": "https://github.com/aiming-lab/SimpleMem",
-        "stars": 2883
+        "stars": 2885
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -5612,7 +5612,7 @@
       "parent": {
         "name": "freelensapp/freelens",
         "url": "https://github.com/freelensapp/freelens",
-        "stars": 4614
+        "stars": 4615
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -5634,7 +5634,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5360
+        "stars": 5364
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -5700,7 +5700,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 114798
+        "stars": 114830
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -5788,7 +5788,7 @@
       "parent": {
         "name": "xai-org/xai-sdk-python",
         "url": "https://github.com/xai-org/xai-sdk-python",
-        "stars": 357
+        "stars": 359
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -5810,7 +5810,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15488
+        "stars": 15493
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5854,7 +5854,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 10710
+        "stars": 10727
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5876,7 +5876,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 19769
+        "stars": 19847
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5964,7 +5964,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 8553
+        "stars": 8585
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -6008,7 +6008,7 @@
       "parent": {
         "name": "Liquid4All/cookbook",
         "url": "https://github.com/Liquid4All/cookbook",
-        "stars": 1147
+        "stars": 1148
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6030,7 +6030,7 @@
       "parent": {
         "name": "ln-dev7/square-ui",
         "url": "https://github.com/ln-dev7/square-ui",
-        "stars": 4773
+        "stars": 4785
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6074,7 +6074,7 @@
       "parent": {
         "name": "ankandrew/fast-alpr",
         "url": "https://github.com/ankandrew/fast-alpr",
-        "stars": 408
+        "stars": 409
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -6184,7 +6184,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7170
+        "stars": 7175
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -6228,7 +6228,7 @@
       "parent": {
         "name": "firecrawl/open-researcher",
         "url": "https://github.com/firecrawl/open-researcher",
-        "stars": 605
+        "stars": 606
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6250,7 +6250,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 22657
+        "stars": 22661
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -6360,7 +6360,7 @@
       "parent": {
         "name": "Ramakm/AI-ML-Book-References",
         "url": "https://github.com/Ramakm/AI-ML-Book-References",
-        "stars": 323
+        "stars": 324
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6382,7 +6382,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 21713
+        "stars": 21716
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6514,7 +6514,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39474
+        "stars": 39475
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6668,7 +6668,7 @@
       "parent": {
         "name": "probberechts/soccerdata",
         "url": "https://github.com/probberechts/soccerdata",
-        "stars": 1536
+        "stars": 1540
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -6712,7 +6712,7 @@
       "parent": {
         "name": "memodb-io/Acontext",
         "url": "https://github.com/memodb-io/Acontext",
-        "stars": 3014
+        "stars": 3015
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -6734,7 +6734,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 181728
+        "stars": 181734
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6756,7 +6756,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 10871
+        "stars": 10877
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6778,7 +6778,7 @@
       "parent": {
         "name": "krypton-byte/neonize",
         "url": "https://github.com/krypton-byte/neonize",
-        "stars": 324
+        "stars": 325
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6800,7 +6800,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12485
+        "stars": 12487
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6976,7 +6976,7 @@
       "parent": {
         "name": "midday-ai/midday",
         "url": "https://github.com/midday-ai/midday",
-        "stars": 13981
+        "stars": 13986
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -6998,7 +6998,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16466
+        "stars": 16470
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7020,7 +7020,7 @@
       "parent": {
         "name": "FOSSBilling/FOSSBilling",
         "url": "https://github.com/FOSSBilling/FOSSBilling",
-        "stars": 1432
+        "stars": 1433
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7042,7 +7042,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56130
+        "stars": 56135
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -7064,7 +7064,7 @@
       "parent": {
         "name": "Qloapps/QloApps",
         "url": "https://github.com/Qloapps/QloApps",
-        "stars": 12101
+        "stars": 12104
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -7108,7 +7108,7 @@
       "parent": {
         "name": "frappe/crm",
         "url": "https://github.com/frappe/crm",
-        "stars": 2349
+        "stars": 2351
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -7218,7 +7218,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 16099
+        "stars": 16132
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -7240,7 +7240,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 105594
+        "stars": 105693
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -7284,7 +7284,7 @@
       "parent": {
         "name": "0xSojalSec/LLMs-local",
         "url": "https://github.com/0xSojalSec/LLMs-local",
-        "stars": 580
+        "stars": 581
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7526,7 +7526,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 27944
+        "stars": 27951
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7592,7 +7592,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 14249
+        "stars": 14270
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -7614,7 +7614,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 20515
+        "stars": 20534
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -7636,7 +7636,7 @@
       "parent": {
         "name": "AHMAD-JX/Hozn-RealEstate-Fullstack",
         "url": "https://github.com/AHMAD-JX/Hozn-RealEstate-Fullstack",
-        "stars": 133
+        "stars": 134
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -7702,7 +7702,7 @@
       "parent": {
         "name": "DevAgentForge/Open-Claude-Cowork",
         "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
-        "stars": 2874
+        "stars": 2876
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7768,7 +7768,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 95140
+        "stars": 95149
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -8072,7 +8072,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 181836
+        "stars": 181835
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
