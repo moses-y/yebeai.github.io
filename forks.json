@@ -1,632 +1,14 @@
 {
-  "lastUpdated": "2026-02-18T18:14:16.987Z",
+  "lastUpdated": "2026-02-19T00:12:44.281Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 321,
+  "totalRepos": 322,
   "progress": {
-    "aiGenerated": 321,
+    "aiGenerated": 322,
     "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
-    {
-      "id": 1160758873,
-      "name": "Monolith",
-      "displayName": "Monolith",
-      "description": "RLM for coding agent",
-      "summary": "## The Problem\n\nLarge language models (LLMs) are great at generating text and solving problems, but they’re terrible at managing long-term memory or working through massive contexts. Try handing GPT-4 a 100k token document and watch it implode. Recursive Language Models (RLMs) are a cool theoretical solution, but they’re a pain to set up, and they don’t persist state between sessions. Not exactly plug-and-play.\n\n## What This Does\n\n`Monolith` takes the RLM concept, wraps it in infrastructure, and makes it usable. It’s built on top of the open-source `rlm` library and adds a bunch of practical stuff to deploy it as a service. The core idea: you get an RLM with persistent memory that can reason over arbitrarily large contexts. For example, `Modal Volume` stores context in files like `/{thread_id}/context.txt`, and the serverless backend (using `Modal`) handles compute so you don’t have to mess with hosting.\n\nOn top of that, `Monolith` plays nice with MCP (Model Context Protocol). Whether it’s the `MCP server` (`mcp-modal/server.py`) or the optional Cloudflare Worker (`mcp-modal/cloudflare/worker-gateway/`), you can expose your RLM to any MCP-compatible agent like Claude Code. There’s even a `session_end_upload.sh` script to automatically upload chat logs for persistence. The result? AI agents that can handle long, complex tasks and actually remember what they’ve done.\n\n## Real-World Use\n\nImagine you’re building a coding assistant for your team that needs to analyze a massive codebase. With `Monolith`, you’d spin up the RLM in a serverless `Modal` environment and connect it to your coding agent via the MCP server. The RLM would read code snippets from a shared `Modal Volume`, recursively delegate sub-tasks (e.g., “Summarize this file”), and stitch the results together. Even better, the next time the agent revisits the same codebase, it can pick up where it left off because the previous context is stored in `context.txt`.\n\nIf you want to experiment locally, the CLI tools in `rlm`—like `python -m monolith.query` or `store`—let you interact directly with the RLM. Just don’t forget to set up your `OPENAI_API_KEY` and initialize `Modal`.\n\n## The Bottom Line\n\n`Monolith` is a cool project for anyone building advanced AI agents, especially those working with large or persistent contexts. The integration with `Modal` means you don’t have to deal with infrastructure, and the MCP compatibility makes it extensible. That said, this isn’t for small projects or casual tinkering—if you aren’t dealing with huge contexts or persistent AI workflows, it’s probably overkill. But if you need a coding assistant that can reason recursively and remember its work? Worth a look.",
-      "url": "https://github.com/moses-y/Monolith",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "WingchunSiu/Monolith",
-        "url": "https://github.com/WingchunSiu/Monolith",
-        "stars": 50
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 18, 2026",
-      "updatedAt": "February 18, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "totalFiles": 64,
-        "directories": {
-          ".claude": 1,
-          "(root)": 9,
-          "claude_tool_mcp": 1,
-          "deeprecurse": 4,
-          "mcp-modal": 21,
-          "rlm": 23,
-          "scripts": 5
-        },
-        "languages": {
-          "Markdown": 6,
-          "Python": 39,
-          "JSON": 2,
-          "TypeScript": 1,
-          "TOML": 2,
-          "Shell": 2
-        },
-        "frameworks": [
-          "React"
-        ],
-        "packageManager": "pip",
-        "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "claude_tool_mcp/server.py",
-          "main.py",
-          "mcp-modal/cloudflare/worker-gateway/src/index.ts",
-          "mcp-modal/server.py",
-          "rlm/main.py"
-        ],
-        "configFiles": [
-          "mcp-modal/cloudflare/worker-gateway/package.json",
-          "mcp-modal/cloudflare/worker-gateway/tsconfig.json",
-          "mcp-modal/requirements.txt",
-          "pyproject.toml",
-          "requirements.txt",
-          "rlm/requirements.txt"
-        ],
-        "dependencies": [
-          "mcp-modal/cloudflare/worker-gateway/package.json",
-          "mcp-modal/requirements.txt",
-          "pyproject.toml",
-          "requirements.txt",
-          "rlm/requirements.txt"
-        ],
-        "testFiles": [
-          "scripts/generate_modal_test_transcript.py"
-        ],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "mcp-modal/README.md",
-          "rlm/LICENSE",
-          "rlm/README.md",
-          "scripts/README.md"
-        ],
-        "fileTypes": {
-          ".md": 6,
-          ".py": 39,
-          ".json": 2,
-          ".ts": 1,
-          ".toml": 2,
-          ".txt": 3,
-          ".sh": 2,
-          ".png": 2,
-          ".lock": 1
-        }
-      }
-    },
-    {
-      "id": 1160571113,
-      "name": "GrapheneOS-Guide",
-      "displayName": "GrapheneOS Guide",
-      "description": "A resource for users intent on optimizing their usage of this highly secure and privacy focused mobile operating system.",
-      "summary": "## The Problem\n\nYou just got yourself a shiny Google Pixel, because you're serious about privacy and security, and you're ready to ditch the spyware that comes with most smartphones. You’ve heard about `GrapheneOS`—a hardened Android OS that doesn’t try to harvest your soul for ad revenue—but installing and configuring it feels like a maze of obscure steps, cryptic terminology, and potential bricking. You need a guide that doesn’t suck.\n\n## What This Does\n\n`GrapheneOS-Guide` is a no-frills, markdown-based walkthrough that holds your hand from buying the phone to getting GrapheneOS installed and configured. The entire thing lives in one lonely file: `README.md`. It’s basically a giant \"How to GrapheneOS for Dummies\" with sections on:\n\n- **Purchasing your device and carrier** (complete with tips like using cash and avoiding Verizon’s OEM-locking nonsense).\n- **Unlocking the bootloader** (a.k.a. the prerequisite for installing custom ROMs).\n- **Installing drivers** (including a direct link to Google’s USB drivers because nobody’s got time for hunting that down).\n- **Installing GrapheneOS** (links to both the web installer and CLI guide—choose your poison).\n- **Post-install configurations** like setting LTE-only mode for better security.\n\nIt even has some nerdy gems, like how to use a VPN over port 53 to bypass captive portal networks. If you know, you know.\n\n## Real-World Use\n\nLet's say you’re ready to switch to a more private mobile lifestyle. First, you follow the guide’s advice to buy a Google Pixel with cash (no paper trail). Once home, you pop the SIM card out, factory reset the device, unlock the OEM, and install Google’s USB drivers using the provided step-by-step instructions. The guide then directs you to the official GrapheneOS web installer, which does most of the heavy lifting. If something goes wrong (because it’s a custom ROM, and Murphy’s Law is real), there’s even a link to an XDA guide for fixing a bricked device. In the end, you’ve got a secure phone that doesn’t spy on you, and it only took an afternoon.\n\n## The Bottom Line\n\nIf you want a simple, practical guide to turning your Google Pixel into a privacy fortress, this is it. The markdown-only format keeps things lightweight and to the point, but don’t expect fancy visuals or detailed troubleshooting. It’s best for people who can follow instructions without needing a hand-holding YouTube tutorial (though there is a linked video if you’re into that). It’s not groundbreaking, but it does the job well.",
-      "url": "https://github.com/moses-y/GrapheneOS-Guide",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "Scrut1ny/GrapheneOS-Guide",
-        "url": "https://github.com/Scrut1ny/GrapheneOS-Guide",
-        "stars": 178
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 18, 2026",
-      "updatedAt": "February 18, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "totalFiles": 1,
-        "directories": {
-          "(root)": 1
-        },
-        "languages": {
-          "Markdown": 1
-        },
-        "frameworks": [],
-        "packageManager": null,
-        "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [],
-        "configFiles": [],
-        "dependencies": [],
-        "testFiles": [],
-        "docs": [
-          "README.md"
-        ],
-        "fileTypes": {
-          ".md": 1
-        }
-      }
-    },
-    {
-      "id": 1160555087,
-      "name": "arXivisual",
-      "displayName": "arXivisual",
-      "description": "🎊 TartanHacks '26 winner",
-      "summary": "## The Problem\nResearch papers are dense, technical, and often impenetrable. For the average person—or even some researchers—navigating through layers of jargon can feel like trying to decipher ancient hieroglyphs. This project addresses that frustration by transforming academic text into engaging, visual stories.\n\n## What This Does\n**arXivisual** is your go-to tool for turning dry academic papers into animated visualizations. It breaks down papers into digestible sections in the `backend/ingestion` directory, using scripts like `arxiv_fetcher.py` and `html_parser.py`. Then it analyzes these sections with AI agents located in `backend/agents/` to pinpoint key concepts and visualization opportunities. \n\nOnce analyzed, it generates slick animations using Manim, thanks to the pipeline in `backend/manimations`. You can find the entry point for this process in `backend/main.py`. The final product is an interactive frontend experience, where users can scroll through papers adorned with animations, all powered by Next.js in the `frontend/` directory.\n\n## Real-World Use\nImagine you're a student tasked with digesting a complex paper on neural networks. Instead of slogging through pages of text, you simply paste the arXiv URL into **arXivisual**. The backend grabs the content, the AI analyzes it, and within moments, you're watching an engaging animation that explains the concepts in a way that clicks. You can even run the backend with `uvicorn main:app --reload` to check how the API serves the data.\n\n## The Bottom Line\n**arXivisual** could be incredibly useful for educators, students, or anyone who struggles with academic papers. However, if you’re just looking to read a paper, this might feel like overkill. It’s a solid project, but the setup requires a bit of work—like handling API keys and ensuring all dependencies are in place. If you're ready to invest the time, this tool can make complex research much more digestible.",
-      "url": "https://github.com/moses-y/arXivisual",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "rajshah6/arXivisual",
-        "url": "https://github.com/rajshah6/arXivisual",
-        "stars": 97
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 18, 2026",
-      "updatedAt": "February 18, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 199,
-        "directories": {
-          ".cursor": 2,
-          "(root)": 5,
-          "backend": 109,
-          "docs": 13,
-          "frontend": 70
-        },
-        "languages": {
-          "Markdown": 27,
-          "Python": 65,
-          "TOML": 2,
-          "Shell": 1,
-          "YAML": 2,
-          "TSX": 28,
-          "CSS": 1,
-          "TypeScript": 8,
-          "JSON": 4
-        },
-        "frameworks": [
-          "React",
-          "Next.js",
-          "Docker"
-        ],
-        "packageManager": "npm",
-        "hasDocker": true,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "backend/main.py",
-          "backend/manimations/main.py"
-        ],
-        "configFiles": [
-          "backend/.env.example",
-          "backend/Dockerfile",
-          "backend/manimations/pyproject.toml",
-          "backend/pyproject.toml",
-          "backend/requirements.txt",
-          "docker-compose.yml",
-          "frontend/next.config.ts",
-          "frontend/package.json",
-          "frontend/tsconfig.json"
-        ],
-        "dependencies": [
-          "backend/manimations/pyproject.toml",
-          "backend/pyproject.toml",
-          "backend/requirements.txt",
-          "frontend/package-lock.json",
-          "frontend/package.json",
-          "package-lock.json"
-        ],
-        "testFiles": [
-          "backend/agents/render_tester.py",
-          "backend/prompts/test_dedalus.md",
-          "backend/test_ingestion.py",
-          "backend/test_voiceover.py",
-          "backend/test_voiceover_transformation.py",
-          "backend/tests/test_manim_generator_voice_mode.py",
-          "backend/tests/test_voiceover_script_validator.py",
-          "backend/tools/pipeline-tests/TESTING_GUIDE.md",
-          "backend/tools/pipeline-tests/quick_render.py",
-          "backend/tools/pipeline-tests/test_pipeline_steps.py",
-          "backend/tools/pipeline-tests/test_video_generation.py",
-          "backend/tools/test_pipeline.py",
-          "docs/AgentDocs/API_SPEC.md"
-        ],
-        "docs": [
-          "README.md",
-          "backend/README.md",
-          "backend/manimations/README.md",
-          "backend/tools/pipeline-tests/TESTING_GUIDE.md",
-          "docs/ARCHITECTURE.md",
-          "docs/AgentDocs/API_SPEC.md",
-          "docs/AgentDocs/MANIM_PATTERNS.md",
-          "docs/AgentDocs/PROJECT_OVERVIEW.md",
-          "docs/AgentDocs/SETUP.md",
-          "docs/AgentDocs/TEAM1_INGESTION.md",
-          "docs/AgentDocs/TEAM2_GENERATION.md",
-          "docs/AgentDocs/TEAM3_BACKEND.md",
-          "docs/AgentDocs/TEAM4_FRONTEND.md",
-          "docs/DEPLOY.md",
-          "docs/archive/AGENT_ANALYSIS.md",
-          "docs/archive/HACKATHON_PLAN.md",
-          "docs/archive/VOICEOVER_AND_QUALITY_PLAN.md",
-          "frontend/README.md"
-        ],
-        "fileTypes": {
-          ".md": 27,
-          ".example": 1,
-          ".py": 65,
-          ".db-shm": 1,
-          ".db-wal": 1,
-          ".mp4": 37,
-          ".toml": 2,
-          ".txt": 2,
-          ".sh": 1,
-          ".lock": 1,
-          ".yml": 1,
-          ".tsx": 28,
-          ".css": 1,
-          ".png": 3,
-          ".mjs": 2,
-          ".ts": 8,
-          ".json": 4,
-          ".svg": 5,
-          ".jpeg": 1,
-          ".yaml": 1
-        }
-      }
-    },
-    {
-      "id": 1160533485,
-      "name": "anymap-ts",
-      "displayName": "anymap ts",
-      "description": "A Python package for creating interactive maps with anywidget and mapping libraries using TypeScript",
-      "summary": "## The Problem\n\nYou ever wanted to throw an interactive map into a Jupyter notebook, but got stuck picking between hacky JavaScript widgets or clunky Python-only tools? Most mapping libraries force you to pick one stack, and then you end up fighting with glue code, broken bidirectional updates, or half-baked layer controls. Been there. Painful.\n\n## What This Does\n\n`anymap-ts` stitches together Python and TypeScript so you can use real mapping libraries (MapLibre, Mapbox, Leaflet, etc.) inside notebooks, with actual bidirectional communication. The magic lives in the `anymap_ts/` folder—each mapping backend gets its own Python wrapper (`cesium.py`, `deckgl.py`, etc.) plus a matching HTML template in `anymap_ts/templates/`. There's a pile of demo files in `examples/`, showing how the frontend TypeScript (`main.ts`) talks to Python. The docs (see `docs/notebooks/` and `docs/typescript/examples/`) actually walk through real map layers—not just toy code.\n\nEverything hooks into `anywidget`, so you get live updates: draw something, edit geometry, or switch basemaps, and your Python code stays in sync. Want layer controls? They've bolted in `maplibre-gl-layer-control` and a geo editor. You even get export-to-HTML built in, so you're not stuck inside Jupyter.\n\n## Real-World Use\n\nSay you're working with geospatial data in a notebook. Fire up `MapLibre`:\n\n```python\nfrom anymap_ts import Map\nm = Map(center=[-122.4, 37.8], zoom=10)\nm.add_basemap(\"OpenStreetMap\")\nm.add_draw_control()\nm\n```\n\nNow you can draw polygons, tweak layers, and grab the results in Python—all inside the notebook. Need to add a WMS layer? Use `OpenLayersMap` and call `add_wms_layer()` with your endpoint. There's no weird JavaScript in your notebook, just Python calls. And if you hate notebooks, just export everything to HTML and send it to your boss.\n\n## The Bottom Line\n\nIf you need interactive maps in Python and care about TypeScript sanity on the frontend, this is a solid toolkit. The layer support is wide, the docs are actually useful, and the integration isn't half-baked. Not for tiny toy projects—it's real code, not a magic one-liner. If you want to hack on map widgets or build custom viz, worth a look. If you're allergic to TypeScript or just need a static map, move along.",
-      "url": "https://github.com/moses-y/anymap-ts",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "opengeos/anymap-ts",
-        "url": "https://github.com/opengeos/anymap-ts",
-        "stars": 166
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 18, 2026",
-      "updatedAt": "February 18, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          ".github": 12,
-          "(root)": 5,
-          ".nblink": 1,
-          "anymap_ts": 21,
-          "docs": 85,
-          "examples": 76
-        },
-        "languages": {
-          "YAML": 12,
-          "Markdown": 33,
-          "Python": 13,
-          "HTML": 44,
-          "CSS": 8,
-          "TypeScript": 34
-        },
-        "frameworks": [],
-        "packageManager": null,
-        "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [
-          "examples/cesium/index.html",
-          "examples/cesium/main.ts",
-          "examples/deckgl/index.html",
-          "examples/deckgl/main.ts",
-          "examples/index.html",
-          "examples/keplergl/index.html",
-          "examples/keplergl/main.ts",
-          "examples/leaflet/index.html",
-          "examples/leaflet/main.ts",
-          "examples/mapbox/index.html",
-          "examples/mapbox/main.ts",
-          "examples/maplibre/index.html",
-          "examples/maplibre/main.ts"
-        ],
-        "configFiles": [],
-        "dependencies": [],
-        "testFiles": [],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "docs/CNAME",
-          "docs/anymap_ts.md",
-          "docs/base.md",
-          "docs/basemaps.md",
-          "docs/cesium.md",
-          "docs/contributing.md",
-          "docs/deckgl.md",
-          "docs/index.md",
-          "docs/installation.md",
-          "docs/keplergl.md",
-          "docs/leaflet.md",
-          "docs/mapbox.md",
-          "docs/maplibre.md",
-          "docs/notebooks/arc_layer.ipynb",
-          "docs/notebooks/bitmap_layer.ipynb",
-          "docs/notebooks/buildings_3d.ipynb",
-          "docs/notebooks/cesium.ipynb",
-          "docs/notebooks/choropleth.ipynb",
-          "docs/notebooks/clustering.ipynb",
-          "docs/notebooks/cog_layer.ipynb",
-          "docs/notebooks/column_layer.ipynb",
-          "docs/notebooks/contour_layer.ipynb",
-          "docs/notebooks/control_grid.ipynb",
-          "docs/notebooks/deckgl.ipynb",
-          "docs/notebooks/geohash_layer.ipynb",
-          "docs/notebooks/geojson_layer.ipynb",
-          "docs/notebooks/great_circle_layer.ipynb",
-          "docs/notebooks/gridcell_layer.ipynb",
-          "docs/notebooks/h3_cluster_layer.ipynb",
-          "docs/notebooks/h3_hexagon_layer.ipynb",
-          "docs/notebooks/heatmap_layer.ipynb",
-          "docs/notebooks/hexagon_layer.ipynb",
-          "docs/notebooks/icon_layer.ipynb",
-          "docs/notebooks/image_overlay.ipynb",
-          "docs/notebooks/keplergl.ipynb",
-          "docs/notebooks/layer_management.ipynb",
-          "docs/notebooks/leaflet.ipynb",
-          "docs/notebooks/lidar_layer.ipynb",
-          "docs/notebooks/mapbox.ipynb",
-          "docs/notebooks/maplibre.ipynb",
-          "docs/notebooks/maplibre_heatmap.ipynb",
-          "docs/notebooks/markers.ipynb",
-          "docs/notebooks/mvt_layer.ipynb",
-          "docs/notebooks/openlayers.ipynb",
-          "docs/notebooks/pmtiles_layer.ipynb",
-          "docs/notebooks/pointcloud_layer.ipynb",
-          "docs/notebooks/polygon_layer.ipynb",
-          "docs/notebooks/popups.ipynb",
-          "docs/notebooks/potree.ipynb",
-          "docs/notebooks/quadkey_layer.ipynb",
-          "docs/notebooks/route_animation.ipynb",
-          "docs/notebooks/s2_layer.ipynb",
-          "docs/notebooks/scatterplot_layer.ipynb",
-          "docs/notebooks/scenegraph_layer.ipynb",
-          "docs/notebooks/simplemesh_layer.ipynb",
-          "docs/notebooks/solidpolygon_layer.ipynb",
-          "docs/notebooks/terrain_3d.ipynb",
-          "docs/notebooks/terrain_layer.ipynb",
-          "docs/notebooks/text_layer.ipynb",
-          "docs/notebooks/tile3d_layer.ipynb",
-          "docs/notebooks/tile_layer.ipynb",
-          "docs/notebooks/to_html.ipynb",
-          "docs/notebooks/trips_layer.ipynb",
-          "docs/notebooks/ui_controls.ipynb",
-          "docs/notebooks/wms_layer.ipynb",
-          "docs/notebooks/zarr_layer.ipynb",
-          "docs/openlayers.md",
-          "docs/overrides/main.html",
-          "docs/potree.md",
-          "docs/stylesheets/extra.css",
-          "docs/typescript/examples/arc_layer.md",
-          "docs/typescript/examples/cesium.md",
-          "docs/typescript/examples/cog_layer.md",
-          "docs/typescript/examples/deckgl.md",
-          "docs/typescript/examples/keplergl.md",
-          "docs/typescript/examples/leaflet.md",
-          "docs/typescript/examples/mapbox.md",
-          "docs/typescript/examples/maplibre.md",
-          "docs/typescript/examples/openlayers.md",
-          "docs/typescript/examples/pointcloud_layer.md",
-          "docs/typescript/examples/potree.md",
-          "docs/typescript/examples/zarr_layer.md",
-          "docs/typescript/index.md",
-          "docs/usage.md",
-          "docs/utils.md"
-        ],
-        "fileTypes": {
-          ".yml": 11,
-          ".md": 33,
-          ".yaml": 1,
-          ".py": 13,
-          ".html": 44,
-          ".ipynb": 53,
-          ".css": 8,
-          ".ts": 34
-        }
-      }
-    },
-    {
-      "id": 1160529856,
-      "name": "ComfyUI_Viewer_OpenReel_Extension",
-      "displayName": "ComfyUI Viewer OpenReel Extension",
-      "description": "ComfyUI Viewer extension to provide OpenReel for video editing",
-      "summary": "## The Problem\n\nEditing videos generated by tools like ComfyUI is a pain in the ass. Sure, you can stitch frames together manually or send them off to some bloated external editor, but that’s tedious, error-prone, and completely breaks your workflow. What if you just want to tweak a video—cut a scene, add text, maybe slap on some transitions—without leaving ComfyUI? Good luck doing that without smashing your keyboard.\n\n## What This Does\n\nThe `ComfyUI_Viewer_OpenReel_Extension` embeds a modified version of OpenReel, a browser-based video editor, directly into the `ComfyUI Viewer`. It's not just a bolted-on iframe—this thing integrates like it was meant to be there. The extension lives in `apps/openreel_app/`, where you'll find everything from the React-based editor (`index.js`) to assets like `three.js` and `zustand.js`. It even hooks into the ComfyUI workflow with custom Python nodes (`nodes/openreel_video_nodes.py`).\n\nHere’s the gist: frame batches and audio from your ComfyUI pipeline go into the `CV OpenReel Bundle Video` node. This bundles them into a video and sends it to OpenReel for editing. When you're done, you hit \"SEND TO OUTPUT,\" and the `CV OpenReel Unpack` node spits the edited frames, audio, and metadata back into the pipeline. The `requirements.txt` keeps dependencies simple, and everything runs locally in your browser because nobody wants to send their stuff to the cloud.\n\n## Real-World Use\n\nLet’s say you’re generating a video with ComfyUI’s AnimateDiff. You can send the output frames and audio through `CV OpenReel Bundle Video`. From there, the video appears in the `Content Viewer`, where OpenReel is embedded. Add some text overlays, trim a few seconds, and apply a transition. Once you’re happy, hit \"SEND TO OUTPUT\" and the `CV OpenReel Unpack` node will break the video back into frames and audio, ready for further processing or saving.\n\nHere’s a basic workflow:\n\n```plaintext\n[Generate Frames] → [CV OpenReel Bundle Video] → [Content Viewer] → [Pause Node] → [CV OpenReel Unpack] → [Save Image/Video]\n```\n\nThis setup lets you pause the workflow, edit the video, and continue without missing a beat. Just follow the README’s advice: use a pause node, and don’t click \"Continue\" like a fool unless you want to lose your edits.\n\n## The Bottom Line\n\nIf you’re deep into ComfyUI and need in-line video editing, this extension is a solid option. It’s still a work in progress, so don’t expect Adobe Premiere, but for quick tweaks and seamless integration, it gets the job done. If you’re not already using ComfyUI, though, this won’t magically make your life better—start there first. Also, the setup process is a bit manual (copying files? really?), but hey, you’re a developer; you’ll survive.",
-      "url": "https://github.com/moses-y/ComfyUI_Viewer_OpenReel_Extension",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "WASasquatch/ComfyUI_Viewer_OpenReel_Extension",
-        "url": "https://github.com/WASasquatch/ComfyUI_Viewer_OpenReel_Extension",
-        "stars": 32
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 18, 2026",
-      "updatedAt": "February 18, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "totalFiles": 34,
-        "directories": {
-          "(root)": 4,
-          "apps": 23,
-          "modules": 1,
-          "nodes": 1,
-          "routes": 1,
-          "screenshots": 3,
-          "web": 1
-        },
-        "languages": {
-          "Markdown": 1,
-          "JavaScript": 16,
-          "CSS": 1,
-          "HTML": 1,
-          "JSON": 1,
-          "Python": 3
-        },
-        "frameworks": [
-          "React"
-        ],
-        "packageManager": "pip",
-        "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "apps/openreel_app/assets/index.js",
-          "apps/openreel_app/index.html"
-        ],
-        "configFiles": [
-          "requirements.txt"
-        ],
-        "dependencies": [
-          "requirements.txt"
-        ],
-        "testFiles": [],
-        "docs": [
-          "LICENSE",
-          "README.md"
-        ],
-        "fileTypes": {
-          ".md": 1,
-          ".js": 16,
-          ".wasm": 1,
-          ".css": 1,
-          ".svg": 1,
-          ".html": 1,
-          ".json": 1,
-          ".py": 3,
-          ".txt": 1,
-          ".jpg": 3
-        }
-      }
-    },
-    {
-      "id": 1160527977,
-      "name": "btw",
-      "displayName": "btw",
-      "description": "Open source Medium alternative- set up your personal blog in minutes.",
-      "summary": "## The Problem\nBuilding a personal blog shouldn’t take more time than writing a post. Most solutions out there are bloated or require you to jump through hoops just to get started. If you're tired of wrestling with overly complex setups, you need a straightforward alternative.\n\n## What This Does\nEnter `btw`, an open-source Medium alternative that allows you to set up your personal blog in mere minutes. With React and Docker in its toolkit, it’s built for developers who want something simple yet powerful. \n\nTo kick things off, you’ll be editing `deploy/docker-compose.dev.yml`. Just set `ADMIN_EMAIL` and `ADMIN_SLUG`, and you’re halfway there. The app will take care of the rest, spinning up a PostgreSQL instance and configuring your database. Want to tweak your setup? Check out the `list/config/webpack.config.js` for build customizations.\n\nThe structure isn’t overwhelming either. With 200 files, the majority are in the `list/` folder, where you'll find your React components, actions, and reducers neatly organized. Need to add a new feature? Just dive into `list/src/components/` and start coding.\n\n## Real-World Use\nImagine you’ve got a story to tell but don’t want to waste time on installation. You clone the repo, set your environment variables, and run `docker-compose up`. Within minutes, you can access the editor at `localhost:3000` and start crafting your first post. If you decide to self-host, follow the instructions in the `README.md`, and you’re good to go.\n\nHere’s a quick snippet to show how easy it is to add a new post within the app:\n\n```javascript\ndispatch(addPost({\n  title: \"My First Post\",\n  content: \"Hello world! This is my first blog post using btw.\"\n}));\n```\n\n## The Bottom Line\n`btw` is a solid choice for developers wanting a no-fuss blogging platform. It’s fast to set up, and you can dive straight into writing. However, if you’re looking for a highly customizable blog with a large plugin ecosystem, this might not be for you. Overall, it’s perfect for anyone who values simplicity over complexity.",
-      "url": "https://github.com/moses-y/btw",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "btw-so/btw",
-        "url": "https://github.com/btw-so/btw",
-        "stars": 1069
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 18, 2026",
-      "updatedAt": "February 18, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          "(root)": 7,
-          "deploy": 1,
-          "list": 192
-        },
-        "languages": {
-          "Markdown": 2,
-          "SQL": 1,
-          "YAML": 4,
-          "Shell": 1,
-          "HTML": 1,
-          "JSON": 8,
-          "CSS": 2,
-          "JavaScript": 27,
-          "TypeScript": 15,
-          "Docker": 1,
-          "JSX": 30,
-          "TSX": 3
-        },
-        "frameworks": [
-          "React",
-          "Docker"
-        ],
-        "packageManager": "npm",
-        "hasDocker": true,
-        "hasCI": true,
-        "ciPlatform": "Travis CI",
-        "entryPoints": [
-          "list/assets/index.html",
-          "list/cypress/plugins/index.js",
-          "list/cypress/support/index.js",
-          "list/src/actions/app.ts",
-          "list/src/actions/index.ts",
-          "list/src/components/Transition/index.tsx",
-          "list/src/index.jsx",
-          "list/src/literals/index.js",
-          "list/src/reducers/app.ts",
-          "list/src/reducers/index.ts"
-        ],
-        "configFiles": [
-          "deploy/docker-compose.dev.yml",
-          "list/.eslintrc",
-          "list/Dockerfile",
-          "list/config/webpack.config.js",
-          "list/jest.config.ts",
-          "list/package.json"
-        ],
-        "dependencies": [
-          "list/package-lock.json",
-          "list/package.json"
-        ],
-        "testFiles": [],
-        "docs": [
-          "LICENSE",
-          "LICENSE copy",
-          "README.md",
-          "list/LICENSE",
-          "list/README.md"
-        ],
-        "fileTypes": {
-          ".md": 2,
-          ".sql": 1,
-          ".yml": 4,
-          ".sh": 1,
-          ".html": 1,
-          ".json": 8,
-          ".png": 14,
-          ".svg": 18,
-          ".otf": 10,
-          ".eot": 12,
-          ".ttf": 12,
-          ".woff": 12,
-          ".woff2": 12,
-          ".gif": 1,
-          ".ico": 1,
-          ".css": 2,
-          ".txt": 1,
-          ".js": 27,
-          ".ts": 15,
-          ".dockerfile": 1,
-          ".jsx": 30,
-          ".tsx": 3
-        }
-      }
-    },
     {
       "id": 1161066246,
       "name": "camel-karavan",
@@ -641,7 +23,7 @@
       "parent": {
         "name": "apache/camel-karavan",
         "url": "https://github.com/apache/camel-karavan",
-        "stars": 561
+        "stars": 564
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -865,6 +247,767 @@
       }
     },
     {
+      "id": 1160758873,
+      "name": "Monolith",
+      "displayName": "Monolith",
+      "description": "RLM for coding agent",
+      "summary": "## The Problem\n\nLarge language models (LLMs) are great at generating text and solving problems, but they’re terrible at managing long-term memory or working through massive contexts. Try handing GPT-4 a 100k token document and watch it implode. Recursive Language Models (RLMs) are a cool theoretical solution, but they’re a pain to set up, and they don’t persist state between sessions. Not exactly plug-and-play.\n\n## What This Does\n\n`Monolith` takes the RLM concept, wraps it in infrastructure, and makes it usable. It’s built on top of the open-source `rlm` library and adds a bunch of practical stuff to deploy it as a service. The core idea: you get an RLM with persistent memory that can reason over arbitrarily large contexts. For example, `Modal Volume` stores context in files like `/{thread_id}/context.txt`, and the serverless backend (using `Modal`) handles compute so you don’t have to mess with hosting.\n\nOn top of that, `Monolith` plays nice with MCP (Model Context Protocol). Whether it’s the `MCP server` (`mcp-modal/server.py`) or the optional Cloudflare Worker (`mcp-modal/cloudflare/worker-gateway/`), you can expose your RLM to any MCP-compatible agent like Claude Code. There’s even a `session_end_upload.sh` script to automatically upload chat logs for persistence. The result? AI agents that can handle long, complex tasks and actually remember what they’ve done.\n\n## Real-World Use\n\nImagine you’re building a coding assistant for your team that needs to analyze a massive codebase. With `Monolith`, you’d spin up the RLM in a serverless `Modal` environment and connect it to your coding agent via the MCP server. The RLM would read code snippets from a shared `Modal Volume`, recursively delegate sub-tasks (e.g., “Summarize this file”), and stitch the results together. Even better, the next time the agent revisits the same codebase, it can pick up where it left off because the previous context is stored in `context.txt`.\n\nIf you want to experiment locally, the CLI tools in `rlm`—like `python -m monolith.query` or `store`—let you interact directly with the RLM. Just don’t forget to set up your `OPENAI_API_KEY` and initialize `Modal`.\n\n## The Bottom Line\n\n`Monolith` is a cool project for anyone building advanced AI agents, especially those working with large or persistent contexts. The integration with `Modal` means you don’t have to deal with infrastructure, and the MCP compatibility makes it extensible. That said, this isn’t for small projects or casual tinkering—if you aren’t dealing with huge contexts or persistent AI workflows, it’s probably overkill. But if you need a coding assistant that can reason recursively and remember its work? Worth a look.",
+      "url": "https://github.com/moses-y/Monolith",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "WingchunSiu/Monolith",
+        "url": "https://github.com/WingchunSiu/Monolith",
+        "stars": 70
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 18, 2026",
+      "updatedAt": "February 18, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 64,
+        "directories": {
+          ".claude": 1,
+          "(root)": 9,
+          "claude_tool_mcp": 1,
+          "deeprecurse": 4,
+          "mcp-modal": 21,
+          "rlm": 23,
+          "scripts": 5
+        },
+        "languages": {
+          "Markdown": 6,
+          "Python": 39,
+          "JSON": 2,
+          "TypeScript": 1,
+          "TOML": 2,
+          "Shell": 2
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "claude_tool_mcp/server.py",
+          "main.py",
+          "mcp-modal/cloudflare/worker-gateway/src/index.ts",
+          "mcp-modal/server.py",
+          "rlm/main.py"
+        ],
+        "configFiles": [
+          "mcp-modal/cloudflare/worker-gateway/package.json",
+          "mcp-modal/cloudflare/worker-gateway/tsconfig.json",
+          "mcp-modal/requirements.txt",
+          "pyproject.toml",
+          "requirements.txt",
+          "rlm/requirements.txt"
+        ],
+        "dependencies": [
+          "mcp-modal/cloudflare/worker-gateway/package.json",
+          "mcp-modal/requirements.txt",
+          "pyproject.toml",
+          "requirements.txt",
+          "rlm/requirements.txt"
+        ],
+        "testFiles": [
+          "scripts/generate_modal_test_transcript.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "mcp-modal/README.md",
+          "rlm/LICENSE",
+          "rlm/README.md",
+          "scripts/README.md"
+        ],
+        "fileTypes": {
+          ".md": 6,
+          ".py": 39,
+          ".json": 2,
+          ".ts": 1,
+          ".toml": 2,
+          ".txt": 3,
+          ".sh": 2,
+          ".png": 2,
+          ".lock": 1
+        }
+      }
+    },
+    {
+      "id": 1160571113,
+      "name": "GrapheneOS-Guide",
+      "displayName": "GrapheneOS Guide",
+      "description": "A resource for users intent on optimizing their usage of this highly secure and privacy focused mobile operating system.",
+      "summary": "## The Problem\n\nYou just got yourself a shiny Google Pixel, because you're serious about privacy and security, and you're ready to ditch the spyware that comes with most smartphones. You’ve heard about `GrapheneOS`—a hardened Android OS that doesn’t try to harvest your soul for ad revenue—but installing and configuring it feels like a maze of obscure steps, cryptic terminology, and potential bricking. You need a guide that doesn’t suck.\n\n## What This Does\n\n`GrapheneOS-Guide` is a no-frills, markdown-based walkthrough that holds your hand from buying the phone to getting GrapheneOS installed and configured. The entire thing lives in one lonely file: `README.md`. It’s basically a giant \"How to GrapheneOS for Dummies\" with sections on:\n\n- **Purchasing your device and carrier** (complete with tips like using cash and avoiding Verizon’s OEM-locking nonsense).\n- **Unlocking the bootloader** (a.k.a. the prerequisite for installing custom ROMs).\n- **Installing drivers** (including a direct link to Google’s USB drivers because nobody’s got time for hunting that down).\n- **Installing GrapheneOS** (links to both the web installer and CLI guide—choose your poison).\n- **Post-install configurations** like setting LTE-only mode for better security.\n\nIt even has some nerdy gems, like how to use a VPN over port 53 to bypass captive portal networks. If you know, you know.\n\n## Real-World Use\n\nLet's say you’re ready to switch to a more private mobile lifestyle. First, you follow the guide’s advice to buy a Google Pixel with cash (no paper trail). Once home, you pop the SIM card out, factory reset the device, unlock the OEM, and install Google’s USB drivers using the provided step-by-step instructions. The guide then directs you to the official GrapheneOS web installer, which does most of the heavy lifting. If something goes wrong (because it’s a custom ROM, and Murphy’s Law is real), there’s even a link to an XDA guide for fixing a bricked device. In the end, you’ve got a secure phone that doesn’t spy on you, and it only took an afternoon.\n\n## The Bottom Line\n\nIf you want a simple, practical guide to turning your Google Pixel into a privacy fortress, this is it. The markdown-only format keeps things lightweight and to the point, but don’t expect fancy visuals or detailed troubleshooting. It’s best for people who can follow instructions without needing a hand-holding YouTube tutorial (though there is a linked video if you’re into that). It’s not groundbreaking, but it does the job well.",
+      "url": "https://github.com/moses-y/GrapheneOS-Guide",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "Scrut1ny/GrapheneOS-Guide",
+        "url": "https://github.com/Scrut1ny/GrapheneOS-Guide",
+        "stars": 188
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 18, 2026",
+      "updatedAt": "February 18, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 1,
+        "directories": {
+          "(root)": 1
+        },
+        "languages": {
+          "Markdown": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1
+        }
+      }
+    },
+    {
+      "id": 1160555087,
+      "name": "arXivisual",
+      "displayName": "arXivisual",
+      "description": "🎊 TartanHacks '26 winner",
+      "summary": "## The Problem\nResearch papers are dense, technical, and often impenetrable. For the average person—or even some researchers—navigating through layers of jargon can feel like trying to decipher ancient hieroglyphs. This project addresses that frustration by transforming academic text into engaging, visual stories.\n\n## What This Does\n**arXivisual** is your go-to tool for turning dry academic papers into animated visualizations. It breaks down papers into digestible sections in the `backend/ingestion` directory, using scripts like `arxiv_fetcher.py` and `html_parser.py`. Then it analyzes these sections with AI agents located in `backend/agents/` to pinpoint key concepts and visualization opportunities. \n\nOnce analyzed, it generates slick animations using Manim, thanks to the pipeline in `backend/manimations`. You can find the entry point for this process in `backend/main.py`. The final product is an interactive frontend experience, where users can scroll through papers adorned with animations, all powered by Next.js in the `frontend/` directory.\n\n## Real-World Use\nImagine you're a student tasked with digesting a complex paper on neural networks. Instead of slogging through pages of text, you simply paste the arXiv URL into **arXivisual**. The backend grabs the content, the AI analyzes it, and within moments, you're watching an engaging animation that explains the concepts in a way that clicks. You can even run the backend with `uvicorn main:app --reload` to check how the API serves the data.\n\n## The Bottom Line\n**arXivisual** could be incredibly useful for educators, students, or anyone who struggles with academic papers. However, if you’re just looking to read a paper, this might feel like overkill. It’s a solid project, but the setup requires a bit of work—like handling API keys and ensuring all dependencies are in place. If you're ready to invest the time, this tool can make complex research much more digestible.",
+      "url": "https://github.com/moses-y/arXivisual",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "rajshah6/arXivisual",
+        "url": "https://github.com/rajshah6/arXivisual",
+        "stars": 102
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 18, 2026",
+      "updatedAt": "February 18, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 199,
+        "directories": {
+          ".cursor": 2,
+          "(root)": 5,
+          "backend": 109,
+          "docs": 13,
+          "frontend": 70
+        },
+        "languages": {
+          "Markdown": 27,
+          "Python": 65,
+          "TOML": 2,
+          "Shell": 1,
+          "YAML": 2,
+          "TSX": 28,
+          "CSS": 1,
+          "TypeScript": 8,
+          "JSON": 4
+        },
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Docker"
+        ],
+        "packageManager": "npm",
+        "hasDocker": true,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "backend/main.py",
+          "backend/manimations/main.py"
+        ],
+        "configFiles": [
+          "backend/.env.example",
+          "backend/Dockerfile",
+          "backend/manimations/pyproject.toml",
+          "backend/pyproject.toml",
+          "backend/requirements.txt",
+          "docker-compose.yml",
+          "frontend/next.config.ts",
+          "frontend/package.json",
+          "frontend/tsconfig.json"
+        ],
+        "dependencies": [
+          "backend/manimations/pyproject.toml",
+          "backend/pyproject.toml",
+          "backend/requirements.txt",
+          "frontend/package-lock.json",
+          "frontend/package.json",
+          "package-lock.json"
+        ],
+        "testFiles": [
+          "backend/agents/render_tester.py",
+          "backend/prompts/test_dedalus.md",
+          "backend/test_ingestion.py",
+          "backend/test_voiceover.py",
+          "backend/test_voiceover_transformation.py",
+          "backend/tests/test_manim_generator_voice_mode.py",
+          "backend/tests/test_voiceover_script_validator.py",
+          "backend/tools/pipeline-tests/TESTING_GUIDE.md",
+          "backend/tools/pipeline-tests/quick_render.py",
+          "backend/tools/pipeline-tests/test_pipeline_steps.py",
+          "backend/tools/pipeline-tests/test_video_generation.py",
+          "backend/tools/test_pipeline.py",
+          "docs/AgentDocs/API_SPEC.md"
+        ],
+        "docs": [
+          "README.md",
+          "backend/README.md",
+          "backend/manimations/README.md",
+          "backend/tools/pipeline-tests/TESTING_GUIDE.md",
+          "docs/ARCHITECTURE.md",
+          "docs/AgentDocs/API_SPEC.md",
+          "docs/AgentDocs/MANIM_PATTERNS.md",
+          "docs/AgentDocs/PROJECT_OVERVIEW.md",
+          "docs/AgentDocs/SETUP.md",
+          "docs/AgentDocs/TEAM1_INGESTION.md",
+          "docs/AgentDocs/TEAM2_GENERATION.md",
+          "docs/AgentDocs/TEAM3_BACKEND.md",
+          "docs/AgentDocs/TEAM4_FRONTEND.md",
+          "docs/DEPLOY.md",
+          "docs/archive/AGENT_ANALYSIS.md",
+          "docs/archive/HACKATHON_PLAN.md",
+          "docs/archive/VOICEOVER_AND_QUALITY_PLAN.md",
+          "frontend/README.md"
+        ],
+        "fileTypes": {
+          ".md": 27,
+          ".example": 1,
+          ".py": 65,
+          ".db-shm": 1,
+          ".db-wal": 1,
+          ".mp4": 37,
+          ".toml": 2,
+          ".txt": 2,
+          ".sh": 1,
+          ".lock": 1,
+          ".yml": 1,
+          ".tsx": 28,
+          ".css": 1,
+          ".png": 3,
+          ".mjs": 2,
+          ".ts": 8,
+          ".json": 4,
+          ".svg": 5,
+          ".jpeg": 1,
+          ".yaml": 1
+        }
+      }
+    },
+    {
+      "id": 1160533485,
+      "name": "anymap-ts",
+      "displayName": "anymap ts",
+      "description": "A Python package for creating interactive maps with anywidget and mapping libraries using TypeScript",
+      "summary": "## The Problem\n\nYou ever wanted to throw an interactive map into a Jupyter notebook, but got stuck picking between hacky JavaScript widgets or clunky Python-only tools? Most mapping libraries force you to pick one stack, and then you end up fighting with glue code, broken bidirectional updates, or half-baked layer controls. Been there. Painful.\n\n## What This Does\n\n`anymap-ts` stitches together Python and TypeScript so you can use real mapping libraries (MapLibre, Mapbox, Leaflet, etc.) inside notebooks, with actual bidirectional communication. The magic lives in the `anymap_ts/` folder—each mapping backend gets its own Python wrapper (`cesium.py`, `deckgl.py`, etc.) plus a matching HTML template in `anymap_ts/templates/`. There's a pile of demo files in `examples/`, showing how the frontend TypeScript (`main.ts`) talks to Python. The docs (see `docs/notebooks/` and `docs/typescript/examples/`) actually walk through real map layers—not just toy code.\n\nEverything hooks into `anywidget`, so you get live updates: draw something, edit geometry, or switch basemaps, and your Python code stays in sync. Want layer controls? They've bolted in `maplibre-gl-layer-control` and a geo editor. You even get export-to-HTML built in, so you're not stuck inside Jupyter.\n\n## Real-World Use\n\nSay you're working with geospatial data in a notebook. Fire up `MapLibre`:\n\n```python\nfrom anymap_ts import Map\nm = Map(center=[-122.4, 37.8], zoom=10)\nm.add_basemap(\"OpenStreetMap\")\nm.add_draw_control()\nm\n```\n\nNow you can draw polygons, tweak layers, and grab the results in Python—all inside the notebook. Need to add a WMS layer? Use `OpenLayersMap` and call `add_wms_layer()` with your endpoint. There's no weird JavaScript in your notebook, just Python calls. And if you hate notebooks, just export everything to HTML and send it to your boss.\n\n## The Bottom Line\n\nIf you need interactive maps in Python and care about TypeScript sanity on the frontend, this is a solid toolkit. The layer support is wide, the docs are actually useful, and the integration isn't half-baked. Not for tiny toy projects—it's real code, not a magic one-liner. If you want to hack on map widgets or build custom viz, worth a look. If you're allergic to TypeScript or just need a static map, move along.",
+      "url": "https://github.com/moses-y/anymap-ts",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "opengeos/anymap-ts",
+        "url": "https://github.com/opengeos/anymap-ts",
+        "stars": 167
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 18, 2026",
+      "updatedAt": "February 18, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".github": 12,
+          "(root)": 5,
+          ".nblink": 1,
+          "anymap_ts": 21,
+          "docs": 85,
+          "examples": 76
+        },
+        "languages": {
+          "YAML": 12,
+          "Markdown": 33,
+          "Python": 13,
+          "HTML": 44,
+          "CSS": 8,
+          "TypeScript": 34
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "examples/cesium/index.html",
+          "examples/cesium/main.ts",
+          "examples/deckgl/index.html",
+          "examples/deckgl/main.ts",
+          "examples/index.html",
+          "examples/keplergl/index.html",
+          "examples/keplergl/main.ts",
+          "examples/leaflet/index.html",
+          "examples/leaflet/main.ts",
+          "examples/mapbox/index.html",
+          "examples/mapbox/main.ts",
+          "examples/maplibre/index.html",
+          "examples/maplibre/main.ts"
+        ],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/CNAME",
+          "docs/anymap_ts.md",
+          "docs/base.md",
+          "docs/basemaps.md",
+          "docs/cesium.md",
+          "docs/contributing.md",
+          "docs/deckgl.md",
+          "docs/index.md",
+          "docs/installation.md",
+          "docs/keplergl.md",
+          "docs/leaflet.md",
+          "docs/mapbox.md",
+          "docs/maplibre.md",
+          "docs/notebooks/arc_layer.ipynb",
+          "docs/notebooks/bitmap_layer.ipynb",
+          "docs/notebooks/buildings_3d.ipynb",
+          "docs/notebooks/cesium.ipynb",
+          "docs/notebooks/choropleth.ipynb",
+          "docs/notebooks/clustering.ipynb",
+          "docs/notebooks/cog_layer.ipynb",
+          "docs/notebooks/column_layer.ipynb",
+          "docs/notebooks/contour_layer.ipynb",
+          "docs/notebooks/control_grid.ipynb",
+          "docs/notebooks/deckgl.ipynb",
+          "docs/notebooks/geohash_layer.ipynb",
+          "docs/notebooks/geojson_layer.ipynb",
+          "docs/notebooks/great_circle_layer.ipynb",
+          "docs/notebooks/gridcell_layer.ipynb",
+          "docs/notebooks/h3_cluster_layer.ipynb",
+          "docs/notebooks/h3_hexagon_layer.ipynb",
+          "docs/notebooks/heatmap_layer.ipynb",
+          "docs/notebooks/hexagon_layer.ipynb",
+          "docs/notebooks/icon_layer.ipynb",
+          "docs/notebooks/image_overlay.ipynb",
+          "docs/notebooks/keplergl.ipynb",
+          "docs/notebooks/layer_management.ipynb",
+          "docs/notebooks/leaflet.ipynb",
+          "docs/notebooks/lidar_layer.ipynb",
+          "docs/notebooks/mapbox.ipynb",
+          "docs/notebooks/maplibre.ipynb",
+          "docs/notebooks/maplibre_heatmap.ipynb",
+          "docs/notebooks/markers.ipynb",
+          "docs/notebooks/mvt_layer.ipynb",
+          "docs/notebooks/openlayers.ipynb",
+          "docs/notebooks/pmtiles_layer.ipynb",
+          "docs/notebooks/pointcloud_layer.ipynb",
+          "docs/notebooks/polygon_layer.ipynb",
+          "docs/notebooks/popups.ipynb",
+          "docs/notebooks/potree.ipynb",
+          "docs/notebooks/quadkey_layer.ipynb",
+          "docs/notebooks/route_animation.ipynb",
+          "docs/notebooks/s2_layer.ipynb",
+          "docs/notebooks/scatterplot_layer.ipynb",
+          "docs/notebooks/scenegraph_layer.ipynb",
+          "docs/notebooks/simplemesh_layer.ipynb",
+          "docs/notebooks/solidpolygon_layer.ipynb",
+          "docs/notebooks/terrain_3d.ipynb",
+          "docs/notebooks/terrain_layer.ipynb",
+          "docs/notebooks/text_layer.ipynb",
+          "docs/notebooks/tile3d_layer.ipynb",
+          "docs/notebooks/tile_layer.ipynb",
+          "docs/notebooks/to_html.ipynb",
+          "docs/notebooks/trips_layer.ipynb",
+          "docs/notebooks/ui_controls.ipynb",
+          "docs/notebooks/wms_layer.ipynb",
+          "docs/notebooks/zarr_layer.ipynb",
+          "docs/openlayers.md",
+          "docs/overrides/main.html",
+          "docs/potree.md",
+          "docs/stylesheets/extra.css",
+          "docs/typescript/examples/arc_layer.md",
+          "docs/typescript/examples/cesium.md",
+          "docs/typescript/examples/cog_layer.md",
+          "docs/typescript/examples/deckgl.md",
+          "docs/typescript/examples/keplergl.md",
+          "docs/typescript/examples/leaflet.md",
+          "docs/typescript/examples/mapbox.md",
+          "docs/typescript/examples/maplibre.md",
+          "docs/typescript/examples/openlayers.md",
+          "docs/typescript/examples/pointcloud_layer.md",
+          "docs/typescript/examples/potree.md",
+          "docs/typescript/examples/zarr_layer.md",
+          "docs/typescript/index.md",
+          "docs/usage.md",
+          "docs/utils.md"
+        ],
+        "fileTypes": {
+          ".yml": 11,
+          ".md": 33,
+          ".yaml": 1,
+          ".py": 13,
+          ".html": 44,
+          ".ipynb": 53,
+          ".css": 8,
+          ".ts": 34
+        }
+      }
+    },
+    {
+      "id": 1160529856,
+      "name": "ComfyUI_Viewer_OpenReel_Extension",
+      "displayName": "ComfyUI Viewer OpenReel Extension",
+      "description": "ComfyUI Viewer extension to provide OpenReel for video editing",
+      "summary": "## The Problem\n\nEditing videos generated by tools like ComfyUI is a pain in the ass. Sure, you can stitch frames together manually or send them off to some bloated external editor, but that’s tedious, error-prone, and completely breaks your workflow. What if you just want to tweak a video—cut a scene, add text, maybe slap on some transitions—without leaving ComfyUI? Good luck doing that without smashing your keyboard.\n\n## What This Does\n\nThe `ComfyUI_Viewer_OpenReel_Extension` embeds a modified version of OpenReel, a browser-based video editor, directly into the `ComfyUI Viewer`. It's not just a bolted-on iframe—this thing integrates like it was meant to be there. The extension lives in `apps/openreel_app/`, where you'll find everything from the React-based editor (`index.js`) to assets like `three.js` and `zustand.js`. It even hooks into the ComfyUI workflow with custom Python nodes (`nodes/openreel_video_nodes.py`).\n\nHere’s the gist: frame batches and audio from your ComfyUI pipeline go into the `CV OpenReel Bundle Video` node. This bundles them into a video and sends it to OpenReel for editing. When you're done, you hit \"SEND TO OUTPUT,\" and the `CV OpenReel Unpack` node spits the edited frames, audio, and metadata back into the pipeline. The `requirements.txt` keeps dependencies simple, and everything runs locally in your browser because nobody wants to send their stuff to the cloud.\n\n## Real-World Use\n\nLet’s say you’re generating a video with ComfyUI’s AnimateDiff. You can send the output frames and audio through `CV OpenReel Bundle Video`. From there, the video appears in the `Content Viewer`, where OpenReel is embedded. Add some text overlays, trim a few seconds, and apply a transition. Once you’re happy, hit \"SEND TO OUTPUT\" and the `CV OpenReel Unpack` node will break the video back into frames and audio, ready for further processing or saving.\n\nHere’s a basic workflow:\n\n```plaintext\n[Generate Frames] → [CV OpenReel Bundle Video] → [Content Viewer] → [Pause Node] → [CV OpenReel Unpack] → [Save Image/Video]\n```\n\nThis setup lets you pause the workflow, edit the video, and continue without missing a beat. Just follow the README’s advice: use a pause node, and don’t click \"Continue\" like a fool unless you want to lose your edits.\n\n## The Bottom Line\n\nIf you’re deep into ComfyUI and need in-line video editing, this extension is a solid option. It’s still a work in progress, so don’t expect Adobe Premiere, but for quick tweaks and seamless integration, it gets the job done. If you’re not already using ComfyUI, though, this won’t magically make your life better—start there first. Also, the setup process is a bit manual (copying files? really?), but hey, you’re a developer; you’ll survive.",
+      "url": "https://github.com/moses-y/ComfyUI_Viewer_OpenReel_Extension",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "WASasquatch/ComfyUI_Viewer_OpenReel_Extension",
+        "url": "https://github.com/WASasquatch/ComfyUI_Viewer_OpenReel_Extension",
+        "stars": 33
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 18, 2026",
+      "updatedAt": "February 18, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 34,
+        "directories": {
+          "(root)": 4,
+          "apps": 23,
+          "modules": 1,
+          "nodes": 1,
+          "routes": 1,
+          "screenshots": 3,
+          "web": 1
+        },
+        "languages": {
+          "Markdown": 1,
+          "JavaScript": 16,
+          "CSS": 1,
+          "HTML": 1,
+          "JSON": 1,
+          "Python": 3
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "apps/openreel_app/assets/index.js",
+          "apps/openreel_app/index.html"
+        ],
+        "configFiles": [
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".js": 16,
+          ".wasm": 1,
+          ".css": 1,
+          ".svg": 1,
+          ".html": 1,
+          ".json": 1,
+          ".py": 3,
+          ".txt": 1,
+          ".jpg": 3
+        }
+      }
+    },
+    {
+      "id": 1160527977,
+      "name": "btw",
+      "displayName": "btw",
+      "description": "Open source Medium alternative- set up your personal blog in minutes.",
+      "summary": "## The Problem\nBuilding a personal blog shouldn’t take more time than writing a post. Most solutions out there are bloated or require you to jump through hoops just to get started. If you're tired of wrestling with overly complex setups, you need a straightforward alternative.\n\n## What This Does\nEnter `btw`, an open-source Medium alternative that allows you to set up your personal blog in mere minutes. With React and Docker in its toolkit, it’s built for developers who want something simple yet powerful. \n\nTo kick things off, you’ll be editing `deploy/docker-compose.dev.yml`. Just set `ADMIN_EMAIL` and `ADMIN_SLUG`, and you’re halfway there. The app will take care of the rest, spinning up a PostgreSQL instance and configuring your database. Want to tweak your setup? Check out the `list/config/webpack.config.js` for build customizations.\n\nThe structure isn’t overwhelming either. With 200 files, the majority are in the `list/` folder, where you'll find your React components, actions, and reducers neatly organized. Need to add a new feature? Just dive into `list/src/components/` and start coding.\n\n## Real-World Use\nImagine you’ve got a story to tell but don’t want to waste time on installation. You clone the repo, set your environment variables, and run `docker-compose up`. Within minutes, you can access the editor at `localhost:3000` and start crafting your first post. If you decide to self-host, follow the instructions in the `README.md`, and you’re good to go.\n\nHere’s a quick snippet to show how easy it is to add a new post within the app:\n\n```javascript\ndispatch(addPost({\n  title: \"My First Post\",\n  content: \"Hello world! This is my first blog post using btw.\"\n}));\n```\n\n## The Bottom Line\n`btw` is a solid choice for developers wanting a no-fuss blogging platform. It’s fast to set up, and you can dive straight into writing. However, if you’re looking for a highly customizable blog with a large plugin ecosystem, this might not be for you. Overall, it’s perfect for anyone who values simplicity over complexity.",
+      "url": "https://github.com/moses-y/btw",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "btw-so/btw",
+        "url": "https://github.com/btw-so/btw",
+        "stars": 1071
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 18, 2026",
+      "updatedAt": "February 18, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 7,
+          "deploy": 1,
+          "list": 192
+        },
+        "languages": {
+          "Markdown": 2,
+          "SQL": 1,
+          "YAML": 4,
+          "Shell": 1,
+          "HTML": 1,
+          "JSON": 8,
+          "CSS": 2,
+          "JavaScript": 27,
+          "TypeScript": 15,
+          "Docker": 1,
+          "JSX": 30,
+          "TSX": 3
+        },
+        "frameworks": [
+          "React",
+          "Docker"
+        ],
+        "packageManager": "npm",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "Travis CI",
+        "entryPoints": [
+          "list/assets/index.html",
+          "list/cypress/plugins/index.js",
+          "list/cypress/support/index.js",
+          "list/src/actions/app.ts",
+          "list/src/actions/index.ts",
+          "list/src/components/Transition/index.tsx",
+          "list/src/index.jsx",
+          "list/src/literals/index.js",
+          "list/src/reducers/app.ts",
+          "list/src/reducers/index.ts"
+        ],
+        "configFiles": [
+          "deploy/docker-compose.dev.yml",
+          "list/.eslintrc",
+          "list/Dockerfile",
+          "list/config/webpack.config.js",
+          "list/jest.config.ts",
+          "list/package.json"
+        ],
+        "dependencies": [
+          "list/package-lock.json",
+          "list/package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "LICENSE copy",
+          "README.md",
+          "list/LICENSE",
+          "list/README.md"
+        ],
+        "fileTypes": {
+          ".md": 2,
+          ".sql": 1,
+          ".yml": 4,
+          ".sh": 1,
+          ".html": 1,
+          ".json": 8,
+          ".png": 14,
+          ".svg": 18,
+          ".otf": 10,
+          ".eot": 12,
+          ".ttf": 12,
+          ".woff": 12,
+          ".woff2": 12,
+          ".gif": 1,
+          ".ico": 1,
+          ".css": 2,
+          ".txt": 1,
+          ".js": 27,
+          ".ts": 15,
+          ".dockerfile": 1,
+          ".jsx": 30,
+          ".tsx": 3
+        }
+      }
+    },
+    {
+      "id": 1161092180,
+      "name": "fastest-validator",
+      "displayName": "fastest validator",
+      "description": ":zap: The fastest JS validator library for NodeJS",
+      "summary": "# How Fast Is “Fastest Validator”? Let’s Find Out  \n\n## The Problem  \nValidating data in JavaScript can be a pain. If you’ve ever tried writing your own validation logic or wrestled with heavy libraries like `Joi`, you know the drill—slow, verbose, and often more complex than necessary. Whether you're validating API payloads, sanitizing inputs, or checking form data, you want something fast, simple, and lightweight that doesn’t chew up your CPU for breakfast.  \n\n## What This Does  \n`fastest-validator` delivers exactly what it promises: stupid-fast validation. It compiles your validation schema into a function (using the `Function` constructor, not some sketchy `eval` nonsense) and runs checks at runtime. No dependencies. No bloat. Just raw speed.  \n\nThe meat of the library lives in `lib/validator.js`, where all the magic happens. Validators are defined in `lib/rules/`, covering everything from `string.js` to `uuid.js`. You get 20+ built-in validators, covering most common data types and edge cases. Need custom validation? No problem—just write your own with `custom.js`.  \n\nThe directory structure is clear:  \n- `lib/` is the core logic.  \n- `test/` has 50+ test files covering every rule and integration.  \n- `examples/` is your playground, with ready-to-run code like `examples/simple.js` and `examples/async.js`.  \n\nWant benchmarks? Of course you do. Check out `benchmark/index.js` for proof that this thing destroys libraries like `Joi` and `Yup` in speed tests.  \n\n## Real-World Use  \nSay you’re building a Node.js API and need to validate incoming requests. With `fastest-validator`, you can compile a schema like this:  \n\n```js  \nconst Validator = require(\"fastest-validator\");  \nconst v = new Validator();  \n\nconst schema = {  \n    id: { type: \"number\", positive: true, integer: true },  \n    name: { type: \"string\", min: 3, max: 255 },  \n    status: \"boolean\" // short-hand  \n};  \n\nconst check = v.compile(schema);  \n\nconst input = { id: 1, name: \"Alice\", status: false };  \nconst result = check(input);  \n\nif (result === true) {  \n    console.log(\"Valid input!\");  \n} else {  \n    console.error(\"Errors:\", result);  \n}  \n```  \n\nNeed even more performance? Use the `haltOnFirstError: true` option to stop validation as soon as it hits an error. Perfect for when you don’t need a full error log.  \n\nAnd yes, it works in the browser and Deno, too. Just grab the script from `unpkg.com` or check out the `examples/browser/index.html` file to see it in action.  \n\n## The Bottom Line  \n`fastest-validator` is a no-nonsense tool that delivers exactly what it promises. It’s ridiculously fast, lightweight, and easy to integrate. But it’s not for everyone. If you’re building a tiny pet project or need fancy schema validation features like deep object merging, this might be overkill. For production-grade APIs where performance matters? It’s a beast.",
+      "url": "https://github.com/moses-y/fastest-validator",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "icebob/fastest-validator",
+        "url": "https://github.com/icebob/fastest-validator",
+        "stars": 1454
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 18, 2026",
+      "updatedAt": "February 18, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 126,
+        "directories": {
+          "(root)": 12,
+          ".github": 2,
+          ".vscode": 1,
+          "benchmark": 4,
+          "deno-test": 1,
+          "examples": 22,
+          "lib": 29,
+          "test": 55
+        },
+        "languages": {
+          "JavaScript": 83,
+          "YAML": 2,
+          "JSON": 5,
+          "Markdown": 4,
+          "TypeScript": 27,
+          "HTML": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "benchmark/index.js",
+          "examples/browser/index.html",
+          "examples/deno/index.js",
+          "examples/deno/index.ts",
+          "examples/index.js",
+          "examples/with-react-nextjs/pages/index.js",
+          "index.js"
+        ],
+        "configFiles": [
+          ".eslintrc.js",
+          "examples/.eslintrc",
+          "examples/with-react-nextjs/package.json",
+          "package.json",
+          "test/typescript/tsconfig.json"
+        ],
+        "dependencies": [
+          "examples/with-react-nextjs/package.json",
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          "deno-test/index.test.ts",
+          "test/helpers/deep-extend.spec.js",
+          "test/helpers/flatten.spec.js",
+          "test/helpers/replace.spec.js",
+          "test/integration.spec.js",
+          "test/messages.spec.js",
+          "test/rules/any.spec.js",
+          "test/rules/array.spec.js",
+          "test/rules/boolean.spec.js",
+          "test/rules/class.spec.js",
+          "test/rules/currency.spec.js",
+          "test/rules/custom.spec.js",
+          "test/rules/custom_messages.spec.js",
+          "test/rules/date.spec.js",
+          "test/rules/email.spec.js",
+          "test/rules/enum.spec.js",
+          "test/rules/equal.spec.js",
+          "test/rules/forbidden.spec.js",
+          "test/rules/function.spec.js",
+          "test/rules/luhn.spec.js",
+          "test/rules/mac.spec.js",
+          "test/rules/multi.spec.js",
+          "test/rules/number.spec.js",
+          "test/rules/object.spec.js",
+          "test/rules/objectID.spec.js",
+          "test/rules/record.spec.js",
+          "test/rules/string.spec.js",
+          "test/rules/tuple.spec.js",
+          "test/rules/url.spec.js",
+          "test/rules/uuid.spec.js",
+          "test/typescript/integration.spec.ts",
+          "test/typescript/messages.spec.ts",
+          "test/typescript/rules/any.spec.ts",
+          "test/typescript/rules/array.spec.ts",
+          "test/typescript/rules/boolean.spec.ts",
+          "test/typescript/rules/class.spec.ts",
+          "test/typescript/rules/custom.spec.ts",
+          "test/typescript/rules/custom_messages.spec.ts",
+          "test/typescript/rules/date.spec.ts",
+          "test/typescript/rules/email.spec.ts",
+          "test/typescript/rules/enum.spec.ts",
+          "test/typescript/rules/equal.spec.ts",
+          "test/typescript/rules/forbidden.spec.ts",
+          "test/typescript/rules/function.spec.ts",
+          "test/typescript/rules/luhn.spec.ts",
+          "test/typescript/rules/mac.spec.ts",
+          "test/typescript/rules/number.spec.ts",
+          "test/typescript/rules/object.spec.ts",
+          "test/typescript/rules/objectID.spec.ts",
+          "test/typescript/rules/string.spec.ts",
+          "test/typescript/rules/tuple.spec.ts",
+          "test/typescript/rules/url.spec.ts",
+          "test/typescript/rules/uuid.spec.ts",
+          "test/typescript/tsconfig.json",
+          "test/typescript/validator.spec.ts",
+          "test/validator.spec.js"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "LICENSE",
+          "README.md",
+          "examples/with-react-nextjs/README.md"
+        ],
+        "fileTypes": {
+          ".js": 83,
+          ".yml": 2,
+          ".json": 5,
+          ".md": 4,
+          ".ts": 27,
+          ".html": 1
+        }
+      }
+    },
+    {
       "id": 1160315748,
       "name": "off-grid-mobile",
       "displayName": "off grid mobile",
@@ -878,7 +1021,7 @@
       "parent": {
         "name": "alichherawalla/off-grid-mobile",
         "url": "https://github.com/alichherawalla/off-grid-mobile",
-        "stars": 394
+        "stars": 398
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1048,7 +1191,7 @@
       "parent": {
         "name": "BukeLy/rag-api",
         "url": "https://github.com/BukeLy/rag-api",
-        "stars": 34
+        "stars": 35
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1155,7 +1298,7 @@
       "parent": {
         "name": "freemocap/freemocap",
         "url": "https://github.com/freemocap/freemocap",
-        "stars": 4827
+        "stars": 4858
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1263,7 +1406,7 @@
       "parent": {
         "name": "SuperagenticAI/superclaw",
         "url": "https://github.com/SuperagenticAI/superclaw",
-        "stars": 45
+        "stars": 46
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1337,7 +1480,7 @@
       "parent": {
         "name": "mindsdb/mindsdb",
         "url": "https://github.com/mindsdb/mindsdb",
-        "stars": 38518
+        "stars": 38520
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1544,7 +1687,7 @@
       "parent": {
         "name": "automataIA/graphrag-rs",
         "url": "https://github.com/automataIA/graphrag-rs",
-        "stars": 157
+        "stars": 159
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1640,7 +1783,7 @@
       "parent": {
         "name": "spacedriveapp/spacebot",
         "url": "https://github.com/spacedriveapp/spacebot",
-        "stars": 664
+        "stars": 696
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1780,7 +1923,7 @@
       "parent": {
         "name": "TencentARC/VerseCrafter",
         "url": "https://github.com/TencentARC/VerseCrafter",
-        "stars": 300
+        "stars": 303
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1833,7 +1976,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 585
+        "stars": 638
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1900,7 +2043,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 780
+        "stars": 799
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1943,7 +2086,7 @@
       "parent": {
         "name": "HKUDS/AI-Trader",
         "url": "https://github.com/HKUDS/AI-Trader",
-        "stars": 11309
+        "stars": 11311
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1995,7 +2138,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 4820
+        "stars": 4896
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -2083,7 +2226,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 7852
+        "stars": 7869
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -2212,7 +2355,7 @@
       "parent": {
         "name": "unitedbyai/droidclaw",
         "url": "https://github.com/unitedbyai/droidclaw",
-        "stars": 683
+        "stars": 703
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2544,7 +2687,7 @@
       "parent": {
         "name": "PurpleAILAB/Decepticon",
         "url": "https://github.com/PurpleAILAB/Decepticon",
-        "stars": 567
+        "stars": 571
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2610,7 +2753,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 60978
+        "stars": 61013
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2686,7 +2829,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 208026
+        "stars": 208750
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2708,7 +2851,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 5623
+        "stars": 5629
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2823,7 +2966,7 @@
       "parent": {
         "name": "ruzin/stenoai",
         "url": "https://github.com/ruzin/stenoai",
-        "stars": 350
+        "stars": 353
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2904,7 +3047,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 3946
+        "stars": 3949
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3064,7 +3207,7 @@
       "parent": {
         "name": "antvis/Infographic",
         "url": "https://github.com/antvis/Infographic",
-        "stars": 4392
+        "stars": 4393
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3487,7 +3630,7 @@
       "parent": {
         "name": "koel/koel",
         "url": "https://github.com/koel/koel",
-        "stars": 17046
+        "stars": 17047
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3790,7 +3933,7 @@
       "parent": {
         "name": "roboflow/trackers",
         "url": "https://github.com/roboflow/trackers",
-        "stars": 2463
+        "stars": 2468
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3886,7 +4029,7 @@
       "parent": {
         "name": "Serial-Studio/Serial-Studio",
         "url": "https://github.com/Serial-Studio/Serial-Studio",
-        "stars": 6528
+        "stars": 6537
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3936,7 +4079,7 @@
       "parent": {
         "name": "gosom/google-maps-scraper",
         "url": "https://github.com/gosom/google-maps-scraper",
-        "stars": 3170
+        "stars": 3173
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4060,7 +4203,7 @@
       "parent": {
         "name": "openrundev/openrun",
         "url": "https://github.com/openrundev/openrun",
-        "stars": 791
+        "stars": 792
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4082,7 +4225,7 @@
       "parent": {
         "name": "crowdsecurity/crowdsec",
         "url": "https://github.com/crowdsecurity/crowdsec",
-        "stars": 12565
+        "stars": 12567
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4104,7 +4247,7 @@
       "parent": {
         "name": "ruvnet/wifi-densepose",
         "url": "https://github.com/ruvnet/wifi-densepose",
-        "stars": 6993
+        "stars": 7014
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4126,7 +4269,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22038
+        "stars": 22043
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4192,7 +4335,7 @@
       "parent": {
         "name": "TencentARC/MotionCrafter",
         "url": "https://github.com/TencentARC/MotionCrafter",
-        "stars": 80
+        "stars": 81
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4236,7 +4379,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 15015
+        "stars": 15017
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4258,7 +4401,7 @@
       "parent": {
         "name": "jlia0/tinyclaw",
         "url": "https://github.com/jlia0/tinyclaw",
-        "stars": 2108
+        "stars": 2124
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4280,7 +4423,7 @@
       "parent": {
         "name": "filipstrand/mflux",
         "url": "https://github.com/filipstrand/mflux",
-        "stars": 1832
+        "stars": 1833
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4324,7 +4467,7 @@
       "parent": {
         "name": "R44VC0RP/pgrok",
         "url": "https://github.com/R44VC0RP/pgrok",
-        "stars": 543
+        "stars": 549
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4368,7 +4511,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 15582
+        "stars": 15766
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4390,7 +4533,7 @@
       "parent": {
         "name": "The-Vibe-Company/companion",
         "url": "https://github.com/The-Vibe-Company/companion",
-        "stars": 1983
+        "stars": 1990
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4412,7 +4555,7 @@
       "parent": {
         "name": "unfoldadmin/django-unfold",
         "url": "https://github.com/unfoldadmin/django-unfold",
-        "stars": 3209
+        "stars": 3210
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4434,7 +4577,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2200
+        "stars": 2207
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4456,7 +4599,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 23912
+        "stars": 23915
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4478,7 +4621,7 @@
       "parent": {
         "name": "sassoftware/kafka-training",
         "url": "https://github.com/sassoftware/kafka-training",
-        "stars": 119
+        "stars": 120
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4544,7 +4687,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 32995
+        "stars": 33046
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4566,7 +4709,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 6219
+        "stars": 6231
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4632,7 +4775,7 @@
       "parent": {
         "name": "BrowserOperator/browser-operator-core",
         "url": "https://github.com/BrowserOperator/browser-operator-core",
-        "stars": 455
+        "stars": 456
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4654,7 +4797,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 5488
+        "stars": 5496
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4698,7 +4841,7 @@
       "parent": {
         "name": "evinjohnn/natively-cluely-ai-assistant",
         "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
-        "stars": 503
+        "stars": 505
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4720,7 +4863,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 4258
+        "stars": 4310
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4742,7 +4885,7 @@
       "parent": {
         "name": "deepentropy/tvscreener",
         "url": "https://github.com/deepentropy/tvscreener",
-        "stars": 749
+        "stars": 750
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4764,7 +4907,7 @@
       "parent": {
         "name": "wg-easy/wg-easy",
         "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24629
+        "stars": 24630
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4808,7 +4951,7 @@
       "parent": {
         "name": "needle-tools/md-browse",
         "url": "https://github.com/needle-tools/md-browse",
-        "stars": 197
+        "stars": 198
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4830,7 +4973,7 @@
       "parent": {
         "name": "rohunvora/x-research-skill",
         "url": "https://github.com/rohunvora/x-research-skill",
-        "stars": 784
+        "stars": 788
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4874,7 +5017,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 21332
+        "stars": 21425
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4896,7 +5039,7 @@
       "parent": {
         "name": "MiniCodeMonkey/chief",
         "url": "https://github.com/MiniCodeMonkey/chief",
-        "stars": 175
+        "stars": 181
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -4918,7 +5061,7 @@
       "parent": {
         "name": "ComposioHQ/composio",
         "url": "https://github.com/ComposioHQ/composio",
-        "stars": 26699
+        "stars": 26754
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -4940,7 +5083,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 8961
+        "stars": 8962
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4962,7 +5105,7 @@
       "parent": {
         "name": "onionshare/onionshare",
         "url": "https://github.com/onionshare/onionshare",
-        "stars": 6884
+        "stars": 6885
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5028,7 +5171,7 @@
       "parent": {
         "name": "itsOwen/CyberScraper-2077",
         "url": "https://github.com/itsOwen/CyberScraper-2077",
-        "stars": 2881
+        "stars": 2883
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -5050,7 +5193,7 @@
       "parent": {
         "name": "univrsal/input-overlay",
         "url": "https://github.com/univrsal/input-overlay",
-        "stars": 3866
+        "stars": 3865
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -5072,7 +5215,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 201391
+        "stars": 201404
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -5094,7 +5237,7 @@
       "parent": {
         "name": "PrimeIntellect-ai/verifiers",
         "url": "https://github.com/PrimeIntellect-ai/verifiers",
-        "stars": 3843
+        "stars": 3842
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -5138,7 +5281,7 @@
       "parent": {
         "name": "RedPlanetHQ/core",
         "url": "https://github.com/RedPlanetHQ/core",
-        "stars": 1368
+        "stars": 1369
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5204,7 +5347,7 @@
       "parent": {
         "name": "sseanliu/VisionClaw",
         "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 1045
+        "stars": 1071
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -5226,7 +5369,7 @@
       "parent": {
         "name": "Polymarket/agents",
         "url": "https://github.com/Polymarket/agents",
-        "stars": 2186
+        "stars": 2187
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -5292,7 +5435,7 @@
       "parent": {
         "name": "rotki/rotki",
         "url": "https://github.com/rotki/rotki",
-        "stars": 3705
+        "stars": 3707
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -5380,7 +5523,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2245
+        "stars": 2248
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5402,7 +5545,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 15646
+        "stars": 15653
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5534,7 +5677,7 @@
       "parent": {
         "name": "Beingpax/VoiceInk",
         "url": "https://github.com/Beingpax/VoiceInk",
-        "stars": 3833
+        "stars": 3835
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -5622,7 +5765,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 95883
+        "stars": 95911
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5644,7 +5787,7 @@
       "parent": {
         "name": "tinyfish-io/agentql",
         "url": "https://github.com/tinyfish-io/agentql",
-        "stars": 1234
+        "stars": 1236
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5666,7 +5809,7 @@
       "parent": {
         "name": "microsoft/call-center-ai",
         "url": "https://github.com/microsoft/call-center-ai",
-        "stars": 6269
+        "stars": 6273
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5688,7 +5831,7 @@
       "parent": {
         "name": "rivo/tview",
         "url": "https://github.com/rivo/tview",
-        "stars": 13571
+        "stars": 13573
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5710,7 +5853,7 @@
       "parent": {
         "name": "rahulnyk/knowledge_graph",
         "url": "https://github.com/rahulnyk/knowledge_graph",
-        "stars": 2968
+        "stars": 2971
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5798,7 +5941,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 7114
+        "stars": 7117
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5820,7 +5963,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1671
+        "stars": 1675
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5842,7 +5985,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 3136
+        "stars": 3152
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5882,7 +6025,7 @@
       "parent": {
         "name": "abhinavxd/libredesk",
         "url": "https://github.com/abhinavxd/libredesk",
-        "stars": 2310
+        "stars": 2311
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5904,7 +6047,7 @@
       "parent": {
         "name": "Kocoro-lab/Shannon",
         "url": "https://github.com/Kocoro-lab/Shannon",
-        "stars": 1000
+        "stars": 1003
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5926,7 +6069,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 20564
+        "stars": 20576
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -5970,7 +6113,7 @@
       "parent": {
         "name": "invoicerr-app/invoicerr",
         "url": "https://github.com/invoicerr-app/invoicerr",
-        "stars": 639
+        "stars": 640
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -5992,7 +6135,7 @@
       "parent": {
         "name": "callstackincubator/agent-device",
         "url": "https://github.com/callstackincubator/agent-device",
-        "stars": 631
+        "stars": 642
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6058,7 +6201,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20578
+        "stars": 20583
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -6080,7 +6223,7 @@
       "parent": {
         "name": "fastrepl/char",
         "url": "https://github.com/fastrepl/char",
-        "stars": 7736
+        "stars": 7739
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6146,7 +6289,7 @@
       "parent": {
         "name": "timoncool/videosos",
         "url": "https://github.com/timoncool/videosos",
-        "stars": 1109
+        "stars": 1110
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6234,7 +6377,7 @@
       "parent": {
         "name": "AtsushiSakai/PythonRobotics",
         "url": "https://github.com/AtsushiSakai/PythonRobotics",
-        "stars": 28660
+        "stars": 28659
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6256,7 +6399,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 30149
+        "stars": 30155
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6366,7 +6509,7 @@
       "parent": {
         "name": "anvaka/city-roads",
         "url": "https://github.com/anvaka/city-roads",
-        "stars": 8959
+        "stars": 8958
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6410,7 +6553,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6782
+        "stars": 6783
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6542,7 +6685,7 @@
       "parent": {
         "name": "supermemoryai/claude-supermemory",
         "url": "https://github.com/supermemoryai/claude-supermemory",
-        "stars": 2162
+        "stars": 2164
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6608,7 +6751,7 @@
       "parent": {
         "name": "xenodium/agent-shell",
         "url": "https://github.com/xenodium/agent-shell",
-        "stars": 699
+        "stars": 700
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6630,7 +6773,7 @@
       "parent": {
         "name": "commaai/openpilot",
         "url": "https://github.com/commaai/openpilot",
-        "stars": 60094
+        "stars": 60097
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6652,7 +6795,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 14976
+        "stars": 14985
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -6718,7 +6861,7 @@
       "parent": {
         "name": "snwfdhmp/awesome-ralph",
         "url": "https://github.com/snwfdhmp/awesome-ralph",
-        "stars": 725
+        "stars": 728
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -6740,7 +6883,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 5998
+        "stars": 6000
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6762,7 +6905,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8333
+        "stars": 8337
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6784,7 +6927,7 @@
       "parent": {
         "name": "hpcaitech/ColossalAI",
         "url": "https://github.com/hpcaitech/ColossalAI",
-        "stars": 41347
+        "stars": 41346
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6806,7 +6949,7 @@
       "parent": {
         "name": "going-doer/Paper2Code",
         "url": "https://github.com/going-doer/Paper2Code",
-        "stars": 4157
+        "stars": 4158
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -6828,7 +6971,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 3591
+        "stars": 3594
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -6850,7 +6993,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 28500
+        "stars": 28503
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6872,7 +7015,7 @@
       "parent": {
         "name": "droidrun/droidrun",
         "url": "https://github.com/droidrun/droidrun",
-        "stars": 7682
+        "stars": 7683
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6894,7 +7037,7 @@
       "parent": {
         "name": "clidey/whodb",
         "url": "https://github.com/clidey/whodb",
-        "stars": 4585
+        "stars": 4587
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -6916,7 +7059,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 124248
+        "stars": 124272
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6938,7 +7081,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 6419
+        "stars": 6428
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6982,7 +7125,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 5919
+        "stars": 5925
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -7026,7 +7169,7 @@
       "parent": {
         "name": "zampierilucas/scx_horoscope",
         "url": "https://github.com/zampierilucas/scx_horoscope",
-        "stars": 1153
+        "stars": 1154
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7048,7 +7191,7 @@
       "parent": {
         "name": "unicodeveloper/globalthreatmap",
         "url": "https://github.com/unicodeveloper/globalthreatmap",
-        "stars": 1212
+        "stars": 1215
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -7070,7 +7213,7 @@
       "parent": {
         "name": "Nutlope/self.so",
         "url": "https://github.com/Nutlope/self.so",
-        "stars": 2880
+        "stars": 2881
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -7092,7 +7235,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24180
+        "stars": 24182
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -7114,7 +7257,7 @@
       "parent": {
         "name": "EuniAI/Prometheus",
         "url": "https://github.com/EuniAI/Prometheus",
-        "stars": 656
+        "stars": 657
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7158,7 +7301,7 @@
       "parent": {
         "name": "Avaiga/taipy",
         "url": "https://github.com/Avaiga/taipy",
-        "stars": 19066
+        "stars": 19067
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -7268,7 +7411,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 36628
+        "stars": 36631
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -7334,7 +7477,7 @@
       "parent": {
         "name": "aiming-lab/SimpleMem",
         "url": "https://github.com/aiming-lab/SimpleMem",
-        "stars": 2948
+        "stars": 2951
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -7422,7 +7565,7 @@
       "parent": {
         "name": "freelensapp/freelens",
         "url": "https://github.com/freelensapp/freelens",
-        "stars": 4624
+        "stars": 4625
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7444,7 +7587,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5388
+        "stars": 5391
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -7510,7 +7653,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 115026
+        "stars": 115053
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -7532,7 +7675,7 @@
       "parent": {
         "name": "adrianhajdin/uber",
         "url": "https://github.com/adrianhajdin/uber",
-        "stars": 1699
+        "stars": 1700
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -7620,7 +7763,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15533
+        "stars": 15546
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7664,7 +7807,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 10807
+        "stars": 10820
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -7686,7 +7829,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 20016
+        "stars": 20026
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7774,7 +7917,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 8763
+        "stars": 8787
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -7818,7 +7961,7 @@
       "parent": {
         "name": "Liquid4All/cookbook",
         "url": "https://github.com/Liquid4All/cookbook",
-        "stars": 1172
+        "stars": 1177
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -7994,7 +8137,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7205
+        "stars": 7208
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -8016,7 +8159,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51494
+        "stars": 51493
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -8060,7 +8203,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 22685
+        "stars": 22688
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -8192,7 +8335,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 21738
+        "stars": 21741
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -8280,7 +8423,7 @@
       "parent": {
         "name": "hanebox/ekphos",
         "url": "https://github.com/hanebox/ekphos",
-        "stars": 825
+        "stars": 826
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8302,7 +8445,7 @@
       "parent": {
         "name": "TradeMaster-NTU/TradeMaster",
         "url": "https://github.com/TradeMaster-NTU/TradeMaster",
-        "stars": 2479
+        "stars": 2480
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8324,7 +8467,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39498
+        "stars": 39508
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -8522,7 +8665,7 @@
       "parent": {
         "name": "memodb-io/Acontext",
         "url": "https://github.com/memodb-io/Acontext",
-        "stars": 3021
+        "stars": 3024
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -8544,7 +8687,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 181796
+        "stars": 181811
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8566,7 +8709,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 10970
+        "stars": 10985
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8610,7 +8753,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12522
+        "stars": 12527
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -8786,7 +8929,7 @@
       "parent": {
         "name": "midday-ai/midday",
         "url": "https://github.com/midday-ai/midday",
-        "stars": 14014
+        "stars": 14016
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -8808,7 +8951,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16508
+        "stars": 16515
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8852,7 +8995,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56158
+        "stars": 56184
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -8874,7 +9017,7 @@
       "parent": {
         "name": "Qloapps/QloApps",
         "url": "https://github.com/Qloapps/QloApps",
-        "stars": 12138
+        "stars": 12140
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -8896,7 +9039,7 @@
       "parent": {
         "name": "HiEventsDev/Hi.Events",
         "url": "https://github.com/HiEventsDev/Hi.Events",
-        "stars": 3528
+        "stars": 3529
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -9028,7 +9171,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 16442
+        "stars": 16473
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -9050,7 +9193,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 106508
+        "stars": 106629
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -9094,7 +9237,7 @@
       "parent": {
         "name": "0xSojalSec/LLMs-local",
         "url": "https://github.com/0xSojalSec/LLMs-local",
-        "stars": 583
+        "stars": 584
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9138,7 +9281,7 @@
       "parent": {
         "name": "piratuks/invoice-builder",
         "url": "https://github.com/piratuks/invoice-builder",
-        "stars": 173
+        "stars": 175
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -9336,7 +9479,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 28006
+        "stars": 28012
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9358,7 +9501,7 @@
       "parent": {
         "name": "fstandhartinger/ralph-wiggum",
         "url": "https://github.com/fstandhartinger/ralph-wiggum",
-        "stars": 169
+        "stars": 170
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9380,7 +9523,7 @@
       "parent": {
         "name": "muratcankoylan/ralph-wiggum-marketer",
         "url": "https://github.com/muratcankoylan/ralph-wiggum-marketer",
-        "stars": 630
+        "stars": 631
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -9402,7 +9545,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 14418
+        "stars": 14440
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -9424,7 +9567,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 20653
+        "stars": 20669
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -9512,7 +9655,7 @@
       "parent": {
         "name": "DevAgentForge/Open-Claude-Cowork",
         "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
-        "stars": 2883
+        "stars": 2884
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -9578,7 +9721,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 95259
+        "stars": 95286
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -9882,7 +10025,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 181864
+        "stars": 181868
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
