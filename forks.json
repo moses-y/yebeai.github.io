@@ -1,450 +1,14 @@
 {
-  "lastUpdated": "2026-02-20T18:11:22.867Z",
+  "lastUpdated": "2026-02-21T00:11:59.992Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 332,
+  "totalRepos": 335,
   "progress": {
-    "aiGenerated": 332,
-    "fallback": 0,
+    "aiGenerated": 334,
+    "fallback": 1,
     "pending": 0,
     "complete": true
   },
   "forks": [
-    {
-      "id": 1162539479,
-      "name": "Motrix",
-      "displayName": "Motrix",
-      "description": "A full-featured download manager.",
-      "summary": "# Why You Should Care About Motrix\n\n## The Problem\n\nDownloading files is a mess. Native browser downloads are slow, unreliable, and lack advanced features like torrent support or bandwidth control. If you've ever tried juggling HTTP, FTP, and Magnet links while managing multiple downloads, you’ve probably wanted to throw your computer out the window. Motrix exists to save you from that.\n\n## What This Does\n\nMotrix is a full-featured download manager that handles everything from HTTP and FTP to BitTorrent and Magnet links. It's built on Electron, so it’s cross-platform (Windows, macOS, Linux) and comes with a clean, minimal UI.\n\nThe backend leans heavily on `aria2`, a lightweight command-line download utility, with configuration files like `extra/darwin/arm64/engine/aria2.conf` taking care of the heavy lifting. The codebase is split into two main parts: the `src/main` directory for core functionality (like managing downloads with `src/main/core/EngineClient.js`) and `src/renderer` for the frontend, which uses Vue for components like `AboutPanel.vue` and `Main.vue`.\n\nFor developers, the project is well-organized. The entry point for the app is `src/main/index.js`, while `package.json` handles build configurations and dependencies. Need to tweak the UI? Look at `src/renderer/components`. Want to see how downloads are managed? Check out `src/main/core`. It’s all laid out pretty logically.\n\n## Real-World Use\n\nLet’s say you need to download a mix of large files: a Linux distro ISO via HTTP, a movie torrent, and a bunch of work files over FTP. Without Motrix, you’re hopping between your browser, a torrent client, and maybe even a separate FTP app. With Motrix? You throw all the links into one place, and it just works. The `src/renderer/api/Api.js` file connects the frontend with the backend, so you can monitor all your downloads in one slick interface.\n\nHere’s a simple example of starting a download via the API:\n\n```javascript\nimport Api from '@/renderer/api/Api';\n\nApi.addTask({\n  url: 'https://example.com/largefile.zip',\n  out: '/path/to/downloads',\n});\n```\n\nThat’s it. No juggling apps or worrying about file types.\n\n## The Bottom Line\n\nMotrix is a solid, no-nonsense download manager. It’s overkill if you just need to grab the occasional PDF, but for power users handling torrents, Magnet links, and big downloads daily? It’s a lifesaver. The codebase is clean enough to hack on, though the Electron stack might feel bloated if you're allergic to big apps. Either way, it does what it says on the tin—and that's rare.",
-      "url": "https://github.com/moses-y/Motrix",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "agalwood/Motrix",
-        "url": "https://github.com/agalwood/Motrix",
-        "stars": 50840
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 20, 2026",
-      "updatedAt": "February 20, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          "(root)": 17,
-          ".electron-vue": 6,
-          ".github": 8,
-          "build": 12,
-          "extra": 15,
-          "screenshots": 5,
-          "src": 137
-        },
-        "languages": {
-          "JavaScript": 80,
-          "YAML": 8,
-          "Markdown": 9,
-          "JSON": 8,
-          "HTML": 2,
-          "Vue": 11
-        },
-        "frameworks": [
-          "React",
-          "Vue"
-        ],
-        "packageManager": null,
-        "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "Travis CI",
-        "entryPoints": [
-          "src/main/index.js",
-          "src/main/pages/index.html",
-          "src/main/utils/index.js",
-          "src/renderer/api/index.js",
-          "src/renderer/components/CommandManager/index.js",
-          "src/renderer/components/Locale/index.js"
-        ],
-        "configFiles": [
-          ".eslintrc.js",
-          "package.json"
-        ],
-        "dependencies": [
-          "package.json"
-        ],
-        "testFiles": [],
-        "docs": [
-          "CONTRIBUTING-CN.md",
-          "CONTRIBUTING.md",
-          "LICENSE",
-          "README-CN.md",
-          "README.md",
-          "extra/README.md"
-        ],
-        "fileTypes": {
-          ".js": 80,
-          ".yml": 8,
-          ".md": 9,
-          ".png": 14,
-          ".tiff": 1,
-          ".icns": 2,
-          ".ico": 2,
-          ".json": 8,
-          ".conf": 7,
-          ".exe": 2,
-          ".ejs": 1,
-          ".html": 2,
-          ".svg": 42,
-          ".vue": 11
-        }
-      }
-    },
-    {
-      "id": 1156080985,
-      "name": "tinyclaw",
-      "displayName": "tinyclaw",
-      "description": "TinyClaw is a team of AI agents that acts as your 24/7 personal assistant",
-      "summary": "## The Problem\nManaging multiple AI assistants across different platforms can be a headache. You might be juggling Discord, WhatsApp, and Telegram bots, each with its own quirks and configurations. Let's face it: setting up each bot separately is tedious, and keeping track of conversation contexts is a nightmare.\n\n## What This Does\nTinyClaw simplifies this chaos by allowing you to run multiple isolated AI agents simultaneously. The `src/` directory contains the core components, like `discord-client.ts` and `telegram-client.ts`, which handle communication with their respective platforms. The `lib/` folder has utility scripts, such as `messaging.sh` and `daemon.sh`, that enable persistent sessions and parallel processing. You can manage everything with commands like `tinyclaw start` or `tinyclaw logs queue` to check message handling.\n\nThe setup is straightforward, thanks to the `scripts/install.sh` and an interactive setup wizard that guides you through channel selections and bot token entries. The configuration is all stored in `settings.json`, making it easy to tweak settings without diving into code.\n\n## Real-World Use\nImagine you’re running a community on Discord while also engaging customers on WhatsApp. With TinyClaw, you can set up a Discord bot that handles moderation tasks while your WhatsApp bot deals with customer inquiries. You could simply run:\n\n```bash\ntinyclaw start\n```\n\nAfter that, the bots operate independently but still maintain their context, thanks to the persistent sessions feature. If your Discord bot needs to fetch user data, it can do so without overlapping with WhatsApp conversations.\n\n## The Bottom Line\nTinyClaw is a solid choice if you need to manage multiple AI assistants across different channels. It saves time and effort, but it might be overkill for simple projects or single-channel usage. If you’re handling diverse communication channels and want a consistent experience, give it a shot. Otherwise, keep it simple and stick to one channel.",
-      "url": "https://github.com/yebeai/tinyclaw",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "TinyAGI/tinyclaw",
-        "url": "https://github.com/TinyAGI/tinyclaw",
-        "stars": 2240
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 12, 2026",
-      "updatedAt": "February 20, 2026",
-      "readTime": 2
-    },
-    {
-      "id": 1162369507,
-      "name": "nairobi_property_pricing",
-      "displayName": "nairobi property pricing",
-      "description": "A data pipeline for scraping, cleaning, and enriching Nairobi property listings. It normalizes prices, extracts bedroom counts from titles/URLs, and calculates per‑bedroom affordability. The project also generates location summaries and enriched datasets for analysis.",
-      "summary": "## The Problem\nFinding affordable property in Nairobi is like searching for a needle in a haystack. With countless listings scattered across various websites, potential renters face the daunting task of sifting through unstructured data. Prices are often displayed in inconsistent formats, and information about the number of bedrooms is buried in messy titles. This project tackles that headache head-on.\n\n## What This Does\nThis repo, `nairobi_property_pricing`, offers a solid data pipeline for scraping, cleaning, and enriching Nairobi property listings. The main players here are the Python scripts. The `scrape_listings.py` file pulls raw data from property websites, while `clean_properties.py` normalizes prices and extracts bedroom counts from chaotic titles and URLs. You’ll appreciate the `location_summary_clean.csv`, which gives you a clear look at average prices and bedroom counts, so you’re not just guessing where to live.\n\nThe project even generates an interactive affordability map, courtesy of `nairobi_affordability_map.html`. This file visualizes property data, making it easy to explore which neighborhoods fit your budget. It’s a one-stop-shop for anyone serious about navigating Nairobi’s real estate market.\n\n## Real-World Use\nImagine you’re moving to Nairobi and have a budget of Ksh 40,000. You fire up the `nairobi_affordability_map.html` and immediately see which areas are within reach. Want to know how many bedrooms you can get for that price? Just run the script in `eda.py`, and you'll get a clear picture of the trade-offs. The `charts/` folder has visualizations that help you see trends at a glance. For instance, check out `charts/02_price_distribution.png` to see how prices vary—no more guesswork.\n\n## The Bottom Line\nThis project is a practical toolkit for anyone needing to make sense of Nairobi’s property listings. The data pipeline is straightforward and effective, but it’s not for the faint-hearted—if you’re not comfortable with Python and data handling, you might feel lost. If you’re in the real estate game in Nairobi, though, this repo is a gem. It could save you hours of frustration.",
-      "url": "https://github.com/moses-y/nairobi_property_pricing",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "mainamuragev/nairobi_property_pricing",
-        "url": "https://github.com/mainamuragev/nairobi_property_pricing",
-        "stars": 23
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 20, 2026",
-      "updatedAt": "February 20, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 32,
-        "directories": {
-          "(root)": 21,
-          "__pycache__": 1,
-          "charts": 9,
-          "data": 1
-        },
-        "languages": {
-          "Markdown": 2,
-          "Python": 9,
-          "HTML": 2
-        },
-        "frameworks": [],
-        "packageManager": "pip",
-        "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [],
-        "configFiles": [
-          "requirements.txt"
-        ],
-        "dependencies": [
-          "requirements.txt"
-        ],
-        "testFiles": [],
-        "docs": [
-          "README.md"
-        ],
-        "fileTypes": {
-          ".md": 2,
-          ".pyc": 1,
-          ".csv": 5,
-          ".py": 9,
-          ".png": 9,
-          ".html": 2,
-          ".geojson": 1,
-          ".txt": 1
-        }
-      }
-    },
-    {
-      "id": 1162368481,
-      "name": "facet",
-      "displayName": "facet",
-      "description": "A multi-dimensional photo analysis engine that examines every facet of an image — from aesthetic appeal and composition to facial detail and technical precision — using an ensemble of        vision models to surface the photos that truly shine.",
-      "summary": "## The Problem\n\nSorting through thousands of photos sucks. Every camera roll is full of duplicates, blurry shots, random faces, and the occasional gem. Maybe you want more than \"date taken\" or \"star rating\"—like actual, intelligent scoring based on sharpness, composition, and who’s in the frame. Most gallery apps are dumb, and \"AI\" features are usually marketing fluff or half-baked.\n\n## What Facet Does\n\n`facet` is a photo analysis engine that actually does the work: it scores each image using vision models, clusters faces, tags content, and surfaces your best shots. The backend is mostly Python (`models/`, `analyzers/`, `faces/`) and talks to your files via `exiftool/exiftool_batch.py` for metadata. Quality scoring uses `models/pyiqa_scorer.py` (TOPIQ, HyperIQA, etc.), composition patterns come from `models/samp_net.py`, and face clustering is handled in `faces/clusterer.py` with HDBSCAN. All the config logic lives in `config/scoring_config.py` and `scoring_config.json`.\n\nThe UI is Angular/React (yeah, both—pick your poison) in `client/`. Infinite scroll, filtering (`gallery.component.ts`, `filter_options.py`), and actual breakdowns for each score. You get stats dashboards, person management (`manage-persons.component.ts`), and gallery views that don’t look like 2005. API endpoints live in `api/routers/`, with FastAPI-style routing.\n\n## Real-World Use\n\nYou point Facet at your photo library, and it churns through everything. It tags, scores, and clusters faces. Want to find your sharpest portraits from last summer? Use the filter drawer—set \"Portrait\", \"Face Quality > 0.8\", \"Date Range: June-July\", and boom, you get a ranked list. Curious why a photo is top-rated? Hover: you’ll see scores for aesthetic, sharpness, composition, plus EXIF details. Want to batch merge duplicate faces? Use the person management UI. If you’re scripting, you can hit the API at `/gallery/top-picks` and get the JSON.\n\n```python\n# example: get top picks via API\nimport requests\nresp = requests.get(\"http://localhost:8000/api/gallery/top-picks?min_score=0.85\")\nphotos = resp.json()\n```\n\n## The Bottom Line\n\nFacet is actually smart, not just trendy. If you shoot a ton, care about quality, and want to see stats like \"which lens gets me the best shots,\" this is legit. It’s overkill for casual users, and setup isn’t plug-and-play, but if you’re tired of basic gallery apps and want real control, give it a try. If you want \"just pretty thumbnails,\" stick to Google Photos.",
-      "url": "https://github.com/moses-y/facet",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "ncoevoet/facet",
-        "url": "https://github.com/ncoevoet/facet",
-        "stars": 45
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 20, 2026",
-      "updatedAt": "February 20, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 189,
-        "directories": {
-          ".claude": 13,
-          "(root)": 11,
-          "analyzers": 5,
-          "api": 22,
-          "client": 61,
-          "comparison": 3,
-          "config": 4,
-          "db": 8,
-          "docs": 22,
-          "exiftool": 2,
-          "faces": 5,
-          "i18n": 6,
-          "models": 8,
-          "optimization": 2,
-          "processing": 6,
-          "utils": 8,
-          "validation": 3
-        },
-        "languages": {
-          "Markdown": 24,
-          "Python": 82,
-          "JSON": 14,
-          "TypeScript": 45,
-          "HTML": 2,
-          "SCSS": 1
-        },
-        "frameworks": [
-          "React",
-          "Angular",
-          "Express"
-        ],
-        "packageManager": "pip",
-        "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "client/src/app/app.ts",
-          "client/src/index.html",
-          "client/src/main.ts"
-        ],
-        "configFiles": [
-          "client/jest.config.ts",
-          "client/package.json",
-          "client/tsconfig.json",
-          "requirements.txt"
-        ],
-        "dependencies": [
-          "client/package-lock.json",
-          "client/package.json",
-          "requirements.txt"
-        ],
-        "testFiles": [
-          ".claude/skills/chrome-devtools-debugging/references/validation-testing.md",
-          ".claude/skills/test-creation/SKILL.md",
-          ".claude/skills/test-creation/references/error-patterns.md",
-          ".claude/skills/test-creation/references/mocking-patterns.md",
-          "client/src/app/core/guards/auth.guard.spec.ts",
-          "client/src/app/core/interceptors/auth.interceptor.spec.ts",
-          "client/src/app/core/interceptors/error.interceptor.spec.ts",
-          "client/src/app/core/services/api.service.spec.ts",
-          "client/src/app/core/services/auth.service.spec.ts",
-          "client/src/app/core/services/i18n.service.spec.ts",
-          "client/src/app/features/auth/login.component.spec.ts",
-          "client/src/app/features/comparison/comparison.component.spec.ts",
-          "client/src/app/features/gallery/gallery.component.spec.ts",
-          "client/src/app/features/gallery/gallery.store.spec.ts",
-          "client/src/app/features/persons/manage-persons.component.spec.ts",
-          "client/src/app/features/persons/merge-suggestions.component.spec.ts",
-          "client/src/app/features/persons/person-page.component.spec.ts",
-          "client/src/app/features/stats/stats.component.spec.ts",
-          "client/src/app/shared/pipes/translate.pipe.spec.ts",
-          "client/tsconfig.spec.json"
-        ],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "client/README.md",
-          "docs/COMMANDS.md",
-          "docs/CONFIGURATION.md",
-          "docs/DEPLOYMENT.md",
-          "docs/FACE_RECOGNITION.md",
-          "docs/INSTALLATION.md",
-          "docs/README.md",
-          "docs/SCORING.md",
-          "docs/VIEWER.md",
-          "docs/screenshots/compare.jpg",
-          "docs/screenshots/filter-drawer.jpg",
-          "docs/screenshots/gallery-compact.jpg",
-          "docs/screenshots/gallery-desktop.jpg",
-          "docs/screenshots/gallery-mobile.jpg",
-          "docs/screenshots/gallery-top-picks.jpg",
-          "docs/screenshots/hover-preview.jpg",
-          "docs/screenshots/manage-persons.jpg",
-          "docs/screenshots/person-gallery.jpg",
-          "docs/screenshots/stats-categories.png",
-          "docs/screenshots/stats-correlations.png",
-          "docs/screenshots/stats-gear.png",
-          "docs/screenshots/stats-settings.png",
-          "docs/screenshots/stats-timeline.png"
-        ],
-        "fileTypes": {
-          ".md": 24,
-          ".py": 82,
-          ".json": 14,
-          ".ts": 45,
-          ".ico": 1,
-          ".svg": 1,
-          ".html": 2,
-          ".scss": 1,
-          ".jpg": 9,
-          ".png": 5,
-          ".txt": 1
-        }
-      }
-    },
-    {
-      "id": 1162273737,
-      "name": "hyperbrowser-app-examples",
-      "displayName": "hyperbrowser app examples",
-      "description": "This repo contains fully functional Hyperbrowser powered web apps",
-      "summary": "## The Problem\n\nBuilding web apps that depend on browser automation or web scraping sucks. You’re stuck juggling headless browser instances, figuring out how to handle captchas, and wrangling brittle scraping logic. If you’re lucky, you get to spend more time coding your app than fixing the automation scripts when they inevitably break. Hyperbrowser exists to relieve that pain, and this repo shows you how to use it effectively. \n\n## What This Does\n\nThe `hyperbrowser-app-examples` repository is a collection of seven full-stack web apps that showcase how to integrate `Hyperbrowser` into real-world applications. Each app tackles a different use case, so you can see how to build tools like a `competitor-tracker/` (monitors website changes), `deep-job-researcher/` (analyzes resumes vs job descriptions), or `assets-optimizer/` (streamlines image optimization). These aren’t just toy examples—they’re fully functional, with modern UIs built using `React`, `Next.js`, and `Tailwind`.\n\nThe apps are organized in their own directories, complete with their own `package.json`, `next.config.js`, and API routes under `app/api/`. For example, the `Idea-generator-reddit` app has a route at `app/api/generate/route.ts` that handles the core idea generation logic, while the UI is neatly modularized in `app/components/ui/`. If you’re sick of spaghetti code examples, you’ll appreciate the separation of concerns in these projects.\n\nEach app also includes a `README.md` with setup instructions, required environment variables (spoiler: you need your Hyperbrowser API key), and usage details. They even come with testing patterns, which is a nice touch, though not every app has comprehensive tests.\n\n## Real-World Use\n\nLet’s say you’re building a tool to monitor your competitors’ websites for price changes or new features. You’d start with the `competitor-tracker/` example. It has API endpoints for crawling and tracking websites (`app/api/crawl/route.ts`, `app/api/track/route.ts`) and even stores snapshots of pages in `data/snapshots/`. You could easily adapt this to send alerts when the tracked site changes using the `lib/notify.ts` helper.\n\nWant to build something more creative? The `Idea-generator-reddit` app uses Reddit as a source for brainstorming, with a clean interface (`app/components/sections/IdeaCard.tsx` and `IdeasGrid.tsx`) and a `useIdeaGeneration.ts` hook to manage API calls. With a few tweaks, you could turn this into a content planning tool.\n\n## The Bottom Line\n\nThis repo is a solid starting point for anyone looking to build browser automation apps without losing their mind. The examples are well-structured and practical, though they’re not perfect—some apps feel a little half-baked in terms of testing and production readiness. If you’re already working with `Hyperbrowser` or need inspiration for your next project, this is a goldmine. Just don’t expect magic; you still need to bring your A-game.",
-      "url": "https://github.com/moses-y/hyperbrowser-app-examples",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "hyperbrowserai/hyperbrowser-app-examples",
-        "url": "https://github.com/hyperbrowserai/hyperbrowser-app-examples",
-        "stars": 531
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 20, 2026",
-      "updatedAt": "February 20, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          "(root)": 2,
-          "Idea-generator-reddit": 35,
-          "assets-optimizer": 28,
-          "churnhunter": 6,
-          "competitor-tracker": 50,
-          "deep-crawler-bot": 30,
-          "deep-job-researcher": 30,
-          "deep-reddit-researcher": 19
-        },
-        "languages": {
-          "Markdown": 8,
-          "TSX": 50,
-          "TypeScript": 42,
-          "CSS": 6,
-          "JSON": 20,
-          "JavaScript": 6,
-          "HTML": 14,
-          "SQL": 1
-        },
-        "frameworks": [
-          "React",
-          "Next.js",
-          "Tailwind"
-        ],
-        "packageManager": "npm",
-        "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "Idea-generator-reddit/app/components/index.ts",
-          "Idea-generator-reddit/app/types/index.ts"
-        ],
-        "configFiles": [
-          "Idea-generator-reddit/next.config.ts",
-          "Idea-generator-reddit/package.json",
-          "Idea-generator-reddit/tsconfig.json",
-          "assets-optimizer/next.config.js",
-          "assets-optimizer/package.json",
-          "assets-optimizer/tailwind.config.js",
-          "assets-optimizer/tsconfig.json",
-          "churnhunter/package.json",
-          "churnhunter/tsconfig.json",
-          "competitor-tracker/next.config.ts",
-          "competitor-tracker/package.json",
-          "competitor-tracker/tailwind.config.js",
-          "competitor-tracker/tsconfig.json",
-          "deep-crawler-bot/next.config.js",
-          "deep-crawler-bot/package.json",
-          "deep-crawler-bot/tailwind.config.js",
-          "deep-crawler-bot/tsconfig.json",
-          "deep-job-researcher/next.config.ts",
-          "deep-job-researcher/package.json",
-          "deep-job-researcher/tailwind.config.js",
-          "deep-job-researcher/tsconfig.json",
-          "deep-reddit-researcher/next.config.ts"
-        ],
-        "dependencies": [
-          "Idea-generator-reddit/package-lock.json",
-          "Idea-generator-reddit/package.json",
-          "assets-optimizer/package-lock.json",
-          "assets-optimizer/package.json",
-          "churnhunter/package-lock.json",
-          "churnhunter/package.json",
-          "competitor-tracker/package-lock.json",
-          "competitor-tracker/package.json",
-          "deep-crawler-bot/package-lock.json",
-          "deep-crawler-bot/package.json",
-          "deep-job-researcher/package-lock.json",
-          "deep-job-researcher/package.json",
-          "deep-reddit-researcher/package-lock.json"
-        ],
-        "testFiles": [],
-        "docs": [
-          "Idea-generator-reddit/README.md",
-          "README.md",
-          "assets-optimizer/README.md",
-          "churnhunter/README.md",
-          "competitor-tracker/README.md",
-          "deep-crawler-bot/README.md",
-          "deep-job-researcher/README.md",
-          "deep-reddit-researcher/README.md"
-        ],
-        "fileTypes": {
-          ".md": 8,
-          ".tsx": 50,
-          ".ts": 42,
-          ".ico": 7,
-          ".css": 6,
-          ".mjs": 6,
-          ".json": 20,
-          ".svg": 30,
-          ".js": 6,
-          ".png": 2,
-          ".example": 1,
-          ".html": 14,
-          ".sql": 1
-        }
-      }
-    },
     {
       "id": 1162684251,
       "name": "ClawWork",
@@ -459,7 +23,7 @@
       "parent": {
         "name": "HKUDS/ClawWork",
         "url": "https://github.com/HKUDS/ClawWork",
-        "stars": 4464
+        "stars": 4567
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -639,6 +203,896 @@
       }
     },
     {
+      "id": 1162539479,
+      "name": "Motrix",
+      "displayName": "Motrix",
+      "description": "A full-featured download manager.",
+      "summary": "# Why You Should Care About Motrix\n\n## The Problem\n\nDownloading files is a mess. Native browser downloads are slow, unreliable, and lack advanced features like torrent support or bandwidth control. If you've ever tried juggling HTTP, FTP, and Magnet links while managing multiple downloads, you’ve probably wanted to throw your computer out the window. Motrix exists to save you from that.\n\n## What This Does\n\nMotrix is a full-featured download manager that handles everything from HTTP and FTP to BitTorrent and Magnet links. It's built on Electron, so it’s cross-platform (Windows, macOS, Linux) and comes with a clean, minimal UI.\n\nThe backend leans heavily on `aria2`, a lightweight command-line download utility, with configuration files like `extra/darwin/arm64/engine/aria2.conf` taking care of the heavy lifting. The codebase is split into two main parts: the `src/main` directory for core functionality (like managing downloads with `src/main/core/EngineClient.js`) and `src/renderer` for the frontend, which uses Vue for components like `AboutPanel.vue` and `Main.vue`.\n\nFor developers, the project is well-organized. The entry point for the app is `src/main/index.js`, while `package.json` handles build configurations and dependencies. Need to tweak the UI? Look at `src/renderer/components`. Want to see how downloads are managed? Check out `src/main/core`. It’s all laid out pretty logically.\n\n## Real-World Use\n\nLet’s say you need to download a mix of large files: a Linux distro ISO via HTTP, a movie torrent, and a bunch of work files over FTP. Without Motrix, you’re hopping between your browser, a torrent client, and maybe even a separate FTP app. With Motrix? You throw all the links into one place, and it just works. The `src/renderer/api/Api.js` file connects the frontend with the backend, so you can monitor all your downloads in one slick interface.\n\nHere’s a simple example of starting a download via the API:\n\n```javascript\nimport Api from '@/renderer/api/Api';\n\nApi.addTask({\n  url: 'https://example.com/largefile.zip',\n  out: '/path/to/downloads',\n});\n```\n\nThat’s it. No juggling apps or worrying about file types.\n\n## The Bottom Line\n\nMotrix is a solid, no-nonsense download manager. It’s overkill if you just need to grab the occasional PDF, but for power users handling torrents, Magnet links, and big downloads daily? It’s a lifesaver. The codebase is clean enough to hack on, though the Electron stack might feel bloated if you're allergic to big apps. Either way, it does what it says on the tin—and that's rare.",
+      "url": "https://github.com/moses-y/Motrix",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "agalwood/Motrix",
+        "url": "https://github.com/agalwood/Motrix",
+        "stars": 50844
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 20, 2026",
+      "updatedAt": "February 20, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 17,
+          ".electron-vue": 6,
+          ".github": 8,
+          "build": 12,
+          "extra": 15,
+          "screenshots": 5,
+          "src": 137
+        },
+        "languages": {
+          "JavaScript": 80,
+          "YAML": 8,
+          "Markdown": 9,
+          "JSON": 8,
+          "HTML": 2,
+          "Vue": 11
+        },
+        "frameworks": [
+          "React",
+          "Vue"
+        ],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "Travis CI",
+        "entryPoints": [
+          "src/main/index.js",
+          "src/main/pages/index.html",
+          "src/main/utils/index.js",
+          "src/renderer/api/index.js",
+          "src/renderer/components/CommandManager/index.js",
+          "src/renderer/components/Locale/index.js"
+        ],
+        "configFiles": [
+          ".eslintrc.js",
+          "package.json"
+        ],
+        "dependencies": [
+          "package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "CONTRIBUTING-CN.md",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README-CN.md",
+          "README.md",
+          "extra/README.md"
+        ],
+        "fileTypes": {
+          ".js": 80,
+          ".yml": 8,
+          ".md": 9,
+          ".png": 14,
+          ".tiff": 1,
+          ".icns": 2,
+          ".ico": 2,
+          ".json": 8,
+          ".conf": 7,
+          ".exe": 2,
+          ".ejs": 1,
+          ".html": 2,
+          ".svg": 42,
+          ".vue": 11
+        }
+      }
+    },
+    {
+      "id": 1156080985,
+      "name": "tinyclaw",
+      "displayName": "tinyclaw",
+      "description": "TinyClaw is a team of AI agents that acts as your 24/7 personal assistant",
+      "summary": "## The Problem\nManaging multiple AI assistants across different platforms can be a headache. You might be juggling Discord, WhatsApp, and Telegram bots, each with its own quirks and configurations. Let's face it: setting up each bot separately is tedious, and keeping track of conversation contexts is a nightmare.\n\n## What This Does\nTinyClaw simplifies this chaos by allowing you to run multiple isolated AI agents simultaneously. The `src/` directory contains the core components, like `discord-client.ts` and `telegram-client.ts`, which handle communication with their respective platforms. The `lib/` folder has utility scripts, such as `messaging.sh` and `daemon.sh`, that enable persistent sessions and parallel processing. You can manage everything with commands like `tinyclaw start` or `tinyclaw logs queue` to check message handling.\n\nThe setup is straightforward, thanks to the `scripts/install.sh` and an interactive setup wizard that guides you through channel selections and bot token entries. The configuration is all stored in `settings.json`, making it easy to tweak settings without diving into code.\n\n## Real-World Use\nImagine you’re running a community on Discord while also engaging customers on WhatsApp. With TinyClaw, you can set up a Discord bot that handles moderation tasks while your WhatsApp bot deals with customer inquiries. You could simply run:\n\n```bash\ntinyclaw start\n```\n\nAfter that, the bots operate independently but still maintain their context, thanks to the persistent sessions feature. If your Discord bot needs to fetch user data, it can do so without overlapping with WhatsApp conversations.\n\n## The Bottom Line\nTinyClaw is a solid choice if you need to manage multiple AI assistants across different channels. It saves time and effort, but it might be overkill for simple projects or single-channel usage. If you’re handling diverse communication channels and want a consistent experience, give it a shot. Otherwise, keep it simple and stick to one channel.",
+      "url": "https://github.com/yebeai/tinyclaw",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "TinyAGI/tinyclaw",
+        "url": "https://github.com/TinyAGI/tinyclaw",
+        "stars": 2264
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 12, 2026",
+      "updatedAt": "February 20, 2026",
+      "readTime": 2
+    },
+    {
+      "id": 1162369507,
+      "name": "nairobi_property_pricing",
+      "displayName": "nairobi property pricing",
+      "description": "A data pipeline for scraping, cleaning, and enriching Nairobi property listings. It normalizes prices, extracts bedroom counts from titles/URLs, and calculates per‑bedroom affordability. The project also generates location summaries and enriched datasets for analysis.",
+      "summary": "## The Problem\nFinding affordable property in Nairobi is like searching for a needle in a haystack. With countless listings scattered across various websites, potential renters face the daunting task of sifting through unstructured data. Prices are often displayed in inconsistent formats, and information about the number of bedrooms is buried in messy titles. This project tackles that headache head-on.\n\n## What This Does\nThis repo, `nairobi_property_pricing`, offers a solid data pipeline for scraping, cleaning, and enriching Nairobi property listings. The main players here are the Python scripts. The `scrape_listings.py` file pulls raw data from property websites, while `clean_properties.py` normalizes prices and extracts bedroom counts from chaotic titles and URLs. You’ll appreciate the `location_summary_clean.csv`, which gives you a clear look at average prices and bedroom counts, so you’re not just guessing where to live.\n\nThe project even generates an interactive affordability map, courtesy of `nairobi_affordability_map.html`. This file visualizes property data, making it easy to explore which neighborhoods fit your budget. It’s a one-stop-shop for anyone serious about navigating Nairobi’s real estate market.\n\n## Real-World Use\nImagine you’re moving to Nairobi and have a budget of Ksh 40,000. You fire up the `nairobi_affordability_map.html` and immediately see which areas are within reach. Want to know how many bedrooms you can get for that price? Just run the script in `eda.py`, and you'll get a clear picture of the trade-offs. The `charts/` folder has visualizations that help you see trends at a glance. For instance, check out `charts/02_price_distribution.png` to see how prices vary—no more guesswork.\n\n## The Bottom Line\nThis project is a practical toolkit for anyone needing to make sense of Nairobi’s property listings. The data pipeline is straightforward and effective, but it’s not for the faint-hearted—if you’re not comfortable with Python and data handling, you might feel lost. If you’re in the real estate game in Nairobi, though, this repo is a gem. It could save you hours of frustration.",
+      "url": "https://github.com/moses-y/nairobi_property_pricing",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "mainamuragev/nairobi_property_pricing",
+        "url": "https://github.com/mainamuragev/nairobi_property_pricing",
+        "stars": 25
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 20, 2026",
+      "updatedAt": "February 20, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 32,
+        "directories": {
+          "(root)": 21,
+          "__pycache__": 1,
+          "charts": 9,
+          "data": 1
+        },
+        "languages": {
+          "Markdown": 2,
+          "Python": 9,
+          "HTML": 2
+        },
+        "frameworks": [],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 2,
+          ".pyc": 1,
+          ".csv": 5,
+          ".py": 9,
+          ".png": 9,
+          ".html": 2,
+          ".geojson": 1,
+          ".txt": 1
+        }
+      }
+    },
+    {
+      "id": 1162368481,
+      "name": "facet",
+      "displayName": "facet",
+      "description": "A multi-dimensional photo analysis engine that examines every facet of an image — from aesthetic appeal and composition to facial detail and technical precision — using an ensemble of        vision models to surface the photos that truly shine.",
+      "summary": "## The Problem\n\nSorting through thousands of photos sucks. Every camera roll is full of duplicates, blurry shots, random faces, and the occasional gem. Maybe you want more than \"date taken\" or \"star rating\"—like actual, intelligent scoring based on sharpness, composition, and who’s in the frame. Most gallery apps are dumb, and \"AI\" features are usually marketing fluff or half-baked.\n\n## What Facet Does\n\n`facet` is a photo analysis engine that actually does the work: it scores each image using vision models, clusters faces, tags content, and surfaces your best shots. The backend is mostly Python (`models/`, `analyzers/`, `faces/`) and talks to your files via `exiftool/exiftool_batch.py` for metadata. Quality scoring uses `models/pyiqa_scorer.py` (TOPIQ, HyperIQA, etc.), composition patterns come from `models/samp_net.py`, and face clustering is handled in `faces/clusterer.py` with HDBSCAN. All the config logic lives in `config/scoring_config.py` and `scoring_config.json`.\n\nThe UI is Angular/React (yeah, both—pick your poison) in `client/`. Infinite scroll, filtering (`gallery.component.ts`, `filter_options.py`), and actual breakdowns for each score. You get stats dashboards, person management (`manage-persons.component.ts`), and gallery views that don’t look like 2005. API endpoints live in `api/routers/`, with FastAPI-style routing.\n\n## Real-World Use\n\nYou point Facet at your photo library, and it churns through everything. It tags, scores, and clusters faces. Want to find your sharpest portraits from last summer? Use the filter drawer—set \"Portrait\", \"Face Quality > 0.8\", \"Date Range: June-July\", and boom, you get a ranked list. Curious why a photo is top-rated? Hover: you’ll see scores for aesthetic, sharpness, composition, plus EXIF details. Want to batch merge duplicate faces? Use the person management UI. If you’re scripting, you can hit the API at `/gallery/top-picks` and get the JSON.\n\n```python\n# example: get top picks via API\nimport requests\nresp = requests.get(\"http://localhost:8000/api/gallery/top-picks?min_score=0.85\")\nphotos = resp.json()\n```\n\n## The Bottom Line\n\nFacet is actually smart, not just trendy. If you shoot a ton, care about quality, and want to see stats like \"which lens gets me the best shots,\" this is legit. It’s overkill for casual users, and setup isn’t plug-and-play, but if you’re tired of basic gallery apps and want real control, give it a try. If you want \"just pretty thumbnails,\" stick to Google Photos.",
+      "url": "https://github.com/moses-y/facet",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "ncoevoet/facet",
+        "url": "https://github.com/ncoevoet/facet",
+        "stars": 50
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 20, 2026",
+      "updatedAt": "February 20, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 189,
+        "directories": {
+          ".claude": 13,
+          "(root)": 11,
+          "analyzers": 5,
+          "api": 22,
+          "client": 61,
+          "comparison": 3,
+          "config": 4,
+          "db": 8,
+          "docs": 22,
+          "exiftool": 2,
+          "faces": 5,
+          "i18n": 6,
+          "models": 8,
+          "optimization": 2,
+          "processing": 6,
+          "utils": 8,
+          "validation": 3
+        },
+        "languages": {
+          "Markdown": 24,
+          "Python": 82,
+          "JSON": 14,
+          "TypeScript": 45,
+          "HTML": 2,
+          "SCSS": 1
+        },
+        "frameworks": [
+          "React",
+          "Angular",
+          "Express"
+        ],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "client/src/app/app.ts",
+          "client/src/index.html",
+          "client/src/main.ts"
+        ],
+        "configFiles": [
+          "client/jest.config.ts",
+          "client/package.json",
+          "client/tsconfig.json",
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "client/package-lock.json",
+          "client/package.json",
+          "requirements.txt"
+        ],
+        "testFiles": [
+          ".claude/skills/chrome-devtools-debugging/references/validation-testing.md",
+          ".claude/skills/test-creation/SKILL.md",
+          ".claude/skills/test-creation/references/error-patterns.md",
+          ".claude/skills/test-creation/references/mocking-patterns.md",
+          "client/src/app/core/guards/auth.guard.spec.ts",
+          "client/src/app/core/interceptors/auth.interceptor.spec.ts",
+          "client/src/app/core/interceptors/error.interceptor.spec.ts",
+          "client/src/app/core/services/api.service.spec.ts",
+          "client/src/app/core/services/auth.service.spec.ts",
+          "client/src/app/core/services/i18n.service.spec.ts",
+          "client/src/app/features/auth/login.component.spec.ts",
+          "client/src/app/features/comparison/comparison.component.spec.ts",
+          "client/src/app/features/gallery/gallery.component.spec.ts",
+          "client/src/app/features/gallery/gallery.store.spec.ts",
+          "client/src/app/features/persons/manage-persons.component.spec.ts",
+          "client/src/app/features/persons/merge-suggestions.component.spec.ts",
+          "client/src/app/features/persons/person-page.component.spec.ts",
+          "client/src/app/features/stats/stats.component.spec.ts",
+          "client/src/app/shared/pipes/translate.pipe.spec.ts",
+          "client/tsconfig.spec.json"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "client/README.md",
+          "docs/COMMANDS.md",
+          "docs/CONFIGURATION.md",
+          "docs/DEPLOYMENT.md",
+          "docs/FACE_RECOGNITION.md",
+          "docs/INSTALLATION.md",
+          "docs/README.md",
+          "docs/SCORING.md",
+          "docs/VIEWER.md",
+          "docs/screenshots/compare.jpg",
+          "docs/screenshots/filter-drawer.jpg",
+          "docs/screenshots/gallery-compact.jpg",
+          "docs/screenshots/gallery-desktop.jpg",
+          "docs/screenshots/gallery-mobile.jpg",
+          "docs/screenshots/gallery-top-picks.jpg",
+          "docs/screenshots/hover-preview.jpg",
+          "docs/screenshots/manage-persons.jpg",
+          "docs/screenshots/person-gallery.jpg",
+          "docs/screenshots/stats-categories.png",
+          "docs/screenshots/stats-correlations.png",
+          "docs/screenshots/stats-gear.png",
+          "docs/screenshots/stats-settings.png",
+          "docs/screenshots/stats-timeline.png"
+        ],
+        "fileTypes": {
+          ".md": 24,
+          ".py": 82,
+          ".json": 14,
+          ".ts": 45,
+          ".ico": 1,
+          ".svg": 1,
+          ".html": 2,
+          ".scss": 1,
+          ".jpg": 9,
+          ".png": 5,
+          ".txt": 1
+        }
+      }
+    },
+    {
+      "id": 1162273737,
+      "name": "hyperbrowser-app-examples",
+      "displayName": "hyperbrowser app examples",
+      "description": "This repo contains fully functional Hyperbrowser powered web apps",
+      "summary": "## The Problem\n\nBuilding web apps that depend on browser automation or web scraping sucks. You’re stuck juggling headless browser instances, figuring out how to handle captchas, and wrangling brittle scraping logic. If you’re lucky, you get to spend more time coding your app than fixing the automation scripts when they inevitably break. Hyperbrowser exists to relieve that pain, and this repo shows you how to use it effectively. \n\n## What This Does\n\nThe `hyperbrowser-app-examples` repository is a collection of seven full-stack web apps that showcase how to integrate `Hyperbrowser` into real-world applications. Each app tackles a different use case, so you can see how to build tools like a `competitor-tracker/` (monitors website changes), `deep-job-researcher/` (analyzes resumes vs job descriptions), or `assets-optimizer/` (streamlines image optimization). These aren’t just toy examples—they’re fully functional, with modern UIs built using `React`, `Next.js`, and `Tailwind`.\n\nThe apps are organized in their own directories, complete with their own `package.json`, `next.config.js`, and API routes under `app/api/`. For example, the `Idea-generator-reddit` app has a route at `app/api/generate/route.ts` that handles the core idea generation logic, while the UI is neatly modularized in `app/components/ui/`. If you’re sick of spaghetti code examples, you’ll appreciate the separation of concerns in these projects.\n\nEach app also includes a `README.md` with setup instructions, required environment variables (spoiler: you need your Hyperbrowser API key), and usage details. They even come with testing patterns, which is a nice touch, though not every app has comprehensive tests.\n\n## Real-World Use\n\nLet’s say you’re building a tool to monitor your competitors’ websites for price changes or new features. You’d start with the `competitor-tracker/` example. It has API endpoints for crawling and tracking websites (`app/api/crawl/route.ts`, `app/api/track/route.ts`) and even stores snapshots of pages in `data/snapshots/`. You could easily adapt this to send alerts when the tracked site changes using the `lib/notify.ts` helper.\n\nWant to build something more creative? The `Idea-generator-reddit` app uses Reddit as a source for brainstorming, with a clean interface (`app/components/sections/IdeaCard.tsx` and `IdeasGrid.tsx`) and a `useIdeaGeneration.ts` hook to manage API calls. With a few tweaks, you could turn this into a content planning tool.\n\n## The Bottom Line\n\nThis repo is a solid starting point for anyone looking to build browser automation apps without losing their mind. The examples are well-structured and practical, though they’re not perfect—some apps feel a little half-baked in terms of testing and production readiness. If you’re already working with `Hyperbrowser` or need inspiration for your next project, this is a goldmine. Just don’t expect magic; you still need to bring your A-game.",
+      "url": "https://github.com/moses-y/hyperbrowser-app-examples",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "hyperbrowserai/hyperbrowser-app-examples",
+        "url": "https://github.com/hyperbrowserai/hyperbrowser-app-examples",
+        "stars": 555
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 20, 2026",
+      "updatedAt": "February 20, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 2,
+          "Idea-generator-reddit": 35,
+          "assets-optimizer": 28,
+          "churnhunter": 6,
+          "competitor-tracker": 50,
+          "deep-crawler-bot": 30,
+          "deep-job-researcher": 30,
+          "deep-reddit-researcher": 19
+        },
+        "languages": {
+          "Markdown": 8,
+          "TSX": 50,
+          "TypeScript": 42,
+          "CSS": 6,
+          "JSON": 20,
+          "JavaScript": 6,
+          "HTML": 14,
+          "SQL": 1
+        },
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Tailwind"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "Idea-generator-reddit/app/components/index.ts",
+          "Idea-generator-reddit/app/types/index.ts"
+        ],
+        "configFiles": [
+          "Idea-generator-reddit/next.config.ts",
+          "Idea-generator-reddit/package.json",
+          "Idea-generator-reddit/tsconfig.json",
+          "assets-optimizer/next.config.js",
+          "assets-optimizer/package.json",
+          "assets-optimizer/tailwind.config.js",
+          "assets-optimizer/tsconfig.json",
+          "churnhunter/package.json",
+          "churnhunter/tsconfig.json",
+          "competitor-tracker/next.config.ts",
+          "competitor-tracker/package.json",
+          "competitor-tracker/tailwind.config.js",
+          "competitor-tracker/tsconfig.json",
+          "deep-crawler-bot/next.config.js",
+          "deep-crawler-bot/package.json",
+          "deep-crawler-bot/tailwind.config.js",
+          "deep-crawler-bot/tsconfig.json",
+          "deep-job-researcher/next.config.ts",
+          "deep-job-researcher/package.json",
+          "deep-job-researcher/tailwind.config.js",
+          "deep-job-researcher/tsconfig.json",
+          "deep-reddit-researcher/next.config.ts"
+        ],
+        "dependencies": [
+          "Idea-generator-reddit/package-lock.json",
+          "Idea-generator-reddit/package.json",
+          "assets-optimizer/package-lock.json",
+          "assets-optimizer/package.json",
+          "churnhunter/package-lock.json",
+          "churnhunter/package.json",
+          "competitor-tracker/package-lock.json",
+          "competitor-tracker/package.json",
+          "deep-crawler-bot/package-lock.json",
+          "deep-crawler-bot/package.json",
+          "deep-job-researcher/package-lock.json",
+          "deep-job-researcher/package.json",
+          "deep-reddit-researcher/package-lock.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "Idea-generator-reddit/README.md",
+          "README.md",
+          "assets-optimizer/README.md",
+          "churnhunter/README.md",
+          "competitor-tracker/README.md",
+          "deep-crawler-bot/README.md",
+          "deep-job-researcher/README.md",
+          "deep-reddit-researcher/README.md"
+        ],
+        "fileTypes": {
+          ".md": 8,
+          ".tsx": 50,
+          ".ts": 42,
+          ".ico": 7,
+          ".css": 6,
+          ".mjs": 6,
+          ".json": 20,
+          ".svg": 30,
+          ".js": 6,
+          ".png": 2,
+          ".example": 1,
+          ".html": 14,
+          ".sql": 1
+        }
+      }
+    },
+    {
+      "id": 1162822106,
+      "name": "apkstudio",
+      "displayName": "apkstudio",
+      "description": "Open-source, cross platform Qt6 based IDE for reverse-engineering Android application packages. It features a friendly IDE-like layout including code editor with syntax highlighting support for *.smali code files.",
+      "summary": "# Reverse Engineering Android Apps with `apkstudio`\n\n## The Problem  \nEver tried reverse-engineering an Android APK? It feels like herding cats with command-line tools, scattered dependencies, and syntax highlighting that's about as helpful as a blank sheet of paper. If you're modifying APKs or digging into `.smali` files, you need a setup that won't make you regret your career choices. That's where `apkstudio` comes in.\n\n## What This Does  \n`apkstudio` is a Qt6-based cross-platform IDE that makes reverse-engineering APKs suck less. It handles APK decompilation, recompilation, signing, and installation—all wrapped in a proper IDE-like interface with syntax highlighting for `.smali`, `.xml`, `.yml`, and `.java` files.  \n\nDig into the `sources/` directory, and you'll see the magic: `apkdecompileworker.cpp` and `apkdecompileworker.h` manage the heavy lifting for decompilation, while `adbinstallworker.cpp` handles the ADB installation process. The built-in code editor (`sources/sourcecodeedit.cpp`) has syntax highlighting baked into `themedsyntaxhighlighter.cpp`, so you can stop pretending that reading raw `.smali` is \"fine.\"  \n\nBonus points for automation: the IDE downloads and configures tools like Apktool, JADX, and Uber APK Signer for you. No more wasting time figuring out why your `apktool` version is breaking everything. That’s handled by the `tooldownloadworker.cpp`.  \n\n## Real-World Use  \nLet’s say you’ve got an APK and need to tweak its behavior.  \n\n1. Open the APK in `apkstudio` (you can even use the \"Open with\" context menu from your OS).  \n2. Decompile it—this triggers `apkdecompileworker.cpp` to crack open the APK and spit out the source files.  \n3. Edit the `.smali` or `.xml` files in the built-in editor.  \n4. Recompile the APK using `apkrecompileworker.cpp`.  \n5. Sign it with Uber APK Signer (already integrated).  \n6. Install it directly to your test device via ADB with a couple of clicks.  \n\nNo juggling tools or manually hunting down dependencies. Just a straightforward workflow that actually works.  \n\n## The Bottom Line  \n`apkstudio` is a solid choice for reverse engineering Android apps. It’s not perfect—for example, the UI looks like it’s stuck in 2010, and the build system could use better documentation for newcomers—but it gets the job done without making you fight your tools. If you live in the world of APK tinkering, it’s a no-brainer. For casual users, the learning curve might be steep, but the automation features make it worth the effort.",
+      "url": "https://github.com/moses-y/apkstudio",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "vaibhavpandeyvpz/apkstudio",
+        "url": "https://github.com/vaibhavpandeyvpz/apkstudio",
+        "stars": 3666
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 20, 2026",
+      "updatedAt": "February 20, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 98,
+        "directories": {
+          ".github": 1,
+          "(root)": 5,
+          "docs": 1,
+          "resources": 34,
+          "sources": 57
+        },
+        "languages": {
+          "YAML": 1,
+          "Markdown": 1,
+          "HTML": 2,
+          "C++": 29,
+          "C/C++ Header": 28
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "docs/index.html",
+          "sources/main.cpp"
+        ],
+        "configFiles": [
+          "CMakeLists.txt"
+        ],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/index.html"
+        ],
+        "fileTypes": {
+          ".yml": 1,
+          ".txt": 1,
+          ".md": 1,
+          ".html": 2,
+          ".qrc": 1,
+          ".desktop": 1,
+          ".png": 16,
+          ".theme": 2,
+          ".def": 9,
+          ".icns": 1,
+          ".ico": 1,
+          ".psd": 2,
+          ".cpp": 29,
+          ".h": 28
+        }
+      }
+    },
+    {
+      "id": 1162821484,
+      "name": "MassGen",
+      "displayName": "MassGen",
+      "description": "🚀 MassGen is an open-source multi-agent scaling system that runs in your terminal, autonomously orchestrating frontier models and agents to collaborate, reason, and produce high-quality results. | Join us on Discord: discord.massgen.ai",
+      "summary": "## The Problem\nScaling AI tasks can be a headache. When you have multiple models or agents trying to tackle the same problem, coordinating their efforts efficiently is crucial. Otherwise, you end up with duplicated work, conflicting results, and a lot of wasted time. It's like herding cats, but the cats are all trying to think on their own.\n\n## What This Does\nEnter `MassGen`, a multi-agent scaling system that runs right in your terminal. It orchestrates various agents to work together, refining their outputs to converge on the best possible solution. You set everything up through a simple `.env.example` for environment variables, and the `Makefile` handles your build tasks. If you're looking to automate, check out the `docs/AI_USAGE.md` for guidance on getting MassGen running inside a large language model (LLM).\n\nDocumentation is well-covered with 157 files, including the `README.md`, which provides a solid overview. There's also a `CHANGELOG.md` to keep track of what’s new. If you like experimenting, the `docs/dev_notes` directory is full of design documents that give insight into the thought process behind features like parallel processing and consensus building.\n\n## Real-World Use\nImagine you're using MassGen for a collaborative research project. You kick off a task by defining your agents in `docs/modules/agents.md`, then watch as they work in parallel, sharing their findings. The `docs/presentation` folder has useful snippets and visuals if you want to present your results to your team. You might even run a command to visualize the agent interactions in real-time.\n\n```bash\nmake run\n```\n\nThis command spins up your agents, and you can observe how they refine their approaches. It’s like having a team of researchers who can bounce ideas off each other while you sit back and sip your coffee.\n\n## The Bottom Line\nMassGen has some solid potential, especially for complex projects requiring multi-agent coordination. However, if all you need is a simple AI task, this might feel like overkill. It's best suited for teams with the technical know-how to navigate its architecture and a need for robust collaboration. If you're diving into multi-agent systems, it’s worth checking out—just be prepared for a bit of a learning curve.",
+      "url": "https://github.com/moses-y/MassGen",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "massgen/MassGen",
+        "url": "https://github.com/massgen/MassGen",
+        "stars": 784
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 20, 2026",
+      "updatedAt": "February 20, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 19,
+          ".devcontainer": 2,
+          ".github": 16,
+          "assets": 11,
+          "docs": 152
+        },
+        "languages": {
+          "YAML": 14,
+          "JSON": 1,
+          "Shell": 2,
+          "Markdown": 81,
+          "HTML": 56,
+          "Python": 2,
+          "CSS": 1,
+          "reStructuredText": 7
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          ".env.example",
+          "Makefile",
+          "docs/Makefile"
+        ],
+        "dependencies": [],
+        "testFiles": [
+          ".github/workflows/tests.yml",
+          "docs/modules/testing.md"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "README_PYPI.md",
+          "docs/.backend_model_listing.md.swp",
+          "docs/.readthedocs.yaml",
+          "docs/CASE_STUDIES_SUMMARY.md",
+          "docs/Makefile",
+          "docs/README.md",
+          "docs/announcements/README.md",
+          "docs/announcements/archive/.gitkeep",
+          "docs/announcements/archive/v0.1.33.md",
+          "docs/announcements/archive/v0.1.34.md",
+          "docs/announcements/archive/v0.1.35.md",
+          "docs/announcements/archive/v0.1.36.md",
+          "docs/announcements/archive/v0.1.37.md",
+          "docs/announcements/archive/v0.1.38.md",
+          "docs/announcements/archive/v0.1.39.md",
+          "docs/announcements/archive/v0.1.40.md",
+          "docs/announcements/archive/v0.1.41.md",
+          "docs/announcements/archive/v0.1.42.md",
+          "docs/announcements/archive/v0.1.43.md",
+          "docs/announcements/archive/v0.1.44.md",
+          "docs/announcements/archive/v0.1.45.md",
+          "docs/announcements/archive/v0.1.46.md",
+          "docs/announcements/archive/v0.1.47.md",
+          "docs/announcements/archive/v0.1.48.md",
+          "docs/announcements/archive/v0.1.49.md",
+          "docs/announcements/archive/v0.1.50.md",
+          "docs/announcements/archive/v0.1.51.md",
+          "docs/announcements/archive/v0.1.52.md",
+          "docs/announcements/current-release.md",
+          "docs/announcements/feature-highlights.md",
+          "docs/claude-advanced-tooling.md",
+          "docs/dev_notes/CODE_EXECUTION_DESIGN.md",
+          "docs/dev_notes/MULTI_SOURCE_AGENT_INTEGRATION_DESIGN.md",
+          "docs/dev_notes/agent_planning_coordination_design.md",
+          "docs/dev_notes/backend_model_listing.md",
+          "docs/dev_notes/context_compression_design.md",
+          "docs/dev_notes/docs_reorganization.md",
+          "docs/dev_notes/docs_reorganization_implementation.md",
+          "docs/dev_notes/file_deletion_and_context_files.md",
+          "docs/dev_notes/filesystem_tool_discovery_design.md",
+          "docs/dev_notes/gemini_filesystem_mcp_design.md",
+          "docs/dev_notes/hierarchy_design.md",
+          "docs/dev_notes/intelligent_planning_mode.md",
+          "docs/dev_notes/litellm_cost_tracking_integration.md",
+          "docs/dev_notes/massgen_rl_integration_design.md",
+          "docs/dev_notes/multi_turn_filesystem_design.md",
+          "docs/dev_notes/nlip_integration_design.md",
+          "docs/dev_notes/preempt_not_restart_design.md",
+          "docs/dev_notes/proactive_compression_design.md",
+          "docs/dev_notes/pypi_package_design.md",
+          "docs/dev_notes/python_library_api_design.md",
+          "docs/dev_notes/release_checklist.md",
+          "docs/dev_notes/release_driven_documentation_system.md",
+          "docs/dev_notes/system_prompt_architecture_redesign.md",
+          "docs/dev_notes/textual_tui_architecture.md",
+          "docs/dev_notes/tui_redesign_phase6_handoff.md",
+          "docs/dev_notes/tui_redesign_phase9_11_13_handoff.md",
+          "docs/dev_notes/v0.0.14-context.md",
+          "docs/make.bat",
+          "docs/modules/architecture.md",
+          "docs/modules/code_review.md",
+          "docs/modules/documentation.md",
+          "docs/modules/interactive_mode.md",
+          "docs/modules/registry.md",
+          "docs/modules/release.md",
+          "docs/modules/skills.md",
+          "docs/modules/subagents.md",
+          "docs/modules/testing.md",
+          "docs/modules/worktrees.md",
+          "docs/parallel-tool-execution.md",
+          "docs/presentation/README_MODULAR.md",
+          "docs/presentation/applied-ai-summit.html",
+          "docs/presentation/berkeley.html",
+          "docs/presentation/build_presentation.py",
+          "docs/presentation/cambridge.html",
+          "docs/presentation/columbia.html",
+          "docs/presentation/components/head-aibuilders.html",
+          "docs/presentation/components/head-columbia.html",
+          "docs/presentation/components/head.html",
+          "docs/presentation/components/navigation.html",
+          "docs/presentation/components/slide-additional-context-paths.html",
+          "docs/presentation/components/slide-advanced-coordination.html",
+          "docs/presentation/components/slide-ag2-research-foundation.html",
+          "docs/presentation/components/slide-applications.html",
+          "docs/presentation/components/slide-architecture.html",
+          "docs/presentation/components/slide-benchmarking-results.html",
+          "docs/presentation/components/slide-call-to-action-aibuilders.html",
+          "docs/presentation/components/slide-call-to-action-applied-ai-summit.html",
+          "docs/presentation/components/slide-call-to-action-columbia.html",
+          "docs/presentation/components/slide-call-to-action-general.html",
+          "docs/presentation/components/slide-call-to-action-m2l.html",
+          "docs/presentation/components/slide-call-to-action-recsys.html",
+          "docs/presentation/components/slide-call-to-action.html",
+          "docs/presentation/components/slide-case-study-success-through-collaboration.html",
+          "docs/presentation/components/slide-case-study-when-coordination-fails.html",
+          "docs/presentation/components/slide-codeact.html",
+          "docs/presentation/components/slide-columbia-research-applications.html",
+          "docs/presentation/components/slide-community-cta.html",
+          "docs/presentation/components/slide-context-sharing-challenge.html",
+          "docs/presentation/components/slide-context-sharing-in-action.html",
+          "docs/presentation/components/slide-context-sharing-solution.html",
+          "docs/presentation/components/slide-coordination-strategy-research.html",
+          "docs/presentation/components/slide-early-adopters.html",
+          "docs/presentation/components/slide-evidence-performance-gains.html",
+          "docs/presentation/components/slide-evolution-from-v001.html",
+          "docs/presentation/components/slide-getting-started.html",
+          "docs/presentation/components/slide-key-features-capabilities.html",
+          "docs/presentation/components/slide-live-demo-examples.html",
+          "docs/presentation/components/slide-recsys-applications.html",
+          "docs/presentation/components/slide-roadmap-vision.html",
+          "docs/presentation/components/slide-tech-deep-dive-async-streaming-architecture.html",
+          "docs/presentation/components/slide-tech-deep-dive-backend-abstraction-challenges.html",
+          "docs/presentation/components/slide-tech-deep-dive-binary-decision-framework-solution.html",
+          "docs/presentation/components/slide-the-problem.html",
+          "docs/presentation/components/slide-the-solution-multi-agent-collaboration.html",
+          "docs/presentation/components/slide-title-aibuilders.html",
+          "docs/presentation/components/slide-title-applied-ai-summit.html",
+          "docs/presentation/components/slide-title-cambridge.html",
+          "docs/presentation/components/slide-title-columbia.html",
+          "docs/presentation/components/slide-title-m2l.html",
+          "docs/presentation/components/slide-title-pytorch-openagents.html",
+          "docs/presentation/components/slide-title-recsys.html",
+          "docs/presentation/datahack_summit_2025.html",
+          "docs/presentation/extract_components.py",
+          "docs/presentation/m2l.html",
+          "docs/presentation/massgen-discord.webp",
+          "docs/presentation/massgen-repo.webp",
+          "docs/presentation/massgendiscord.svg",
+          "docs/presentation/massgenrepo.svg",
+          "docs/presentation/packt.html",
+          "docs/presentation/pytorch-openagents.html",
+          "docs/presentation/recsys-short.html",
+          "docs/presentation/recsys.html",
+          "docs/rate_limiting.md",
+          "docs/rebuild_and_open.sh",
+          "docs/requirements-docs.txt",
+          "docs/source/_static/css/theme-images.css",
+          "docs/source/_static/images/logo-dark.png",
+          "docs/source/_static/images/logo.png",
+          "docs/source/_static/images/massgen-demo-light.gif",
+          "docs/source/_static/images/massgen-demo.gif",
+          "docs/source/_static/images/readme.gif",
+          "docs/source/_static/images/readme_old.gif",
+          "docs/source/_static/images/thumbnail.png",
+          "docs/source/_static/images/tutorial-develop.gif",
+          "docs/source/_static/images/tutorial-getting-started.gif",
+          "docs/source/api/agents.rst",
+          "docs/source/api/backends.rst",
+          "docs/source/api/formatter.rst",
+          "docs/source/api/frontend.rst",
+          "docs/source/api/index.rst",
+          "docs/source/api/mcp_tools.rst",
+          "docs/source/api/orchestrator.rst"
+        ],
+        "fileTypes": {
+          ".yaml": 4,
+          ".json": 1,
+          ".sh": 2,
+          ".example": 1,
+          ".md": 81,
+          ".yml": 10,
+          ".disabled": 1,
+          ".in": 1,
+          ".gif": 9,
+          ".png": 11,
+          ".swp": 1,
+          ".bat": 1,
+          ".html": 56,
+          ".py": 2,
+          ".webp": 2,
+          ".svg": 2,
+          ".txt": 1,
+          ".css": 1,
+          ".rst": 7
+        }
+      }
+    },
+    {
+      "id": 1162814238,
+      "name": "agenticSeek",
+      "displayName": "agenticSeek",
+      "description": "Fully Local Manus AI. No APIs, No $200 monthly bills. Enjoy an autonomous agent that thinks, browses the web, and code for the sole cost of electricity. 🔔 Official updates only via twitter @Martin993886460 (Beware of fake account)",
+      "summary": "## The Problem\n\nTired of paying $200/month for cloud “AI assistants” that leak your data and lock you into APIs? Sick of startup marketing nonsense (“Your agent, but more agentic!”)? You want a local AI that actually works—browses, codes, and doesn’t phone home. That’s what `agenticSeek` solves.\n\n## What This Does\n\n`agenticSeek` is a fully local AI agent. You run it on your own hardware; no API keys, no cloud dependencies. The guts live in `sources/` (Python), where agents like `code_agent.py` and `browser_agent.py` handle coding and web tasks. The web interface in `frontend/agentic-seek-front/` is React—basic, but functional. The backend is Flask (`llm_server/app.py`), with Docker wiring everything together (`docker-compose.yml`, `Dockerfile.backend`). Prompts for different agent behaviors are in `prompts/`. It can talk, listen, and even run code in Python, C, Go, Java (see `sources/tools/`).\n\n## Real-World Use\n\nSay you need to scan a folder of resumes and pick the best fit for a project—no cloud, no SketchyAI.com. Fire up `agenticSeek`, ask it (via text or voice) to “search for agenticSeek, learn what skills are required, and match candidates in CV_candidates.zip.” It’ll use `browser_agent.py` to browse, `code_agent.py` to unzip and parse files, and a planner agent to stitch it all together. All steps, logs, and files stay local. No random startup servers, no mystery charges.\n\n## The Bottom Line\n\nIf you want a local AI that actually does stuff—browses the web, writes code, plans tasks—without sending your data to someone’s cloud, this is solid. Setup isn’t “one-click”; you need Docker, Python 3.10, and to read the README. Not for beginners or people who want a pretty UI. But if you’re sick of SaaS and want control, it’s worth a look.",
+      "url": "https://github.com/moses-y/agenticSeek",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "Fosowl/agenticSeek",
+        "url": "https://github.com/Fosowl/agenticSeek",
+        "stars": 25061
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 20, 2026",
+      "updatedAt": "February 20, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 137,
+        "directories": {
+          "(root)": 26,
+          ".github": 3,
+          "crx": 1,
+          "docs": 6,
+          "frontend": 24,
+          "llm_router": 4,
+          "llm_server": 9,
+          "media": 4,
+          "prompts": 12,
+          "scripts": 3,
+          "searxng": 5,
+          "sources": 35,
+          "tests": 5
+        },
+        "languages": {
+          "YAML": 5,
+          "Markdown": 12,
+          "Python": 46,
+          "JSON": 5,
+          "HTML": 1,
+          "CSS": 4,
+          "JavaScript": 12,
+          "Shell": 7,
+          "TOML": 2
+        },
+        "frameworks": [
+          "React",
+          "Flask",
+          "Express",
+          "Docker"
+        ],
+        "packageManager": "pip",
+        "hasDocker": true,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "cli.py",
+          "frontend/agentic-seek-front/public/index.html",
+          "frontend/agentic-seek-front/src/App.js",
+          "frontend/agentic-seek-front/src/index.js",
+          "llm_server/app.py",
+          "setup.py"
+        ],
+        "configFiles": [
+          ".env.example",
+          "Dockerfile.backend",
+          "docker-compose.yml",
+          "frontend/Dockerfile.frontend",
+          "frontend/agentic-seek-front/package.json",
+          "llm_server/Dockerfile",
+          "llm_server/requirements.txt",
+          "pyproject.toml",
+          "requirements.txt",
+          "searxng/docker-compose.yml",
+          "setup.py"
+        ],
+        "dependencies": [
+          "frontend/agentic-seek-front/package-lock.json",
+          "frontend/agentic-seek-front/package.json",
+          "llm_server/requirements.txt",
+          "pyproject.toml",
+          "requirements.txt"
+        ],
+        "testFiles": [
+          "frontend/agentic-seek-front/src/App.test.js",
+          "frontend/agentic-seek-front/src/setupTests.js",
+          "tests/test_browser_agent_parsing.py",
+          "tests/test_memory.py",
+          "tests/test_provider.py",
+          "tests/test_searx_search.py",
+          "tests/test_tools_parsing.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "README_CHS.md",
+          "README_CHT.md",
+          "README_ES.md",
+          "README_FR.md",
+          "README_JP.md",
+          "README_PTBR.md",
+          "docs/CODE_OF_CONDUCT.md",
+          "docs/CONTRIBUTING.md",
+          "docs/technical/code_agent.png",
+          "docs/technical/diagram_overall.png",
+          "docs/technical/routing_system.png",
+          "docs/technical/web_agent.png",
+          "frontend/README.md",
+          "media/chromedriver_readme.png",
+          "media/whale_readme.jpg"
+        ],
+        "fileTypes": {
+          ".example": 1,
+          ".yml": 4,
+          ".md": 12,
+          ".yaml": 1,
+          ".backend": 1,
+          ".py": 46,
+          ".ini": 2,
+          ".crx": 1,
+          ".png": 9,
+          ".frontend": 1,
+          ".json": 5,
+          ".ico": 1,
+          ".html": 1,
+          ".txt": 15,
+          ".css": 4,
+          ".js": 12,
+          ".bat": 2,
+          ".sh": 7,
+          ".safetensors": 1,
+          ".jpg": 1,
+          ".toml": 2,
+          ".cmd": 1,
+          ".lock": 1
+        }
+      }
+    },
+    {
       "id": 1161984220,
       "name": "neuronpedia",
       "displayName": "neuronpedia",
@@ -795,7 +1249,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 213837
+        "stars": 214249
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -817,7 +1271,7 @@
       "parent": {
         "name": "Conway-Research/automaton",
         "url": "https://github.com/Conway-Research/automaton",
-        "stars": 1665
+        "stars": 1699
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -895,7 +1349,7 @@
       "parent": {
         "name": "kkoomen/pointless",
         "url": "https://github.com/kkoomen/pointless",
-        "stars": 1747
+        "stars": 1750
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1476,7 +1930,7 @@
       "parent": {
         "name": "felixbrock/voxpaste",
         "url": "https://github.com/felixbrock/voxpaste",
-        "stars": 11
+        "stars": 13
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1541,7 +1995,7 @@
       "parent": {
         "name": "WingchunSiu/Monolith",
         "url": "https://github.com/WingchunSiu/Monolith",
-        "stars": 89
+        "stars": 90
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1812,7 +2266,7 @@
       "parent": {
         "name": "opengeos/anymap-ts",
         "url": "https://github.com/opengeos/anymap-ts",
-        "stars": 175
+        "stars": 177
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2159,7 +2613,7 @@
       "parent": {
         "name": "alichherawalla/off-grid-mobile",
         "url": "https://github.com/alichherawalla/off-grid-mobile",
-        "stars": 495
+        "stars": 516
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2329,7 +2783,7 @@
       "parent": {
         "name": "BukeLy/rag-api",
         "url": "https://github.com/BukeLy/rag-api",
-        "stars": 36
+        "stars": 40
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2436,7 +2890,7 @@
       "parent": {
         "name": "freemocap/freemocap",
         "url": "https://github.com/freemocap/freemocap",
-        "stars": 5496
+        "stars": 5558
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2544,7 +2998,7 @@
       "parent": {
         "name": "SuperagenticAI/superclaw",
         "url": "https://github.com/SuperagenticAI/superclaw",
-        "stars": 54
+        "stars": 65
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2618,7 +3072,7 @@
       "parent": {
         "name": "mindsdb/mindsdb",
         "url": "https://github.com/mindsdb/mindsdb",
-        "stars": 38537
+        "stars": 38543
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2921,7 +3375,7 @@
       "parent": {
         "name": "spacedriveapp/spacebot",
         "url": "https://github.com/spacedriveapp/spacebot",
-        "stars": 816
+        "stars": 824
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3061,7 +3515,7 @@
       "parent": {
         "name": "TencentARC/VerseCrafter",
         "url": "https://github.com/TencentARC/VerseCrafter",
-        "stars": 309
+        "stars": 310
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3114,7 +3568,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 990
+        "stars": 1010
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3181,7 +3635,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 1666
+        "stars": 1838
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3224,7 +3678,7 @@
       "parent": {
         "name": "HKUDS/AI-Trader",
         "url": "https://github.com/HKUDS/AI-Trader",
-        "stars": 11341
+        "stars": 11343
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3276,7 +3730,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 5267
+        "stars": 5306
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3364,7 +3818,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 8223
+        "stars": 8234
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3493,7 +3947,7 @@
       "parent": {
         "name": "unitedbyai/droidclaw",
         "url": "https://github.com/unitedbyai/droidclaw",
-        "stars": 850
+        "stars": 855
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3763,7 +4217,7 @@
       "parent": {
         "name": "memvid/claude-brain",
         "url": "https://github.com/memvid/claude-brain",
-        "stars": 283
+        "stars": 287
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3825,7 +4279,7 @@
       "parent": {
         "name": "PurpleAILAB/Decepticon",
         "url": "https://github.com/PurpleAILAB/Decepticon",
-        "stars": 663
+        "stars": 678
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3891,7 +4345,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 61211
+        "stars": 61231
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3967,7 +4421,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 5691
+        "stars": 5694
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4082,7 +4536,7 @@
       "parent": {
         "name": "ruzin/stenoai",
         "url": "https://github.com/ruzin/stenoai",
-        "stars": 362
+        "stars": 365
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4163,7 +4617,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 3974
+        "stars": 3979
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4323,7 +4777,7 @@
       "parent": {
         "name": "antvis/Infographic",
         "url": "https://github.com/antvis/Infographic",
-        "stars": 4419
+        "stars": 4420
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4869,7 +5323,7 @@
       "parent": {
         "name": "simonbs/Runestone",
         "url": "https://github.com/simonbs/Runestone",
-        "stars": 3049
+        "stars": 3050
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5049,7 +5503,7 @@
       "parent": {
         "name": "roboflow/trackers",
         "url": "https://github.com/roboflow/trackers",
-        "stars": 2677
+        "stars": 2720
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5145,7 +5599,7 @@
       "parent": {
         "name": "Serial-Studio/Serial-Studio",
         "url": "https://github.com/Serial-Studio/Serial-Studio",
-        "stars": 6565
+        "stars": 6568
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5195,7 +5649,7 @@
       "parent": {
         "name": "gosom/google-maps-scraper",
         "url": "https://github.com/gosom/google-maps-scraper",
-        "stars": 3197
+        "stars": 3199
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5341,7 +5795,7 @@
       "parent": {
         "name": "crowdsecurity/crowdsec",
         "url": "https://github.com/crowdsecurity/crowdsec",
-        "stars": 12576
+        "stars": 12579
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5363,7 +5817,7 @@
       "parent": {
         "name": "ruvnet/wifi-densepose",
         "url": "https://github.com/ruvnet/wifi-densepose",
-        "stars": 7170
+        "stars": 7189
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -5385,7 +5839,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22103
+        "stars": 22115
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -5495,7 +5949,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 15070
+        "stars": 15074
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5561,7 +6015,7 @@
       "parent": {
         "name": "R44VC0RP/pgrok",
         "url": "https://github.com/R44VC0RP/pgrok",
-        "stars": 592
+        "stars": 596
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5605,7 +6059,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 16904
+        "stars": 17018
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5627,7 +6081,7 @@
       "parent": {
         "name": "The-Vibe-Company/companion",
         "url": "https://github.com/The-Vibe-Company/companion",
-        "stars": 2015
+        "stars": 2018
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5671,7 +6125,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2232
+        "stars": 2235
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5693,7 +6147,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 23954
+        "stars": 23958
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5781,7 +6235,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 33361
+        "stars": 33374
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -5803,7 +6257,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 6386
+        "stars": 6402
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -5869,7 +6323,7 @@
       "parent": {
         "name": "BrowserOperator/browser-operator-core",
         "url": "https://github.com/BrowserOperator/browser-operator-core",
-        "stars": 456
+        "stars": 457
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5891,7 +6345,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 5548
+        "stars": 5553
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5935,7 +6389,7 @@
       "parent": {
         "name": "evinjohnn/natively-cluely-ai-assistant",
         "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
-        "stars": 517
+        "stars": 518
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5957,7 +6411,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 4754
+        "stars": 4796
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5979,7 +6433,7 @@
       "parent": {
         "name": "deepentropy/tvscreener",
         "url": "https://github.com/deepentropy/tvscreener",
-        "stars": 756
+        "stars": 758
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6001,7 +6455,7 @@
       "parent": {
         "name": "wg-easy/wg-easy",
         "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24654
+        "stars": 24656
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -6023,7 +6477,7 @@
       "parent": {
         "name": "mult1v4c/hestia-core",
         "url": "https://github.com/mult1v4c/hestia-core",
-        "stars": 643
+        "stars": 644
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6067,7 +6521,7 @@
       "parent": {
         "name": "rohunvora/x-research-skill",
         "url": "https://github.com/rohunvora/x-research-skill",
-        "stars": 804
+        "stars": 809
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6111,7 +6565,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 22216
+        "stars": 22272
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6133,7 +6587,7 @@
       "parent": {
         "name": "MiniCodeMonkey/chief",
         "url": "https://github.com/MiniCodeMonkey/chief",
-        "stars": 199
+        "stars": 202
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -6155,7 +6609,7 @@
       "parent": {
         "name": "ComposioHQ/composio",
         "url": "https://github.com/ComposioHQ/composio",
-        "stars": 26967
+        "stars": 27011
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -6177,7 +6631,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 8978
+        "stars": 8980
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6287,7 +6741,7 @@
       "parent": {
         "name": "univrsal/input-overlay",
         "url": "https://github.com/univrsal/input-overlay",
-        "stars": 3868
+        "stars": 3869
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -6309,7 +6763,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 201500
+        "stars": 201501
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -6331,7 +6785,7 @@
       "parent": {
         "name": "PrimeIntellect-ai/verifiers",
         "url": "https://github.com/PrimeIntellect-ai/verifiers",
-        "stars": 3845
+        "stars": 3847
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6375,7 +6829,7 @@
       "parent": {
         "name": "RedPlanetHQ/core",
         "url": "https://github.com/RedPlanetHQ/core",
-        "stars": 1370
+        "stars": 1371
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6397,7 +6851,7 @@
       "parent": {
         "name": "OpenBMB/VoxCPM",
         "url": "https://github.com/OpenBMB/VoxCPM",
-        "stars": 5913
+        "stars": 5914
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6441,7 +6895,7 @@
       "parent": {
         "name": "sseanliu/VisionClaw",
         "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 1171
+        "stars": 1185
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -6463,7 +6917,7 @@
       "parent": {
         "name": "Polymarket/agents",
         "url": "https://github.com/Polymarket/agents",
-        "stars": 2210
+        "stars": 2213
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6485,7 +6939,7 @@
       "parent": {
         "name": "bubblelabai/BubbleLab",
         "url": "https://github.com/bubblelabai/BubbleLab",
-        "stars": 1044
+        "stars": 1045
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -6529,7 +6983,7 @@
       "parent": {
         "name": "rotki/rotki",
         "url": "https://github.com/rotki/rotki",
-        "stars": 3708
+        "stars": 3709
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6617,7 +7071,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2262
+        "stars": 2269
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6639,7 +7093,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 15766
+        "stars": 15776
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6683,7 +7137,7 @@
       "parent": {
         "name": "tom-doerr/repo_posts",
         "url": "https://github.com/tom-doerr/repo_posts",
-        "stars": 231
+        "stars": 232
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6771,7 +7225,7 @@
       "parent": {
         "name": "Beingpax/VoiceInk",
         "url": "https://github.com/Beingpax/VoiceInk",
-        "stars": 3878
+        "stars": 3882
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6859,7 +7313,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 96269
+        "stars": 96295
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6881,7 +7335,7 @@
       "parent": {
         "name": "tinyfish-io/agentql",
         "url": "https://github.com/tinyfish-io/agentql",
-        "stars": 1238
+        "stars": 1239
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6903,7 +7357,7 @@
       "parent": {
         "name": "microsoft/call-center-ai",
         "url": "https://github.com/microsoft/call-center-ai",
-        "stars": 6278
+        "stars": 6282
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6925,7 +7379,7 @@
       "parent": {
         "name": "rivo/tview",
         "url": "https://github.com/rivo/tview",
-        "stars": 13583
+        "stars": 13584
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6947,7 +7401,7 @@
       "parent": {
         "name": "rahulnyk/knowledge_graph",
         "url": "https://github.com/rahulnyk/knowledge_graph",
-        "stars": 2981
+        "stars": 2982
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6991,7 +7445,7 @@
       "parent": {
         "name": "antirez/voxtral.c",
         "url": "https://github.com/antirez/voxtral.c",
-        "stars": 1367
+        "stars": 1368
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7035,7 +7489,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 7217
+        "stars": 7222
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7079,7 +7533,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 3321
+        "stars": 3337
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7163,7 +7617,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 20632
+        "stars": 20638
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -7185,7 +7639,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44404
+        "stars": 44409
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -7229,7 +7683,7 @@
       "parent": {
         "name": "callstackincubator/agent-device",
         "url": "https://github.com/callstackincubator/agent-device",
-        "stars": 713
+        "stars": 716
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7295,7 +7749,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20611
+        "stars": 20617
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -7317,7 +7771,7 @@
       "parent": {
         "name": "fastrepl/char",
         "url": "https://github.com/fastrepl/char",
-        "stars": 7751
+        "stars": 7753
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7383,7 +7837,7 @@
       "parent": {
         "name": "timoncool/videosos",
         "url": "https://github.com/timoncool/videosos",
-        "stars": 1113
+        "stars": 1114
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -7405,7 +7859,7 @@
       "parent": {
         "name": "spieglt/FlyingCarpet",
         "url": "https://github.com/spieglt/FlyingCarpet",
-        "stars": 4950
+        "stars": 4951
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -7427,7 +7881,7 @@
       "parent": {
         "name": "ar51an/unbound-dashboard",
         "url": "https://github.com/ar51an/unbound-dashboard",
-        "stars": 612
+        "stars": 613
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -7493,7 +7947,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 30249
+        "stars": 30252
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7515,7 +7969,7 @@
       "parent": {
         "name": "0xSojalSec/airllm",
         "url": "https://github.com/0xSojalSec/airllm",
-        "stars": 2643
+        "stars": 2650
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -7647,7 +8101,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6796
+        "stars": 6798
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -7845,7 +8299,7 @@
       "parent": {
         "name": "xenodium/agent-shell",
         "url": "https://github.com/xenodium/agent-shell",
-        "stars": 707
+        "stars": 710
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7867,7 +8321,7 @@
       "parent": {
         "name": "commaai/openpilot",
         "url": "https://github.com/commaai/openpilot",
-        "stars": 60107
+        "stars": 60110
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -7889,7 +8343,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 15073
+        "stars": 15078
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -7911,7 +8365,7 @@
       "parent": {
         "name": "latitude-dev/latitude-llm",
         "url": "https://github.com/latitude-dev/latitude-llm",
-        "stars": 3899
+        "stars": 3900
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -7955,7 +8409,7 @@
       "parent": {
         "name": "snwfdhmp/awesome-ralph",
         "url": "https://github.com/snwfdhmp/awesome-ralph",
-        "stars": 732
+        "stars": 733
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -7977,7 +8431,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 6080
+        "stars": 6091
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -7999,7 +8453,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8369
+        "stars": 8371
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -8021,7 +8475,7 @@
       "parent": {
         "name": "hpcaitech/ColossalAI",
         "url": "https://github.com/hpcaitech/ColossalAI",
-        "stars": 41348
+        "stars": 41347
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -8065,7 +8519,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 3682
+        "stars": 3688
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -8087,7 +8541,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 28530
+        "stars": 28535
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8109,7 +8563,7 @@
       "parent": {
         "name": "droidrun/droidrun",
         "url": "https://github.com/droidrun/droidrun",
-        "stars": 7691
+        "stars": 7700
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8153,7 +8607,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 124433
+        "stars": 124449
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -8175,7 +8629,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 6562
+        "stars": 6569
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8219,7 +8673,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 5960
+        "stars": 5965
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -8263,7 +8717,7 @@
       "parent": {
         "name": "zampierilucas/scx_horoscope",
         "url": "https://github.com/zampierilucas/scx_horoscope",
-        "stars": 1158
+        "stars": 1160
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -8285,7 +8739,7 @@
       "parent": {
         "name": "unicodeveloper/globalthreatmap",
         "url": "https://github.com/unicodeveloper/globalthreatmap",
-        "stars": 1220
+        "stars": 1221
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -8329,7 +8783,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24204
+        "stars": 24208
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -8395,7 +8849,7 @@
       "parent": {
         "name": "Avaiga/taipy",
         "url": "https://github.com/Avaiga/taipy",
-        "stars": 19070
+        "stars": 19071
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -8505,7 +8959,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 36654
+        "stars": 36656
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -8571,7 +9025,7 @@
       "parent": {
         "name": "aiming-lab/SimpleMem",
         "url": "https://github.com/aiming-lab/SimpleMem",
-        "stars": 2976
+        "stars": 2978
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -8615,7 +9069,7 @@
       "parent": {
         "name": "antirez/iris.c",
         "url": "https://github.com/antirez/iris.c",
-        "stars": 1841
+        "stars": 1842
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8659,7 +9113,7 @@
       "parent": {
         "name": "freelensapp/freelens",
         "url": "https://github.com/freelensapp/freelens",
-        "stars": 4633
+        "stars": 4635
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -8681,7 +9135,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5406
+        "stars": 5407
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -8747,7 +9201,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 115310
+        "stars": 115340
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -8769,7 +9223,7 @@
       "parent": {
         "name": "adrianhajdin/uber",
         "url": "https://github.com/adrianhajdin/uber",
-        "stars": 1700
+        "stars": 1701
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -8813,7 +9267,7 @@
       "parent": {
         "name": "IndAlok/rzweb",
         "url": "https://github.com/IndAlok/rzweb",
-        "stars": 634
+        "stars": 635
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -8857,7 +9311,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15588
+        "stars": 15591
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8901,7 +9355,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 10972
+        "stars": 10987
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -8923,7 +9377,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 20076
+        "stars": 20081
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9011,7 +9465,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 8949
+        "stars": 8958
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -9055,7 +9509,7 @@
       "parent": {
         "name": "Liquid4All/cookbook",
         "url": "https://github.com/Liquid4All/cookbook",
-        "stars": 1193
+        "stars": 1196
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -9099,7 +9553,7 @@
       "parent": {
         "name": "yuntian-group/neural-os",
         "url": "https://github.com/yuntian-group/neural-os",
-        "stars": 152
+        "stars": 153
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -9231,7 +9685,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7247
+        "stars": 7250
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -9253,7 +9707,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51498
+        "stars": 51500
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -9297,7 +9751,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 22727
+        "stars": 22731
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -9407,7 +9861,7 @@
       "parent": {
         "name": "Ramakm/AI-ML-Book-References",
         "url": "https://github.com/Ramakm/AI-ML-Book-References",
-        "stars": 324
+        "stars": 325
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -9429,7 +9883,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 21778
+        "stars": 21780
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -9539,7 +9993,7 @@
       "parent": {
         "name": "TradeMaster-NTU/TradeMaster",
         "url": "https://github.com/TradeMaster-NTU/TradeMaster",
-        "stars": 2483
+        "stars": 2484
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9561,7 +10015,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39539
+        "stars": 39543
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -9781,7 +10235,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 181944
+        "stars": 181947
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9803,7 +10257,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 11086
+        "stars": 11093
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9847,7 +10301,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12570
+        "stars": 12573
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -10023,7 +10477,7 @@
       "parent": {
         "name": "midday-ai/midday",
         "url": "https://github.com/midday-ai/midday",
-        "stars": 14031
+        "stars": 14034
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -10045,7 +10499,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16541
+        "stars": 16546
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -10089,7 +10543,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56239
+        "stars": 56251
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -10111,7 +10565,7 @@
       "parent": {
         "name": "Qloapps/QloApps",
         "url": "https://github.com/Qloapps/QloApps",
-        "stars": 12292
+        "stars": 12295
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -10265,7 +10719,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 16709
+        "stars": 16716
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -10287,7 +10741,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 107571
+        "stars": 107684
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -10331,7 +10785,7 @@
       "parent": {
         "name": "0xSojalSec/LLMs-local",
         "url": "https://github.com/0xSojalSec/LLMs-local",
-        "stars": 586
+        "stars": 585
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10375,7 +10829,7 @@
       "parent": {
         "name": "piratuks/invoice-builder",
         "url": "https://github.com/piratuks/invoice-builder",
-        "stars": 175
+        "stars": 176
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -10573,7 +11027,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 28092
+        "stars": 28097
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -10595,7 +11049,7 @@
       "parent": {
         "name": "fstandhartinger/ralph-wiggum",
         "url": "https://github.com/fstandhartinger/ralph-wiggum",
-        "stars": 170
+        "stars": 171
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10639,7 +11093,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 14680
+        "stars": 14707
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -10661,7 +11115,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 20826
+        "stars": 20834
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -10749,7 +11203,7 @@
       "parent": {
         "name": "DevAgentForge/Open-Claude-Cowork",
         "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
-        "stars": 2892
+        "stars": 2893
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -10793,7 +11247,7 @@
       "parent": {
         "name": "czhou578/llm-god",
         "url": "https://github.com/czhou578/llm-god",
-        "stars": 245
+        "stars": 244
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -10815,7 +11269,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 95457
+        "stars": 95477
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -11119,7 +11573,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 181899
+        "stars": 181903
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
