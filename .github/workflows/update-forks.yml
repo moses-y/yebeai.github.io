@@ -2,8 +2,9 @@ name: Update Forks Feed
 
 on:
   schedule:
-    # Run every 6 hours
-    - cron: '0 */6 * * *'
+    # Run every 30 minutes during knowledgeGraph backfill
+    # Change back to '0 */6 * * *' once backfill is complete
+    - cron: '*/30 * * * *'
   workflow_dispatch: # Manual trigger
   repository_dispatch:
     types: [update-forks] # Trigger via API
@@ -33,6 +34,18 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Check if backfill needed
+        id: check-backfill
+        run: |
+          # Count repos missing knowledgeGraph
+          MISSING=$(node -e "
+            const data = require('./forks.json');
+            const missing = (data.forks || []).filter(f => !f.knowledgeGraph).length;
+            console.log(missing);
+          ")
+          echo "missing=$MISSING" >> $GITHUB_OUTPUT
+          echo "Repos missing knowledgeGraph: $MISSING"
+
       - name: Fetch forks and generate feed
         env:
           GITHUB_TOKEN: ${{ secrets.GH_MODELS_TOKEN || secrets.GITHUB_TOKEN }}
@@ -44,3 +57,19 @@ jobs:
           git config --local user.name "GitHub Action"
           git add forks.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update forks feed [skip ci]" && git pull --rebase && git push)
+
+      - name: Backfill status
+        run: |
+          MISSING=$(node -e "
+            const data = require('./forks.json');
+            const missing = (data.forks || []).filter(f => !f.knowledgeGraph).length;
+            console.log(missing);
+          ")
+          TOTAL=$(node -e "const data = require('./forks.json'); console.log(data.forks?.length || 0);")
+          WITH_KG=$((TOTAL - MISSING))
+          echo "📊 KnowledgeGraph Status: $WITH_KG / $TOTAL repos"
+          if [ "$MISSING" -eq "0" ]; then
+            echo "✅ Backfill complete! Consider changing cron back to '0 */6 * * *'"
+          else
+            echo "⏳ $MISSING repos remaining. Next run in 30 minutes."
+          fi
