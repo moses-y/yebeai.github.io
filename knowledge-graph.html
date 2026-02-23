@@ -256,7 +256,7 @@
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.15s;
-            max-width: 320px;
+            max-width: 380px;
             z-index: 200;
             backdrop-filter: blur(20px);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -276,6 +276,20 @@
             color: var(--text-secondary);
             font-size: 0.75rem;
             line-height: 1.4;
+        }
+
+        .tooltip .summary {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+            line-height: 1.5;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+            max-height: 120px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
         }
 
         .tooltip .tag {
@@ -832,6 +846,7 @@
                 language: repo.language,
                 stars: repo.stars || 0,
                 description: repo.description,
+                summary: repo.summary,
                 totalFiles,
                 kg,
                 radius: Math.max(5, Math.min(18, 4 + Math.sqrt(totalFiles)))
@@ -967,12 +982,18 @@
                 html += `<div class="click-hint">Click to filter by ${d.name}</div>`;
             } else {
                 html = `<h4>${d.name}</h4>`;
-                if (d.description) html += `<div class="detail">${d.description}</div>`;
                 if (d.kg?.languages) {
                     const langs = Object.entries(d.kg.languages).sort((a, b) => b[1] - a[1]).slice(0, 5);
                     html += '<div style="margin-top:4px">' + langs.map(([l, c]) => `<span class="tag">${l}: ${c}</span>`).join('') + '</div>';
                 }
                 html += `<div class="detail" style="margin-top:4px">${d.totalFiles} files · ★ ${d.stars}</div>`;
+                // Show blog summary if available
+                if (d.summary) {
+                    const truncated = d.summary.length > 200 ? d.summary.slice(0, 200) + '...' : d.summary;
+                    html += `<div class="summary">${truncated}</div>`;
+                } else if (d.description) {
+                    html += `<div class="summary">${d.description}</div>`;
+                }
                 html += `<div class="click-hint">Click to explore</div>`;
             }
             tooltip.innerHTML = html;
@@ -1019,7 +1040,7 @@
         const links = [];
 
         // Center node: repo
-        const centerNode = { id: 'center', name: repo.displayName || repo.name, type: 'repo', radius: 25, fx: width / 2, fy: height / 2 };
+        const centerNode = { id: 'center', name: repo.displayName || repo.name, type: 'repo', radius: 25, fx: width / 2, fy: height / 2, summary: repo.summary, description: repo.description };
         nodes.push(centerNode);
 
         // Directory nodes
@@ -1222,6 +1243,13 @@
             // Type-specific info
             if (d.type === 'language' && d.reposWithLang) {
                 html += `<div class="detail" style="margin-top:4px">${d.reposWithLang} repos use ${d.name}</div>`;
+            }
+
+            // Show summary for repo center node
+            if (d.type === 'repo' && (d.summary || d.description)) {
+                const text = d.summary || d.description;
+                const truncated = text.length > 200 ? text.slice(0, 200) + '...' : text;
+                html += `<div class="summary">${truncated}</div>`;
             }
 
             // Click hints based on type
