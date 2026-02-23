@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-23T19:27:40.035Z",
+  "lastUpdated": "2026-02-23T19:50:31.445Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
   "totalRepos": 346,
   "progress": {
@@ -9,6 +9,60 @@
     "complete": true
   },
   "forks": [
+    {
+      "id": 1165032985,
+      "name": "challenges",
+      "displayName": "challenges",
+      "description": "Various coding challenges to push the limits of computing",
+      "summary": "Building a Custom Data Compressor: Squeezing Every Byte Out of Cricsheet JSONs\n\nThe Problem\n\nCricsheet JSONs are massive. If you’ve ever worked with them, you know they pile up fast—multiple gigabytes of structured cricket data that are 99% predictable and 1% useful. Standard compression tools like gzip and 7z only go so far because they treat the files as generic text and miss the patterns in the schema. The problem? You need an efficient way to shrink these datasets without sacrificing their integrity.\n\nWhat This Does\n\nThis repo's compressor/ directory holds a custom data compressor that takes advantage of the predictable structure of Cricsheet JSONs. The magic happens in compressor/main.py, which implements a schema-aware compression algorithm. Instead of treating the data like a blob of random bytes, it intelligently encodes the known fields, removing redundancy that traditional compressors don’t catch.\n\nThere’s a writeup in compressor/README.md that walks you through the math behind the approach (spoiler: it involves entropy). The results are impressive—this technique shrinks a 2.87GB dataset down to just 42MB. Combine it with 7z, and you’re looking at 8.9MB. That’s absurdly small for something this large. Bonus points: the repo even includes visual evidence of the entropy reduction (compressor/media/entropy.png, because why not flex?).\n\nThe folder also has compressor/driver.py, which presumably handles batch processing or testing (the docs don’t say), and a few sample media files for... reasons. But the real action is in main.py.\n\nReal-World Use\n\nImagine you’re running a cricket analytics platform. You need to store and process years of JSON data for matches without breaking the bank on storage. Here’s how you might use this:\n\nBoom. Now your 3GB of data fits on a thumb drive, and your AWS bill won’t make you cry.\n\nThe Bottom Line\n\nThis project is a niche but elegant solution for anyone drowning in structured JSON data. If you’re not working with Cricsheet or similar datasets, you probably don’t need this—it’s not a general-purpose compression tool. The lack of stars and documentation polish might scare off casual users, but the results speak for themselves. If you’re into Algorithmic Information Theory or just want to geek out over squeezing every last byte, give it a look.",
+      "url": "https://github.com/moses-y/challenges",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "datavorous/challenges",
+        "url": "https://github.com/datavorous/challenges",
+        "stars": 37
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 23, 2026",
+      "updatedAt": "February 23, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 9,
+        "directories": {
+          "(root)": 2,
+          "compressor": 7
+        },
+        "languages": {
+          "Markdown": 2,
+          "Python": 2
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "compressor/main.py"
+        ],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md",
+          "compressor/README.md"
+        ],
+        "fileTypes": {
+          ".md": 2,
+          ".py": 2,
+          ".jpg": 3,
+          ".png": 1
+        }
+      }
+    },
     {
       "id": 1164932794,
       "name": "FalkorDB",
@@ -219,60 +273,6 @@
       }
     },
     {
-      "id": 1165032985,
-      "name": "challenges",
-      "displayName": "challenges",
-      "description": "Various coding challenges to push the limits of computing",
-      "summary": "Building a Custom Data Compressor: Squeezing Every Byte Out of Cricsheet JSONs\n\nThe Problem\n\nCricsheet JSONs are massive. If you’ve ever worked with them, you know they pile up fast—multiple gigabytes of structured cricket data that are 99% predictable and 1% useful. Standard compression tools like gzip and 7z only go so far because they treat the files as generic text and miss the patterns in the schema. The problem? You need an efficient way to shrink these datasets without sacrificing their integrity.\n\nWhat This Does\n\nThis repo's compressor/ directory holds a custom data compressor that takes advantage of the predictable structure of Cricsheet JSONs. The magic happens in compressor/main.py, which implements a schema-aware compression algorithm. Instead of treating the data like a blob of random bytes, it intelligently encodes the known fields, removing redundancy that traditional compressors don’t catch.\n\nThere’s a writeup in compressor/README.md that walks you through the math behind the approach (spoiler: it involves entropy). The results are impressive—this technique shrinks a 2.87GB dataset down to just 42MB. Combine it with 7z, and you’re looking at 8.9MB. That’s absurdly small for something this large. Bonus points: the repo even includes visual evidence of the entropy reduction (compressor/media/entropy.png, because why not flex?).\n\nThe folder also has compressor/driver.py, which presumably handles batch processing or testing (the docs don’t say), and a few sample media files for... reasons. But the real action is in main.py.\n\nReal-World Use\n\nImagine you’re running a cricket analytics platform. You need to store and process years of JSON data for matches without breaking the bank on storage. Here’s how you might use this:\n\nBoom. Now your 3GB of data fits on a thumb drive, and your AWS bill won’t make you cry.\n\nThe Bottom Line\n\nThis project is a niche but elegant solution for anyone drowning in structured JSON data. If you’re not working with Cricsheet or similar datasets, you probably don’t need this—it’s not a general-purpose compression tool. The lack of stars and documentation polish might scare off casual users, but the results speak for themselves. If you’re into Algorithmic Information Theory or just want to geek out over squeezing every last byte, give it a look.",
-      "url": "https://github.com/moses-y/challenges",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "datavorous/challenges",
-        "url": "https://github.com/datavorous/challenges",
-        "stars": 37
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 23, 2026",
-      "updatedAt": "February 23, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 9,
-        "directories": {
-          "(root)": 2,
-          "compressor": 7
-        },
-        "languages": {
-          "Markdown": 2,
-          "Python": 2
-        },
-        "frameworks": [],
-        "packageManager": null,
-        "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "compressor/main.py"
-        ],
-        "configFiles": [],
-        "dependencies": [],
-        "testFiles": [],
-        "docs": [
-          "README.md",
-          "compressor/README.md"
-        ],
-        "fileTypes": {
-          ".md": 2,
-          ".py": 2,
-          ".jpg": 3,
-          ".png": 1
-        }
-      }
-    },
-    {
       "id": 1164162066,
       "name": "GhostTrack",
       "displayName": "GhostTrack",
@@ -286,7 +286,7 @@
       "parent": {
         "name": "HunxByts/GhostTrack",
         "url": "https://github.com/HunxByts/GhostTrack",
-        "stars": 7175
+        "stars": 7176
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -734,7 +734,7 @@
       "parent": {
         "name": "QwenLM/Qwen3-Coder",
         "url": "https://github.com/QwenLM/Qwen3-Coder",
-        "stars": 15683
+        "stars": 15684
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -828,7 +828,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 13137
+        "stars": 13154
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -2476,7 +2476,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 220864
+        "stars": 220896
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2578,7 +2578,7 @@
       "parent": {
         "name": "Conway-Research/automaton",
         "url": "https://github.com/Conway-Research/automaton",
-        "stars": 2129
+        "stars": 2132
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3920,7 +3920,7 @@
       "parent": {
         "name": "alichherawalla/off-grid-mobile",
         "url": "https://github.com/alichherawalla/off-grid-mobile",
-        "stars": 596
+        "stars": 597
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -4682,7 +4682,7 @@
       "parent": {
         "name": "spacedriveapp/spacebot",
         "url": "https://github.com/spacedriveapp/spacebot",
-        "stars": 1163
+        "stars": 1167
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4875,7 +4875,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 1203
+        "stars": 1204
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4942,7 +4942,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 2459
+        "stars": 2460
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4985,7 +4985,7 @@
       "parent": {
         "name": "HKUDS/AI-Trader",
         "url": "https://github.com/HKUDS/AI-Trader",
-        "stars": 11387
+        "stars": 11388
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5037,7 +5037,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 7431
+        "stars": 7434
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5125,7 +5125,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 8582
+        "stars": 8584
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -5254,7 +5254,7 @@
       "parent": {
         "name": "unitedbyai/droidclaw",
         "url": "https://github.com/unitedbyai/droidclaw",
-        "stars": 930
+        "stars": 931
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -5652,7 +5652,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 61548
+        "stars": 61551
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8459,7 +8459,7 @@
       "parent": {
         "name": "R44VC0RP/pgrok",
         "url": "https://github.com/R44VC0RP/pgrok",
-        "stars": 691
+        "stars": 692
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -8627,7 +8627,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 18619
+        "stars": 18631
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9120,7 +9120,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 24023
+        "stars": 24024
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9702,7 +9702,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 6678
+        "stars": 6679
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -10191,7 +10191,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 5643
+        "stars": 5644
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10535,7 +10535,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 6141
+        "stars": 6144
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -11135,7 +11135,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 23780
+        "stars": 23781
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -12169,7 +12169,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 201634
+        "stars": 201635
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -12237,7 +12237,7 @@
       "parent": {
         "name": "PrimeIntellect-ai/verifiers",
         "url": "https://github.com/PrimeIntellect-ai/verifiers",
-        "stars": 3852
+        "stars": 3853
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -12816,7 +12816,7 @@
       "parent": {
         "name": "Polymarket/agents",
         "url": "https://github.com/Polymarket/agents",
-        "stars": 2232
+        "stars": 2233
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -13648,7 +13648,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 16089
+        "stars": 16093
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -14753,7 +14753,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 96724
+        "stars": 96727
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -15566,7 +15566,7 @@
       "parent": {
         "name": "antirez/voxtral.c",
         "url": "https://github.com/antirez/voxtral.c",
-        "stars": 1397
+        "stars": 1398
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15767,7 +15767,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 7404
+        "stars": 7408
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15951,7 +15951,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1708
+        "stars": 1709
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -16034,7 +16034,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 3534
+        "stars": 3536
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -17142,7 +17142,7 @@
       "parent": {
         "name": "fastrepl/char",
         "url": "https://github.com/fastrepl/char",
-        "stars": 7771
+        "stars": 7772
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -20258,7 +20258,7 @@
       "parent": {
         "name": "going-doer/Paper2Code",
         "url": "https://github.com/going-doer/Paper2Code",
-        "stars": 4170
+        "stars": 4171
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -20790,7 +20790,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 124697
+        "stars": 124698
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -22930,7 +22930,7 @@
       "parent": {
         "name": "learning-at-home/hivemind",
         "url": "https://github.com/learning-at-home/hivemind",
-        "stars": 2381
+        "stars": 2382
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -23651,7 +23651,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 119941
+        "stars": 120000
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -25773,7 +25773,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7298
+        "stars": 7300
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -26052,7 +26052,7 @@
       "parent": {
         "name": "firecrawl/open-researcher",
         "url": "https://github.com/firecrawl/open-researcher",
-        "stars": 609
+        "stars": 610
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -26919,7 +26919,7 @@
       "parent": {
         "name": "braedonsaunders/codeflow",
         "url": "https://github.com/braedonsaunders/codeflow",
-        "stars": 554
+        "stars": 555
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -28147,7 +28147,7 @@
       "parent": {
         "name": "probberechts/soccerdata",
         "url": "https://github.com/probberechts/soccerdata",
-        "stars": 1558
+        "stars": 1560
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -28566,7 +28566,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182014
+        "stars": 182016
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -28697,7 +28697,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 11214
+        "stars": 11215
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -29869,7 +29869,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16588
+        "stars": 16589
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -30991,7 +30991,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 109091
+        "stars": 109094
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -31207,7 +31207,7 @@
       "parent": {
         "name": "0xSojalSec/LLMs-local",
         "url": "https://github.com/0xSojalSec/LLMs-local",
-        "stars": 605
+        "stars": 606
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -31455,7 +31455,7 @@
       "parent": {
         "name": "HQarroum/awesome-iot",
         "url": "https://github.com/HQarroum/awesome-iot",
-        "stars": 3850
+        "stars": 3851
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -32743,7 +32743,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 15031
+        "stars": 15034
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -33527,7 +33527,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 95688
+        "stars": 95691
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -33814,7 +33814,73 @@
       "forkedAt": "March 20, 2025",
       "updatedAt": "June 30, 2025",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 55,
+        "directories": {
+          "(root)": 12,
+          ".github": 1,
+          ".space": 1,
+          "assets": 2,
+          "data": 2,
+          "docs": 7,
+          "src": 26,
+          "tests": 4
+        },
+        "languages": {
+          "YAML": 4,
+          "Markdown": 8,
+          "Python": 32,
+          "JSON": 1
+        },
+        "frameworks": [
+          "Flask",
+          "Docker"
+        ],
+        "packageManager": "pip",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "app.py"
+        ],
+        "configFiles": [
+          ".env.example",
+          "Dockerfile",
+          "docker-compose.yml",
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [
+          "docs/development/testing.md",
+          "tests/__init__.py",
+          "tests/conftest.py",
+          "tests/test_fallback_llm.py",
+          "tests/test_main_flows.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/EVALUATION.md",
+          "docs/development/SETUP.md",
+          "docs/development/architecture.md",
+          "docs/development/deployment.md",
+          "docs/development/testing.md",
+          "docs/index.md",
+          "docs/usage.md"
+        ],
+        "fileTypes": {
+          ".example": 1,
+          ".yml": 4,
+          ".md": 8,
+          ".py": 32,
+          ".png": 2,
+          ".csv": 1,
+          ".json": 1,
+          ".txt": 2
+        }
+      }
     },
     {
       "id": 1004131322,
@@ -33833,7 +33899,113 @@
       "forkedAt": "June 18, 2025",
       "updatedAt": "June 18, 2025",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 88,
+        "directories": {
+          "(root)": 16,
+          ".github": 2,
+          "apps": 29,
+          "docker": 5,
+          "docs": 17,
+          "libs": 7,
+          "tools": 12
+        },
+        "languages": {
+          "YAML": 3,
+          "Markdown": 26,
+          "Python": 12,
+          "JSON": 5,
+          "JavaScript": 2,
+          "TSX": 11,
+          "TypeScript": 3,
+          "CSS": 3,
+          "TOML": 1,
+          "Shell": 3
+        },
+        "frameworks": [
+          "React",
+          "Flask",
+          "FastAPI",
+          "Tailwind",
+          "Docker"
+        ],
+        "packageManager": "pip",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "apps/frontend/src/App.tsx"
+        ],
+        "configFiles": [
+          "apps/frontend/.eslintrc.cjs",
+          "apps/frontend/Dockerfile.production",
+          "apps/frontend/package.json",
+          "apps/frontend/tailwind.config.js",
+          "apps/frontend/tsconfig.json",
+          "apps/frontend/vite.config.ts",
+          "docker/Dockerfile",
+          "docker/Dockerfile.fastapi",
+          "docker/Dockerfile.react",
+          "docker/Dockerfile.streamlit",
+          "docker/docker-compose.yml",
+          "pyproject.toml",
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "apps/frontend/package-lock.json",
+          "apps/frontend/package.json",
+          "pyproject.toml",
+          "requirements.txt"
+        ],
+        "testFiles": [
+          "pytest.ini"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "README_NEW.md",
+          "docs/AGENTIC_ICC_PRD.md",
+          "docs/AGENTIC_ICC_SUCCESS.md",
+          "docs/AGENTIC_IMPLEMENTATION.md",
+          "docs/CORE_AGENTS_CONSOLIDATION.md",
+          "docs/FINAL_SETUP_GUIDE.md",
+          "docs/FRONTEND_DEPLOYMENT_STRATEGY.md",
+          "docs/GROQ_ORGANIZATION.md",
+          "docs/IMPLEMENTATION_SUMMARY.md",
+          "docs/LAUNCH_DAY_SUCCESS.md",
+          "docs/MONOREPO_REORGANIZATION_PLAN.md",
+          "docs/PLATFORM_OPERATIONAL.md",
+          "docs/PRD.md",
+          "docs/QUICK_START.md",
+          "docs/REACT_FRONTEND_GUIDE.md",
+          "docs/SMART_LAUNCHER_SOLUTION.md",
+          "docs/ai-models.md",
+          "docs/deployment.md"
+        ],
+        "fileTypes": {
+          ".yml": 3,
+          ".md": 26,
+          ".py": 12,
+          ".cjs": 1,
+          ".production": 1,
+          ".conf": 2,
+          ".json": 5,
+          ".js": 2,
+          ".tsx": 11,
+          ".ts": 3,
+          ".css": 3,
+          ".fastapi": 1,
+          ".react": 1,
+          ".streamlit": 1,
+          ".toml": 1,
+          ".ini": 1,
+          ".txt": 1,
+          ".sh": 3,
+          ".ps1": 1,
+          ".bat": 4,
+          ".lock": 1
+        }
+      }
     },
     {
       "id": 989521438,
@@ -33852,7 +34024,41 @@
       "forkedAt": "May 24, 2025",
       "updatedAt": "May 24, 2025",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 5,
+        "directories": {
+          ".github": 1,
+          "(root)": 4
+        },
+        "languages": {
+          "YAML": 1,
+          "Markdown": 1,
+          "HTML": 1,
+          "JavaScript": 1,
+          "CSS": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "index.html"
+        ],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".yml": 1,
+          ".md": 1,
+          ".html": 1,
+          ".js": 1,
+          ".css": 1
+        }
+      }
     },
     {
       "id": 989525869,
@@ -33875,7 +34081,43 @@
       "forkedAt": "May 24, 2025",
       "updatedAt": "May 24, 2025",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 37,
+        "directories": {
+          "(root)": 2,
+          "agent-venv": 32,
+          "codelab": 1,
+          "mikoko_guardian": 2
+        },
+        "languages": {
+          "Markdown": 2,
+          "C/C++ Header": 1,
+          "Python": 2
+        },
+        "frameworks": [
+          "FastAPI"
+        ],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 2,
+          ".h": 1,
+          ".ps1": 1,
+          ".bat": 2,
+          ".exe": 26,
+          ".cfg": 1,
+          ".py": 2
+        }
+      }
     },
     {
       "id": 972101968,
@@ -33894,7 +34136,85 @@
       "forkedAt": "April 24, 2025",
       "updatedAt": "May 19, 2025",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 118,
+        "directories": {
+          "(root)": 12,
+          ".github": 5,
+          "api": 10,
+          "config": 4,
+          "dashboard": 9,
+          "data": 4,
+          "docs": 5,
+          "notebooks": 32,
+          "src": 26,
+          "tests": 11
+        },
+        "languages": {
+          "Markdown": 11,
+          "YAML": 8,
+          "Python": 57
+        },
+        "frameworks": [
+          "Flask",
+          "Docker"
+        ],
+        "packageManager": "pip",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "api/main.py",
+          "dashboard/app.py",
+          "setup.py",
+          "src/cli.py"
+        ],
+        "configFiles": [
+          ".env.example",
+          "Dockerfile",
+          "Makefile",
+          "docker-compose.yml",
+          "requirements.txt",
+          "setup.py"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [
+          ".github/workflows/tests.yml",
+          "tests/__init__.py",
+          "tests/integration/__init__.py",
+          "tests/integration/test_endpoints.py",
+          "tests/integration/test_pipeline.py",
+          "tests/test_api.py",
+          "tests/test_models.py",
+          "tests/test_preprocessing.py",
+          "tests/unit/__init__.py",
+          "tests/unit/test_api.py",
+          "tests/unit/test_models.py",
+          "tests/unit/test_preprocessing.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/api_documentation.md",
+          "docs/dashboard_guide.md",
+          "docs/evaluation_metrics.md",
+          "docs/implementation_plan.md",
+          "docs/mlops_design.md"
+        ],
+        "fileTypes": {
+          ".example": 1,
+          ".md": 11,
+          ".yml": 8,
+          ".py": 57,
+          ".csv": 2,
+          ".jsonl": 1,
+          ".ipynb": 3,
+          ".png": 29,
+          ".txt": 1
+        }
+      }
     },
     {
       "id": 610009502,
@@ -33913,7 +34233,31 @@
       "forkedAt": "March 5, 2023",
       "updatedAt": "March 31, 2025",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 2,
+        "directories": {
+          "(root)": 2
+        },
+        "languages": {
+          "Markdown": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1
+        }
+      }
     },
     {
       "id": 943861639,
@@ -33932,7 +34276,57 @@
       "forkedAt": "March 6, 2025",
       "updatedAt": "March 11, 2025",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 21,
+        "directories": {
+          "(root)": 9,
+          "data": 2,
+          "images": 3,
+          "static": 3,
+          "templates": 4
+        },
+        "languages": {
+          "Markdown": 1,
+          "Python": 4,
+          "JSON": 2,
+          "HTML": 5,
+          "CSS": 1,
+          "JavaScript": 1
+        },
+        "frameworks": [
+          "Flask"
+        ],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "app.py",
+          "index.html",
+          "templates/index.html"
+        ],
+        "configFiles": [
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".py": 4,
+          ".ipynb": 1,
+          ".json": 2,
+          ".png": 4,
+          ".html": 5,
+          ".txt": 1,
+          ".css": 1,
+          ".js": 1
+        }
+      }
     },
     {
       "id": 763039998,
@@ -33951,7 +34345,44 @@
       "forkedAt": "February 25, 2024",
       "updatedAt": "February 25, 2024",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 12,
+        "directories": {
+          "(root)": 3,
+          "dist": 1,
+          "mypackage.egg-info": 5,
+          "mypackage": 2,
+          "tests": 1
+        },
+        "languages": {
+          "Markdown": 1,
+          "Python": 4
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "setup.py"
+        ],
+        "configFiles": [
+          "setup.py"
+        ],
+        "dependencies": [],
+        "testFiles": [
+          "tests/test.py"
+        ],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".gz": 1,
+          ".txt": 4,
+          ".py": 4
+        }
+      }
     },
     {
       "id": 735262554,
@@ -33970,7 +34401,41 @@
       "forkedAt": "December 24, 2023",
       "updatedAt": "December 24, 2023",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 7,
+        "directories": {
+          "(root)": 3,
+          "__pycache__": 1,
+          "src": 3
+        },
+        "languages": {
+          "Markdown": 1,
+          "Python": 3
+        },
+        "frameworks": [],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".pyc": 1,
+          ".txt": 1,
+          ".py": 3
+        }
+      }
     },
     {
       "id": 734789281,
@@ -33989,7 +34454,43 @@
       "forkedAt": "December 22, 2023",
       "updatedAt": "December 22, 2023",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 5,
+        "directories": {
+          ".github": 1,
+          "(root)": 4
+        },
+        "languages": {
+          "YAML": 1,
+          "Markdown": 1,
+          "Python": 1
+        },
+        "frameworks": [],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [
+          "speedtest.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".yml": 1,
+          ".md": 1,
+          ".txt": 1,
+          ".py": 1
+        }
+      }
     },
     {
       "id": 719814481,
@@ -34012,7 +34513,41 @@
       "forkedAt": "November 17, 2023",
       "updatedAt": "November 17, 2023",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 10,
+        "directories": {
+          "(root)": 5,
+          "assets": 4,
+          "frames": 1
+        },
+        "languages": {
+          "Markdown": 1,
+          "Python": 2
+        },
+        "frameworks": [],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".mp3": 2,
+          ".wav": 2,
+          ".py": 2,
+          ".txt": 1
+        }
+      }
     },
     {
       "id": 677993108,
@@ -34031,7 +34566,50 @@
       "forkedAt": "August 13, 2023",
       "updatedAt": "August 13, 2023",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 72,
+        "directories": {
+          "(root)": 5,
+          "assets": 56,
+          "images": 11
+        },
+        "languages": {
+          "CSS": 3,
+          "JavaScript": 7,
+          "SCSS": 31,
+          "HTML": 3
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "assets/js/main.js",
+          "index.html"
+        ],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "LICENSE.txt",
+          "README.txt"
+        ],
+        "fileTypes": {
+          ".txt": 2,
+          ".css": 3,
+          ".js": 7,
+          ".scss": 31,
+          ".eot": 3,
+          ".svg": 3,
+          ".ttf": 3,
+          ".woff": 3,
+          ".woff2": 3,
+          ".html": 3,
+          ".jpg": 10,
+          ".png": 1
+        }
+      }
     },
     {
       "id": 649106325,
@@ -34050,7 +34628,42 @@
       "forkedAt": "June 3, 2023",
       "updatedAt": "June 3, 2023",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 11,
+        "directories": {
+          "(root)": 5,
+          "_layouts": 1,
+          "images": 4,
+          "pdf": 1
+        },
+        "languages": {
+          "Markdown": 3,
+          "YAML": 1,
+          "HTML": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 3,
+          ".yml": 1,
+          ".html": 1,
+          ".jpg": 2,
+          ".gif": 1,
+          ".png": 1,
+          ".pdf": 1
+        }
+      }
     },
     {
       "id": 625041724,
@@ -34073,7 +34686,54 @@
       "forkedAt": "April 7, 2023",
       "updatedAt": "April 7, 2023",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 41,
+        "directories": {
+          "(root)": 8,
+          ".github": 5,
+          "outputs": 8,
+          "scripts": 19,
+          "tests": 1
+        },
+        "languages": {
+          "YAML": 5,
+          "Markdown": 3,
+          "Python": 19
+        },
+        "frameworks": [
+          "Docker"
+        ],
+        "packageManager": "pip",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "scripts/main.py"
+        ],
+        "configFiles": [
+          "Dockerfile",
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [
+          "tests/json_tests.py"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".template": 1,
+          ".yml": 4,
+          ".md": 3,
+          ".yaml": 1,
+          ".txt": 10,
+          ".py": 19
+        }
+      }
     },
     {
       "id": 597005930,
@@ -34092,7 +34752,31 @@
       "forkedAt": "February 3, 2023",
       "updatedAt": "February 3, 2023",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 2,
+        "directories": {
+          "(root)": 2
+        },
+        "languages": {
+          "Markdown": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".ipynb": 1
+        }
+      }
     },
     {
       "id": 594873631,
@@ -34130,7 +34814,31 @@
       "forkedAt": "January 19, 2023",
       "updatedAt": "January 19, 2023",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 2,
+        "directories": {
+          "(root)": 2
+        },
+        "languages": {
+          "Markdown": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".ipynb": 1,
+          ".md": 1
+        }
+      }
     },
     {
       "id": 498430066,
@@ -34152,7 +34860,31 @@
       "forkedAt": "May 31, 2022",
       "updatedAt": "January 11, 2023",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 2,
+        "directories": {
+          "(root)": 2
+        },
+        "languages": {
+          "Markdown": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".ipynb": 1,
+          ".md": 1
+        }
+      }
     },
     {
       "id": 582018627,
@@ -34171,7 +34903,32 @@
       "forkedAt": "December 25, 2022",
       "updatedAt": "December 25, 2022",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 2,
+        "directories": {
+          "(root)": 2
+        },
+        "languages": {
+          "Markdown": 1,
+          "Python": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".py": 1
+        }
+      }
     },
     {
       "id": 580938057,
@@ -34190,7 +34947,31 @@
       "forkedAt": "December 21, 2022",
       "updatedAt": "December 21, 2022",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 3,
+        "directories": {
+          "(root)": 3
+        },
+        "languages": {
+          "Markdown": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".ipynb": 2,
+          ".md": 1
+        }
+      }
     },
     {
       "id": 517570318,
@@ -34213,7 +34994,34 @@
       "forkedAt": "July 25, 2022",
       "updatedAt": "July 25, 2022",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 24,
+        "directories": {
+          "(root)": 13,
+          "assets": 4,
+          "screenshots": 7
+        },
+        "languages": {
+          "Markdown": 12
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 12,
+          ".png": 11
+        }
+      }
     },
     {
       "id": 482038562,
@@ -34232,7 +35040,42 @@
       "forkedAt": "April 15, 2022",
       "updatedAt": "April 15, 2022",
       "readTime": 3,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 20,
+        "directories": {
+          "Amazon Product Review Sentiment Analysis": 2,
+          "(root)": 5,
+          "Britam Data Science Project": 1,
+          "Cape Town Airbnb Data Science Project": 1,
+          "Fourier Analysis": 2,
+          "Generalised Linear Models in Insurance Motor Claims": 2,
+          "Linear Regression-Decision Tree Models": 2,
+          "Python Libraries - Pandas & Seaborn": 2,
+          "Python Library": 2,
+          "Streamlit Projects": 1
+        },
+        "languages": {
+          "Markdown": 1,
+          "Python": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".ipynb": 11,
+          ".md": 1,
+          ".py": 1
+        }
+      }
     }
   ]
 }
