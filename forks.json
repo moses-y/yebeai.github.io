@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-02-23T18:51:10.704Z",
+  "lastUpdated": "2026-02-23T19:27:40.035Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 345,
+  "totalRepos": 346,
   "progress": {
-    "aiGenerated": 345,
+    "aiGenerated": 346,
     "fallback": 0,
     "pending": 0,
     "complete": true
@@ -219,6 +219,60 @@
       }
     },
     {
+      "id": 1165032985,
+      "name": "challenges",
+      "displayName": "challenges",
+      "description": "Various coding challenges to push the limits of computing",
+      "summary": "Building a Custom Data Compressor: Squeezing Every Byte Out of Cricsheet JSONs\n\nThe Problem\n\nCricsheet JSONs are massive. If you’ve ever worked with them, you know they pile up fast—multiple gigabytes of structured cricket data that are 99% predictable and 1% useful. Standard compression tools like gzip and 7z only go so far because they treat the files as generic text and miss the patterns in the schema. The problem? You need an efficient way to shrink these datasets without sacrificing their integrity.\n\nWhat This Does\n\nThis repo's compressor/ directory holds a custom data compressor that takes advantage of the predictable structure of Cricsheet JSONs. The magic happens in compressor/main.py, which implements a schema-aware compression algorithm. Instead of treating the data like a blob of random bytes, it intelligently encodes the known fields, removing redundancy that traditional compressors don’t catch.\n\nThere’s a writeup in compressor/README.md that walks you through the math behind the approach (spoiler: it involves entropy). The results are impressive—this technique shrinks a 2.87GB dataset down to just 42MB. Combine it with 7z, and you’re looking at 8.9MB. That’s absurdly small for something this large. Bonus points: the repo even includes visual evidence of the entropy reduction (compressor/media/entropy.png, because why not flex?).\n\nThe folder also has compressor/driver.py, which presumably handles batch processing or testing (the docs don’t say), and a few sample media files for... reasons. But the real action is in main.py.\n\nReal-World Use\n\nImagine you’re running a cricket analytics platform. You need to store and process years of JSON data for matches without breaking the bank on storage. Here’s how you might use this:\n\nBoom. Now your 3GB of data fits on a thumb drive, and your AWS bill won’t make you cry.\n\nThe Bottom Line\n\nThis project is a niche but elegant solution for anyone drowning in structured JSON data. If you’re not working with Cricsheet or similar datasets, you probably don’t need this—it’s not a general-purpose compression tool. The lack of stars and documentation polish might scare off casual users, but the results speak for themselves. If you’re into Algorithmic Information Theory or just want to geek out over squeezing every last byte, give it a look.",
+      "url": "https://github.com/moses-y/challenges",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "datavorous/challenges",
+        "url": "https://github.com/datavorous/challenges",
+        "stars": 37
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 23, 2026",
+      "updatedAt": "February 23, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 9,
+        "directories": {
+          "(root)": 2,
+          "compressor": 7
+        },
+        "languages": {
+          "Markdown": 2,
+          "Python": 2
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "compressor/main.py"
+        ],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md",
+          "compressor/README.md"
+        ],
+        "fileTypes": {
+          ".md": 2,
+          ".py": 2,
+          ".jpg": 3,
+          ".png": 1
+        }
+      }
+    },
+    {
       "id": 1164162066,
       "name": "GhostTrack",
       "displayName": "GhostTrack",
@@ -232,7 +286,7 @@
       "parent": {
         "name": "HunxByts/GhostTrack",
         "url": "https://github.com/HunxByts/GhostTrack",
-        "stars": 7170
+        "stars": 7175
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -385,7 +439,7 @@
       "parent": {
         "name": "michaelzixizhou/codag",
         "url": "https://github.com/michaelzixizhou/codag",
-        "stars": 461
+        "stars": 463
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -774,7 +828,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 13125
+        "stars": 13137
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -928,7 +982,7 @@
       "parent": {
         "name": "RunMaestro/Maestro",
         "url": "https://github.com/RunMaestro/Maestro",
-        "stars": 2298
+        "stars": 2299
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -1145,7 +1199,7 @@
       "parent": {
         "name": "vaibhavpandeyvpz/apkstudio",
         "url": "https://github.com/vaibhavpandeyvpz/apkstudio",
-        "stars": 3751
+        "stars": 3752
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1792,7 +1846,7 @@
       "parent": {
         "name": "agalwood/Motrix",
         "url": "https://github.com/agalwood/Motrix",
-        "stars": 50877
+        "stars": 50878
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -2156,7 +2210,7 @@
       "parent": {
         "name": "hyperbrowserai/hyperbrowser-app-examples",
         "url": "https://github.com/hyperbrowserai/hyperbrowser-app-examples",
-        "stars": 661
+        "stars": 663
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -2422,7 +2476,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 220822
+        "stars": 220864
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2524,7 +2578,7 @@
       "parent": {
         "name": "Conway-Research/automaton",
         "url": "https://github.com/Conway-Research/automaton",
-        "stars": 2124
+        "stars": 2129
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3853,6 +3907,176 @@
       }
     },
     {
+      "id": 1160315748,
+      "name": "off-grid-mobile",
+      "displayName": "off grid mobile",
+      "description": "The Swiss Army Knife of Offline AI. Chat, Speak, and Generate Images - Privacy First, Zero Internet. Download an LLM and use it on your mobile device. No data ever leaves your phone. Supports text-to-text, vision, text-to-image",
+      "summary": "The Problem\nMost mobile AI applications are tethered to the internet, which raises serious privacy concerns. If you're tired of your data being sucked into the cloud while you're just trying to chat with a bot or generate an image, you’re not alone. Enter Off Grid, which runs everything locally on your phone. No internet required, no data leaks.\n\nWhat This Does\nOff Grid is like the Swiss Army Knife of offline AI. It combines text generation, image creation, vision AI, and voice transcription all on your device. You can dive into the code with App.tsx as your entry point, while the heavy lifting happens in the android/ directory, where you’ll find the core functionality and native modules.\n\nThe project structure is pretty straightforward. The tests/ folder has 80+ files ensuring that this thing works as intended, which is nice. You can see that DownloadManagerModule.kt in the android/app/src/main/java/ai/offgridmobile/download/ directory manages downloads, allowing you to grab models without needing an internet connection. The build.gradle files in android/ handle the dependencies and build configurations, so you're not left in the dark when it comes to knowing what’s needed to compile.\n\nReal-World Use\nImagine you need to generate an image for a presentation but are out in the wild with no cell service. You fire up Off Grid, input your text prompt, and within seconds, the local model generates a stunning image. You can also attach documents like PDFs for analysis without worrying about sending sensitive data over the internet. The app’s voice input feature uses Whisper for real-time transcription, so you can dictate notes without a hitch.\n\nNow you’re ready to go.\n\nThe Bottom Line\nOff Grid is a solid option if you need a privacy-first AI suite on your mobile device. It’s feature-rich and runs entirely offline, which is great for power users who want control over their data. However, it's probably overkill for casual users who just want a simple chat app. If you're into AI and privacy, though, this is a tool worth checking out.",
+      "url": "https://github.com/moses-y/off-grid-mobile",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "alichherawalla/off-grid-mobile",
+        "url": "https://github.com/alichherawalla/off-grid-mobile",
+        "stars": 596
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 17, 2026",
+      "updatedAt": "February 17, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".bundle": 1,
+          "(root)": 11,
+          ".github": 4,
+          ".maestro": 18,
+          "__tests__": 80,
+          "android": 86
+        },
+        "languages": {
+          "JavaScript": 2,
+          "Markdown": 4,
+          "YAML": 23,
+          "TSX": 36,
+          "TypeScript": 42,
+          "JSON": 1,
+          "Kotlin": 9
+        },
+        "frameworks": [
+          "React",
+          "Rails"
+        ],
+        "packageManager": "gradle",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "App.tsx"
+        ],
+        "configFiles": [
+          ".eslintrc.js",
+          ".prettierrc.js",
+          "Gemfile",
+          "android/app/build.gradle",
+          "android/build.gradle"
+        ],
+        "dependencies": [
+          "Gemfile",
+          "android/app/build.gradle",
+          "android/build.gradle"
+        ],
+        "testFiles": [
+          ".maestro/E2E_TESTING.md",
+          "__tests__/App.test.tsx",
+          "__tests__/contracts/coreMLDiffusion.contract.test.ts",
+          "__tests__/contracts/iosDownloadManager.contract.test.ts",
+          "__tests__/contracts/llama.rn.test.ts",
+          "__tests__/contracts/llamaContext.contract.test.ts",
+          "__tests__/contracts/localDream.contract.test.ts",
+          "__tests__/contracts/whisper.contract.test.ts",
+          "__tests__/contracts/whisper.rn.test.ts",
+          "__tests__/integration/generation/generationFlow.test.ts",
+          "__tests__/integration/generation/imageGenerationFlow.test.ts",
+          "__tests__/integration/models/activeModelService.test.ts",
+          "__tests__/integration/stores/chatStoreIntegration.test.ts",
+          "__tests__/rntl/components/AnimatedEntry.test.tsx",
+          "__tests__/rntl/components/AnimatedListItem.test.tsx",
+          "__tests__/rntl/components/AnimatedPressable.test.tsx",
+          "__tests__/rntl/components/AppSheet.test.tsx",
+          "__tests__/rntl/components/Card.test.tsx",
+          "__tests__/rntl/components/ChatInput.test.tsx",
+          "__tests__/rntl/components/ChatMessage.test.tsx",
+          "__tests__/rntl/components/CustomAlert.test.tsx",
+          "__tests__/rntl/components/DebugSheet.test.tsx",
+          "__tests__/rntl/components/GenerationSettingsModal.test.tsx",
+          "__tests__/rntl/components/ModelCard.test.tsx",
+          "__tests__/rntl/components/ModelSelectorModal.test.tsx",
+          "__tests__/rntl/components/ProjectSelectorSheet.test.tsx",
+          "__tests__/rntl/components/VoiceRecordButton.test.tsx",
+          "__tests__/rntl/hooks/useFocusTrigger.test.ts",
+          "__tests__/rntl/navigation/AppNavigator.test.tsx",
+          "__tests__/rntl/screens/ChatScreen.test.tsx",
+          "__tests__/rntl/screens/ChatsListScreen.test.tsx",
+          "__tests__/rntl/screens/DeviceInfoScreen.test.tsx",
+          "__tests__/rntl/screens/DownloadManagerScreen.test.tsx",
+          "__tests__/rntl/screens/GalleryScreen.test.tsx",
+          "__tests__/rntl/screens/HomeScreen.test.tsx",
+          "__tests__/rntl/screens/LockScreen.test.tsx",
+          "__tests__/rntl/screens/ModelDownloadScreen.test.tsx",
+          "__tests__/rntl/screens/ModelSettingsScreen.test.tsx",
+          "__tests__/rntl/screens/ModelsScreen.test.tsx",
+          "__tests__/rntl/screens/OnboardingScreen.test.tsx",
+          "__tests__/rntl/screens/PassphraseSetupScreen.test.tsx",
+          "__tests__/rntl/screens/ProjectDetailScreen.test.tsx",
+          "__tests__/rntl/screens/ProjectEditScreen.test.tsx",
+          "__tests__/rntl/screens/ProjectsScreen.test.tsx",
+          "__tests__/rntl/screens/SecuritySettingsScreen.test.tsx",
+          "__tests__/rntl/screens/SettingsScreen.test.tsx",
+          "__tests__/rntl/screens/StorageSettingsScreen.test.tsx",
+          "__tests__/rntl/screens/VoiceSettingsScreen.test.tsx",
+          "__tests__/specs/image-generation.yaml",
+          "__tests__/specs/model-lifecycle.yaml",
+          "__tests__/specs/text-generation.yaml",
+          "__tests__/unit/constants/constants.test.ts",
+          "__tests__/unit/hooks/useAppState.test.ts",
+          "__tests__/unit/hooks/useVoiceRecording.test.ts",
+          "__tests__/unit/hooks/useWhisperTranscription.test.ts",
+          "__tests__/unit/services/authService.test.ts",
+          "__tests__/unit/services/backgroundDownloadService.test.ts",
+          "__tests__/unit/services/coreMLModelBrowser.test.ts",
+          "__tests__/unit/services/documentService.test.ts",
+          "__tests__/unit/services/generationService.test.ts",
+          "__tests__/unit/services/hardware.test.ts",
+          "__tests__/unit/services/huggingFaceModelBrowser.test.ts",
+          "__tests__/unit/services/huggingface.test.ts",
+          "__tests__/unit/services/imageGenerator.test.ts",
+          "__tests__/unit/services/imageModelRecommendation.test.ts",
+          "__tests__/unit/services/intentClassifier.test.ts",
+          "__tests__/unit/services/llm.test.ts",
+          "__tests__/unit/services/localDreamGenerator.test.ts",
+          "__tests__/unit/services/modelManager.test.ts",
+          "__tests__/unit/services/pdfExtractor.test.ts",
+          "__tests__/unit/services/voiceService.test.ts",
+          "__tests__/unit/services/whisperService.test.ts",
+          "__tests__/unit/stores/appStore.test.ts",
+          "__tests__/unit/stores/authStore.test.ts",
+          "__tests__/unit/stores/chatStore.test.ts",
+          "__tests__/unit/stores/projectStore.test.ts",
+          "__tests__/unit/stores/whisperStore.test.ts",
+          "__tests__/unit/utils/coreMLModelUtils.test.ts",
+          "__tests__/unit/utils/messageContent.test.ts",
+          "__tests__/utils/factories.ts",
+          "__tests__/utils/testHelpers.ts"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".js": 2,
+          ".md": 4,
+          ".yml": 3,
+          ".yaml": 20,
+          ".tsx": 36,
+          ".ts": 42,
+          ".json": 1,
+          ".gradle": 2,
+          ".keystore": 1,
+          ".pro": 1,
+          ".xml": 11,
+          ".so": 27,
+          ".bundle": 1,
+          ".kt": 9,
+          ".png": 33,
+          ".properties": 1
+        }
+      }
+    },
+    {
       "id": 1160264409,
       "name": "rag-api",
       "displayName": "rag api",
@@ -3973,7 +4197,7 @@
       "parent": {
         "name": "freemocap/freemocap",
         "url": "https://github.com/freemocap/freemocap",
-        "stars": 5718
+        "stars": 5719
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4081,7 +4305,7 @@
       "parent": {
         "name": "SuperagenticAI/superclaw",
         "url": "https://github.com/SuperagenticAI/superclaw",
-        "stars": 139
+        "stars": 141
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4458,7 +4682,7 @@
       "parent": {
         "name": "spacedriveapp/spacebot",
         "url": "https://github.com/spacedriveapp/spacebot",
-        "stars": 1157
+        "stars": 1163
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4638,176 +4862,6 @@
       }
     },
     {
-      "id": 1160315748,
-      "name": "off-grid-mobile",
-      "displayName": "off grid mobile",
-      "description": "The Swiss Army Knife of Offline AI. Chat, Speak, and Generate Images - Privacy First, Zero Internet. Download an LLM and use it on your mobile device. No data ever leaves your phone. Supports text-to-text, vision, text-to-image",
-      "summary": "The Problem\nMost mobile AI applications are tethered to the internet, which raises serious privacy concerns. If you're tired of your data being sucked into the cloud while you're just trying to chat with a bot or generate an image, you’re not alone. Enter Off Grid, which runs everything locally on your phone. No internet required, no data leaks.\n\nWhat This Does\nOff Grid is like the Swiss Army Knife of offline AI. It combines text generation, image creation, vision AI, and voice transcription all on your device. You can dive into the code with App.tsx as your entry point, while the heavy lifting happens in the android/ directory, where you’ll find the core functionality and native modules.\n\nThe project structure is pretty straightforward. The tests/ folder has 80+ files ensuring that this thing works as intended, which is nice. You can see that DownloadManagerModule.kt in the android/app/src/main/java/ai/offgridmobile/download/ directory manages downloads, allowing you to grab models without needing an internet connection. The build.gradle files in android/ handle the dependencies and build configurations, so you're not left in the dark when it comes to knowing what’s needed to compile.\n\nReal-World Use\nImagine you need to generate an image for a presentation but are out in the wild with no cell service. You fire up Off Grid, input your text prompt, and within seconds, the local model generates a stunning image. You can also attach documents like PDFs for analysis without worrying about sending sensitive data over the internet. The app’s voice input feature uses Whisper for real-time transcription, so you can dictate notes without a hitch.\n\nNow you’re ready to go.\n\nThe Bottom Line\nOff Grid is a solid option if you need a privacy-first AI suite on your mobile device. It’s feature-rich and runs entirely offline, which is great for power users who want control over their data. However, it's probably overkill for casual users who just want a simple chat app. If you're into AI and privacy, though, this is a tool worth checking out.",
-      "url": "https://github.com/moses-y/off-grid-mobile",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "alichherawalla/off-grid-mobile",
-        "url": "https://github.com/alichherawalla/off-grid-mobile",
-        "stars": 596
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 17, 2026",
-      "updatedAt": "February 17, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          ".bundle": 1,
-          "(root)": 11,
-          ".github": 4,
-          ".maestro": 18,
-          "__tests__": 80,
-          "android": 86
-        },
-        "languages": {
-          "JavaScript": 2,
-          "Markdown": 4,
-          "YAML": 23,
-          "TSX": 36,
-          "TypeScript": 42,
-          "JSON": 1,
-          "Kotlin": 9
-        },
-        "frameworks": [
-          "React",
-          "Rails"
-        ],
-        "packageManager": "gradle",
-        "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [
-          "App.tsx"
-        ],
-        "configFiles": [
-          ".eslintrc.js",
-          ".prettierrc.js",
-          "Gemfile",
-          "android/app/build.gradle",
-          "android/build.gradle"
-        ],
-        "dependencies": [
-          "Gemfile",
-          "android/app/build.gradle",
-          "android/build.gradle"
-        ],
-        "testFiles": [
-          ".maestro/E2E_TESTING.md",
-          "__tests__/App.test.tsx",
-          "__tests__/contracts/coreMLDiffusion.contract.test.ts",
-          "__tests__/contracts/iosDownloadManager.contract.test.ts",
-          "__tests__/contracts/llama.rn.test.ts",
-          "__tests__/contracts/llamaContext.contract.test.ts",
-          "__tests__/contracts/localDream.contract.test.ts",
-          "__tests__/contracts/whisper.contract.test.ts",
-          "__tests__/contracts/whisper.rn.test.ts",
-          "__tests__/integration/generation/generationFlow.test.ts",
-          "__tests__/integration/generation/imageGenerationFlow.test.ts",
-          "__tests__/integration/models/activeModelService.test.ts",
-          "__tests__/integration/stores/chatStoreIntegration.test.ts",
-          "__tests__/rntl/components/AnimatedEntry.test.tsx",
-          "__tests__/rntl/components/AnimatedListItem.test.tsx",
-          "__tests__/rntl/components/AnimatedPressable.test.tsx",
-          "__tests__/rntl/components/AppSheet.test.tsx",
-          "__tests__/rntl/components/Card.test.tsx",
-          "__tests__/rntl/components/ChatInput.test.tsx",
-          "__tests__/rntl/components/ChatMessage.test.tsx",
-          "__tests__/rntl/components/CustomAlert.test.tsx",
-          "__tests__/rntl/components/DebugSheet.test.tsx",
-          "__tests__/rntl/components/GenerationSettingsModal.test.tsx",
-          "__tests__/rntl/components/ModelCard.test.tsx",
-          "__tests__/rntl/components/ModelSelectorModal.test.tsx",
-          "__tests__/rntl/components/ProjectSelectorSheet.test.tsx",
-          "__tests__/rntl/components/VoiceRecordButton.test.tsx",
-          "__tests__/rntl/hooks/useFocusTrigger.test.ts",
-          "__tests__/rntl/navigation/AppNavigator.test.tsx",
-          "__tests__/rntl/screens/ChatScreen.test.tsx",
-          "__tests__/rntl/screens/ChatsListScreen.test.tsx",
-          "__tests__/rntl/screens/DeviceInfoScreen.test.tsx",
-          "__tests__/rntl/screens/DownloadManagerScreen.test.tsx",
-          "__tests__/rntl/screens/GalleryScreen.test.tsx",
-          "__tests__/rntl/screens/HomeScreen.test.tsx",
-          "__tests__/rntl/screens/LockScreen.test.tsx",
-          "__tests__/rntl/screens/ModelDownloadScreen.test.tsx",
-          "__tests__/rntl/screens/ModelSettingsScreen.test.tsx",
-          "__tests__/rntl/screens/ModelsScreen.test.tsx",
-          "__tests__/rntl/screens/OnboardingScreen.test.tsx",
-          "__tests__/rntl/screens/PassphraseSetupScreen.test.tsx",
-          "__tests__/rntl/screens/ProjectDetailScreen.test.tsx",
-          "__tests__/rntl/screens/ProjectEditScreen.test.tsx",
-          "__tests__/rntl/screens/ProjectsScreen.test.tsx",
-          "__tests__/rntl/screens/SecuritySettingsScreen.test.tsx",
-          "__tests__/rntl/screens/SettingsScreen.test.tsx",
-          "__tests__/rntl/screens/StorageSettingsScreen.test.tsx",
-          "__tests__/rntl/screens/VoiceSettingsScreen.test.tsx",
-          "__tests__/specs/image-generation.yaml",
-          "__tests__/specs/model-lifecycle.yaml",
-          "__tests__/specs/text-generation.yaml",
-          "__tests__/unit/constants/constants.test.ts",
-          "__tests__/unit/hooks/useAppState.test.ts",
-          "__tests__/unit/hooks/useVoiceRecording.test.ts",
-          "__tests__/unit/hooks/useWhisperTranscription.test.ts",
-          "__tests__/unit/services/authService.test.ts",
-          "__tests__/unit/services/backgroundDownloadService.test.ts",
-          "__tests__/unit/services/coreMLModelBrowser.test.ts",
-          "__tests__/unit/services/documentService.test.ts",
-          "__tests__/unit/services/generationService.test.ts",
-          "__tests__/unit/services/hardware.test.ts",
-          "__tests__/unit/services/huggingFaceModelBrowser.test.ts",
-          "__tests__/unit/services/huggingface.test.ts",
-          "__tests__/unit/services/imageGenerator.test.ts",
-          "__tests__/unit/services/imageModelRecommendation.test.ts",
-          "__tests__/unit/services/intentClassifier.test.ts",
-          "__tests__/unit/services/llm.test.ts",
-          "__tests__/unit/services/localDreamGenerator.test.ts",
-          "__tests__/unit/services/modelManager.test.ts",
-          "__tests__/unit/services/pdfExtractor.test.ts",
-          "__tests__/unit/services/voiceService.test.ts",
-          "__tests__/unit/services/whisperService.test.ts",
-          "__tests__/unit/stores/appStore.test.ts",
-          "__tests__/unit/stores/authStore.test.ts",
-          "__tests__/unit/stores/chatStore.test.ts",
-          "__tests__/unit/stores/projectStore.test.ts",
-          "__tests__/unit/stores/whisperStore.test.ts",
-          "__tests__/unit/utils/coreMLModelUtils.test.ts",
-          "__tests__/unit/utils/messageContent.test.ts",
-          "__tests__/utils/factories.ts",
-          "__tests__/utils/testHelpers.ts"
-        ],
-        "docs": [
-          "LICENSE",
-          "README.md"
-        ],
-        "fileTypes": {
-          ".js": 2,
-          ".md": 4,
-          ".yml": 3,
-          ".yaml": 20,
-          ".tsx": 36,
-          ".ts": 42,
-          ".json": 1,
-          ".gradle": 2,
-          ".keystore": 1,
-          ".pro": 1,
-          ".xml": 11,
-          ".so": 27,
-          ".bundle": 1,
-          ".kt": 9,
-          ".png": 33,
-          ".properties": 1
-        }
-      }
-    },
-    {
       "id": 1159567990,
       "name": "pinchtab",
       "displayName": "pinchtab",
@@ -4888,7 +4942,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 2457
+        "stars": 2459
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4983,7 +5037,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 7421
+        "stars": 7431
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5598,7 +5652,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 61547
+        "stars": 61548
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5674,7 +5728,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 5783
+        "stars": 5784
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5789,7 +5843,7 @@
       "parent": {
         "name": "ruzin/stenoai",
         "url": "https://github.com/ruzin/stenoai",
-        "stars": 378
+        "stars": 379
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5870,7 +5924,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4013
+        "stars": 4014
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6756,7 +6810,7 @@
       "parent": {
         "name": "roboflow/trackers",
         "url": "https://github.com/roboflow/trackers",
-        "stars": 2840
+        "stars": 2843
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7588,7 +7642,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22182
+        "stars": 22183
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -8106,7 +8160,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 15112
+        "stars": 15113
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8573,7 +8627,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 18611
+        "stars": 18619
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8645,7 +8699,7 @@
       "parent": {
         "name": "The-Vibe-Company/companion",
         "url": "https://github.com/The-Vibe-Company/companion",
-        "stars": 2060
+        "stars": 2061
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9066,7 +9120,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 24024
+        "stars": 24023
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9527,7 +9581,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 33567
+        "stars": 33568
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -10481,7 +10535,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 6135
+        "stars": 6141
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -11081,7 +11135,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 23774
+        "stars": 23780
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -11165,7 +11219,7 @@
       "parent": {
         "name": "MiniCodeMonkey/chief",
         "url": "https://github.com/MiniCodeMonkey/chief",
-        "stars": 210
+        "stars": 211
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -11320,7 +11374,7 @@
       "parent": {
         "name": "ComposioHQ/composio",
         "url": "https://github.com/ComposioHQ/composio",
-        "stars": 27136
+        "stars": 27137
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -12115,7 +12169,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 201633
+        "stars": 201634
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -13594,7 +13648,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 16079
+        "stars": 16089
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -14699,7 +14753,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 96720
+        "stars": 96724
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -15146,7 +15200,7 @@
       "parent": {
         "name": "rivo/tview",
         "url": "https://github.com/rivo/tview",
-        "stars": 13595
+        "stars": 13596
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -15256,7 +15310,7 @@
       "parent": {
         "name": "rahulnyk/knowledge_graph",
         "url": "https://github.com/rahulnyk/knowledge_graph",
-        "stars": 2994
+        "stars": 2995
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -15512,7 +15566,7 @@
       "parent": {
         "name": "antirez/voxtral.c",
         "url": "https://github.com/antirez/voxtral.c",
-        "stars": 1396
+        "stars": 1397
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15713,7 +15767,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 7399
+        "stars": 7404
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15897,7 +15951,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1707
+        "stars": 1708
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -17856,7 +17910,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 30440
+        "stars": 30445
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -19894,7 +19948,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 6331
+        "stars": 6333
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -20435,7 +20489,7 @@
       "parent": {
         "name": "droidrun/droidrun",
         "url": "https://github.com/droidrun/droidrun",
-        "stars": 7731
+        "stars": 7732
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -20577,7 +20631,7 @@
       "parent": {
         "name": "clidey/whodb",
         "url": "https://github.com/clidey/whodb",
-        "stars": 4640
+        "stars": 4641
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -20736,7 +20790,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 124694
+        "stars": 124697
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -23597,7 +23651,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 119853
+        "stars": 119941
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -24063,7 +24117,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15648
+        "stars": 15649
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -24211,7 +24265,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 11136
+        "stars": 11137
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -24272,7 +24326,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 20306
+        "stars": 20307
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -24848,7 +24902,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 9086
+        "stars": 9087
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -25719,7 +25773,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7297
+        "stars": 7298
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -25937,7 +25991,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51505
+        "stars": 51504
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -26077,7 +26131,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 22776
+        "stars": 22778
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -26610,7 +26664,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 21827
+        "stars": 21829
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -27227,7 +27281,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39582
+        "stars": 39583
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -28512,14 +28566,122 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182013
+        "stars": 182014
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".config": 3,
+          ".devcontainer": 6,
+          "(root)": 18,
+          ".eslint-plugin-local": 47,
+          ".github": 61,
+          ".vscode": 48,
+          "build": 17
+        },
+        "languages": {
+          "YAML": 26,
+          "Markdown": 39,
+          "JSON": 23,
+          "Shell": 3,
+          "TypeScript": 63,
+          "JavaScript": 1
+        },
+        "frameworks": [
+          "React",
+          "Express",
+          "Docker"
+        ],
+        "packageManager": "npm",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          ".eslint-plugin-local/index.ts"
+        ],
+        "configFiles": [
+          ".devcontainer/Dockerfile",
+          ".eslint-plugin-local/package.json",
+          ".eslint-plugin-local/tsconfig.json",
+          ".vscode/extensions/vscode-selfhost-import-aid/package.json",
+          ".vscode/extensions/vscode-selfhost-import-aid/tsconfig.json",
+          ".vscode/extensions/vscode-selfhost-test-provider/package.json",
+          ".vscode/extensions/vscode-selfhost-test-provider/tsconfig.json"
+        ],
+        "dependencies": [
+          ".eslint-plugin-local/package.json",
+          ".vscode/extensions/vscode-selfhost-import-aid/package-lock.json",
+          ".vscode/extensions/vscode-selfhost-import-aid/package.json",
+          ".vscode/extensions/vscode-selfhost-test-provider/package-lock.json",
+          ".vscode/extensions/vscode-selfhost-test-provider/package.json"
+        ],
+        "testFiles": [
+          ".eslint-plugin-local/code-ensure-no-disposables-leak-in-test.ts",
+          ".eslint-plugin-local/code-no-test-async-suite.ts",
+          ".eslint-plugin-local/code-no-test-only.ts",
+          ".eslint-plugin-local/tests/code-no-observable-get-in-reactive-context-test.ts",
+          ".eslint-plugin-local/tests/code-no-reader-after-await-test.ts",
+          ".github/workflows/pr-darwin-test.yml",
+          ".github/workflows/pr-linux-cli-test.yml",
+          ".github/workflows/pr-linux-test.yml",
+          ".github/workflows/pr-win32-test.yml",
+          ".vscode-test.js",
+          ".vscode/extensions/vscode-selfhost-test-provider/.vscode/launch.json",
+          ".vscode/extensions/vscode-selfhost-test-provider/.vscode/settings.json",
+          ".vscode/extensions/vscode-selfhost-test-provider/icon.png",
+          ".vscode/extensions/vscode-selfhost-test-provider/package-lock.json",
+          ".vscode/extensions/vscode-selfhost-test-provider/package.json",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/coverageProvider.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/debounce.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/extension.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/failingDeepStrictEqualAssertFixer.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/failureTracker.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/importGraph.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/memoize.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/metadata.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/snapshot.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/sourceUtils.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/stackTraceParser.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/streamSplitter.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/testOutputScanner.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/testTree.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/v8CoverageWrangling.test.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/v8CoverageWrangling.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/src/vscodeTestRunner.ts",
+          ".vscode/extensions/vscode-selfhost-test-provider/tsconfig.json"
+        ],
+        "docs": [
+          ".devcontainer/README.md",
+          ".eslint-plugin-local/README.md",
+          ".vscode/cglicenses.schema.json",
+          "CONTRIBUTING.md",
+          "LICENSE.txt",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".yml": 26,
+          ".winget": 1,
+          ".md": 39,
+          ".json": 23,
+          ".sh": 3,
+          ".ts": 63,
+          ".svg": 6,
+          ".js": 1,
+          ".png": 1,
+          ".github-issues": 10,
+          ".code-search": 2,
+          ".code-snippets": 1,
+          ".txt": 2,
+          ".darwin": 1,
+          ".linux": 1,
+          ".win32": 1
+        }
+      }
     },
     {
       "id": 1135128135,
@@ -28535,14 +28697,125 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 11213
+        "stars": 11214
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 164,
+        "directories": {
+          ".github": 1,
+          "(root)": 10,
+          ".husky": 1,
+          "apps": 78,
+          "examples": 29,
+          "packages": 45
+        },
+        "languages": {
+          "YAML": 3,
+          "Markdown": 6,
+          "TypeScript": 26,
+          "TSX": 89,
+          "CSS": 2,
+          "JSON": 18,
+          "JavaScript": 7
+        },
+        "frameworks": [
+          "React",
+          "Next.js"
+        ],
+        "packageManager": "pnpm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "apps/web/components/demo/index.ts",
+          "examples/dashboard/components/ui/index.ts",
+          "packages/core/src/index.ts",
+          "packages/react/src/index.ts"
+        ],
+        "configFiles": [
+          "apps/web/.env.example",
+          "apps/web/next.config.js",
+          "apps/web/package.json",
+          "apps/web/tsconfig.json",
+          "examples/dashboard/.env.example",
+          "examples/dashboard/next.config.js",
+          "examples/dashboard/package.json",
+          "examples/dashboard/tsconfig.json",
+          "package.json",
+          "packages/core/package.json",
+          "packages/core/tsconfig.json",
+          "packages/eslint-config/package.json",
+          "packages/react/package.json",
+          "packages/react/tsconfig.json",
+          "packages/typescript-config/package.json",
+          "packages/ui/package.json",
+          "packages/ui/tsconfig.json"
+        ],
+        "dependencies": [
+          "apps/web/package.json",
+          "examples/dashboard/package.json",
+          "package.json",
+          "packages/core/package.json",
+          "packages/eslint-config/package.json",
+          "packages/react/package.json",
+          "packages/typescript-config/package.json",
+          "packages/ui/package.json"
+        ],
+        "testFiles": [
+          "packages/core/src/actions.test.ts",
+          "packages/core/src/catalog.test.ts",
+          "packages/core/src/types.test.ts",
+          "packages/core/src/validation.test.ts",
+          "packages/core/src/visibility.test.ts",
+          "packages/react/src/contexts/data.test.tsx",
+          "packages/react/src/contexts/visibility.test.tsx",
+          "packages/react/src/hooks.test.ts",
+          "packages/react/src/renderer.test.tsx",
+          "vitest.config.ts"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "apps/web/README.md",
+          "apps/web/app/docs/actions/page.tsx",
+          "apps/web/app/docs/ai-sdk/page.tsx",
+          "apps/web/app/docs/api/core/page.tsx",
+          "apps/web/app/docs/api/react/page.tsx",
+          "apps/web/app/docs/catalog/page.tsx",
+          "apps/web/app/docs/components/page.tsx",
+          "apps/web/app/docs/data-binding/page.tsx",
+          "apps/web/app/docs/installation/page.tsx",
+          "apps/web/app/docs/layout.tsx",
+          "apps/web/app/docs/page.tsx",
+          "apps/web/app/docs/quick-start/page.tsx",
+          "apps/web/app/docs/streaming/page.tsx",
+          "apps/web/app/docs/validation/page.tsx",
+          "apps/web/app/docs/visibility/page.tsx",
+          "packages/core/README.md",
+          "packages/eslint-config/README.md",
+          "packages/react/README.md"
+        ],
+        "fileTypes": {
+          ".yml": 1,
+          ".md": 6,
+          ".example": 2,
+          ".ts": 26,
+          ".tsx": 89,
+          ".ico": 1,
+          ".woff": 2,
+          ".css": 2,
+          ".json": 18,
+          ".js": 7,
+          ".mjs": 2,
+          ".ttf": 1,
+          ".yaml": 2
+        }
+      }
     },
     {
       "id": 1135124688,
@@ -28565,7 +28838,90 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".github": 6,
+          "(root)": 7,
+          ".vscode": 1,
+          "assets": 3,
+          "docs": 22,
+          "examples": 6,
+          "goneonize": 72,
+          "neonize": 83
+        },
+        "languages": {
+          "YAML": 8,
+          "JSON": 1,
+          "Markdown": 23,
+          "Shell": 1,
+          "Python": 56,
+          "Protocol Buffers": 56,
+          "Go": 9,
+          "C/C++ Header": 2,
+          "C": 1
+        },
+        "frameworks": [],
+        "packageManager": "go modules",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "goneonize/main.go"
+        ],
+        "configFiles": [
+          "goneonize/go.mod"
+        ],
+        "dependencies": [
+          "goneonize/go.mod"
+        ],
+        "testFiles": [
+          "docs/development/testing.md"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/.gitignore",
+          "docs/README.md",
+          "docs/api-reference/async-client.md",
+          "docs/api-reference/client.md",
+          "docs/api-reference/index.md",
+          "docs/async/index.md",
+          "docs/changelog.md",
+          "docs/development/building.md",
+          "docs/development/contributing.md",
+          "docs/development/index.md",
+          "docs/development/testing.md",
+          "docs/examples/index.md",
+          "docs/faq.md",
+          "docs/getting-started/authentication.md",
+          "docs/getting-started/index.md",
+          "docs/getting-started/installation.md",
+          "docs/getting-started/quickstart.md",
+          "docs/index.md",
+          "docs/user-guide/client-configuration.md",
+          "docs/user-guide/index.md",
+          "docs/user-guide/receiving-messages.md",
+          "docs/user-guide/sending-messages.md"
+        ],
+        "fileTypes": {
+          ".yml": 6,
+          ".yaml": 2,
+          ".json": 1,
+          ".md": 23,
+          ".png": 2,
+          ".jpg": 1,
+          ".sh": 1,
+          ".py": 56,
+          ".proto": 56,
+          ".go": 9,
+          ".mod": 1,
+          ".sum": 1,
+          ".h": 2,
+          ".c": 1,
+          ".pyi": 34
+        }
+      }
     },
     {
       "id": 1134830400,
@@ -28588,7 +28944,114 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 14,
+          ".github": 12,
+          ".vscode": 5,
+          "backend": 93,
+          "build": 4,
+          "config": 2,
+          "docs": 16,
+          "electron": 15,
+          "package": 39
+        },
+        "languages": {
+          "YAML": 11,
+          "Markdown": 19,
+          "JSON": 12,
+          "Python": 81,
+          "TOML": 1,
+          "TypeScript": 15,
+          "HTML": 1,
+          "JavaScript": 18
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "backend/cli.py",
+          "backend/main.py",
+          "electron/main/index.ts",
+          "electron/preload/index.ts",
+          "index.html"
+        ],
+        "configFiles": [
+          "backend/pyproject.toml",
+          "package.json"
+        ],
+        "dependencies": [
+          "backend/pyproject.toml",
+          "package.json"
+        ],
+        "testFiles": [
+          "backend/tests/conftest.py",
+          "backend/tests/unit/controller/test_chat_controller.py",
+          "backend/tests/unit/controller/test_model_controller.py",
+          "backend/tests/unit/controller/test_task_controller.py",
+          "backend/tests/unit/controller/test_tool_controller.py",
+          "backend/tests/unit/service/test_chat_service.py",
+          "backend/tests/unit/service/test_task.py",
+          "backend/tests/unit/utils/test_agent.py",
+          "backend/tests/unit/utils/test_single_agent_worker.py",
+          "backend/tests/unit/utils/test_terminal_toolkit.py",
+          "backend/tests/unit/utils/test_workforce.py"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "README_CN.md",
+          "backend/README.md",
+          "docs/core/concepts.md",
+          "docs/core/models/gemini.md",
+          "docs/core/models/local-model.md",
+          "docs/core/tools.md",
+          "docs/core/workers.md",
+          "docs/core/workforce.md",
+          "docs/docs.json",
+          "docs/get_started/installation.md",
+          "docs/get_started/quick_start.md",
+          "docs/get_started/welcome.md",
+          "docs/images/gemini_1.png",
+          "docs/images/gemini_2.png",
+          "docs/images/gemini_3.png",
+          "docs/images/gemini_4.png",
+          "docs/troubleshooting/bug.md",
+          "docs/troubleshooting/support.md",
+          "package/@stackframe/react/CHANGELOG.md",
+          "package/@stackframe/react/LICENSE",
+          "package/@stackframe/react/README.md"
+        ],
+        "fileTypes": {
+          ".development": 1,
+          ".yml": 11,
+          ".md": 19,
+          ".mjs": 1,
+          ".json": 12,
+          ".py": 81,
+          ".cfg": 1,
+          ".po": 2,
+          ".pot": 1,
+          ".toml": 1,
+          ".lock": 1,
+          ".icns": 1,
+          ".ico": 1,
+          ".png": 5,
+          ".nsh": 1,
+          ".cjs": 1,
+          ".ts": 15,
+          ".plist": 1,
+          ".html": 1,
+          ".js": 18,
+          ".map": 18
+        }
+      }
     },
     {
       "id": 1134819106,
@@ -28611,7 +29074,131 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 5,
+          "client": 61,
+          "example": 3,
+          "server-source-code": 131
+        },
+        "languages": {
+          "Markdown": 7,
+          "Java": 9,
+          "HTML": 3,
+          "TOML": 1,
+          "YAML": 2,
+          "Swift": 1,
+          "C++": 12
+        },
+        "frameworks": [],
+        "packageManager": "gradle",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "Travis CI",
+        "entryPoints": [
+          "server-source-code/libdatachannel/deps/json/tests/abi/main.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_add_subdirectory/project/main.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_fetch_content/project/main.cpp"
+        ],
+        "configFiles": [
+          "client/android/app/build.gradle",
+          "client/android/build.gradle",
+          "server-source-code/libdatachannel/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/abi/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/abi/config/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/abi/diag/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/abi/inline_ns/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/benchmarks/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_add_subdirectory/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_add_subdirectory/project/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_fetch_content/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_fetch_content/project/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_fetch_content2/CMakeLists.txt"
+        ],
+        "dependencies": [
+          "client/android/app/build.gradle",
+          "client/android/build.gradle"
+        ],
+        "testFiles": [
+          "client/android/app/src/androidTest/java/com/example/lemonchat/ExampleInstrumentedTest.java",
+          "client/android/app/src/test/java/com/example/lemonchat/ExampleUnitTest.java",
+          "example/test1.PNG",
+          "server-source-code/libdatachannel/deps/json/cmake/download_test_data.cmake",
+          "server-source-code/libdatachannel/deps/json/cmake/test.cmake",
+          "server-source-code/libdatachannel/deps/json/tests/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/abi/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/abi/config/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/abi/config/config.hpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/config/custom.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/config/default.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/config/noversion.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/diag/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/abi/diag/diag.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/diag/diag.hpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/diag/diag_off.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/diag/diag_on.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/include/nlohmann/json_v3_10_5.hpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/inline_ns/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/abi/inline_ns/use_current.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/inline_ns/use_v3_10_5.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/abi/main.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/benchmarks/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/benchmarks/src/benchmarks.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_add_subdirectory/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_add_subdirectory/project/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_add_subdirectory/project/main.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_fetch_content/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_fetch_content/project/CMakeLists.txt",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_fetch_content/project/main.cpp",
+          "server-source-code/libdatachannel/deps/json/tests/cmake_fetch_content2/CMakeLists.txt"
+        ],
+        "docs": [
+          "README.md",
+          "client/android/README.md.txt",
+          "server-source-code/libdatachannel/LICENSE",
+          "server-source-code/libdatachannel/README.md",
+          "server-source-code/libdatachannel/deps/json/ChangeLog.md",
+          "server-source-code/libdatachannel/deps/json/LICENSE.MIT",
+          "server-source-code/libdatachannel/deps/json/LICENSES/Apache-2.0.txt",
+          "server-source-code/libdatachannel/deps/json/LICENSES/BSD-3-Clause.txt",
+          "server-source-code/libdatachannel/deps/json/LICENSES/GPL-3.0-only.txt",
+          "server-source-code/libdatachannel/deps/json/LICENSES/MIT.txt",
+          "server-source-code/libdatachannel/deps/json/README.md"
+        ],
+        "fileTypes": {
+          ".md": 7,
+          ".txt": 21,
+          ".gradle": 3,
+          ".pro": 1,
+          ".java": 9,
+          ".xml": 21,
+          ".html": 3,
+          ".png": 4,
+          ".webp": 15,
+          ".properties": 3,
+          ".toml": 1,
+          ".jar": 1,
+          ".bat": 1,
+          ".mkv": 1,
+          ".zip": 1,
+          ".yml": 2,
+          ".cmake": 20,
+          ".in": 5,
+          ".jinja2": 2,
+          ".bazel": 2,
+          ".cff": 1,
+          ".mit": 1,
+          ".swift": 1,
+          ".hpp": 48,
+          ".build": 1,
+          ".natvis": 1,
+          ".pc": 1,
+          ".cpp": 12
+        }
+      }
     },
     {
       "id": 1134804505,
@@ -28634,7 +29221,48 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 170,
+        "directories": {
+          "(root)": 1,
+          "my_salon": 169
+        },
+        "languages": {
+          "Markdown": 1,
+          "SQL": 1,
+          "PHP": 58,
+          "CSS": 10,
+          "JavaScript": 20
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".sql": 1,
+          ".php": 58,
+          ".css": 10,
+          ".otf": 2,
+          ".eot": 1,
+          ".svg": 3,
+          ".ttf": 1,
+          ".woff": 4,
+          ".woff2": 3,
+          ".png": 24,
+          ".js": 20,
+          ".txt": 2,
+          ".jpg": 38
+        }
+      }
     },
     {
       "id": 1134802136,
@@ -28657,7 +29285,104 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 11,
+          "app": 22,
+          "public": 7,
+          "resources": 15,
+          "routes": 4,
+          "storage": 8,
+          "tests": 4,
+          "vendor": 129
+        },
+        "languages": {
+          "PHP": 136,
+          "JSON": 11,
+          "CSS": 1,
+          "JavaScript": 3,
+          "Markdown": 11,
+          "Vue": 1,
+          "SCSS": 2
+        },
+        "frameworks": [
+          "React",
+          "Vue",
+          "Express",
+          "Laravel"
+        ],
+        "packageManager": "composer",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "public/js/app.js",
+          "resources/assets/js/app.js"
+        ],
+        "configFiles": [
+          ".env.example",
+          "package.json"
+        ],
+        "dependencies": [
+          "composer.json",
+          "package.json",
+          "vendor/dnoegel/php-xdg-base-dir/composer.json",
+          "vendor/doctrine/inflector/composer.json",
+          "vendor/doctrine/instantiator/composer.json",
+          "vendor/doctrine/lexer/composer.json",
+          "vendor/egulias/email-validator/composer.json",
+          "vendor/erusev/parsedown/composer.json",
+          "vendor/fideloper/proxy/composer.json",
+          "vendor/filp/whoops/composer.json"
+        ],
+        "testFiles": [
+          "storage/framework/testing/.gitignore",
+          "tests/CreatesApplication.php",
+          "tests/Feature/ExampleTest.php",
+          "tests/TestCase.php",
+          "tests/Unit/ExampleTest.php",
+          "vendor/dnoegel/php-xdg-base-dir/tests/XdgTest.php",
+          "vendor/filp/whoops/src/Whoops/Exception/Inspector.php"
+        ],
+        "docs": [
+          "readme.md",
+          "vendor/composer/LICENSE",
+          "vendor/dnoegel/php-xdg-base-dir/LICENSE",
+          "vendor/dnoegel/php-xdg-base-dir/README.md",
+          "vendor/doctrine/inflector/LICENSE",
+          "vendor/doctrine/inflector/README.md",
+          "vendor/doctrine/instantiator/CONTRIBUTING.md",
+          "vendor/doctrine/instantiator/LICENSE",
+          "vendor/doctrine/instantiator/README.md",
+          "vendor/doctrine/lexer/LICENSE",
+          "vendor/doctrine/lexer/README.md",
+          "vendor/egulias/email-validator/LICENSE",
+          "vendor/egulias/email-validator/README.md",
+          "vendor/erusev/parsedown/LICENSE.txt",
+          "vendor/erusev/parsedown/README.md",
+          "vendor/fideloper/proxy/LICENSE.md",
+          "vendor/filp/whoops/CHANGELOG.md",
+          "vendor/filp/whoops/LICENSE.md"
+        ],
+        "fileTypes": {
+          ".example": 1,
+          ".php": 136,
+          ".json": 11,
+          ".lock": 2,
+          ".xml": 1,
+          ".css": 1,
+          ".ico": 1,
+          ".js": 3,
+          ".txt": 2,
+          ".config": 1,
+          ".md": 11,
+          ".vue": 1,
+          ".scss": 2,
+          ".bat": 3,
+          ".dist": 2
+        }
+      }
     },
     {
       "id": 1134801873,
@@ -28680,7 +29405,100 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".devcontainer": 3,
+          "(root)": 17,
+          "app": 72,
+          "bootstrap": 2,
+          "config": 18,
+          "database": 25,
+          "public": 27,
+          "readme-assets": 22,
+          "resources": 14
+        },
+        "languages": {
+          "JSON": 6,
+          "YAML": 2,
+          "Markdown": 3,
+          "PHP": 124,
+          "Shell": 1,
+          "JavaScript": 4,
+          "CSS": 3
+        },
+        "frameworks": [
+          "React",
+          "Express",
+          "Laravel",
+          "Docker"
+        ],
+        "packageManager": "npm",
+        "hasDocker": true,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "public/vendor/telescope/app.js",
+          "resources/js/app.js"
+        ],
+        "configFiles": [
+          ".devcontainer/Dockerfile",
+          ".devcontainer/docker-compose.yml",
+          ".env.example",
+          "Dockerfile",
+          "docker-compose.yml",
+          "package.json"
+        ],
+        "dependencies": [
+          "composer.json",
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "README.md",
+          "readme-assets/screenshots/admin-dash-analytics.png",
+          "readme-assets/screenshots/admin-location-day-schedule.png",
+          "readme-assets/screenshots/analytics_recording.png",
+          "readme-assets/screenshots/appointment_confirm_email_queue.png",
+          "readme-assets/screenshots/cart.png",
+          "readme-assets/screenshots/customer-analytics.png",
+          "readme-assets/screenshots/customer-details-analytics.png",
+          "readme-assets/screenshots/dashboard.png",
+          "readme-assets/screenshots/homepage.png",
+          "readme-assets/screenshots/locations-manage.png",
+          "readme-assets/screenshots/logo-readme.png",
+          "readme-assets/screenshots/manage-appointment-admin-view.png",
+          "readme-assets/screenshots/manage-deals.png",
+          "readme-assets/screenshots/manage-services.png",
+          "readme-assets/screenshots/manage-users.png",
+          "readme-assets/screenshots/new-service-email.png",
+          "readme-assets/screenshots/new_service_promo_queue.png",
+          "readme-assets/screenshots/queued_mail_appointment_confirm_email.png",
+          "readme-assets/screenshots/service-analytics.png",
+          "readme-assets/screenshots/services-page.png",
+          "readme-assets/screenshots/view-a-service.png",
+          "readme-assets/screenshots/view-appointment-customer.png"
+        ],
+        "fileTypes": {
+          ".json": 6,
+          ".yml": 2,
+          ".example": 1,
+          ".md": 3,
+          ".pdf": 1,
+          ".php": 124,
+          ".lock": 1,
+          ".sqlite": 1,
+          ".sh": 1,
+          ".xml": 1,
+          ".js": 4,
+          ".ico": 2,
+          ".jpg": 14,
+          ".png": 26,
+          ".txt": 1,
+          ".css": 3
+        }
+      }
     },
     {
       "id": 1134801521,
@@ -28703,7 +29521,94 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "AI Sakincare Recommandation": 45,
+          "Admin Panel": 155
+        },
+        "languages": {
+          "JSON": 10,
+          "Python": 3,
+          "Markdown": 7,
+          "HTML": 1,
+          "CSS": 6,
+          "JavaScript": 20,
+          "TypeScript": 98
+        },
+        "frameworks": [
+          "React",
+          "Flask",
+          "Express"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "AI Sakincare Recommandation/mlmodel_AWS_Lambda/app.py",
+          "AI Sakincare Recommandation/mlmodel_flask/app.py",
+          "AI Sakincare Recommandation/public/index.html",
+          "AI Sakincare Recommandation/server.js",
+          "AI Sakincare Recommandation/src/App.js",
+          "AI Sakincare Recommandation/src/index.js",
+          "Admin Panel/index.js",
+          "Admin Panel/node_modules/@fast-csv/format/build/src/formatter/index.js",
+          "Admin Panel/node_modules/@fast-csv/format/build/src/index.js"
+        ],
+        "configFiles": [
+          "AI Sakincare Recommandation/mlmodel_AWS_Lambda/requirements.txt",
+          "AI Sakincare Recommandation/mlmodel_flask/requirements.txt",
+          "AI Sakincare Recommandation/package.json",
+          "Admin Panel/node_modules/@fast-csv/format/node_modules/@types/node/package.json",
+          "Admin Panel/node_modules/@fast-csv/format/package.json"
+        ],
+        "dependencies": [
+          "AI Sakincare Recommandation/mlmodel_AWS_Lambda/requirements.txt",
+          "AI Sakincare Recommandation/mlmodel_flask/requirements.txt",
+          "AI Sakincare Recommandation/package-lock.json",
+          "AI Sakincare Recommandation/package.json",
+          "Admin Panel/node_modules/@fast-csv/format/node_modules/@types/node/package.json",
+          "Admin Panel/node_modules/@fast-csv/format/package.json"
+        ],
+        "testFiles": [
+          "AI Sakincare Recommandation/src/App.test.js",
+          "AI Sakincare Recommandation/src/setupTests.js",
+          "Admin Panel/node_modules/@fast-csv/format/node_modules/@types/node/inspector.d.ts",
+          "Admin Panel/node_modules/@fast-csv/format/node_modules/@types/node/ts4.8/inspector.d.ts"
+        ],
+        "docs": [
+          "Admin Panel/node_modules/@fast-csv/format/CHANGELOG.md",
+          "Admin Panel/node_modules/@fast-csv/format/LICENSE",
+          "Admin Panel/node_modules/@fast-csv/format/README.md",
+          "Admin Panel/node_modules/@fast-csv/format/node_modules/@types/node/LICENSE",
+          "Admin Panel/node_modules/@fast-csv/format/node_modules/@types/node/README.md",
+          "Admin Panel/node_modules/@fast-csv/parse/CHANGELOG.md",
+          "Admin Panel/node_modules/@fast-csv/parse/LICENSE",
+          "Admin Panel/node_modules/@fast-csv/parse/README.md"
+        ],
+        "fileTypes": {
+          ".json": 10,
+          ".py": 3,
+          ".pkl": 2,
+          ".md": 7,
+          ".txt": 3,
+          ".ipynb": 1,
+          ".ico": 1,
+          ".png": 4,
+          ".html": 1,
+          ".css": 6,
+          ".js": 20,
+          ".svg": 1,
+          ".jpg": 2,
+          ".jpeg": 2,
+          ".xlsx": 1,
+          ".cmd": 8,
+          ".ps1": 8,
+          ".ts": 98,
+          ".map": 9
+        }
+      }
     },
     {
       "id": 1134801264,
@@ -28726,7 +29631,71 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 146,
+        "directories": {
+          "(root)": 9,
+          "app": 52,
+          "components": 43,
+          "lib": 3,
+          "prisma": 25,
+          "public": 13,
+          "types": 1
+        },
+        "languages": {
+          "Markdown": 1,
+          "CSS": 2,
+          "TypeScript": 33,
+          "TSX": 69,
+          "JSON": 3,
+          "SQL": 18,
+          "TOML": 1
+        },
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Tailwind"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [
+          ".env.example",
+          "next.config.mjs",
+          "package.json",
+          "tailwind.config.ts",
+          "tsconfig.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          "components/Dashboard/DeleteStylist.tsx",
+          "prisma/seeds/test.ts"
+        ],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".example": 1,
+          ".md": 1,
+          ".css": 2,
+          ".ts": 33,
+          ".tsx": 69,
+          ".ico": 1,
+          ".mjs": 2,
+          ".json": 3,
+          ".sql": 18,
+          ".toml": 1,
+          ".prisma": 1,
+          ".jpg": 9,
+          ".svg": 3,
+          ".png": 1
+        }
+      }
     },
     {
       "id": 1134797367,
@@ -28749,7 +29718,53 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 26,
+        "directories": {
+          "(root)": 10,
+          "data": 2,
+          "docs": 1,
+          "src": 13
+        },
+        "languages": {
+          "Markdown": 1,
+          "TOML": 2,
+          "HTML": 2,
+          "Python": 14
+        },
+        "frameworks": [],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "docs/index.html",
+          "src/knowledge_graph/main.py"
+        ],
+        "configFiles": [
+          "pyproject.toml",
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "pyproject.toml",
+          "requirements.txt"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/index.html"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".toml": 2,
+          ".png": 1,
+          ".txt": 2,
+          ".html": 2,
+          ".py": 14,
+          ".lock": 1
+        }
+      }
     },
     {
       "id": 1134792760,
@@ -28772,7 +29787,73 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".github": 14,
+          "(root)": 4,
+          ".vscode": 2,
+          "apps": 180
+        },
+        "languages": {
+          "YAML": 15,
+          "JSON": 3,
+          "Markdown": 6,
+          "TOML": 1,
+          "TypeScript": 170
+        },
+        "frameworks": [
+          "React",
+          "Docker"
+        ],
+        "packageManager": null,
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "apps/api/src/ai/agents/main.ts",
+          "apps/api/src/index.ts",
+          "apps/api/src/rest/middleware/index.ts",
+          "apps/api/src/rest/routers/apps/fortnox/index.ts",
+          "apps/api/src/rest/routers/apps/gmail/index.ts",
+          "apps/api/src/rest/routers/apps/index.ts",
+          "apps/api/src/rest/routers/apps/outlook/index.ts",
+          "apps/api/src/rest/routers/apps/quickbooks/index.ts",
+          "apps/api/src/rest/routers/apps/slack/index.ts",
+          "apps/api/src/rest/routers/apps/xero/index.ts",
+          "apps/api/src/rest/routers/files/index.ts",
+          "apps/api/src/rest/routers/index.ts",
+          "apps/api/src/rest/routers/webhooks/inbox/index.ts",
+          "apps/api/src/rest/routers/webhooks/index.ts",
+          "apps/api/src/rest/routers/webhooks/polar/index.ts",
+          "apps/api/src/rest/routers/webhooks/stripe/index.ts",
+          "apps/api/src/rest/routers/webhooks/whatsapp/index.ts"
+        ],
+        "configFiles": [
+          "apps/api/Dockerfile",
+          "apps/api/package.json"
+        ],
+        "dependencies": [
+          "apps/api/package.json"
+        ],
+        "testFiles": [
+          "apps/api/src/ai/artifacts/cash-flow-stress-test.ts",
+          "apps/api/src/ai/tools/get-cash-flow-stress-test.ts"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "apps/api/README.md"
+        ],
+        "fileTypes": {
+          ".yaml": 6,
+          ".yml": 9,
+          ".json": 3,
+          ".md": 6,
+          ".toml": 1,
+          ".ts": 170
+        }
+      }
     },
     {
       "id": 1134792360,
@@ -28788,14 +29869,211 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16587
+        "stars": 16588
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".github": 3,
+          "(root)": 5,
+          "apps": 192
+        },
+        "languages": {
+          "YAML": 3,
+          "Markdown": 5,
+          "TypeScript": 22,
+          "CSS": 3,
+          "TSX": 4,
+          "HTML": 2,
+          "JSON": 3,
+          "Python": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "apps/browser-extension/entrypoints/content/index.ts",
+          "apps/browser-extension/entrypoints/popup/App.tsx",
+          "apps/browser-extension/entrypoints/popup/index.html",
+          "apps/browser-extension/entrypoints/welcome/index.html"
+        ],
+        "configFiles": [
+          "apps/browser-extension/.env.example",
+          "apps/browser-extension/package.json",
+          "apps/browser-extension/tsconfig.json"
+        ],
+        "dependencies": [
+          "apps/browser-extension/package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "apps/browser-extension/README.md",
+          "apps/docs/.cursor/rules/docs.mdc",
+          "apps/docs/.gitignore",
+          "apps/docs/README.md",
+          "apps/docs/add-memories/examples/basic.mdx",
+          "apps/docs/add-memories/examples/file-upload.mdx",
+          "apps/docs/add-memories/overview.mdx",
+          "apps/docs/add-memories/parameters.mdx",
+          "apps/docs/ai-sdk/examples.mdx",
+          "apps/docs/ai-sdk/infinite-chat.mdx",
+          "apps/docs/ai-sdk/memory-tools.mdx",
+          "apps/docs/ai-sdk/npm.mdx",
+          "apps/docs/ai-sdk/overview.mdx",
+          "apps/docs/ai-sdk/user-profiles.mdx",
+          "apps/docs/analytics.mdx",
+          "apps/docs/changelog/developer-platform.mdx",
+          "apps/docs/changelog/overview.mdx",
+          "apps/docs/connectors/github.mdx",
+          "apps/docs/connectors/google-drive.mdx",
+          "apps/docs/connectors/notion.mdx",
+          "apps/docs/connectors/onedrive.mdx",
+          "apps/docs/connectors/overview.mdx",
+          "apps/docs/connectors/s3.mdx",
+          "apps/docs/connectors/troubleshooting.mdx",
+          "apps/docs/connectors/web-crawler.mdx",
+          "apps/docs/cookbook/ai-sdk-integration.mdx",
+          "apps/docs/cookbook/chat-with-gdrive.mdx",
+          "apps/docs/cookbook/customer-support.mdx",
+          "apps/docs/cookbook/document-qa.mdx",
+          "apps/docs/cookbook/inf-chat-blog.mdx",
+          "apps/docs/cookbook/overview.mdx",
+          "apps/docs/cookbook/perplexity-supermemory.mdx",
+          "apps/docs/cookbook/personal-assistant.mdx",
+          "apps/docs/deployment/self-hosting.mdx",
+          "apps/docs/docs.json",
+          "apps/docs/favicon.png",
+          "apps/docs/how-it-works.mdx",
+          "apps/docs/images/232.png",
+          "apps/docs/images/Screenshot 2025-06-19 at 3.50.20 PM.png",
+          "apps/docs/images/Screenshot 2025-07-05 at 7.16.18 PM (2).png",
+          "apps/docs/images/Screenshot 2025-07-05 at 7.16.18 PM (3).png",
+          "apps/docs/images/Screenshot 2025-07-05 at 7.16.18 PM.png",
+          "apps/docs/images/Screenshot 2025-07-05 at 7.16.22 PM (2).png",
+          "apps/docs/images/Screenshot 2025-07-05 at 7.16.22 PM (3).png",
+          "apps/docs/images/Screenshot 2025-07-05 at 7.16.22 PM.png",
+          "apps/docs/images/add-gmail-node-zapier.png",
+          "apps/docs/images/bearer-auth-add-n8n.png",
+          "apps/docs/images/connectors-flow.png",
+          "apps/docs/images/core-http-req.png",
+          "apps/docs/images/create-api.png",
+          "apps/docs/images/dev-platform-api-keys.png",
+          "apps/docs/images/dev-platform-copy-key.png",
+          "apps/docs/images/dev-platform-create-key.png",
+          "apps/docs/images/dev-platform-login.png",
+          "apps/docs/images/doc-to-memory-process.png",
+          "apps/docs/images/gmail-content.png",
+          "apps/docs/images/gmail-trigger.png",
+          "apps/docs/images/graph-view.png",
+          "apps/docs/images/hero-dark.svg",
+          "apps/docs/images/hero-light.svg",
+          "apps/docs/images/infinite-context.png",
+          "apps/docs/images/make-zap.png",
+          "apps/docs/images/map-content-to-gmail.png",
+          "apps/docs/images/memories-inferred.png",
+          "apps/docs/images/memory-graph.png",
+          "apps/docs/images/opts/Connectors.png",
+          "apps/docs/images/opts/Memory_API.png",
+          "apps/docs/images/opts/Model_Enhancer.png",
+          "apps/docs/images/opts/Supermemory_MCP.png",
+          "apps/docs/images/overview-image.png",
+          "apps/docs/images/pipeline.png",
+          "apps/docs/images/process.png",
+          "apps/docs/images/processing.png",
+          "apps/docs/images/query-rewriting.png",
+          "apps/docs/images/rerank.png",
+          "apps/docs/images/sm-header.png",
+          "apps/docs/images/static-dynamic-profile.png",
+          "apps/docs/images/transparent-proxy.png",
+          "apps/docs/images/zapier-output.png",
+          "apps/docs/intro.mdx",
+          "apps/docs/introduction.mdx",
+          "apps/docs/list-memories/examples/basic.mdx",
+          "apps/docs/list-memories/examples/filtering.mdx",
+          "apps/docs/list-memories/examples/monitoring.mdx",
+          "apps/docs/list-memories/examples/pagination.mdx",
+          "apps/docs/list-memories/overview.mdx",
+          "apps/docs/logo/dark.svg",
+          "apps/docs/logo/light.svg",
+          "apps/docs/memory-api/connectors/advanced/bring-your-own-key.mdx",
+          "apps/docs/memory-api/connectors/creating-connection.mdx",
+          "apps/docs/memory-api/connectors/google-drive.mdx",
+          "apps/docs/memory-api/connectors/managing-resources.mdx",
+          "apps/docs/memory-api/connectors/overview.mdx",
+          "apps/docs/memory-api/creation/adding-memories.mdx",
+          "apps/docs/memory-api/creation/status.mdx",
+          "apps/docs/memory-api/features/auto-multi-modal.mdx",
+          "apps/docs/memory-api/features/content-cleaner.mdx",
+          "apps/docs/memory-api/features/filtering.mdx",
+          "apps/docs/memory-api/features/query-rewriting.mdx",
+          "apps/docs/memory-api/features/reranking.mdx",
+          "apps/docs/memory-api/ingesting.mdx",
+          "apps/docs/memory-api/introduction.mdx",
+          "apps/docs/memory-api/overview.mdx",
+          "apps/docs/memory-api/sdks/anthropic-claude-memory.mdx",
+          "apps/docs/memory-api/sdks/native.mdx",
+          "apps/docs/memory-api/sdks/openai-plugins.mdx",
+          "apps/docs/memory-api/sdks/overview.mdx",
+          "apps/docs/memory-api/sdks/python.mdx",
+          "apps/docs/memory-api/sdks/supermemory-npm.mdx",
+          "apps/docs/memory-api/sdks/supermemory-pypi.mdx",
+          "apps/docs/memory-api/sdks/typescript.mdx",
+          "apps/docs/memory-api/searching/searching-memories.mdx",
+          "apps/docs/memory-api/track-progress.mdx",
+          "apps/docs/memory-graph/api-reference.mdx",
+          "apps/docs/memory-graph/examples.mdx",
+          "apps/docs/memory-graph/installation.mdx",
+          "apps/docs/memory-graph/npm.mdx",
+          "apps/docs/memory-graph/overview.mdx",
+          "apps/docs/memory-graph/quickstart.mdx",
+          "apps/docs/memory-router/overview.mdx",
+          "apps/docs/memory-router/usage.mdx",
+          "apps/docs/memory-router/with-memory-api.mdx",
+          "apps/docs/memory-vs-rag.mdx",
+          "apps/docs/memorybench/architecture.mdx",
+          "apps/docs/memorybench/cli.mdx",
+          "apps/docs/memorybench/contributing.mdx",
+          "apps/docs/memorybench/extend-benchmark.mdx",
+          "apps/docs/memorybench/extend-provider.mdx",
+          "apps/docs/memorybench/github.mdx",
+          "apps/docs/memorybench/installation.mdx",
+          "apps/docs/memorybench/integrations.mdx",
+          "apps/docs/memorybench/overview.mdx",
+          "apps/docs/memorybench/quickstart.mdx",
+          "apps/docs/memorybench/supported-models.mdx",
+          "apps/docs/migration/from-mem0.mdx",
+          "apps/docs/migration/from-zep.mdx",
+          "apps/docs/migration/mem0-migration-script.py"
+        ],
+        "fileTypes": {
+          ".yml": 3,
+          ".md": 5,
+          ".example": 1,
+          ".ts": 22,
+          ".css": 3,
+          ".tsx": 4,
+          ".html": 2,
+          ".ttf": 6,
+          ".json": 3,
+          ".svg": 5,
+          ".png": 54,
+          ".mdc": 1,
+          ".mdx": 86,
+          ".py": 1
+        }
+      }
     },
     {
       "id": 1134791393,
@@ -28818,7 +30096,93 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".claude": 1,
+          ".ddev": 7,
+          "(root)": 20,
+          ".gemini": 1,
+          ".github": 17,
+          ".qwen": 1,
+          "data": 2,
+          "frontend-build-utils": 5,
+          "src": 146
+        },
+        "languages": {
+          "Markdown": 9,
+          "YAML": 16,
+          "Shell": 1,
+          "JSON": 8,
+          "PHP": 120,
+          "JavaScript": 3,
+          "HTML": 5,
+          "CSS": 1,
+          "SQL": 2
+        },
+        "frameworks": [
+          "React",
+          "Laravel",
+          "Docker"
+        ],
+        "packageManager": "npm",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "src/data/assets/gateways/index.html",
+          "src/data/assets/index.html",
+          "src/data/index.html",
+          "src/data/log/index.html",
+          "src/data/uploads/index.html"
+        ],
+        "configFiles": [
+          ".ddev/docker-compose.phpmyadmin.yaml",
+          ".ddev/docker-compose.phpmyadmin_norouter.yaml",
+          "Dockerfile",
+          "frontend-build-utils/package.json",
+          "package.json"
+        ],
+        "dependencies": [
+          "composer.json",
+          "frontend-build-utils/package.json",
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          ".github/workflows/live-tests.yml"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "src/library/Model/ProductLicense.php",
+          "src/library/Model/ServiceLicense.php"
+        ],
+        "fileTypes": {
+          ".md": 9,
+          ".yaml": 4,
+          ".conf": 1,
+          ".sh": 1,
+          ".json": 8,
+          ".yml": 12,
+          ".php": 120,
+          ".lock": 1,
+          ".txt": 2,
+          ".mjs": 3,
+          ".js": 3,
+          ".neon": 2,
+          ".xml": 1,
+          ".dist": 1,
+          ".png": 9,
+          ".html": 5,
+          ".jpg": 1,
+          ".css": 1,
+          ".twig": 3,
+          ".sql": 2,
+          ".mmdb": 2
+        }
+      }
     },
     {
       "id": 1134790867,
@@ -28834,14 +30198,144 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56319
+        "stars": 56321
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".github": 2,
+          "(root)": 9,
+          "apis": 73,
+          "cmd": 3,
+          "core": 113
+        },
+        "languages": {
+          "Markdown": 7,
+          "YAML": 2,
+          "Go": 189
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "cmd/serve.go",
+          "cmd/superuser.go",
+          "cmd/superuser_test.go"
+        ],
+        "configFiles": [
+          "Makefile"
+        ],
+        "dependencies": [],
+        "testFiles": [
+          "apis/backup_test.go",
+          "apis/base_test.go",
+          "apis/batch_test.go",
+          "apis/collection_import_test.go",
+          "apis/collection_test.go",
+          "apis/cron_test.go",
+          "apis/file_test.go",
+          "apis/health_test.go",
+          "apis/logs_test.go",
+          "apis/middlewares_body_limit_test.go",
+          "apis/middlewares_rate_limit_test.go",
+          "apis/middlewares_test.go",
+          "apis/realtime_test.go",
+          "apis/record_auth_email_change_confirm_test.go",
+          "apis/record_auth_email_change_request_test.go",
+          "apis/record_auth_impersonate_test.go",
+          "apis/record_auth_methods_test.go",
+          "apis/record_auth_otp_request_test.go",
+          "apis/record_auth_password_reset_confirm_test.go",
+          "apis/record_auth_password_reset_request_test.go",
+          "apis/record_auth_refresh_test.go",
+          "apis/record_auth_verification_confirm_test.go",
+          "apis/record_auth_verification_request_test.go",
+          "apis/record_auth_with_oauth2_redirect_test.go",
+          "apis/record_auth_with_oauth2_test.go",
+          "apis/record_auth_with_otp_test.go",
+          "apis/record_auth_with_password_test.go",
+          "apis/record_crud_auth_origin_test.go",
+          "apis/record_crud_external_auth_test.go",
+          "apis/record_crud_mfa_test.go",
+          "apis/record_crud_otp_test.go",
+          "apis/record_crud_superuser_test.go",
+          "apis/record_crud_test.go",
+          "apis/record_helpers_test.go",
+          "apis/settings_test.go",
+          "cmd/superuser_test.go",
+          "core/auth_origin_model_test.go",
+          "core/auth_origin_query_test.go",
+          "core/base_backup_test.go",
+          "core/base_test.go",
+          "core/collection_import_test.go",
+          "core/collection_model_auth_options_test.go",
+          "core/collection_model_test.go",
+          "core/collection_model_view_options_test.go",
+          "core/collection_query_test.go",
+          "core/collection_record_table_sync_test.go",
+          "core/collection_validate_test.go",
+          "core/db_model_test.go",
+          "core/db_retry_test.go",
+          "core/db_table_test.go",
+          "core/db_test.go",
+          "core/db_tx_test.go",
+          "core/event_request_batch_test.go",
+          "core/event_request_test.go",
+          "core/external_auth_model_test.go",
+          "core/external_auth_query_test.go",
+          "core/field_autodate_test.go",
+          "core/field_bool_test.go",
+          "core/field_date_test.go",
+          "core/field_editor_test.go",
+          "core/field_email_test.go",
+          "core/field_file_test.go",
+          "core/field_geo_point_test.go",
+          "core/field_json_test.go",
+          "core/field_number_test.go",
+          "core/field_password_test.go",
+          "core/field_relation_test.go",
+          "core/field_select_test.go",
+          "core/field_test.go",
+          "core/field_text_test.go",
+          "core/field_url_test.go",
+          "core/fields_list_test.go",
+          "core/log_printer_test.go",
+          "core/log_query_test.go",
+          "core/mfa_model_test.go",
+          "core/mfa_query_test.go",
+          "core/migrations_list_test.go",
+          "core/migrations_runner_test.go",
+          "core/otp_model_test.go",
+          "core/otp_query_test.go",
+          "core/record_field_resolver_test.go",
+          "core/record_model_auth_test.go",
+          "core/record_model_superusers_test.go",
+          "core/record_model_test.go",
+          "core/record_proxy_test.go",
+          "core/record_query_expand_test.go",
+          "core/record_query_test.go"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "CHANGELOG_16_22.md",
+          "CHANGELOG_8_15.md",
+          "CONTRIBUTING.md",
+          "LICENSE.md",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 7,
+          ".yaml": 2,
+          ".go": 189
+        }
+      }
     },
     {
       "id": 1134789760,
@@ -28864,7 +30358,49 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 7,
+          "Adapter": 12,
+          "Core": 19,
+          "admin": 162
+        },
+        "languages": {
+          "YAML": 1,
+          "PHP": 51,
+          "Markdown": 4,
+          "CSS": 8,
+          "LESS": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "Travis CI",
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "CHANGELOG.txt",
+          "CONTRIBUTING.md",
+          "LICENSE.md",
+          "README.md",
+          "admin/filemanager/LICENSE"
+        ],
+        "fileTypes": {
+          ".yml": 1,
+          ".php": 51,
+          ".txt": 1,
+          ".md": 4,
+          ".css": 8,
+          ".less": 1,
+          ".png": 14,
+          ".jpg": 113,
+          ".ico": 2
+        }
+      }
     },
     {
       "id": 1134788719,
@@ -28887,7 +30423,64 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".do": 1,
+          "(root)": 22,
+          ".github": 9,
+          "backend": 168
+        },
+        "languages": {
+          "YAML": 7,
+          "Markdown": 22,
+          "PHP": 160
+        },
+        "frameworks": [
+          "Docker"
+        ],
+        "packageManager": null,
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          "Dockerfile.all-in-one",
+          "backend/.env.example",
+          "backend/Dockerfile",
+          "backend/Dockerfile.dev"
+        ],
+        "dependencies": [],
+        "testFiles": [
+          ".github/workflows/unit-tests.yml"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "README.de.md",
+          "README.es.md",
+          "README.fr.md",
+          "README.hu.md",
+          "README.it.md",
+          "README.ja.md",
+          "README.md",
+          "README.nl.md",
+          "README.pt.md",
+          "README.tr.md",
+          "README.vi.md",
+          "README.zh-cn.md",
+          "README.zh-hk.md",
+          "backend/README.md"
+        ],
+        "fileTypes": {
+          ".yaml": 1,
+          ".yml": 6,
+          ".md": 22,
+          ".all-in-one": 1,
+          ".example": 1,
+          ".dev": 1,
+          ".php": 160
+        }
+      }
     },
     {
       "id": 1134787997,
@@ -28910,7 +30503,78 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".devcontainer": 2,
+          ".github": 20,
+          "(root)": 6,
+          ".vscode": 2,
+          "crm": 170
+        },
+        "languages": {
+          "JSON": 36,
+          "YAML": 8,
+          "Markdown": 3,
+          "Shell": 2,
+          "Python": 113,
+          "JavaScript": 24
+        },
+        "frameworks": [
+          "Django",
+          "Flask",
+          "Docker"
+        ],
+        "packageManager": null,
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          ".devcontainer/docker-compose.yml"
+        ],
+        "dependencies": [],
+        "testFiles": [
+          "crm/fcrm/doctype/crm_call_log/test_crm_call_log.py",
+          "crm/fcrm/doctype/crm_communication_status/test_crm_communication_status.py",
+          "crm/fcrm/doctype/crm_dashboard/test_crm_dashboard.py",
+          "crm/fcrm/doctype/crm_deal/test_crm_deal.py",
+          "crm/fcrm/doctype/crm_deal_status/test_crm_deal_status.py",
+          "crm/fcrm/doctype/crm_exotel_settings/test_crm_exotel_settings.py",
+          "crm/fcrm/doctype/crm_fields_layout/test_crm_fields_layout.py",
+          "crm/fcrm/doctype/crm_form_script/test_crm_form_script.py",
+          "crm/fcrm/doctype/crm_global_settings/test_crm_global_settings.py",
+          "crm/fcrm/doctype/crm_holiday_list/test_crm_holiday_list.py",
+          "crm/fcrm/doctype/crm_industry/test_crm_industry.py",
+          "crm/fcrm/doctype/crm_invitation/test_crm_invitation.py",
+          "crm/fcrm/doctype/crm_lead/test_crm_lead.py",
+          "crm/fcrm/doctype/crm_lead_source/test_crm_lead_source.py",
+          "crm/fcrm/doctype/crm_lead_status/test_crm_lead_status.py",
+          "crm/fcrm/doctype/crm_lost_reason/test_crm_lost_reason.py",
+          "crm/fcrm/doctype/crm_notification/test_crm_notification.py",
+          "crm/fcrm/doctype/crm_organization/test_crm_organization.py",
+          "crm/fcrm/doctype/crm_product/test_crm_product.py",
+          "crm/fcrm/doctype/crm_service_level_agreement/test_crm_service_level_agreement.py",
+          "crm/fcrm/doctype/crm_service_level_priority/test_crm_service_level_priority.py",
+          "crm/fcrm/doctype/crm_task/test_crm_task.py",
+          "crm/fcrm/doctype/crm_telephony_agent/test_crm_telephony_agent.py",
+          "crm/fcrm/doctype/crm_territory/test_crm_territory.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".json": 36,
+          ".yml": 8,
+          ".md": 3,
+          ".png": 9,
+          ".sh": 2,
+          ".svg": 1,
+          ".py": 113,
+          ".js": 24
+        }
+      }
     },
     {
       "id": 1134786455,
@@ -28933,7 +30597,31 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 3,
+        "directories": {
+          "(root)": 3
+        },
+        "languages": {
+          "Markdown": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".png": 2
+        }
+      }
     },
     {
       "id": 1134786081,
@@ -28956,7 +30644,80 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 52,
+        "directories": {
+          "(root)": 8,
+          "examples": 30,
+          "permissions": 3,
+          "src": 6,
+          "webview-dist": 2,
+          "webview-src": 3
+        },
+        "languages": {
+          "Markdown": 3,
+          "TOML": 4,
+          "Rust": 10,
+          "HTML": 1,
+          "JSON": 11,
+          "Svelte": 2,
+          "JavaScript": 4,
+          "CSS": 1,
+          "TypeScript": 3
+        },
+        "frameworks": [
+          "React",
+          "Svelte"
+        ],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "examples/helloworld/index.html",
+          "examples/helloworld/src-tauri/src/lib.rs",
+          "examples/helloworld/src-tauri/src/main.rs",
+          "examples/helloworld/src/main.js",
+          "src/lib.rs",
+          "webview-dist/index.js",
+          "webview-src/index.ts"
+        ],
+        "configFiles": [
+          "Cargo.toml",
+          "examples/helloworld/package.json",
+          "examples/helloworld/src-tauri/Cargo.toml",
+          "examples/helloworld/vite.config.js",
+          "package.json",
+          "webview-src/tsconfig.json"
+        ],
+        "dependencies": [
+          "Cargo.toml",
+          "examples/helloworld/package.json",
+          "examples/helloworld/src-tauri/Cargo.toml",
+          "package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "CHANGELOG.md",
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 3,
+          ".toml": 4,
+          ".rs": 10,
+          ".html": 1,
+          ".json": 11,
+          ".svg": 3,
+          ".png": 4,
+          ".icns": 1,
+          ".ico": 1,
+          ".svelte": 2,
+          ".js": 4,
+          ".css": 1,
+          ".ts": 3
+        }
+      }
     },
     {
       "id": 1134785756,
@@ -28979,7 +30740,45 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 11,
+        "directories": {
+          "(root)": 6,
+          "app": 2,
+          "assets": 1,
+          "bin": 2
+        },
+        "languages": {
+          "Markdown": 1,
+          "Python": 2,
+          "TOML": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "app/main.py"
+        ],
+        "configFiles": [
+          "pyproject.toml"
+        ],
+        "dependencies": [
+          "pyproject.toml"
+        ],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".py": 2,
+          ".png": 1,
+          ".toml": 1,
+          ".lock": 1
+        }
+      }
     },
     {
       "id": 1134785523,
@@ -29002,7 +30801,66 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 119,
+        "directories": {
+          "(root)": 9,
+          "public": 56,
+          "src": 54
+        },
+        "languages": {
+          "Markdown": 3,
+          "JavaScript": 8,
+          "HTML": 1,
+          "JSON": 3,
+          "JSX": 32,
+          "SCSS": 18
+        },
+        "frameworks": [
+          "React",
+          "Express"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "index.html",
+          "src/App.jsx"
+        ],
+        "configFiles": [
+          "package.json",
+          "vite.config.js"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE.md",
+          "README.md",
+          "public/basis/README.md"
+        ],
+        "fileTypes": {
+          ".md": 3,
+          ".js": 8,
+          ".html": 1,
+          ".json": 3,
+          ".wasm": 1,
+          ".woff": 14,
+          ".woff2": 14,
+          ".webp": 5,
+          ".png": 4,
+          ".ico": 1,
+          ".svg": 1,
+          ".webmanifest": 1,
+          ".glb": 10,
+          ".jsx": 32,
+          ".mp4": 2,
+          ".scss": 18
+        }
+      }
     },
     {
       "id": 1134785230,
@@ -29018,14 +30876,106 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 16920
+        "stars": 16922
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 18,
+          ".github": 12,
+          ".husky": 2,
+          ".specify": 5,
+          ".vscode": 3,
+          "assistant": 41,
+          "config": 5,
+          "docs": 2,
+          "public": 1,
+          "resources": 26,
+          "scripts": 6,
+          "skills": 79
+        },
+        "languages": {
+          "JSON": 7,
+          "Markdown": 42,
+          "YAML": 11,
+          "Python": 23,
+          "JavaScript": 7,
+          "TypeScript": 5,
+          "HTML": 2,
+          "CSS": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "docs/index.html",
+          "public/index.html"
+        ],
+        "configFiles": [
+          ".eslintrc.json",
+          ".prettierrc.json",
+          "config/webpack/webpack.config.ts",
+          "jest.config.js",
+          "package.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          ".specify/memory/constitution.md",
+          ".specify/templates/agent-file-template.md",
+          ".specify/templates/plan-template.md",
+          ".specify/templates/spec-template.md",
+          ".specify/templates/tasks-template.md",
+          "skills/pdf/scripts/check_bounding_boxes_test.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "WEBUI_GUIDE.md",
+          "assistant/ui-ux-pro-max/README.md",
+          "assistant/ui-ux-pro-max/data/ux-guidelines.csv",
+          "docs/index.html",
+          "docs/style.css",
+          "readme.md",
+          "readme_ch.md",
+          "readme_jp.md",
+          "resources/aionui_readme_header_0807.png",
+          "scripts/README.md",
+          "skills/docx/LICENSE.txt",
+          "skills/pdf/LICENSE.txt",
+          "skills/pptx/LICENSE.txt"
+        ],
+        "fileTypes": {
+          ".json": 7,
+          ".md": 42,
+          ".yml": 11,
+          ".csv": 19,
+          ".py": 23,
+          ".js": 7,
+          ".ts": 5,
+          ".html": 2,
+          ".css": 1,
+          ".plist": 1,
+          ".gif": 10,
+          ".png": 13,
+          ".svg": 1,
+          ".icns": 1,
+          ".ico": 1,
+          ".txt": 3,
+          ".xsd": 41,
+          ".xml": 5
+        }
+      }
     },
     {
       "id": 1134784733,
@@ -29041,14 +30991,111 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 109083
+        "stars": 109091
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 18,
+          ".github": 29,
+          ".husky": 1,
+          ".opencode": 16,
+          ".vscode": 2,
+          "github": 10,
+          "infra": 5,
+          "logs": 2,
+          "nix": 10,
+          "packages": 107
+        },
+        "languages": {
+          "YAML": 28,
+          "Markdown": 23,
+          "TypeScript": 37,
+          "JSON": 12,
+          "TOML": 2,
+          "Shell": 1,
+          "HTML": 1,
+          "JavaScript": 2,
+          "TSX": 46,
+          "CSS": 2
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "github/index.ts",
+          "infra/app.ts",
+          "packages/app/index.html",
+          "packages/app/src/app.tsx",
+          "packages/app/src/components/session/index.ts",
+          "packages/app/src/index.ts",
+          "packages/app/src/utils/index.ts",
+          "packages/console/app/src/app.tsx"
+        ],
+        "configFiles": [
+          "github/package.json",
+          "github/tsconfig.json",
+          "package.json",
+          "packages/app/package.json",
+          "packages/app/tsconfig.json",
+          "packages/app/vite.config.ts",
+          "packages/console/app/package.json"
+        ],
+        "dependencies": [
+          "github/package.json",
+          "package.json",
+          "packages/app/package.json",
+          "packages/console/app/package.json"
+        ],
+        "testFiles": [
+          ".github/workflows/test.yml",
+          ".opencode/skill/test-skill/SKILL.md",
+          "packages/app/src/addons/serialize.test.ts",
+          "packages/app/src/context/layout-scroll.test.ts"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "README.zh-CN.md",
+          "README.zh-TW.md",
+          "STYLE_GUIDE.md",
+          "github/README.md",
+          "packages/app/README.md",
+          "packages/console/app/README.md"
+        ],
+        "fileTypes": {
+          ".yml": 28,
+          ".md": 23,
+          ".ts": 37,
+          ".jsonc": 1,
+          ".json": 12,
+          ".txt": 3,
+          ".lock": 3,
+          ".toml": 2,
+          ".nix": 4,
+          ".log": 1,
+          ".sh": 1,
+          ".html": 1,
+          ".png": 13,
+          ".ico": 2,
+          ".svg": 2,
+          ".js": 2,
+          ".webmanifest": 2,
+          ".tsx": 46,
+          ".css": 2,
+          ".zip": 1
+        }
+      }
     },
     {
       "id": 1134784407,
@@ -29071,7 +31118,80 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 122,
+        "directories": {
+          "(root)": 3,
+          "admin": 24,
+          "backend": 29,
+          "mobile": 66
+        },
+        "languages": {
+          "Markdown": 3,
+          "JavaScript": 36,
+          "HTML": 1,
+          "JSON": 11,
+          "JSX": 11,
+          "CSS": 2,
+          "TSX": 23,
+          "TypeScript": 12
+        },
+        "frameworks": [
+          "React",
+          "Express",
+          "Tailwind"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "admin/index.html",
+          "admin/src/App.jsx",
+          "backend/src/seeds/index.js",
+          "backend/src/server.js",
+          "mobile/app/(auth)/index.tsx",
+          "mobile/app/(tabs)/index.tsx",
+          "mobile/types/index.ts"
+        ],
+        "configFiles": [
+          "admin/package.json",
+          "admin/vite.config.js",
+          "backend/package.json",
+          "mobile/package.json",
+          "mobile/tailwind.config.js",
+          "mobile/tsconfig.json",
+          "package.json"
+        ],
+        "dependencies": [
+          "admin/package-lock.json",
+          "admin/package.json",
+          "backend/package-lock.json",
+          "backend/package.json",
+          "mobile/package-lock.json",
+          "mobile/package.json",
+          "package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "README.md",
+          "admin/README.md",
+          "admin/public/screenshot-for-readme.png",
+          "mobile/README.md"
+        ],
+        "fileTypes": {
+          ".md": 3,
+          ".js": 36,
+          ".html": 1,
+          ".json": 11,
+          ".png": 19,
+          ".svg": 1,
+          ".jsx": 11,
+          ".css": 2,
+          ".tsx": 23,
+          ".ts": 12
+        }
+      }
     },
     {
       "id": 1134783968,
@@ -29094,7 +31214,30 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 1,
+        "directories": {
+          "(root)": 1
+        },
+        "languages": {
+          "Markdown": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1
+        }
+      }
     },
     {
       "id": 1134783708,
@@ -29117,7 +31260,91 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 180,
+        "directories": {
+          "(root)": 11,
+          ".github": 3,
+          "facefusion": 126,
+          "tests": 40
+        },
+        "languages": {
+          "YAML": 2,
+          "Markdown": 2,
+          "Python": 167,
+          "CSS": 1
+        },
+        "frameworks": [
+          "Express"
+        ],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [
+          "tests/__init__.py",
+          "tests/helper.py",
+          "tests/test_audio.py",
+          "tests/test_cli_age_modifier.py",
+          "tests/test_cli_batch_runner.py",
+          "tests/test_cli_expression_restorer.py",
+          "tests/test_cli_face_debugger.py",
+          "tests/test_cli_face_editor.py",
+          "tests/test_cli_face_enhancer.py",
+          "tests/test_cli_face_swapper.py",
+          "tests/test_cli_frame_colorizer.py",
+          "tests/test_cli_frame_enhancer.py",
+          "tests/test_cli_job_manager.py",
+          "tests/test_cli_job_runner.py",
+          "tests/test_cli_lip_syncer.py",
+          "tests/test_cli_output_scale.py",
+          "tests/test_common_helper.py",
+          "tests/test_config.py",
+          "tests/test_curl_builder.py",
+          "tests/test_download.py",
+          "tests/test_execution.py",
+          "tests/test_face_analyser.py",
+          "tests/test_ffmpeg.py",
+          "tests/test_ffmpeg_builder.py",
+          "tests/test_filesystem.py",
+          "tests/test_inference_manager.py",
+          "tests/test_job_helper.py",
+          "tests/test_job_list.py",
+          "tests/test_job_manager.py",
+          "tests/test_job_runner.py",
+          "tests/test_json.py",
+          "tests/test_memory.py",
+          "tests/test_normalizer.py",
+          "tests/test_process_manager.py",
+          "tests/test_program_helper.py",
+          "tests/test_state_manager.py",
+          "tests/test_temp_helper.py",
+          "tests/test_time_helper.py",
+          "tests/test_vision.py",
+          "tests/test_wording.py"
+        ],
+        "docs": [
+          "LICENSE.md",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".yml": 2,
+          ".png": 1,
+          ".md": 2,
+          ".ico": 1,
+          ".ini": 2,
+          ".py": 167,
+          ".css": 1,
+          ".txt": 1
+        }
+      }
     },
     {
       "id": 1134783276,
@@ -29140,7 +31367,79 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 24,
+          ".github": 8,
+          ".vscode": 1,
+          "public": 1,
+          "scripts": 2,
+          "src": 164
+        },
+        "languages": {
+          "Markdown": 15,
+          "YAML": 3,
+          "JSON": 6,
+          "JavaScript": 3,
+          "HTML": 1,
+          "TypeScript": 56,
+          "TSX": 39
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "index.html",
+          "src/main/ipc/index.ts",
+          "src/main/main.ts",
+          "src/renderer/app/App.tsx",
+          "src/renderer/i18n/index.ts",
+          "src/renderer/mocks/server.ts",
+          "src/renderer/pages/businesses/index.tsx",
+          "src/renderer/pages/categories/index.tsx",
+          "src/renderer/pages/clients/index.tsx",
+          "src/renderer/pages/currencies/index.tsx"
+        ],
+        "configFiles": [
+          ".prettierrc",
+          "package.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          ".env.test.example",
+          "setupTests.ts"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "LICENSE-DISCLAIMER.md",
+          "README.md",
+          "src/renderer/assets/roboto/README.txt"
+        ],
+        "fileTypes": {
+          ".example": 3,
+          ".md": 15,
+          ".yml": 3,
+          ".json": 6,
+          ".js": 3,
+          ".png": 10,
+          ".html": 1,
+          ".cjs": 1,
+          ".ts": 56,
+          ".icns": 1,
+          ".tsx": 39,
+          ".txt": 2,
+          ".ttf": 56
+        }
+      }
     },
     {
       "id": 1134782394,
@@ -29163,7 +31462,35 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 5,
+        "directories": {
+          "(root)": 5
+        },
+        "languages": {
+          "YAML": 1,
+          "Markdown": 2
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "Travis CI",
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".yml": 1,
+          ".md": 2,
+          ".png": 1
+        }
+      }
     },
     {
       "id": 1134782014,
@@ -29186,7 +31513,100 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 12,
+          ".github": 18,
+          "config": 3,
+          "crates": 167
+        },
+        "languages": {
+          "Markdown": 11,
+          "YAML": 15,
+          "TOML": 14,
+          "Rust": 151,
+          "SQL": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "cargo",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "crates/codegraph-ai/src/lib.rs",
+          "crates/codegraph-concurrent/src/lib.rs",
+          "crates/codegraph-core/src/lib.rs",
+          "crates/codegraph-graph/src/lib.rs",
+          "crates/codegraph-mcp-autoagents/src/lib.rs",
+          "crates/codegraph-mcp-core/src/lib.rs",
+          "crates/codegraph-mcp-daemon/src/lib.rs",
+          "crates/codegraph-mcp-rig/src/lib.rs",
+          "crates/codegraph-mcp-server/src/lib.rs",
+          "crates/codegraph-mcp-tools/src/lib.rs"
+        ],
+        "configFiles": [
+          ".env.example",
+          "Cargo.toml",
+          "Makefile",
+          "crates/codegraph-ai/Cargo.toml",
+          "crates/codegraph-concurrent/Cargo.toml",
+          "crates/codegraph-core/Cargo.toml",
+          "crates/codegraph-graph/Cargo.toml",
+          "crates/codegraph-mcp-autoagents/Cargo.toml",
+          "crates/codegraph-mcp-core/Cargo.toml",
+          "crates/codegraph-mcp-daemon/Cargo.toml",
+          "crates/codegraph-mcp-rig/Cargo.toml",
+          "crates/codegraph-mcp-server/Cargo.toml",
+          "crates/codegraph-mcp-tools/Cargo.toml",
+          "crates/codegraph-mcp/Cargo.toml"
+        ],
+        "dependencies": [
+          "Cargo.toml",
+          "crates/codegraph-ai/Cargo.toml",
+          "crates/codegraph-concurrent/Cargo.toml",
+          "crates/codegraph-core/Cargo.toml",
+          "crates/codegraph-graph/Cargo.toml",
+          "crates/codegraph-mcp-autoagents/Cargo.toml",
+          "crates/codegraph-mcp-core/Cargo.toml",
+          "crates/codegraph-mcp-daemon/Cargo.toml",
+          "crates/codegraph-mcp-rig/Cargo.toml",
+          "crates/codegraph-mcp-server/Cargo.toml",
+          "crates/codegraph-mcp-tools/Cargo.toml",
+          "crates/codegraph-mcp/Cargo.toml"
+        ],
+        "testFiles": [
+          "crates/codegraph-core/src/integration/memory_tests.rs",
+          "crates/codegraph-core/tests/config_integration_test.rs",
+          "crates/codegraph-graph/src/bin/surreal_smoke_test.rs",
+          "crates/codegraph-graph/src/tests.rs",
+          "crates/codegraph-graph/tests/schema_indexes_test.rs",
+          "crates/codegraph-graph/tests/semantic_search_nodes_via_chunks_test.rs",
+          "crates/codegraph-mcp-server/tests/http_server_integration.rs",
+          "crates/codegraph-mcp-server/tests/semantic_question_prompts_test.rs"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "CONTRIBUTING.md",
+          "README.md",
+          "config/README.md",
+          "crates/codegraph-concurrent/README.md",
+          "crates/codegraph-graph/README.md"
+        ],
+        "fileTypes": {
+          ".security": 1,
+          ".example": 2,
+          ".md": 11,
+          ".yml": 15,
+          ".codegraph": 1,
+          ".lock": 1,
+          ".toml": 14,
+          ".rs": 151,
+          ".sql": 1
+        }
+      }
     },
     {
       "id": 1134781734,
@@ -29209,7 +31629,61 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 8,
+          "content": 17,
+          "data": 3,
+          "layouts": 26,
+          "src": 6,
+          "static": 140
+        },
+        "languages": {
+          "Markdown": 1,
+          "YAML": 1,
+          "HTML": 42,
+          "JSON": 5,
+          "JavaScript": 6,
+          "CSS": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "src/index.js"
+        ],
+        "configFiles": [
+          "package.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".lock": 1,
+          ".md": 1,
+          ".yml": 1,
+          ".html": 42,
+          ".json": 5,
+          ".xml": 2,
+          ".js": 6,
+          ".css": 1,
+          ".png": 23,
+          ".ico": 1,
+          ".jpg": 10,
+          ".svg": 104
+        }
+      }
     },
     {
       "id": 1134780546,
@@ -29232,7 +31706,62 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 11,
+          "drizzle": 7,
+          "public": 25,
+          "src": 157
+        },
+        "languages": {
+          "Markdown": 1,
+          "TypeScript": 41,
+          "JSON": 7,
+          "SQL": 3,
+          "TSX": 118,
+          "CSS": 1
+        },
+        "frameworks": [
+          "React",
+          "Next.js"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "src/db/index.ts",
+          "src/lib/email/index.ts"
+        ],
+        "configFiles": [
+          "next.config.ts",
+          "package.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          "src/components/ui/aspect-ratio.tsx"
+        ],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".ts": 41,
+          ".json": 7,
+          ".sql": 3,
+          ".mjs": 2,
+          ".svg": 21,
+          ".txt": 2,
+          ".png": 2,
+          ".tsx": 118,
+          ".ico": 1,
+          ".css": 1
+        }
+      }
     },
     {
       "id": 1134780318,
@@ -29255,7 +31784,166 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".github": 6,
+          "(root)": 6,
+          "cmd": 1,
+          "docker": 3,
+          "docs": 50,
+          "frontend": 134
+        },
+        "languages": {
+          "Markdown": 3,
+          "YAML": 6,
+          "Go": 1,
+          "TOML": 1,
+          "JSON": 6,
+          "TypeScript": 42,
+          "CSS": 2,
+          "HTML": 1,
+          "Vue": 83
+        },
+        "frameworks": [
+          "React",
+          "Vue",
+          "Docker"
+        ],
+        "packageManager": "npm",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "cmd/whatomate/main.go",
+          "frontend/e2e/helpers/index.ts",
+          "frontend/e2e/pages/index.ts",
+          "frontend/index.html",
+          "frontend/src/components/ui/accordion/index.ts",
+          "frontend/src/components/ui/alert-dialog/index.ts",
+          "frontend/src/components/ui/alert/index.ts",
+          "frontend/src/components/ui/aspect-ratio/index.ts",
+          "frontend/src/components/ui/avatar/index.ts",
+          "frontend/src/components/ui/badge/index.ts",
+          "frontend/src/components/ui/breadcrumb/index.ts",
+          "frontend/src/components/ui/button/index.ts",
+          "frontend/src/components/ui/calendar/index.ts",
+          "frontend/src/components/ui/card/index.ts",
+          "frontend/src/components/ui/checkbox/index.ts",
+          "frontend/src/components/ui/collapsible/index.ts",
+          "frontend/src/components/ui/command/index.ts"
+        ],
+        "configFiles": [
+          "Makefile",
+          "docker/Dockerfile",
+          "docker/Dockerfile.goreleaser",
+          "docker/docker-compose.yml",
+          "docs/package.json",
+          "docs/tsconfig.json",
+          "frontend/.env.example",
+          "frontend/Dockerfile",
+          "frontend/package.json"
+        ],
+        "dependencies": [
+          "docs/package-lock.json",
+          "docs/package.json",
+          "frontend/package-lock.json",
+          "frontend/package.json"
+        ],
+        "testFiles": [
+          ".github/workflows/e2e-tests.yml",
+          ".github/workflows/test.yml",
+          "frontend/e2e/tests/analytics/analytics.spec.ts",
+          "frontend/e2e/tests/auth/login.spec.ts",
+          "frontend/e2e/tests/auth/register.spec.ts",
+          "frontend/e2e/tests/campaigns/campaigns.spec.ts",
+          "frontend/e2e/tests/chatbot/ai-contexts.spec.ts",
+          "frontend/e2e/tests/chatbot/keywords.spec.ts",
+          "frontend/e2e/tests/dashboard/dashboard.spec.ts",
+          "frontend/e2e/tests/flows/flows.spec.ts",
+          "frontend/e2e/tests/settings/api-keys.spec.ts",
+          "frontend/e2e/tests/settings/canned-responses.spec.ts",
+          "frontend/e2e/tests/settings/custom-actions.spec.ts",
+          "frontend/e2e/tests/settings/teams.spec.ts",
+          "frontend/e2e/tests/settings/users.spec.ts",
+          "frontend/e2e/tests/settings/webhooks.spec.ts",
+          "frontend/src/components/ui/aspect-ratio/AspectRatio.vue",
+          "frontend/src/components/ui/aspect-ratio/index.ts"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/.gitignore",
+          "docs/astro.config.mjs",
+          "docs/package-lock.json",
+          "docs/package.json",
+          "docs/public/images/01-dashboard.png",
+          "docs/public/images/02-chatbot-settings.png",
+          "docs/public/images/03-keyword-rules.png",
+          "docs/public/images/04-keyword-rule-editor.png",
+          "docs/public/images/05-ai-contexts.png",
+          "docs/public/images/06-ai-context-editor.png",
+          "docs/public/images/07-conversation-flows.png",
+          "docs/public/images/08-conversation-flow-builder.png",
+          "docs/public/images/09-whatsapp-flows.png",
+          "docs/public/images/10-whatsapp-flow-builder.png",
+          "docs/public/images/11-templates.png",
+          "docs/public/images/12-template-editor.png",
+          "docs/public/images/13-campaigns.png",
+          "docs/public/images/14-campaign-details.png",
+          "docs/public/images/15-settings.png",
+          "docs/public/images/16-account-settings.png",
+          "docs/src/assets/logo-dark.svg",
+          "docs/src/assets/logo-light.svg",
+          "docs/src/content.config.ts",
+          "docs/src/content/docs/api-reference/accounts.mdx",
+          "docs/src/content/docs/api-reference/analytics.mdx",
+          "docs/src/content/docs/api-reference/api-keys.mdx",
+          "docs/src/content/docs/api-reference/authentication.mdx",
+          "docs/src/content/docs/api-reference/campaigns.mdx",
+          "docs/src/content/docs/api-reference/canned-responses.mdx",
+          "docs/src/content/docs/api-reference/chatbot.mdx",
+          "docs/src/content/docs/api-reference/contacts.mdx",
+          "docs/src/content/docs/api-reference/flows.mdx",
+          "docs/src/content/docs/api-reference/messages.mdx",
+          "docs/src/content/docs/api-reference/overview.mdx",
+          "docs/src/content/docs/api-reference/teams.mdx",
+          "docs/src/content/docs/api-reference/templates.mdx",
+          "docs/src/content/docs/api-reference/users.mdx",
+          "docs/src/content/docs/api-reference/webhooks.mdx",
+          "docs/src/content/docs/features/campaigns.mdx",
+          "docs/src/content/docs/features/canned-responses.mdx",
+          "docs/src/content/docs/features/chatbot.mdx",
+          "docs/src/content/docs/features/dashboard.mdx",
+          "docs/src/content/docs/features/templates.mdx",
+          "docs/src/content/docs/features/whatsapp-flows.mdx",
+          "docs/src/content/docs/getting-started/configuration.mdx",
+          "docs/src/content/docs/getting-started/introduction.mdx",
+          "docs/src/content/docs/getting-started/quickstart.mdx",
+          "docs/src/content/docs/index.mdx",
+          "docs/src/styles/custom.css",
+          "docs/tsconfig.json"
+        ],
+        "fileTypes": {
+          ".md": 3,
+          ".yml": 6,
+          ".go": 1,
+          ".toml": 1,
+          ".goreleaser": 1,
+          ".mjs": 1,
+          ".json": 6,
+          ".png": 16,
+          ".svg": 3,
+          ".ts": 42,
+          ".mdx": 25,
+          ".css": 2,
+          ".example": 1,
+          ".html": 1,
+          ".cjs": 1,
+          ".mp3": 1,
+          ".vue": 83
+        }
+      }
     },
     {
       "id": 1134780004,
@@ -29278,7 +31966,189 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 21,
+          ".github": 5,
+          ".husky": 2,
+          ".storybook": 8,
+          "build-utils": 1,
+          "docs": 13,
+          "playwright": 9,
+          "src": 141
+        },
+        "languages": {
+          "YAML": 5,
+          "JavaScript": 4,
+          "TSX": 52,
+          "TypeScript": 16,
+          "JSON": 5,
+          "Markdown": 25,
+          "HTML": 1,
+          "SCSS": 12,
+          "Shell": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          ".storybook/main.ts",
+          "playwright/core/index.ts",
+          "playwright/index.html",
+          "playwright/index.tsx",
+          "src/components/atoms/ActionButton/index.ts",
+          "src/components/atoms/Alert/index.tsx",
+          "src/components/atoms/ChatDate/i18n/index.ts",
+          "src/components/atoms/ChatDate/index.ts",
+          "src/components/atoms/ContextIndicator/index.tsx",
+          "src/components/atoms/ContextItem/index.tsx",
+          "src/components/atoms/DiffStat/index.tsx",
+          "src/components/atoms/Disclaimer/index.ts",
+          "src/components/atoms/InlineCitation/index.ts",
+          "src/components/atoms/IntersectionContainer/index.ts",
+          "src/components/atoms/Loader/index.ts",
+          "src/components/atoms/MarkdownRenderer/index.ts",
+          "src/components/atoms/MessageBalloon/index.tsx",
+          "src/components/atoms/Shimmer/index.tsx"
+        ],
+        "configFiles": [
+          ".eslintrc",
+          ".prettierrc.js",
+          ".storybook/tsconfig.json",
+          "jest.config.js",
+          "package.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          "docs/TESTING.md",
+          "src/components/atoms/ActionButton/__tests__/ActionButton.visual.spec.tsx",
+          "src/components/atoms/ActionButton/__tests__/__snapshots__/ActionButton-should-render-button-without-tooltip-chromium.png",
+          "src/components/atoms/ActionButton/__tests__/__snapshots__/ActionButton-should-render-default-button-without-hover-chromium.png",
+          "src/components/atoms/ActionButton/__tests__/__snapshots__/ActionButton-should-render-default-with-tooltip-on-hover-chromium.png",
+          "src/components/atoms/ActionButton/__tests__/__snapshots__/ActionButton-should-render-without-tooltip-on-hover-chromium.png",
+          "src/components/atoms/ActionButton/__tests__/helpersPlaywright.tsx",
+          "src/components/atoms/Alert/__tests__/Alert.visual.spec.tsx",
+          "src/components/atoms/Alert/__tests__/__snapshots__/Alert-should-correct-render-custom-icon-chromium.png",
+          "src/components/atoms/Alert/__tests__/__snapshots__/Alert-should-correct-render-with-long-text-chromium.png",
+          "src/components/atoms/Alert/__tests__/__snapshots__/Alert-should-render-action-button-chromium.png",
+          "src/components/atoms/Alert/__tests__/__snapshots__/Alert-should-render-collapsible-content-chromium.png",
+          "src/components/atoms/Alert/__tests__/__snapshots__/Alert-should-render-different-variant-chromium.png",
+          "src/components/atoms/Alert/__tests__/helpersPlaywright.tsx",
+          "src/components/atoms/ChatDate/__tests__/ChatDate.visual.spec.tsx",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-different-date-types-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-different-formats-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-invalid-date-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-recent-dates-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-with-custom-format-and-time-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-with-custom-format-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-with-custom-style-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-with-date-object-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-with-date-string-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-with-time-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/__snapshots__/ChatDate-should-render-with-timestamp-chromium.png",
+          "src/components/atoms/ChatDate/__tests__/helpersPlaywright.tsx",
+          "src/components/atoms/ContextIndicator/__tests__/ContextIndicator.visual.spec.tsx",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-all-reversed-variants-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-all-states-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-empty-state-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-full-state-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-half-state-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-playground-variant-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-quarter-state-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-three-quarters-state-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-vertical-with-number-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-with-gray-colors-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-with-number-at-half-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-with-number-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/__snapshots__/ContextIndicator-should-render-with-vertical-orientation-chromium.png",
+          "src/components/atoms/ContextIndicator/__tests__/helpersPlaywright.tsx",
+          "src/components/atoms/ContextItem/__tests__/ContextItem.visual.spec.tsx",
+          "src/components/atoms/ContextItem/__tests__/__snapshots__/ContextItem-should-render-playground-variant-chromium.png",
+          "src/components/atoms/ContextItem/__tests__/__snapshots__/ContextItem-should-render-without-remove-button-chromium.png",
+          "src/components/atoms/ContextItem/__tests__/helpersPlaywright.tsx",
+          "src/components/atoms/DiffStat/__tests__/DiffStat.visual.spec.tsx",
+          "src/components/atoms/DiffStat/__tests__/__snapshots__/DiffStat-should-render-all-lengths-variants-chromium.png",
+          "src/components/atoms/DiffStat/__tests__/__snapshots__/DiffStat-should-render-playground-variant-chromium.png",
+          "src/components/atoms/DiffStat/__tests__/helpersPlaywright.tsx",
+          "src/components/atoms/Disclaimer/__tests__/Disclaimer.visual.spec.tsx",
+          "src/components/atoms/Disclaimer/__tests__/__snapshots__/Disclaimer-should-render-with-caption-variant-chromium.png",
+          "src/components/atoms/Disclaimer/__tests__/__snapshots__/Disclaimer-should-render-with-children-chromium.png",
+          "src/components/atoms/Disclaimer/__tests__/__snapshots__/Disclaimer-should-render-with-text-and-children-chromium.png",
+          "src/components/atoms/Disclaimer/__tests__/__snapshots__/Disclaimer-should-render-with-text-chromium.png",
+          "src/components/atoms/Disclaimer/__tests__/helpersPlaywright.tsx",
+          "src/components/atoms/Loader/__tests__/Loader.visual.spec.tsx",
+          "src/components/atoms/Loader/__tests__/__snapshots__/Loader-should-render-all-sizes-chromium.png",
+          "src/components/atoms/Loader/__tests__/__snapshots__/Loader-should-render-loading-view-chromium.png",
+          "src/components/atoms/Loader/__tests__/__snapshots__/Loader-should-render-streaming-view-chromium.png",
+          "src/components/atoms/Loader/__tests__/helpersPlaywright.tsx",
+          "src/components/atoms/MarkdownRenderer/__tests__/MarkdownRenderer.visual.spec.tsx",
+          "src/components/atoms/MarkdownRenderer/__tests__/__snapshots__/MarkdownRenderer-should-render-basic-markdown-chromium.png",
+          "src/components/atoms/MarkdownRenderer/__tests__/__snapshots__/MarkdownRenderer-should-render-with-transform-options-and-custom-plugin-chromium.png",
+          "src/components/atoms/MarkdownRenderer/__tests__/helpersPlaywright.tsx",
+          "src/components/atoms/MessageBalloon/__tests__/MessageBallojn.visual.spec.tsx",
+          "src/components/atoms/MessageBalloon/__tests__/__snapshots__/MessageBalloon-should-render-user-message-chromium.png",
+          "src/components/atoms/MessageBalloon/__tests__/helpersPlaywright.tsx",
+          "src/components/atoms/Shimmer/__tests__/Shimmer.visual.spec.tsx",
+          "src/components/atoms/Shimmer/__tests__/__snapshots__/Shimmer-should-render-text-state-chromium.png",
+          "src/components/atoms/Shimmer/__tests__/helpersPlaywright.tsx"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README-ru.md",
+          "README.md",
+          "docs/ARCHITECTURE.md",
+          "docs/GETTING_STARTED.md",
+          "docs/PLAYWRIGHT.md",
+          "docs/PROJECT_STRUCTURE.md",
+          "docs/README.md",
+          "docs/TESTING.md",
+          "docs/assets/aikit_cover.png",
+          "docs/assets/globe_dark.svg",
+          "docs/assets/globe_light.svg",
+          "docs/assets/storybook_dark.svg",
+          "docs/assets/storybook_light.svg",
+          "docs/assets/telegram_dark.svg",
+          "docs/assets/telegram_light.svg",
+          "playwright/README.md",
+          "src/components/atoms/ActionButton/README.md",
+          "src/components/atoms/Alert/README.md",
+          "src/components/atoms/ChatDate/README.md",
+          "src/components/atoms/ContextIndicator/README.md",
+          "src/components/atoms/ContextItem/README.md",
+          "src/components/atoms/DiffStat/README.md",
+          "src/components/atoms/Disclaimer/README.md",
+          "src/components/atoms/IntersectionContainer/README.md",
+          "src/components/atoms/Loader/README.md",
+          "src/components/atoms/MarkdownRenderer/README.md",
+          "src/components/atoms/MessageBalloon/README.md",
+          "src/components/atoms/Shimmer/README.md",
+          "src/components/atoms/SubmitButton/README.md"
+        ],
+        "fileTypes": {
+          ".yml": 5,
+          ".js": 4,
+          ".tsx": 52,
+          ".ts": 16,
+          ".json": 5,
+          ".md": 25,
+          ".png": 49,
+          ".svg": 6,
+          ".html": 1,
+          ".scss": 12,
+          ".sh": 1,
+          ".mdx": 12
+        }
+      }
     },
     {
       "id": 1134778666,
@@ -29301,7 +32171,99 @@
       "forkedAt": "January 15, 2026",
       "updatedAt": "January 15, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".bundle": 1,
+          "(root)": 21,
+          "android": 37,
+          "assets": 100,
+          "generators": 5,
+          "ios": 20,
+          "src": 16
+        },
+        "languages": {
+          "YAML": 1,
+          "JavaScript": 25,
+          "Markdown": 2,
+          "Kotlin": 2,
+          "JSON": 6,
+          "Shell": 1,
+          "C/C++ Header": 1
+        },
+        "frameworks": [
+          "React",
+          "Express",
+          "Rails"
+        ],
+        "packageManager": "gradle",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "Travis CI",
+        "entryPoints": [
+          "App.js",
+          "index.js",
+          "src/components/index.js"
+        ],
+        "configFiles": [
+          ".eslintrc",
+          ".prettierrc",
+          "Gemfile",
+          "android/app/build.gradle",
+          "android/build.gradle",
+          "jest.config.js",
+          "package.json"
+        ],
+        "dependencies": [
+          "Gemfile",
+          "android/app/build.gradle",
+          "android/build.gradle",
+          "package.json"
+        ],
+        "testFiles": [
+          "generators/component/Component.spec.js.hbs",
+          "ios/ReactNativeStarterTests/Info.plist",
+          "ios/ReactNativeStarterTests/ReactNativeStarterTests.m",
+          "src/components/__tests__/example.spec.js"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "changelog.md"
+        ],
+        "fileTypes": {
+          ".yml": 1,
+          ".js": 25,
+          ".md": 2,
+          ".gradle": 3,
+          ".keystore": 1,
+          ".pro": 1,
+          ".xml": 5,
+          ".ttf": 18,
+          ".kt": 2,
+          ".png": 96,
+          ".properties": 2,
+          ".jar": 1,
+          ".bat": 1,
+          ".json": 6,
+          ".svg": 1,
+          ".jpg": 2,
+          ".jpeg": 2,
+          ".sh": 1,
+          ".hbs": 5,
+          ".env": 1,
+          ".storyboard": 2,
+          ".lock": 1,
+          ".pbxproj": 1,
+          ".xcscheme": 2,
+          ".xcworkspacedata": 1,
+          ".plist": 3,
+          ".h": 1,
+          ".mm": 1,
+          ".xib": 1,
+          ".m": 2
+        }
+      }
     },
     {
       "id": 1134563577,
@@ -29324,7 +32286,95 @@
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 116,
+        "directories": {
+          "(root)": 21,
+          "client": 69,
+          "nginx": 1,
+          "public": 3,
+          "screenshots": 4,
+          "server": 18
+        },
+        "languages": {
+          "Markdown": 8,
+          "JavaScript": 29,
+          "Shell": 4,
+          "HTML": 2,
+          "JSON": 6,
+          "CSS": 16,
+          "JSX": 20,
+          "YAML": 3
+        },
+        "frameworks": [
+          "React",
+          "Express",
+          "Docker"
+        ],
+        "packageManager": "npm",
+        "hasDocker": true,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "client/index.html",
+          "client/server.js",
+          "client/src/App.jsx",
+          "public/app.js",
+          "public/index.html",
+          "server.js",
+          "server/index.js"
+        ],
+        "configFiles": [
+          ".env.example",
+          "client/.env.example",
+          "client/Dockerfile",
+          "client/Dockerfile.dev",
+          "client/package.json",
+          "client/vite.config.js",
+          "docker-compose.override.yml",
+          "docker-compose.prod.yml",
+          "docker-compose.yml",
+          "package.json",
+          "server/Dockerfile",
+          "server/package.json"
+        ],
+        "dependencies": [
+          "client/package-lock.json",
+          "client/package.json",
+          "package.json",
+          "server/package-lock.json",
+          "server/package.json"
+        ],
+        "testFiles": [
+          "server/test-cors.sh"
+        ],
+        "docs": [
+          "DEPLOYMENT_GUIDE.md",
+          "LICENSE",
+          "README.md",
+          "client/README.md"
+        ],
+        "fileTypes": {
+          ".docker": 2,
+          ".example": 2,
+          ".production": 3,
+          ".md": 8,
+          ".js": 29,
+          ".dev": 1,
+          ".sh": 4,
+          ".cjs": 1,
+          ".html": 2,
+          ".conf": 2,
+          ".json": 6,
+          ".svg": 3,
+          ".css": 16,
+          ".jsx": 20,
+          ".backup": 2,
+          ".append": 2,
+          ".yml": 3,
+          ".png": 4
+        }
+      }
     },
     {
       "id": 1134563092,
@@ -29347,7 +32397,208 @@
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".github": 2,
+          "(root)": 8,
+          "blog": 24,
+          "docs": 126,
+          "examples": 4,
+          "packages": 36
+        },
+        "languages": {
+          "YAML": 2,
+          "Markdown": 91,
+          "JavaScript": 3,
+          "TypeScript": 36,
+          "JSON": 20,
+          "CSS": 2,
+          "TSX": 2
+        },
+        "frameworks": [
+          "React",
+          "Tailwind"
+        ],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "docs/src/pages/index.tsx",
+          "packages/cli/src/cli.ts",
+          "packages/cli/src/utils/index.ts",
+          "packages/cli/src/utils/preset/index.ts",
+          "packages/core/src/plugins/index.ts",
+          "packages/core/src/plugins/output/index.ts"
+        ],
+        "configFiles": [
+          "docs/package.json",
+          "docs/tailwind.config.js",
+          "docs/tsconfig.json",
+          "package.json",
+          "packages/cli/package.json",
+          "packages/cli/tsconfig.json",
+          "packages/core/package.json"
+        ],
+        "dependencies": [
+          "docs/package.json",
+          "package.json",
+          "packages/cli/package.json",
+          "packages/core/package.json"
+        ],
+        "testFiles": [
+          "blog/en/progressive-disclosure-of-agent-tools-from-the-perspective-of-cli-tool-style.md",
+          "blog/images/chrome-inspect.png",
+          "docs/static/blog-images/chrome-inspect.png"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "README_zh.md",
+          "docs/.gitignore",
+          "docs/README.md",
+          "docs/blog/2025-02-25-project-motivation.md",
+          "docs/blog/2025-11-18-glm-reasoning.md",
+          "docs/blog/2025-11-18-router-exploration.md",
+          "docs/docs/cli/commands/model.md",
+          "docs/docs/cli/commands/other.md",
+          "docs/docs/cli/commands/preset.md",
+          "docs/docs/cli/commands/start.md",
+          "docs/docs/cli/commands/status.md",
+          "docs/docs/cli/commands/statusline.md",
+          "docs/docs/cli/config/basic.md",
+          "docs/docs/cli/config/project-level.md",
+          "docs/docs/cli/installation.md",
+          "docs/docs/cli/intro.md",
+          "docs/docs/cli/quick-start.md",
+          "docs/docs/presets/intro.md",
+          "docs/docs/server/advanced/custom-router.md",
+          "docs/docs/server/api/config-api.md",
+          "docs/docs/server/api/logs-api.md",
+          "docs/docs/server/api/messages-api.md",
+          "docs/docs/server/api/overview.md",
+          "docs/docs/server/config/basic.md",
+          "docs/docs/server/config/providers.md",
+          "docs/docs/server/config/routing.md",
+          "docs/docs/server/config/transformers.md",
+          "docs/docs/server/deployment.md",
+          "docs/docs/server/intro.md",
+          "docs/docusaurus.config.ts",
+          "docs/i18n/en/code.json",
+          "docs/i18n/en/docusaurus-plugin-content-blog/options.json",
+          "docs/i18n/en/docusaurus-plugin-content-docs/current.json",
+          "docs/i18n/en/docusaurus-theme-classic/footer.json",
+          "docs/i18n/en/docusaurus-theme-classic/navbar.json",
+          "docs/i18n/zh-CN/code.json",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-blog/2025-02-25-project-motivation.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-blog/2025-11-18-glm-reasoning.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-blog/2025-11-18-router-exploration.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-blog/options.json",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/advanced/custom-router.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/advanced/preset-format.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/advanced/presets.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/cli/commands/preset.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/cli/commands/statusline.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/cli/config/basic.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/cli/config/project-level.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/cli/intro.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/cli/model.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/cli/other-commands.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/cli/start.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/cli/status.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/config/basic.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/config/providers.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/config/routing.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/config/transformers.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/current.json",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/installation.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/intro.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/quick-start.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/server/api/config-api.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/server/api/logs-api.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/server/api/messages-api.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/server/api/overview.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/server/deployment.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs.backup.20260101_205603/server/intro.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current.json",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/commands/model.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/commands/other.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/commands/preset.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/commands/start.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/commands/status.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/commands/statusline.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/config/basic.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/config/project-level.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/installation.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/intro.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/cli/quick-start.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/presets/intro.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/advanced/custom-router.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/advanced/preset-format.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/api/config-api.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/api/logs-api.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/api/messages-api.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/api/overview.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/config/basic.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/config/providers.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/config/routing.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/config/transformers.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/deployment.md",
+          "docs/i18n/zh-CN/docusaurus-plugin-content-docs/current/server/intro.md",
+          "docs/i18n/zh-CN/docusaurus-theme-classic/footer.json",
+          "docs/i18n/zh-CN/docusaurus-theme-classic/navbar.json",
+          "docs/package.json",
+          "docs/postcss.config.js",
+          "docs/sidebars.ts",
+          "docs/src/components/HomepageFeatures.module.css",
+          "docs/src/components/HomepageFeatures.tsx",
+          "docs/src/css-modules.d.ts",
+          "docs/src/css/custom.css",
+          "docs/src/docusaurus.d.ts",
+          "docs/src/pages/index.tsx",
+          "docs/static/blog-images/alipay.jpg",
+          "docs/static/blog-images/chrome-devtools.png",
+          "docs/static/blog-images/chrome-inspect.png",
+          "docs/static/blog-images/claude-code-router-img.png",
+          "docs/static/blog-images/claude-code.png",
+          "docs/static/blog-images/models.gif",
+          "docs/static/blog-images/roadmap.svg",
+          "docs/static/blog-images/search.png",
+          "docs/static/blog-images/sponsors/glm-en.jpg",
+          "docs/static/blog-images/sponsors/glm-zh.jpg",
+          "docs/static/blog-images/statusline-config.png",
+          "docs/static/blog-images/statusline.png",
+          "docs/static/blog-images/ui.png",
+          "docs/static/blog-images/webstorm-formate-file.png",
+          "docs/static/blog-images/wechat.jpg",
+          "docs/static/blog-images/wechat_group.jpg",
+          "docs/static/img/ccr.svg",
+          "docs/static/img/docusaurus-social-card.jpg",
+          "docs/static/img/favicon.ico",
+          "docs/static/img/logo.svg",
+          "docs/static/img/undraw_docusaurus_mountain.svg",
+          "docs/static/img/undraw_docusaurus_react.svg",
+          "docs/static/img/undraw_docusaurus_tree.svg",
+          "docs/tailwind.config.js",
+          "docs/tsconfig.json",
+          "examples/README.md"
+        ],
+        "fileTypes": {
+          ".yml": 2,
+          ".md": 91,
+          ".jpg": 11,
+          ".png": 18,
+          ".gif": 2,
+          ".svg": 7,
+          ".js": 3,
+          ".ts": 36,
+          ".json": 20,
+          ".css": 2,
+          ".tsx": 2,
+          ".ico": 1
+        }
+      }
     },
     {
       "id": 1134499482,
@@ -29370,7 +32621,43 @@
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 18,
+        "directories": {
+          ".claude": 1,
+          ".cursor": 2,
+          "(root)": 6,
+          "codex-prompts": 2,
+          "scripts": 4,
+          "templates": 3
+        },
+        "languages": {
+          "Markdown": 13,
+          "Shell": 4
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [
+          ".cursor/commands/speckit.implement.md",
+          ".cursor/commands/speckit.specify.md",
+          "codex-prompts/ralph-spec.md",
+          "templates/spec-template.md"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 13,
+          ".sh": 4
+        }
+      }
     },
     {
       "id": 1134497985,
@@ -29393,7 +32680,54 @@
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 24,
+        "directories": {
+          ".claude-plugin": 2,
+          "(root)": 5,
+          "commands": 4,
+          "hooks": 2,
+          "scripts": 6,
+          "skills": 1,
+          "templates": 4
+        },
+        "languages": {
+          "JSON": 7,
+          "Markdown": 8,
+          "Shell": 1,
+          "JavaScript": 6
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [
+          "package.json",
+          "templates/package.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json",
+          "templates/package.json"
+        ],
+        "testFiles": [
+          "scripts/src/test.js"
+        ],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".json": 7,
+          ".md": 8,
+          ".sh": 1,
+          ".js": 6,
+          ".txt": 1
+        }
+      }
     },
     {
       "id": 1134497452,
@@ -29409,14 +32743,121 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 15025
+        "stars": 15031
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 62,
+        "directories": {
+          ".github": 1,
+          "(root)": 9,
+          ".husky": 1,
+          "bin": 2,
+          "cli": 8,
+          "docker": 2,
+          "docs": 23,
+          "scripts": 4,
+          "skills": 1,
+          "src": 10,
+          "test": 1
+        },
+        "languages": {
+          "YAML": 4,
+          "Markdown": 3,
+          "TOML": 1,
+          "Rust": 6,
+          "TypeScript": 13,
+          "JSON": 4,
+          "TSX": 14,
+          "CSS": 1,
+          "Shell": 1,
+          "JavaScript": 3
+        },
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Docker"
+        ],
+        "packageManager": "pnpm",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "cli/src/main.rs"
+        ],
+        "configFiles": [
+          ".prettierrc",
+          "cli/Cargo.toml",
+          "docker/Dockerfile.build",
+          "docker/docker-compose.yml",
+          "docs/next.config.ts",
+          "docs/package.json",
+          "docs/tsconfig.json",
+          "package.json",
+          "tsconfig.json"
+        ],
+        "dependencies": [
+          "cli/Cargo.toml",
+          "docs/package.json",
+          "package.json"
+        ],
+        "testFiles": [
+          "src/actions.test.ts",
+          "src/browser.test.ts",
+          "src/protocol.test.ts",
+          "test/serverless.test.ts",
+          "vitest.config.ts"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/.gitignore",
+          "docs/eslint.config.mjs",
+          "docs/next.config.ts",
+          "docs/package.json",
+          "docs/pnpm-lock.yaml",
+          "docs/postcss.config.mjs",
+          "docs/src/app/agent-mode/page.tsx",
+          "docs/src/app/cdp-mode/page.tsx",
+          "docs/src/app/commands/page.tsx",
+          "docs/src/app/favicon.ico",
+          "docs/src/app/globals.css",
+          "docs/src/app/installation/page.tsx",
+          "docs/src/app/layout.tsx",
+          "docs/src/app/page.tsx",
+          "docs/src/app/quick-start/page.tsx",
+          "docs/src/app/selectors/page.tsx",
+          "docs/src/app/sessions/page.tsx",
+          "docs/src/app/snapshots/page.tsx",
+          "docs/src/app/streaming/page.tsx",
+          "docs/src/components/code-block.tsx",
+          "docs/src/components/copy-button.tsx",
+          "docs/src/components/sidebar.tsx",
+          "docs/tsconfig.json"
+        ],
+        "fileTypes": {
+          ".yml": 2,
+          ".md": 3,
+          ".cmd": 1,
+          ".lock": 1,
+          ".toml": 1,
+          ".rs": 6,
+          ".build": 1,
+          ".mjs": 2,
+          ".ts": 13,
+          ".json": 4,
+          ".yaml": 2,
+          ".tsx": 14,
+          ".ico": 1,
+          ".css": 1,
+          ".sh": 1,
+          ".js": 3
+        }
+      }
     },
     {
       "id": 1134496112,
@@ -29432,14 +32873,48 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 21024
+        "stars": 21026
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 56,
+        "directories": {
+          "(root)": 4,
+          "skills": 52
+        },
+        "languages": {
+          "Markdown": 52,
+          "Shell": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [
+          "skills/react-best-practices/references/rules/advanced-use-latest.md"
+        ],
+        "docs": [
+          "README.md",
+          "skills/react-best-practices/references/react-performance-guidelines.md",
+          "skills/vercel-design-guidelines.zip",
+          "skills/vercel-design-guidelines/SKILL.md"
+        ],
+        "fileTypes": {
+          ".md": 52,
+          ".zip": 2,
+          ".sh": 1
+        }
+      }
     },
     {
       "id": 1134495140,
@@ -29462,7 +32937,58 @@
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 7,
+          "public": 193
+        },
+        "languages": {
+          "JSON": 4,
+          "Markdown": 1,
+          "JavaScript": 1,
+          "CSS": 10,
+          "SCSS": 1
+        },
+        "frameworks": [
+          "React",
+          "Next.js"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [
+          ".eslintrc.json",
+          "next.config.js",
+          "package.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".json": 4,
+          ".md": 1,
+          ".js": 1,
+          ".css": 10,
+          ".map": 5,
+          ".scss": 1,
+          ".woff": 11,
+          ".woff2": 22,
+          ".ttf": 20,
+          ".eot": 10,
+          ".jpg": 44,
+          ".png": 18,
+          ".svg": 51
+        }
+      }
     },
     {
       "id": 1134493827,
@@ -29485,7 +33011,76 @@
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 44,
+        "directories": {
+          ".github": 3,
+          "(root)": 13,
+          "examples": 4,
+          "public": 2,
+          "src": 20,
+          "tests": 2
+        },
+        "languages": {
+          "YAML": 4,
+          "Markdown": 1,
+          "HTML": 4,
+          "TypeScript": 23,
+          "TSX": 2,
+          "JSON": 4,
+          "CSS": 2
+        },
+        "frameworks": [
+          "React",
+          "Docker"
+        ],
+        "packageManager": "npm",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "examples/basic/index.html",
+          "examples/basic/main.ts",
+          "examples/react/index.html",
+          "index.html",
+          "src/index.ts",
+          "src/lib/adapters/index.ts",
+          "src/lib/gui/index.ts",
+          "src/lib/hooks/index.ts",
+          "src/lib/results/index.ts",
+          "src/lib/stac/index.ts",
+          "src/lib/utils/index.ts"
+        ],
+        "configFiles": [
+          "Dockerfile",
+          "package.json",
+          "tsconfig.json",
+          "vite.config.ts"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          "tests/setup.ts",
+          "tests/stac-searcher.test.ts",
+          "vitest.config.ts"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".yml": 3,
+          ".yaml": 1,
+          ".md": 1,
+          ".html": 4,
+          ".ts": 23,
+          ".tsx": 2,
+          ".json": 4,
+          ".css": 2
+        }
+      }
     },
     {
       "id": 1134493195,
@@ -29508,7 +33103,85 @@
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 53,
+        "directories": {
+          ".github": 2,
+          "(root)": 10,
+          "cli": 1,
+          "cmd": 1,
+          "docs": 4,
+          "internal": 23,
+          "scanner": 3,
+          "scripts": 1,
+          "snap": 1,
+          "systemd": 1,
+          "web": 6
+        },
+        "languages": {
+          "YAML": 3,
+          "Markdown": 3,
+          "Go": 19,
+          "Shell": 3,
+          "JavaScript": 2,
+          "CSS": 2,
+          "HTML": 2,
+          "Python": 2,
+          "PHP": 3
+        },
+        "frameworks": [
+          "Express",
+          "Docker"
+        ],
+        "packageManager": "pip",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "cmd/orangutan/main.go",
+          "internal/web/static/app.js",
+          "internal/web/templates/index.html",
+          "web/assets/app.js"
+        ],
+        "configFiles": [
+          "Dockerfile",
+          "Makefile",
+          "go.mod",
+          "scanner/requirements.txt"
+        ],
+        "dependencies": [
+          "go.mod",
+          "scanner/requirements.txt"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/INSTALL.md",
+          "docs/LO1.png",
+          "docs/LO2.png",
+          "docs/TROUBLESHOOTING.md"
+        ],
+        "fileTypes": {
+          ".yml": 2,
+          ".md": 3,
+          ".go": 19,
+          ".ini": 1,
+          ".png": 2,
+          ".mod": 1,
+          ".sum": 1,
+          ".sh": 3,
+          ".js": 2,
+          ".svg": 2,
+          ".css": 2,
+          ".html": 2,
+          ".txt": 1,
+          ".py": 2,
+          ".yaml": 1,
+          ".service": 1,
+          ".php": 3
+        }
+      }
     },
     {
       "id": 1134352925,
@@ -29531,7 +33204,67 @@
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 44,
+        "directories": {
+          "(root)": 16,
+          "assets": 1,
+          "src": 27
+        },
+        "languages": {
+          "Markdown": 2,
+          "JSON": 7,
+          "JavaScript": 1,
+          "HTML": 1,
+          "TypeScript": 16,
+          "CSS": 2,
+          "TSX": 8
+        },
+        "frameworks": [
+          "React",
+          "Express"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "index.html",
+          "src/electron/main.ts",
+          "src/ui/App.tsx"
+        ],
+        "configFiles": [
+          "package.json",
+          "src/electron/tsconfig.json",
+          "tsconfig.json",
+          "vite.config.ts"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          "src/electron/test.ts"
+        ],
+        "docs": [
+          "README.md",
+          "README_ZH.md"
+        ],
+        "fileTypes": {
+          ".md": 2,
+          ".jpg": 1,
+          ".lock": 1,
+          ".png": 2,
+          ".json": 7,
+          ".js": 1,
+          ".html": 1,
+          ".ts": 16,
+          ".cts": 1,
+          ".css": 2,
+          ".tsx": 8,
+          ".svg": 1
+        }
+      }
     },
     {
       "id": 1134345761,
@@ -29554,7 +33287,141 @@
       "forkedAt": "January 14, 2026",
       "updatedAt": "January 14, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".beads": 5,
+          ".claude": 72,
+          ".cursor": 1,
+          "(root)": 9,
+          ".rbp": 2,
+          "apps": 55,
+          "docs": 7,
+          "fin-guru": 49
+        },
+        "languages": {
+          "Markdown": 110,
+          "YAML": 8,
+          "JSON": 16,
+          "Shell": 6,
+          "TypeScript": 26,
+          "Python": 2,
+          "TSX": 7,
+          "CSS": 1,
+          "SQL": 1
+        },
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Tailwind",
+          "Docker"
+        ],
+        "packageManager": "npm",
+        "hasDocker": true,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "apps/plaid-dashboard/db/src/index.ts",
+          "apps/plaid-dashboard/engine/src/db/index.ts",
+          "apps/plaid-dashboard/engine/src/index.ts",
+          "apps/plaid-dashboard/engine/src/providers/plaid/index.ts"
+        ],
+        "configFiles": [
+          ".claude/hooks/package.json",
+          ".claude/hooks/tsconfig.json",
+          ".env.example",
+          "apps/plaid-dashboard/.env.example",
+          "apps/plaid-dashboard/dashboard/next.config.ts",
+          "apps/plaid-dashboard/dashboard/package.json",
+          "apps/plaid-dashboard/dashboard/tailwind.config.ts",
+          "apps/plaid-dashboard/dashboard/tsconfig.json",
+          "apps/plaid-dashboard/db/package.json",
+          "apps/plaid-dashboard/db/tsconfig.json",
+          "apps/plaid-dashboard/docker-compose.yml",
+          "apps/plaid-dashboard/engine/package.json",
+          "apps/plaid-dashboard/engine/tsconfig.json",
+          "apps/plaid-dashboard/package.json"
+        ],
+        "dependencies": [
+          ".claude/hooks/package-lock.json",
+          ".claude/hooks/package.json",
+          "apps/plaid-dashboard/dashboard/package.json",
+          "apps/plaid-dashboard/db/package.json",
+          "apps/plaid-dashboard/engine/package.json",
+          "apps/plaid-dashboard/package.json"
+        ],
+        "testFiles": [
+          ".claude/commands/fin-guru/agents/dividend-specialist.md",
+          ".claude/commands/fin-guru/agents/margin-specialist.md",
+          ".claude/commands/fin-guru/agents/onboarding-specialist.md",
+          ".claude/commands/fin-guru/agents/teaching-specialist.md",
+          ".claude/skills/backend-dev-guidelines/resources/testing-guide.md",
+          ".claude/skills/route-tester/SKILL.md",
+          ".rbp/current-spec-bead",
+          ".rbp/test-command",
+          "fin-guru/agents/dividend-specialist.md",
+          "fin-guru/agents/margin-specialist.md",
+          "fin-guru/agents/onboarding-specialist.md",
+          "fin-guru/agents/specialist.md",
+          "fin-guru/agents/teaching-specialist.md"
+        ],
+        "docs": [
+          ".beads/README.md",
+          ".claude/hooks/README.md",
+          ".claude/skills/FinanceReport/StyleGuide.md",
+          ".claude/skills/FinanceReport/VisGuide.md",
+          ".claude/skills/README.md",
+          ".claude/skills/backend-dev-guidelines/SKILL.md",
+          ".claude/skills/backend-dev-guidelines/resources/architecture-overview.md",
+          ".claude/skills/backend-dev-guidelines/resources/async-and-errors.md",
+          ".claude/skills/backend-dev-guidelines/resources/complete-examples.md",
+          ".claude/skills/backend-dev-guidelines/resources/configuration.md",
+          ".claude/skills/backend-dev-guidelines/resources/database-patterns.md",
+          ".claude/skills/backend-dev-guidelines/resources/middleware-guide.md",
+          ".claude/skills/backend-dev-guidelines/resources/routing-and-controllers.md",
+          ".claude/skills/backend-dev-guidelines/resources/sentry-and-monitoring.md",
+          ".claude/skills/backend-dev-guidelines/resources/services-and-repositories.md",
+          ".claude/skills/backend-dev-guidelines/resources/testing-guide.md",
+          ".claude/skills/backend-dev-guidelines/resources/validation-patterns.md",
+          ".claude/skills/fin-core/README.md",
+          "LICENSE",
+          "README.md",
+          "apps/plaid-dashboard/README.md",
+          "apps/plaid-dashboard/docs/access-control-policy.md",
+          "apps/plaid-dashboard/docs/access-control-policy.pdf",
+          "apps/plaid-dashboard/docs/data-retention-policy.md",
+          "apps/plaid-dashboard/docs/data-retention-policy.pdf",
+          "apps/plaid-dashboard/docs/information-security-policy.md",
+          "apps/plaid-dashboard/docs/information-security-policy.pdf",
+          "docs/api.md",
+          "docs/contributing.md",
+          "docs/hooks.md",
+          "docs/images/finance-guru-architecture-diagram.png",
+          "docs/images/finance-guru-architecture.png",
+          "docs/images/finance-guru-logo.png",
+          "docs/index.md",
+          "fin-guru/README.md"
+        ],
+        "fileTypes": {
+          ".md": 110,
+          ".yaml": 7,
+          ".jsonl": 1,
+          ".json": 16,
+          ".sh": 6,
+          ".ts": 26,
+          ".py": 2,
+          ".mdc": 1,
+          ".example": 2,
+          ".lock": 2,
+          ".mjs": 1,
+          ".tsx": 7,
+          ".css": 1,
+          ".sql": 1,
+          ".yml": 1,
+          ".pdf": 3,
+          ".png": 4
+        }
+      }
     },
     {
       "id": 1133803979,
@@ -29577,7 +33444,74 @@
       "forkedAt": "January 13, 2026",
       "updatedAt": "January 13, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 45,
+        "directories": {
+          ".github": 1,
+          "(root)": 16,
+          "__tests__": 10,
+          "answer_scrapers": 2,
+          "src": 16
+        },
+        "languages": {
+          "YAML": 1,
+          "Markdown": 3,
+          "TypeScript": 20,
+          "JavaScript": 4,
+          "HTML": 5,
+          "JSON": 4,
+          "CSS": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "index.html",
+          "src/main.ts"
+        ],
+        "configFiles": [
+          "jest.config.js",
+          "package.json",
+          "tsconfig.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          "__tests__/dropdown.test.ts",
+          "__tests__/main.ipc.test.ts",
+          "__tests__/main.test.ts",
+          "__tests__/main.views.test.ts",
+          "__tests__/main.windows.test.ts",
+          "__tests__/renderer.test.ts",
+          "__tests__/save_edited_prompts.test.ts",
+          "__tests__/save_prompts.test.ts",
+          "__tests__/select_model_renderer.test.ts",
+          "__tests__/utilities.test.ts"
+        ],
+        "docs": [
+          "LICENSE",
+          "readme.md"
+        ],
+        "fileTypes": {
+          ".yml": 1,
+          ".md": 3,
+          ".ts": 20,
+          ".js": 4,
+          ".ico": 2,
+          ".cjs": 1,
+          ".png": 1,
+          ".html": 5,
+          ".json": 4,
+          ".cts": 1,
+          ".css": 1
+        }
+      }
     },
     {
       "id": 1133775173,
@@ -29593,14 +33527,147 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 95687
+        "stars": 95688
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
       "forkedAt": "January 13, 2026",
       "updatedAt": "January 13, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 25,
+          ".devops": 23,
+          ".gemini": 1,
+          ".github": 37,
+          "benches": 5,
+          "ci": 3,
+          "cmake": 10,
+          "common": 41,
+          "docs": 50,
+          "examples": 5
+        },
+        "languages": {
+          "Docker": 10,
+          "Shell": 3,
+          "JSON": 5,
+          "YAML": 36,
+          "Markdown": 45,
+          "HTML": 1,
+          "C++": 19,
+          "C/C++ Header": 19,
+          "Python": 4,
+          "Swift": 1
+        },
+        "frameworks": [
+          "Docker"
+        ],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          "CMakeLists.txt",
+          "Makefile",
+          "common/CMakeLists.txt",
+          "examples/CMakeLists.txt",
+          "examples/batched.swift/Makefile"
+        ],
+        "dependencies": [],
+        "testFiles": [
+          ".devops/llama-cpp-cuda.srpm.spec",
+          ".devops/llama-cpp.srpm.spec",
+          "common/speculative.cpp",
+          "common/speculative.h",
+          "docs/development/debugging-tests.md"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "ci/README-MUSA.md",
+          "ci/README.md",
+          "cmake/license.cmake",
+          "docs/android.md",
+          "docs/android/imported-into-android-studio.jpg",
+          "docs/backend/BLIS.md",
+          "docs/backend/CANN.md",
+          "docs/backend/CUDA-FEDORA.md",
+          "docs/backend/OPENCL.md",
+          "docs/backend/SYCL.md",
+          "docs/backend/ZenDNN.md",
+          "docs/backend/hexagon/CMakeUserPresets.json",
+          "docs/backend/hexagon/README.md",
+          "docs/backend/hexagon/developer.md",
+          "docs/backend/zDNN.md",
+          "docs/build-riscv64-spacemit.md",
+          "docs/build-s390x.md",
+          "docs/build.md",
+          "docs/development/HOWTO-add-model.md",
+          "docs/development/debugging-tests.md",
+          "docs/development/llama-star/idea-arch.key",
+          "docs/development/llama-star/idea-arch.pdf",
+          "docs/development/parsing.md",
+          "docs/development/token_generation_performance_tips.md",
+          "docs/docker.md",
+          "docs/function-calling.md",
+          "docs/install.md",
+          "docs/llguidance.md",
+          "docs/multimodal.md",
+          "docs/multimodal/MobileVLM.md",
+          "docs/multimodal/gemma3.md",
+          "docs/multimodal/glmedge.md",
+          "docs/multimodal/granitevision.md",
+          "docs/multimodal/llava.md",
+          "docs/multimodal/minicpmo2.6.md",
+          "docs/multimodal/minicpmo4.0.md",
+          "docs/multimodal/minicpmv2.5.md",
+          "docs/multimodal/minicpmv2.6.md",
+          "docs/multimodal/minicpmv4.0.md",
+          "docs/multimodal/minicpmv4.5.md",
+          "docs/ops.md",
+          "docs/ops/BLAS.csv",
+          "docs/ops/CANN.csv",
+          "docs/ops/CPU.csv",
+          "docs/ops/CUDA.csv",
+          "docs/ops/Metal.csv",
+          "docs/ops/OpenCL.csv",
+          "docs/ops/SYCL.csv",
+          "docs/ops/Vulkan.csv",
+          "docs/ops/WebGPU.csv",
+          "docs/ops/ZenDNN.csv",
+          "docs/ops/zDNN.csv",
+          "docs/preset.md",
+          "examples/batched.swift/README.md"
+        ],
+        "fileTypes": {
+          ".dockerfile": 10,
+          ".spec": 2,
+          ".nix": 10,
+          ".sh": 3,
+          ".json": 5,
+          ".yml": 35,
+          ".md": 45,
+          ".disabled": 1,
+          ".yaml": 1,
+          ".txt": 3,
+          ".html": 1,
+          ".log": 1,
+          ".cmake": 8,
+          ".in": 3,
+          ".cpp": 19,
+          ".h": 19,
+          ".hpp": 1,
+          ".py": 4,
+          ".jpg": 1,
+          ".key": 1,
+          ".pdf": 1,
+          ".csv": 11,
+          ".swift": 1
+        }
+      }
     },
     {
       "id": 1133770707,
@@ -29623,7 +33690,69 @@
       "forkedAt": "January 13, 2026",
       "updatedAt": "January 13, 2026",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 100,
+        "directories": {
+          "(root)": 13,
+          ".github": 4,
+          "assets": 15,
+          "completions": 3,
+          "example-logs": 5,
+          "man": 1,
+          "src": 52,
+          "tests": 3,
+          "util": 4
+        },
+        "languages": {
+          "YAML": 4,
+          "Markdown": 2,
+          "TOML": 4,
+          "Shell": 5,
+          "Rust": 54
+        },
+        "frameworks": [],
+        "packageManager": "cargo",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "src/lib.rs",
+          "src/main.rs"
+        ],
+        "configFiles": [
+          "Cargo.toml"
+        ],
+        "dependencies": [
+          "Cargo.toml"
+        ],
+        "testFiles": [
+          ".github/workflows/BuildAndTest.yml",
+          "src/core/tests/escape_code_converter.rs",
+          "tests/files/empty.log",
+          "tests/integration_tests.rs",
+          "tests/utils.rs"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".yml": 4,
+          ".md": 2,
+          ".lock": 2,
+          ".toml": 4,
+          ".png": 15,
+          ".bash": 1,
+          ".fish": 1,
+          ".zsh": 1,
+          ".nix": 1,
+          ".1": 1,
+          ".rs": 54,
+          ".log": 1,
+          ".sh": 3,
+          ".adoc": 1
+        }
+      }
     },
     {
       "id": 605572406,
@@ -29642,7 +33771,31 @@
       "forkedAt": "February 23, 2023",
       "updatedAt": "July 14, 2025",
       "readTime": 2,
-      "knowledgeGraph": null
+      "knowledgeGraph": {
+        "totalFiles": 2,
+        "directories": {
+          "(root)": 2
+        },
+        "languages": {
+          "Markdown": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".ipynb": 1,
+          ".md": 1
+        }
+      }
     },
     {
       "id": 951980885,
