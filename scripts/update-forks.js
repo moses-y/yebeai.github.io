@@ -7,7 +7,9 @@ const CONFIG = {
   username: 'moses-y',
   reposToShow: 999, // All repos - no limit
   batchSize: 10, // Reduced batch size to allow richer data extraction per repo
+  kgBatchSize: 50, // Batch size for knowledgeGraph backfill (existing repos)
   apiDelay: 3000, // 3 seconds between AI requests (rotating models)
+  kgApiDelay: 200, // 200ms between GitHub API requests for file trees
   maxFiles: 200, // Max files to include from repo tree for AI context
   models: {
     endpoint: 'https://models.inference.ai.azure.com/chat/completions',
@@ -89,6 +91,42 @@ function isFallbackArticle(article) {
   ];
 
   return badPhrases.some(phrase => article.toLowerCase().includes(phrase.toLowerCase()));
+}
+
+// Strip markdown formatting from text for clean display
+function stripMarkdown(text) {
+  if (!text) return '';
+  return text
+    // Remove code blocks (triple backticks with optional language)
+    .replace(/```[\w]*\n[\s\S]*?```/g, '')
+    .replace(/```[\s\S]*?```/g, '')
+    // Remove malformed code blocks (double/single backticks at line start)
+    .replace(/^`{1,3}\w*\s*$/gm, '')
+    // Remove headers
+    .replace(/^#{1,6}\s+/gm, '')
+    // Remove bold/italic
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/__([^_]+)__/g, '$1')
+    .replace(/_([^_]+)_/g, '$1')
+    // Remove inline code (but keep the text inside)
+    .replace(/`([^`]+)`/g, '$1')
+    // Remove any remaining backticks
+    .replace(/`/g, '')
+    // Remove links but keep text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    // Remove images
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '')
+    // Remove horizontal rules
+    .replace(/^[-*_]{3,}\s*$/gm, '')
+    // Remove blockquotes
+    .replace(/^>\s+/gm, '')
+    // Remove list markers
+    .replace(/^[\s]*[-*+]\s+/gm, '')
+    .replace(/^[\s]*\d+\.\s+/gm, '')
+    // Clean up extra whitespace
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 // Fetch README content from repo
@@ -631,12 +669,41 @@ async function main() {
   const forks = [];
   let aiCallCount = 0;
 
-  // First, add repos that already have good articles (no AI call needed)
-  for (const { repo, existing } of hasArticle) {
+  // First, add repos that already have good articles
+  // Also generate knowledgeGraph if missing (in batches)
+  const needsKnowledgeGraph = hasArticle.filter(({ existing }) => !existing.knowledgeGraph);
+  console.log(`Repos with articles but missing knowledgeGraph: ${needsKnowledgeGraph.length}`);
+
+  let kgGeneratedCount = 0;
+  const kgBatchLimit = CONFIG.kgBatchSize;
+
+  for (let i = 0; i < hasArticle.length; i++) {
+    const { repo, existing } = hasArticle[i];
     const detailed = await fetchRepoDetails(repo);
+
+    let knowledgeGraph = existing.knowledgeGraph;
+
+    // Generate knowledgeGraph if missing (respect batch limit)
+    if (!knowledgeGraph && kgGeneratedCount < kgBatchLimit) {
+      const fileTree = await fetchRepoTree(repo);
+      if (fileTree.length > 0) {
+        knowledgeGraph = buildKnowledgeGraph(fileTree);
+        kgGeneratedCount++;
+        console.log(`  [${kgGeneratedCount}/${kgBatchLimit}] Generated knowledgeGraph for ${repo.name}: ${fileTree.length} files`);
+        // Small delay to avoid rate limiting
+        if (kgGeneratedCount < kgBatchLimit) {
+          await new Promise(r => setTimeout(r, CONFIG.kgApiDelay));
+        }
+      }
+    }
+
+    // Strip markdown from summary if needed
+    const cleanSummary = stripMarkdown(existing.summary);
+
     forks.push({
       ...existing,
       // Update metadata but keep the article
+      summary: cleanSummary,
       description: repo.description || existing.description,
       language: repo.language,
       stars: repo.stargazers_count,
@@ -645,7 +712,14 @@ async function main() {
       parent: detailed.parent || existing.parent,
       type: repo._type,
       updatedAt: formatDate(repo.updated_at),
+      knowledgeGraph: knowledgeGraph || null,
     });
+  }
+
+  const remainingKg = needsKnowledgeGraph.length - kgGeneratedCount;
+  console.log(`Generated ${kgGeneratedCount} knowledgeGraphs this run`);
+  if (remainingKg > 0) {
+    console.log(`Remaining repos needing knowledgeGraph: ${remainingKg}`);
   }
   console.log(`Preserved ${hasArticle.length} existing articles\n`);
 
@@ -698,7 +772,8 @@ async function main() {
 
       // Prefer: AI article > existing article > fallback
       const existing = existingArticles.get(repo.id);
-      const finalArticle = article || (existing && existing.summary) || generateFallbackSummary(repo);
+      const rawArticle = article || (existing && existing.summary) || generateFallbackSummary(repo);
+      const finalArticle = stripMarkdown(rawArticle);
       const source = article ? 'AI generated' : (existing && existing.summary) ? 'preserved' : 'fallback';
       console.log(`  - Article: ${finalArticle.length} chars (${source})`);
 
