@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-25T07:24:22.065Z",
+  "lastUpdated": "2026-02-25T07:48:37.929Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
   "totalRepos": 358,
   "progress": {
@@ -9,209 +9,6 @@
     "complete": true
   },
   "forks": [
-    {
-      "id": 1166361501,
-      "name": "dataclaw",
-      "displayName": "dataclaw",
-      "description": "No description available",
-      "summary": "Dataclaw: Taking Back Your Data from AI Models\n\nThe Problem\n\nSo, you’ve been chatting with AI models like Claude Code or Codex, getting them to write your scripts, debug your code, and maybe even naming your variables. But here’s the kicker: while you’re feeding them your data and ideas, they’re walking away with it. Anthropic, OpenAI, you name it—they’re happy to hoard your input for their training sets, but make it painfully hard for you to extract your own data. Enter dataclaw, a Python tool that lets you take control of your AI session logs, clean them up, and publish them as structured datasets to Hugging Face with a single command. It’s part data pipeline, part middle finger to the closed-data playbook.\n\nWhat This Does\n\ndataclaw is a CLI-based tool designed to turn your AI session logs into datasets you own. The main entry point is dataclaw/cli.py, which powers commands for setup, configuration, data processing, and publishing. It’s smart enough to parse logs, redact sensitive info (using dataclaw/anonymizer.py), and even handle custom user configs (dataclaw/config.py). The pyproject.toml handles dependencies, and CI/CD is baked in via GitHub Actions (.github/workflows/).\n\nThe process is deliberately step-by-step to ensure you don’t accidentally leak your secrets. First, you run dataclaw prep to set up the environment. Then, you configure your scope (dataclaw config --source) and pick which folders to exclude (dataclaw config --exclude). Once that’s done, you export the data locally for review (dataclaw export --no-push), confirm any redactions, and only then publish to Hugging Face (dataclaw export --publish-attestation). The guardrails are strict—this thing is built to err on the side of caution.\n\nReal-World Use\n\nLet’s say you’ve been using Claude Code to prototype a new app. Over weeks, you’ve racked up a ton of conversations with useful snippets, but now you want to make a public dataset documenting AI-human collaboration. dataclaw lets you:\nInstall it: pip install dataclaw (or clone it if you’re old-school).\nConfigure it to pull Claude logs: dataclaw config --source claude.\nExclude anything sensitive: dataclaw config --exclude \"private-projects,scratch\".\nReview the export locally: dataclaw export --no-push.\nConfirm redactions and publish: dataclaw confirm followed by dataclaw export --publish-attestation.\n\nAll without exposing your personal or client data, thanks to the built-in anonymization and review workflows.\n\nThe Bottom Line\n\ndataclaw is a niche tool for a niche problem, but it’s damn good at what it does. The CLI is clear, the steps are well-documented, and the safety features are robust (in the good way). That said, it’s overkill if all you want is a quick-and-dirty log dump. But if you care about controlling your data and want to contribute to an open, distributed dataset, dataclaw is worth a look. Just be ready to jump through a lot of “did you really mean to do that?” hoops along the way.",
-      "url": "https://github.com/moses-y/dataclaw",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "peteromallet/dataclaw",
-        "url": "https://github.com/peteromallet/dataclaw",
-        "stars": 169
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 25, 2026",
-      "updatedAt": "February 25, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "totalFiles": 22,
-        "directories": {
-          ".claude": 1,
-          ".github": 2,
-          "(root)": 6,
-          "dataclaw": 6,
-          "docs": 1,
-          "tests": 6
-        },
-        "languages": {
-          "Markdown": 3,
-          "YAML": 2,
-          "Python": 12,
-          "TOML": 1
-        },
-        "frameworks": [],
-        "packageManager": null,
-        "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [
-          "dataclaw/cli.py"
-        ],
-        "configFiles": [
-          "pyproject.toml"
-        ],
-        "dependencies": [
-          "pyproject.toml"
-        ],
-        "testFiles": [
-          ".github/workflows/test.yml",
-          "tests/conftest.py",
-          "tests/test_anonymizer.py",
-          "tests/test_cli.py",
-          "tests/test_config.py",
-          "tests/test_parser.py",
-          "tests/test_secrets.py"
-        ],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "docs/SKILL.md"
-        ],
-        "fileTypes": {
-          ".md": 3,
-          ".yml": 2,
-          ".jpeg": 1,
-          ".py": 12,
-          ".toml": 1,
-          ".png": 1
-        }
-      }
-    },
-    {
-      "id": 1166356346,
-      "name": "plano",
-      "displayName": "plano",
-      "description": "Delivery infrastructure for agentic apps - Plano is an AI-native proxy and data plane that offloads plumbing work, so you stay focused on your agent's core logic (via any AI framework).",
-      "summary": "The Problem\nBuilding agentic applications is a nightmare when you have to deal with all the routing, orchestration, and data management. You end up spending way too much time on boilerplate code instead of actually building features that matter. Every new agent means more code to manage, and your app starts looking like a tangled mess of spaghetti.\n\nWhat This Does\nPlano is here to pull the plumbing out of your codebase. It offloads the heavy lifting of routing and orchestration into its own data plane. Check out the apps/www/src/app/api/contact/route.ts for an example of how you can define your API routes without getting bogged down in the backend logic.\n\nUsing Filter Chains, you can easily implement moderation and memory hooks without writing a ton of boilerplate. You can find the configuration details in config/planoconfigschema.yaml, which makes it straightforward to customize your setup. Want to add a new agent? Just drop it in and let Plano handle the rest.\n\nReal-World Use\nImagine you're building a travel agent app that interacts with multiple APIs for booking flights, hotels, and car rentals. With Plano, you can set up your agents to handle each task without hardcoding the logic into your app. You’d use apps/www/src/components/research/ResearchGrid.tsx to display results, while the routing and orchestration happen behind the scenes. Just define your agents in the cli/planoai/templates directory and let Plano manage the communication.\n\nThe Bottom Line\nPlano is a solid choice if you’re tired of boilerplate and want to focus on building your agentic apps. It’s great for medium to large projects that need robust routing and orchestration but might be overkill for simple applications. If you're dealing with multiple agents and need a flexible, scalable solution, give Plano a shot. Just be ready to dive into the weeds of its configuration.",
-      "url": "https://github.com/moses-y/plano",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "katanemo/plano",
-        "url": "https://github.com/katanemo/plano",
-        "stars": 5304
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "February 25, 2026",
-      "updatedAt": "February 25, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          "(root)": 11,
-          ".github": 5,
-          "apps": 122,
-          "cli": 31,
-          "config": 9,
-          "crates": 22
-        },
-        "languages": {
-          "YAML": 16,
-          "Markdown": 6,
-          "JSON": 12,
-          "TypeScript": 16,
-          "CSS": 2,
-          "TSX": 40,
-          "Shell": 3,
-          "Python": 19,
-          "TOML": 3,
-          "Rust": 17
-        },
-        "frameworks": [
-          "React",
-          "Next.js",
-          "Docker"
-        ],
-        "packageManager": "cargo",
-        "hasDocker": true,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [
-          "apps/www/schemaTypes/index.ts",
-          "apps/www/src/components/research/index.ts",
-          "cli/planoai/main.py",
-          "crates/brightstaff/src/lib.rs",
-          "crates/brightstaff/src/main.rs"
-        ],
-        "configFiles": [
-          "Dockerfile",
-          "apps/katanemo-www/next.config.ts",
-          "apps/katanemo-www/package.json",
-          "apps/katanemo-www/tsconfig.json",
-          "apps/www/next.config.ts",
-          "apps/www/package.json",
-          "apps/www/tsconfig.json",
-          "cli/pyproject.toml",
-          "config/docker-compose.dev.yaml",
-          "config/requirements.txt",
-          "crates/Cargo.toml",
-          "crates/brightstaff/Cargo.toml"
-        ],
-        "dependencies": [
-          "apps/katanemo-www/package.json",
-          "apps/www/package-lock.json",
-          "apps/www/package.json",
-          "cli/pyproject.toml",
-          "config/requirements.txt",
-          "crates/Cargo.toml",
-          "crates/brightstaff/Cargo.toml"
-        ],
-        "testFiles": [
-          "cli/test/__init__.py",
-          "cli/test/source/failure.json",
-          "cli/test/source/success.json",
-          "cli/test/test_config_generator.py",
-          "cli/test/test_init.py",
-          "cli/test/test_trace_cmd.py",
-          "cli/test/test_version_check.py",
-          "config/test_passthrough.yaml",
-          "crates/brightstaff/src/handlers/integration_tests.rs"
-        ],
-        "docs": [
-          "CONTRIBUTING.md",
-          "LICENSE",
-          "README.md",
-          "apps/www/README.md",
-          "cli/README.md",
-          "config/README.md"
-        ],
-        "fileTypes": {
-          ".yml": 5,
-          ".yaml": 11,
-          ".md": 6,
-          ".json": 12,
-          ".ts": 16,
-          ".mjs": 2,
-          ".svg": 39,
-          ".css": 2,
-          ".tsx": 40,
-          ".png": 1,
-          ".ttf": 2,
-          ".otf": 4,
-          ".woff2": 3,
-          ".ico": 1,
-          ".code-workspace": 1,
-          ".sh": 3,
-          ".py": 19,
-          ".toml": 3,
-          ".lock": 2,
-          ".list": 1,
-          ".txt": 1,
-          ".conf": 1,
-          ".rs": 17
-        }
-      }
-    },
     {
       "id": 1166389079,
       "name": "weekday",
@@ -395,7 +192,7 @@
       "parent": {
         "name": "ariana-dot-dev/ariana",
         "url": "https://github.com/ariana-dot-dev/ariana",
-        "stars": 208
+        "stars": 209
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -481,6 +278,209 @@
       }
     },
     {
+      "id": 1166361501,
+      "name": "dataclaw",
+      "displayName": "dataclaw",
+      "description": "No description available",
+      "summary": "Dataclaw: Taking Back Your Data from AI Models\n\nThe Problem\n\nSo, you’ve been chatting with AI models like Claude Code or Codex, getting them to write your scripts, debug your code, and maybe even naming your variables. But here’s the kicker: while you’re feeding them your data and ideas, they’re walking away with it. Anthropic, OpenAI, you name it—they’re happy to hoard your input for their training sets, but make it painfully hard for you to extract your own data. Enter dataclaw, a Python tool that lets you take control of your AI session logs, clean them up, and publish them as structured datasets to Hugging Face with a single command. It’s part data pipeline, part middle finger to the closed-data playbook.\n\nWhat This Does\n\ndataclaw is a CLI-based tool designed to turn your AI session logs into datasets you own. The main entry point is dataclaw/cli.py, which powers commands for setup, configuration, data processing, and publishing. It’s smart enough to parse logs, redact sensitive info (using dataclaw/anonymizer.py), and even handle custom user configs (dataclaw/config.py). The pyproject.toml handles dependencies, and CI/CD is baked in via GitHub Actions (.github/workflows/).\n\nThe process is deliberately step-by-step to ensure you don’t accidentally leak your secrets. First, you run dataclaw prep to set up the environment. Then, you configure your scope (dataclaw config --source) and pick which folders to exclude (dataclaw config --exclude). Once that’s done, you export the data locally for review (dataclaw export --no-push), confirm any redactions, and only then publish to Hugging Face (dataclaw export --publish-attestation). The guardrails are strict—this thing is built to err on the side of caution.\n\nReal-World Use\n\nLet’s say you’ve been using Claude Code to prototype a new app. Over weeks, you’ve racked up a ton of conversations with useful snippets, but now you want to make a public dataset documenting AI-human collaboration. dataclaw lets you:\nInstall it: pip install dataclaw (or clone it if you’re old-school).\nConfigure it to pull Claude logs: dataclaw config --source claude.\nExclude anything sensitive: dataclaw config --exclude \"private-projects,scratch\".\nReview the export locally: dataclaw export --no-push.\nConfirm redactions and publish: dataclaw confirm followed by dataclaw export --publish-attestation.\n\nAll without exposing your personal or client data, thanks to the built-in anonymization and review workflows.\n\nThe Bottom Line\n\ndataclaw is a niche tool for a niche problem, but it’s damn good at what it does. The CLI is clear, the steps are well-documented, and the safety features are robust (in the good way). That said, it’s overkill if all you want is a quick-and-dirty log dump. But if you care about controlling your data and want to contribute to an open, distributed dataset, dataclaw is worth a look. Just be ready to jump through a lot of “did you really mean to do that?” hoops along the way.",
+      "url": "https://github.com/moses-y/dataclaw",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "peteromallet/dataclaw",
+        "url": "https://github.com/peteromallet/dataclaw",
+        "stars": 201
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 25, 2026",
+      "updatedAt": "February 25, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 22,
+        "directories": {
+          ".claude": 1,
+          ".github": 2,
+          "(root)": 6,
+          "dataclaw": 6,
+          "docs": 1,
+          "tests": 6
+        },
+        "languages": {
+          "Markdown": 3,
+          "YAML": 2,
+          "Python": 12,
+          "TOML": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "dataclaw/cli.py"
+        ],
+        "configFiles": [
+          "pyproject.toml"
+        ],
+        "dependencies": [
+          "pyproject.toml"
+        ],
+        "testFiles": [
+          ".github/workflows/test.yml",
+          "tests/conftest.py",
+          "tests/test_anonymizer.py",
+          "tests/test_cli.py",
+          "tests/test_config.py",
+          "tests/test_parser.py",
+          "tests/test_secrets.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/SKILL.md"
+        ],
+        "fileTypes": {
+          ".md": 3,
+          ".yml": 2,
+          ".jpeg": 1,
+          ".py": 12,
+          ".toml": 1,
+          ".png": 1
+        }
+      }
+    },
+    {
+      "id": 1166356346,
+      "name": "plano",
+      "displayName": "plano",
+      "description": "Delivery infrastructure for agentic apps - Plano is an AI-native proxy and data plane that offloads plumbing work, so you stay focused on your agent's core logic (via any AI framework).",
+      "summary": "The Problem\nBuilding agentic applications is a nightmare when you have to deal with all the routing, orchestration, and data management. You end up spending way too much time on boilerplate code instead of actually building features that matter. Every new agent means more code to manage, and your app starts looking like a tangled mess of spaghetti.\n\nWhat This Does\nPlano is here to pull the plumbing out of your codebase. It offloads the heavy lifting of routing and orchestration into its own data plane. Check out the apps/www/src/app/api/contact/route.ts for an example of how you can define your API routes without getting bogged down in the backend logic.\n\nUsing Filter Chains, you can easily implement moderation and memory hooks without writing a ton of boilerplate. You can find the configuration details in config/planoconfigschema.yaml, which makes it straightforward to customize your setup. Want to add a new agent? Just drop it in and let Plano handle the rest.\n\nReal-World Use\nImagine you're building a travel agent app that interacts with multiple APIs for booking flights, hotels, and car rentals. With Plano, you can set up your agents to handle each task without hardcoding the logic into your app. You’d use apps/www/src/components/research/ResearchGrid.tsx to display results, while the routing and orchestration happen behind the scenes. Just define your agents in the cli/planoai/templates directory and let Plano manage the communication.\n\nThe Bottom Line\nPlano is a solid choice if you’re tired of boilerplate and want to focus on building your agentic apps. It’s great for medium to large projects that need robust routing and orchestration but might be overkill for simple applications. If you're dealing with multiple agents and need a flexible, scalable solution, give Plano a shot. Just be ready to dive into the weeds of its configuration.",
+      "url": "https://github.com/moses-y/plano",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "katanemo/plano",
+        "url": "https://github.com/katanemo/plano",
+        "stars": 5307
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "February 25, 2026",
+      "updatedAt": "February 25, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 11,
+          ".github": 5,
+          "apps": 122,
+          "cli": 31,
+          "config": 9,
+          "crates": 22
+        },
+        "languages": {
+          "YAML": 16,
+          "Markdown": 6,
+          "JSON": 12,
+          "TypeScript": 16,
+          "CSS": 2,
+          "TSX": 40,
+          "Shell": 3,
+          "Python": 19,
+          "TOML": 3,
+          "Rust": 17
+        },
+        "frameworks": [
+          "React",
+          "Next.js",
+          "Docker"
+        ],
+        "packageManager": "cargo",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "apps/www/schemaTypes/index.ts",
+          "apps/www/src/components/research/index.ts",
+          "cli/planoai/main.py",
+          "crates/brightstaff/src/lib.rs",
+          "crates/brightstaff/src/main.rs"
+        ],
+        "configFiles": [
+          "Dockerfile",
+          "apps/katanemo-www/next.config.ts",
+          "apps/katanemo-www/package.json",
+          "apps/katanemo-www/tsconfig.json",
+          "apps/www/next.config.ts",
+          "apps/www/package.json",
+          "apps/www/tsconfig.json",
+          "cli/pyproject.toml",
+          "config/docker-compose.dev.yaml",
+          "config/requirements.txt",
+          "crates/Cargo.toml",
+          "crates/brightstaff/Cargo.toml"
+        ],
+        "dependencies": [
+          "apps/katanemo-www/package.json",
+          "apps/www/package-lock.json",
+          "apps/www/package.json",
+          "cli/pyproject.toml",
+          "config/requirements.txt",
+          "crates/Cargo.toml",
+          "crates/brightstaff/Cargo.toml"
+        ],
+        "testFiles": [
+          "cli/test/__init__.py",
+          "cli/test/source/failure.json",
+          "cli/test/source/success.json",
+          "cli/test/test_config_generator.py",
+          "cli/test/test_init.py",
+          "cli/test/test_trace_cmd.py",
+          "cli/test/test_version_check.py",
+          "config/test_passthrough.yaml",
+          "crates/brightstaff/src/handlers/integration_tests.rs"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "apps/www/README.md",
+          "cli/README.md",
+          "config/README.md"
+        ],
+        "fileTypes": {
+          ".yml": 5,
+          ".yaml": 11,
+          ".md": 6,
+          ".json": 12,
+          ".ts": 16,
+          ".mjs": 2,
+          ".svg": 39,
+          ".css": 2,
+          ".tsx": 40,
+          ".png": 1,
+          ".ttf": 2,
+          ".otf": 4,
+          ".woff2": 3,
+          ".ico": 1,
+          ".code-workspace": 1,
+          ".sh": 3,
+          ".py": 19,
+          ".toml": 3,
+          ".lock": 2,
+          ".list": 1,
+          ".txt": 1,
+          ".conf": 1,
+          ".rs": 17
+        }
+      }
+    },
+    {
       "id": 1165945544,
       "name": "stable-diffusion-webui",
       "displayName": "stable diffusion webui",
@@ -494,7 +494,7 @@
       "parent": {
         "name": "AUTOMATIC1111/stable-diffusion-webui",
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-        "stars": 161116
+        "stars": 161120
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -579,7 +579,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 1442
+        "stars": 1450
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -810,7 +810,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 3030
+        "stars": 3042
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -994,7 +994,7 @@
       "parent": {
         "name": "joi-lab/ouroboros",
         "url": "https://github.com/joi-lab/ouroboros",
-        "stars": 466
+        "stars": 471
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1082,7 +1082,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 36846
+        "stars": 36848
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -1609,7 +1609,7 @@
       "parent": {
         "name": "HunxByts/GhostTrack",
         "url": "https://github.com/HunxByts/GhostTrack",
-        "stars": 7579
+        "stars": 7591
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2057,7 +2057,7 @@
       "parent": {
         "name": "QwenLM/Qwen3-Coder",
         "url": "https://github.com/QwenLM/Qwen3-Coder",
-        "stars": 15724
+        "stars": 15726
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -2151,7 +2151,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 14271
+        "stars": 14281
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -2305,7 +2305,7 @@
       "parent": {
         "name": "RunMaestro/Maestro",
         "url": "https://github.com/RunMaestro/Maestro",
-        "stars": 2312
+        "stars": 2313
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -2522,7 +2522,7 @@
       "parent": {
         "name": "vaibhavpandeyvpz/apkstudio",
         "url": "https://github.com/vaibhavpandeyvpz/apkstudio",
-        "stars": 3783
+        "stars": 3784
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2976,7 +2976,7 @@
       "parent": {
         "name": "HKUDS/ClawWork",
         "url": "https://github.com/HKUDS/ClawWork",
-        "stars": 5471
+        "stars": 5475
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -3169,7 +3169,7 @@
       "parent": {
         "name": "agalwood/Motrix",
         "url": "https://github.com/agalwood/Motrix",
-        "stars": 50898
+        "stars": 50897
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3259,7 +3259,7 @@
       "parent": {
         "name": "TinyAGI/tinyclaw",
         "url": "https://github.com/TinyAGI/tinyclaw",
-        "stars": 2608
+        "stars": 2610
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3799,7 +3799,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 226621
+        "stars": 226745
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3901,7 +3901,7 @@
       "parent": {
         "name": "Conway-Research/automaton",
         "url": "https://github.com/Conway-Research/automaton",
-        "stars": 2371
+        "stars": 2378
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5243,7 +5243,7 @@
       "parent": {
         "name": "alichherawalla/off-grid-mobile",
         "url": "https://github.com/alichherawalla/off-grid-mobile",
-        "stars": 639
+        "stars": 641
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6005,7 +6005,7 @@
       "parent": {
         "name": "spacedriveapp/spacebot",
         "url": "https://github.com/spacedriveapp/spacebot",
-        "stars": 1336
+        "stars": 1337
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6198,7 +6198,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 1302
+        "stars": 1303
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6265,7 +6265,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 2905
+        "stars": 2910
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6360,7 +6360,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 7790
+        "stars": 7795
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6448,7 +6448,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 8788
+        "stars": 8790
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6909,7 +6909,7 @@
       "parent": {
         "name": "PurpleAILAB/Decepticon",
         "url": "https://github.com/PurpleAILAB/Decepticon",
-        "stars": 816
+        "stars": 817
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6975,7 +6975,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 61802
+        "stars": 61806
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7247,7 +7247,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4031
+        "stars": 4032
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -8079,7 +8079,7 @@
       "parent": {
         "name": "thanhkeke97/RSTGameTranslation",
         "url": "https://github.com/thanhkeke97/RSTGameTranslation",
-        "stars": 437
+        "stars": 438
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -8229,7 +8229,7 @@
       "parent": {
         "name": "Serial-Studio/Serial-Studio",
         "url": "https://github.com/Serial-Studio/Serial-Studio",
-        "stars": 6595
+        "stars": 6597
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8279,7 +8279,7 @@
       "parent": {
         "name": "gosom/google-maps-scraper",
         "url": "https://github.com/gosom/google-maps-scraper",
-        "stars": 3243
+        "stars": 3244
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -8667,7 +8667,7 @@
       "parent": {
         "name": "crowdsecurity/crowdsec",
         "url": "https://github.com/crowdsecurity/crowdsec",
-        "stars": 12614
+        "stars": 12615
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -8965,7 +8965,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22243
+        "stars": 22244
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -9782,7 +9782,7 @@
       "parent": {
         "name": "R44VC0RP/pgrok",
         "url": "https://github.com/R44VC0RP/pgrok",
-        "stars": 764
+        "stars": 765
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -9950,7 +9950,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 19602
+        "stars": 19614
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10443,7 +10443,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 24061
+        "stars": 24063
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10904,7 +10904,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 33677
+        "stars": 33683
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -11025,7 +11025,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 6865
+        "stars": 6870
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -11858,7 +11858,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 7210
+        "stars": 7240
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -12040,7 +12040,7 @@
       "parent": {
         "name": "wg-easy/wg-easy",
         "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24744
+        "stars": 24745
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -12458,7 +12458,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 24750
+        "stars": 24768
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -12920,7 +12920,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 9015
+        "stars": 9017
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -13492,7 +13492,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 201693
+        "stars": 201694
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -13919,7 +13919,7 @@
       "parent": {
         "name": "OpenBMB/VoxCPM",
         "url": "https://github.com/OpenBMB/VoxCPM",
-        "stars": 5939
+        "stars": 5940
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -14971,7 +14971,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 16380
+        "stars": 16381
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -16076,7 +16076,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 96984
+        "stars": 96988
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -16889,7 +16889,7 @@
       "parent": {
         "name": "antirez/voxtral.c",
         "url": "https://github.com/antirez/voxtral.c",
-        "stars": 1413
+        "stars": 1414
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -17274,7 +17274,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1712
+        "stars": 1713
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -17646,7 +17646,7 @@
       "parent": {
         "name": "Kocoro-lab/Shannon",
         "url": "https://github.com/Kocoro-lab/Shannon",
-        "stars": 1065
+        "stars": 1066
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -17779,7 +17779,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 20771
+        "stars": 20772
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -18722,7 +18722,7 @@
       "parent": {
         "name": "timoncool/videosos",
         "url": "https://github.com/timoncool/videosos",
-        "stars": 1118
+        "stars": 1119
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -19233,7 +19233,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 30631
+        "stars": 30640
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -21271,7 +21271,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 6520
+        "stars": 6527
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -21404,7 +21404,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8491
+        "stars": 8492
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -21649,7 +21649,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 3865
+        "stars": 3867
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -21812,7 +21812,7 @@
       "parent": {
         "name": "droidrun/droidrun",
         "url": "https://github.com/droidrun/droidrun",
-        "stars": 7751
+        "stars": 7752
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -22113,7 +22113,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 124838
+        "stars": 124841
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -22208,7 +22208,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 6861
+        "stars": 6866
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -22796,7 +22796,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24267
+        "stars": 24268
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -23912,7 +23912,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 36701
+        "stars": 36702
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -24974,7 +24974,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 123361
+        "stars": 123376
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -25588,7 +25588,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 11212
+        "stars": 11213
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -26225,7 +26225,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 9157
+        "stars": 9160
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -27987,7 +27987,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 21857
+        "stars": 21858
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -29889,7 +29889,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182058
+        "stars": 182059
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -30020,7 +30020,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 11323
+        "stars": 11325
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -31521,7 +31521,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56371
+        "stars": 56373
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -32314,7 +32314,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 110245
+        "stars": 110270
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -33713,7 +33713,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 28327
+        "stars": 28329
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -34066,7 +34066,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 15361
+        "stars": 15370
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -34196,7 +34196,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 21144
+        "stars": 21146
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -34850,7 +34850,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 95811
+        "stars": 95814
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -36002,7 +36002,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 182007
+        "stars": 182008
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
