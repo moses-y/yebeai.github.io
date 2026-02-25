@@ -610,6 +610,138 @@
             font-style: italic;
         }
 
+        /* Depth slider */
+        .depth-control {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .depth-control input[type="range"] {
+            width: 80px;
+            height: 4px;
+            -webkit-appearance: none;
+            background: var(--border);
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .depth-control input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+
+        .depth-control input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+        .depth-value {
+            min-width: 20px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        /* Community toggle */
+        .community-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        .community-toggle:hover {
+            border-color: var(--accent);
+        }
+
+        .community-toggle.active {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .community-toggle input {
+            display: none;
+        }
+
+        .toggle-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--text-tertiary);
+            transition: background 0.2s;
+        }
+
+        .community-toggle.active .toggle-dot {
+            background: var(--accent);
+        }
+
+        /* Community legend */
+        .community-legend {
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.7rem;
+            color: var(--text-tertiary);
+        }
+
+        .community-legend.visible {
+            display: flex;
+        }
+
+        .community-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 3px;
+        }
+
+        /* Selected node indicator */
+        .selected-node-badge {
+            display: none;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+        }
+
+        .selected-node-badge.visible {
+            display: flex;
+        }
+
+        .selected-node-badge .clear-selection {
+            background: rgba(99, 102, 241, 0.2);
+            border: none;
+            color: var(--accent);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 0.65rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             nav { padding: 0.75rem 1rem; }
@@ -663,6 +795,30 @@
             Search:
             <input type="text" id="search" placeholder="Filter repos..." style="width:140px">
         </label>
+
+        <!-- Community detection toggle -->
+        <label class="community-toggle" id="community-toggle">
+            <input type="checkbox" id="community-checkbox">
+            <span class="toggle-dot"></span>
+            Clusters
+        </label>
+
+        <!-- Depth filter -->
+        <div class="depth-control" id="depth-control" style="display:none">
+            <span>Depth:</span>
+            <input type="range" id="depth-slider" min="1" max="5" value="5">
+            <span class="depth-value" id="depth-value">∞</span>
+        </div>
+
+        <!-- Selected node badge -->
+        <div class="selected-node-badge" id="selected-badge">
+            <span id="selected-name">Node</span>
+            <button class="clear-selection" onclick="clearSelection()">✕</button>
+        </div>
+
+        <!-- Community legend -->
+        <div class="community-legend" id="community-legend"></div>
+
         <div class="stats-bar" id="stats-bar">
             <span>Repos: <strong id="stat-repos">0</strong></span>
             <span>Languages: <strong id="stat-langs">0</strong></span>
@@ -730,6 +886,18 @@
     let currentView = 'ecosystem';
     let currentRepo = null;
     let filterLanguage = null;
+    let communityMode = false;
+    let selectedNodeId = null;
+    let depthFilter = 5; // 5 = show all
+    let nodeCommunities = new Map(); // nodeId -> communityId
+    let currentNodes = [];
+    let currentLinks = [];
+
+    // Community colors (distinct, colorblind-friendly palette)
+    const communityColors = [
+        '#6366f1', '#22c55e', '#f59e0b', '#ef4444', '#8b5cf6',
+        '#06b6d4', '#ec4899', '#14b8a6', '#f97316', '#84cc16'
+    ];
 
     // Load data
     async function loadData() {
@@ -758,12 +926,171 @@
         }
     }
 
-    // Event listeners
+    // ========== COMMUNITY DETECTION (Louvain-inspired) ==========
+    function detectCommunities(nodes, links) {
+        // Build adjacency list
+        const adj = new Map();
+        nodes.forEach(n => adj.set(n.id, []));
+        links.forEach(l => {
+            const src = typeof l.source === 'string' ? l.source : l.source.id;
+            const tgt = typeof l.target === 'string' ? l.target : l.target.id;
+            if (adj.has(src)) adj.get(src).push({ node: tgt, weight: l.value || 1 });
+            if (adj.has(tgt)) adj.get(tgt).push({ node: src, weight: l.value || 1 });
+        });
+
+        // Initialize each node in its own community
+        const community = new Map();
+        nodes.forEach((n, i) => community.set(n.id, i));
+
+        // Simple greedy modularity optimization (2 passes)
+        for (let pass = 0; pass < 2; pass++) {
+            let improved = true;
+            while (improved) {
+                improved = false;
+                for (const node of nodes) {
+                    const neighbors = adj.get(node.id) || [];
+                    if (neighbors.length === 0) continue;
+
+                    // Find best community among neighbors
+                    const commCounts = new Map();
+                    neighbors.forEach(({ node: nid, weight }) => {
+                        const c = community.get(nid);
+                        commCounts.set(c, (commCounts.get(c) || 0) + weight);
+                    });
+
+                    let bestComm = community.get(node.id);
+                    let bestScore = 0;
+                    commCounts.forEach((score, c) => {
+                        if (score > bestScore) {
+                            bestScore = score;
+                            bestComm = c;
+                        }
+                    });
+
+                    if (bestComm !== community.get(node.id)) {
+                        community.set(node.id, bestComm);
+                        improved = true;
+                    }
+                }
+            }
+        }
+
+        // Renumber communities to be sequential
+        const uniqueComms = [...new Set(community.values())];
+        const commMap = new Map(uniqueComms.map((c, i) => [c, i]));
+        const result = new Map();
+        community.forEach((c, nodeId) => result.set(nodeId, commMap.get(c)));
+
+        return result;
+    }
+
+    // ========== BFS DEPTH FILTER ==========
+    function getNodesWithinDepth(startId, maxDepth, nodes, links) {
+        if (maxDepth >= 5) {
+            // Return all nodes
+            return new Map(nodes.map(n => [n.id, 0]));
+        }
+
+        const adj = new Map();
+        nodes.forEach(n => adj.set(n.id, []));
+        links.forEach(l => {
+            const src = typeof l.source === 'string' ? l.source : l.source.id;
+            const tgt = typeof l.target === 'string' ? l.target : l.target.id;
+            if (adj.has(src)) adj.get(src).push(tgt);
+            if (adj.has(tgt)) adj.get(tgt).push(src);
+        });
+
+        const visited = new Map([[startId, 0]]);
+        const queue = [startId];
+
+        while (queue.length > 0) {
+            const nodeId = queue.shift();
+            const depth = visited.get(nodeId);
+            if (depth < maxDepth) {
+                const neighbors = adj.get(nodeId) || [];
+                neighbors.forEach(neighbor => {
+                    if (!visited.has(neighbor)) {
+                        visited.set(neighbor, depth + 1);
+                        queue.push(neighbor);
+                    }
+                });
+            }
+        }
+        return visited;
+    }
+
+    // ========== EVENT LISTENERS ==========
     document.getElementById('search').addEventListener('input', (e) => {
         if (currentView === 'ecosystem') {
             renderGraph(e.target.value.toLowerCase());
         }
     });
+
+    // Community toggle
+    document.getElementById('community-toggle').addEventListener('click', () => {
+        communityMode = !communityMode;
+        document.getElementById('community-toggle').classList.toggle('active', communityMode);
+        document.getElementById('community-legend').classList.toggle('visible', communityMode);
+        renderGraph(document.getElementById('search').value.toLowerCase());
+    });
+
+    // Depth slider
+    document.getElementById('depth-slider').addEventListener('input', (e) => {
+        depthFilter = parseInt(e.target.value);
+        document.getElementById('depth-value').textContent = depthFilter >= 5 ? '∞' : depthFilter;
+        if (selectedNodeId && currentView === 'ecosystem') {
+            applyDepthFilter();
+        }
+    });
+
+    function clearSelection() {
+        selectedNodeId = null;
+        document.getElementById('selected-badge').classList.remove('visible');
+        document.getElementById('depth-control').style.display = 'none';
+        renderGraph(document.getElementById('search').value.toLowerCase());
+    }
+
+    function applyDepthFilter() {
+        if (!selectedNodeId || currentView !== 'ecosystem') return;
+
+        const visibleNodes = getNodesWithinDepth(selectedNodeId, depthFilter, currentNodes, currentLinks);
+
+        // Update node visibility
+        d3.selectAll('.node-group')
+            .classed('dimmed', d => !visibleNodes.has(d.id))
+            .select('.node-circle')
+            .classed('selected', d => d.id === selectedNodeId);
+
+        d3.selectAll('.link-line')
+            .classed('dimmed', l => {
+                const src = typeof l.source === 'string' ? l.source : l.source.id;
+                const tgt = typeof l.target === 'string' ? l.target : l.target.id;
+                return !visibleNodes.has(src) || !visibleNodes.has(tgt);
+            });
+    }
+
+    function updateCommunityLegend() {
+        const legend = document.getElementById('community-legend');
+        const uniqueComms = [...new Set(nodeCommunities.values())].sort((a, b) => a - b);
+
+        // Count nodes per community
+        const commCounts = new Map();
+        nodeCommunities.forEach((comm) => {
+            commCounts.set(comm, (commCounts.get(comm) || 0) + 1);
+        });
+
+        // Show top communities (max 5)
+        const topComms = uniqueComms.slice(0, 5);
+        legend.innerHTML = topComms.map(comm => {
+            const color = communityColors[comm % communityColors.length];
+            const count = commCounts.get(comm) || 0;
+            return `<span><span class="community-dot" style="background:${color}"></span>C${comm + 1} (${count})</span>`;
+        }).join('');
+
+        if (uniqueComms.length > 5) {
+            legend.innerHTML += `<span style="color:var(--text-tertiary)">+${uniqueComms.length - 5} more</span>`;
+        }
+    }
 
     function updateUI() {
         const backBtn = document.getElementById('back-btn');
@@ -946,6 +1273,16 @@
             }
         });
 
+        // Store for depth filter
+        currentNodes = nodes;
+        currentLinks = links;
+
+        // Run community detection if enabled
+        if (communityMode) {
+            nodeCommunities = detectCommunities(nodes, links);
+            updateCommunityLegend();
+        }
+
         // D3 force simulation
         const svg = d3.select(container).append('svg')
             .attr('width', width)
@@ -993,6 +1330,12 @@
             .attr('class', d => 'node-circle clickable')
             .attr('r', d => d.radius)
             .attr('fill', d => {
+                // Community mode coloring
+                if (communityMode && nodeCommunities.has(d.id)) {
+                    const commId = nodeCommunities.get(d.id);
+                    return communityColors[commId % communityColors.length];
+                }
+                // Default coloring
                 if (d.type === 'language') return getColor(d.name);
                 if (d.language) {
                     const c = d3.color(getColor(d.language));
@@ -1007,6 +1350,17 @@
                 event.stopPropagation();
                 createRipple(g, d.x, d.y, d.type === 'language' ? getColor(d.name) : null);
 
+                // Shift+click: select node for depth filtering
+                if (event.shiftKey) {
+                    selectedNodeId = d.id;
+                    document.getElementById('selected-badge').classList.add('visible');
+                    document.getElementById('selected-name').textContent = d.name;
+                    document.getElementById('depth-control').style.display = 'flex';
+                    applyDepthFilter();
+                    return;
+                }
+
+                // Normal click
                 if (d.type === 'language') {
                     // Filter by this language
                     filterByLanguage(d.name);
@@ -1054,12 +1408,17 @@
 
             // Tooltip
             let html = '';
+            // Show community if enabled
+            const commInfo = communityMode && nodeCommunities.has(d.id)
+                ? `<span class="tag" style="background:${communityColors[nodeCommunities.get(d.id) % communityColors.length]}40;border-color:${communityColors[nodeCommunities.get(d.id) % communityColors.length]}">Cluster ${nodeCommunities.get(d.id) + 1}</span>`
+                : '';
+
             if (d.type === 'language') {
                 const repoCount = links.filter(l => (typeof l.target === 'string' ? l.target : l.target.id) === d.id).length;
-                html = `<h4>${d.name}</h4><div class="detail">${d.count} files across ${repoCount} repos</div>`;
-                html += `<div class="click-hint">Click to filter by ${d.name}</div>`;
+                html = `<h4>${d.name}</h4>${commInfo}<div class="detail">${d.count} files across ${repoCount} repos</div>`;
+                html += `<div class="click-hint">Click to filter · Shift+click to select</div>`;
             } else {
-                html = `<h4>${d.name}</h4>`;
+                html = `<h4>${d.name}</h4>${commInfo}`;
                 if (d.kg?.languages) {
                     const langs = Object.entries(d.kg.languages).sort((a, b) => b[1] - a[1]).slice(0, 5);
                     html += '<div style="margin-top:4px">' + langs.map(([l, c]) => `<span class="tag">${l}: ${c}</span>`).join('') + '</div>';
@@ -1072,7 +1431,7 @@
                 } else if (d.description) {
                     html += `<div class="summary">${d.description}</div>`;
                 }
-                html += `<div class="click-hint">Click to explore</div>`;
+                html += `<div class="click-hint">Click to explore · Shift+click to select</div>`;
             }
             tooltip.innerHTML = html;
             tooltip.style.left = (event.clientX + 12) + 'px';
