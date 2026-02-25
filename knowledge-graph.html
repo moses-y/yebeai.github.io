@@ -488,17 +488,6 @@
             }
         }
 
-        @keyframes pulse-glow {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 rgba(99, 102, 241, 0);
-            }
-            50% {
-                transform: scale(1.02);
-                box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
-            }
-        }
-
         @keyframes slide-in {
             from { opacity: 0; transform: translateX(20px); }
             to { opacity: 1; transform: translateX(0); }
@@ -537,15 +526,6 @@
 
         ::-webkit-scrollbar-thumb:hover {
             background: var(--accent);
-        }
-
-        /* Enhanced shadows */
-        .shadow-glow {
-            box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
-        }
-
-        .shadow-subtle {
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
         }
 
         /* Filter badge */
@@ -843,8 +823,10 @@
         <div id="panel-content"></div>
     </div>
 
-    <!-- D3.js from CDN -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- 3D Force Graph + Three.js extras -->
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three-spritetext@1.8.2/dist/three-spritetext.min.js"></script>
+    <script src="https://unpkg.com/3d-force-graph@1.73.0/dist/3d-force-graph.min.js"></script>
 
     <script>
     // Theme
@@ -898,6 +880,12 @@
         '#6366f1', '#22c55e', '#f59e0b', '#ef4444', '#8b5cf6',
         '#06b6d4', '#ec4899', '#14b8a6', '#f97316', '#84cc16'
     ];
+
+    // 3D Graph instance
+    let graph3D = null;
+    let highlightNodes = new Set();
+    let highlightLinks = new Set();
+    let hoverNode = null;
 
     // Load data
     async function loadData() {
@@ -1053,20 +1041,11 @@
     function applyDepthFilter() {
         if (!selectedNodeId || currentView !== 'ecosystem') return;
 
-        const visibleNodes = getNodesWithinDepth(selectedNodeId, depthFilter, currentNodes, currentLinks);
-
-        // Update node visibility
-        d3.selectAll('.node-group')
-            .classed('dimmed', d => !visibleNodes.has(d.id))
-            .select('.node-circle')
-            .classed('selected', d => d.id === selectedNodeId);
-
-        d3.selectAll('.link-line')
-            .classed('dimmed', l => {
-                const src = typeof l.source === 'string' ? l.source : l.source.id;
-                const tgt = typeof l.target === 'string' ? l.target : l.target.id;
-                return !visibleNodes.has(src) || !visibleNodes.has(tgt);
-            });
+        // Trigger re-render with new depth
+        if (graph3D) {
+            graph3D.nodeColor(graph3D.nodeColor());
+            graph3D.linkColor(graph3D.linkColor());
+        }
     }
 
     function updateCommunityLegend() {
@@ -1130,22 +1109,6 @@
         renderGraph(document.getElementById('search').value.toLowerCase());
     }
 
-    function createRipple(g, x, y, color) {
-        const ripple = g.append('circle')
-            .attr('class', 'ripple')
-            .attr('cx', x)
-            .attr('cy', y)
-            .attr('r', 0)
-            .attr('fill', color || 'var(--accent)')
-            .attr('opacity', 0.6);
-
-        ripple.transition()
-            .duration(400)
-            .attr('r', 50)
-            .attr('opacity', 0)
-            .remove();
-    }
-
     function drillIntoRepo(repo) {
         const container = document.getElementById('graph-container');
         container.classList.add('transitioning');
@@ -1181,10 +1144,82 @@
         }
     }
 
-    // ========== ECOSYSTEM VIEW ==========
+    // Type colors for nodes
+    const typeColors = {
+        repo: '#6366f1',
+        directory: '#22c55e',
+        language: null,
+        framework: '#8b5cf6',
+        entry: '#f59e0b',
+        config: '#ef4444',
+        ci: '#3b82f6',
+        docker: '#0ea5e9'
+    };
+
+    // Get node color based on type, community, etc.
+    function getNodeColor(node) {
+        // Dimmed if depth filtered
+        if (selectedNodeId && depthFilter < 5) {
+            const visible = getNodesWithinDepth(selectedNodeId, depthFilter, currentNodes, currentLinks);
+            if (!visible.has(node.id)) {
+                return 'rgba(100,100,100,0.2)';
+            }
+        }
+
+        // Highlight on hover
+        if (hoverNode) {
+            if (highlightNodes.has(node.id)) {
+                // Keep bright
+            } else {
+                return 'rgba(100,100,100,0.3)';
+            }
+        }
+
+        // Community coloring
+        if (communityMode && nodeCommunities.has(node.id)) {
+            return communityColors[nodeCommunities.get(node.id) % communityColors.length];
+        }
+
+        // Type-based coloring
+        if (node.type === 'language') return getColor(node.name);
+        if (typeColors[node.type]) return typeColors[node.type];
+        if (node.language) return getColor(node.language);
+        return '#888888';
+    }
+
+    // Get link color
+    function getLinkColor(link) {
+        if (hoverNode && !highlightLinks.has(link)) {
+            return 'rgba(100,100,100,0.1)';
+        }
+        if (selectedNodeId && depthFilter < 5) {
+            const visible = getNodesWithinDepth(selectedNodeId, depthFilter, currentNodes, currentLinks);
+            const src = typeof link.source === 'object' ? link.source.id : link.source;
+            const tgt = typeof link.target === 'object' ? link.target.id : link.target;
+            if (!visible.has(src) || !visible.has(tgt)) {
+                return 'rgba(100,100,100,0.05)';
+            }
+        }
+        if (highlightLinks.has(link)) {
+            return 'rgba(255,255,255,0.8)';
+        }
+        const tgt = typeof link.target === 'object' ? link.target : currentNodes.find(n => n.id === link.target);
+        if (tgt && tgt.type === 'language') {
+            return getColor(tgt.name) + '40';
+        }
+        return 'rgba(255,255,255,0.15)';
+    }
+
+    // ========== ECOSYSTEM VIEW (3D) ==========
     function renderEcosystemGraph(filter) {
         const container = document.getElementById('graph-container');
-        container.querySelectorAll('svg').forEach(s => s.remove());
+
+        // Clear previous
+        if (graph3D) {
+            graph3D._destructor && graph3D._destructor();
+            graph3D = null;
+        }
+        container.innerHTML = '';
 
         let repos = allData;
 
@@ -1210,9 +1245,6 @@
             return;
         }
 
-        const width = container.clientWidth;
-        const height = container.clientHeight;
-
         // Build nodes and links
         const nodes = [];
         const links = [];
@@ -1234,7 +1266,7 @@
             .slice(0, 15);
 
         topLangs.forEach(([lang, count]) => {
-            const node = { id: 'lang-' + lang, name: lang, type: 'language', count, radius: Math.min(30, 10 + Math.sqrt(count)) };
+            const node = { id: 'lang-' + lang, name: lang, type: 'language', count, val: Math.min(30, 8 + Math.sqrt(count)) };
             nodes.push(node);
             langNodes.set(lang, node);
         });
@@ -1254,7 +1286,7 @@
                 summary: repo.summary,
                 totalFiles,
                 kg,
-                radius: Math.max(5, Math.min(18, 4 + Math.sqrt(totalFiles)))
+                val: Math.max(3, Math.min(15, 3 + Math.sqrt(totalFiles) * 0.8))
             };
             nodes.push(repoNode);
 
@@ -1283,187 +1315,99 @@
             updateCommunityLegend();
         }
 
-        // D3 force simulation
-        const svg = d3.select(container).append('svg')
-            .attr('width', width)
-            .attr('height', height);
+        // Get theme
+        const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+        const bgColor = isDark ? '#030303' : '#ffffff';
 
-        // Zoom
-        const g = svg.append('g');
-        svg.call(d3.zoom()
-            .scaleExtent([0.1, 4])
-            .on('zoom', (event) => g.attr('transform', event.transform)));
+        // Create 3D graph
+        graph3D = ForceGraph3D()(container)
+            .graphData({ nodes, links })
+            .backgroundColor(bgColor)
+            .nodeVal(n => n.val || 5)
+            .nodeColor(n => getNodeColor(n))
+            .nodeLabel(n => '')
+            .nodeOpacity(0.9)
+            .linkWidth(l => Math.max(0.3, Math.min(2, (l.value || 1) / 10)))
+            .linkColor(l => getLinkColor(l))
+            .linkOpacity(0.6)
+            .onNodeHover(node => {
+                container.style.cursor = node ? 'pointer' : 'default';
+                hoverNode = node;
 
-        const simulation = d3.forceSimulation(nodes)
-            .force('link', d3.forceLink(links).id(d => d.id).distance(d => 80 + (d.value ? 50 / d.value : 0)))
-            .force('charge', d3.forceManyBody().strength(d => d.type === 'language' ? -300 : -60))
-            .force('center', d3.forceCenter(width / 2, height / 2))
-            .force('collision', d3.forceCollide().radius(d => d.radius + 3));
+                // Update highlight sets
+                highlightNodes.clear();
+                highlightLinks.clear();
 
-        // Links
-        const link = g.append('g')
-            .selectAll('line')
-            .data(links)
-            .join('line')
-            .attr('class', 'link-line')
-            .attr('stroke', d => {
-                const langName = typeof d.target === 'string' ? d.target.replace('lang-', '') : d.target.name;
-                return getColor(langName);
-            })
-            .attr('stroke-opacity', 0.15)
-            .attr('stroke-width', d => Math.max(0.5, Math.min(3, d.value / 5)));
+                if (node) {
+                    highlightNodes.add(node.id);
+                    links.forEach(link => {
+                        const src = typeof link.source === 'object' ? link.source.id : link.source;
+                        const tgt = typeof link.target === 'object' ? link.target.id : link.target;
+                        if (src === node.id || tgt === node.id) {
+                            highlightNodes.add(src);
+                            highlightNodes.add(tgt);
+                            highlightLinks.add(link);
+                        }
+                    });
 
-        // Nodes
-        const node = g.append('g')
-            .selectAll('g')
-            .data(nodes)
-            .join('g')
-            .attr('class', 'node-group')
-            .call(d3.drag()
-                .on('start', (event, d) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
-                .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
-                .on('end', (event, d) => { if (!event.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
-            );
-
-        // Circles
-        node.append('circle')
-            .attr('class', d => 'node-circle clickable')
-            .attr('r', d => d.radius)
-            .attr('fill', d => {
-                // Community mode coloring
-                if (communityMode && nodeCommunities.has(d.id)) {
-                    const commId = nodeCommunities.get(d.id);
-                    return communityColors[commId % communityColors.length];
+                    // Show tooltip
+                    showTooltip(node, true);
+                } else {
+                    hideTooltip();
                 }
-                // Default coloring
-                if (d.type === 'language') return getColor(d.name);
-                if (d.language) {
-                    const c = d3.color(getColor(d.language));
-                    if (c) { c.opacity = 0.6; return c.formatRgb(); }
-                }
-                return 'var(--text-tertiary)';
-            })
-            .attr('stroke', d => d.type === 'language' ? getColor(d.name) : 'var(--border)')
-            .attr('stroke-width', d => d.type === 'language' ? 2 : 1)
-            .style('color', d => d.type === 'language' ? getColor(d.name) : 'var(--accent)')
-            .on('click', (event, d) => {
-                event.stopPropagation();
-                createRipple(g, d.x, d.y, d.type === 'language' ? getColor(d.name) : null);
 
-                // Shift+click: select node for depth filtering
+                // Trigger re-render
+                graph3D.nodeColor(graph3D.nodeColor());
+                graph3D.linkColor(graph3D.linkColor());
+            })
+            .onNodeClick((node, event) => {
+                // Shift+click: select for depth filter
                 if (event.shiftKey) {
-                    selectedNodeId = d.id;
+                    selectedNodeId = node.id;
                     document.getElementById('selected-badge').classList.add('visible');
-                    document.getElementById('selected-name').textContent = d.name;
+                    document.getElementById('selected-name').textContent = node.name;
                     document.getElementById('depth-control').style.display = 'flex';
-                    applyDepthFilter();
+                    graph3D.nodeColor(graph3D.nodeColor());
+                    graph3D.linkColor(graph3D.linkColor());
                     return;
                 }
 
                 // Normal click
-                if (d.type === 'language') {
-                    // Filter by this language
-                    filterByLanguage(d.name);
-                } else if (d.type === 'repo' && d.kg) {
-                    const repo = allData.find(f => f.name === d.repoName);
+                if (node.type === 'language') {
+                    filterByLanguage(node.name);
+                } else if (node.type === 'repo' && node.kg) {
+                    const repo = allData.find(f => f.name === node.repoName);
                     if (repo) drillIntoRepo(repo);
                 }
-            });
+            })
+            .d3Force('charge', d3ForceSimulation => d3ForceSimulation.strength(n => n.type === 'language' ? -150 : -30))
+            .d3Force('link', d3ForceSimulation => d3ForceSimulation.distance(l => 50 + (l.value ? 30 / l.value : 0)));
 
-        // Labels for language hubs
-        node.filter(d => d.type === 'language')
-            .append('text')
-            .text(d => d.name)
-            .attr('text-anchor', 'middle')
-            .attr('dy', d => d.radius + 14)
-            .attr('font-size', '0.65rem')
-            .attr('font-weight', 600)
-            .attr('fill', d => getColor(d.name))
-            .style('pointer-events', 'none');
-
-        // Hover tooltip and highlighting
-        const tooltip = document.getElementById('tooltip');
-
-        node.on('mouseenter', (event, d) => {
-            // Highlight connected nodes
-            const connectedIds = new Set([d.id]);
-            links.forEach(l => {
-                const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
-                const targetId = typeof l.target === 'string' ? l.target : l.target.id;
-                if (sourceId === d.id) connectedIds.add(targetId);
-                if (targetId === d.id) connectedIds.add(sourceId);
-            });
-
-            node.classed('dimmed', n => !connectedIds.has(n.id));
-            link.classed('dimmed', l => {
-                const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
-                const targetId = typeof l.target === 'string' ? l.target : l.target.id;
-                return sourceId !== d.id && targetId !== d.id;
-            });
-            link.classed('highlighted', l => {
-                const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
-                const targetId = typeof l.target === 'string' ? l.target : l.target.id;
-                return sourceId === d.id || targetId === d.id;
-            });
-
-            // Tooltip
-            let html = '';
-            // Show community if enabled
-            const commInfo = communityMode && nodeCommunities.has(d.id)
-                ? `<span class="tag" style="background:${communityColors[nodeCommunities.get(d.id) % communityColors.length]}40;border-color:${communityColors[nodeCommunities.get(d.id) % communityColors.length]}">Cluster ${nodeCommunities.get(d.id) + 1}</span>`
-                : '';
-
-            if (d.type === 'language') {
-                const repoCount = links.filter(l => (typeof l.target === 'string' ? l.target : l.target.id) === d.id).length;
-                html = `<h4>${d.name}</h4>${commInfo}<div class="detail">${d.count} files across ${repoCount} repos</div>`;
-                html += `<div class="click-hint">Click to filter · Shift+click to select</div>`;
-            } else {
-                html = `<h4>${d.name}</h4>${commInfo}`;
-                if (d.kg?.languages) {
-                    const langs = Object.entries(d.kg.languages).sort((a, b) => b[1] - a[1]).slice(0, 5);
-                    html += '<div style="margin-top:4px">' + langs.map(([l, c]) => `<span class="tag">${l}: ${c}</span>`).join('') + '</div>';
-                }
-                html += `<div class="detail" style="margin-top:4px">${d.totalFiles} files · ★ ${d.stars}</div>`;
-                // Show blog summary if available
-                if (d.summary) {
-                    const truncated = d.summary.length > 200 ? d.summary.slice(0, 200) + '...' : d.summary;
-                    html += `<div class="summary">${truncated}</div>`;
-                } else if (d.description) {
-                    html += `<div class="summary">${d.description}</div>`;
-                }
-                html += `<div class="click-hint">Click to explore · Shift+click to select</div>`;
+        // Add labels as sprites
+        graph3D.nodeThreeObject(node => {
+            if (node.type === 'language') {
+                const sprite = new SpriteText(node.name);
+                sprite.color = getColor(node.name);
+                sprite.textHeight = 4;
+                sprite.position.y = (node.val || 5) + 5;
+                return sprite;
             }
-            tooltip.innerHTML = html;
-            tooltip.style.left = (event.clientX + 12) + 'px';
-            tooltip.style.top = (event.clientY - 10) + 'px';
-            tooltip.classList.add('visible');
-        })
-        .on('mousemove', (event) => {
-            tooltip.style.left = (event.clientX + 12) + 'px';
-            tooltip.style.top = (event.clientY - 10) + 'px';
-        })
-        .on('mouseleave', () => {
-            // Remove highlighting
-            node.classed('dimmed', false);
-            link.classed('dimmed', false);
-            link.classed('highlighted', false);
-            tooltip.classList.remove('visible');
+            return false;
         });
 
-        simulation.on('tick', () => {
-            link
-                .attr('x1', d => d.source.x)
-                .attr('y1', d => d.source.y)
-                .attr('x2', d => d.target.x)
-                .attr('y2', d => d.target.y);
-            node.attr('transform', d => `translate(${d.x},${d.y})`);
-        });
+        graph3D.nodeThreeObjectExtend(true);
     }
 
-    // ========== SINGLE REPO VIEW ==========
+    // ========== SINGLE REPO VIEW (3D) ==========
     function renderSingleRepoGraph(repo) {
         const container = document.getElementById('graph-container');
-        container.querySelectorAll('svg').forEach(s => s.remove());
+
+        // Clear previous
+        if (graph3D) {
+            graph3D._destructor && graph3D._destructor();
+            graph3D = null;
+        }
+        container.innerHTML = '';
 
         const kg = repo.knowledgeGraph;
         if (!kg) {
@@ -1471,266 +1415,197 @@
             return;
         }
 
-        const width = container.clientWidth;
-        const height = container.clientHeight;
         const nodes = [];
         const links = [];
 
         // Center node: repo
-        const centerNode = { id: 'center', name: repo.displayName || repo.name, type: 'repo', radius: 25, fx: width / 2, fy: height / 2, summary: repo.summary, description: repo.description };
+        const centerNode = { id: 'center', name: repo.displayName || repo.name, type: 'repo', val: 20, summary: repo.summary, description: repo.description };
         nodes.push(centerNode);
 
         // Directory nodes
         Object.entries(kg.directories || {}).sort((a, b) => b[1] - a[1]).slice(0, 12).forEach(([dir, count]) => {
-            const n = { id: 'dir-' + dir, name: dir + '/', dirName: dir, type: 'directory', count, radius: 8 + Math.sqrt(count) * 2 };
+            const n = { id: 'dir-' + dir, name: dir + '/', dirName: dir, type: 'directory', count, val: 5 + Math.sqrt(count) };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: count });
         });
 
-        // Language nodes - include repo count info
+        // Language nodes
         Object.entries(kg.languages || {}).sort((a, b) => b[1] - a[1]).slice(0, 10).forEach(([lang, count]) => {
-            // Count how many repos use this language
             const reposWithLang = allData.filter(r => r.knowledgeGraph?.languages?.[lang]).length;
-            const n = { id: 'lang-' + lang, name: lang, type: 'language', count, reposWithLang, radius: 8 + Math.sqrt(count) * 2 };
+            const n = { id: 'lang-' + lang, name: lang, type: 'language', count, reposWithLang, val: 5 + Math.sqrt(count) };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: count });
         });
 
-        // Framework nodes (if available)
+        // Framework nodes
         (kg.frameworks || []).slice(0, 6).forEach((fw, i) => {
-            const n = { id: 'fw-' + i, name: fw, type: 'framework', radius: 10 };
+            const n = { id: 'fw-' + i, name: fw, type: 'framework', val: 6 };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: 2 });
         });
 
         // Entry point nodes
         (kg.entryPoints || []).slice(0, 6).forEach((ep, i) => {
-            const n = { id: 'entry-' + i, name: ep, type: 'entry', radius: 7 };
+            const n = { id: 'entry-' + i, name: ep, type: 'entry', val: 4 };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: 1 });
         });
 
         // Config nodes
         (kg.configFiles || []).slice(0, 6).forEach((cf, i) => {
-            const n = { id: 'config-' + i, name: cf, type: 'config', radius: 6 };
+            const n = { id: 'config-' + i, name: cf, type: 'config', val: 3 };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: 1 });
         });
 
-        // CI/CD node if present
+        // CI/CD node
         if (kg.hasCI && kg.ciPlatform) {
-            const n = { id: 'ci', name: kg.ciPlatform, type: 'ci', radius: 8 };
+            const n = { id: 'ci', name: kg.ciPlatform, type: 'ci', val: 5 };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: 1 });
         }
 
-        // Docker node if present
+        // Docker node
         if (kg.hasDocker) {
-            const n = { id: 'docker', name: 'Docker', type: 'docker', radius: 8 };
+            const n = { id: 'docker', name: 'Docker', type: 'docker', val: 5 };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: 1 });
         }
 
-        const svg = d3.select(container).append('svg')
-            .attr('width', width)
-            .attr('height', height);
+        currentNodes = nodes;
+        currentLinks = links;
 
-        const g = svg.append('g');
-        svg.call(d3.zoom()
-            .scaleExtent([0.3, 4])
-            .on('zoom', (event) => g.attr('transform', event.transform)));
+        const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+        const bgColor = isDark ? '#030303' : '#ffffff';
 
-        const simulation = d3.forceSimulation(nodes)
-            .force('link', d3.forceLink(links).id(d => d.id).distance(100))
-            .force('charge', d3.forceManyBody().strength(-200))
-            .force('center', d3.forceCenter(width / 2, height / 2))
-            .force('collision', d3.forceCollide().radius(d => d.radius + 8));
-
-        const typeColors = {
-            repo: 'var(--accent)',
-            directory: '#22c55e',
-            language: null, // uses langColors
-            framework: '#8b5cf6',
-            entry: '#f59e0b',
-            config: '#ef4444',
-            ci: '#3b82f6',
-            docker: '#0ea5e9'
-        };
-
-        const link = g.append('g')
-            .selectAll('line')
-            .data(links)
-            .join('line')
-            .attr('class', 'link-line')
-            .attr('stroke', 'var(--border)')
-            .attr('stroke-opacity', 0.4)
-            .attr('stroke-width', d => Math.max(1, Math.min(3, d.value / 3)));
-
-        const node = g.append('g')
-            .selectAll('g')
-            .data(nodes)
-            .join('g')
-            .attr('class', 'node-group')
-            .call(d3.drag()
-                .on('start', (event, d) => { if (!event.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
-                .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
-                .on('end', (event, d) => { if (!event.active) simulation.alphaTarget(0); if (d.id !== 'center') { d.fx = null; d.fy = null; } })
-            );
-
-        node.append('circle')
-            .attr('class', 'node-circle clickable')
-            .attr('r', d => d.radius)
-            .attr('fill', d => {
-                if (d.type === 'language') return getColor(d.name);
-                return typeColors[d.type] || '#888';
+        graph3D = ForceGraph3D()(container)
+            .graphData({ nodes, links })
+            .backgroundColor(bgColor)
+            .nodeVal(n => n.val || 5)
+            .nodeColor(n => {
+                if (n.type === 'language') return getColor(n.name);
+                return typeColors[n.type] || '#888';
             })
-            .attr('stroke', 'var(--border)')
-            .attr('stroke-width', 1)
-            .attr('opacity', 0.85)
-            .style('color', d => {
-                if (d.type === 'language') return getColor(d.name);
-                return typeColors[d.type] || 'var(--accent)';
+            .nodeLabel(n => '')
+            .nodeOpacity(0.9)
+            .linkWidth(1)
+            .linkColor(() => 'rgba(255,255,255,0.3)')
+            .onNodeHover(node => {
+                container.style.cursor = node ? 'pointer' : 'default';
+                if (node) {
+                    showTooltipSingleRepo(node, repo);
+                } else {
+                    hideTooltip();
+                }
             })
-            .on('click', (event, d) => {
-                event.stopPropagation();
-                createRipple(g, d.x, d.y, d.type === 'language' ? getColor(d.name) : typeColors[d.type]);
-
+            .onNodeClick((node) => {
                 const repoUrl = repo.url || `https://github.com/moses-y/${repo.name}`;
 
-                if (d.type === 'repo') {
-                    // Open GitHub
+                if (node.type === 'repo') {
                     window.open(repoUrl, '_blank');
-                } else if (d.type === 'directory') {
-                    // Open directory on GitHub
-                    const dirPath = d.dirName === '(root)' ? '' : d.dirName;
+                } else if (node.type === 'directory') {
+                    const dirPath = node.dirName === '(root)' ? '' : node.dirName;
                     window.open(`${repoUrl}/tree/main/${dirPath}`, '_blank');
-                } else if (d.type === 'language') {
-                    // Go back and filter by this language
+                } else if (node.type === 'language') {
                     goBack();
-                    setTimeout(() => filterByLanguage(d.name), 200);
-                } else if (d.type === 'entry' || d.type === 'config') {
-                    // Open file on GitHub
-                    window.open(`${repoUrl}/blob/main/${d.name}`, '_blank');
-                } else if (d.type === 'ci') {
-                    // Open workflows folder
+                    setTimeout(() => filterByLanguage(node.name), 200);
+                } else if (node.type === 'entry' || node.type === 'config') {
+                    window.open(`${repoUrl}/blob/main/${node.name}`, '_blank');
+                } else if (node.type === 'ci') {
                     window.open(`${repoUrl}/tree/main/.github/workflows`, '_blank');
-                } else if (d.type === 'docker') {
-                    // Open Dockerfile
+                } else if (node.type === 'docker') {
                     window.open(`${repoUrl}/blob/main/Dockerfile`, '_blank');
-                } else if (d.type === 'framework') {
-                    // Search for framework on the repo
-                    window.open(`${repoUrl}/search?q=${encodeURIComponent(d.name)}`, '_blank');
+                } else if (node.type === 'framework') {
+                    window.open(`${repoUrl}/search?q=${encodeURIComponent(node.name)}`, '_blank');
                 }
             });
 
-        // Labels
-        node.append('text')
-            .text(d => {
-                if (d.type === 'config' || d.type === 'entry') {
-                    const parts = d.name.split('/');
-                    return parts[parts.length - 1];
-                }
-                return d.name;
-            })
-            .attr('text-anchor', 'middle')
-            .attr('dy', d => d.radius + 13)
-            .attr('font-size', d => d.type === 'repo' ? '0.8rem' : '0.65rem')
-            .attr('font-weight', d => d.type === 'repo' ? 700 : 400)
-            .attr('fill', d => {
-                if (d.type === 'language') return getColor(d.name);
-                return 'var(--text-secondary)';
-            })
-            .style('pointer-events', 'none');
-
-        // Type labels (small)
-        node.filter(d => d.type !== 'repo')
-            .append('text')
-            .text(d => {
-                const labels = { directory: '📁', language: '💻', framework: '🔧', entry: '🚀', config: '⚙️', ci: '🔄', docker: '🐳' };
-                return labels[d.type] || '';
-            })
-            .attr('text-anchor', 'middle')
-            .attr('dy', '0.35em')
-            .attr('font-size', d => Math.max(8, d.radius * 0.8) + 'px')
-            .style('pointer-events', 'none');
-
-        // Tooltip and highlighting
-        const tooltip = document.getElementById('tooltip');
-
-        node.on('mouseenter', (event, d) => {
-            // Highlight connections
-            const connectedIds = new Set([d.id, 'center']);
-            links.forEach(l => {
-                const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
-                const targetId = typeof l.target === 'string' ? l.target : l.target.id;
-                if (sourceId === d.id) connectedIds.add(targetId);
-                if (targetId === d.id) connectedIds.add(sourceId);
-            });
-
-            node.classed('dimmed', n => !connectedIds.has(n.id));
-            link.classed('dimmed', l => {
-                const sourceId = typeof l.source === 'string' ? l.source : l.source.id;
-                const targetId = typeof l.target === 'string' ? l.target : l.target.id;
-                return sourceId !== d.id && targetId !== d.id;
-            });
-
-            let html = `<h4>${d.name}</h4>`;
-            if (d.count) html += `<div class="detail">${d.count} files</div>`;
-
-            // Type-specific info
-            if (d.type === 'language' && d.reposWithLang) {
-                html += `<div class="detail" style="margin-top:4px">${d.reposWithLang} repos use ${d.name}</div>`;
-            }
-
-            // Show summary for repo center node
-            if (d.type === 'repo' && (d.summary || d.description)) {
-                const text = d.summary || d.description;
-                const truncated = text.length > 200 ? text.slice(0, 200) + '...' : text;
-                html += `<div class="summary">${truncated}</div>`;
-            }
-
-            // Click hints based on type
-            if (d.type === 'repo') {
-                html += `<div class="click-hint">Click to open on GitHub</div>`;
-            } else if (d.type === 'directory') {
-                html += `<div class="click-hint">Click to browse folder</div>`;
-            } else if (d.type === 'language') {
-                html += `<div class="click-hint">Click to filter all repos by ${d.name}</div>`;
-            } else if (d.type === 'entry' || d.type === 'config') {
-                html += `<div class="click-hint">Click to view file</div>`;
-            } else if (d.type === 'framework') {
-                html += `<div class="click-hint">Click to search in repo</div>`;
-            } else if (d.type === 'ci') {
-                html += `<div class="click-hint">Click to view workflows</div>`;
-            } else if (d.type === 'docker') {
-                html += `<div class="click-hint">Click to view Dockerfile</div>`;
-            }
-            tooltip.innerHTML = html;
-            tooltip.style.left = (event.clientX + 12) + 'px';
-            tooltip.style.top = (event.clientY - 10) + 'px';
-            tooltip.classList.add('visible');
-        })
-        .on('mousemove', (event) => {
-            tooltip.style.left = (event.clientX + 12) + 'px';
-            tooltip.style.top = (event.clientY - 10) + 'px';
-        })
-        .on('mouseleave', () => {
-            node.classed('dimmed', false);
-            link.classed('dimmed', false);
-            tooltip.classList.remove('visible');
+        // Add labels
+        graph3D.nodeThreeObject(node => {
+            const sprite = new SpriteText(node.type === 'repo' ? node.name : (node.type === 'config' || node.type === 'entry' ? node.name.split('/').pop() : node.name));
+            sprite.color = node.type === 'language' ? getColor(node.name) : (node.type === 'repo' ? '#ffffff' : '#aaaaaa');
+            sprite.textHeight = node.type === 'repo' ? 5 : 3;
+            sprite.position.y = (node.val || 5) + 4;
+            return sprite;
         });
 
-        simulation.on('tick', () => {
-            link
-                .attr('x1', d => d.source.x)
-                .attr('y1', d => d.source.y)
-                .attr('x2', d => d.target.x)
-                .attr('y2', d => d.target.y);
-            node.attr('transform', d => `translate(${d.x},${d.y})`);
-        });
+        graph3D.nodeThreeObjectExtend(true);
 
         // Auto-open side panel
         openSidePanel({ name: repo.displayName || repo.name, repoName: repo.name, description: repo.description, stars: repo.stars, kg, totalFiles: Object.values(kg.directories || {}).reduce((a, b) => a + b, 0) }, repo.url);
+    }
+
+    // ========== TOOLTIPS ==========
+    function showTooltip(node, isEcosystem) {
+        const tooltip = document.getElementById('tooltip');
+        let html = '';
+
+        const commInfo = communityMode && nodeCommunities.has(node.id)
+            ? `<span class="tag" style="background:${communityColors[nodeCommunities.get(node.id) % communityColors.length]}40;border-color:${communityColors[nodeCommunities.get(node.id) % communityColors.length]}">Cluster ${nodeCommunities.get(node.id) + 1}</span>`
+            : '';
+
+        if (node.type === 'language') {
+            const repoCount = currentLinks.filter(l => {
+                const tgt = typeof l.target === 'object' ? l.target.id : l.target;
+                return tgt === node.id;
+            }).length;
+            html = `<h4>${node.name}</h4>${commInfo}<div class="detail">${node.count} files across ${repoCount} repos</div>`;
+            html += `<div class="click-hint">Click to filter · Shift+click to select</div>`;
+        } else {
+            html = `<h4>${node.name}</h4>${commInfo}`;
+            if (node.kg?.languages) {
+                const langs = Object.entries(node.kg.languages).sort((a, b) => b[1] - a[1]).slice(0, 5);
+                html += '<div style="margin-top:4px">' + langs.map(([l, c]) => `<span class="tag">${l}: ${c}</span>`).join('') + '</div>';
+            }
+            html += `<div class="detail" style="margin-top:4px">${node.totalFiles || 0} files · ★ ${node.stars || 0}</div>`;
+            if (node.summary) {
+                html += `<div class="summary">${node.summary.slice(0, 150)}...</div>`;
+            } else if (node.description) {
+                html += `<div class="summary">${node.description}</div>`;
+            }
+            html += `<div class="click-hint">Click to explore · Shift+click to select</div>`;
+        }
+
+        tooltip.innerHTML = html;
+        tooltip.style.left = '50%';
+        tooltip.style.top = '120px';
+        tooltip.style.transform = 'translateX(-50%)';
+        tooltip.classList.add('visible');
+    }
+
+    function showTooltipSingleRepo(node, repo) {
+        const tooltip = document.getElementById('tooltip');
+        let html = `<h4>${node.name}</h4>`;
+
+        if (node.count) html += `<div class="detail">${node.count} files</div>`;
+        if (node.type === 'language' && node.reposWithLang) {
+            html += `<div class="detail">${node.reposWithLang} repos use ${node.name}</div>`;
+        }
+        if (node.type === 'repo' && (node.summary || node.description)) {
+            html += `<div class="summary">${(node.summary || node.description).slice(0, 150)}</div>`;
+        }
+
+        const hints = {
+            repo: 'Click to open on GitHub',
+            directory: 'Click to browse folder',
+            language: 'Click to filter all repos',
+            entry: 'Click to view file',
+            config: 'Click to view file',
+            framework: 'Click to search in repo',
+            ci: 'Click to view workflows',
+            docker: 'Click to view Dockerfile'
+        };
+        html += `<div class="click-hint">${hints[node.type] || 'Click to interact'}</div>`;
+
+        tooltip.innerHTML = html;
+        tooltip.style.left = '50%';
+        tooltip.style.top = '120px';
+        tooltip.style.transform = 'translateX(-50%)';
+        tooltip.classList.add('visible');
+    }
+
+    function hideTooltip() {
+        document.getElementById('tooltip').classList.remove('visible');
     }
 
     // ========== SIDE PANEL ==========
