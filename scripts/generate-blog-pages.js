@@ -34,6 +34,9 @@ function generateBlogPostHTML(post) {
 
     <link rel="canonical" href="https://moses-y.github.io/blog/${post.name}.html">
 
+    <!-- Mermaid.js for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+
     <style>
         :root {
             --bg-primary: #030303;
@@ -283,6 +286,69 @@ function generateBlogPostHTML(post) {
             text-decoration: none;
         }
 
+        /* Mermaid diagram styling */
+        .mermaid {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            overflow-x: auto;
+        }
+
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Code blocks styling (GitNexus-inspired) */
+        .post-content pre {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 20px;
+            overflow-x: auto;
+            margin: 24px 0;
+            font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .post-content code {
+            background: rgba(99, 102, 241, 0.1);
+            color: #e6b450;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.875em;
+        }
+
+        .post-content pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--text-tertiary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 1.75rem; }
             .post-description { font-size: 1rem; }
@@ -378,7 +444,35 @@ function generateBlogPostHTML(post) {
             const next = current === 'light' ? 'dark' : 'light';
             document.documentElement.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
+            // Re-initialize mermaid with new theme
+            initMermaid();
         });
+
+        // Initialize Mermaid
+        function initMermaid() {
+            const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+            mermaid.initialize({
+                startOnLoad: false,
+                theme: isDark ? 'dark' : 'default',
+                themeVariables: isDark ? {
+                    primaryColor: '#6366f1',
+                    primaryTextColor: '#f8fafc',
+                    primaryBorderColor: '#8b5cf6',
+                    lineColor: '#64748b',
+                    secondaryColor: '#1e1e2e',
+                    tertiaryColor: '#0a0a0a'
+                } : {
+                    primaryColor: '#6366f1',
+                    primaryTextColor: '#0f172a',
+                    primaryBorderColor: '#8b5cf6',
+                    lineColor: '#64748b'
+                }
+            });
+            mermaid.run();
+        }
+
+        // Run on load
+        document.addEventListener('DOMContentLoaded', initMermaid);
     </script>
 </body>
 </html>`;

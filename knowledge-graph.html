@@ -262,7 +262,10 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        .tooltip.visible { opacity: 1; }
+        .tooltip.visible {
+            opacity: 1;
+            animation: fade-in 0.15s ease-out;
+        }
 
         .tooltip h4 {
             font-size: 0.85rem;
@@ -319,7 +322,10 @@
             z-index: 80;
         }
 
-        .side-panel.open { transform: translateX(0); }
+        .side-panel.open {
+            transform: translateX(0);
+            animation: slide-in 0.3s ease-out;
+        }
 
         .side-panel h3 {
             font-size: 1rem;
@@ -468,6 +474,78 @@
         .ripple {
             fill: var(--accent);
             pointer-events: none;
+        }
+
+        /* GitNexus-inspired animations */
+        @keyframes breathe {
+            0%, 100% {
+                border-color: var(--border);
+                box-shadow: 0 0 0 rgba(99, 102, 241, 0);
+            }
+            50% {
+                border-color: var(--accent);
+                box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+            }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 rgba(99, 102, 241, 0);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+            }
+        }
+
+        @keyframes slide-in {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Apply breathing to selected nodes */
+        .node-circle.selected {
+            animation: breathe 3s ease-in-out infinite;
+        }
+
+        /* Smooth node entrance */
+        .node-group {
+            animation: fade-in 0.3s ease-out;
+        }
+
+        /* Custom scrollbar (GitNexus style) */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--text-tertiary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent);
+        }
+
+        /* Enhanced shadows */
+        .shadow-glow {
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
+        }
+
+        .shadow-subtle {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
         }
 
         /* Filter badge */
