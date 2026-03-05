@@ -824,7 +824,7 @@
     </div>
 
     <!-- 3D Force Graph + Three.js extras -->
-    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
     <script src="https://unpkg.com/three-spritetext@1.8.2/dist/three-spritetext.min.js"></script>
     <script src="https://unpkg.com/3d-force-graph@1.73.0/dist/3d-force-graph.min.js"></script>
 
@@ -853,8 +853,11 @@
         'R': '#198CE7', 'GraphQL': '#e10098', 'Zig': '#ec915c'
     };
 
+    // Tableau10 color scheme (inlined to avoid d3 dependency)
+    const schemeTableau10 = ['#4e79a7','#f28e2c','#e15759','#76b7b2','#59a14f','#edc949','#af7aa1','#ff9da7','#9c755f','#bab0ab'];
+
     function getColor(name) {
-        return langColors[name] || d3.schemeTableau10[Math.abs(hashStr(name)) % 10];
+        return langColors[name] || schemeTableau10[Math.abs(hashStr(name)) % 10];
     }
 
     function hashStr(s) {
