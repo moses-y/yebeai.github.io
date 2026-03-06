@@ -1,14 +1,608 @@
 {
-  "lastUpdated": "2026-03-06T06:05:12.758Z",
+  "lastUpdated": "2026-03-06T07:13:23.914Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 378,
+  "totalRepos": 382,
   "progress": {
-    "aiGenerated": 378,
+    "aiGenerated": 382,
     "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
+    {
+      "id": 1174196521,
+      "name": "local-deep-researcher",
+      "displayName": "local deep researcher",
+      "description": "Fully local web research and report writing assistant",
+      "summary": "The Problem\n\nLLMs are great at generating content, but they’re only as good as the data you feed them. If you’ve ever tried to do actual research with an LLM, you know the pain: limited context windows, outdated training data, and the constant side-eye from your browser as you copy-paste between 12 tabs. Oh, and if you want to keep things local for privacy reasons? Good luck finding a solution that doesn’t involve selling your soul to some cloud API.\n\nWhat This Does\n\nlocal-deep-researcher automates the research process and keeps it all local. It uses LLMs you host yourself (via Ollama or LMStudio) to generate search queries, summarize web results, identify gaps, and iterate until it has a well-rounded understanding of your topic. Then, it spits out a tidy Markdown report with all its sources linked.  \n\nThe core logic lives in src/ollamadeepresearcher/. Files like graph.py and state.py handle the brainy stuff—managing the research flow and summarizing results. Configuration is centralized in configuration.py, and you can tweak everything by editing .env or the defaults in that file. It even supports multiple search tools like DuckDuckGo, SearXNG, and Perplexity, configurable through—you guessed it—the .env file. No hardcoding nonsense here.\n\nAs for setup, the Dockerfile means you’re a docker-compose up away from spinning this thing up, and the pyproject.toml keeps your Python dependencies clean.\n\nReal-World Use\n\nImagine you’re writing a report on \"The Impact of AI on Privacy.\" Here’s how this could work:\nFire up the Ollama app, pull a local model like deepseek-r1:8b, and configure .env with:\nAdd a search tool, like DuckDuckGo, or throw in your own SearXNG API key:\nRun the script. The system will generate its first search query using prompts in prompts.py, fetch results, summarize them, and keep iterating until you’ve got a complete Markdown report. It’s like having an intern, minus the awkward coffee orders.\n\nThe Bottom Line\n\nIf you need local, privacy-first research automation, this project delivers. It’s not beginner-friendly—expect to wrestle with .env files and Docker—but the payoff is a fully customizable, offline research assistant. Perfect for researchers, privacy enthusiasts, or anyone tired of sharing their queries with Big Tech. Not for you if you just need a quick Google search.",
+      "url": "https://github.com/moses-y/local-deep-researcher",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "langchain-ai/local-deep-researcher",
+        "url": "https://github.com/langchain-ai/local-deep-researcher",
+        "stars": 8547
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 6, 2026",
+      "updatedAt": "March 6, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 18,
+        "directories": {
+          "(root)": 7,
+          ".github": 4,
+          "src": 7
+        },
+        "languages": {
+          "YAML": 4,
+          "Markdown": 1,
+          "JSON": 1,
+          "TOML": 1,
+          "Python": 7
+        },
+        "frameworks": [
+          "Docker"
+        ],
+        "packageManager": null,
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          ".env.example",
+          "Dockerfile",
+          "pyproject.toml"
+        ],
+        "dependencies": [
+          "pyproject.toml"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".example": 1,
+          ".yml": 4,
+          ".md": 1,
+          ".json": 1,
+          ".toml": 1,
+          ".py": 7,
+          ".lock": 1
+        }
+      }
+    },
+    {
+      "id": 1174192640,
+      "name": "pmm",
+      "displayName": "pmm",
+      "description": "Percona Monitoring and Management: an open source database monitoring, observability and management tool",
+      "summary": "The Problem\nDatabase monitoring can feel like running a marathon while juggling flaming torches. You need to keep an eye on performance, security, and backups without losing your mind. Percona Monitoring and Management (PMM) tackles this chaos by giving you a unified view of your MySQL, MongoDB, PostgreSQL, and other databases, making it easier to spot issues before they blow up in your face.\n\nWhat This Does\nPMM is your Swiss Army knife for database management. It provides real-time monitoring, customizable dashboards, and alerting features to keep your databases in check. The admin/cmd/pmm-admin/main.go file is your main entry point for the PMM admin commands, allowing you to manage agents and check the status of your databases. The admin/docker-compose.yml helps you spin up PMM in Docker, which is perfect if you're not ready to dedicate a server to it yet. \n\nThe architecture is straightforward: the PMM server collects data from your databases and presents it in a user-friendly format. You can easily dive deep into performance metrics with tools that let you zoom in from node-level stats to individual queries.\n\nReal-World Use\nImagine you've got a MySQL database that's slower than a dial-up connection. You can use PMM to set up a monitoring dashboard in a few minutes. Just run the commands from the README to get the PMM server up and running. Then, with the pmm-admin commands, you can add your MySQL instance like this:\n\nNow you’ll get alerts for slow queries and performance degradation right in your inbox. No more waiting for users to complain!\n\nThe Bottom Line\nPMM is solid for managing multiple databases, especially in complex environments. If you're dealing with a single database, however, this might feel like overkill. The setup is straightforward, and the documentation is helpful. Just be prepared for some Docker gymnastics if you're not familiar with containers. Use it if you want to keep your databases running smoothly without losing your sanity.",
+      "url": "https://github.com/moses-y/pmm",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "percona/pmm",
+        "url": "https://github.com/percona/pmm",
+        "stars": 975
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 6, 2026",
+      "updatedAt": "March 6, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".devcontainer": 2,
+          "(root)": 14,
+          ".github": 32,
+          "admin": 93,
+          "agent": 59
+        },
+        "languages": {
+          "Python": 1,
+          "Markdown": 13,
+          "YAML": 28,
+          "TOML": 1,
+          "Go": 139,
+          "JSON": 3
+        },
+        "frameworks": [
+          "Docker"
+        ],
+        "packageManager": null,
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          ".devcontainer/setup.py",
+          "admin/cmd/bootstrap.go",
+          "admin/cmd/pmm-admin/main.go",
+          "admin/cmd/pmm-admin/main_test.go"
+        ],
+        "configFiles": [
+          ".devcontainer/Dockerfile",
+          ".devcontainer/setup.py",
+          ".env.example",
+          "Makefile",
+          "Makefile.devcontainer",
+          "Makefile.include",
+          "admin/Makefile",
+          "admin/docker-compose.yml",
+          "agent/Makefile"
+        ],
+        "dependencies": [],
+        "testFiles": [
+          ".github/workflows/api-tests.yml",
+          ".github/workflows/linkspector.yml",
+          "admin/cmd/pmm-admin/main_test.go",
+          "admin/commands/base_test.go",
+          "admin/commands/config_test.go",
+          "admin/commands/inventory/add_agent_mysqld_exporter_test.go",
+          "admin/commands/inventory/add_agent_postgres_exporter_test.go",
+          "admin/commands/inventory/add_node_remote_rds_test.go",
+          "admin/commands/inventory/add_service_external_test.go",
+          "admin/commands/inventory/add_service_haproxy_test.go",
+          "admin/commands/inventory/add_service_mongodb_test.go",
+          "admin/commands/inventory/add_service_mysql_test.go",
+          "admin/commands/inventory/add_service_postgres_test.go",
+          "admin/commands/inventory/add_service_proxysql_test.go",
+          "admin/commands/inventory/add_service_valkey_test.go",
+          "admin/commands/list_test.go",
+          "admin/commands/management/add_external_test.go",
+          "admin/commands/management/add_haproxy_test.go",
+          "admin/commands/management/add_mongodb_test.go",
+          "admin/commands/management/add_mysql_test.go",
+          "admin/commands/management/add_test.go",
+          "admin/commands/management/add_valkey_test.go",
+          "admin/commands/management/register_test.go",
+          "admin/commands/status_test.go",
+          "admin/commands/summary_test.go",
+          "agent/agentlocal/agent_local_test.go",
+          "agent/agentlocal/mock_client_test.go",
+          "agent/agentlocal/mock_supervisor_test.go",
+          "agent/agents/agents_test.go",
+          "agent/agents/cache/cache_test.go",
+          "agent/agents/mongodb/mongolog/internal/monitor_test.go",
+          "agent/agents/mongodb/mongolog/internal/testdata/expected/many_slow_queries.json",
+          "agent/agents/mongodb/mongolog/internal/testdata/expected/no_slow_query.json",
+          "agent/agents/mongodb/mongolog/internal/testdata/expected/slow_query_with_$cmd.json",
+          "agent/agents/mongodb/mongolog/internal/testdata/logs/many_slow_queries.log",
+          "agent/agents/mongodb/mongolog/internal/testdata/logs/no_slow_query.log",
+          "agent/agents/mongodb/mongolog/internal/testdata/logs/slow_query_with_$cmd.log",
+          "agent/agents/mongodb/mongolog/mongodb_test.go",
+          "agent/agents/mongodb/profiler/internal/collector/collector_test.go",
+          "agent/agents/mongodb/profiler/internal/parser/parser_test.go",
+          "agent/agents/mongodb/profiler/internal/profiler_test.go",
+          "agent/agents/mongodb/profiler/mongodb_test.go",
+          "agent/agents/mongodb/realtimeanalytics/parser/aggregate_test.go",
+          "agent/agents/mongodb/realtimeanalytics/parser/command_test.go",
+          "agent/agents/mongodb/realtimeanalytics/parser/delete_test.go",
+          "agent/agents/mongodb/realtimeanalytics/parser/find_test.go",
+          "agent/agents/mongodb/realtimeanalytics/parser/helpers_test.go",
+          "agent/agents/mongodb/realtimeanalytics/parser/insert_test.go",
+          "agent/agents/mongodb/realtimeanalytics/parser/parser_test.go",
+          "agent/agents/mongodb/realtimeanalytics/parser/update_test.go",
+          "agent/agents/mongodb/shared/aggregator/aggregator_test.go",
+          "agent/agents/mongodb/shared/fingerprinter/fingerprinter_test.go",
+          "agent/agents/mongodb/shared/report/report_test.go"
+        ],
+        "docs": [
+          ".github/CONTRIBUTING.md",
+          ".github/workflows/dockerhub-readme.yml",
+          ".licenserc.yaml",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "admin/LICENSE",
+          "admin/README.md",
+          "agent/LICENSE",
+          "agent/README.md"
+        ],
+        "fileTypes": {
+          ".py": 1,
+          ".example": 1,
+          ".md": 13,
+          ".yml": 26,
+          ".yaml": 2,
+          ".toml": 1,
+          ".devcontainer": 1,
+          ".include": 1,
+          ".go": 139,
+          ".json": 3,
+          ".log": 3
+        }
+      }
+    },
+    {
+      "id": 1174191236,
+      "name": "paperclip",
+      "displayName": "paperclip",
+      "description": "Open-source orchestration for zero-human companies",
+      "summary": "The Problem\n\nJuggling multiple AI agents across different platforms is a nightmare. You end up with a dozen browser tabs, lost context, and zero accountability. Tracking goals, budgets, and progress feels like herding cats — especially when you want everything running 24/7 without babysitting.\n\nWhat This Does\n\nPaperclip acts as the central command for autonomous companies. You define goals, plug in your agents (Claude, Codex, OpenClaw, whatever), and Paperclip keeps everyone in line. The cli/ directory is the brains: commands for onboarding agents, setting goals, and approving strategies live in files like cli/src/commands/onboard.ts and cli/src/commands/approval.ts. Agent orchestration happens through adapters in cli/src/adapters/. Everything is tracked and audited — costs, activity, org charts — so you actually know what your bots are doing.\n\nSetup is handled via Docker (docker-compose.yml, Dockerfile), and config is managed in files like .env.example and cli/src/config/env.ts. The React UI pulls it all together so you can monitor your \"company\" from your phone or browser. Documentation is everywhere (docs/, doc/), so you won't be lost.\n\nReal-World Use\n\nSay you want to build an AI startup. You set your goal in the dashboard (\"Build the #1 AI note-taking app to $1M MRR\"), hire agents (CEO, CTO, engineers), and assign tasks. Agents connect via HTTP or process adapters (cli/src/adapters/http/index.ts, cli/src/adapters/process/index.ts), send heartbeats, and report progress. You approve budgets, monitor activity logs, and jump in if things go off the rails. If you want to automate onboarding, you can use the CLI:  \n\nAnd watch your bots execute, audit logs in real time, and enforce cost controls.\n\nThe Bottom Line\n\nPaperclip is serious orchestration for anyone sick of micromanaging AI agents. If you want real accountability, org charts, and budget enforcement, it’s worth a look. Not lightweight — this is overkill for a single bot, but if you’re wrangling a swarm, it’s exactly what you need. Just read the docs before you dive in, or you’ll drown in YAML.",
+      "url": "https://github.com/moses-y/paperclip",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "paperclipai/paperclip",
+        "url": "https://github.com/paperclipai/paperclip",
+        "stars": 3792
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 6, 2026",
+      "updatedAt": "March 6, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".changeset": 2,
+          ".claude": 3,
+          "(root)": 12,
+          "cli": 66,
+          "doc": 48,
+          "docker": 2,
+          "docs": 55,
+          "packages": 12
+        },
+        "languages": {
+          "Markdown": 87,
+          "JSON": 8,
+          "TypeScript": 69,
+          "YAML": 2
+        },
+        "frameworks": [
+          "React",
+          "Docker"
+        ],
+        "packageManager": null,
+        "hasDocker": true,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "cli/src/adapters/http/index.ts",
+          "cli/src/adapters/index.ts",
+          "cli/src/adapters/process/index.ts",
+          "cli/src/checks/index.ts",
+          "cli/src/index.ts",
+          "cli/src/prompts/server.ts",
+          "packages/adapter-utils/src/index.ts",
+          "packages/adapters/claude-local/src/cli/index.ts",
+          "packages/adapters/claude-local/src/index.ts"
+        ],
+        "configFiles": [
+          ".env.example",
+          "Dockerfile",
+          "Dockerfile.onboard-smoke",
+          "cli/package.json",
+          "cli/tsconfig.json",
+          "docker-compose.quickstart.yml",
+          "docker-compose.yml",
+          "docker/openclaw-smoke/Dockerfile",
+          "package.json",
+          "packages/adapter-utils/package.json",
+          "packages/adapter-utils/tsconfig.json",
+          "packages/adapters/claude-local/package.json"
+        ],
+        "dependencies": [
+          "cli/package.json",
+          "package.json",
+          "packages/adapter-utils/package.json",
+          "packages/adapters/claude-local/package.json"
+        ],
+        "testFiles": [
+          "cli/src/__tests__/agent-jwt-env.test.ts",
+          "cli/src/__tests__/allowed-hostname.test.ts",
+          "cli/src/__tests__/common.test.ts",
+          "cli/src/__tests__/company-delete.test.ts",
+          "cli/src/__tests__/context.test.ts",
+          "cli/src/__tests__/data-dir.test.ts",
+          "cli/src/__tests__/home-paths.test.ts",
+          "cli/src/__tests__/http.test.ts",
+          "cli/vitest.config.ts",
+          "doc/SPEC-implementation.md",
+          "doc/SPEC.md",
+          "doc/spec/agent-runs.md",
+          "doc/spec/agents-runtime.md",
+          "doc/spec/ui.md",
+          "docs/specs/agent-config-ui.md",
+          "docs/specs/cliphub-plan.md"
+        ],
+        "docs": [
+          ".changeset/README.md",
+          ".claude/skills/design-guide/SKILL.md",
+          ".claude/skills/design-guide/references/component-index.md",
+          "README.md",
+          "cli/CHANGELOG.md",
+          "doc/CLI.md",
+          "doc/CLIPHUB.md",
+          "doc/DATABASE.md",
+          "doc/DEPLOYMENT-MODES.md",
+          "doc/DEVELOPING.md",
+          "doc/DOCKER.md",
+          "doc/GOAL.md",
+          "doc/PRODUCT.md",
+          "doc/PUBLISHING.md",
+          "doc/README-draft.md",
+          "doc/SPEC-implementation.md",
+          "doc/SPEC.md",
+          "doc/TASKS-mcp.md",
+          "doc/TASKS.md",
+          "doc/assets/avatars/dark-circle.png",
+          "doc/assets/avatars/dark-circle.svg",
+          "doc/assets/avatars/dark.png",
+          "doc/assets/avatars/dark.svg",
+          "doc/assets/avatars/gradient-cool.png",
+          "doc/assets/avatars/gradient-cool.svg",
+          "doc/assets/avatars/gradient-warm.png",
+          "doc/assets/avatars/gradient-warm.svg",
+          "doc/assets/avatars/light.png",
+          "doc/assets/avatars/light.svg",
+          "doc/assets/avatars/zinc.png",
+          "doc/assets/avatars/zinc.svg",
+          "doc/assets/footer.jpg",
+          "doc/assets/header.png",
+          "doc/assets/logos/bash.svg",
+          "doc/assets/logos/claude.svg",
+          "doc/assets/logos/codex.svg",
+          "doc/assets/logos/cursor.svg",
+          "doc/assets/logos/http.svg",
+          "doc/assets/logos/openclaw.svg",
+          "doc/plan/humans-and-permissions-implementation.md",
+          "doc/plan/humans-and-permissions.md",
+          "doc/plans/agent-authentication-implementation.md",
+          "doc/plans/agent-authentication.md",
+          "doc/plans/agent-mgmt-followup-plan.md",
+          "doc/plans/ceo-agent-creation-and-hiring.md",
+          "doc/plans/cursor-cloud-adapter.md",
+          "doc/plans/deployment-auth-mode-consolidation.md",
+          "doc/plans/issue-run-orchestration-plan.md",
+          "doc/plans/module-system.md",
+          "doc/plans/storage-system-implementation.md",
+          "doc/spec/agent-runs.md",
+          "doc/spec/agents-runtime.md",
+          "doc/spec/ui.md",
+          "docs/adapters/claude-local.md",
+          "docs/adapters/codex-local.md",
+          "docs/adapters/creating-an-adapter.md",
+          "docs/adapters/http.md",
+          "docs/adapters/overview.md",
+          "docs/adapters/process.md",
+          "docs/agents-runtime.md",
+          "docs/api/activity.md",
+          "docs/api/agents.md",
+          "docs/api/approvals.md",
+          "docs/api/authentication.md",
+          "docs/api/companies.md",
+          "docs/api/costs.md",
+          "docs/api/dashboard.md",
+          "docs/api/goals-and-projects.md",
+          "docs/api/issues.md",
+          "docs/api/overview.md",
+          "docs/api/secrets.md",
+          "docs/cli/control-plane-commands.md",
+          "docs/cli/overview.md",
+          "docs/cli/setup-commands.md",
+          "docs/deploy/database.md",
+          "docs/deploy/deployment-modes.md",
+          "docs/deploy/docker.md",
+          "docs/deploy/environment-variables.md",
+          "docs/deploy/local-development.md",
+          "docs/deploy/overview.md",
+          "docs/deploy/secrets.md",
+          "docs/deploy/storage.md",
+          "docs/docs.json",
+          "docs/favicon.svg",
+          "docs/guides/agent-developer/comments-and-communication.md",
+          "docs/guides/agent-developer/cost-reporting.md",
+          "docs/guides/agent-developer/handling-approvals.md",
+          "docs/guides/agent-developer/heartbeat-protocol.md",
+          "docs/guides/agent-developer/how-agents-work.md",
+          "docs/guides/agent-developer/task-workflow.md",
+          "docs/guides/agent-developer/writing-a-skill.md",
+          "docs/guides/board-operator/activity-log.md",
+          "docs/guides/board-operator/approvals.md",
+          "docs/guides/board-operator/costs-and-budgets.md",
+          "docs/guides/board-operator/creating-a-company.md",
+          "docs/guides/board-operator/dashboard.md",
+          "docs/guides/board-operator/managing-agents.md",
+          "docs/guides/board-operator/managing-tasks.md",
+          "docs/guides/board-operator/org-structure.md",
+          "docs/guides/openclaw-docker-setup.md",
+          "docs/images/logo-dark.svg",
+          "docs/images/logo-light.svg",
+          "docs/specs/agent-config-ui.md",
+          "docs/specs/cliphub-plan.md",
+          "docs/start/architecture.md",
+          "docs/start/core-concepts.md",
+          "docs/start/quickstart.md",
+          "docs/start/what-is-paperclip.md",
+          "packages/adapter-utils/CHANGELOG.md",
+          "packages/adapters/claude-local/CHANGELOG.md"
+        ],
+        "fileTypes": {
+          ".md": 87,
+          ".json": 8,
+          ".example": 1,
+          ".onboard-smoke": 1,
+          ".mjs": 2,
+          ".ts": 69,
+          ".png": 7,
+          ".svg": 15,
+          ".jpg": 1,
+          ".yml": 2
+        }
+      }
+    },
+    {
+      "id": 1174190487,
+      "name": "landscape2",
+      "displayName": "landscape2",
+      "description": "Landscape2 is a tool that generates interactive landscapes websites",
+      "summary": "Landscape2: Building Interactive Landscape Websites with a CLI\n\nThe Problem\n\nCompiling and maintaining an \"interactive landscape\" website—think of the CNCF Landscape—can be a monumental headache. You're dealing with YAML files, logos, external data sources like GitHub and Crunchbase, and the need for a consistent, polished UI. Doing this manually or cobbling together a system with custom scripts is a surefire way to lose your weekends to debugging and data wrangling.\n\nWhat This Does\n\nLandscape2 is a CLI tool for generating static websites that look like the CNCF Landscape, but without needing to sell your soul to a SaaS platform. Feed it a handful of YAML files (docs/config/data.yml, settings.yml, games.yml, etc.), and it spits out a fully functional, polished website. The CLI lives in the crates/cli directory, with entry points like crates/cli/src/main.rs.\n\nThe tool isn’t just a glorified YAML parser—it pulls external data from sources like GitHub and Crunchbase if you feed it API tokens via environment variables (GITHUBTOKENS and CRUNCHBASEAPI_KEY). This lets you enrich your landscape with real-time stats (stars, contributors, funding data, etc.). It’s like having a personal assistant that does all the grunt work of gathering and organizing data for you.\n\nOnce the data is compiled and processed, the website is built using React components housed in the ui/ folder. This means your output isn’t just functional but also pretty (see docs/screenshots/). It even includes interactive features like modals (ui/common/src/components/ItemModalContent.tsx), tables, and responsive layouts.\n\nReal-World Use\n\nImagine you’re tasked with creating a landscape website for open-source Kubernetes tools. You’d start by writing a data.yml for your items, a settings.yml to define the branding and layout, and perhaps a games.yml for some playful interaction. Here’s a snippet of a data.yml entry:\n\nOnce your files are ready, run:\n\nIf you've set up your GitHub and Crunchbase tokens, the tool will automatically pull in additional metadata about the projects, like contributors and funding rounds. The result? A fully baked, interactive landscape website ready to deploy.\n\nThe Bottom Line\n\nLandscape2 is niche but solid. If you need to build a landscape-style site, it saves you from a mountain of manual work. That said, it’s overkill for smaller projects or those not reliant on complex data integration. For large-scale, data-driven websites, though? It’s a lifesaver. Just be prepared to wrestle with YAML and spend some time tweaking your configs. DevOps folks and open-source maintainers: this one’s for you.",
+      "url": "https://github.com/moses-y/landscape2",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "cncf/landscape2",
+        "url": "https://github.com/cncf/landscape2",
+        "stars": 284
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 6, 2026",
+      "updatedAt": "March 6, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 13,
+          ".github": 4,
+          "crates": 49,
+          "docs": 15,
+          "scripts": 1,
+          "ui": 118
+        },
+        "languages": {
+          "YAML": 16,
+          "TOML": 8,
+          "Markdown": 6,
+          "Rust": 28,
+          "HTML": 5,
+          "JSON": 17,
+          "Shell": 1,
+          "JavaScript": 10,
+          "TSX": 45,
+          "CSS": 4,
+          "TypeScript": 33
+        },
+        "frameworks": [
+          "React",
+          "Docker"
+        ],
+        "packageManager": "yarn",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "crates/cli/src/lib.rs",
+          "crates/cli/src/main.rs",
+          "crates/core/src/lib.rs",
+          "crates/wasm/overlay/src/lib.rs",
+          "crates/wasm/quiz/src/lib.rs",
+          "ui/common/src/hooks/index.ts",
+          "ui/common/src/index.tsx",
+          "ui/common/src/utils/index.tsx",
+          "ui/embed-item/src/App.tsx",
+          "ui/embed-item/src/index.tsx",
+          "ui/embed/src/App.tsx",
+          "ui/embed/src/index.tsx",
+          "ui/webapp/index.html",
+          "ui/webapp/src/App.tsx"
+        ],
+        "configFiles": [
+          "Cargo.toml",
+          "crates/cli/Cargo.toml",
+          "crates/cli/Dockerfile",
+          "crates/core/Cargo.toml",
+          "crates/wasm/overlay/Cargo.toml",
+          "crates/wasm/quiz/Cargo.toml",
+          "ui/common/.prettierrc",
+          "ui/common/package.json",
+          "ui/common/tsconfig.json",
+          "ui/common/vite.config.ts",
+          "ui/embed-item/.prettierrc",
+          "ui/embed-item/package.json",
+          "ui/embed-item/tsconfig.json",
+          "ui/embed-item/vite.config.ts",
+          "ui/embed/.prettierrc",
+          "ui/embed/package.json",
+          "ui/embed/tsconfig.json",
+          "ui/embed/vite.config.ts",
+          "ui/webapp/.prettierrc",
+          "ui/webapp/jest.config.js",
+          "ui/webapp/package.json"
+        ],
+        "dependencies": [
+          "Cargo.toml",
+          "crates/cli/Cargo.toml",
+          "crates/core/Cargo.toml",
+          "crates/wasm/overlay/Cargo.toml",
+          "crates/wasm/quiz/Cargo.toml",
+          "ui/common/package.json",
+          "ui/common/yarn.lock",
+          "ui/embed-item/package.json",
+          "ui/embed-item/yarn.lock",
+          "ui/embed/package.json",
+          "ui/embed/yarn.lock",
+          "ui/webapp/package.json"
+        ],
+        "testFiles": [
+          "crates/core/src/testdata/data.yml",
+          "crates/core/src/testdata/games.yml",
+          "crates/core/src/testdata/guide.yml",
+          "crates/core/src/testdata/settings.yml",
+          "crates/wasm/overlay/overlay-test.html",
+          "crates/wasm/quiz/quiz-test.html",
+          "crates/wasm/quiz/src/testdata/quiz1.json",
+          "crates/wasm/quiz/src/testdata/quiz2.json",
+          "crates/wasm/quiz/src/testdata/quiz3.json"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "crates/cli/src/new/template/guide.yml",
+          "crates/core/src/guide.rs",
+          "crates/core/src/testdata/guide.yml",
+          "docs/config/data.yml",
+          "docs/config/games.yml",
+          "docs/config/guide.yml",
+          "docs/config/schema/data.schema.json",
+          "docs/config/schema/games.schema.json",
+          "docs/config/schema/guide.schema.json",
+          "docs/config/schema/settings.schema.json",
+          "docs/config/settings.yml",
+          "docs/screenshots/embed-setup.png",
+          "docs/screenshots/landscape1.png",
+          "docs/screenshots/landscape2.png",
+          "docs/screenshots/landscape3.png",
+          "docs/screenshots/landscape4.png",
+          "docs/screenshots/landscape5.png",
+          "docs/screenshots/landscape6.png"
+        ],
+        "fileTypes": {
+          ".yml": 16,
+          ".toml": 8,
+          ".md": 6,
+          ".lock": 4,
+          ".rs": 28,
+          ".svg": 1,
+          ".html": 5,
+          ".json": 17,
+          ".png": 7,
+          ".sh": 1,
+          ".js": 10,
+          ".tsx": 45,
+          ".css": 4,
+          ".ts": 33,
+          ".ttf": 1,
+          ".woff": 1
+        }
+      }
+    },
     {
       "id": 1173804025,
       "name": "vibe",
@@ -88,7 +682,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 202151
+        "stars": 202152
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -156,7 +750,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182332
+        "stars": 182339
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -287,7 +881,7 @@
       "parent": {
         "name": "dbt-labs/dbt-agent-skills",
         "url": "https://github.com/dbt-labs/dbt-agent-skills",
-        "stars": 238
+        "stars": 239
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -403,7 +997,7 @@
       "parent": {
         "name": "Yeachan-Heo/oh-my-codex",
         "url": "https://github.com/Yeachan-Heo/oh-my-codex",
-        "stars": 1430
+        "stars": 1438
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -628,7 +1222,7 @@
       "parent": {
         "name": "ItzCrazyKns/Perplexica",
         "url": "https://github.com/ItzCrazyKns/Perplexica",
-        "stars": 31356
+        "stars": 31363
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1074,7 +1668,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 8708
+        "stars": 8748
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1208,7 +1802,7 @@
       "parent": {
         "name": "rishikanthc/Scriberr",
         "url": "https://github.com/rishikanthc/Scriberr",
-        "stars": 2331
+        "stars": 2333
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1538,7 +2132,7 @@
       "parent": {
         "name": "maderix/ANE",
         "url": "https://github.com/maderix/ANE",
-        "stars": 5847
+        "stars": 5853
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1606,7 +2200,7 @@
       "parent": {
         "name": "git-up/GitUp",
         "url": "https://github.com/git-up/GitUp",
-        "stars": 11946
+        "stars": 11947
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1685,7 +2279,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 12363
+        "stars": 12374
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1905,7 +2499,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 10836
+        "stars": 10912
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2008,7 +2602,7 @@
       "parent": {
         "name": "Kieirra/murmure",
         "url": "https://github.com/Kieirra/murmure",
-        "stars": 470
+        "stars": 471
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2589,7 +3183,7 @@
       "parent": {
         "name": "peteromallet/dataclaw",
         "url": "https://github.com/peteromallet/dataclaw",
-        "stars": 1854
+        "stars": 1855
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2792,7 +3386,7 @@
       "parent": {
         "name": "AUTOMATIC1111/stable-diffusion-webui",
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-        "stars": 161512
+        "stars": 161514
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2877,7 +3471,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 3763
+        "stars": 3766
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3108,7 +3702,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 10206
+        "stars": 10245
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3380,7 +3974,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 37993
+        "stars": 38000
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -3819,7 +4413,7 @@
       "parent": {
         "name": "getzep/graphiti",
         "url": "https://github.com/getzep/graphiti",
-        "stars": 23307
+        "stars": 23313
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3907,7 +4501,7 @@
       "parent": {
         "name": "HunxByts/GhostTrack",
         "url": "https://github.com/HunxByts/GhostTrack",
-        "stars": 7972
+        "stars": 7973
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4355,7 +4949,7 @@
       "parent": {
         "name": "QwenLM/Qwen3-Coder",
         "url": "https://github.com/QwenLM/Qwen3-Coder",
-        "stars": 15887
+        "stars": 15888
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -4449,7 +5043,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 19415
+        "stars": 19451
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -5132,7 +5726,7 @@
       "parent": {
         "name": "Fosowl/agenticSeek",
         "url": "https://github.com/Fosowl/agenticSeek",
-        "stars": 25431
+        "stars": 25433
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5274,7 +5868,7 @@
       "parent": {
         "name": "HKUDS/ClawWork",
         "url": "https://github.com/HKUDS/ClawWork",
-        "stars": 6608
+        "stars": 6614
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -5467,7 +6061,7 @@
       "parent": {
         "name": "agalwood/Motrix",
         "url": "https://github.com/agalwood/Motrix",
-        "stars": 50980
+        "stars": 50982
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -5557,7 +6151,7 @@
       "parent": {
         "name": "TinyAGI/tinyclaw",
         "url": "https://github.com/TinyAGI/tinyclaw",
-        "stars": 2911
+        "stars": 2915
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6097,7 +6691,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 266895
+        "stars": 267361
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6199,7 +6793,7 @@
       "parent": {
         "name": "Conway-Research/automaton",
         "url": "https://github.com/Conway-Research/automaton",
-        "stars": 3203
+        "stars": 3206
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7541,7 +8135,7 @@
       "parent": {
         "name": "alichherawalla/off-grid-mobile-ai",
         "url": "https://github.com/alichherawalla/off-grid-mobile-ai",
-        "stars": 847
+        "stars": 848
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -7818,7 +8412,7 @@
       "parent": {
         "name": "freemocap/freemocap",
         "url": "https://github.com/freemocap/freemocap",
-        "stars": 6049
+        "stars": 6050
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8496,7 +9090,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 5183
+        "stars": 5198
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8563,7 +9157,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 5668
+        "stars": 5672
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8606,7 +9200,7 @@
       "parent": {
         "name": "HKUDS/AI-Trader",
         "url": "https://github.com/HKUDS/AI-Trader",
-        "stars": 11547
+        "stars": 11548
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -9273,7 +9867,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 63380
+        "stars": 63397
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9349,7 +9943,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 6188
+        "stars": 6195
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9464,7 +10058,7 @@
       "parent": {
         "name": "ruzin/stenoai",
         "url": "https://github.com/ruzin/stenoai",
-        "stars": 411
+        "stars": 412
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9545,7 +10139,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4196
+        "stars": 4202
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -10431,7 +11025,7 @@
       "parent": {
         "name": "roboflow/trackers",
         "url": "https://github.com/roboflow/trackers",
-        "stars": 2936
+        "stars": 2937
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -10527,7 +11121,7 @@
       "parent": {
         "name": "Serial-Studio/Serial-Studio",
         "url": "https://github.com/Serial-Studio/Serial-Studio",
-        "stars": 6665
+        "stars": 6666
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10736,7 +11330,7 @@
       "parent": {
         "name": "bobbyiliev/101-linux-commands",
         "url": "https://github.com/bobbyiliev/101-linux-commands",
-        "stars": 744
+        "stars": 745
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10817,7 +11411,7 @@
       "parent": {
         "name": "openrundev/openrun",
         "url": "https://github.com/openrundev/openrun",
-        "stars": 804
+        "stars": 805
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -11188,7 +11782,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 28412
+        "stars": 28449
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -11263,7 +11857,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22698
+        "stars": 22704
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -12080,7 +12674,7 @@
       "parent": {
         "name": "R44VC0RP/pgrok",
         "url": "https://github.com/R44VC0RP/pgrok",
-        "stars": 830
+        "stars": 831
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -12152,7 +12746,7 @@
       "parent": {
         "name": "BAI-LAB/MemoryOS",
         "url": "https://github.com/BAI-LAB/MemoryOS",
-        "stars": 1225
+        "stars": 1226
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -12248,7 +12842,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 22374
+        "stars": 22401
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -12320,7 +12914,7 @@
       "parent": {
         "name": "The-Vibe-Company/companion",
         "url": "https://github.com/The-Vibe-Company/companion",
-        "stars": 2146
+        "stars": 2147
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -12572,7 +13166,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2776
+        "stars": 2779
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -12741,7 +13335,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 24280
+        "stars": 24284
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13202,7 +13796,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 34352
+        "stars": 34351
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -13323,7 +13917,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 8548
+        "stars": 8575
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -14034,7 +14628,7 @@
       "parent": {
         "name": "evinjohnn/natively-cluely-ai-assistant",
         "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
-        "stars": 617
+        "stars": 618
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -14156,7 +14750,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 19207
+        "stars": 19280
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -14338,7 +14932,7 @@
       "parent": {
         "name": "wg-easy/wg-easy",
         "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24857
+        "stars": 24858
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -14614,7 +15208,7 @@
       "parent": {
         "name": "rohunvora/x-research-skill",
         "url": "https://github.com/rohunvora/x-research-skill",
-        "stars": 914
+        "stars": 916
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -14756,7 +15350,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 29330
+        "stars": 29366
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -14840,7 +15434,7 @@
       "parent": {
         "name": "MiniCodeMonkey/chief",
         "url": "https://github.com/MiniCodeMonkey/chief",
-        "stars": 352
+        "stars": 353
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -16149,7 +16743,7 @@
       "parent": {
         "name": "OpenBMB/VoxCPM",
         "url": "https://github.com/OpenBMB/VoxCPM",
-        "stars": 6045
+        "stars": 6047
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -16302,7 +16896,7 @@
       "parent": {
         "name": "sseanliu/VisionClaw",
         "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 1481
+        "stars": 1484
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -16369,7 +16963,7 @@
       "parent": {
         "name": "Polymarket/agents",
         "url": "https://github.com/Polymarket/agents",
-        "stars": 2393
+        "stars": 2395
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -17201,7 +17795,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 17174
+        "stars": 17182
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -18306,7 +18900,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 99886
+        "stars": 99893
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -19320,7 +19914,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 8106
+        "stars": 8111
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -19504,7 +20098,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1752
+        "stars": 1754
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -19587,7 +20181,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 3823
+        "stars": 3824
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -20009,7 +20603,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 21016
+        "stars": 21019
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -20591,7 +21185,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20801
+        "stars": 20802
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -21373,7 +21967,7 @@
       "parent": {
         "name": "AtsushiSakai/PythonRobotics",
         "url": "https://github.com/AtsushiSakai/PythonRobotics",
-        "stars": 28797
+        "stars": 28798
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -21463,7 +22057,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 31376
+        "stars": 31382
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -22083,7 +22677,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6861
+        "stars": 6860
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -23141,7 +23735,7 @@
       "parent": {
         "name": "microsoft/agent-lightning",
         "url": "https://github.com/microsoft/agent-lightning",
-        "stars": 15327
+        "stars": 15328
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -23501,7 +24095,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 7287
+        "stars": 7289
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -23634,7 +24228,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8787
+        "stars": 8789
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -23716,7 +24310,7 @@
       "parent": {
         "name": "hpcaitech/ColossalAI",
         "url": "https://github.com/hpcaitech/ColossalAI",
-        "stars": 41364
+        "stars": 41365
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -23879,7 +24473,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 4446
+        "stars": 4452
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -24042,7 +24636,7 @@
       "parent": {
         "name": "droidrun/droidrun",
         "url": "https://github.com/droidrun/droidrun",
-        "stars": 7872
+        "stars": 7873
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -24343,7 +24937,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 125917
+        "stars": 125924
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -24438,7 +25032,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 7183
+        "stars": 7187
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -25026,7 +25620,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24374
+        "stars": 24375
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -25101,7 +25695,7 @@
       "parent": {
         "name": "EuniAI/Prometheus",
         "url": "https://github.com/EuniAI/Prometheus",
-        "stars": 810
+        "stars": 812
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -25873,7 +26467,7 @@
       "parent": {
         "name": "AmineDjeghri/awesome-os-setup",
         "url": "https://github.com/AmineDjeghri/awesome-os-setup",
-        "stars": 539
+        "stars": 538
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -26142,7 +26736,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 36825
+        "stars": 36826
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -26953,7 +27547,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5554
+        "stars": 5555
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -27204,7 +27798,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 128571
+        "stars": 128604
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -27670,7 +28264,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15879
+        "stars": 15880
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -27818,7 +28412,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 11642
+        "stars": 11643
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -27879,7 +28473,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 20951
+        "stars": 20952
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -29544,7 +30138,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51534
+        "stars": 51533
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -29684,7 +30278,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 23038
+        "stars": 23037
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -30217,7 +30811,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 22051
+        "stars": 22054
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -32119,7 +32713,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 11920
+        "stars": 11923
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -33291,7 +33885,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16783
+        "stars": 16784
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -33620,7 +34214,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56571
+        "stars": 56575
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -33773,7 +34367,7 @@
       "parent": {
         "name": "Qloapps/QloApps",
         "url": "https://github.com/Qloapps/QloApps",
-        "stars": 12519
+        "stars": 12521
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -33838,7 +34432,7 @@
       "parent": {
         "name": "HiEventsDev/Hi.Events",
         "url": "https://github.com/HiEventsDev/Hi.Events",
-        "stars": 3574
+        "stars": 3575
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -34298,7 +34892,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 17947
+        "stars": 17950
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -34413,7 +35007,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 116839
+        "stars": 116898
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -35812,7 +36406,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 29051
+        "stars": 29057
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -36036,7 +36630,7 @@
       "parent": {
         "name": "fstandhartinger/ralph-wiggum",
         "url": "https://github.com/fstandhartinger/ralph-wiggum",
-        "stars": 188
+        "stars": 189
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -36165,7 +36759,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 19241
+        "stars": 19284
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -36295,7 +36889,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22171
+        "stars": 22178
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -36619,7 +37213,7 @@
       "parent": {
         "name": "DevAgentForge/Open-Claude-Cowork",
         "url": "https://github.com/DevAgentForge/Open-Claude-Cowork",
-        "stars": 2999
+        "stars": 3000
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -36949,7 +37543,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 96860
+        "stars": 96868
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -38101,7 +38695,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 182205
+        "stars": 182206
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
