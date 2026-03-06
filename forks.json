@@ -1,14 +1,67 @@
 {
-  "lastUpdated": "2026-03-06T20:26:30.947Z",
+  "lastUpdated": "2026-03-06T20:55:39.371Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 385,
+  "totalRepos": 386,
   "progress": {
-    "aiGenerated": 385,
+    "aiGenerated": 386,
     "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
+    {
+      "id": 1174761519,
+      "name": "PhoneDriver",
+      "displayName": "PhoneDriver",
+      "description": "Android Phone Control With Qwen3-VL",
+      "summary": "The Problem  \nControlling Android devices programmatically is a royal pain. Sure, you can hack together some ADB scripts, but good luck handling dynamic screens, inconsistent layouts, or pixel-perfect taps. And trying to automate tasks like \"open Chrome and Google something\" using traditional tools? Forget it. You’ll be drowning in brittle XPath selectors and trial-and-error debugging.  \n\nWhat This Does  \nPhoneDriver bridges the gap between visual understanding and mobile automation. With the Qwen3-VL vision-language model, it analyzes screenshots like a human would and uses ADB commands to act on them. The heavy lifting happens in qwenvlagent.py, where the Qwen3-VL model processes incoming screenshots and plans actions. The actual execution—ADB commands—is handled by phoneagent.py.  \n\nThe repo also comes with a Gradio-based web UI (ui.py) that lets you describe tasks in plain English. No coding required. Type “Enable WiFi” or “Open Instagram,” and the agent figures out the rest. Configuration lives in config.json, where you can tweak screen resolution, model behavior, and execution timing.  \n\nWant to swap between dense and MoE Qwen3-VL models? You’ll need to edit qwenvl_agent.py and change imports and initialization logic. Yeah, it’s manual, but it’s not rocket science.  \n\nReal-World Use  \nLet’s say you’re testing a mobile app. Instead of manually clicking through screens, you fire up the web UI (python ui.py) and tell the agent:  \n\n  \nThe agent takes a screenshot, analyzes the UI with Qwen3-VL, identifies relevant buttons, and sends ADB commands to interact with them. If something goes wrong (e.g., a button isn’t found), the live log in Gradio tells you why.  \n\nAlternatively, if you’re more comfortable with code, you can skip the UI and use the CLI:  \n\n  \n\nThe Bottom Line  \nPhoneDriver is solid if you need automation for Android devices that’s smarter than hardcoded scripts. The Qwen3-VL integration is impressive, but the setup feels a bit rough—you’re editing Python files to change models or tweak configs, which could’ve been more user-friendly. If you’re comfortable with Python and have a beefy GPU, this is worth it. For casual users or small projects, it’s probably overkill.",
+      "url": "https://github.com/moses-y/PhoneDriver",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "OminousIndustries/PhoneDriver",
+        "url": "https://github.com/OminousIndustries/PhoneDriver",
+        "stars": 1303
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 6, 2026",
+      "updatedAt": "March 6, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 8,
+        "directories": {
+          "Images": 1,
+          "(root)": 7
+        },
+        "languages": {
+          "Markdown": 1,
+          "JSON": 1,
+          "Python": 4
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".png": 1,
+          ".md": 1,
+          ".json": 1,
+          ".py": 4
+        }
+      }
+    },
     {
       "id": 1141897721,
       "name": "drawdb",
@@ -284,7 +337,7 @@
       "parent": {
         "name": "langchain-ai/local-deep-researcher",
         "url": "https://github.com/langchain-ai/local-deep-researcher",
-        "stars": 8561
+        "stars": 8562
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -496,7 +549,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 5519
+        "stars": 5578
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -865,36 +918,35 @@
       }
     },
     {
-      "id": 1174761519,
-      "name": "PhoneDriver",
-      "displayName": "PhoneDriver",
-      "description": "Android Phone Control With Qwen3-VL",
-      "summary": "The Problem  \nControlling Android devices programmatically is a royal pain. Sure, you can hack together some ADB scripts, but good luck handling dynamic screens, inconsistent layouts, or pixel-perfect taps. And trying to automate tasks like \"open Chrome and Google something\" using traditional tools? Forget it. You’ll be drowning in brittle XPath selectors and trial-and-error debugging.  \n\nWhat This Does  \nPhoneDriver bridges the gap between visual understanding and mobile automation. With the Qwen3-VL vision-language model, it analyzes screenshots like a human would and uses ADB commands to act on them. The heavy lifting happens in qwenvlagent.py, where the Qwen3-VL model processes incoming screenshots and plans actions. The actual execution—ADB commands—is handled by phoneagent.py.  \n\nThe repo also comes with a Gradio-based web UI (ui.py) that lets you describe tasks in plain English. No coding required. Type “Enable WiFi” or “Open Instagram,” and the agent figures out the rest. Configuration lives in config.json, where you can tweak screen resolution, model behavior, and execution timing.  \n\nWant to swap between dense and MoE Qwen3-VL models? You’ll need to edit qwenvl_agent.py and change imports and initialization logic. Yeah, it’s manual, but it’s not rocket science.  \n\nReal-World Use  \nLet’s say you’re testing a mobile app. Instead of manually clicking through screens, you fire up the web UI (python ui.py) and tell the agent:  \n\n  \nThe agent takes a screenshot, analyzes the UI with Qwen3-VL, identifies relevant buttons, and sends ADB commands to interact with them. If something goes wrong (e.g., a button isn’t found), the live log in Gradio tells you why.  \n\nAlternatively, if you’re more comfortable with code, you can skip the UI and use the CLI:  \n\n  \n\nThe Bottom Line  \nPhoneDriver is solid if you need automation for Android devices that’s smarter than hardcoded scripts. The Qwen3-VL integration is impressive, but the setup feels a bit rough—you’re editing Python files to change models or tweak configs, which could’ve been more user-friendly. If you’re comfortable with Python and have a beefy GPU, this is worth it. For casual users or small projects, it’s probably overkill.",
-      "url": "https://github.com/moses-y/PhoneDriver",
+      "id": 1174780802,
+      "name": "founders-kit",
+      "displayName": "founders kit",
+      "description": "A curated collection of essential resources, tools, and playbooks to help founders build, launch, and scale startups successfully.",
+      "summary": "The Problem  \nBuilding a startup is already a circus of chaos, caffeine, and constant decision-making. The last thing founders need is to waste hours Googling for tools, resources, and advice. Whether you’re hunting for the perfect pitch deck template or trying to find a good deal on cloud hosting, the sheer volume of scattered information is overwhelming. You end up piecing things together from blog posts, Reddit threads, and Twitter gurus. Ain’t nobody got time for that.  \n\nWhat This Does  \nThe founders-kit repo is basically a Swiss Army knife for startup founders. It’s a well-organized collection of links to tools, templates, and resources that cover everything from ideation to scaling. Think of it like a startup survival guide, except it doesn’t charge you $99/month or bombard you with ads.  \n\nThe repo is simple and clean:  \nThe README.md is the main event. It’s the table of contents for everything you’ll need, broken into categories like \"Funding Resources,\" \"Design Tools,\" and \"Customer Development.\" You can CTRL+F your way to the exact resource you’re looking for instead of scrolling through endless junk.  \nThe .github/FUNDING.yml file? It’s just GitHub’s built-in funding support. If you want to throw some coffee money at the repo’s original creator, go for it.  \nThe LICENSE is MIT, so feel free to fork, clone, or even build your own “Founder’s Kit” knockoff without lawyers breathing down your neck.  \n\nNo unnecessary scripts, no bloat, no BS. Just a curated list, tightly organized.  \n\nReal-World Use  \nLet’s say you’re a first-time founder trying to figure out how to pitch investors. Instead of scouring Medium for “Top 10 Tips for an Amazing Pitch Deck,” you open the repo, scroll to the \"Fundraising\" section in the README.md, and boom—links to pitch deck examples, angel networks, and guides from people who’ve actually raised money.  \n\nOr maybe you’re a developer building an MVP. Hit the \"No-Code Tools\" or \"Automation & Backend\" sections. You’ll find links to tools that can save you weeks of work. No need to reinvent the wheel when someone else already built the dang car.  \n\nThe Bottom Line  \nfounders-kit is like a cheat sheet for anyone in the startup grind. It’s not groundbreaking, but it doesn’t need to be. It’s just links—useful links. Sure, it lacks depth (no actual content or tools in the repo itself), but that’s kind of the point. If you’re a founder, PM, or developer, bookmark this repo. If you’re a VC looking for a “portfolio value-add,” maybe don’t.",
+      "url": "https://github.com/moses-y/founders-kit",
       "language": null,
       "stars": 0,
       "forks": 0,
       "topics": [],
       "parent": {
-        "name": "OminousIndustries/PhoneDriver",
-        "url": "https://github.com/OminousIndustries/PhoneDriver",
-        "stars": 1303
+        "name": "avinash201199/founders-kit",
+        "url": "https://github.com/avinash201199/founders-kit",
+        "stars": 350
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
       "forkedAt": "March 6, 2026",
       "updatedAt": "March 6, 2026",
-      "readTime": 2,
+      "readTime": 3,
       "knowledgeGraph": {
-        "totalFiles": 8,
+        "totalFiles": 3,
         "directories": {
-          "Images": 1,
-          "(root)": 7
+          ".github": 1,
+          "(root)": 2
         },
         "languages": {
-          "Markdown": 1,
-          "JSON": 1,
-          "Python": 4
+          "YAML": 1,
+          "Markdown": 1
         },
         "frameworks": [],
         "packageManager": null,
@@ -910,10 +962,8 @@
           "README.md"
         ],
         "fileTypes": {
-          ".png": 1,
-          ".md": 1,
-          ".json": 1,
-          ".py": 4
+          ".yml": 1,
+          ".md": 1
         }
       }
     },
@@ -1536,7 +1586,7 @@
       "parent": {
         "name": "ItzCrazyKns/Perplexica",
         "url": "https://github.com/ItzCrazyKns/Perplexica",
-        "stars": 31613
+        "stars": 31618
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1982,7 +2032,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 8999
+        "stars": 9002
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2116,7 +2166,7 @@
       "parent": {
         "name": "rishikanthc/Scriberr",
         "url": "https://github.com/rishikanthc/Scriberr",
-        "stars": 2340
+        "stars": 2341
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2288,7 +2338,7 @@
       "parent": {
         "name": "NdoleStudio/httpsms",
         "url": "https://github.com/NdoleStudio/httpsms",
-        "stars": 1777
+        "stars": 1778
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2593,7 +2643,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 12460
+        "stars": 12461
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2813,7 +2863,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 11465
+        "stars": 11475
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2916,7 +2966,7 @@
       "parent": {
         "name": "Kieirra/murmure",
         "url": "https://github.com/Kieirra/murmure",
-        "stars": 496
+        "stars": 497
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3398,7 +3448,7 @@
       "parent": {
         "name": "ariana-dot-dev/ariana",
         "url": "https://github.com/ariana-dot-dev/ariana",
-        "stars": 336
+        "stars": 337
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3785,7 +3835,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 3794
+        "stars": 3795
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4016,7 +4066,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 10421
+        "stars": 10423
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4288,7 +4338,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 38069
+        "stars": 38070
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4606,7 +4656,7 @@
       "parent": {
         "name": "FalkorDB/FalkorDB",
         "url": "https://github.com/FalkorDB/FalkorDB",
-        "stars": 3651
+        "stars": 3652
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5357,7 +5407,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 19688
+        "stars": 19694
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6040,7 +6090,7 @@
       "parent": {
         "name": "Fosowl/agenticSeek",
         "url": "https://github.com/Fosowl/agenticSeek",
-        "stars": 25441
+        "stars": 25440
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6182,7 +6232,7 @@
       "parent": {
         "name": "HKUDS/ClawWork",
         "url": "https://github.com/HKUDS/ClawWork",
-        "stars": 6679
+        "stars": 6681
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6375,7 +6425,7 @@
       "parent": {
         "name": "agalwood/Motrix",
         "url": "https://github.com/agalwood/Motrix",
-        "stars": 50989
+        "stars": 50990
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -7005,7 +7055,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 270704
+        "stars": 270722
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8449,7 +8499,7 @@
       "parent": {
         "name": "alichherawalla/off-grid-mobile-ai",
         "url": "https://github.com/alichherawalla/off-grid-mobile-ai",
-        "stars": 865
+        "stars": 866
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -9404,7 +9454,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 5375
+        "stars": 5376
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9471,7 +9521,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 5722
+        "stars": 5723
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9654,7 +9704,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 9651
+        "stars": 9653
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -10181,7 +10231,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 63530
+        "stars": 63532
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10453,7 +10503,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4252
+        "stars": 4253
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -11485,7 +11535,7 @@
       "parent": {
         "name": "gosom/google-maps-scraper",
         "url": "https://github.com/gosom/google-maps-scraper",
-        "stars": 3325
+        "stars": 3324
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -11873,7 +11923,7 @@
       "parent": {
         "name": "crowdsecurity/crowdsec",
         "url": "https://github.com/crowdsecurity/crowdsec",
-        "stars": 12710
+        "stars": 12711
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -12096,7 +12146,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 28892
+        "stars": 28900
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -12171,7 +12221,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22733
+        "stars": 22734
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -13156,7 +13206,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 22539
+        "stars": 22541
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13480,7 +13530,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2828
+        "stars": 2829
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -14231,7 +14281,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 8707
+        "stars": 8709
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -15064,7 +15114,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 19699
+        "stars": 19702
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -15664,7 +15714,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 29593
+        "stars": 29594
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -16698,7 +16748,7 @@
       "parent": {
         "name": "PrimeIntellect-ai/verifiers",
         "url": "https://github.com/PrimeIntellect-ai/verifiers",
-        "stars": 3876
+        "stars": 3877
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -18034,7 +18084,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2560
+        "stars": 2559
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -18109,7 +18159,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 17225
+        "stars": 17226
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -19214,7 +19264,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 100015
+        "stars": 100019
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -20984,7 +21034,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44659
+        "stars": 44660
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -21499,7 +21549,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20803
+        "stars": 20804
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -22371,7 +22421,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 31433
+        "stars": 31435
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -24409,7 +24459,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 7306
+        "stars": 7307
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -24542,7 +24592,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8810
+        "stars": 8811
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -25251,7 +25301,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 125991
+        "stars": 125992
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -25694,7 +25744,7 @@
       "parent": {
         "name": "zampierilucas/scx_horoscope",
         "url": "https://github.com/zampierilucas/scx_horoscope",
-        "stars": 1244
+        "stars": 1245
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -28023,7 +28073,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 128954
+        "stars": 128959
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -28637,7 +28687,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 11657
+        "stars": 11658
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -30145,7 +30195,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7595
+        "stars": 7594
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -32762,7 +32812,7 @@
       "parent": {
         "name": "memodb-io/Acontext",
         "url": "https://github.com/memodb-io/Acontext",
-        "stars": 3131
+        "stars": 3132
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -35117,7 +35167,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 18000
+        "stars": 18003
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -36018,7 +36068,7 @@
       "parent": {
         "name": "shridarpatil/whatomate",
         "url": "https://github.com/shridarpatil/whatomate",
-        "stars": 928
+        "stars": 927
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -36631,7 +36681,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 29100
+        "stars": 29101
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -36984,7 +37034,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 19491
+        "stars": 19492
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -37768,7 +37818,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 96962
+        "stars": 96965
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
