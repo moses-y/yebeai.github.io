@@ -823,10 +823,9 @@
         <div id="panel-content"></div>
     </div>
 
-    <!-- 3D Force Graph + Three.js extras -->
-    <script src="https://unpkg.com/three@0.149.0/build/three.min.js"></script>
-    <script src="https://unpkg.com/three-spritetext@1.8.2/dist/three-spritetext.min.js"></script>
+    <!-- 3D Force Graph (bundles Three.js) + SpriteText addon -->
     <script src="https://unpkg.com/3d-force-graph@1.73.0/dist/3d-force-graph.min.js"></script>
+    <script src="https://unpkg.com/three-spritetext@1.8.2/dist/three-spritetext.min.js"></script>
 
     <script>
     // Theme
@@ -1312,7 +1311,7 @@
             .slice(0, 15);
 
         topLangs.forEach(([lang, count]) => {
-            const node = { id: 'lang-' + lang, name: lang, type: 'language', count, val: Math.min(8, 3 + Math.sqrt(count) * 0.3) };
+            const node = { id: 'lang-' + lang, name: lang, type: 'language', count, val: Math.min(30, 8 + Math.sqrt(count)) };
             nodes.push(node);
             langNodes.set(lang, node);
         });
@@ -1332,7 +1331,7 @@
                 summary: repo.summary,
                 totalFiles,
                 kg,
-                val: Math.max(1, Math.min(4, 1 + Math.sqrt(totalFiles) * 0.2))
+                val: Math.max(3, Math.min(15, 3 + Math.sqrt(totalFiles) * 0.8))
             };
             nodes.push(repoNode);
 
@@ -1472,7 +1471,7 @@
                 const sprite = new SpriteText(node.name);
                 sprite.color = getColor(node.name);
                 sprite.textHeight = 4;
-                sprite.position.y = 8;
+                sprite.position.y = (node.val || 5) + 5;
                 return sprite;
             }
             return false;
@@ -1505,12 +1504,12 @@
         const links = [];
 
         // Center node: repo
-        const centerNode = { id: 'center', name: repo.displayName || repo.name, type: 'repo', val: 8, summary: repo.summary, description: repo.description };
+        const centerNode = { id: 'center', name: repo.displayName || repo.name, type: 'repo', val: 20, summary: repo.summary, description: repo.description };
         nodes.push(centerNode);
 
         // Directory nodes
         Object.entries(kg.directories || {}).sort((a, b) => b[1] - a[1]).slice(0, 12).forEach(([dir, count]) => {
-            const n = { id: 'dir-' + dir, name: dir + '/', dirName: dir, type: 'directory', count, val: 2 + Math.sqrt(count) * 0.3 };
+            const n = { id: 'dir-' + dir, name: dir + '/', dirName: dir, type: 'directory', count, val: 5 + Math.sqrt(count) };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: count });
         });
@@ -1518,7 +1517,7 @@
         // Language nodes
         Object.entries(kg.languages || {}).sort((a, b) => b[1] - a[1]).slice(0, 10).forEach(([lang, count]) => {
             const reposWithLang = allData.filter(r => r.knowledgeGraph?.languages?.[lang]).length;
-            const n = { id: 'lang-' + lang, name: lang, type: 'language', count, reposWithLang, val: 3 + Math.sqrt(count) * 0.3 };
+            const n = { id: 'lang-' + lang, name: lang, type: 'language', count, reposWithLang, val: 5 + Math.sqrt(count) };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: count });
         });
