@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-06T21:24:55.639Z",
+  "lastUpdated": "2026-03-06T21:53:04.533Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
   "totalRepos": 387,
   "progress": {
@@ -9,6 +9,118 @@
     "complete": true
   },
   "forks": [
+    {
+      "id": 1174796976,
+      "name": "svg-path-editor",
+      "displayName": "svg path editor",
+      "description": "Online editor to create and manipulate SVG paths",
+      "summary": "Editing SVG Paths Sucks. Here's a Tool That Doesn't.\n\nThe Problem\n\nEditing SVG paths manually is like trying to write a novel using only emoji. Sure, it’s possible, but it’s tedious, error-prone, and deeply unpleasant. Whether you’re hand-coding paths for a logo or tweaking a shape in a design, the process is a mess of cryptic commands, trial-and-error adjustments, and a lot of Googling \"what does M mean in SVG?\"\n\nWhat This Does\n\nsvg-path-editor is an online tool that lets you create, edit, and manipulate SVG paths visually, like a normal human being. Under the hood, the app uses Angular for the UI (src/app is where all the components live) and a standalone library (src/lib) for handling the path logic. This separation means you can use the tool out of the box or import the library into your own projects if you’re building something custom.\n\nThe app does everything you’d want: drag-and-drop point manipulation, command conversion (relative to absolute, and vice versa), path optimization, and even subpath reordering. Want to scale, translate, or rotate your path? Buttons for all of that. Need to reverse a path or minimize its length? Covered. The actual logic lives in files like src/lib/optimize-path.ts and src/lib/reverse-path.ts, while the UI for these operations is built out in components like src/app/export/export.component.ts or src/app/path-preview/path-preview.component.ts.\n\nThere’s also a ViewBox editor (drag, zoom, fit to path) and keyboard shortcuts for power users. For example, pressing M, L, or C inserts new commands directly, while Ctrl + Z handles undo (because you will mess up). \n\nReal-World Use\n\nSay you’re designing a custom icon for a project. Instead of trying to fine-tune SVG commands in a text editor, you can load the path into this tool, drag points around, adjust commands inline, and optimize the output. For example, here’s how you might simplify a path:\n\nYou can run this directly in your app or just use the web editor and copy-paste the final path into your project. Either way, you’re saving time and sanity.\n\nThe Bottom Line\n\nIf you hate dealing with raw SVG path strings, this tool is your friend. The UI is intuitive, the features are practical, and the library is reusable if you want to build something custom. That said, it’s a bit overkill for quick tweaks—use it when you’re working with complex paths or need fine-grained control. It’s a fork of the popular yqnn/svg-path-editor (with 5k+ stars), so you’re in good company. Just don’t expect it to solve all your SVG headaches—it’s a path editor, not a miracle worker.",
+      "url": "https://github.com/moses-y/svg-path-editor",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "Yqnn/svg-path-editor",
+        "url": "https://github.com/Yqnn/svg-path-editor",
+        "stars": 5062
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 6, 2026",
+      "updatedAt": "March 6, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 119,
+        "directories": {
+          "(root)": 18,
+          ".github": 1,
+          ".vscode": 3,
+          "doc": 1,
+          "src": 96
+        },
+        "languages": {
+          "JSON": 12,
+          "YAML": 2,
+          "Markdown": 2,
+          "Shell": 2,
+          "HTML": 17,
+          "SCSS": 6,
+          "TypeScript": 49,
+          "CSS": 4
+        },
+        "frameworks": [
+          "React",
+          "Angular",
+          "Express",
+          "Docker"
+        ],
+        "packageManager": "npm",
+        "hasDocker": true,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "src/index.html",
+          "src/lib/index.ts",
+          "src/main.ts"
+        ],
+        "configFiles": [
+          ".eslintrc.json",
+          "Dockerfile",
+          "docker-compose.yml",
+          "package.json",
+          "src/lib/package.json",
+          "tsconfig.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json",
+          "src/lib/package.json"
+        ],
+        "testFiles": [
+          "src/app/app.component.spec.ts",
+          "src/app/canvas/canvas.component.spec.ts",
+          "src/app/config.service.spec.ts",
+          "src/app/expandable/expandable.component.spec.ts",
+          "src/app/export/export.component.spec.ts",
+          "src/app/formatter/formatter.directive.spec.ts",
+          "src/app/import/import.component.spec.ts",
+          "src/app/keyboard-navigable/keyboard-navigable.directive.spec.ts",
+          "src/app/open/open.component.spec.ts",
+          "src/app/path-preview/path-preview.component.spec.ts",
+          "src/app/save/save.component.spec.ts",
+          "src/app/share/share.component.spec.ts",
+          "src/app/storage.service.spec.ts",
+          "src/app/upload-image/upload-image.component.spec.ts",
+          "src/lib/change-path-origin.spec.ts",
+          "src/lib/optimize-path.spec.ts",
+          "src/lib/path-parser.spec.ts",
+          "src/lib/reverse-path.spec.ts",
+          "src/lib/svg.spec.ts",
+          "tsconfig.spec.json"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "doc/screenshot.png",
+          "src/lib/README.md"
+        ],
+        "fileTypes": {
+          ".json": 12,
+          ".yml": 2,
+          ".md": 2,
+          ".sh": 2,
+          ".png": 10,
+          ".html": 17,
+          ".scss": 6,
+          ".ts": 49,
+          ".css": 4,
+          ".svg": 8,
+          ".ico": 1,
+          ".webmanifest": 1
+        }
+      }
+    },
     {
       "id": 1174780802,
       "name": "founders-kit",
@@ -23,7 +135,7 @@
       "parent": {
         "name": "avinash201199/founders-kit",
         "url": "https://github.com/avinash201199/founders-kit",
-        "stars": 354
+        "stars": 362
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -73,7 +185,7 @@
       "parent": {
         "name": "OminousIndustries/PhoneDriver",
         "url": "https://github.com/OminousIndustries/PhoneDriver",
-        "stars": 1303
+        "stars": 1305
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -126,7 +238,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 36830
+        "stars": 36831
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -387,7 +499,7 @@
       "parent": {
         "name": "langchain-ai/local-deep-researcher",
         "url": "https://github.com/langchain-ai/local-deep-researcher",
-        "stars": 8562
+        "stars": 8564
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -454,7 +566,7 @@
       "parent": {
         "name": "percona/pmm",
         "url": "https://github.com/percona/pmm",
-        "stars": 978
+        "stars": 980
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -599,7 +711,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 5623
+        "stars": 5663
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -968,118 +1080,6 @@
       }
     },
     {
-      "id": 1174796976,
-      "name": "svg-path-editor",
-      "displayName": "svg path editor",
-      "description": "Online editor to create and manipulate SVG paths",
-      "summary": "Editing SVG Paths Sucks. Here's a Tool That Doesn't.\n\nThe Problem\n\nEditing SVG paths manually is like trying to write a novel using only emoji. Sure, it’s possible, but it’s tedious, error-prone, and deeply unpleasant. Whether you’re hand-coding paths for a logo or tweaking a shape in a design, the process is a mess of cryptic commands, trial-and-error adjustments, and a lot of Googling \"what does M mean in SVG?\"\n\nWhat This Does\n\nsvg-path-editor is an online tool that lets you create, edit, and manipulate SVG paths visually, like a normal human being. Under the hood, the app uses Angular for the UI (src/app is where all the components live) and a standalone library (src/lib) for handling the path logic. This separation means you can use the tool out of the box or import the library into your own projects if you’re building something custom.\n\nThe app does everything you’d want: drag-and-drop point manipulation, command conversion (relative to absolute, and vice versa), path optimization, and even subpath reordering. Want to scale, translate, or rotate your path? Buttons for all of that. Need to reverse a path or minimize its length? Covered. The actual logic lives in files like src/lib/optimize-path.ts and src/lib/reverse-path.ts, while the UI for these operations is built out in components like src/app/export/export.component.ts or src/app/path-preview/path-preview.component.ts.\n\nThere’s also a ViewBox editor (drag, zoom, fit to path) and keyboard shortcuts for power users. For example, pressing M, L, or C inserts new commands directly, while Ctrl + Z handles undo (because you will mess up). \n\nReal-World Use\n\nSay you’re designing a custom icon for a project. Instead of trying to fine-tune SVG commands in a text editor, you can load the path into this tool, drag points around, adjust commands inline, and optimize the output. For example, here’s how you might simplify a path:\n\nYou can run this directly in your app or just use the web editor and copy-paste the final path into your project. Either way, you’re saving time and sanity.\n\nThe Bottom Line\n\nIf you hate dealing with raw SVG path strings, this tool is your friend. The UI is intuitive, the features are practical, and the library is reusable if you want to build something custom. That said, it’s a bit overkill for quick tweaks—use it when you’re working with complex paths or need fine-grained control. It’s a fork of the popular yqnn/svg-path-editor (with 5k+ stars), so you’re in good company. Just don’t expect it to solve all your SVG headaches—it’s a path editor, not a miracle worker.",
-      "url": "https://github.com/moses-y/svg-path-editor",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "Yqnn/svg-path-editor",
-        "url": "https://github.com/Yqnn/svg-path-editor",
-        "stars": 5060
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 6, 2026",
-      "updatedAt": "March 6, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "totalFiles": 119,
-        "directories": {
-          "(root)": 18,
-          ".github": 1,
-          ".vscode": 3,
-          "doc": 1,
-          "src": 96
-        },
-        "languages": {
-          "JSON": 12,
-          "YAML": 2,
-          "Markdown": 2,
-          "Shell": 2,
-          "HTML": 17,
-          "SCSS": 6,
-          "TypeScript": 49,
-          "CSS": 4
-        },
-        "frameworks": [
-          "React",
-          "Angular",
-          "Express",
-          "Docker"
-        ],
-        "packageManager": "npm",
-        "hasDocker": true,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "src/index.html",
-          "src/lib/index.ts",
-          "src/main.ts"
-        ],
-        "configFiles": [
-          ".eslintrc.json",
-          "Dockerfile",
-          "docker-compose.yml",
-          "package.json",
-          "src/lib/package.json",
-          "tsconfig.json"
-        ],
-        "dependencies": [
-          "package-lock.json",
-          "package.json",
-          "src/lib/package.json"
-        ],
-        "testFiles": [
-          "src/app/app.component.spec.ts",
-          "src/app/canvas/canvas.component.spec.ts",
-          "src/app/config.service.spec.ts",
-          "src/app/expandable/expandable.component.spec.ts",
-          "src/app/export/export.component.spec.ts",
-          "src/app/formatter/formatter.directive.spec.ts",
-          "src/app/import/import.component.spec.ts",
-          "src/app/keyboard-navigable/keyboard-navigable.directive.spec.ts",
-          "src/app/open/open.component.spec.ts",
-          "src/app/path-preview/path-preview.component.spec.ts",
-          "src/app/save/save.component.spec.ts",
-          "src/app/share/share.component.spec.ts",
-          "src/app/storage.service.spec.ts",
-          "src/app/upload-image/upload-image.component.spec.ts",
-          "src/lib/change-path-origin.spec.ts",
-          "src/lib/optimize-path.spec.ts",
-          "src/lib/path-parser.spec.ts",
-          "src/lib/reverse-path.spec.ts",
-          "src/lib/svg.spec.ts",
-          "tsconfig.spec.json"
-        ],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "doc/screenshot.png",
-          "src/lib/README.md"
-        ],
-        "fileTypes": {
-          ".json": 12,
-          ".yml": 2,
-          ".md": 2,
-          ".sh": 2,
-          ".png": 10,
-          ".html": 17,
-          ".scss": 6,
-          ".ts": 49,
-          ".css": 4,
-          ".svg": 8,
-          ".ico": 1,
-          ".webmanifest": 1
-        }
-      }
-    },
-    {
       "id": 1173804025,
       "name": "vibe",
       "displayName": "vibe",
@@ -1158,7 +1158,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 202179
+        "stars": 202181
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -1226,7 +1226,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182365
+        "stars": 182366
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1698,7 +1698,7 @@
       "parent": {
         "name": "ItzCrazyKns/Perplexica",
         "url": "https://github.com/ItzCrazyKns/Perplexica",
-        "stars": 31617
+        "stars": 31625
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1974,7 +1974,7 @@
       "parent": {
         "name": "getomnico/omni",
         "url": "https://github.com/getomnico/omni",
-        "stars": 535
+        "stars": 536
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2144,7 +2144,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 9003
+        "stars": 9009
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2755,7 +2755,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 12462
+        "stars": 12464
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2975,7 +2975,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 11485
+        "stars": 11496
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3078,7 +3078,7 @@
       "parent": {
         "name": "Kieirra/murmure",
         "url": "https://github.com/Kieirra/murmure",
-        "stars": 498
+        "stars": 500
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3947,7 +3947,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 3796
+        "stars": 3795
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4362,7 +4362,7 @@
       "parent": {
         "name": "joi-lab/ouroboros",
         "url": "https://github.com/joi-lab/ouroboros",
-        "stars": 732
+        "stars": 734
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5519,7 +5519,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 19698
+        "stars": 19705
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6202,7 +6202,7 @@
       "parent": {
         "name": "Fosowl/agenticSeek",
         "url": "https://github.com/Fosowl/agenticSeek",
-        "stars": 25440
+        "stars": 25441
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -7167,7 +7167,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 270743
+        "stars": 270763
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7456,7 +7456,7 @@
       "parent": {
         "name": "eznix86/mssh",
         "url": "https://github.com/eznix86/mssh",
-        "stars": 102
+        "stars": 103
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -8611,7 +8611,7 @@
       "parent": {
         "name": "alichherawalla/off-grid-mobile-ai",
         "url": "https://github.com/alichherawalla/off-grid-mobile-ai",
-        "stars": 866
+        "stars": 867
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -9566,7 +9566,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 5377
+        "stars": 5383
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9633,7 +9633,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 5726
+        "stars": 5727
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10343,7 +10343,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 63533
+        "stars": 63534
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -12258,7 +12258,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 28907
+        "stars": 28912
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -13477,7 +13477,7 @@
       "parent": {
         "name": "unfoldadmin/django-unfold",
         "url": "https://github.com/unfoldadmin/django-unfold",
-        "stars": 3325
+        "stars": 3326
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13642,7 +13642,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2829
+        "stars": 2832
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -13811,7 +13811,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 24298
+        "stars": 24299
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -14272,7 +14272,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 34376
+        "stars": 34377
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -14393,7 +14393,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 8710
+        "stars": 8714
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -15226,7 +15226,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 19708
+        "stars": 19711
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -15600,7 +15600,7 @@
       "parent": {
         "name": "needle-tools/md-browse",
         "url": "https://github.com/needle-tools/md-browse",
-        "stars": 208
+        "stars": 209
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15684,7 +15684,7 @@
       "parent": {
         "name": "rohunvora/x-research-skill",
         "url": "https://github.com/rohunvora/x-research-skill",
-        "stars": 918
+        "stars": 917
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -15826,7 +15826,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 29598
+        "stars": 29601
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -16065,7 +16065,7 @@
       "parent": {
         "name": "ComposioHQ/composio",
         "url": "https://github.com/ComposioHQ/composio",
-        "stars": 27297
+        "stars": 27298
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -19376,7 +19376,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 100025
+        "stars": 100028
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -20657,7 +20657,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 3854
+        "stars": 3855
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -24070,7 +24070,7 @@
       "parent": {
         "name": "commaai/openpilot",
         "url": "https://github.com/commaai/openpilot",
-        "stars": 60238
+        "stars": 60237
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -25413,7 +25413,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 125993
+        "stars": 125994
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -25508,7 +25508,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 7197
+        "stars": 7195
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -27934,7 +27934,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5557
+        "stars": 5558
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -28185,7 +28185,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 128965
+        "stars": 128968
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -29535,7 +29535,7 @@
       "parent": {
         "name": "Liquid4All/liquid-audio",
         "url": "https://github.com/Liquid4All/liquid-audio",
-        "stars": 410
+        "stars": 411
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -29603,7 +29603,7 @@
       "parent": {
         "name": "Liquid4All/cookbook",
         "url": "https://github.com/Liquid4All/cookbook",
-        "stars": 1386
+        "stars": 1388
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -30665,7 +30665,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 23055
+        "stars": 23056
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -31815,7 +31815,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39822
+        "stars": 39823
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -33340,7 +33340,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12861
+        "stars": 12862
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -35279,7 +35279,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 18004
+        "stars": 18007
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -35394,7 +35394,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 117320
+        "stars": 117329
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -36793,7 +36793,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 29102
+        "stars": 29104
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -37146,7 +37146,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 19493
+        "stars": 19495
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -37276,7 +37276,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22237
+        "stars": 22238
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -37930,7 +37930,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 96968
+        "stars": 96969
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
