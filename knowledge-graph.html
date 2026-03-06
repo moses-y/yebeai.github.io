@@ -1312,7 +1312,7 @@
             .slice(0, 15);
 
         topLangs.forEach(([lang, count]) => {
-            const node = { id: 'lang-' + lang, name: lang, type: 'language', count, val: Math.min(30, 8 + Math.sqrt(count)) };
+            const node = { id: 'lang-' + lang, name: lang, type: 'language', count, val: Math.min(8, 3 + Math.sqrt(count) * 0.3) };
             nodes.push(node);
             langNodes.set(lang, node);
         });
@@ -1332,7 +1332,7 @@
                 summary: repo.summary,
                 totalFiles,
                 kg,
-                val: Math.max(3, Math.min(15, 3 + Math.sqrt(totalFiles) * 0.8))
+                val: Math.max(1, Math.min(4, 1 + Math.sqrt(totalFiles) * 0.2))
             };
             nodes.push(repoNode);
 
@@ -1462,8 +1462,9 @@
                     refreshGraph3D();
                 }
             })
-            .d3Force('charge', d3ForceSimulation => d3ForceSimulation.strength(n => n.type === 'language' ? -150 : -30))
-            .d3Force('link', d3ForceSimulation => d3ForceSimulation.distance(l => 50 + (l.value ? 30 / l.value : 0)));
+        // Configure forces after creation
+        graph3D.d3Force('charge').strength(n => n.type === 'language' ? -300 : -80);
+        graph3D.d3Force('link').distance(l => 120 + (l.value ? 60 / l.value : 0));
 
         // Add labels as sprites
         graph3D.nodeThreeObject(node => {
@@ -1471,13 +1472,16 @@
                 const sprite = new SpriteText(node.name);
                 sprite.color = getColor(node.name);
                 sprite.textHeight = 4;
-                sprite.position.y = (node.val || 5) + 5;
+                sprite.position.y = 8;
                 return sprite;
             }
             return false;
         });
 
         graph3D.nodeThreeObjectExtend(true);
+
+        // Warm up the simulation so nodes spread out before rendering
+        graph3D.d3ReheatSimulation();
     }
 
     // ========== SINGLE REPO VIEW (3D) ==========
@@ -1501,12 +1505,12 @@
         const links = [];
 
         // Center node: repo
-        const centerNode = { id: 'center', name: repo.displayName || repo.name, type: 'repo', val: 20, summary: repo.summary, description: repo.description };
+        const centerNode = { id: 'center', name: repo.displayName || repo.name, type: 'repo', val: 8, summary: repo.summary, description: repo.description };
         nodes.push(centerNode);
 
         // Directory nodes
         Object.entries(kg.directories || {}).sort((a, b) => b[1] - a[1]).slice(0, 12).forEach(([dir, count]) => {
-            const n = { id: 'dir-' + dir, name: dir + '/', dirName: dir, type: 'directory', count, val: 5 + Math.sqrt(count) };
+            const n = { id: 'dir-' + dir, name: dir + '/', dirName: dir, type: 'directory', count, val: 2 + Math.sqrt(count) * 0.3 };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: count });
         });
@@ -1514,7 +1518,7 @@
         // Language nodes
         Object.entries(kg.languages || {}).sort((a, b) => b[1] - a[1]).slice(0, 10).forEach(([lang, count]) => {
             const reposWithLang = allData.filter(r => r.knowledgeGraph?.languages?.[lang]).length;
-            const n = { id: 'lang-' + lang, name: lang, type: 'language', count, reposWithLang, val: 5 + Math.sqrt(count) };
+            const n = { id: 'lang-' + lang, name: lang, type: 'language', count, reposWithLang, val: 3 + Math.sqrt(count) * 0.3 };
             nodes.push(n);
             links.push({ source: 'center', target: n.id, value: count });
         });
