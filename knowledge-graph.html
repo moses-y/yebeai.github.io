@@ -823,8 +823,11 @@
         <div id="panel-content"></div>
     </div>
 
-    <!-- 3D Force Graph (bundles Three.js) + SpriteText addon -->
+    <!-- Three.js must load first to set window.THREE for SpriteText -->
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <!-- 3D Force Graph (also bundles Three.js internally; duplicate warning is harmless) -->
     <script src="https://unpkg.com/3d-force-graph@1.73.0/dist/3d-force-graph.min.js"></script>
+    <!-- SpriteText requires window.THREE set by the standalone import above -->
     <script src="https://unpkg.com/three-spritetext@1.8.2/dist/three-spritetext.min.js"></script>
 
     <script>
@@ -1364,9 +1367,8 @@
         const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
         const bgColor = isDark ? '#030303' : '#ffffff';
 
-        // Create 3D graph
+        // Create 3D graph — configure everything before setting graphData
         graph3D = ForceGraph3D()(container)
-            .graphData({ nodes, links })
             .backgroundColor(bgColor)
             .nodeVal(n => n.val || 5)
             .nodeColor(n => getNodeColor(n))
@@ -1460,10 +1462,7 @@
                     clickedLinks.clear();
                     refreshGraph3D();
                 }
-            })
-        // Configure forces after creation
-        graph3D.d3Force('charge').strength(n => n.type === 'language' ? -300 : -80);
-        graph3D.d3Force('link').distance(l => 120 + (l.value ? 60 / l.value : 0));
+            });
 
         // Add labels as sprites
         graph3D.nodeThreeObject(node => {
@@ -1476,10 +1475,17 @@
             }
             return false;
         });
-
         graph3D.nodeThreeObjectExtend(true);
 
-        // Warm up the simulation so nodes spread out before rendering
+        // Set data last — this starts the simulation
+        graph3D.graphData({ nodes, links });
+
+        // Configure forces after simulation is initialized
+        const chargeForce = graph3D.d3Force('charge');
+        if (chargeForce) chargeForce.strength(n => n.type === 'language' ? -300 : -80);
+        const linkForce = graph3D.d3Force('link');
+        if (linkForce) linkForce.distance(l => 120 + (l.value ? 60 / l.value : 0));
+
         graph3D.d3ReheatSimulation();
     }
 
