@@ -853,11 +853,11 @@
         'R': '#198CE7', 'GraphQL': '#e10098', 'Zig': '#ec915c'
     };
 
-    // Tableau10 color scheme (inlined to avoid d3 dependency)
-    const schemeTableau10 = ['#4e79a7','#f28e2c','#e15759','#76b7b2','#59a14f','#edc949','#af7aa1','#ff9da7','#9c755f','#bab0ab'];
+    // Tableau10 palette (replaces d3.schemeTableau10 since D3 was removed)
+    const tableau10 = ['#4e79a7','#f28e2b','#e15759','#76b7b2','#59a14f','#edc948','#b07aa1','#ff9da7','#9c755f','#bab0ac'];
 
     function getColor(name) {
-        return langColors[name] || schemeTableau10[Math.abs(hashStr(name)) % 10];
+        return langColors[name] || tableau10[Math.abs(hashStr(name)) % 10];
     }
 
     function hashStr(s) {
@@ -889,6 +889,9 @@
     let highlightNodes = new Set();
     let highlightLinks = new Set();
     let hoverNode = null;
+    let clickedNode = null;
+    let clickedNodes = new Set();
+    let clickedLinks = new Set();
 
     // Load data
     async function loadData() {
@@ -1043,12 +1046,7 @@
 
     function applyDepthFilter() {
         if (!selectedNodeId || currentView !== 'ecosystem') return;
-
-        // Trigger re-render with new depth
-        if (graph3D) {
-            graph3D.nodeColor(graph3D.nodeColor());
-            graph3D.linkColor(graph3D.linkColor());
-        }
+        refreshGraph3D();
     }
 
     function updateCommunityLegend() {
@@ -1169,11 +1167,18 @@
             }
         }
 
+        // Clicked node: dim non-connected nodes
+        if (clickedNode) {
+            if (!clickedNodes.has(node.id)) {
+                return 'rgba(100,100,100,0.15)';
+            }
+        }
+
         // Highlight on hover
         if (hoverNode) {
             if (highlightNodes.has(node.id)) {
                 // Keep bright
-            } else {
+            } else if (!clickedNode) {
                 return 'rgba(100,100,100,0.3)';
             }
         }
@@ -1192,6 +1197,21 @@
 
     // Get link color
     function getLinkColor(link) {
+        // Clicked state: bright connected links, dim everything else
+        if (clickedNode) {
+            if (clickedLinks.has(link)) {
+                // Use the language/node color for connected links
+                const src = typeof link.source === 'object' ? link.source : currentNodes.find(n => n.id === link.source);
+                const tgt = typeof link.target === 'object' ? link.target : currentNodes.find(n => n.id === link.target);
+                const colorNode = (src && src.id === clickedNode.id) ? src : tgt;
+                if (colorNode && colorNode.type === 'language') return getColor(colorNode.name);
+                if (tgt && tgt.type === 'language') return getColor(tgt.name);
+                if (src && src.type === 'language') return getColor(src.name);
+                return 'rgba(255,255,255,0.9)';
+            }
+            return 'rgba(100,100,100,0.03)';
+        }
+
         if (hoverNode && !highlightLinks.has(link)) {
             return 'rgba(100,100,100,0.1)';
         }
@@ -1213,6 +1233,24 @@
         return 'rgba(255,255,255,0.15)';
     }
 
+    // Get link width (dynamic based on clicked state)
+    function getLinkWidth(link) {
+        if (clickedNode && clickedLinks.has(link)) {
+            return Math.max(2, Math.min(5, (link.value || 1) / 3));
+        }
+        return Math.max(0.3, Math.min(2, (link.value || 1) / 10));
+    }
+
+    // Refresh all dynamic visual properties on the 3D graph
+    function refreshGraph3D() {
+        if (!graph3D) return;
+        graph3D.nodeColor(graph3D.nodeColor());
+        graph3D.linkColor(graph3D.linkColor());
+        graph3D.linkWidth(graph3D.linkWidth());
+        graph3D.linkDirectionalParticles(graph3D.linkDirectionalParticles());
+        graph3D.linkDirectionalParticleColor(graph3D.linkDirectionalParticleColor());
+    }
+
     // ========== ECOSYSTEM VIEW (3D) ==========
     function renderEcosystemGraph(filter) {
         const container = document.getElementById('graph-container');
@@ -1223,6 +1261,11 @@
             graph3D = null;
         }
         container.innerHTML = '';
+
+        // Reset click state on re-render
+        clickedNode = null;
+        clickedNodes.clear();
+        clickedLinks.clear();
 
         let repos = allData;
 
@@ -1330,9 +1373,13 @@
             .nodeColor(n => getNodeColor(n))
             .nodeLabel(n => '')
             .nodeOpacity(0.9)
-            .linkWidth(l => Math.max(0.3, Math.min(2, (l.value || 1) / 10)))
+            .linkWidth(l => getLinkWidth(l))
             .linkColor(l => getLinkColor(l))
-            .linkOpacity(0.6)
+            .linkOpacity(0.8)
+            .linkDirectionalParticles(l => clickedLinks.has(l) ? 4 : 0)
+            .linkDirectionalParticleWidth(l => clickedLinks.has(l) ? 2 : 0)
+            .linkDirectionalParticleColor(l => getLinkColor(l))
+            .linkDirectionalParticleSpeed(0.005)
             .onNodeHover(node => {
                 container.style.cursor = node ? 'pointer' : 'default';
                 hoverNode = node;
@@ -1360,8 +1407,7 @@
                 }
 
                 // Trigger re-render
-                graph3D.nodeColor(graph3D.nodeColor());
-                graph3D.linkColor(graph3D.linkColor());
+                refreshGraph3D();
             })
             .onNodeClick((node, event) => {
                 // Shift+click: select for depth filter
@@ -1370,17 +1416,50 @@
                     document.getElementById('selected-badge').classList.add('visible');
                     document.getElementById('selected-name').textContent = node.name;
                     document.getElementById('depth-control').style.display = 'flex';
-                    graph3D.nodeColor(graph3D.nodeColor());
-                    graph3D.linkColor(graph3D.linkColor());
+                    refreshGraph3D();
                     return;
                 }
 
-                // Normal click
-                if (node.type === 'language') {
-                    filterByLanguage(node.name);
-                } else if (node.type === 'repo' && node.kg) {
-                    const repo = allData.find(f => f.name === node.repoName);
-                    if (repo) drillIntoRepo(repo);
+                // Toggle click-highlight: click same node again to deselect
+                if (clickedNode && clickedNode.id === node.id) {
+                    clickedNode = null;
+                    clickedNodes.clear();
+                    clickedLinks.clear();
+                } else {
+                    // Set clicked state — highlight this node and all connected links/nodes
+                    clickedNode = node;
+                    clickedNodes.clear();
+                    clickedLinks.clear();
+                    clickedNodes.add(node.id);
+                    links.forEach(link => {
+                        const src = typeof link.source === 'object' ? link.source.id : link.source;
+                        const tgt = typeof link.target === 'object' ? link.target.id : link.target;
+                        if (src === node.id || tgt === node.id) {
+                            clickedNodes.add(src);
+                            clickedNodes.add(tgt);
+                            clickedLinks.add(link);
+                        }
+                    });
+                }
+
+                refreshGraph3D();
+
+                // Show side panel info for the clicked node
+                if (clickedNode) {
+                    if (node.type === 'repo' && node.kg) {
+                        openSidePanel(node, allData.find(f => f.name === node.repoName)?.url);
+                    } else if (node.type === 'language') {
+                        showTooltip(node, true);
+                    }
+                }
+            })
+            .onBackgroundClick(() => {
+                // Click empty space to clear selection
+                if (clickedNode) {
+                    clickedNode = null;
+                    clickedNodes.clear();
+                    clickedLinks.clear();
+                    refreshGraph3D();
                 }
             })
             .d3Force('charge', d3ForceSimulation => d3ForceSimulation.strength(n => n.type === 'language' ? -150 : -30))
