@@ -823,12 +823,12 @@
         <div id="panel-content"></div>
     </div>
 
-    <!-- Three.js must load first to set window.THREE for SpriteText -->
-    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
-    <!-- 3D Force Graph (also bundles Three.js internally; duplicate warning is harmless) -->
-    <script src="https://unpkg.com/3d-force-graph@1.73.0/dist/3d-force-graph.min.js"></script>
-    <!-- SpriteText requires window.THREE set by the standalone import above -->
-    <script src="https://unpkg.com/three-spritetext@1.8.2/dist/three-spritetext.min.js"></script>
+    <!-- Three.js r149 (last stable UMD build) must load first to set window.THREE -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+    <!-- 3D Force Graph (detects and uses window.THREE if present) -->
+    <script src="https://cdn.jsdelivr.net/npm/3d-force-graph@1.73.0/dist/3d-force-graph.min.js"></script>
+    <!-- SpriteText reads window.THREE -->
+    <script src="https://cdn.jsdelivr.net/npm/three-spritetext@1.8.2/dist/three-spritetext.min.js"></script>
 
     <script>
     // Theme
