@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-07T14:19:40.800Z",
+  "lastUpdated": "2026-03-07T14:48:37.175Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
   "totalRepos": 389,
   "progress": {
@@ -9,93 +9,6 @@
     "complete": true
   },
   "forks": [
-    {
-      "id": 1175246509,
-      "name": "ytDownloader",
-      "displayName": "ytDownloader",
-      "description": "Desktop App for downloading Videos and Audios from hundreds of sites",
-      "summary": "The Problem\n\nDownloading videos and audio from sites like YouTube, TikTok, or Instagram isn't rocket science, but finding a tool that works, doesn’t drown you in ads, and doesn’t quietly install spyware? Good luck. Sure, you’ve got CLI tools like yt-dlp, but if you’re not a terminal ninja, you’re stuck Googling for sketchy software. Enter ytDownloader: a desktop app that wraps powerful functionality in a clean GUI, saving you from command-line headaches and shady downloads.\n\nWhat This Does\n\nAt its core, ytDownloader is a React-powered desktop app using yt-dlp under the hood (though you won't find that explicitly stated in the repo). It’s structured logically enough: the main UI logic lives in src/, with files like src/index.js handling the entry point and src/renderer.js managing the front-end views. The app supports downloading from hundreds of sites, thanks to yt-dlp’s extensive compatibility, but wraps it in a slick interface with features like playlist downloads (src/playlist.js) and subtitles (src/preferences.js).\n\nThe translations/ folder is packed with 24 JSON files for multi-language support—cool if you care about localization. Meanwhile, the assets/ folder handles themes, icons, and fonts for the visual nerds. And yes, there's a video compressor (src/compressor.js) that claims hardware acceleration, though don’t expect magic if you’re rocking a potato GPU.\n\nOn the config side, package.json manages dependencies, while tsconfig.json shows there's some TypeScript sprinkled in (src/types.d.ts is the only file). CI/CD is handled via GitHub Actions (.github/workflows/main.yml), which automates builds and releases. Nothing groundbreaking, but it gets the job done.\n\nReal-World Use\n\nLet’s say you want to grab a YouTube playlist for offline viewing. Fire up ytDownloader, choose your preferred quality and format (audio or video), and let it handle the rest. Need subtitles? Enable them in the preferences menu (html/preferences.html). Want to compress videos to save space? Use the built-in compressor (src/compressor.js)—though don’t expect HandBrake-level options.\n\nExample workflow:  \nClone the repo (git clone or download the latest release).  \nInstall dependencies: npm install.  \nRun locally: npm start (assuming you don’t want the pre-built binaries).  \nOpen the app, paste a URL, and hit download. Done.\n\nThe Bottom Line\n\nytDownloader is a solid choice if you're tired of sketchy downloaders and want something that just works. It’s simple, functional, and respects your privacy—no ads, no trackers. That said, if you’re already comfortable with yt-dlp in the terminal, this GUI might feel redundant. But for the less technically inclined or anyone who prefers clicking buttons over typing commands, it’s well worth a try. Just don’t expect groundbreaking features; it’s a well-dressed frontend for yt-dlp, and that’s perfectly fine.",
-      "url": "https://github.com/moses-y/ytDownloader",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "aandrew-me/ytDownloader",
-        "url": "https://github.com/aandrew-me/ytDownloader",
-        "stars": 8446
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 7, 2026",
-      "updatedAt": "March 7, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "totalFiles": 74,
-        "directories": {
-          ".github": 4,
-          "(root)": 12,
-          "assets": 10,
-          "flatpak": 2,
-          "html": 7,
-          "resources": 6,
-          "src": 9,
-          "translations": 24
-        },
-        "languages": {
-          "Markdown": 3,
-          "YAML": 3,
-          "CSS": 2,
-          "HTML": 7,
-          "Shell": 2,
-          "JavaScript": 11,
-          "JSON": 26,
-          "TypeScript": 1
-        },
-        "frameworks": [
-          "React"
-        ],
-        "packageManager": "npm",
-        "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [
-          "html/index.html",
-          "main.js",
-          "src/index.js"
-        ],
-        "configFiles": [
-          "package.json",
-          "tsconfig.json"
-        ],
-        "dependencies": [
-          "package-lock.json",
-          "package.json"
-        ],
-        "testFiles": [],
-        "docs": [
-          "LICENSE",
-          "README.md"
-        ],
-        "fileTypes": {
-          ".md": 3,
-          ".yml": 3,
-          ".css": 2,
-          ".ttf": 3,
-          ".png": 9,
-          ".desktop": 1,
-          ".xml": 1,
-          ".html": 7,
-          ".sh": 2,
-          ".js": 11,
-          ".json": 26,
-          ".icns": 1,
-          ".ico": 1,
-          ".ts": 1,
-          ".ps1": 1
-        }
-      }
-    },
     {
       "id": 1175278635,
       "name": "envcrypt",
@@ -171,6 +84,93 @@
       }
     },
     {
+      "id": 1175246509,
+      "name": "ytDownloader",
+      "displayName": "ytDownloader",
+      "description": "Desktop App for downloading Videos and Audios from hundreds of sites",
+      "summary": "The Problem\n\nDownloading videos and audio from sites like YouTube, TikTok, or Instagram isn't rocket science, but finding a tool that works, doesn’t drown you in ads, and doesn’t quietly install spyware? Good luck. Sure, you’ve got CLI tools like yt-dlp, but if you’re not a terminal ninja, you’re stuck Googling for sketchy software. Enter ytDownloader: a desktop app that wraps powerful functionality in a clean GUI, saving you from command-line headaches and shady downloads.\n\nWhat This Does\n\nAt its core, ytDownloader is a React-powered desktop app using yt-dlp under the hood (though you won't find that explicitly stated in the repo). It’s structured logically enough: the main UI logic lives in src/, with files like src/index.js handling the entry point and src/renderer.js managing the front-end views. The app supports downloading from hundreds of sites, thanks to yt-dlp’s extensive compatibility, but wraps it in a slick interface with features like playlist downloads (src/playlist.js) and subtitles (src/preferences.js).\n\nThe translations/ folder is packed with 24 JSON files for multi-language support—cool if you care about localization. Meanwhile, the assets/ folder handles themes, icons, and fonts for the visual nerds. And yes, there's a video compressor (src/compressor.js) that claims hardware acceleration, though don’t expect magic if you’re rocking a potato GPU.\n\nOn the config side, package.json manages dependencies, while tsconfig.json shows there's some TypeScript sprinkled in (src/types.d.ts is the only file). CI/CD is handled via GitHub Actions (.github/workflows/main.yml), which automates builds and releases. Nothing groundbreaking, but it gets the job done.\n\nReal-World Use\n\nLet’s say you want to grab a YouTube playlist for offline viewing. Fire up ytDownloader, choose your preferred quality and format (audio or video), and let it handle the rest. Need subtitles? Enable them in the preferences menu (html/preferences.html). Want to compress videos to save space? Use the built-in compressor (src/compressor.js)—though don’t expect HandBrake-level options.\n\nExample workflow:  \nClone the repo (git clone or download the latest release).  \nInstall dependencies: npm install.  \nRun locally: npm start (assuming you don’t want the pre-built binaries).  \nOpen the app, paste a URL, and hit download. Done.\n\nThe Bottom Line\n\nytDownloader is a solid choice if you're tired of sketchy downloaders and want something that just works. It’s simple, functional, and respects your privacy—no ads, no trackers. That said, if you’re already comfortable with yt-dlp in the terminal, this GUI might feel redundant. But for the less technically inclined or anyone who prefers clicking buttons over typing commands, it’s well worth a try. Just don’t expect groundbreaking features; it’s a well-dressed frontend for yt-dlp, and that’s perfectly fine.",
+      "url": "https://github.com/moses-y/ytDownloader",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "aandrew-me/ytDownloader",
+        "url": "https://github.com/aandrew-me/ytDownloader",
+        "stars": 8453
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 7, 2026",
+      "updatedAt": "March 7, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 74,
+        "directories": {
+          ".github": 4,
+          "(root)": 12,
+          "assets": 10,
+          "flatpak": 2,
+          "html": 7,
+          "resources": 6,
+          "src": 9,
+          "translations": 24
+        },
+        "languages": {
+          "Markdown": 3,
+          "YAML": 3,
+          "CSS": 2,
+          "HTML": 7,
+          "Shell": 2,
+          "JavaScript": 11,
+          "JSON": 26,
+          "TypeScript": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "html/index.html",
+          "main.js",
+          "src/index.js"
+        ],
+        "configFiles": [
+          "package.json",
+          "tsconfig.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 3,
+          ".yml": 3,
+          ".css": 2,
+          ".ttf": 3,
+          ".png": 9,
+          ".desktop": 1,
+          ".xml": 1,
+          ".html": 7,
+          ".sh": 2,
+          ".js": 11,
+          ".json": 26,
+          ".icns": 1,
+          ".ico": 1,
+          ".ts": 1,
+          ".ps1": 1
+        }
+      }
+    },
+    {
       "id": 1174796976,
       "name": "svg-path-editor",
       "displayName": "svg path editor",
@@ -184,7 +184,7 @@
       "parent": {
         "name": "Yqnn/svg-path-editor",
         "url": "https://github.com/Yqnn/svg-path-editor",
-        "stars": 5097
+        "stars": 5098
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -296,7 +296,7 @@
       "parent": {
         "name": "avinash201199/founders-kit",
         "url": "https://github.com/avinash201199/founders-kit",
-        "stars": 562
+        "stars": 569
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -872,7 +872,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 7015
+        "stars": 7084
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1387,7 +1387,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182397
+        "stars": 182399
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1634,7 +1634,7 @@
       "parent": {
         "name": "Yeachan-Heo/oh-my-codex",
         "url": "https://github.com/Yeachan-Heo/oh-my-codex",
-        "stars": 1531
+        "stars": 1533
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1859,7 +1859,7 @@
       "parent": {
         "name": "ItzCrazyKns/Perplexica",
         "url": "https://github.com/ItzCrazyKns/Perplexica",
-        "stars": 31884
+        "stars": 31901
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2135,7 +2135,7 @@
       "parent": {
         "name": "getomnico/omni",
         "url": "https://github.com/getomnico/omni",
-        "stars": 545
+        "stars": 546
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2305,7 +2305,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 9255
+        "stars": 9264
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2916,7 +2916,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 12565
+        "stars": 12568
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3136,7 +3136,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 11826
+        "stars": 11841
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4023,7 +4023,7 @@
       "parent": {
         "name": "AUTOMATIC1111/stable-diffusion-webui",
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-        "stars": 161539
+        "stars": 161540
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4339,7 +4339,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 10655
+        "stars": 10668
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4611,7 +4611,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 38141
+        "stars": 38143
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -4929,7 +4929,7 @@
       "parent": {
         "name": "FalkorDB/FalkorDB",
         "url": "https://github.com/FalkorDB/FalkorDB",
-        "stars": 3658
+        "stars": 3659
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5680,7 +5680,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 19942
+        "stars": 19950
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7328,7 +7328,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 274391
+        "stars": 274541
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7430,7 +7430,7 @@
       "parent": {
         "name": "Conway-Research/automaton",
         "url": "https://github.com/Conway-Research/automaton",
-        "stars": 3229
+        "stars": 3230
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9049,7 +9049,7 @@
       "parent": {
         "name": "freemocap/freemocap",
         "url": "https://github.com/freemocap/freemocap",
-        "stars": 6075
+        "stars": 6076
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9727,7 +9727,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 5479
+        "stars": 5482
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9889,7 +9889,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 8722
+        "stars": 8725
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -9977,7 +9977,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 9682
+        "stars": 9683
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -10504,7 +10504,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 63663
+        "stars": 63667
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10580,7 +10580,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 6243
+        "stars": 6244
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -10776,7 +10776,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4298
+        "stars": 4300
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -12419,7 +12419,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 29291
+        "stars": 29308
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -12494,7 +12494,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22751
+        "stars": 22754
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -13012,7 +13012,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 15208
+        "stars": 15207
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -13120,7 +13120,7 @@
       "parent": {
         "name": "filipstrand/mflux",
         "url": "https://github.com/filipstrand/mflux",
-        "stars": 1863
+        "stars": 1864
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -13479,7 +13479,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 22677
+        "stars": 22682
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13551,7 +13551,7 @@
       "parent": {
         "name": "The-Vibe-Company/companion",
         "url": "https://github.com/The-Vibe-Company/companion",
-        "stars": 2153
+        "stars": 2154
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -13638,7 +13638,7 @@
       "parent": {
         "name": "unfoldadmin/django-unfold",
         "url": "https://github.com/unfoldadmin/django-unfold",
-        "stars": 3329
+        "stars": 3330
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13803,7 +13803,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2881
+        "stars": 2886
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -13972,7 +13972,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 24304
+        "stars": 24305
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -14433,7 +14433,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 34391
+        "stars": 34392
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -14554,7 +14554,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 8850
+        "stars": 8852
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -14650,7 +14650,7 @@
       "parent": {
         "name": "OpenBMB/MiniCPM-o",
         "url": "https://github.com/OpenBMB/MiniCPM-o",
-        "stars": 24036
+        "stars": 24035
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -15043,7 +15043,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 5996
+        "stars": 5998
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15387,7 +15387,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 20205
+        "stars": 20234
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -15845,7 +15845,7 @@
       "parent": {
         "name": "rohunvora/x-research-skill",
         "url": "https://github.com/rohunvora/x-research-skill",
-        "stars": 919
+        "stars": 920
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -15987,7 +15987,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 29841
+        "stars": 29852
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -16449,7 +16449,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 9163
+        "stars": 9165
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -17380,7 +17380,7 @@
       "parent": {
         "name": "OpenBMB/VoxCPM",
         "url": "https://github.com/OpenBMB/VoxCPM",
-        "stars": 6069
+        "stars": 6070
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -18432,7 +18432,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 17271
+        "stars": 17276
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -19537,7 +19537,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 100322
+        "stars": 100340
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -20418,7 +20418,7 @@
       "parent": {
         "name": "allmonday/fastapi-voyager",
         "url": "https://github.com/allmonday/fastapi-voyager",
-        "stars": 436
+        "stars": 437
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -20551,7 +20551,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 8128
+        "stars": 8129
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -20735,7 +20735,7 @@
       "parent": {
         "name": "agno-agi/dash",
         "url": "https://github.com/agno-agi/dash",
-        "stars": 1757
+        "stars": 1758
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -20818,7 +20818,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 3899
+        "stars": 3900
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -22694,7 +22694,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 31485
+        "stars": 31488
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -23314,7 +23314,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6870
+        "stars": 6871
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -24732,7 +24732,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 7319
+        "stars": 7318
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -25185,7 +25185,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 28701
+        "stars": 28702
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -25574,7 +25574,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 126071
+        "stars": 126073
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -25669,7 +25669,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 7216
+        "stars": 7219
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -25797,7 +25797,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 6241
+        "stars": 6242
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -26257,7 +26257,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24382
+        "stars": 24383
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -28095,7 +28095,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5681
+        "stars": 5696
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -28346,7 +28346,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 129193
+        "stars": 129197
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -29021,7 +29021,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 20981
+        "stars": 20982
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -29597,7 +29597,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 9584
+        "stars": 9585
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -29764,7 +29764,7 @@
       "parent": {
         "name": "Liquid4All/cookbook",
         "url": "https://github.com/Liquid4All/cookbook",
-        "stars": 1403
+        "stars": 1404
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -30826,7 +30826,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 23064
+        "stars": 23066
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -31842,7 +31842,7 @@
       "parent": {
         "name": "hanebox/ekphos",
         "url": "https://github.com/hanebox/ekphos",
-        "stars": 853
+        "stars": 852
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -33085,7 +33085,7 @@
       "parent": {
         "name": "memodb-io/Acontext",
         "url": "https://github.com/memodb-io/Acontext",
-        "stars": 3133
+        "stars": 3134
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -33261,7 +33261,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 12025
+        "stars": 12026
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -34275,7 +34275,7 @@
       "parent": {
         "name": "robert-mcdermott/ai-knowledge-graph",
         "url": "https://github.com/robert-mcdermott/ai-knowledge-graph",
-        "stars": 1915
+        "stars": 1916
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -34915,7 +34915,7 @@
       "parent": {
         "name": "Qloapps/QloApps",
         "url": "https://github.com/Qloapps/QloApps",
-        "stars": 12539
+        "stars": 12540
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -35440,7 +35440,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 18090
+        "stars": 18093
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -35555,7 +35555,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 117684
+        "stars": 117692
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -36954,7 +36954,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 29133
+        "stars": 29135
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -37307,7 +37307,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 19713
+        "stars": 19716
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -37437,7 +37437,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22293
+        "stars": 22295
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -38091,7 +38091,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 97046
+        "stars": 97048
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -39243,7 +39243,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 182242
+        "stars": 182243
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
