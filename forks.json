@@ -1,14 +1,133 @@
 {
-  "lastUpdated": "2026-03-08T14:21:27.681Z",
+  "lastUpdated": "2026-03-08T14:50:19.611Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 396,
+  "totalRepos": 398,
   "progress": {
-    "aiGenerated": 396,
+    "aiGenerated": 398,
     "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
+    {
+      "id": 1176027264,
+      "name": "OpenDrop",
+      "displayName": "OpenDrop",
+      "description": " Transfer files across your local network directly from device to device using WebRTC.",
+      "summary": "OpenDrop: Peer-to-Peer File Sharing with WebRTC\n\nThe Problem\n\nEver been stuck trying to share a file between devices on the same network without messing around with email, USB drives, or some sketchy third-party service? Sure, services like AirDrop exist, but that's locked to Apple devices. And cloud storage? Great until you realize you're uploading a 2GB file just to download it again—on the same Wi-Fi. We can do better.\n\nWhat This Does\n\nOpenDrop is a simple, no-frills file-sharing tool that uses WebRTC for peer-to-peer (P2P) transfers on the same local network. The project is split into two parts:\nFrontend (client/): A static site (index.html, main.js, style.css) that handles the UI and opens WebRTC connections. It’s deployed via GitHub Pages, so you don’t even need to host it yourself. \nBackend (server/): A tiny Node.js WebSocket signaling server (server/index.js) to match devices on the same local network. For good measure, it also lets you upload files for temporary shareable links if P2P isn’t an option.\n\nFor P2P transfers, your files never leave the network—no cloud uploads, no middleman. For the shareable links, the backend is lightweight and can run for free on services like Koyeb or Render. Configuration is minimal—update the SIGNALING_URL in client/main.js with your server’s WebSocket URL and you’re good to go.\n\nReal-World Use\n\nLet’s say you’re sitting in a meeting (ugh) and need to send a 500MB video to a coworker across the table. Open http://your-opendrop-instance on both devices (make sure they’re on the same Wi-Fi). They’ll auto-discover each other—no IP addresses, no nonsense. Click their name and send your file. Done.\n\nOr maybe the Wi-Fi sucks (shocker), and P2P isn’t an option. Upload the file via the \"Share via Link\" option and send them the auto-generated URL. The link expires in 24 hours, so your files aren’t floating around forever—nice touch.\n\nThe Bottom Line\n\nOpenDrop is great for quick, local file transfers without relying on bloated services or proprietary ecosystems. It’s not revolutionary, but it’s reliable and easy to set up. That said, the lack of stars (0, ouch) and the \"not open-source\" license might be deal-breakers for some devs. If you’re okay with that, it’s a solid tool for personal or small-team use.",
+      "url": "https://github.com/moses-y/OpenDrop",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "DhanushNehru/OpenDrop",
+        "url": "https://github.com/DhanushNehru/OpenDrop",
+        "stars": 7
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 8, 2026",
+      "updatedAt": "March 8, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 12,
+        "directories": {
+          ".github": 1,
+          "(root)": 3,
+          "client": 4,
+          "server": 4
+        },
+        "languages": {
+          "YAML": 1,
+          "Markdown": 1,
+          "HTML": 1,
+          "JavaScript": 2,
+          "CSS": 1,
+          "JSON": 2
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "client/index.html",
+          "client/main.js",
+          "server/index.js"
+        ],
+        "configFiles": [
+          "server/package.json"
+        ],
+        "dependencies": [
+          "server/package-lock.json",
+          "server/package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".yml": 1,
+          ".md": 1,
+          ".html": 1,
+          ".js": 2,
+          ".css": 1,
+          ".json": 2
+        }
+      }
+    },
+    {
+      "id": 1176025349,
+      "name": "OpenClaw_Termux",
+      "displayName": "OpenClaw Termux",
+      "description": "How to Install OpenClaw on an Android Phone and Control It via WhatsApp",
+      "summary": "Control OpenClaw on Android via WhatsApp: A Practical Guide\n\nThe Problem\nManaging tasks on an Android device without root access can be a real headache. You need to analyze APKs, handle notifications, and execute commands without any hassle. Enter OpenClaw, which lets you control your Android phone through messaging apps. But getting it to work? That’s the real challenge.\n\nWhat This Does\nThe installopenclawtermux.sh script in this repo is your one-stop solution. It installs Ubuntu inside Termux, which is a terminal emulator for Android. After setting up, it installs Node.js 22 and OpenClaw, then launches everything in just a few minutes. The README does a decent job of summarizing the installation process, but using wget to grab the script and running it with chmod +x makes it straightforward. \n\nHere's a quick rundown of the commands you need to run:\n\nOnce this is done, you’re ready to roll with OpenClaw.\n\nReal-World Use\nImagine you receive an APK via WhatsApp that you want to analyze. You fire up OpenClaw, and within seconds, you can execute commands like taking photos or reading notifications—all without leaving your chat. For example, you could send a command like take_photo through WhatsApp, and OpenClaw takes care of the rest. Pretty slick, right?\n\nThe Bottom Line\nOpenClaw on Termux is a nifty way to control your Android device via messaging apps, especially if you’re a developer or security researcher. The installation script is simple enough for anyone with basic terminal skills. However, if you’re not into tinkering with setups or don’t need such functionality, this might feel like overkill. But for those who need it, this setup can save a lot of time and effort.",
+      "url": "https://github.com/moses-y/OpenClaw_Termux",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "androidmalware/OpenClaw_Termux",
+        "url": "https://github.com/androidmalware/OpenClaw_Termux",
+        "stars": 206
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 8, 2026",
+      "updatedAt": "March 8, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 2,
+        "directories": {
+          "(root)": 2
+        },
+        "languages": {
+          "Markdown": 1,
+          "Shell": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".sh": 1
+        }
+      }
+    },
     {
       "id": 1175979729,
       "name": "wormhole",
@@ -23,7 +142,7 @@
       "parent": {
         "name": "MuhammadHananAsghar/wormhole",
         "url": "https://github.com/MuhammadHananAsghar/wormhole",
-        "stars": 94
+        "stars": 96
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -300,7 +419,7 @@
       "parent": {
         "name": "xournalpp/xournalpp",
         "url": "https://github.com/xournalpp/xournalpp",
-        "stars": 14437
+        "stars": 14438
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -435,7 +554,7 @@
       "parent": {
         "name": "nearai/ironclaw",
         "url": "https://github.com/nearai/ironclaw",
-        "stars": 7404
+        "stars": 7429
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -570,7 +689,7 @@
       "parent": {
         "name": "shiahonb777/web-to-app",
         "url": "https://github.com/shiahonb777/web-to-app",
-        "stars": 1140
+        "stars": 1147
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -659,20 +778,20 @@
       }
     },
     {
-      "id": 1176027264,
-      "name": "OpenDrop",
-      "displayName": "OpenDrop",
-      "description": " Transfer files across your local network directly from device to device using WebRTC.",
-      "summary": "OpenDrop: Peer-to-Peer File Sharing with WebRTC\n\nThe Problem\n\nEver been stuck trying to share a file between devices on the same network without messing around with email, USB drives, or some sketchy third-party service? Sure, services like AirDrop exist, but that's locked to Apple devices. And cloud storage? Great until you realize you're uploading a 2GB file just to download it again—on the same Wi-Fi. We can do better.\n\nWhat This Does\n\nOpenDrop is a simple, no-frills file-sharing tool that uses WebRTC for peer-to-peer (P2P) transfers on the same local network. The project is split into two parts:\nFrontend (client/): A static site (index.html, main.js, style.css) that handles the UI and opens WebRTC connections. It’s deployed via GitHub Pages, so you don’t even need to host it yourself. \nBackend (server/): A tiny Node.js WebSocket signaling server (server/index.js) to match devices on the same local network. For good measure, it also lets you upload files for temporary shareable links if P2P isn’t an option.\n\nFor P2P transfers, your files never leave the network—no cloud uploads, no middleman. For the shareable links, the backend is lightweight and can run for free on services like Koyeb or Render. Configuration is minimal—update the SIGNALING_URL in client/main.js with your server’s WebSocket URL and you’re good to go.\n\nReal-World Use\n\nLet’s say you’re sitting in a meeting (ugh) and need to send a 500MB video to a coworker across the table. Open http://your-opendrop-instance on both devices (make sure they’re on the same Wi-Fi). They’ll auto-discover each other—no IP addresses, no nonsense. Click their name and send your file. Done.\n\nOr maybe the Wi-Fi sucks (shocker), and P2P isn’t an option. Upload the file via the \"Share via Link\" option and send them the auto-generated URL. The link expires in 24 hours, so your files aren’t floating around forever—nice touch.\n\nThe Bottom Line\n\nOpenDrop is great for quick, local file transfers without relying on bloated services or proprietary ecosystems. It’s not revolutionary, but it’s reliable and easy to set up. That said, the lack of stars (0, ouch) and the \"not open-source\" license might be deal-breakers for some devs. If you’re okay with that, it’s a solid tool for personal or small-team use.",
-      "url": "https://github.com/moses-y/OpenDrop",
+      "id": 1176043377,
+      "name": "Skyfall-GS",
+      "displayName": "Skyfall GS",
+      "description": "Skyfall-GS: Synthesizing Immersive 3D Urban Scenes from Satellite Imagery",
+      "summary": "The Problem  \nSynthesizing 3D urban scenes from scratch is a nightmare, especially when you don’t have access to high-quality 3D scans or boatloads of labeled data. If you’ve ever tried to generate realistic, explorable environments for games, simulations, or research, you know the pain: models don’t generalize, textures look like garbage, and geometry is all over the place. Enter Skyfall-GS, which says, “Screw expensive 3D annotations, let’s use satellite imagery and some fancy diffusion models instead.”  \n\nWhat This Does  \nSkyfall-GS combines satellite imagery with a curriculum-driven refinement strategy to produce 3D urban scenes. The pipeline is broken into two stages: reconstruction and synthesis. In the first stage, the framework uses satellite images to generate coarse geometry and basic textures. The second stage steps it up a notch, leveraging an Iterative Dataset Update (IDU) process and diffusion models for more realistic textures and geometry refinement.  \n\nThe repo is split across multiple folders, but key pieces live in cmmdpytorch/ (core logic like main.py, embedding.py, and generateimages.py), camerapaths/ (predefined camera angles for rendering), and scene/ (modules for loading datasets and managing scene components). There’s a lot to unpack, but the README.md does a decent job explaining where to start. Need to dive into the code? cmmdpytorch/main.py is ground zero for running the pipeline.  \n\nReal-World Use  \nLet’s say you’re working on a VR app for urban exploration, and you need realistic 3D models of cities without blowing the budget on LIDAR scans. With Skyfall-GS, you can process satellite images to whip up immersive urban environments.  \n\nThe workflow starts with the datasets—dump them into the data/ directory as explained in the README. Then, run the training pipeline via cmmdpytorch/main.py. Two stages later, you’ll have a collection of 3D assets ready for visualization. Use the rendervideo.py or render_videos.py scripts to preview the results or integrate the output into your project.  \n\nThe Bottom Line  \nSkyfall-GS is clever and ambitious, but it’s not plug-and-play. The setup is… involved (pip install --force-reinstall torch torchvision torchaudio is a red flag), and the learning curve is steep. That said, if you’re working on large-scale 3D scene generation and don’t mind getting your hands dirty, this could save you both time and money. For small-scale projects? Probably overkill.",
+      "url": "https://github.com/moses-y/Skyfall-GS",
       "language": null,
       "stars": 0,
       "forks": 0,
       "topics": [],
       "parent": {
-        "name": "DhanushNehru/OpenDrop",
-        "url": "https://github.com/DhanushNehru/OpenDrop",
-        "stars": 6
+        "name": "jayin92/Skyfall-GS",
+        "url": "https://github.com/jayin92/Skyfall-GS",
+        "stars": 756
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -680,70 +799,77 @@
       "updatedAt": "March 8, 2026",
       "readTime": 2,
       "knowledgeGraph": {
-        "totalFiles": 12,
+        "totalFiles": 92,
         "directories": {
-          ".github": 1,
-          "(root)": 3,
-          "client": 4,
-          "server": 4
+          "(root)": 18,
+          "arguments": 1,
+          "assets": 3,
+          "camera_paths": 32,
+          "cmmd_pytorch": 10,
+          "data": 1,
+          "gaussian_renderer": 2,
+          "lpipsPyTorch": 4,
+          "results_eval": 1,
+          "scene": 5,
+          "scripts": 7,
+          "utils": 8
         },
         "languages": {
-          "YAML": 1,
-          "Markdown": 1,
-          "HTML": 1,
-          "JavaScript": 2,
-          "CSS": 1,
-          "JSON": 2
+          "Markdown": 5,
+          "Python": 45,
+          "JSON": 32
         },
-        "frameworks": [
-          "React"
-        ],
-        "packageManager": "npm",
+        "frameworks": [],
+        "packageManager": "pip",
         "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
+        "hasCI": false,
+        "ciPlatform": null,
         "entryPoints": [
-          "client/index.html",
-          "client/main.js",
-          "server/index.js"
+          "cmmd_pytorch/main.py"
         ],
         "configFiles": [
-          "server/package.json"
+          "cmmd_pytorch/requirements.txt",
+          "requirements.txt"
         ],
         "dependencies": [
-          "server/package-lock.json",
-          "server/package.json"
+          "cmmd_pytorch/requirements.txt",
+          "requirements.txt"
         ],
         "testFiles": [],
         "docs": [
           "LICENSE",
-          "README.md"
+          "LICENSE_inria.md",
+          "README.md",
+          "cmmd_pytorch/LICENSE",
+          "cmmd_pytorch/README.md",
+          "data/README.md",
+          "results_eval/README.md"
         ],
         "fileTypes": {
-          ".yml": 1,
-          ".md": 1,
-          ".html": 1,
-          ".js": 2,
-          ".css": 1,
-          ".json": 2
+          ".md": 5,
+          ".py": 45,
+          ".png": 1,
+          ".jpg": 2,
+          ".json": 32,
+          ".txt": 2
         }
       }
     },
     {
-      "id": 1176025349,
-      "name": "OpenClaw_Termux",
-      "displayName": "OpenClaw Termux",
-      "description": "How to Install OpenClaw on an Android Phone and Control It via WhatsApp",
-      "summary": "Control OpenClaw on Android via WhatsApp: A Practical Guide\n\nThe Problem\nManaging tasks on an Android device without root access can be a real headache. You need to analyze APKs, handle notifications, and execute commands without any hassle. Enter OpenClaw, which lets you control your Android phone through messaging apps. But getting it to work? That’s the real challenge.\n\nWhat This Does\nThe installopenclawtermux.sh script in this repo is your one-stop solution. It installs Ubuntu inside Termux, which is a terminal emulator for Android. After setting up, it installs Node.js 22 and OpenClaw, then launches everything in just a few minutes. The README does a decent job of summarizing the installation process, but using wget to grab the script and running it with chmod +x makes it straightforward. \n\nHere's a quick rundown of the commands you need to run:\n\nOnce this is done, you’re ready to roll with OpenClaw.\n\nReal-World Use\nImagine you receive an APK via WhatsApp that you want to analyze. You fire up OpenClaw, and within seconds, you can execute commands like taking photos or reading notifications—all without leaving your chat. For example, you could send a command like take_photo through WhatsApp, and OpenClaw takes care of the rest. Pretty slick, right?\n\nThe Bottom Line\nOpenClaw on Termux is a nifty way to control your Android device via messaging apps, especially if you’re a developer or security researcher. The installation script is simple enough for anyone with basic terminal skills. However, if you’re not into tinkering with setups or don’t need such functionality, this might feel like overkill. But for those who need it, this setup can save a lot of time and effort.",
-      "url": "https://github.com/moses-y/OpenClaw_Termux",
+      "id": 1176030836,
+      "name": "autoresearch",
+      "displayName": "autoresearch",
+      "description": "AI agents running research on single-GPU nanochat training automatically",
+      "summary": "The Problem\nManual experimentation in AI research is tedious and time-consuming. Researchers spend countless hours tweaking hyperparameters, testing different architectures, and running experiments. The process often involves a lot of guesswork, and even then, results can be underwhelming. Enter autoresearch, which aims to automate this entire grind using AI agents.\n\nWhat This Does\nAt its core, autoresearch is about letting an AI agent handle the nitty-gritty of training a language model. You set up your training environment using the program.md file, which gives the agent the context it needs. From there, the agent takes over, making changes to train.py, which contains the model architecture and training loop. This isn't just a simple script; the agent can modify anything in this file, from hyperparameters to optimizer configurations.\n\nThe prepare.py file is responsible for one-time data preparation tasks like downloading datasets and initializing a Byte Pair Encoding (BPE) tokenizer. The agent doesn’t touch this file; it’s fixed. The real action happens in train.py, which is where the agent experiments autonomously for 5-minute intervals, continually optimizing based on the val_bpb metric. \n\nReal-World Use\nSay you're working on a new language model and want to quickly explore different training settings. You'd start by running the commands in the README to set things up: installing dependencies with uv sync, prepping your data with uv run prepare.py, and kicking off a training run with uv run train.py. Once you're set up, you can leave the agent to experiment overnight. In the morning, you’ll find a log detailing all the modifications made during training and the corresponding results, letting you evaluate what worked and what didn’t.\n\nThe Bottom Line\nautoresearch is a nifty tool for those diving deep into language model training on a single NVIDIA GPU. If you're looking to automate the repetitive aspects of your research without getting bogged down in the details, give this a shot. Just know that it’s tailored for a specific setup, so if you’re not on an NVIDIA GPU, you might want to look elsewhere. Overall, it’s a neat proof of concept, but don’t expect it to solve every problem in AI research—yet.",
+      "url": "https://github.com/moses-y/autoresearch",
       "language": null,
       "stars": 0,
       "forks": 0,
       "topics": [],
       "parent": {
-        "name": "androidmalware/OpenClaw_Termux",
-        "url": "https://github.com/androidmalware/OpenClaw_Termux",
-        "stars": 206
+        "name": "karpathy/autoresearch",
+        "url": "https://github.com/karpathy/autoresearch",
+        "stars": 5821
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -751,13 +877,14 @@
       "updatedAt": "March 8, 2026",
       "readTime": 2,
       "knowledgeGraph": {
-        "totalFiles": 2,
+        "totalFiles": 10,
         "directories": {
-          "(root)": 2
+          "(root)": 10
         },
         "languages": {
-          "Markdown": 1,
-          "Shell": 1
+          "Markdown": 2,
+          "Python": 2,
+          "TOML": 1
         },
         "frameworks": [],
         "packageManager": null,
@@ -765,15 +892,23 @@
         "hasCI": false,
         "ciPlatform": null,
         "entryPoints": [],
-        "configFiles": [],
-        "dependencies": [],
+        "configFiles": [
+          "pyproject.toml"
+        ],
+        "dependencies": [
+          "pyproject.toml"
+        ],
         "testFiles": [],
         "docs": [
           "README.md"
         ],
         "fileTypes": {
-          ".md": 1,
-          ".sh": 1
+          ".md": 2,
+          ".ipynb": 1,
+          ".py": 2,
+          ".png": 1,
+          ".toml": 1,
+          ".lock": 1
         }
       }
     },
@@ -1060,7 +1195,7 @@
       "parent": {
         "name": "aandrew-me/ytDownloader",
         "url": "https://github.com/aandrew-me/ytDownloader",
-        "stars": 8612
+        "stars": 8611
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1259,7 +1394,7 @@
       "parent": {
         "name": "avinash201199/founders-kit",
         "url": "https://github.com/avinash201199/founders-kit",
-        "stars": 772
+        "stars": 775
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1835,7 +1970,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 9746
+        "stars": 9834
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2350,7 +2485,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182436
+        "stars": 182438
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2481,7 +2616,7 @@
       "parent": {
         "name": "dbt-labs/dbt-agent-skills",
         "url": "https://github.com/dbt-labs/dbt-agent-skills",
-        "stars": 244
+        "stars": 245
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2597,7 +2732,7 @@
       "parent": {
         "name": "Yeachan-Heo/oh-my-codex",
         "url": "https://github.com/Yeachan-Heo/oh-my-codex",
-        "stars": 1578
+        "stars": 1579
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3268,7 +3403,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 9600
+        "stars": 9612
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3732,7 +3867,7 @@
       "parent": {
         "name": "maderix/ANE",
         "url": "https://github.com/maderix/ANE",
-        "stars": 5948
+        "stars": 5949
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3879,7 +4014,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 12707
+        "stars": 12713
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4099,7 +4234,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 12440
+        "stars": 12457
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4663,7 +4798,7 @@
       "parent": {
         "name": "katanemo/plano",
         "url": "https://github.com/katanemo/plano",
-        "stars": 5902
+        "stars": 5903
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4791,7 +4926,7 @@
       "parent": {
         "name": "AUTOMATIC1111/stable-diffusion-webui",
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-        "stars": 161556
+        "stars": 161555
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4876,7 +5011,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 3877
+        "stars": 3876
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5107,7 +5242,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 10974
+        "stars": 10985
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5379,7 +5514,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 38209
+        "stars": 38212
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5818,7 +5953,7 @@
       "parent": {
         "name": "getzep/graphiti",
         "url": "https://github.com/getzep/graphiti",
-        "stars": 23411
+        "stars": 23413
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6354,7 +6489,7 @@
       "parent": {
         "name": "QwenLM/Qwen3-Coder",
         "url": "https://github.com/QwenLM/Qwen3-Coder",
-        "stars": 15908
+        "stars": 15906
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6448,7 +6583,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 20308
+        "stars": 20318
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7273,7 +7408,7 @@
       "parent": {
         "name": "HKUDS/ClawWork",
         "url": "https://github.com/HKUDS/ClawWork",
-        "stars": 6804
+        "stars": 6807
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -7466,7 +7601,7 @@
       "parent": {
         "name": "agalwood/Motrix",
         "url": "https://github.com/agalwood/Motrix",
-        "stars": 51000
+        "stars": 51001
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -8096,7 +8231,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 279036
+        "stars": 279192
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8198,7 +8333,7 @@
       "parent": {
         "name": "Conway-Research/automaton",
         "url": "https://github.com/Conway-Research/automaton",
-        "stars": 3250
+        "stars": 3254
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9356,7 +9491,7 @@
       "parent": {
         "name": "WASasquatch/ComfyUI_Viewer_OpenReel_Extension",
         "url": "https://github.com/WASasquatch/ComfyUI_Viewer_OpenReel_Extension",
-        "stars": 58
+        "stars": 59
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -10495,7 +10630,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 5579
+        "stars": 5580
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -10562,7 +10697,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 5853
+        "stars": 5861
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10745,7 +10880,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 9701
+        "stars": 9702
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -11272,7 +11407,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 63837
+        "stars": 63845
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -11348,7 +11483,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 6275
+        "stars": 6277
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -11544,7 +11679,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4342
+        "stars": 4343
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -11704,7 +11839,7 @@
       "parent": {
         "name": "antvis/Infographic",
         "url": "https://github.com/antvis/Infographic",
-        "stars": 4564
+        "stars": 4565
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -13187,7 +13322,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 29858
+        "stars": 29888
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -13262,7 +13397,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22807
+        "stars": 22808
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -14247,7 +14382,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 22885
+        "stars": 22887
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -14319,7 +14454,7 @@
       "parent": {
         "name": "The-Vibe-Company/companion",
         "url": "https://github.com/The-Vibe-Company/companion",
-        "stars": 2161
+        "stars": 2162
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -15201,7 +15336,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 34424
+        "stars": 34425
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -15322,7 +15457,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 9048
+        "stars": 9055
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -16155,7 +16290,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 20977
+        "stars": 21014
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -16529,7 +16664,7 @@
       "parent": {
         "name": "needle-tools/md-browse",
         "url": "https://github.com/needle-tools/md-browse",
-        "stars": 217
+        "stars": 218
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -16755,7 +16890,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 30412
+        "stars": 30431
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -17217,7 +17352,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 9181
+        "stars": 9183
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -18301,7 +18436,7 @@
       "parent": {
         "name": "sseanliu/VisionClaw",
         "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 1527
+        "stars": 1529
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -20305,7 +20440,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 100795
+        "stars": 100801
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -20944,7 +21079,7 @@
       "parent": {
         "name": "kizuna-ai-lab/sokuji",
         "url": "https://github.com/kizuna-ai-lab/sokuji",
-        "stars": 850
+        "stars": 851
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -21319,7 +21454,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 8142
+        "stars": 8143
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -23462,7 +23597,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 31572
+        "stars": 31573
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -24082,7 +24217,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6873
+        "stars": 6874
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -25500,7 +25635,7 @@
       "parent": {
         "name": "GetStream/Vision-Agents",
         "url": "https://github.com/GetStream/Vision-Agents",
-        "stars": 7323
+        "stars": 7324
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -25633,7 +25768,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8838
+        "stars": 8839
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -26342,7 +26477,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 126186
+        "stars": 126189
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -26852,7 +26987,7 @@
       "parent": {
         "name": "unicodeveloper/globalthreatmap",
         "url": "https://github.com/unicodeveloper/globalthreatmap",
-        "stars": 1289
+        "stars": 1290
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -28287,7 +28422,7 @@
       "parent": {
         "name": "aiming-lab/SimpleMem",
         "url": "https://github.com/aiming-lab/SimpleMem",
-        "stars": 3106
+        "stars": 3107
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -28863,7 +28998,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5844
+        "stars": 5849
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -29114,7 +29249,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 129468
+        "stars": 129478
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -29789,7 +29924,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 21008
+        "stars": 21010
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -30365,7 +30500,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 9619
+        "stars": 9620
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -31594,7 +31729,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 23079
+        "stars": 23081
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -32127,7 +32262,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 22103
+        "stars": 22105
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -34029,7 +34164,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 12116
+        "stars": 12117
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -34269,7 +34404,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12885
+        "stars": 12887
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -35201,7 +35336,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16811
+        "stars": 16813
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -35530,7 +35665,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56609
+        "stars": 56611
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -35828,7 +35963,7 @@
       "parent": {
         "name": "frappe/crm",
         "url": "https://github.com/frappe/crm",
-        "stars": 2412
+        "stars": 2413
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -36323,7 +36458,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 118195
+        "stars": 118214
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -37722,7 +37857,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 29192
+        "stars": 29194
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -38075,7 +38210,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 19922
+        "stars": 19927
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -38205,7 +38340,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22369
+        "stars": 22371
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -38859,7 +38994,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 97167
+        "stars": 97169
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
