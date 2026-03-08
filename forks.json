@@ -1,14 +1,123 @@
 {
-  "lastUpdated": "2026-03-08T13:37:47.062Z",
+  "lastUpdated": "2026-03-08T14:21:27.681Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 394,
+  "totalRepos": 396,
   "progress": {
-    "aiGenerated": 394,
+    "aiGenerated": 396,
     "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
+    {
+      "id": 1175979729,
+      "name": "wormhole",
+      "displayName": "wormhole",
+      "description": "Open-source ngrok alternative. Expose your localhost to the internet with one command. Built with Go + Cloudflare Workers.",
+      "summary": "The Problem\nEver tried to show a local server to someone on the internet? You know, without the hassle of deploying it somewhere or jumping through hoops? Enter the frustration of needing a public URL for demos or testing webhooks. You want something quick, easy, and with zero config files. That’s where wormhole comes in.\n\nWhat This Does\nwormhole is an open-source alternative to ngrok that lets you expose your localhost to the internet with a single command. You just run wormhole http 3000, and voila! You've got a public HTTPS URL, thanks to Cloudflare handling the TLS magic. Check out the cmd/wormhole/main.go file if you want to see the entry point where this all kicks off.\n\nThe internal/client directory is where the real action happens. For example, local.go manages the local server traffic, while ws_passthrough.go ensures WebSocket connections work smoothly. It's all about making your life easier, and it does a decent job at that.\n\nReal-World Use\nImagine you're working on a webhook for a payment processor like Stripe. You fire up your local server on port 3000 and run:\n\nNow, you can provide the forwarding URL (like https://k7x9m2.wormhole.bar) to your team for testing. The built-in traffic inspector, accessible at http://localhost:4040, gives you live feedback on incoming requests and even lets you replay them with a click. Perfect for debugging! \n\nNeed a custom subdomain? Just run wormhole http 3000 --subdomain myapp after logging in with GitHub. Now, your URL looks a lot more professional.\n\nThe Bottom Line\nwormhole is solid for developers who need to share local servers without the fuss of deployments. The features like request replay and traffic inspection are handy, but if you're working on small projects that don’t need real-time testing, this might feel like overkill. Still, for anyone juggling multiple local servers or integrating with webhooks, it's worth a shot.",
+      "url": "https://github.com/moses-y/wormhole",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "MuhammadHananAsghar/wormhole",
+        "url": "https://github.com/MuhammadHananAsghar/wormhole",
+        "stars": 94
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 8, 2026",
+      "updatedAt": "March 8, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 47,
+        "directories": {
+          "(root)": 9,
+          "cmd": 1,
+          "deployments": 1,
+          "docs": 5,
+          "edge": 13,
+          "internal": 17,
+          "pkg": 1
+        },
+        "languages": {
+          "YAML": 1,
+          "Markdown": 2,
+          "Go": 19,
+          "Shell": 3,
+          "HTML": 1,
+          "TypeScript": 6,
+          "SQL": 3,
+          "JSON": 3,
+          "TOML": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "go modules",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "cmd/wormhole/main.go",
+          "docs/index.html",
+          "edge/src/index.ts",
+          "internal/inspect/server.go"
+        ],
+        "configFiles": [
+          "Makefile",
+          "edge/package.json",
+          "edge/tsconfig.json",
+          "go.mod"
+        ],
+        "dependencies": [
+          "edge/package-lock.json",
+          "edge/package.json",
+          "go.mod"
+        ],
+        "testFiles": [
+          "edge/__tests__/env.d.ts",
+          "edge/__tests__/index.test.ts",
+          "edge/__tests__/tunnel.test.ts",
+          "edge/vitest.config.ts",
+          "internal/client/local_test.go",
+          "internal/inspect/har.go",
+          "internal/inspect/har_test.go",
+          "internal/inspect/recorder.go",
+          "internal/inspect/recorder_test.go",
+          "internal/inspect/replay.go",
+          "internal/inspect/replay_test.go",
+          "internal/inspect/server.go",
+          "internal/inspect/server_test.go",
+          "internal/transport/protocol_test.go"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "docs/CNAME",
+          "docs/index.html",
+          "docs/install.sh",
+          "docs/og-image.png",
+          "docs/og-image.svg"
+        ],
+        "fileTypes": {
+          ".yml": 1,
+          ".md": 2,
+          ".go": 19,
+          ".sh": 3,
+          ".html": 1,
+          ".png": 1,
+          ".svg": 1,
+          ".ts": 6,
+          ".sql": 3,
+          ".json": 3,
+          ".toml": 1,
+          ".mod": 1,
+          ".sum": 1
+        }
+      }
+    },
     {
       "id": 1175877232,
       "name": "takopi",
@@ -191,7 +300,7 @@
       "parent": {
         "name": "xournalpp/xournalpp",
         "url": "https://github.com/xournalpp/xournalpp",
-        "stars": 14436
+        "stars": 14437
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -326,7 +435,7 @@
       "parent": {
         "name": "nearai/ironclaw",
         "url": "https://github.com/nearai/ironclaw",
-        "stars": 7370
+        "stars": 7404
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -461,7 +570,7 @@
       "parent": {
         "name": "shiahonb777/web-to-app",
         "url": "https://github.com/shiahonb777/web-to-app",
-        "stars": 1133
+        "stars": 1140
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -550,20 +659,20 @@
       }
     },
     {
-      "id": 1175979729,
-      "name": "wormhole",
-      "displayName": "wormhole",
-      "description": "Open-source ngrok alternative. Expose your localhost to the internet with one command. Built with Go + Cloudflare Workers.",
-      "summary": "The Problem\nEver tried to show a local server to someone on the internet? You know, without the hassle of deploying it somewhere or jumping through hoops? Enter the frustration of needing a public URL for demos or testing webhooks. You want something quick, easy, and with zero config files. That’s where wormhole comes in.\n\nWhat This Does\nwormhole is an open-source alternative to ngrok that lets you expose your localhost to the internet with a single command. You just run wormhole http 3000, and voila! You've got a public HTTPS URL, thanks to Cloudflare handling the TLS magic. Check out the cmd/wormhole/main.go file if you want to see the entry point where this all kicks off.\n\nThe internal/client directory is where the real action happens. For example, local.go manages the local server traffic, while ws_passthrough.go ensures WebSocket connections work smoothly. It's all about making your life easier, and it does a decent job at that.\n\nReal-World Use\nImagine you're working on a webhook for a payment processor like Stripe. You fire up your local server on port 3000 and run:\n\nNow, you can provide the forwarding URL (like https://k7x9m2.wormhole.bar) to your team for testing. The built-in traffic inspector, accessible at http://localhost:4040, gives you live feedback on incoming requests and even lets you replay them with a click. Perfect for debugging! \n\nNeed a custom subdomain? Just run wormhole http 3000 --subdomain myapp after logging in with GitHub. Now, your URL looks a lot more professional.\n\nThe Bottom Line\nwormhole is solid for developers who need to share local servers without the fuss of deployments. The features like request replay and traffic inspection are handy, but if you're working on small projects that don’t need real-time testing, this might feel like overkill. Still, for anyone juggling multiple local servers or integrating with webhooks, it's worth a shot.",
-      "url": "https://github.com/moses-y/wormhole",
+      "id": 1176027264,
+      "name": "OpenDrop",
+      "displayName": "OpenDrop",
+      "description": " Transfer files across your local network directly from device to device using WebRTC.",
+      "summary": "OpenDrop: Peer-to-Peer File Sharing with WebRTC\n\nThe Problem\n\nEver been stuck trying to share a file between devices on the same network without messing around with email, USB drives, or some sketchy third-party service? Sure, services like AirDrop exist, but that's locked to Apple devices. And cloud storage? Great until you realize you're uploading a 2GB file just to download it again—on the same Wi-Fi. We can do better.\n\nWhat This Does\n\nOpenDrop is a simple, no-frills file-sharing tool that uses WebRTC for peer-to-peer (P2P) transfers on the same local network. The project is split into two parts:\nFrontend (client/): A static site (index.html, main.js, style.css) that handles the UI and opens WebRTC connections. It’s deployed via GitHub Pages, so you don’t even need to host it yourself. \nBackend (server/): A tiny Node.js WebSocket signaling server (server/index.js) to match devices on the same local network. For good measure, it also lets you upload files for temporary shareable links if P2P isn’t an option.\n\nFor P2P transfers, your files never leave the network—no cloud uploads, no middleman. For the shareable links, the backend is lightweight and can run for free on services like Koyeb or Render. Configuration is minimal—update the SIGNALING_URL in client/main.js with your server’s WebSocket URL and you’re good to go.\n\nReal-World Use\n\nLet’s say you’re sitting in a meeting (ugh) and need to send a 500MB video to a coworker across the table. Open http://your-opendrop-instance on both devices (make sure they’re on the same Wi-Fi). They’ll auto-discover each other—no IP addresses, no nonsense. Click their name and send your file. Done.\n\nOr maybe the Wi-Fi sucks (shocker), and P2P isn’t an option. Upload the file via the \"Share via Link\" option and send them the auto-generated URL. The link expires in 24 hours, so your files aren’t floating around forever—nice touch.\n\nThe Bottom Line\n\nOpenDrop is great for quick, local file transfers without relying on bloated services or proprietary ecosystems. It’s not revolutionary, but it’s reliable and easy to set up. That said, the lack of stars (0, ouch) and the \"not open-source\" license might be deal-breakers for some devs. If you’re okay with that, it’s a solid tool for personal or small-team use.",
+      "url": "https://github.com/moses-y/OpenDrop",
       "language": null,
       "stars": 0,
       "forks": 0,
       "topics": [],
       "parent": {
-        "name": "MuhammadHananAsghar/wormhole",
-        "url": "https://github.com/MuhammadHananAsghar/wormhole",
-        "stars": 86
+        "name": "DhanushNehru/OpenDrop",
+        "url": "https://github.com/DhanushNehru/OpenDrop",
+        "stars": 6
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -571,90 +680,100 @@
       "updatedAt": "March 8, 2026",
       "readTime": 2,
       "knowledgeGraph": {
-        "totalFiles": 47,
+        "totalFiles": 12,
         "directories": {
-          "(root)": 9,
-          "cmd": 1,
-          "deployments": 1,
-          "docs": 5,
-          "edge": 13,
-          "internal": 17,
-          "pkg": 1
+          ".github": 1,
+          "(root)": 3,
+          "client": 4,
+          "server": 4
         },
         "languages": {
           "YAML": 1,
-          "Markdown": 2,
-          "Go": 19,
-          "Shell": 3,
+          "Markdown": 1,
           "HTML": 1,
-          "TypeScript": 6,
-          "SQL": 3,
-          "JSON": 3,
-          "TOML": 1
+          "JavaScript": 2,
+          "CSS": 1,
+          "JSON": 2
         },
         "frameworks": [
           "React"
         ],
-        "packageManager": "go modules",
+        "packageManager": "npm",
         "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
         "entryPoints": [
-          "cmd/wormhole/main.go",
-          "docs/index.html",
-          "edge/src/index.ts",
-          "internal/inspect/server.go"
+          "client/index.html",
+          "client/main.js",
+          "server/index.js"
         ],
         "configFiles": [
-          "Makefile",
-          "edge/package.json",
-          "edge/tsconfig.json",
-          "go.mod"
+          "server/package.json"
         ],
         "dependencies": [
-          "edge/package-lock.json",
-          "edge/package.json",
-          "go.mod"
+          "server/package-lock.json",
+          "server/package.json"
         ],
-        "testFiles": [
-          "edge/__tests__/env.d.ts",
-          "edge/__tests__/index.test.ts",
-          "edge/__tests__/tunnel.test.ts",
-          "edge/vitest.config.ts",
-          "internal/client/local_test.go",
-          "internal/inspect/har.go",
-          "internal/inspect/har_test.go",
-          "internal/inspect/recorder.go",
-          "internal/inspect/recorder_test.go",
-          "internal/inspect/replay.go",
-          "internal/inspect/replay_test.go",
-          "internal/inspect/server.go",
-          "internal/inspect/server_test.go",
-          "internal/transport/protocol_test.go"
-        ],
+        "testFiles": [],
         "docs": [
           "LICENSE",
-          "README.md",
-          "docs/CNAME",
-          "docs/index.html",
-          "docs/install.sh",
-          "docs/og-image.png",
-          "docs/og-image.svg"
+          "README.md"
         ],
         "fileTypes": {
           ".yml": 1,
-          ".md": 2,
-          ".go": 19,
-          ".sh": 3,
+          ".md": 1,
           ".html": 1,
-          ".png": 1,
-          ".svg": 1,
-          ".ts": 6,
-          ".sql": 3,
-          ".json": 3,
-          ".toml": 1,
-          ".mod": 1,
-          ".sum": 1
+          ".js": 2,
+          ".css": 1,
+          ".json": 2
+        }
+      }
+    },
+    {
+      "id": 1176025349,
+      "name": "OpenClaw_Termux",
+      "displayName": "OpenClaw Termux",
+      "description": "How to Install OpenClaw on an Android Phone and Control It via WhatsApp",
+      "summary": "Control OpenClaw on Android via WhatsApp: A Practical Guide\n\nThe Problem\nManaging tasks on an Android device without root access can be a real headache. You need to analyze APKs, handle notifications, and execute commands without any hassle. Enter OpenClaw, which lets you control your Android phone through messaging apps. But getting it to work? That’s the real challenge.\n\nWhat This Does\nThe installopenclawtermux.sh script in this repo is your one-stop solution. It installs Ubuntu inside Termux, which is a terminal emulator for Android. After setting up, it installs Node.js 22 and OpenClaw, then launches everything in just a few minutes. The README does a decent job of summarizing the installation process, but using wget to grab the script and running it with chmod +x makes it straightforward. \n\nHere's a quick rundown of the commands you need to run:\n\nOnce this is done, you’re ready to roll with OpenClaw.\n\nReal-World Use\nImagine you receive an APK via WhatsApp that you want to analyze. You fire up OpenClaw, and within seconds, you can execute commands like taking photos or reading notifications—all without leaving your chat. For example, you could send a command like take_photo through WhatsApp, and OpenClaw takes care of the rest. Pretty slick, right?\n\nThe Bottom Line\nOpenClaw on Termux is a nifty way to control your Android device via messaging apps, especially if you’re a developer or security researcher. The installation script is simple enough for anyone with basic terminal skills. However, if you’re not into tinkering with setups or don’t need such functionality, this might feel like overkill. But for those who need it, this setup can save a lot of time and effort.",
+      "url": "https://github.com/moses-y/OpenClaw_Termux",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "androidmalware/OpenClaw_Termux",
+        "url": "https://github.com/androidmalware/OpenClaw_Termux",
+        "stars": 206
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 8, 2026",
+      "updatedAt": "March 8, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 2,
+        "directories": {
+          "(root)": 2
+        },
+        "languages": {
+          "Markdown": 1,
+          "Shell": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".sh": 1
         }
       }
     },
@@ -941,7 +1060,7 @@
       "parent": {
         "name": "aandrew-me/ytDownloader",
         "url": "https://github.com/aandrew-me/ytDownloader",
-        "stars": 8611
+        "stars": 8612
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1140,7 +1259,7 @@
       "parent": {
         "name": "avinash201199/founders-kit",
         "url": "https://github.com/avinash201199/founders-kit",
-        "stars": 770
+        "stars": 772
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1190,7 +1309,7 @@
       "parent": {
         "name": "OminousIndustries/PhoneDriver",
         "url": "https://github.com/OminousIndustries/PhoneDriver",
-        "stars": 1330
+        "stars": 1331
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1332,7 +1451,7 @@
       "parent": {
         "name": "facebookresearch/eb_jepa",
         "url": "https://github.com/facebookresearch/eb_jepa",
-        "stars": 485
+        "stars": 486
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1716,7 +1835,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 9619
+        "stars": 9746
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2163,7 +2282,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 202222
+        "stars": 202225
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -2231,7 +2350,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182437
+        "stars": 182436
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2478,7 +2597,7 @@
       "parent": {
         "name": "Yeachan-Heo/oh-my-codex",
         "url": "https://github.com/Yeachan-Heo/oh-my-codex",
-        "stars": 1576
+        "stars": 1578
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2703,7 +2822,7 @@
       "parent": {
         "name": "ItzCrazyKns/Perplexica",
         "url": "https://github.com/ItzCrazyKns/Perplexica",
-        "stars": 32168
+        "stars": 32173
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3149,7 +3268,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 9578
+        "stars": 9600
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3283,7 +3402,7 @@
       "parent": {
         "name": "rishikanthc/Scriberr",
         "url": "https://github.com/rishikanthc/Scriberr",
-        "stars": 2378
+        "stars": 2379
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3760,7 +3879,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 12699
+        "stars": 12707
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3980,7 +4099,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 12395
+        "stars": 12440
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4672,7 +4791,7 @@
       "parent": {
         "name": "AUTOMATIC1111/stable-diffusion-webui",
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-        "stars": 161557
+        "stars": 161556
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4757,7 +4876,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 3874
+        "stars": 3877
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4988,7 +5107,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 10963
+        "stars": 10974
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5260,7 +5379,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 38204
+        "stars": 38209
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -6329,7 +6448,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 20290
+        "stars": 20308
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7154,7 +7273,7 @@
       "parent": {
         "name": "HKUDS/ClawWork",
         "url": "https://github.com/HKUDS/ClawWork",
-        "stars": 6801
+        "stars": 6804
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -7347,7 +7466,7 @@
       "parent": {
         "name": "agalwood/Motrix",
         "url": "https://github.com/agalwood/Motrix",
-        "stars": 51001
+        "stars": 51000
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -7437,7 +7556,7 @@
       "parent": {
         "name": "TinyAGI/tinyclaw",
         "url": "https://github.com/TinyAGI/tinyclaw",
-        "stars": 2984
+        "stars": 2986
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7977,7 +8096,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 278770
+        "stars": 279036
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9421,7 +9540,7 @@
       "parent": {
         "name": "alichherawalla/off-grid-mobile-ai",
         "url": "https://github.com/alichherawalla/off-grid-mobile-ai",
-        "stars": 889
+        "stars": 890
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -10183,7 +10302,7 @@
       "parent": {
         "name": "spacedriveapp/spacebot",
         "url": "https://github.com/spacedriveapp/spacebot",
-        "stars": 1619
+        "stars": 1620
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10376,7 +10495,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 5577
+        "stars": 5579
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -10443,7 +10562,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 5851
+        "stars": 5853
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10538,7 +10657,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 8747
+        "stars": 8746
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -10626,7 +10745,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 9699
+        "stars": 9701
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -11153,7 +11272,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 63830
+        "stars": 63837
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -11229,7 +11348,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 6273
+        "stars": 6275
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -11425,7 +11544,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4339
+        "stars": 4342
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -12008,7 +12127,7 @@
       "parent": {
         "name": "koel/koel",
         "url": "https://github.com/koel/koel",
-        "stars": 17081
+        "stars": 17082
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -12697,7 +12816,7 @@
       "parent": {
         "name": "openrundev/openrun",
         "url": "https://github.com/openrundev/openrun",
-        "stars": 806
+        "stars": 807
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -13068,7 +13187,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 29821
+        "stars": 29858
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -13143,7 +13262,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22803
+        "stars": 22807
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -13661,7 +13780,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 15209
+        "stars": 15210
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -14128,7 +14247,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 22868
+        "stars": 22885
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -14452,7 +14571,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2938
+        "stars": 2941
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -14832,7 +14951,7 @@
       "parent": {
         "name": "opendatalab/PDF-Extract-Kit",
         "url": "https://github.com/opendatalab/PDF-Extract-Kit",
-        "stars": 9448
+        "stars": 9449
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -15203,7 +15322,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 9034
+        "stars": 9048
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -15692,7 +15811,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 6036
+        "stars": 6040
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -16036,7 +16155,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 20935
+        "stars": 20977
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -16218,7 +16337,7 @@
       "parent": {
         "name": "wg-easy/wg-easy",
         "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24881
+        "stars": 24882
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -16636,7 +16755,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 30388
+        "stars": 30412
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -16720,7 +16839,7 @@
       "parent": {
         "name": "MiniCodeMonkey/chief",
         "url": "https://github.com/MiniCodeMonkey/chief",
-        "stars": 363
+        "stars": 364
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -17098,7 +17217,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 9180
+        "stars": 9181
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -17508,7 +17627,7 @@
       "parent": {
         "name": "itsOwen/CyberScraper-2077",
         "url": "https://github.com/itsOwen/CyberScraper-2077",
-        "stars": 2909
+        "stars": 2910
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -19081,7 +19200,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 17328
+        "stars": 17331
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -20186,7 +20305,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 100785
+        "stars": 100795
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -21467,7 +21586,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 3911
+        "stars": 3912
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -21756,7 +21875,7 @@
       "parent": {
         "name": "Kocoro-lab/Shannon",
         "url": "https://github.com/Kocoro-lab/Shannon",
-        "stars": 1149
+        "stars": 1150
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -22281,7 +22400,7 @@
       "parent": {
         "name": "callstackincubator/agent-device",
         "url": "https://github.com/callstackincubator/agent-device",
-        "stars": 960
+        "stars": 961
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -22471,7 +22590,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20821
+        "stars": 20820
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -23343,7 +23462,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 31569
+        "stars": 31572
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -25514,7 +25633,7 @@
       "parent": {
         "name": "numman-ali/openskills",
         "url": "https://github.com/numman-ali/openskills",
-        "stars": 8837
+        "stars": 8838
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -25596,7 +25715,7 @@
       "parent": {
         "name": "hpcaitech/ColossalAI",
         "url": "https://github.com/hpcaitech/ColossalAI",
-        "stars": 41359
+        "stars": 41360
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -25759,7 +25878,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 4579
+        "stars": 4580
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -26223,7 +26342,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 126181
+        "stars": 126186
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -26318,7 +26437,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 7271
+        "stars": 7274
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -26813,7 +26932,7 @@
       "parent": {
         "name": "Nutlope/self.so",
         "url": "https://github.com/Nutlope/self.so",
-        "stars": 2900
+        "stars": 2901
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -26906,7 +27025,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24386
+        "stars": 24385
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -26981,7 +27100,7 @@
       "parent": {
         "name": "EuniAI/Prometheus",
         "url": "https://github.com/EuniAI/Prometheus",
-        "stars": 852
+        "stars": 853
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -28168,7 +28287,7 @@
       "parent": {
         "name": "aiming-lab/SimpleMem",
         "url": "https://github.com/aiming-lab/SimpleMem",
-        "stars": 3104
+        "stars": 3106
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -28744,7 +28863,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5841
+        "stars": 5844
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -28995,7 +29114,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 129455
+        "stars": 129468
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -29670,7 +29789,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 21007
+        "stars": 21008
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -32263,7 +32382,7 @@
       "parent": {
         "name": "braedonsaunders/codeflow",
         "url": "https://github.com/braedonsaunders/codeflow",
-        "stars": 563
+        "stars": 564
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -33910,7 +34029,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 12115
+        "stars": 12116
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -34150,7 +34269,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12884
+        "stars": 12885
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -36089,7 +36208,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 18182
+        "stars": 18185
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -36204,7 +36323,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 118162
+        "stars": 118195
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -37603,7 +37722,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 29185
+        "stars": 29192
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -37956,7 +38075,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 19911
+        "stars": 19922
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -38086,7 +38205,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22366
+        "stars": 22369
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -38740,7 +38859,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 97163
+        "stars": 97167
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -39892,7 +40011,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 182265
+        "stars": 182264
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
