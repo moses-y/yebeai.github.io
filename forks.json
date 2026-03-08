@@ -1,9 +1,9 @@
 {
-  "lastUpdated": "2026-03-08T09:24:29.322Z",
+  "lastUpdated": "2026-03-08T09:53:00.535Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 390,
+  "totalRepos": 392,
   "progress": {
-    "aiGenerated": 390,
+    "aiGenerated": 392,
     "fallback": 0,
     "pending": 0,
     "complete": true
@@ -23,7 +23,7 @@
       "parent": {
         "name": "shiahonb777/web-to-app",
         "url": "https://github.com/shiahonb777/web-to-app",
-        "stars": 1093
+        "stars": 1099
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -108,6 +108,276 @@
           ".cpp": 4,
           ".h": 1,
           ".kt": 154
+        }
+      }
+    },
+    {
+      "id": 1175873940,
+      "name": "xournalpp",
+      "displayName": "xournalpp",
+      "description": "Xournal++ is a handwriting notetaking software with PDF annotation support. Written in C++ with GTK3, supporting Linux (e.g. Ubuntu, Debian, Arch, SUSE), macOS and Windows 10. Supports pen input from devices such as Wacom Tablets.",
+      "summary": "The Problem\n\nAnnotating PDFs and taking handwritten notes shouldn’t feel like you’re fighting your software. Tools like Adobe Acrobat are bloated and clunky, while scribbling on a tablet app often lacks precision, features, and cross-platform support. If you’re a student, teacher, or anyone working with PDFs and handwritten notes, you’ve probably been frustrated by the lack of a solid, no-BS solution.\n\nWhat This Does\n\nXournal++ is the \"Why isn’t this already a thing?\" solution. It’s a lightweight, open-source handwriting and PDF annotation tool built in C++ with GTK3. It works on Linux, Windows 10, and macOS, and even supports pressure-sensitive styluses like Wacom tablets. Think of it as the Swiss Army knife for anyone who needs to take notes, annotate PDFs, or just doodle with precision.\n\nThe project is well-organized. The src/ folder houses the C++ core, including modules for audio recording (src/core/audio/AudioRecorder.cpp) and playback (src/core/audio/AudioPlayer.cpp). The plugins/ folder adds Lua-based scripting to extend functionality (e.g., plugins/Export/main.lua for exporting workflows). For cross-platform builds, there’s a bunch of CMakeLists.txt files littered across the repo, which is nice if you like pain-free builds. CI/CD is handled via GitHub Actions, with workflows like make-installer-windows.yml and make-installer-macos.yml making it easier to ship builds across platforms.\n\nAnd yes, it handles PDF annotation like a champ. You can highlight, underline, or strike through text in PDFs, export annotated versions, and even overlay them with handwriting or shapes. All this while offering LaTeX support, customizable toolbars, and a plugin system for nerds who want to extend it further.\n\nReal-World Use\n\nSay you’re a math teacher prepping lecture notes. You can load your PDF slides into Xournal++, scribble annotations using a Wacom tablet, and even add LaTeX formulas for extra clarity. Need to emphasize a section? Use the highlighter tool or draw shapes to circle key points. Want to share the annotated slides with your students? Export them as a new PDF or even as SVG for further editing. Bonus: if you’re explaining something complicated, the audio recording feature lets you attach voice notes to your annotations for asynchronous learning.\n\nThe Bottom Line\n\nXournal++ is a powerful, no-frills tool for anyone who needs robust handwriting and PDF annotation capabilities. It’s not flashy, but it works. You’ll love it if you’re on Linux, and it’s solid on macOS and Windows too. The plugin system is a nice touch for tinkerers, but the codebase could use more tests (seriously, one test file?). Overall, it’s a workhorse for anyone tired of bloated alternatives.",
+      "url": "https://github.com/moses-y/xournalpp",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "xournalpp/xournalpp",
+        "url": "https://github.com/xournalpp/xournalpp",
+        "stars": 14430
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 8, 2026",
+      "updatedAt": "March 8, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 17,
+          ".github": 21,
+          "cmake": 9,
+          "debian": 9,
+          "desktop": 2,
+          "development": 12,
+          "linux-setup": 1,
+          "mac-setup": 13,
+          "man": 2,
+          "palettes": 2,
+          "plugins": 24,
+          "po": 48,
+          "readme": 15,
+          "resources-templates": 4,
+          "resources": 2,
+          "rpm": 1,
+          "scripts": 4,
+          "src": 14
+        },
+        "languages": {
+          "YAML": 22,
+          "JSON": 1,
+          "Markdown": 13,
+          "Shell": 7,
+          "Lua": 13,
+          "Python": 2,
+          "C++": 2,
+          "C/C++ Header": 3
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          "CMakeLists.txt",
+          "man/CMakeLists.txt",
+          "po/CMakeLists.txt",
+          "src/CMakeLists.txt",
+          "src/core/CMakeLists.txt"
+        ],
+        "dependencies": [],
+        "testFiles": [
+          "rpm/fedora/xournalpp.spec"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "cmake/README.md",
+          "debian/changelog",
+          "development/README",
+          "development/documentation/README-Eraser-and-padded-box.pdf",
+          "development/documentation/README-Eraser-and-padded-box.xopp",
+          "development/documentation/Setsquare_Readme.md",
+          "po/README.md",
+          "po/its/Readme.md",
+          "readme/Compile.md",
+          "readme/LinuxBuild.md",
+          "readme/MacBuild.md",
+          "readme/Releases.md",
+          "readme/WindowsBuild.md",
+          "readme/WindowsBuildArm.md",
+          "readme/background.png",
+          "readme/floatingtoolbox.png",
+          "readme/floatingtoolboxmbmenu.png",
+          "readme/layer.png",
+          "readme/main-mac.png",
+          "readme/main-win.png",
+          "readme/main.png",
+          "readme/moreexperimentals.png",
+          "readme/toolbar.png",
+          "scripts/compare_license.py"
+        ],
+        "fileTypes": {
+          ".yml": 22,
+          ".json": 1,
+          ".md": 13,
+          ".txt": 7,
+          ".in": 14,
+          ".cmake": 4,
+          ".thumbnailer": 1,
+          ".pdf": 1,
+          ".xopp": 2,
+          ".png": 15,
+          ".suppression": 1,
+          ".sh": 7,
+          ".plist": 1,
+          ".patch": 1,
+          ".icns": 1,
+          ".lock": 1,
+          ".bundle": 1,
+          ".modules": 1,
+          ".groff": 1,
+          ".gpl": 2,
+          ".lua": 13,
+          ".ini": 11,
+          ".po": 41,
+          ".its": 1,
+          ".loc": 1,
+          ".pot": 1,
+          ".tex": 2,
+          ".spec": 1,
+          ".py": 2,
+          ".cpp": 2,
+          ".h": 3
+        }
+      }
+    },
+    {
+      "id": 1175873588,
+      "name": "ironclaw",
+      "displayName": "ironclaw",
+      "description": "IronClaw is OpenClaw inspired implementation in Rust focused on privacy and security",
+      "summary": "The Problem\nIn a world drowning in data breaches and privacy violations, trusting your personal AI assistant is a tough sell. Most solutions out there are either locked down by corporate interests or riddled with hidden telemetry that leaves your data exposed. You need an assistant that respects your privacy and doesn’t turn you into a product.\n\nWhat This Does\nEnter IronClaw. This Rust-based implementation focuses on privacy and security, ensuring your data stays yours. It runs tools in a WASM sandbox, isolating untrusted code to prevent leaks and injections. Check out src/agent/self_repair.rs for how it handles automatic recovery of stuck operations, and src/channels/web/server.rs for the web gateway that streams real-time data while keeping your interactions secure.\n\nThe directory structure is clean, with dedicated folders for each channel (channels-src/discord, channels-src/slack, etc.), allowing you to plug in new capabilities as needed. If you’re looking to build or modify tools on the fly, the src/channels/web/handlers folder has everything from job handlers to static file management neatly organized.\n\nReal-World Use\nImagine you want to automate daily reminders through Slack using IronClaw. You can set this up in minutes. Write a function in channels-src/slack/src/lib.rs that triggers based on an event, and thanks to the built-in Routines, you can schedule it without a second thought. Plus, everything operates under a Docker sandbox, so you can run multiple instances without worrying about conflicts.\n\nThe Bottom Line\nIronClaw is solid if you prioritize privacy and flexibility in an AI assistant. It’s packed with features like multi-channel support and dynamic tool building, but the learning curve might be steep for those not familiar with Rust or WASM. If you’re a developer looking for a trustworthy AI solution that doesn’t compromise your data, give IronClaw a shot. Just don’t expect it to be as user-friendly as a corporate alternative.",
+      "url": "https://github.com/moses-y/ironclaw",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "nearai/ironclaw",
+        "url": "https://github.com/nearai/ironclaw",
+        "stars": 7225
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 8, 2026",
+      "updatedAt": "March 8, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".claude": 10,
+          "(root)": 28,
+          ".githooks": 2,
+          ".github": 12,
+          "channels-src": 21,
+          "deploy": 4,
+          "docker": 1,
+          "docs": 7,
+          "migrations": 11,
+          "registry": 15,
+          "scripts": 8,
+          "skills": 3,
+          "src": 78
+        },
+        "languages": {
+          "Markdown": 31,
+          "YAML": 12,
+          "Shell": 17,
+          "TOML": 7,
+          "Rust": 76,
+          "JSON": 20,
+          "Docker": 1,
+          "SQL": 11,
+          "JavaScript": 1,
+          "HTML": 1,
+          "CSS": 1
+        },
+        "frameworks": [
+          "Express",
+          "Docker"
+        ],
+        "packageManager": "cargo",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "channels-src/discord/src/lib.rs",
+          "channels-src/slack/src/lib.rs",
+          "channels-src/telegram/src/lib.rs",
+          "channels-src/whatsapp/src/lib.rs",
+          "src/channels/web/static/app.js",
+          "src/channels/web/static/index.html"
+        ],
+        "configFiles": [
+          ".env.example",
+          "Cargo.toml",
+          "Dockerfile",
+          "Dockerfile.test",
+          "Dockerfile.worker",
+          "channels-src/discord/Cargo.toml",
+          "channels-src/slack/Cargo.toml",
+          "channels-src/telegram/Cargo.toml",
+          "channels-src/whatsapp/Cargo.toml",
+          "docker-compose.yml"
+        ],
+        "dependencies": [
+          "Cargo.toml",
+          "channels-src/discord/Cargo.toml",
+          "channels-src/slack/Cargo.toml",
+          "channels-src/telegram/Cargo.toml",
+          "channels-src/whatsapp/Cargo.toml"
+        ],
+        "testFiles": [
+          ".github/workflows/regression-test-check.yml",
+          ".github/workflows/test.yml",
+          "Dockerfile.test",
+          "docs/smart-routing-spec.md",
+          "skills/local-test/SKILL.md",
+          "skills/web-ui-test/SKILL.md",
+          "src/channels/web/test_helpers.rs"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "CONTRIBUTING.md",
+          "LICENSE-APACHE",
+          "LICENSE-MIT",
+          "README.md",
+          "channels-src/discord/README.md",
+          "docs/BUILDING_CHANNELS.md",
+          "docs/LLM_PROVIDERS.md",
+          "docs/TELEGRAM_SETUP.md",
+          "docs/plans/2026-02-24-automated-qa.md",
+          "docs/plans/2026-02-24-e2e-infrastructure-design.md",
+          "docs/plans/2026-02-24-e2e-infrastructure.md",
+          "docs/smart-routing-spec.md"
+        ],
+        "fileTypes": {
+          ".md": 31,
+          ".example": 2,
+          ".yml": 12,
+          ".sh": 15,
+          ".lock": 5,
+          ".toml": 7,
+          ".test": 1,
+          ".worker": 1,
+          ".rs": 76,
+          ".json": 20,
+          ".service": 2,
+          ".dockerfile": 1,
+          ".bash": 1,
+          ".fish": 1,
+          ".png": 1,
+          ".zsh": 1,
+          ".sql": 11,
+          ".js": 1,
+          ".ico": 1,
+          ".html": 1,
+          ".css": 1
         }
       }
     },
@@ -593,7 +863,7 @@
       "parent": {
         "name": "avinash201199/founders-kit",
         "url": "https://github.com/avinash201199/founders-kit",
-        "stars": 739
+        "stars": 742
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1169,7 +1439,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 9032
+        "stars": 9087
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -1684,7 +1954,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182432
+        "stars": 182435
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1931,7 +2201,7 @@
       "parent": {
         "name": "Yeachan-Heo/oh-my-codex",
         "url": "https://github.com/Yeachan-Heo/oh-my-codex",
-        "stars": 1564
+        "stars": 1565
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2156,7 +2426,7 @@
       "parent": {
         "name": "ItzCrazyKns/Perplexica",
         "url": "https://github.com/ItzCrazyKns/Perplexica",
-        "stars": 32138
+        "stars": 32141
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2602,7 +2872,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 9517
+        "stars": 9527
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2736,7 +3006,7 @@
       "parent": {
         "name": "rishikanthc/Scriberr",
         "url": "https://github.com/rishikanthc/Scriberr",
-        "stars": 2373
+        "stars": 2374
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3213,7 +3483,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 12668
+        "stars": 12670
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3433,7 +3703,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 12226
+        "stars": 12247
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4125,7 +4395,7 @@
       "parent": {
         "name": "AUTOMATIC1111/stable-diffusion-webui",
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-        "stars": 161554
+        "stars": 161556
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4441,7 +4711,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 10906
+        "stars": 10910
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4713,7 +4983,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 38192
+        "stars": 38195
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5782,7 +6052,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 20218
+        "stars": 20225
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -6607,7 +6877,7 @@
       "parent": {
         "name": "HKUDS/ClawWork",
         "url": "https://github.com/HKUDS/ClawWork",
-        "stars": 6782
+        "stars": 6783
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -6800,7 +7070,7 @@
       "parent": {
         "name": "agalwood/Motrix",
         "url": "https://github.com/agalwood/Motrix",
-        "stars": 51002
+        "stars": 51001
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -7430,7 +7700,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 277641
+        "stars": 277772
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8874,7 +9144,7 @@
       "parent": {
         "name": "alichherawalla/off-grid-mobile-ai",
         "url": "https://github.com/alichherawalla/off-grid-mobile-ai",
-        "stars": 887
+        "stars": 888
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -9829,7 +10099,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 5555
+        "stars": 5556
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9896,7 +10166,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 5825
+        "stars": 5828
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9991,7 +10261,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 8741
+        "stars": 8742
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -10079,7 +10349,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 9696
+        "stars": 9697
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -10878,7 +11148,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4335
+        "stars": 4336
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -12521,7 +12791,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 29697
+        "stars": 29705
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -13485,7 +13755,7 @@
       "parent": {
         "name": "BAI-LAB/MemoryOS",
         "url": "https://github.com/BAI-LAB/MemoryOS",
-        "stars": 1231
+        "stars": 1232
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -13581,7 +13851,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 22823
+        "stars": 22828
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13905,7 +14175,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2927
+        "stars": 2931
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -14535,7 +14805,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 34416
+        "stars": 34417
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -14656,7 +14926,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 8993
+        "stars": 8995
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -14752,7 +15022,7 @@
       "parent": {
         "name": "OpenBMB/MiniCPM-o",
         "url": "https://github.com/OpenBMB/MiniCPM-o",
-        "stars": 24042
+        "stars": 24043
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -15145,7 +15415,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 6031
+        "stars": 6033
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15489,7 +15759,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 20767
+        "stars": 20786
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -15671,7 +15941,7 @@
       "parent": {
         "name": "wg-easy/wg-easy",
         "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24879
+        "stars": 24880
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -16089,7 +16359,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 30282
+        "stars": 30290
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -17635,7 +17905,7 @@
       "parent": {
         "name": "sseanliu/VisionClaw",
         "url": "https://github.com/sseanliu/VisionClaw",
-        "stars": 1524
+        "stars": 1526
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -17880,7 +18150,7 @@
       "parent": {
         "name": "m0n0x41d/quint-code",
         "url": "https://github.com/m0n0x41d/quint-code",
-        "stars": 1179
+        "stars": 1180
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -18459,7 +18729,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2567
+        "stars": 2569
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -19639,7 +19909,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 100726
+        "stars": 100733
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -20086,7 +20356,7 @@
       "parent": {
         "name": "rivo/tview",
         "url": "https://github.com/rivo/tview",
-        "stars": 13635
+        "stars": 13636
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -20653,7 +20923,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 8139
+        "stars": 8140
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -21409,7 +21679,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44675
+        "stars": 44676
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -22706,7 +22976,7 @@
       "parent": {
         "name": "AtsushiSakai/PythonRobotics",
         "url": "https://github.com/AtsushiSakai/PythonRobotics",
-        "stars": 28812
+        "stars": 28813
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -22796,7 +23066,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 31551
+        "stars": 31553
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -23942,7 +24212,7 @@
       "parent": {
         "name": "reconurge/flowsint",
         "url": "https://github.com/reconurge/flowsint",
-        "stars": 2627
+        "stars": 2626
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -25212,7 +25482,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 4568
+        "stars": 4570
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -25287,7 +25557,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 28708
+        "stars": 28709
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -25375,7 +25645,7 @@
       "parent": {
         "name": "droidrun/droidrun",
         "url": "https://github.com/droidrun/droidrun",
-        "stars": 7890
+        "stars": 7889
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -25676,7 +25946,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 126158
+        "stars": 126157
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -25771,7 +26041,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 7259
+        "stars": 7260
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -26186,7 +26456,7 @@
       "parent": {
         "name": "unicodeveloper/globalthreatmap",
         "url": "https://github.com/unicodeveloper/globalthreatmap",
-        "stars": 1287
+        "stars": 1288
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -26434,7 +26704,7 @@
       "parent": {
         "name": "EuniAI/Prometheus",
         "url": "https://github.com/EuniAI/Prometheus",
-        "stars": 845
+        "stars": 846
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -28197,7 +28467,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5821
+        "stars": 5823
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -28448,7 +28718,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 129402
+        "stars": 129409
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -28539,7 +28809,7 @@
       "parent": {
         "name": "adrianhajdin/uber",
         "url": "https://github.com/adrianhajdin/uber",
-        "stars": 1707
+        "stars": 1708
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -29866,7 +30136,7 @@
       "parent": {
         "name": "Liquid4All/cookbook",
         "url": "https://github.com/Liquid4All/cookbook",
-        "stars": 1411
+        "stars": 1413
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -30570,7 +30840,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7613
+        "stars": 7614
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -33603,7 +33873,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12880
+        "stars": 12881
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -35542,7 +35812,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 18169
+        "stars": 18171
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -35657,7 +35927,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 118051
+        "stars": 118065
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -37409,7 +37679,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 19870
+        "stars": 19872
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -37539,7 +37809,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22353
+        "stars": 22354
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -38193,7 +38463,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 97136
+        "stars": 97140
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -38349,7 +38619,7 @@
       "parent": {
         "name": "bensadeh/tailspin",
         "url": "https://github.com/bensadeh/tailspin",
-        "stars": 7699
+        "stars": 7700
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -39345,7 +39615,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 182264
+        "stars": 182265
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
