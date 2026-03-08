@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-08T10:20:30.315Z",
+  "lastUpdated": "2026-03-08T10:50:40.445Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
   "totalRepos": 393,
   "progress": {
@@ -9,378 +9,6 @@
     "complete": true
   },
   "forks": [
-    {
-      "id": 1175873940,
-      "name": "xournalpp",
-      "displayName": "xournalpp",
-      "description": "Xournal++ is a handwriting notetaking software with PDF annotation support. Written in C++ with GTK3, supporting Linux (e.g. Ubuntu, Debian, Arch, SUSE), macOS and Windows 10. Supports pen input from devices such as Wacom Tablets.",
-      "summary": "The Problem\n\nAnnotating PDFs and taking handwritten notes shouldn’t feel like you’re fighting your software. Tools like Adobe Acrobat are bloated and clunky, while scribbling on a tablet app often lacks precision, features, and cross-platform support. If you’re a student, teacher, or anyone working with PDFs and handwritten notes, you’ve probably been frustrated by the lack of a solid, no-BS solution.\n\nWhat This Does\n\nXournal++ is the \"Why isn’t this already a thing?\" solution. It’s a lightweight, open-source handwriting and PDF annotation tool built in C++ with GTK3. It works on Linux, Windows 10, and macOS, and even supports pressure-sensitive styluses like Wacom tablets. Think of it as the Swiss Army knife for anyone who needs to take notes, annotate PDFs, or just doodle with precision.\n\nThe project is well-organized. The src/ folder houses the C++ core, including modules for audio recording (src/core/audio/AudioRecorder.cpp) and playback (src/core/audio/AudioPlayer.cpp). The plugins/ folder adds Lua-based scripting to extend functionality (e.g., plugins/Export/main.lua for exporting workflows). For cross-platform builds, there’s a bunch of CMakeLists.txt files littered across the repo, which is nice if you like pain-free builds. CI/CD is handled via GitHub Actions, with workflows like make-installer-windows.yml and make-installer-macos.yml making it easier to ship builds across platforms.\n\nAnd yes, it handles PDF annotation like a champ. You can highlight, underline, or strike through text in PDFs, export annotated versions, and even overlay them with handwriting or shapes. All this while offering LaTeX support, customizable toolbars, and a plugin system for nerds who want to extend it further.\n\nReal-World Use\n\nSay you’re a math teacher prepping lecture notes. You can load your PDF slides into Xournal++, scribble annotations using a Wacom tablet, and even add LaTeX formulas for extra clarity. Need to emphasize a section? Use the highlighter tool or draw shapes to circle key points. Want to share the annotated slides with your students? Export them as a new PDF or even as SVG for further editing. Bonus: if you’re explaining something complicated, the audio recording feature lets you attach voice notes to your annotations for asynchronous learning.\n\nThe Bottom Line\n\nXournal++ is a powerful, no-frills tool for anyone who needs robust handwriting and PDF annotation capabilities. It’s not flashy, but it works. You’ll love it if you’re on Linux, and it’s solid on macOS and Windows too. The plugin system is a nice touch for tinkerers, but the codebase could use more tests (seriously, one test file?). Overall, it’s a workhorse for anyone tired of bloated alternatives.",
-      "url": "https://github.com/moses-y/xournalpp",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "xournalpp/xournalpp",
-        "url": "https://github.com/xournalpp/xournalpp",
-        "stars": 14432
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 8, 2026",
-      "updatedAt": "March 8, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          "(root)": 17,
-          ".github": 21,
-          "cmake": 9,
-          "debian": 9,
-          "desktop": 2,
-          "development": 12,
-          "linux-setup": 1,
-          "mac-setup": 13,
-          "man": 2,
-          "palettes": 2,
-          "plugins": 24,
-          "po": 48,
-          "readme": 15,
-          "resources-templates": 4,
-          "resources": 2,
-          "rpm": 1,
-          "scripts": 4,
-          "src": 14
-        },
-        "languages": {
-          "YAML": 22,
-          "JSON": 1,
-          "Markdown": 13,
-          "Shell": 7,
-          "Lua": 13,
-          "Python": 2,
-          "C++": 2,
-          "C/C++ Header": 3
-        },
-        "frameworks": [],
-        "packageManager": null,
-        "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [],
-        "configFiles": [
-          "CMakeLists.txt",
-          "man/CMakeLists.txt",
-          "po/CMakeLists.txt",
-          "src/CMakeLists.txt",
-          "src/core/CMakeLists.txt"
-        ],
-        "dependencies": [],
-        "testFiles": [
-          "rpm/fedora/xournalpp.spec"
-        ],
-        "docs": [
-          "CHANGELOG.md",
-          "CONTRIBUTING.md",
-          "LICENSE",
-          "README.md",
-          "cmake/README.md",
-          "debian/changelog",
-          "development/README",
-          "development/documentation/README-Eraser-and-padded-box.pdf",
-          "development/documentation/README-Eraser-and-padded-box.xopp",
-          "development/documentation/Setsquare_Readme.md",
-          "po/README.md",
-          "po/its/Readme.md",
-          "readme/Compile.md",
-          "readme/LinuxBuild.md",
-          "readme/MacBuild.md",
-          "readme/Releases.md",
-          "readme/WindowsBuild.md",
-          "readme/WindowsBuildArm.md",
-          "readme/background.png",
-          "readme/floatingtoolbox.png",
-          "readme/floatingtoolboxmbmenu.png",
-          "readme/layer.png",
-          "readme/main-mac.png",
-          "readme/main-win.png",
-          "readme/main.png",
-          "readme/moreexperimentals.png",
-          "readme/toolbar.png",
-          "scripts/compare_license.py"
-        ],
-        "fileTypes": {
-          ".yml": 22,
-          ".json": 1,
-          ".md": 13,
-          ".txt": 7,
-          ".in": 14,
-          ".cmake": 4,
-          ".thumbnailer": 1,
-          ".pdf": 1,
-          ".xopp": 2,
-          ".png": 15,
-          ".suppression": 1,
-          ".sh": 7,
-          ".plist": 1,
-          ".patch": 1,
-          ".icns": 1,
-          ".lock": 1,
-          ".bundle": 1,
-          ".modules": 1,
-          ".groff": 1,
-          ".gpl": 2,
-          ".lua": 13,
-          ".ini": 11,
-          ".po": 41,
-          ".its": 1,
-          ".loc": 1,
-          ".pot": 1,
-          ".tex": 2,
-          ".spec": 1,
-          ".py": 2,
-          ".cpp": 2,
-          ".h": 3
-        }
-      }
-    },
-    {
-      "id": 1175873588,
-      "name": "ironclaw",
-      "displayName": "ironclaw",
-      "description": "IronClaw is OpenClaw inspired implementation in Rust focused on privacy and security",
-      "summary": "The Problem\nIn a world drowning in data breaches and privacy violations, trusting your personal AI assistant is a tough sell. Most solutions out there are either locked down by corporate interests or riddled with hidden telemetry that leaves your data exposed. You need an assistant that respects your privacy and doesn’t turn you into a product.\n\nWhat This Does\nEnter IronClaw. This Rust-based implementation focuses on privacy and security, ensuring your data stays yours. It runs tools in a WASM sandbox, isolating untrusted code to prevent leaks and injections. Check out src/agent/self_repair.rs for how it handles automatic recovery of stuck operations, and src/channels/web/server.rs for the web gateway that streams real-time data while keeping your interactions secure.\n\nThe directory structure is clean, with dedicated folders for each channel (channels-src/discord, channels-src/slack, etc.), allowing you to plug in new capabilities as needed. If you’re looking to build or modify tools on the fly, the src/channels/web/handlers folder has everything from job handlers to static file management neatly organized.\n\nReal-World Use\nImagine you want to automate daily reminders through Slack using IronClaw. You can set this up in minutes. Write a function in channels-src/slack/src/lib.rs that triggers based on an event, and thanks to the built-in Routines, you can schedule it without a second thought. Plus, everything operates under a Docker sandbox, so you can run multiple instances without worrying about conflicts.\n\nThe Bottom Line\nIronClaw is solid if you prioritize privacy and flexibility in an AI assistant. It’s packed with features like multi-channel support and dynamic tool building, but the learning curve might be steep for those not familiar with Rust or WASM. If you’re a developer looking for a trustworthy AI solution that doesn’t compromise your data, give IronClaw a shot. Just don’t expect it to be as user-friendly as a corporate alternative.",
-      "url": "https://github.com/moses-y/ironclaw",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "nearai/ironclaw",
-        "url": "https://github.com/nearai/ironclaw",
-        "stars": 7245
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 8, 2026",
-      "updatedAt": "March 8, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          ".claude": 10,
-          "(root)": 28,
-          ".githooks": 2,
-          ".github": 12,
-          "channels-src": 21,
-          "deploy": 4,
-          "docker": 1,
-          "docs": 7,
-          "migrations": 11,
-          "registry": 15,
-          "scripts": 8,
-          "skills": 3,
-          "src": 78
-        },
-        "languages": {
-          "Markdown": 31,
-          "YAML": 12,
-          "Shell": 17,
-          "TOML": 7,
-          "Rust": 76,
-          "JSON": 20,
-          "Docker": 1,
-          "SQL": 11,
-          "JavaScript": 1,
-          "HTML": 1,
-          "CSS": 1
-        },
-        "frameworks": [
-          "Express",
-          "Docker"
-        ],
-        "packageManager": "cargo",
-        "hasDocker": true,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [
-          "channels-src/discord/src/lib.rs",
-          "channels-src/slack/src/lib.rs",
-          "channels-src/telegram/src/lib.rs",
-          "channels-src/whatsapp/src/lib.rs",
-          "src/channels/web/static/app.js",
-          "src/channels/web/static/index.html"
-        ],
-        "configFiles": [
-          ".env.example",
-          "Cargo.toml",
-          "Dockerfile",
-          "Dockerfile.test",
-          "Dockerfile.worker",
-          "channels-src/discord/Cargo.toml",
-          "channels-src/slack/Cargo.toml",
-          "channels-src/telegram/Cargo.toml",
-          "channels-src/whatsapp/Cargo.toml",
-          "docker-compose.yml"
-        ],
-        "dependencies": [
-          "Cargo.toml",
-          "channels-src/discord/Cargo.toml",
-          "channels-src/slack/Cargo.toml",
-          "channels-src/telegram/Cargo.toml",
-          "channels-src/whatsapp/Cargo.toml"
-        ],
-        "testFiles": [
-          ".github/workflows/regression-test-check.yml",
-          ".github/workflows/test.yml",
-          "Dockerfile.test",
-          "docs/smart-routing-spec.md",
-          "skills/local-test/SKILL.md",
-          "skills/web-ui-test/SKILL.md",
-          "src/channels/web/test_helpers.rs"
-        ],
-        "docs": [
-          "CHANGELOG.md",
-          "CONTRIBUTING.md",
-          "LICENSE-APACHE",
-          "LICENSE-MIT",
-          "README.md",
-          "channels-src/discord/README.md",
-          "docs/BUILDING_CHANNELS.md",
-          "docs/LLM_PROVIDERS.md",
-          "docs/TELEGRAM_SETUP.md",
-          "docs/plans/2026-02-24-automated-qa.md",
-          "docs/plans/2026-02-24-e2e-infrastructure-design.md",
-          "docs/plans/2026-02-24-e2e-infrastructure.md",
-          "docs/smart-routing-spec.md"
-        ],
-        "fileTypes": {
-          ".md": 31,
-          ".example": 2,
-          ".yml": 12,
-          ".sh": 15,
-          ".lock": 5,
-          ".toml": 7,
-          ".test": 1,
-          ".worker": 1,
-          ".rs": 76,
-          ".json": 20,
-          ".service": 2,
-          ".dockerfile": 1,
-          ".bash": 1,
-          ".fish": 1,
-          ".png": 1,
-          ".zsh": 1,
-          ".sql": 11,
-          ".js": 1,
-          ".ico": 1,
-          ".html": 1,
-          ".css": 1
-        }
-      }
-    },
-    {
-      "id": 1175766852,
-      "name": "web-to-app",
-      "displayName": "web to app",
-      "description": "A native Android application that converts any website URL into a standalone Android App.",
-      "summary": "Turning Websites into Android Apps with web-to-app\n\nThe Problem  \nBuilding an Android app from a website is a hassle. Not everyone wants to mess with Android Studio, SDKs, or a ton of boilerplate just to wrap a URL into an APK. For non-developers (or lazy devs like me), the process should be easy: slap in a URL, tweak a few settings, press a button, and boom—app. But it’s not. Until now.\n\nWhat This Does  \nweb-to-app is a native Android app that takes any website URL and spits out a fully functional APK. No coding, no Android Studio, no headaches. Just give it a web link and let it do the rest. It even supports frameworks like React, Vue, and Next.js if you’re into that kind of thing.  \n\nThe heavy lifting is done in app/src/main/java/com/webtoapp/core. For example, the WebViewManager.kt handles the WebView integration, while ApkBuilder.kt takes care of, well, building the APK. If you’re curious about the fancy AI-powered features (like icon generation), check out the app/src/main/java/com/webtoapp/core/ai folder.  \n\nThis app also includes some neat extras like ad-blocking (AdBlocker.kt), APK encryption (AesCryptoEngine.kt), and multi-instance isolation (IsolationManager.kt). Oh, and you get a bunch of prebuilt JavaScript frameworks under app/src/main/assets/sample_projects, so you can test things out without having to write a single line of code.  \n\nReal-World Use  \nSay you’re a small business owner with a website, and you want to make an app so your customers can access your store easily. You don’t want to waste time hiring developers or learning new tools. web-to-app lets you paste in your site’s URL, customize a few settings (like app icons using IconGeneratorDialog.kt), and generate a polished APK right on your phone.  \n\nOr maybe you’re a frontend dev who wants to show off your React demo to a client as a standalone app. Drop your app files in the react-demo folder, and let the FrontendProjectBuilder.kt do its thing. In minutes, you’ve got an APK to share.  \n\nThe Bottom Line  \nweb-to-app is super useful if you need quick, no-code Android apps from websites or frontend projects. It’s feature-packed, but that also makes it bloated for simple use cases. The codebase is a beast—200 files, tons of Kotlin, and more AI nonsense than you’ll probably use. If you’re a dev looking to customize or extend it, you’ll love the modular design (ExtensionModule.kt). If you’re just here for one-click APKs, it’s perfect.",
-      "url": "https://github.com/moses-y/web-to-app",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "shiahonb777/web-to-app",
-        "url": "https://github.com/shiahonb777/web-to-app",
-        "stars": 1107
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 8, 2026",
-      "updatedAt": "March 8, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          "(root)": 5,
-          "app": 195
-        },
-        "languages": {
-          "Markdown": 4,
-          "HTML": 9,
-          "JavaScript": 9,
-          "CSS": 9,
-          "JSON": 3,
-          "C++": 4,
-          "C/C++ Header": 1,
-          "Kotlin": 154
-        },
-        "frameworks": [
-          "React"
-        ],
-        "packageManager": "gradle",
-        "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "app/src/main/assets/sample_projects/react-demo-ar/dist/index.html",
-          "app/src/main/assets/sample_projects/react-demo-ar/dist/main.js",
-          "app/src/main/assets/sample_projects/react-demo-en/dist/index.html",
-          "app/src/main/assets/sample_projects/react-demo-en/dist/main.js",
-          "app/src/main/assets/sample_projects/react-demo/dist/index.html",
-          "app/src/main/assets/sample_projects/react-demo/dist/main.js",
-          "app/src/main/assets/sample_projects/vite-vanilla-ar/dist/index.html",
-          "app/src/main/assets/sample_projects/vite-vanilla-ar/dist/main.js",
-          "app/src/main/assets/sample_projects/vite-vanilla-en/dist/index.html",
-          "app/src/main/assets/sample_projects/vite-vanilla-en/dist/main.js",
-          "app/src/main/assets/sample_projects/vite-vanilla/dist/index.html",
-          "app/src/main/assets/sample_projects/vite-vanilla/dist/main.js",
-          "app/src/main/assets/sample_projects/vue-demo-ar/dist/index.html",
-          "app/src/main/assets/sample_projects/vue-demo-ar/dist/main.js",
-          "app/src/main/assets/sample_projects/vue-demo-en/dist/index.html",
-          "app/src/main/assets/sample_projects/vue-demo-en/dist/main.js",
-          "app/src/main/assets/sample_projects/vue-demo/dist/index.html",
-          "app/src/main/assets/sample_projects/vue-demo/dist/main.js"
-        ],
-        "configFiles": [
-          "app/build.gradle.kts",
-          "app/src/main/assets/sample_projects/react-demo/package.json",
-          "app/src/main/assets/sample_projects/vite-vanilla/package.json",
-          "app/src/main/assets/sample_projects/vue-demo/package.json",
-          "app/src/main/cpp/CMakeLists.txt"
-        ],
-        "dependencies": [
-          "app/src/main/assets/sample_projects/react-demo/package.json",
-          "app/src/main/assets/sample_projects/vite-vanilla/package.json",
-          "app/src/main/assets/sample_projects/vue-demo/package.json"
-        ],
-        "testFiles": [
-          "app/src/main/java/com/webtoapp/core/extension/DebugTestPages.kt"
-        ],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "README_CN.md",
-          "app/src/main/assets/bgm/README.txt",
-          "app/src/main/assets/template/README.md"
-        ],
-        "fileTypes": {
-          ".md": 4,
-          ".kts": 1,
-          ".pro": 1,
-          ".xml": 1,
-          ".txt": 2,
-          ".html": 9,
-          ".js": 9,
-          ".css": 9,
-          ".json": 3,
-          ".cpp": 4,
-          ".h": 1,
-          ".kt": 154
-        }
-      }
-    },
     {
       "id": 1175877232,
       "name": "takopi",
@@ -546,6 +174,378 @@
           ".sh": 1,
           ".jsonl": 10,
           ".txt": 1
+        }
+      }
+    },
+    {
+      "id": 1175873940,
+      "name": "xournalpp",
+      "displayName": "xournalpp",
+      "description": "Xournal++ is a handwriting notetaking software with PDF annotation support. Written in C++ with GTK3, supporting Linux (e.g. Ubuntu, Debian, Arch, SUSE), macOS and Windows 10. Supports pen input from devices such as Wacom Tablets.",
+      "summary": "The Problem\n\nAnnotating PDFs and taking handwritten notes shouldn’t feel like you’re fighting your software. Tools like Adobe Acrobat are bloated and clunky, while scribbling on a tablet app often lacks precision, features, and cross-platform support. If you’re a student, teacher, or anyone working with PDFs and handwritten notes, you’ve probably been frustrated by the lack of a solid, no-BS solution.\n\nWhat This Does\n\nXournal++ is the \"Why isn’t this already a thing?\" solution. It’s a lightweight, open-source handwriting and PDF annotation tool built in C++ with GTK3. It works on Linux, Windows 10, and macOS, and even supports pressure-sensitive styluses like Wacom tablets. Think of it as the Swiss Army knife for anyone who needs to take notes, annotate PDFs, or just doodle with precision.\n\nThe project is well-organized. The src/ folder houses the C++ core, including modules for audio recording (src/core/audio/AudioRecorder.cpp) and playback (src/core/audio/AudioPlayer.cpp). The plugins/ folder adds Lua-based scripting to extend functionality (e.g., plugins/Export/main.lua for exporting workflows). For cross-platform builds, there’s a bunch of CMakeLists.txt files littered across the repo, which is nice if you like pain-free builds. CI/CD is handled via GitHub Actions, with workflows like make-installer-windows.yml and make-installer-macos.yml making it easier to ship builds across platforms.\n\nAnd yes, it handles PDF annotation like a champ. You can highlight, underline, or strike through text in PDFs, export annotated versions, and even overlay them with handwriting or shapes. All this while offering LaTeX support, customizable toolbars, and a plugin system for nerds who want to extend it further.\n\nReal-World Use\n\nSay you’re a math teacher prepping lecture notes. You can load your PDF slides into Xournal++, scribble annotations using a Wacom tablet, and even add LaTeX formulas for extra clarity. Need to emphasize a section? Use the highlighter tool or draw shapes to circle key points. Want to share the annotated slides with your students? Export them as a new PDF or even as SVG for further editing. Bonus: if you’re explaining something complicated, the audio recording feature lets you attach voice notes to your annotations for asynchronous learning.\n\nThe Bottom Line\n\nXournal++ is a powerful, no-frills tool for anyone who needs robust handwriting and PDF annotation capabilities. It’s not flashy, but it works. You’ll love it if you’re on Linux, and it’s solid on macOS and Windows too. The plugin system is a nice touch for tinkerers, but the codebase could use more tests (seriously, one test file?). Overall, it’s a workhorse for anyone tired of bloated alternatives.",
+      "url": "https://github.com/moses-y/xournalpp",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "xournalpp/xournalpp",
+        "url": "https://github.com/xournalpp/xournalpp",
+        "stars": 14432
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 8, 2026",
+      "updatedAt": "March 8, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 17,
+          ".github": 21,
+          "cmake": 9,
+          "debian": 9,
+          "desktop": 2,
+          "development": 12,
+          "linux-setup": 1,
+          "mac-setup": 13,
+          "man": 2,
+          "palettes": 2,
+          "plugins": 24,
+          "po": 48,
+          "readme": 15,
+          "resources-templates": 4,
+          "resources": 2,
+          "rpm": 1,
+          "scripts": 4,
+          "src": 14
+        },
+        "languages": {
+          "YAML": 22,
+          "JSON": 1,
+          "Markdown": 13,
+          "Shell": 7,
+          "Lua": 13,
+          "Python": 2,
+          "C++": 2,
+          "C/C++ Header": 3
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          "CMakeLists.txt",
+          "man/CMakeLists.txt",
+          "po/CMakeLists.txt",
+          "src/CMakeLists.txt",
+          "src/core/CMakeLists.txt"
+        ],
+        "dependencies": [],
+        "testFiles": [
+          "rpm/fedora/xournalpp.spec"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "cmake/README.md",
+          "debian/changelog",
+          "development/README",
+          "development/documentation/README-Eraser-and-padded-box.pdf",
+          "development/documentation/README-Eraser-and-padded-box.xopp",
+          "development/documentation/Setsquare_Readme.md",
+          "po/README.md",
+          "po/its/Readme.md",
+          "readme/Compile.md",
+          "readme/LinuxBuild.md",
+          "readme/MacBuild.md",
+          "readme/Releases.md",
+          "readme/WindowsBuild.md",
+          "readme/WindowsBuildArm.md",
+          "readme/background.png",
+          "readme/floatingtoolbox.png",
+          "readme/floatingtoolboxmbmenu.png",
+          "readme/layer.png",
+          "readme/main-mac.png",
+          "readme/main-win.png",
+          "readme/main.png",
+          "readme/moreexperimentals.png",
+          "readme/toolbar.png",
+          "scripts/compare_license.py"
+        ],
+        "fileTypes": {
+          ".yml": 22,
+          ".json": 1,
+          ".md": 13,
+          ".txt": 7,
+          ".in": 14,
+          ".cmake": 4,
+          ".thumbnailer": 1,
+          ".pdf": 1,
+          ".xopp": 2,
+          ".png": 15,
+          ".suppression": 1,
+          ".sh": 7,
+          ".plist": 1,
+          ".patch": 1,
+          ".icns": 1,
+          ".lock": 1,
+          ".bundle": 1,
+          ".modules": 1,
+          ".groff": 1,
+          ".gpl": 2,
+          ".lua": 13,
+          ".ini": 11,
+          ".po": 41,
+          ".its": 1,
+          ".loc": 1,
+          ".pot": 1,
+          ".tex": 2,
+          ".spec": 1,
+          ".py": 2,
+          ".cpp": 2,
+          ".h": 3
+        }
+      }
+    },
+    {
+      "id": 1175873588,
+      "name": "ironclaw",
+      "displayName": "ironclaw",
+      "description": "IronClaw is OpenClaw inspired implementation in Rust focused on privacy and security",
+      "summary": "The Problem\nIn a world drowning in data breaches and privacy violations, trusting your personal AI assistant is a tough sell. Most solutions out there are either locked down by corporate interests or riddled with hidden telemetry that leaves your data exposed. You need an assistant that respects your privacy and doesn’t turn you into a product.\n\nWhat This Does\nEnter IronClaw. This Rust-based implementation focuses on privacy and security, ensuring your data stays yours. It runs tools in a WASM sandbox, isolating untrusted code to prevent leaks and injections. Check out src/agent/self_repair.rs for how it handles automatic recovery of stuck operations, and src/channels/web/server.rs for the web gateway that streams real-time data while keeping your interactions secure.\n\nThe directory structure is clean, with dedicated folders for each channel (channels-src/discord, channels-src/slack, etc.), allowing you to plug in new capabilities as needed. If you’re looking to build or modify tools on the fly, the src/channels/web/handlers folder has everything from job handlers to static file management neatly organized.\n\nReal-World Use\nImagine you want to automate daily reminders through Slack using IronClaw. You can set this up in minutes. Write a function in channels-src/slack/src/lib.rs that triggers based on an event, and thanks to the built-in Routines, you can schedule it without a second thought. Plus, everything operates under a Docker sandbox, so you can run multiple instances without worrying about conflicts.\n\nThe Bottom Line\nIronClaw is solid if you prioritize privacy and flexibility in an AI assistant. It’s packed with features like multi-channel support and dynamic tool building, but the learning curve might be steep for those not familiar with Rust or WASM. If you’re a developer looking for a trustworthy AI solution that doesn’t compromise your data, give IronClaw a shot. Just don’t expect it to be as user-friendly as a corporate alternative.",
+      "url": "https://github.com/moses-y/ironclaw",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "nearai/ironclaw",
+        "url": "https://github.com/nearai/ironclaw",
+        "stars": 7264
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 8, 2026",
+      "updatedAt": "March 8, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".claude": 10,
+          "(root)": 28,
+          ".githooks": 2,
+          ".github": 12,
+          "channels-src": 21,
+          "deploy": 4,
+          "docker": 1,
+          "docs": 7,
+          "migrations": 11,
+          "registry": 15,
+          "scripts": 8,
+          "skills": 3,
+          "src": 78
+        },
+        "languages": {
+          "Markdown": 31,
+          "YAML": 12,
+          "Shell": 17,
+          "TOML": 7,
+          "Rust": 76,
+          "JSON": 20,
+          "Docker": 1,
+          "SQL": 11,
+          "JavaScript": 1,
+          "HTML": 1,
+          "CSS": 1
+        },
+        "frameworks": [
+          "Express",
+          "Docker"
+        ],
+        "packageManager": "cargo",
+        "hasDocker": true,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "channels-src/discord/src/lib.rs",
+          "channels-src/slack/src/lib.rs",
+          "channels-src/telegram/src/lib.rs",
+          "channels-src/whatsapp/src/lib.rs",
+          "src/channels/web/static/app.js",
+          "src/channels/web/static/index.html"
+        ],
+        "configFiles": [
+          ".env.example",
+          "Cargo.toml",
+          "Dockerfile",
+          "Dockerfile.test",
+          "Dockerfile.worker",
+          "channels-src/discord/Cargo.toml",
+          "channels-src/slack/Cargo.toml",
+          "channels-src/telegram/Cargo.toml",
+          "channels-src/whatsapp/Cargo.toml",
+          "docker-compose.yml"
+        ],
+        "dependencies": [
+          "Cargo.toml",
+          "channels-src/discord/Cargo.toml",
+          "channels-src/slack/Cargo.toml",
+          "channels-src/telegram/Cargo.toml",
+          "channels-src/whatsapp/Cargo.toml"
+        ],
+        "testFiles": [
+          ".github/workflows/regression-test-check.yml",
+          ".github/workflows/test.yml",
+          "Dockerfile.test",
+          "docs/smart-routing-spec.md",
+          "skills/local-test/SKILL.md",
+          "skills/web-ui-test/SKILL.md",
+          "src/channels/web/test_helpers.rs"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "CONTRIBUTING.md",
+          "LICENSE-APACHE",
+          "LICENSE-MIT",
+          "README.md",
+          "channels-src/discord/README.md",
+          "docs/BUILDING_CHANNELS.md",
+          "docs/LLM_PROVIDERS.md",
+          "docs/TELEGRAM_SETUP.md",
+          "docs/plans/2026-02-24-automated-qa.md",
+          "docs/plans/2026-02-24-e2e-infrastructure-design.md",
+          "docs/plans/2026-02-24-e2e-infrastructure.md",
+          "docs/smart-routing-spec.md"
+        ],
+        "fileTypes": {
+          ".md": 31,
+          ".example": 2,
+          ".yml": 12,
+          ".sh": 15,
+          ".lock": 5,
+          ".toml": 7,
+          ".test": 1,
+          ".worker": 1,
+          ".rs": 76,
+          ".json": 20,
+          ".service": 2,
+          ".dockerfile": 1,
+          ".bash": 1,
+          ".fish": 1,
+          ".png": 1,
+          ".zsh": 1,
+          ".sql": 11,
+          ".js": 1,
+          ".ico": 1,
+          ".html": 1,
+          ".css": 1
+        }
+      }
+    },
+    {
+      "id": 1175766852,
+      "name": "web-to-app",
+      "displayName": "web to app",
+      "description": "A native Android application that converts any website URL into a standalone Android App.",
+      "summary": "Turning Websites into Android Apps with web-to-app\n\nThe Problem  \nBuilding an Android app from a website is a hassle. Not everyone wants to mess with Android Studio, SDKs, or a ton of boilerplate just to wrap a URL into an APK. For non-developers (or lazy devs like me), the process should be easy: slap in a URL, tweak a few settings, press a button, and boom—app. But it’s not. Until now.\n\nWhat This Does  \nweb-to-app is a native Android app that takes any website URL and spits out a fully functional APK. No coding, no Android Studio, no headaches. Just give it a web link and let it do the rest. It even supports frameworks like React, Vue, and Next.js if you’re into that kind of thing.  \n\nThe heavy lifting is done in app/src/main/java/com/webtoapp/core. For example, the WebViewManager.kt handles the WebView integration, while ApkBuilder.kt takes care of, well, building the APK. If you’re curious about the fancy AI-powered features (like icon generation), check out the app/src/main/java/com/webtoapp/core/ai folder.  \n\nThis app also includes some neat extras like ad-blocking (AdBlocker.kt), APK encryption (AesCryptoEngine.kt), and multi-instance isolation (IsolationManager.kt). Oh, and you get a bunch of prebuilt JavaScript frameworks under app/src/main/assets/sample_projects, so you can test things out without having to write a single line of code.  \n\nReal-World Use  \nSay you’re a small business owner with a website, and you want to make an app so your customers can access your store easily. You don’t want to waste time hiring developers or learning new tools. web-to-app lets you paste in your site’s URL, customize a few settings (like app icons using IconGeneratorDialog.kt), and generate a polished APK right on your phone.  \n\nOr maybe you’re a frontend dev who wants to show off your React demo to a client as a standalone app. Drop your app files in the react-demo folder, and let the FrontendProjectBuilder.kt do its thing. In minutes, you’ve got an APK to share.  \n\nThe Bottom Line  \nweb-to-app is super useful if you need quick, no-code Android apps from websites or frontend projects. It’s feature-packed, but that also makes it bloated for simple use cases. The codebase is a beast—200 files, tons of Kotlin, and more AI nonsense than you’ll probably use. If you’re a dev looking to customize or extend it, you’ll love the modular design (ExtensionModule.kt). If you’re just here for one-click APKs, it’s perfect.",
+      "url": "https://github.com/moses-y/web-to-app",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "shiahonb777/web-to-app",
+        "url": "https://github.com/shiahonb777/web-to-app",
+        "stars": 1109
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 8, 2026",
+      "updatedAt": "March 8, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 5,
+          "app": 195
+        },
+        "languages": {
+          "Markdown": 4,
+          "HTML": 9,
+          "JavaScript": 9,
+          "CSS": 9,
+          "JSON": 3,
+          "C++": 4,
+          "C/C++ Header": 1,
+          "Kotlin": 154
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "gradle",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "app/src/main/assets/sample_projects/react-demo-ar/dist/index.html",
+          "app/src/main/assets/sample_projects/react-demo-ar/dist/main.js",
+          "app/src/main/assets/sample_projects/react-demo-en/dist/index.html",
+          "app/src/main/assets/sample_projects/react-demo-en/dist/main.js",
+          "app/src/main/assets/sample_projects/react-demo/dist/index.html",
+          "app/src/main/assets/sample_projects/react-demo/dist/main.js",
+          "app/src/main/assets/sample_projects/vite-vanilla-ar/dist/index.html",
+          "app/src/main/assets/sample_projects/vite-vanilla-ar/dist/main.js",
+          "app/src/main/assets/sample_projects/vite-vanilla-en/dist/index.html",
+          "app/src/main/assets/sample_projects/vite-vanilla-en/dist/main.js",
+          "app/src/main/assets/sample_projects/vite-vanilla/dist/index.html",
+          "app/src/main/assets/sample_projects/vite-vanilla/dist/main.js",
+          "app/src/main/assets/sample_projects/vue-demo-ar/dist/index.html",
+          "app/src/main/assets/sample_projects/vue-demo-ar/dist/main.js",
+          "app/src/main/assets/sample_projects/vue-demo-en/dist/index.html",
+          "app/src/main/assets/sample_projects/vue-demo-en/dist/main.js",
+          "app/src/main/assets/sample_projects/vue-demo/dist/index.html",
+          "app/src/main/assets/sample_projects/vue-demo/dist/main.js"
+        ],
+        "configFiles": [
+          "app/build.gradle.kts",
+          "app/src/main/assets/sample_projects/react-demo/package.json",
+          "app/src/main/assets/sample_projects/vite-vanilla/package.json",
+          "app/src/main/assets/sample_projects/vue-demo/package.json",
+          "app/src/main/cpp/CMakeLists.txt"
+        ],
+        "dependencies": [
+          "app/src/main/assets/sample_projects/react-demo/package.json",
+          "app/src/main/assets/sample_projects/vite-vanilla/package.json",
+          "app/src/main/assets/sample_projects/vue-demo/package.json"
+        ],
+        "testFiles": [
+          "app/src/main/java/com/webtoapp/core/extension/DebugTestPages.kt"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "README_CN.md",
+          "app/src/main/assets/bgm/README.txt",
+          "app/src/main/assets/template/README.md"
+        ],
+        "fileTypes": {
+          ".md": 4,
+          ".kts": 1,
+          ".pro": 1,
+          ".xml": 1,
+          ".txt": 2,
+          ".html": 9,
+          ".js": 9,
+          ".css": 9,
+          ".json": 3,
+          ".cpp": 4,
+          ".h": 1,
+          ".kt": 154
         }
       }
     },
@@ -832,7 +832,7 @@
       "parent": {
         "name": "aandrew-me/ytDownloader",
         "url": "https://github.com/aandrew-me/ytDownloader",
-        "stars": 8610
+        "stars": 8609
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1031,7 +1031,7 @@
       "parent": {
         "name": "avinash201199/founders-kit",
         "url": "https://github.com/avinash201199/founders-kit",
-        "stars": 745
+        "stars": 748
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1607,7 +1607,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 9144
+        "stars": 9202
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2122,7 +2122,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182436
+        "stars": 182435
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2594,7 +2594,7 @@
       "parent": {
         "name": "ItzCrazyKns/Perplexica",
         "url": "https://github.com/ItzCrazyKns/Perplexica",
-        "stars": 32145
+        "stars": 32149
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3040,7 +3040,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 9532
+        "stars": 9536
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3504,7 +3504,7 @@
       "parent": {
         "name": "maderix/ANE",
         "url": "https://github.com/maderix/ANE",
-        "stars": 5943
+        "stars": 5944
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3651,7 +3651,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 12674
+        "stars": 12678
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3871,7 +3871,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 12259
+        "stars": 12274
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4435,7 +4435,7 @@
       "parent": {
         "name": "katanemo/plano",
         "url": "https://github.com/katanemo/plano",
-        "stars": 5901
+        "stars": 5902
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4563,7 +4563,7 @@
       "parent": {
         "name": "AUTOMATIC1111/stable-diffusion-webui",
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-        "stars": 161557
+        "stars": 161558
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4648,7 +4648,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 3867
+        "stars": 3869
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4879,7 +4879,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 10915
+        "stars": 10921
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5151,7 +5151,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 38197
+        "stars": 38198
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -5590,7 +5590,7 @@
       "parent": {
         "name": "getzep/graphiti",
         "url": "https://github.com/getzep/graphiti",
-        "stars": 23408
+        "stars": 23410
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6220,7 +6220,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 20233
+        "stars": 20241
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -7045,7 +7045,7 @@
       "parent": {
         "name": "HKUDS/ClawWork",
         "url": "https://github.com/HKUDS/ClawWork",
-        "stars": 6785
+        "stars": 6786
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -7868,7 +7868,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 277863
+        "stars": 277960
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7970,7 +7970,7 @@
       "parent": {
         "name": "Conway-Research/automaton",
         "url": "https://github.com/Conway-Research/automaton",
-        "stars": 3246
+        "stars": 3247
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -10267,7 +10267,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 5559
+        "stars": 5563
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -10334,7 +10334,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 5833
+        "stars": 5837
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -10429,7 +10429,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 8744
+        "stars": 8745
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -11044,7 +11044,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 63801
+        "stars": 63803
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -11120,7 +11120,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 6267
+        "stars": 6268
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -11316,7 +11316,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4336
+        "stars": 4337
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -12959,7 +12959,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 29714
+        "stars": 29733
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -13034,7 +13034,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 22793
+        "stars": 22797
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -13923,7 +13923,7 @@
       "parent": {
         "name": "BAI-LAB/MemoryOS",
         "url": "https://github.com/BAI-LAB/MemoryOS",
-        "stars": 1232
+        "stars": 1233
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -14019,7 +14019,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 22833
+        "stars": 22840
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -14343,7 +14343,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 2932
+        "stars": 2933
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -14723,7 +14723,7 @@
       "parent": {
         "name": "opendatalab/PDF-Extract-Kit",
         "url": "https://github.com/opendatalab/PDF-Extract-Kit",
-        "stars": 9446
+        "stars": 9447
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -14973,7 +14973,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 34420
+        "stars": 34421
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -15094,7 +15094,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 9004
+        "stars": 9005
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -15583,7 +15583,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 6033
+        "stars": 6034
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15927,7 +15927,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 20802
+        "stars": 20825
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -16527,7 +16527,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 30306
+        "stars": 30313
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -16989,7 +16989,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 9174
+        "stars": 9176
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -18972,7 +18972,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 17324
+        "stars": 17326
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -20077,7 +20077,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 100740
+        "stars": 100745
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -21358,7 +21358,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 3906
+        "stars": 3907
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -21847,7 +21847,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44676
+        "stars": 44677
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -22172,7 +22172,7 @@
       "parent": {
         "name": "callstackincubator/agent-device",
         "url": "https://github.com/callstackincubator/agent-device",
-        "stars": 955
+        "stars": 957
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -23234,7 +23234,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 31554
+        "stars": 31556
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -25650,7 +25650,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 4570
+        "stars": 4572
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -26114,7 +26114,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 126160
+        "stars": 126161
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -26337,7 +26337,7 @@
       "parent": {
         "name": "AnmolSaini16/mapcn",
         "url": "https://github.com/AnmolSaini16/mapcn",
-        "stars": 6275
+        "stars": 6277
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -26624,7 +26624,7 @@
       "parent": {
         "name": "unicodeveloper/globalthreatmap",
         "url": "https://github.com/unicodeveloper/globalthreatmap",
-        "stars": 1288
+        "stars": 1289
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -26797,7 +26797,7 @@
       "parent": {
         "name": "firecrawl/open-lovable",
         "url": "https://github.com/firecrawl/open-lovable",
-        "stars": 24385
+        "stars": 24386
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -26872,7 +26872,7 @@
       "parent": {
         "name": "EuniAI/Prometheus",
         "url": "https://github.com/EuniAI/Prometheus",
-        "stars": 847
+        "stars": 848
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -28059,7 +28059,7 @@
       "parent": {
         "name": "aiming-lab/SimpleMem",
         "url": "https://github.com/aiming-lab/SimpleMem",
-        "stars": 3096
+        "stars": 3098
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -28635,7 +28635,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5823
+        "stars": 5826
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -28886,7 +28886,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 129416
+        "stars": 129421
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -29352,7 +29352,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15914
+        "stars": 15915
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -29500,7 +29500,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 11707
+        "stars": 11709
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -29561,7 +29561,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 21004
+        "stars": 21005
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -31899,7 +31899,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 22098
+        "stars": 22100
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -32516,7 +32516,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39829
+        "stars": 39832
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -35302,7 +35302,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56606
+        "stars": 56607
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -35455,7 +35455,7 @@
       "parent": {
         "name": "Qloapps/QloApps",
         "url": "https://github.com/Qloapps/QloApps",
-        "stars": 12546
+        "stars": 12547
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -35600,7 +35600,7 @@
       "parent": {
         "name": "frappe/crm",
         "url": "https://github.com/frappe/crm",
-        "stars": 2411
+        "stars": 2412
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -35980,7 +35980,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 18172
+        "stars": 18173
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -36095,7 +36095,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 118078
+        "stars": 118091
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -36726,7 +36726,7 @@
       "parent": {
         "name": "themesberg/flowbite-admin-dashboard",
         "url": "https://github.com/themesberg/flowbite-admin-dashboard",
-        "stars": 2812
+        "stars": 2813
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -37494,7 +37494,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 29181
+        "stars": 29183
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -37847,7 +37847,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 19879
+        "stars": 19883
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -37977,7 +37977,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22356
+        "stars": 22357
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -38631,7 +38631,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 97144
+        "stars": 97145
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -39783,7 +39783,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 182266
+        "stars": 182265
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
