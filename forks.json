@@ -1,14 +1,222 @@
 {
-  "lastUpdated": "2026-03-11T19:16:32.581Z",
+  "lastUpdated": "2026-03-11T19:57:31.062Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 420,
+  "totalRepos": 421,
   "progress": {
-    "aiGenerated": 419,
-    "fallback": 1,
+    "aiGenerated": 421,
+    "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
+    {
+      "id": 1179147110,
+      "name": "markmap",
+      "displayName": "markmap",
+      "description": "Build mindmaps with plain text",
+      "summary": "Building Mindmaps with Markmap\n\nThe Problem\nIf you've ever tried organizing your thoughts or notes in a linear format, you know it can quickly become a tangled mess. Markdown is great for writing, but it lacks the visual structure needed for clarity. Enter Markmap: a tool that transforms your Markdown into mindmaps, making it easier to visualize connections and hierarchies.\n\nWhat This Does\nMarkmap utilizes a simple text format to create interactive mindmaps, allowing for a more intuitive approach to organizing information. The core functionality is found in packages/markmap-cli/src/index.ts, which processes Markdown files and generates the mindmap. The packages/markmap-autoloader/src/index.ts handles loading the necessary assets, while the configuration files (like vite.config.mts) set up the build process using Vite and TypeScript.\n\nThe project is structured into multiple packages, with packages/markmap-common providing reusable components and utilities. You’ll find README.md files in each package, which detail how to use the functionality specific to that package. The tests are scattered across various directories, but there are only five test files, which might raise an eyebrow about the project's stability.\n\nReal-World Use\nImagine you’re prepping for a big presentation. You jot down your key points in a Markdown file like this:\n\nRunning the Markmap CLI (packages/markmap-cli/bin/cli.js) turns this Markdown into a dynamic mindmap. You can then visually navigate through your ideas, making it easier to communicate and expand on them.\n\nThe Bottom Line\nMarkmap is a handy tool if you often work with Markdown and need to visualize your notes or presentations. It's got a solid structure and is built on modern tools like React and TypeScript, but the limited test coverage is a concern. If you're looking for a better way to organize your thoughts, give Markmap a shot—just don’t expect it to replace your entire note-taking workflow.",
+      "url": "https://github.com/moses-y/markmap",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "markmap/markmap",
+        "url": "https://github.com/markmap/markmap",
+        "stars": 12526
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 11, 2026",
+      "updatedAt": "March 11, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 129,
+        "directories": {
+          "(root)": 18,
+          ".github": 3,
+          ".husky": 3,
+          "adr": 2,
+          "packages": 103
+        },
+        "languages": {
+          "Markdown": 12,
+          "YAML": 4,
+          "JSON": 21,
+          "TypeScript": 60,
+          "JavaScript": 2,
+          "HTML": 1,
+          "CSS": 2,
+          "TSX": 1
+        },
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "pnpm",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "packages/markmap-autoloader/src/index.ts",
+          "packages/markmap-cli/bin/cli.js",
+          "packages/markmap-cli/src/cli.ts",
+          "packages/markmap-cli/src/client/index.ts",
+          "packages/markmap-cli/src/index.ts",
+          "packages/markmap-common/src/index.ts",
+          "packages/markmap-common/src/types/index.ts",
+          "packages/markmap-html-parser/src/index.ts",
+          "packages/markmap-lib/src/index.ts",
+          "packages/markmap-lib/src/plugins/checkbox/index.ts",
+          "packages/markmap-lib/src/plugins/frontmatter/index.ts",
+          "packages/markmap-lib/src/plugins/hljs/index.ts",
+          "packages/markmap-lib/src/plugins/index.ts",
+          "packages/markmap-lib/src/plugins/katex/index.ts",
+          "packages/markmap-lib/src/plugins/npm-url/index.ts",
+          "packages/markmap-lib/src/plugins/prism/index.ts",
+          "packages/markmap-lib/src/plugins/source-lines/index.ts",
+          "packages/markmap-render/src/index.ts",
+          "packages/markmap-toolbar/src/index.ts",
+          "packages/markmap-view/src/index.ts"
+        ],
+        "configFiles": [
+          "package.json",
+          "packages/markmap-autoloader/package.json",
+          "packages/markmap-autoloader/tsconfig.json",
+          "packages/markmap-autoloader/vite.config.mts",
+          "packages/markmap-cli/package.json",
+          "packages/markmap-cli/tsconfig.json",
+          "packages/markmap-cli/vite.config.mts",
+          "packages/markmap-common/package.json",
+          "packages/markmap-common/tsconfig.json",
+          "packages/markmap-common/vite.config.mts",
+          "packages/markmap-html-parser/package.json",
+          "packages/markmap-html-parser/tsconfig.json",
+          "packages/markmap-html-parser/vite.config.mts",
+          "packages/markmap-lib/package.json",
+          "packages/markmap-lib/tsconfig.json",
+          "packages/markmap-lib/vite.config.mts",
+          "packages/markmap-render/package.json",
+          "packages/markmap-render/tsconfig.json",
+          "packages/markmap-render/vite.config.mts",
+          "packages/markmap-toolbar/package.json",
+          "packages/markmap-toolbar/tsconfig.json",
+          "packages/markmap-toolbar/vite.config.mts",
+          "packages/markmap-view/package.json",
+          "packages/markmap-view/tsconfig.json",
+          "packages/markmap-view/vite.config.mts",
+          "tsconfig.json"
+        ],
+        "dependencies": [
+          "package.json",
+          "packages/markmap-autoloader/package.json",
+          "packages/markmap-cli/package.json",
+          "packages/markmap-common/package.json",
+          "packages/markmap-html-parser/package.json",
+          "packages/markmap-lib/package.json",
+          "packages/markmap-render/package.json",
+          "packages/markmap-toolbar/package.json",
+          "packages/markmap-view/package.json"
+        ],
+        "testFiles": [
+          "packages/markmap-html-parser/test/__snapshots__/index.test.ts.snap",
+          "packages/markmap-html-parser/test/index.test.ts",
+          "packages/markmap-lib/test/__snapshots__/index.test.ts.snap",
+          "packages/markmap-lib/test/index.test.ts",
+          "vitest.workspace.ts"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "packages/markmap-autoloader/README.md",
+          "packages/markmap-cli/LICENSE",
+          "packages/markmap-cli/README.md",
+          "packages/markmap-common/LICENSE",
+          "packages/markmap-common/README.md",
+          "packages/markmap-html-parser/README.md",
+          "packages/markmap-lib/README.md",
+          "packages/markmap-render/README.md",
+          "packages/markmap-toolbar/LICENSE",
+          "packages/markmap-toolbar/README.md",
+          "packages/markmap-view/README.md"
+        ],
+        "fileTypes": {
+          ".md": 12,
+          ".yml": 2,
+          ".mjs": 1,
+          ".json": 21,
+          ".ts": 60,
+          ".mts": 9,
+          ".js": 2,
+          ".snap": 2,
+          ".svg": 2,
+          ".html": 1,
+          ".css": 2,
+          ".tsx": 1,
+          ".yaml": 2,
+          ".cjs": 1
+        }
+      }
+    },
+    {
+      "id": 1179145387,
+      "name": "agenthub",
+      "displayName": "agenthub",
+      "description": "GitHub is for humans. AgentHub is for agents. First use case is for autoresearch but it's a lot more general than that. Exploratory project.",
+      "summary": "The Problem\n\nIf you’ve ever tried wrangling a swarm of AI agents hacking on the same codebase, you know GitHub falls apart fast. PRs, merges, and main branches are built for humans and linear progress. When you have ten bots pushing commits every minute, you get chaos, not collaboration. The usual tools become a bottleneck.\n\nWhat AgentHub Does\n\nAgentHub is basically GitHub stripped to the bolts for agents—no PRs, no merges, just a bare git repo and a message board. The main server (cmd/agenthub-server/main.go) spins up a Go web app, runs on SQLite, and stores a bare git repo. Git ops are handled via bundles (see internal/gitrepo/repo.go), so agents can push and fetch arbitrary commits without tripping over branch logic. The message board lives in internal/server/board_handlers.go, letting agents dump results, ask questions, or coordinate next moves. Authentication is dead simple—API keys per agent, managed in internal/auth/auth.go. The CLI in cmd/ah/main.go wraps the HTTP API so agents can push/fetch, read the board, and check the DAG frontier with a single command.\n\nReal-World Use\n\nSay you’ve got ten autoresearch bots running experiments. Each bot registers with AgentHub (see the ah join snippet in README). They push their latest commits via ah push, fetch data from other agents with ah fetch <hash>, and drop experiment results on the board using ah post. Want to see unexplored commits? ah leaves gives the frontier. Need the ancestry of a weird commit? Run ah lineage <hash>. The server handles bundle validation and DAG tracking, so you never get stuck in merge hell or lose children.\n\nThe Bottom Line\n\nAgentHub is a sketch, not a solution—perfect if you need a low-friction git+board backend for bots, but don’t expect polish or hand-holding. If you’re running agent swarms or want a DAG-first codebase, it’s worth a look. For human teams, stick to GitHub. For agent chaos, this is about as barebones as it gets.",
+      "url": "https://github.com/moses-y/agenthub",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "JacquesGariepy/agenthub",
+        "url": "https://github.com/JacquesGariepy/agenthub",
+        "stars": 12
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 11, 2026",
+      "updatedAt": "March 11, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 14,
+        "directories": {
+          "(root)": 4,
+          "cmd": 2,
+          "internal": 8
+        },
+        "languages": {
+          "Markdown": 1,
+          "Go": 10
+        },
+        "frameworks": [],
+        "packageManager": "go modules",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "cmd/agenthub-server/main.go",
+          "cmd/ah/main.go",
+          "internal/server/server.go"
+        ],
+        "configFiles": [
+          "go.mod"
+        ],
+        "dependencies": [
+          "go.mod"
+        ],
+        "testFiles": [],
+        "docs": [
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".go": 10,
+          ".mod": 1,
+          ".sum": 1
+        }
+      }
+    },
     {
       "id": 1179123665,
       "name": "sandbox-agent",
@@ -366,7 +574,7 @@
       "parent": {
         "name": "wimpysworld/ia-get",
         "url": "https://github.com/wimpysworld/ia-get",
-        "stars": 155
+        "stars": 156
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -710,11 +918,88 @@
       }
     },
     {
+      "id": 1179188329,
+      "name": "speech-to-speech",
+      "displayName": "speech to speech",
+      "description": "Build local voice agents with open-source models",
+      "summary": "The Problem\nBuilding local voice agents can be a pain in the neck, especially when you're juggling multiple models for voice activity detection (VAD), speech-to-text (STT), language processing, and text-to-speech (TTS). You’re stuck either integrating a bunch of libraries with varying quality or relying on some half-baked cloud service that eats into your budget and time.\n\nWhat This Does\nEnter the speech-to-speech repo. It gives you an open-source pipeline that covers the full deal: VAD, STT, language modeling, and TTS, all wrapped in a neat package. The core structure is split into directories: VAD for voice detection, STT for transcribing audio, LLM for language modeling, and TTS for generating speech. \n\nYou’ll find files like STT/whisperstthandler.py to handle Whisper model integration and TTS/chatTTShandler.py for generating speech responses. The s2spipeline.py file ties everything together, allowing you to run the complete pipeline in a few lines of code. It’s modular enough that you can swap models in and out without losing your mind.\n\nReal-World Use\nImagine you want to set up a local assistant that converts speech to text, processes it, and reads it back in a different voice. You can clone the repo, set up your environment with a couple of uv commands, and run something like this:\n\nWith minimal fuss, you get a responsive voice agent that works offline. If you’re on Mac and using Melo TTS, just remember to download the necessary files and handle any compatibility issues.\n\nThe Bottom Line\nThis repo is solid if you're diving into voice agents without wanting to wrestle with a dozen different libraries. It's not for tiny projects—if you need a simple TTS, you're better off with a standalone solution. But for those needing a full-featured local agent, this is a good start. Just make sure your system can handle the requirements—especially if you're on Apple Silicon.",
+      "url": "https://github.com/moses-y/speech-to-speech",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "huggingface/speech-to-speech",
+        "url": "https://github.com/huggingface/speech-to-speech",
+        "stars": 4509
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 11, 2026",
+      "updatedAt": "March 11, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 70,
+        "directories": {
+          "(root)": 15,
+          "LLM": 6,
+          "STT": 9,
+          "TTS": 10,
+          "VAD": 2,
+          "arguments_classes": 20,
+          "connections": 4,
+          "tests": 1,
+          "utils": 3
+        },
+        "languages": {
+          "Markdown": 4,
+          "Python": 56,
+          "YAML": 1
+        },
+        "frameworks": [
+          "Docker"
+        ],
+        "packageManager": "pip",
+        "hasDocker": true,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [
+          "Dockerfile",
+          "Dockerfile.arm64",
+          "docker-compose.yml",
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [
+          "tests/test_parakeet_language_detection.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "LLM/README.md",
+          "README.md",
+          "STT/README.md",
+          "TTS/README.md"
+        ],
+        "fileTypes": {
+          ".arm64": 1,
+          ".md": 4,
+          ".py": 56,
+          ".wav": 1,
+          ".yml": 1,
+          ".png": 1,
+          ".txt": 2
+        }
+      }
+    },
+    {
       "id": 1179156092,
       "name": "fractals",
       "displayName": "fractals",
       "description": "Fractals is a recursive task orchestrator for agent swarm",
-      "summary": "Fractals: Recursive Task Orchestration with Agent Swarms  \n\nThe Problem  \nLet’s be real—managing complex, multi-step tasks sucks. Breaking down high-level goals into subtasks, tracking dependencies, and executing each step (often across multiple environments) is tedious and error-prone. Tools like Trello or Airtable are great for visualizing the \"what,\" but they don’t handle the \"how.\" If you’ve ever wished for a system that could not only plan a task but actually do the work, welcome to Fractals.  \n\nWhat This Does  \nFractals is a unique two-phase system that takes a high-level task input, recursively decomposes it into executable subtasks, and runs those subtasks in isolated git worktrees using an AI agent swarm. The backend (src/) is a Hono-based API server handling task decomposition (src/llm.ts) and orchestration (src/orchestrator.ts). It interacts with OpenAI (for task planning) and Claude/Codex CLI (for execution).  \n\nThe frontend (web/) is a Next.js app. It lets you input tasks, visualize the task tree, review the plan, and track execution. Files like web/src/components/task-tree.tsx handle the tree rendering, while web/src/lib/api.ts connects the UI to the backend. Everything is built with TypeScript, so devs get type safety across the stack.  \n\nBatch execution is handled via strategies defined in src/batch.ts. Right now, only depth-first execution is implemented—leaf tasks under branch 1.x run first, then 2.x, and so on. More strategies (breadth-first, layer-sequential) are in the roadmap.  \n\nReal-World Use  \nSay you’re building an open-source library. You might start with:  \n\"Create a TypeScript library for OAuth with full documentation, unit tests, and a CI pipeline.\"  \n\nFractals would break this down into subtasks like:  \nInitialize repo with package.json and basic linting.  \nWrite core OAuth logic.  \nAdd unit tests for all edge cases.  \nSet up CI/CD pipelines via GitHub Actions.  \n\nThe backend creates a task tree (src/lineage.ts) and assigns each leaf to a git worktree. When you confirm execution, Claude runs tasks like \"Write unit tests for OAuth logic\" with relevant lineage context in isolated environments. The frontend polls execution status in real-time (web/src/app/page.tsx).  \n\nThe Bottom Line  \nFractals is ambitious, no doubt. For large, multi-step projects with heavy AI involvement, it’s a game-changer. But let’s be honest: it’s not production-ready (the README even says \"experimental\"). If you’re working on simple tasks or don’t trust AI to write your code, this is overkill. For power users comfortable with git, LLMs, and debugging bleeding-edge tech, it’s worth a shot—and you’ll probably end up contributing fixes along the way.",
+      "summary": "The Problem\n\nManaging complex tasks with an AI swarm is a pain. You give ChatGPT some vague project spec, and it spits out a single, linear plan. Real work isn’t linear—there are dependencies, subtasks, and rabbit holes. Orchestrating recursive agent tasks manually is a nightmare, especially if you want each leaf to run in isolation and not step on each other's toes.\n\nWhat This Does\n\nfractals takes a high-level task, recursively breaks it down, and spins up a tree of subtasks. The backend is in src/—server.ts uses Hono for the API, and llm.ts handles OpenAI calls for classifying and decomposing tasks. The real magic is in orchestrator.ts, which builds out the recursive tree and manages batch strategies. Each leaf task runs in its own git worktree, handled by executor.ts and workspace.ts. The frontend (Next.js, living in web/) lets you enter tasks, review the generated tree (web/src/components/task-tree.tsx), and track execution status.\n\nBatch execution isn’t just a buzzword; it’s necessary for AI rate limits. Depth-first is implemented, so you’ll see branch 1.x finish before 2.x. Breadth-first and layer-sequential are on the roadmap, but the code for that isn’t here yet.\n\nReal-World Use\n\nSay you want to \"Build a Python web scraper and deploy it.\" You punch that into the UI. The server (via llm.ts) classifies and recursively breaks it down—maybe into “Write scraper,” “Test scraper,” “Create Dockerfile,” “Deploy to Heroku.” You review the tree, pick your workspace (it auto-inits git in ~/fractals/<task-slug>), and hit execute. Each leaf gets its own isolated git worktree, and Claude CLI (or whatever) runs the actual agent tasks. The frontend polls for status, so you see progress in real time.\n\nThe Bottom Line\n\nfractals is cool if you’re tired of linear AI assistants and want recursive planning with real isolation. It’s overkill for small tasks, but if you’re wrangling big projects or want agent swarms that don’t trash your main workspace, it works. The UI is basic, and you’ll need to babysit workspace paths. If you’re comfortable with git and CLI tools, it’s worth a try. Otherwise, keep your workflow simple.",
       "url": "https://github.com/moses-y/fractals",
       "language": null,
       "stars": 0,
@@ -723,7 +1008,7 @@
       "parent": {
         "name": "TinyAGI/fractals",
         "url": "https://github.com/TinyAGI/fractals",
-        "stars": 522
+        "stars": 525
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -786,214 +1071,6 @@
           ".ico": 1,
           ".css": 1,
           ".tsx": 11
-        }
-      }
-    },
-    {
-      "id": 1179147110,
-      "name": "markmap",
-      "displayName": "markmap",
-      "description": "Build mindmaps with plain text",
-      "summary": "Building Mindmaps with Markmap\n\nThe Problem\nIf you've ever tried organizing your thoughts or notes in a linear format, you know it can quickly become a tangled mess. Markdown is great for writing, but it lacks the visual structure needed for clarity. Enter Markmap: a tool that transforms your Markdown into mindmaps, making it easier to visualize connections and hierarchies.\n\nWhat This Does\nMarkmap utilizes a simple text format to create interactive mindmaps, allowing for a more intuitive approach to organizing information. The core functionality is found in packages/markmap-cli/src/index.ts, which processes Markdown files and generates the mindmap. The packages/markmap-autoloader/src/index.ts handles loading the necessary assets, while the configuration files (like vite.config.mts) set up the build process using Vite and TypeScript.\n\nThe project is structured into multiple packages, with packages/markmap-common providing reusable components and utilities. You’ll find README.md files in each package, which detail how to use the functionality specific to that package. The tests are scattered across various directories, but there are only five test files, which might raise an eyebrow about the project's stability.\n\nReal-World Use\nImagine you’re prepping for a big presentation. You jot down your key points in a Markdown file like this:\n\nRunning the Markmap CLI (packages/markmap-cli/bin/cli.js) turns this Markdown into a dynamic mindmap. You can then visually navigate through your ideas, making it easier to communicate and expand on them.\n\nThe Bottom Line\nMarkmap is a handy tool if you often work with Markdown and need to visualize your notes or presentations. It's got a solid structure and is built on modern tools like React and TypeScript, but the limited test coverage is a concern. If you're looking for a better way to organize your thoughts, give Markmap a shot—just don’t expect it to replace your entire note-taking workflow.",
-      "url": "https://github.com/moses-y/markmap",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "markmap/markmap",
-        "url": "https://github.com/markmap/markmap",
-        "stars": 12524
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 11, 2026",
-      "updatedAt": "March 11, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 129,
-        "directories": {
-          "(root)": 18,
-          ".github": 3,
-          ".husky": 3,
-          "adr": 2,
-          "packages": 103
-        },
-        "languages": {
-          "Markdown": 12,
-          "YAML": 4,
-          "JSON": 21,
-          "TypeScript": 60,
-          "JavaScript": 2,
-          "HTML": 1,
-          "CSS": 2,
-          "TSX": 1
-        },
-        "frameworks": [
-          "React"
-        ],
-        "packageManager": "pnpm",
-        "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [
-          "packages/markmap-autoloader/src/index.ts",
-          "packages/markmap-cli/bin/cli.js",
-          "packages/markmap-cli/src/cli.ts",
-          "packages/markmap-cli/src/client/index.ts",
-          "packages/markmap-cli/src/index.ts",
-          "packages/markmap-common/src/index.ts",
-          "packages/markmap-common/src/types/index.ts",
-          "packages/markmap-html-parser/src/index.ts",
-          "packages/markmap-lib/src/index.ts",
-          "packages/markmap-lib/src/plugins/checkbox/index.ts",
-          "packages/markmap-lib/src/plugins/frontmatter/index.ts",
-          "packages/markmap-lib/src/plugins/hljs/index.ts",
-          "packages/markmap-lib/src/plugins/index.ts",
-          "packages/markmap-lib/src/plugins/katex/index.ts",
-          "packages/markmap-lib/src/plugins/npm-url/index.ts",
-          "packages/markmap-lib/src/plugins/prism/index.ts",
-          "packages/markmap-lib/src/plugins/source-lines/index.ts",
-          "packages/markmap-render/src/index.ts",
-          "packages/markmap-toolbar/src/index.ts",
-          "packages/markmap-view/src/index.ts"
-        ],
-        "configFiles": [
-          "package.json",
-          "packages/markmap-autoloader/package.json",
-          "packages/markmap-autoloader/tsconfig.json",
-          "packages/markmap-autoloader/vite.config.mts",
-          "packages/markmap-cli/package.json",
-          "packages/markmap-cli/tsconfig.json",
-          "packages/markmap-cli/vite.config.mts",
-          "packages/markmap-common/package.json",
-          "packages/markmap-common/tsconfig.json",
-          "packages/markmap-common/vite.config.mts",
-          "packages/markmap-html-parser/package.json",
-          "packages/markmap-html-parser/tsconfig.json",
-          "packages/markmap-html-parser/vite.config.mts",
-          "packages/markmap-lib/package.json",
-          "packages/markmap-lib/tsconfig.json",
-          "packages/markmap-lib/vite.config.mts",
-          "packages/markmap-render/package.json",
-          "packages/markmap-render/tsconfig.json",
-          "packages/markmap-render/vite.config.mts",
-          "packages/markmap-toolbar/package.json",
-          "packages/markmap-toolbar/tsconfig.json",
-          "packages/markmap-toolbar/vite.config.mts",
-          "packages/markmap-view/package.json",
-          "packages/markmap-view/tsconfig.json",
-          "packages/markmap-view/vite.config.mts",
-          "tsconfig.json"
-        ],
-        "dependencies": [
-          "package.json",
-          "packages/markmap-autoloader/package.json",
-          "packages/markmap-cli/package.json",
-          "packages/markmap-common/package.json",
-          "packages/markmap-html-parser/package.json",
-          "packages/markmap-lib/package.json",
-          "packages/markmap-render/package.json",
-          "packages/markmap-toolbar/package.json",
-          "packages/markmap-view/package.json"
-        ],
-        "testFiles": [
-          "packages/markmap-html-parser/test/__snapshots__/index.test.ts.snap",
-          "packages/markmap-html-parser/test/index.test.ts",
-          "packages/markmap-lib/test/__snapshots__/index.test.ts.snap",
-          "packages/markmap-lib/test/index.test.ts",
-          "vitest.workspace.ts"
-        ],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "packages/markmap-autoloader/README.md",
-          "packages/markmap-cli/LICENSE",
-          "packages/markmap-cli/README.md",
-          "packages/markmap-common/LICENSE",
-          "packages/markmap-common/README.md",
-          "packages/markmap-html-parser/README.md",
-          "packages/markmap-lib/README.md",
-          "packages/markmap-render/README.md",
-          "packages/markmap-toolbar/LICENSE",
-          "packages/markmap-toolbar/README.md",
-          "packages/markmap-view/README.md"
-        ],
-        "fileTypes": {
-          ".md": 12,
-          ".yml": 2,
-          ".mjs": 1,
-          ".json": 21,
-          ".ts": 60,
-          ".mts": 9,
-          ".js": 2,
-          ".snap": 2,
-          ".svg": 2,
-          ".html": 1,
-          ".css": 2,
-          ".tsx": 1,
-          ".yaml": 2,
-          ".cjs": 1
-        }
-      }
-    },
-    {
-      "id": 1179145387,
-      "name": "agenthub",
-      "displayName": "agenthub",
-      "description": "GitHub is for humans. AgentHub is for agents. First use case is for autoresearch but it's a lot more general than that. Exploratory project.",
-      "summary": "The Problem\n\nIf you’ve ever tried wrangling a swarm of AI agents hacking on the same codebase, you know GitHub falls apart fast. PRs, merges, and main branches are built for humans and linear progress. When you have ten bots pushing commits every minute, you get chaos, not collaboration. The usual tools become a bottleneck.\n\nWhat AgentHub Does\n\nAgentHub is basically GitHub stripped to the bolts for agents—no PRs, no merges, just a bare git repo and a message board. The main server (cmd/agenthub-server/main.go) spins up a Go web app, runs on SQLite, and stores a bare git repo. Git ops are handled via bundles (see internal/gitrepo/repo.go), so agents can push and fetch arbitrary commits without tripping over branch logic. The message board lives in internal/server/board_handlers.go, letting agents dump results, ask questions, or coordinate next moves. Authentication is dead simple—API keys per agent, managed in internal/auth/auth.go. The CLI in cmd/ah/main.go wraps the HTTP API so agents can push/fetch, read the board, and check the DAG frontier with a single command.\n\nReal-World Use\n\nSay you’ve got ten autoresearch bots running experiments. Each bot registers with AgentHub (see the ah join snippet in README). They push their latest commits via ah push, fetch data from other agents with ah fetch <hash>, and drop experiment results on the board using ah post. Want to see unexplored commits? ah leaves gives the frontier. Need the ancestry of a weird commit? Run ah lineage <hash>. The server handles bundle validation and DAG tracking, so you never get stuck in merge hell or lose children.\n\nThe Bottom Line\n\nAgentHub is a sketch, not a solution—perfect if you need a low-friction git+board backend for bots, but don’t expect polish or hand-holding. If you’re running agent swarms or want a DAG-first codebase, it’s worth a look. For human teams, stick to GitHub. For agent chaos, this is about as barebones as it gets.",
-      "url": "https://github.com/moses-y/agenthub",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "JacquesGariepy/agenthub",
-        "url": "https://github.com/JacquesGariepy/agenthub",
-        "stars": 10
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 11, 2026",
-      "updatedAt": "March 11, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 14,
-        "directories": {
-          "(root)": 4,
-          "cmd": 2,
-          "internal": 8
-        },
-        "languages": {
-          "Markdown": 1,
-          "Go": 10
-        },
-        "frameworks": [],
-        "packageManager": "go modules",
-        "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "cmd/agenthub-server/main.go",
-          "cmd/ah/main.go",
-          "internal/server/server.go"
-        ],
-        "configFiles": [
-          "go.mod"
-        ],
-        "dependencies": [
-          "go.mod"
-        ],
-        "testFiles": [],
-        "docs": [
-          "README.md"
-        ],
-        "fileTypes": {
-          ".md": 1,
-          ".go": 10,
-          ".mod": 1,
-          ".sum": 1
         }
       }
     },
@@ -1992,7 +2069,7 @@
       "parent": {
         "name": "bytedance/deer-flow",
         "url": "https://github.com/bytedance/deer-flow",
-        "stars": 29249
+        "stars": 29255
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2125,7 +2202,7 @@
       "parent": {
         "name": "affaan-m/everything-claude-code",
         "url": "https://github.com/affaan-m/everything-claude-code",
-        "stars": 71839
+        "stars": 71865
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2459,7 +2536,7 @@
       "parent": {
         "name": "public-apis/public-apis",
         "url": "https://github.com/public-apis/public-apis",
-        "stars": 406874
+        "stars": 406906
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2839,7 +2916,7 @@
       "parent": {
         "name": "karpathy/autoresearch",
         "url": "https://github.com/karpathy/autoresearch",
-        "stars": 25723
+        "stars": 25771
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3015,7 +3092,7 @@
       "parent": {
         "name": "MuhammadHananAsghar/wormhole",
         "url": "https://github.com/MuhammadHananAsghar/wormhole",
-        "stars": 210
+        "stars": 211
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3427,7 +3504,7 @@
       "parent": {
         "name": "nearai/ironclaw",
         "url": "https://github.com/nearai/ironclaw",
-        "stars": 9406
+        "stars": 9409
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3933,7 +4010,7 @@
       "parent": {
         "name": "aandrew-me/ytDownloader",
         "url": "https://github.com/aandrew-me/ytDownloader",
-        "stars": 8776
+        "stars": 8777
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4708,7 +4785,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 18378
+        "stars": 18422
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5155,7 +5232,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 202373
+        "stars": 202376
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -5223,7 +5300,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182602
+        "stars": 182605
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5354,7 +5431,7 @@
       "parent": {
         "name": "dbt-labs/dbt-agent-skills",
         "url": "https://github.com/dbt-labs/dbt-agent-skills",
-        "stars": 263
+        "stars": 264
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5695,7 +5772,7 @@
       "parent": {
         "name": "ItzCrazyKns/Vane",
         "url": "https://github.com/ItzCrazyKns/Vane",
-        "stars": 32729
+        "stars": 32732
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6141,7 +6218,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 10743
+        "stars": 10747
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6752,7 +6829,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 13321
+        "stars": 13322
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6972,7 +7049,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 13763
+        "stars": 13768
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7461,7 +7538,7 @@
       "parent": {
         "name": "peteromallet/dataclaw",
         "url": "https://github.com/peteromallet/dataclaw",
-        "stars": 1913
+        "stars": 1915
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7664,7 +7741,7 @@
       "parent": {
         "name": "AUTOMATIC1111/stable-diffusion-webui",
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-        "stars": 161673
+        "stars": 161674
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7749,7 +7826,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 4088
+        "stars": 4089
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7980,7 +8057,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 11806
+        "stars": 11809
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8252,7 +8329,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 38681
+        "stars": 38682
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -8691,7 +8768,7 @@
       "parent": {
         "name": "getzep/graphiti",
         "url": "https://github.com/getzep/graphiti",
-        "stars": 23583
+        "stars": 23584
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8779,7 +8856,7 @@
       "parent": {
         "name": "HunxByts/GhostTrack",
         "url": "https://github.com/HunxByts/GhostTrack",
-        "stars": 8042
+        "stars": 8043
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -9227,7 +9304,7 @@
       "parent": {
         "name": "QwenLM/Qwen3-Coder",
         "url": "https://github.com/QwenLM/Qwen3-Coder",
-        "stars": 15942
+        "stars": 15943
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -9321,7 +9398,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 21740
+        "stars": 21748
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -9475,7 +9552,7 @@
       "parent": {
         "name": "RunMaestro/Maestro",
         "url": "https://github.com/RunMaestro/Maestro",
-        "stars": 2461
+        "stars": 2462
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -10146,7 +10223,7 @@
       "parent": {
         "name": "HKUDS/ClawWork",
         "url": "https://github.com/HKUDS/ClawWork",
-        "stars": 7034
+        "stars": 7033
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -10969,7 +11046,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 303548
+        "stars": 303586
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -12690,7 +12767,7 @@
       "parent": {
         "name": "freemocap/freemocap",
         "url": "https://github.com/freemocap/freemocap",
-        "stars": 6128
+        "stars": 6129
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13368,7 +13445,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 6711
+        "stars": 6735
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -13435,7 +13512,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 6343
+        "stars": 6347
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13478,7 +13555,7 @@
       "parent": {
         "name": "HKUDS/AI-Trader",
         "url": "https://github.com/HKUDS/AI-Trader",
-        "stars": 11631
+        "stars": 11632
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -13747,7 +13824,7 @@
       "parent": {
         "name": "unitedbyai/droidclaw",
         "url": "https://github.com/unitedbyai/droidclaw",
-        "stars": 1160
+        "stars": 1161
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -14145,7 +14222,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 64653
+        "stars": 64657
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15449,7 +15526,7 @@
       "parent": {
         "name": "gosom/google-maps-scraper",
         "url": "https://github.com/gosom/google-maps-scraper",
-        "stars": 3368
+        "stars": 3369
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -16060,7 +16137,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 34931
+        "stars": 34939
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -16135,7 +16212,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 23016
+        "stars": 23017
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -17120,7 +17197,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 23932
+        "stars": 23937
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -17444,7 +17521,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 3130
+        "stars": 3133
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -17613,7 +17690,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 24376
+        "stars": 24377
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -18074,7 +18151,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 34598
+        "stars": 34599
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -18195,7 +18272,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 9715
+        "stars": 9717
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -18291,7 +18368,7 @@
       "parent": {
         "name": "OpenBMB/MiniCPM-o",
         "url": "https://github.com/OpenBMB/MiniCPM-o",
-        "stars": 24083
+        "stars": 24084
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -18906,7 +18983,7 @@
       "parent": {
         "name": "evinjohnn/natively-cluely-ai-assistant",
         "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
-        "stars": 662
+        "stars": 664
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -19028,7 +19105,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 23502
+        "stars": 23504
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -19210,7 +19287,7 @@
       "parent": {
         "name": "wg-easy/wg-easy",
         "url": "https://github.com/wg-easy/wg-easy",
-        "stars": 24926
+        "stars": 24927
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -19628,7 +19705,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 32422
+        "stars": 32425
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -22092,7 +22169,7 @@
       "parent": {
         "name": "miantiao-me/awesome-homelab",
         "url": "https://github.com/miantiao-me/awesome-homelab",
-        "stars": 1749
+        "stars": 1748
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -22865,7 +22942,7 @@
       "parent": {
         "name": "Hawksight-AI/semantica",
         "url": "https://github.com/Hawksight-AI/semantica",
-        "stars": 790
+        "stars": 791
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -23111,7 +23188,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 101628
+        "stars": 101629
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -24392,7 +24469,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 4045
+        "stars": 4047
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -24814,7 +24891,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 21170
+        "stars": 21171
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -25206,7 +25283,7 @@
       "parent": {
         "name": "callstackincubator/agent-device",
         "url": "https://github.com/callstackincubator/agent-device",
-        "stars": 1030
+        "stars": 1031
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -25396,7 +25473,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20879
+        "stars": 20880
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -26268,7 +26345,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 31826
+        "stars": 31828
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -28759,7 +28836,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 29828
+        "stars": 29896
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -29148,7 +29225,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 126747
+        "stars": 126753
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -29591,7 +29668,7 @@
       "parent": {
         "name": "zampierilucas/scx_horoscope",
         "url": "https://github.com/zampierilucas/scx_horoscope",
-        "stars": 1284
+        "stars": 1285
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -31526,7 +31603,7 @@
       "parent": {
         "name": "freelensapp/freelens",
         "url": "https://github.com/freelensapp/freelens",
-        "stars": 4704
+        "stars": 4705
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -31920,7 +31997,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 130248
+        "stars": 130251
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -32534,7 +32611,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 11828
+        "stars": 11829
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -34042,7 +34119,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7716
+        "stars": 7720
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -34260,7 +34337,7 @@
       "parent": {
         "name": "xai-org/grok-1",
         "url": "https://github.com/xai-org/grok-1",
-        "stars": 51536
+        "stars": 51535
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -34933,7 +35010,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 22232
+        "stars": 22233
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -36835,7 +36912,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 12273
+        "stars": 12275
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -38336,7 +38413,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56676
+        "stars": 56678
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -38728,7 +38805,7 @@
       "parent": {
         "name": "AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
         "url": "https://github.com/AgenticHealthAI/Awesome-AI-Agents-for-Healthcare",
-        "stars": 696
+        "stars": 697
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -39014,7 +39091,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 18505
+        "stars": 18504
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -39129,7 +39206,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 120264
+        "stars": 120280
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -39760,7 +39837,7 @@
       "parent": {
         "name": "themesberg/flowbite-admin-dashboard",
         "url": "https://github.com/themesberg/flowbite-admin-dashboard",
-        "stars": 2812
+        "stars": 2813
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -40881,7 +40958,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 20949
+        "stars": 20954
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -41011,7 +41088,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22760
+        "stars": 22762
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -41665,7 +41742,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 97624
+        "stars": 97626
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
