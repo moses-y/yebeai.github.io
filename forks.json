@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-11T19:57:31.062Z",
+  "lastUpdated": "2026-03-11T20:29:50.406Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
   "totalRepos": 421,
   "progress": {
@@ -9,6 +9,163 @@
     "complete": true
   },
   "forks": [
+    {
+      "id": 1179188329,
+      "name": "speech-to-speech",
+      "displayName": "speech to speech",
+      "description": "Build local voice agents with open-source models",
+      "summary": "The Problem\nBuilding local voice agents can be a pain in the neck, especially when you're juggling multiple models for voice activity detection (VAD), speech-to-text (STT), language processing, and text-to-speech (TTS). You’re stuck either integrating a bunch of libraries with varying quality or relying on some half-baked cloud service that eats into your budget and time.\n\nWhat This Does\nEnter the speech-to-speech repo. It gives you an open-source pipeline that covers the full deal: VAD, STT, language modeling, and TTS, all wrapped in a neat package. The core structure is split into directories: VAD for voice detection, STT for transcribing audio, LLM for language modeling, and TTS for generating speech. \n\nYou’ll find files like STT/whisperstthandler.py to handle Whisper model integration and TTS/chatTTShandler.py for generating speech responses. The s2spipeline.py file ties everything together, allowing you to run the complete pipeline in a few lines of code. It’s modular enough that you can swap models in and out without losing your mind.\n\nReal-World Use\nImagine you want to set up a local assistant that converts speech to text, processes it, and reads it back in a different voice. You can clone the repo, set up your environment with a couple of uv commands, and run something like this:\n\nWith minimal fuss, you get a responsive voice agent that works offline. If you’re on Mac and using Melo TTS, just remember to download the necessary files and handle any compatibility issues.\n\nThe Bottom Line\nThis repo is solid if you're diving into voice agents without wanting to wrestle with a dozen different libraries. It's not for tiny projects—if you need a simple TTS, you're better off with a standalone solution. But for those needing a full-featured local agent, this is a good start. Just make sure your system can handle the requirements—especially if you're on Apple Silicon.",
+      "url": "https://github.com/moses-y/speech-to-speech",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "huggingface/speech-to-speech",
+        "url": "https://github.com/huggingface/speech-to-speech",
+        "stars": 4510
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 11, 2026",
+      "updatedAt": "March 11, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 70,
+        "directories": {
+          "(root)": 15,
+          "LLM": 6,
+          "STT": 9,
+          "TTS": 10,
+          "VAD": 2,
+          "arguments_classes": 20,
+          "connections": 4,
+          "tests": 1,
+          "utils": 3
+        },
+        "languages": {
+          "Markdown": 4,
+          "Python": 56,
+          "YAML": 1
+        },
+        "frameworks": [
+          "Docker"
+        ],
+        "packageManager": "pip",
+        "hasDocker": true,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [
+          "Dockerfile",
+          "Dockerfile.arm64",
+          "docker-compose.yml",
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "requirements.txt"
+        ],
+        "testFiles": [
+          "tests/test_parakeet_language_detection.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "LLM/README.md",
+          "README.md",
+          "STT/README.md",
+          "TTS/README.md"
+        ],
+        "fileTypes": {
+          ".arm64": 1,
+          ".md": 4,
+          ".py": 56,
+          ".wav": 1,
+          ".yml": 1,
+          ".png": 1,
+          ".txt": 2
+        }
+      }
+    },
+    {
+      "id": 1179156092,
+      "name": "fractals",
+      "displayName": "fractals",
+      "description": "Fractals is a recursive task orchestrator for agent swarm",
+      "summary": "The Problem\n\nManaging complex tasks with an AI swarm is a pain. You give ChatGPT some vague project spec, and it spits out a single, linear plan. Real work isn’t linear—there are dependencies, subtasks, and rabbit holes. Orchestrating recursive agent tasks manually is a nightmare, especially if you want each leaf to run in isolation and not step on each other's toes.\n\nWhat This Does\n\nfractals takes a high-level task, recursively breaks it down, and spins up a tree of subtasks. The backend is in src/—server.ts uses Hono for the API, and llm.ts handles OpenAI calls for classifying and decomposing tasks. The real magic is in orchestrator.ts, which builds out the recursive tree and manages batch strategies. Each leaf task runs in its own git worktree, handled by executor.ts and workspace.ts. The frontend (Next.js, living in web/) lets you enter tasks, review the generated tree (web/src/components/task-tree.tsx), and track execution status.\n\nBatch execution isn’t just a buzzword; it’s necessary for AI rate limits. Depth-first is implemented, so you’ll see branch 1.x finish before 2.x. Breadth-first and layer-sequential are on the roadmap, but the code for that isn’t here yet.\n\nReal-World Use\n\nSay you want to \"Build a Python web scraper and deploy it.\" You punch that into the UI. The server (via llm.ts) classifies and recursively breaks it down—maybe into “Write scraper,” “Test scraper,” “Create Dockerfile,” “Deploy to Heroku.” You review the tree, pick your workspace (it auto-inits git in ~/fractals/<task-slug>), and hit execute. Each leaf gets its own isolated git worktree, and Claude CLI (or whatever) runs the actual agent tasks. The frontend polls for status, so you see progress in real time.\n\nThe Bottom Line\n\nfractals is cool if you’re tired of linear AI assistants and want recursive planning with real isolation. It’s overkill for small tasks, but if you’re wrangling big projects or want agent swarms that don’t trash your main workspace, it works. The UI is basic, and you’ll need to babysit workspace paths. If you’re comfortable with git and CLI tools, it’s worth a try. Otherwise, keep your workflow simple.",
+      "url": "https://github.com/moses-y/fractals",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "TinyAGI/fractals",
+        "url": "https://github.com/TinyAGI/fractals",
+        "stars": 528
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 11, 2026",
+      "updatedAt": "March 11, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 47,
+        "directories": {
+          "(root)": 6,
+          "images": 2,
+          "src": 10,
+          "web": 29
+        },
+        "languages": {
+          "Markdown": 2,
+          "JSON": 7,
+          "TypeScript": 13,
+          "CSS": 1,
+          "TSX": 11
+        },
+        "frameworks": [
+          "React",
+          "Next.js"
+        ],
+        "packageManager": "npm",
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "src/index.ts",
+          "src/server.ts"
+        ],
+        "configFiles": [
+          "package.json",
+          "tsconfig.json",
+          "web/next.config.ts",
+          "web/package.json",
+          "web/tsconfig.json"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json",
+          "web/package-lock.json",
+          "web/package.json"
+        ],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "web/README.md"
+        ],
+        "fileTypes": {
+          ".md": 2,
+          ".png": 2,
+          ".json": 7,
+          ".ts": 13,
+          ".mjs": 2,
+          ".svg": 5,
+          ".ico": 1,
+          ".css": 1,
+          ".tsx": 11
+        }
+      }
+    },
     {
       "id": 1179147110,
       "name": "markmap",
@@ -472,7 +629,7 @@
       "parent": {
         "name": "secure-77/Perlite",
         "url": "https://github.com/secure-77/Perlite",
-        "stars": 1665
+        "stars": 1666
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -574,7 +731,7 @@
       "parent": {
         "name": "wimpysworld/ia-get",
         "url": "https://github.com/wimpysworld/ia-get",
-        "stars": 156
+        "stars": 165
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -914,163 +1071,6 @@
           ".toml": 1,
           ".txt": 1,
           ".sh": 1
-        }
-      }
-    },
-    {
-      "id": 1179188329,
-      "name": "speech-to-speech",
-      "displayName": "speech to speech",
-      "description": "Build local voice agents with open-source models",
-      "summary": "The Problem\nBuilding local voice agents can be a pain in the neck, especially when you're juggling multiple models for voice activity detection (VAD), speech-to-text (STT), language processing, and text-to-speech (TTS). You’re stuck either integrating a bunch of libraries with varying quality or relying on some half-baked cloud service that eats into your budget and time.\n\nWhat This Does\nEnter the speech-to-speech repo. It gives you an open-source pipeline that covers the full deal: VAD, STT, language modeling, and TTS, all wrapped in a neat package. The core structure is split into directories: VAD for voice detection, STT for transcribing audio, LLM for language modeling, and TTS for generating speech. \n\nYou’ll find files like STT/whisperstthandler.py to handle Whisper model integration and TTS/chatTTShandler.py for generating speech responses. The s2spipeline.py file ties everything together, allowing you to run the complete pipeline in a few lines of code. It’s modular enough that you can swap models in and out without losing your mind.\n\nReal-World Use\nImagine you want to set up a local assistant that converts speech to text, processes it, and reads it back in a different voice. You can clone the repo, set up your environment with a couple of uv commands, and run something like this:\n\nWith minimal fuss, you get a responsive voice agent that works offline. If you’re on Mac and using Melo TTS, just remember to download the necessary files and handle any compatibility issues.\n\nThe Bottom Line\nThis repo is solid if you're diving into voice agents without wanting to wrestle with a dozen different libraries. It's not for tiny projects—if you need a simple TTS, you're better off with a standalone solution. But for those needing a full-featured local agent, this is a good start. Just make sure your system can handle the requirements—especially if you're on Apple Silicon.",
-      "url": "https://github.com/moses-y/speech-to-speech",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "huggingface/speech-to-speech",
-        "url": "https://github.com/huggingface/speech-to-speech",
-        "stars": 4509
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 11, 2026",
-      "updatedAt": "March 11, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 70,
-        "directories": {
-          "(root)": 15,
-          "LLM": 6,
-          "STT": 9,
-          "TTS": 10,
-          "VAD": 2,
-          "arguments_classes": 20,
-          "connections": 4,
-          "tests": 1,
-          "utils": 3
-        },
-        "languages": {
-          "Markdown": 4,
-          "Python": 56,
-          "YAML": 1
-        },
-        "frameworks": [
-          "Docker"
-        ],
-        "packageManager": "pip",
-        "hasDocker": true,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [],
-        "configFiles": [
-          "Dockerfile",
-          "Dockerfile.arm64",
-          "docker-compose.yml",
-          "requirements.txt"
-        ],
-        "dependencies": [
-          "requirements.txt"
-        ],
-        "testFiles": [
-          "tests/test_parakeet_language_detection.py"
-        ],
-        "docs": [
-          "LICENSE",
-          "LLM/README.md",
-          "README.md",
-          "STT/README.md",
-          "TTS/README.md"
-        ],
-        "fileTypes": {
-          ".arm64": 1,
-          ".md": 4,
-          ".py": 56,
-          ".wav": 1,
-          ".yml": 1,
-          ".png": 1,
-          ".txt": 2
-        }
-      }
-    },
-    {
-      "id": 1179156092,
-      "name": "fractals",
-      "displayName": "fractals",
-      "description": "Fractals is a recursive task orchestrator for agent swarm",
-      "summary": "The Problem\n\nManaging complex tasks with an AI swarm is a pain. You give ChatGPT some vague project spec, and it spits out a single, linear plan. Real work isn’t linear—there are dependencies, subtasks, and rabbit holes. Orchestrating recursive agent tasks manually is a nightmare, especially if you want each leaf to run in isolation and not step on each other's toes.\n\nWhat This Does\n\nfractals takes a high-level task, recursively breaks it down, and spins up a tree of subtasks. The backend is in src/—server.ts uses Hono for the API, and llm.ts handles OpenAI calls for classifying and decomposing tasks. The real magic is in orchestrator.ts, which builds out the recursive tree and manages batch strategies. Each leaf task runs in its own git worktree, handled by executor.ts and workspace.ts. The frontend (Next.js, living in web/) lets you enter tasks, review the generated tree (web/src/components/task-tree.tsx), and track execution status.\n\nBatch execution isn’t just a buzzword; it’s necessary for AI rate limits. Depth-first is implemented, so you’ll see branch 1.x finish before 2.x. Breadth-first and layer-sequential are on the roadmap, but the code for that isn’t here yet.\n\nReal-World Use\n\nSay you want to \"Build a Python web scraper and deploy it.\" You punch that into the UI. The server (via llm.ts) classifies and recursively breaks it down—maybe into “Write scraper,” “Test scraper,” “Create Dockerfile,” “Deploy to Heroku.” You review the tree, pick your workspace (it auto-inits git in ~/fractals/<task-slug>), and hit execute. Each leaf gets its own isolated git worktree, and Claude CLI (or whatever) runs the actual agent tasks. The frontend polls for status, so you see progress in real time.\n\nThe Bottom Line\n\nfractals is cool if you’re tired of linear AI assistants and want recursive planning with real isolation. It’s overkill for small tasks, but if you’re wrangling big projects or want agent swarms that don’t trash your main workspace, it works. The UI is basic, and you’ll need to babysit workspace paths. If you’re comfortable with git and CLI tools, it’s worth a try. Otherwise, keep your workflow simple.",
-      "url": "https://github.com/moses-y/fractals",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "TinyAGI/fractals",
-        "url": "https://github.com/TinyAGI/fractals",
-        "stars": 525
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 11, 2026",
-      "updatedAt": "March 11, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 47,
-        "directories": {
-          "(root)": 6,
-          "images": 2,
-          "src": 10,
-          "web": 29
-        },
-        "languages": {
-          "Markdown": 2,
-          "JSON": 7,
-          "TypeScript": 13,
-          "CSS": 1,
-          "TSX": 11
-        },
-        "frameworks": [
-          "React",
-          "Next.js"
-        ],
-        "packageManager": "npm",
-        "hasDocker": false,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "src/index.ts",
-          "src/server.ts"
-        ],
-        "configFiles": [
-          "package.json",
-          "tsconfig.json",
-          "web/next.config.ts",
-          "web/package.json",
-          "web/tsconfig.json"
-        ],
-        "dependencies": [
-          "package-lock.json",
-          "package.json",
-          "web/package-lock.json",
-          "web/package.json"
-        ],
-        "testFiles": [],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "web/README.md"
-        ],
-        "fileTypes": {
-          ".md": 2,
-          ".png": 2,
-          ".json": 7,
-          ".ts": 13,
-          ".mjs": 2,
-          ".svg": 5,
-          ".ico": 1,
-          ".css": 1,
-          ".tsx": 11
         }
       }
     },
@@ -1459,7 +1459,7 @@
       "parent": {
         "name": "MemMachine/MemMachine",
         "url": "https://github.com/MemMachine/MemMachine",
-        "stars": 4791
+        "stars": 4792
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2069,7 +2069,7 @@
       "parent": {
         "name": "bytedance/deer-flow",
         "url": "https://github.com/bytedance/deer-flow",
-        "stars": 29255
+        "stars": 29265
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2202,7 +2202,7 @@
       "parent": {
         "name": "affaan-m/everything-claude-code",
         "url": "https://github.com/affaan-m/everything-claude-code",
-        "stars": 71865
+        "stars": 71887
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2536,7 +2536,7 @@
       "parent": {
         "name": "public-apis/public-apis",
         "url": "https://github.com/public-apis/public-apis",
-        "stars": 406906
+        "stars": 406938
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2916,7 +2916,7 @@
       "parent": {
         "name": "karpathy/autoresearch",
         "url": "https://github.com/karpathy/autoresearch",
-        "stars": 25771
+        "stars": 25814
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3504,7 +3504,7 @@
       "parent": {
         "name": "nearai/ironclaw",
         "url": "https://github.com/nearai/ironclaw",
-        "stars": 9409
+        "stars": 9412
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4097,7 +4097,7 @@
       "parent": {
         "name": "Yqnn/svg-path-editor",
         "url": "https://github.com/Yqnn/svg-path-editor",
-        "stars": 5116
+        "stars": 5117
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4401,7 +4401,7 @@
       "parent": {
         "name": "facebookresearch/eb_jepa",
         "url": "https://github.com/facebookresearch/eb_jepa",
-        "stars": 496
+        "stars": 497
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4785,7 +4785,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 18422
+        "stars": 18459
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5232,7 +5232,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 202376
+        "stars": 202378
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -5300,7 +5300,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182605
+        "stars": 182606
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5547,7 +5547,7 @@
       "parent": {
         "name": "Yeachan-Heo/oh-my-codex",
         "url": "https://github.com/Yeachan-Heo/oh-my-codex",
-        "stars": 1816
+        "stars": 1817
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5772,7 +5772,7 @@
       "parent": {
         "name": "ItzCrazyKns/Vane",
         "url": "https://github.com/ItzCrazyKns/Vane",
-        "stars": 32732
+        "stars": 32735
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6218,7 +6218,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 10747
+        "stars": 10749
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -6829,7 +6829,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 13322
+        "stars": 13324
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7049,7 +7049,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 13768
+        "stars": 13770
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7826,7 +7826,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 4089
+        "stars": 4091
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8057,7 +8057,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 11809
+        "stars": 11810
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8768,7 +8768,7 @@
       "parent": {
         "name": "getzep/graphiti",
         "url": "https://github.com/getzep/graphiti",
-        "stars": 23584
+        "stars": 23585
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8856,7 +8856,7 @@
       "parent": {
         "name": "HunxByts/GhostTrack",
         "url": "https://github.com/HunxByts/GhostTrack",
-        "stars": 8043
+        "stars": 8044
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -9304,7 +9304,7 @@
       "parent": {
         "name": "QwenLM/Qwen3-Coder",
         "url": "https://github.com/QwenLM/Qwen3-Coder",
-        "stars": 15943
+        "stars": 15944
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -9398,7 +9398,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 21748
+        "stars": 21750
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -10416,7 +10416,7 @@
       "parent": {
         "name": "agalwood/Motrix",
         "url": "https://github.com/agalwood/Motrix",
-        "stars": 51023
+        "stars": 51022
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -11046,7 +11046,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 303586
+        "stars": 303610
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13445,7 +13445,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 6735
+        "stars": 6741
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -13695,7 +13695,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 9746
+        "stars": 9747
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -14222,7 +14222,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 64657
+        "stars": 64660
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -14298,7 +14298,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 6641
+        "stars": 6642
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -14494,7 +14494,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4447
+        "stars": 4448
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -16137,7 +16137,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 34939
+        "stars": 34953
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -16212,7 +16212,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 23017
+        "stars": 23020
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -17197,7 +17197,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 23937
+        "stars": 23946
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -17521,7 +17521,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 3133
+        "stars": 3134
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -18151,7 +18151,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 34599
+        "stars": 34602
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -18272,7 +18272,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 9717
+        "stars": 9718
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -19105,7 +19105,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 23504
+        "stars": 23505
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -19705,7 +19705,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 32425
+        "stars": 32427
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -20577,7 +20577,7 @@
       "parent": {
         "name": "itsOwen/CyberScraper-2077",
         "url": "https://github.com/itsOwen/CyberScraper-2077",
-        "stars": 2919
+        "stars": 2920
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -22008,7 +22008,7 @@
       "parent": {
         "name": "batrachianai/toad",
         "url": "https://github.com/batrachianai/toad",
-        "stars": 2610
+        "stars": 2611
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -22083,7 +22083,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 17673
+        "stars": 17674
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -22942,7 +22942,7 @@
       "parent": {
         "name": "Hawksight-AI/semantica",
         "url": "https://github.com/Hawksight-AI/semantica",
-        "stars": 791
+        "stars": 794
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -23188,7 +23188,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 101629
+        "stars": 101630
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -24202,7 +24202,7 @@
       "parent": {
         "name": "lukilabs/beautiful-mermaid",
         "url": "https://github.com/lukilabs/beautiful-mermaid",
-        "stars": 8194
+        "stars": 8196
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -24469,7 +24469,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 4047
+        "stars": 4048
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -24891,7 +24891,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 21171
+        "stars": 21172
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -24958,7 +24958,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44728
+        "stars": 44729
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -25283,7 +25283,7 @@
       "parent": {
         "name": "callstackincubator/agent-device",
         "url": "https://github.com/callstackincubator/agent-device",
-        "stars": 1031
+        "stars": 1033
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -26345,7 +26345,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 31828
+        "stars": 31829
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -27882,7 +27882,7 @@
       "parent": {
         "name": "commaai/openpilot",
         "url": "https://github.com/commaai/openpilot",
-        "stars": 60279
+        "stars": 60280
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -28761,7 +28761,7 @@
       "parent": {
         "name": "Orchestra-Research/AI-Research-SKILLs",
         "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-        "stars": 4781
+        "stars": 4782
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -28836,7 +28836,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 29896
+        "stars": 29943
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -29225,7 +29225,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 126753
+        "stars": 126756
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -31997,7 +31997,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 130251
+        "stars": 130252
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -32672,7 +32672,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 21065
+        "stars": 21066
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -33248,7 +33248,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 9735
+        "stars": 9737
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -33514,7 +33514,7 @@
       "parent": {
         "name": "ln-dev7/square-ui",
         "url": "https://github.com/ln-dev7/square-ui",
-        "stars": 5023
+        "stars": 5024
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -34119,7 +34119,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7720
+        "stars": 7724
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -34477,7 +34477,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 23167
+        "stars": 23168
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -35010,7 +35010,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 22233
+        "stars": 22234
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -35627,7 +35627,7 @@
       "parent": {
         "name": "HeyPuter/puter",
         "url": "https://github.com/HeyPuter/puter",
-        "stars": 39870
+        "stars": 39869
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -36912,7 +36912,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 12275
+        "stars": 12277
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -38413,7 +38413,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56678
+        "stars": 56677
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -39206,7 +39206,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 120280
+        "stars": 120290
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -40958,7 +40958,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 20954
+        "stars": 20959
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -41088,7 +41088,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22762
+        "stars": 22763
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -41742,7 +41742,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 97626
+        "stars": 97629
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
