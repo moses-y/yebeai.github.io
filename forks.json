@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-11T21:35:27.464Z",
+  "lastUpdated": "2026-03-11T22:22:57.049Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
   "totalRepos": 423,
   "progress": {
@@ -9,6 +9,129 @@
     "complete": true
   },
   "forks": [
+    {
+      "id": 1179260525,
+      "name": "prime-rl",
+      "displayName": "prime rl",
+      "description": "Async RL Training at Scale",
+      "summary": "PRIME-RL: Asynchronous RL at Scale Without Losing Your Mind\n\nThe Problem\n\nReinforcement learning is a beast. It’s computationally expensive, hard to scale, and a nightmare to orchestrate. Throw in multi-node, multi-GPU setups, and you've got a recipe for a dev's worst day. If you've ever tried to cobble together a training pipeline with hacked-together scripts and cursed out at Kubernetes YAML files, you’ll understand the pain. That’s where prime-rl comes in: it’s a framework for large-scale, async RL training that promises to make your life suck a little less.\n\nWhat This Does\n\nprime-rl is built for scaling reinforcement learning workflows. It’s packed with everything you need to take an RL model from SFT (Supervised Fine-Tuning) to full-blown agent training. The project is neatly organized, with directories like benchmarks/ for performance metrics, configs/ for training setups, and examples/ for real-world use cases. If you're into Kubernetes (or just forced to use it), there’s a k8s/ directory to help deploy your experiments on multi-node clusters.\n\nThe framework leans heavily on tools like Docker, Kubernetes, and PyTorch's FSDP2 for distributed training. The pyproject.toml handles dependencies, while the scripts/ folder provides utilities for everything from environment setup (install.sh) to managing SLURM jobs (slurm_tmux.sh). If you’re wondering how to get started, the README.md has a one-liner install command using curl. For once, a project that doesn't make you hunt for setup instructions.\n\nReal-World Use\n\nImagine you're training an RL agent to solve a complex task like multi-modal reasoning or optimizing a transformer-based model. With prime-rl, you can spin up a training job using a config file from configs/. For example, the configs/debug/rl/train.toml is a good starting point for single-GPU experiments. Once you're ready to scale, you can move to multi-node setups using the Kubernetes templates in k8s/prime-rl/.\n\nWant benchmarks? Check out the benchmarks/baselines/ folder for JSON files with detailed performance data for a bunch of GPU setups (A100, H100, B200—you name it). These are great for comparing your hardware or tweaking your training to squeeze out that last 2% improvement.\n\nThe Bottom Line\n\nprime-rl is overkill for your weekend \"flappy bird RL\" side project, but it's a solid pick for serious research or production-grade training. The modular design and clear documentation make it easy to adapt to your needs, though the heavy reliance on Kubernetes and the NVIDIA ecosystem might alienate smaller teams. If you're ready to tackle async RL at scale without losing your sanity, give this repo a spin. Just don’t forget to budget for GPUs.",
+      "url": "https://github.com/moses-y/prime-rl",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "PrimeIntellect-ai/prime-rl",
+        "url": "https://github.com/PrimeIntellect-ai/prime-rl",
+        "stars": 1131
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 11, 2026",
+      "updatedAt": "March 11, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          ".claude": 1,
+          ".cursor": 1,
+          ".github": 8,
+          "(root)": 10,
+          "benchmarks": 63,
+          "configs": 42,
+          "docs": 22,
+          "examples": 27,
+          "k8s": 8,
+          "scripts": 9,
+          "skills": 3,
+          "src": 6
+        },
+        "languages": {
+          "Markdown": 42,
+          "YAML": 15,
+          "JSON": 61,
+          "Python": 10,
+          "TOML": 51,
+          "Shell": 7
+        },
+        "frameworks": [
+          "Docker",
+          "Kubernetes"
+        ],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          "Dockerfile.cuda",
+          "pyproject.toml"
+        ],
+        "dependencies": [
+          "pyproject.toml"
+        ],
+        "testFiles": [
+          ".github/workflows/cpu_tests.yaml",
+          ".github/workflows/gpu_tests.yaml",
+          ".github/workflows/nightly_tests.yaml",
+          "docs/testing-moe-at-small-scale.md"
+        ],
+        "docs": [
+          "CHANGELOG.md",
+          "LICENSE",
+          "README.md",
+          "configs/README.md",
+          "configs/deepscaler/README.md",
+          "configs/elastic/README.md",
+          "configs/env_mix/README.md",
+          "configs/gsm8k/README.md",
+          "configs/hendrycks_math/README.md",
+          "configs/math_python/README.md",
+          "docs/assets/architecture.png",
+          "docs/assets/two-step-off-policy.png",
+          "docs/async.md",
+          "docs/benchmarking.md",
+          "docs/bring-your-own-algorithms.md",
+          "docs/checkpointing.md",
+          "docs/configs.md",
+          "docs/deployment.md",
+          "docs/entrypoints.md",
+          "docs/environments.md",
+          "docs/index.md",
+          "docs/kubernetes.md",
+          "docs/logging.md",
+          "docs/metrics.md",
+          "docs/mint.json",
+          "docs/multi_run_manager.md",
+          "docs/multimodal.md",
+          "docs/on_policy_distillation.md",
+          "docs/slurm.md",
+          "docs/testing-moe-at-small-scale.md",
+          "docs/trajectories.md",
+          "docs/troubleshooting.md",
+          "examples/README.md",
+          "examples/alphabet_sort/README.md",
+          "examples/hendrycks_sanity/README.md",
+          "examples/reverse_text/README.md",
+          "examples/wiki_search/README.md",
+          "examples/wordle/README.md",
+          "k8s/README.md"
+        ],
+        "fileTypes": {
+          ".md": 42,
+          ".yaml": 14,
+          ".yml": 1,
+          ".cff": 1,
+          ".cuda": 1,
+          ".json": 61,
+          ".py": 10,
+          ".toml": 51,
+          ".png": 8,
+          ".tpl": 1,
+          ".sh": 7
+        }
+      }
+    },
     {
       "id": 1179247133,
       "name": "api2cli",
@@ -23,7 +146,7 @@
       "parent": {
         "name": "alexknowshtml/api2cli",
         "url": "https://github.com/alexknowshtml/api2cli",
-        "stars": 382
+        "stars": 385
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -71,7 +194,7 @@
       "parent": {
         "name": "huggingface/speech-to-speech",
         "url": "https://github.com/huggingface/speech-to-speech",
-        "stars": 4513
+        "stars": 4515
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -148,7 +271,7 @@
       "parent": {
         "name": "TinyAGI/fractals",
         "url": "https://github.com/TinyAGI/fractals",
-        "stars": 534
+        "stars": 537
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -228,7 +351,7 @@
       "parent": {
         "name": "markmap/markmap",
         "url": "https://github.com/markmap/markmap",
-        "stars": 12526
+        "stars": 12527
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -376,7 +499,7 @@
       "parent": {
         "name": "JacquesGariepy/agenthub",
         "url": "https://github.com/JacquesGariepy/agenthub",
-        "stars": 12
+        "stars": 13
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -436,7 +559,7 @@
       "parent": {
         "name": "rivet-dev/sandbox-agent",
         "url": "https://github.com/rivet-dev/sandbox-agent",
-        "stars": 1058
+        "stars": 1059
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -779,7 +902,7 @@
       "parent": {
         "name": "wimpysworld/ia-get",
         "url": "https://github.com/wimpysworld/ia-get",
-        "stars": 171
+        "stars": 177
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -856,7 +979,7 @@
       "parent": {
         "name": "SWE-bench/SWE-bench",
         "url": "https://github.com/SWE-bench/SWE-bench",
-        "stars": 4454
+        "stars": 4455
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -971,7 +1094,7 @@
       "parent": {
         "name": "oddlama/nixos-config-tui",
         "url": "https://github.com/oddlama/nixos-config-tui",
-        "stars": 96
+        "stars": 97
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1119,129 +1242,6 @@
           ".toml": 1,
           ".txt": 1,
           ".sh": 1
-        }
-      }
-    },
-    {
-      "id": 1179260525,
-      "name": "prime-rl",
-      "displayName": "prime rl",
-      "description": "Async RL Training at Scale",
-      "summary": "PRIME-RL: Asynchronous RL at Scale Without Losing Your Mind\n\nThe Problem\n\nReinforcement learning is a beast. It’s computationally expensive, hard to scale, and a nightmare to orchestrate. Throw in multi-node, multi-GPU setups, and you've got a recipe for a dev's worst day. If you've ever tried to cobble together a training pipeline with hacked-together scripts and cursed out at Kubernetes YAML files, you’ll understand the pain. That’s where prime-rl comes in: it’s a framework for large-scale, async RL training that promises to make your life suck a little less.\n\nWhat This Does\n\nprime-rl is built for scaling reinforcement learning workflows. It’s packed with everything you need to take an RL model from SFT (Supervised Fine-Tuning) to full-blown agent training. The project is neatly organized, with directories like benchmarks/ for performance metrics, configs/ for training setups, and examples/ for real-world use cases. If you're into Kubernetes (or just forced to use it), there’s a k8s/ directory to help deploy your experiments on multi-node clusters.\n\nThe framework leans heavily on tools like Docker, Kubernetes, and PyTorch's FSDP2 for distributed training. The pyproject.toml handles dependencies, while the scripts/ folder provides utilities for everything from environment setup (install.sh) to managing SLURM jobs (slurm_tmux.sh). If you’re wondering how to get started, the README.md has a one-liner install command using curl. For once, a project that doesn't make you hunt for setup instructions.\n\nReal-World Use\n\nImagine you're training an RL agent to solve a complex task like multi-modal reasoning or optimizing a transformer-based model. With prime-rl, you can spin up a training job using a config file from configs/. For example, the configs/debug/rl/train.toml is a good starting point for single-GPU experiments. Once you're ready to scale, you can move to multi-node setups using the Kubernetes templates in k8s/prime-rl/.\n\nWant benchmarks? Check out the benchmarks/baselines/ folder for JSON files with detailed performance data for a bunch of GPU setups (A100, H100, B200—you name it). These are great for comparing your hardware or tweaking your training to squeeze out that last 2% improvement.\n\nThe Bottom Line\n\nprime-rl is overkill for your weekend \"flappy bird RL\" side project, but it's a solid pick for serious research or production-grade training. The modular design and clear documentation make it easy to adapt to your needs, though the heavy reliance on Kubernetes and the NVIDIA ecosystem might alienate smaller teams. If you're ready to tackle async RL at scale without losing your sanity, give this repo a spin. Just don’t forget to budget for GPUs.",
-      "url": "https://github.com/moses-y/prime-rl",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "PrimeIntellect-ai/prime-rl",
-        "url": "https://github.com/PrimeIntellect-ai/prime-rl",
-        "stars": 1130
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 11, 2026",
-      "updatedAt": "March 11, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          ".claude": 1,
-          ".cursor": 1,
-          ".github": 8,
-          "(root)": 10,
-          "benchmarks": 63,
-          "configs": 42,
-          "docs": 22,
-          "examples": 27,
-          "k8s": 8,
-          "scripts": 9,
-          "skills": 3,
-          "src": 6
-        },
-        "languages": {
-          "Markdown": 42,
-          "YAML": 15,
-          "JSON": 61,
-          "Python": 10,
-          "TOML": 51,
-          "Shell": 7
-        },
-        "frameworks": [
-          "Docker",
-          "Kubernetes"
-        ],
-        "packageManager": null,
-        "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [],
-        "configFiles": [
-          "Dockerfile.cuda",
-          "pyproject.toml"
-        ],
-        "dependencies": [
-          "pyproject.toml"
-        ],
-        "testFiles": [
-          ".github/workflows/cpu_tests.yaml",
-          ".github/workflows/gpu_tests.yaml",
-          ".github/workflows/nightly_tests.yaml",
-          "docs/testing-moe-at-small-scale.md"
-        ],
-        "docs": [
-          "CHANGELOG.md",
-          "LICENSE",
-          "README.md",
-          "configs/README.md",
-          "configs/deepscaler/README.md",
-          "configs/elastic/README.md",
-          "configs/env_mix/README.md",
-          "configs/gsm8k/README.md",
-          "configs/hendrycks_math/README.md",
-          "configs/math_python/README.md",
-          "docs/assets/architecture.png",
-          "docs/assets/two-step-off-policy.png",
-          "docs/async.md",
-          "docs/benchmarking.md",
-          "docs/bring-your-own-algorithms.md",
-          "docs/checkpointing.md",
-          "docs/configs.md",
-          "docs/deployment.md",
-          "docs/entrypoints.md",
-          "docs/environments.md",
-          "docs/index.md",
-          "docs/kubernetes.md",
-          "docs/logging.md",
-          "docs/metrics.md",
-          "docs/mint.json",
-          "docs/multi_run_manager.md",
-          "docs/multimodal.md",
-          "docs/on_policy_distillation.md",
-          "docs/slurm.md",
-          "docs/testing-moe-at-small-scale.md",
-          "docs/trajectories.md",
-          "docs/troubleshooting.md",
-          "examples/README.md",
-          "examples/alphabet_sort/README.md",
-          "examples/hendrycks_sanity/README.md",
-          "examples/reverse_text/README.md",
-          "examples/wiki_search/README.md",
-          "examples/wordle/README.md",
-          "k8s/README.md"
-        ],
-        "fileTypes": {
-          ".md": 42,
-          ".yaml": 14,
-          ".yml": 1,
-          ".cff": 1,
-          ".cuda": 1,
-          ".json": 61,
-          ".py": 10,
-          ".toml": 51,
-          ".png": 8,
-          ".tpl": 1,
-          ".sh": 7
         }
       }
     },
@@ -1445,7 +1445,7 @@
       "parent": {
         "name": "fastapi/fastapi-vscode",
         "url": "https://github.com/fastapi/fastapi-vscode",
-        "stars": 290
+        "stars": 291
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -2240,7 +2240,7 @@
       "parent": {
         "name": "bytedance/deer-flow",
         "url": "https://github.com/bytedance/deer-flow",
-        "stars": 29285
+        "stars": 29292
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2373,7 +2373,7 @@
       "parent": {
         "name": "affaan-m/everything-claude-code",
         "url": "https://github.com/affaan-m/everything-claude-code",
-        "stars": 71935
+        "stars": 71969
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2707,7 +2707,7 @@
       "parent": {
         "name": "public-apis/public-apis",
         "url": "https://github.com/public-apis/public-apis",
-        "stars": 407027
+        "stars": 407090
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -2830,7 +2830,7 @@
       "parent": {
         "name": "MobAI-App/ios-builder",
         "url": "https://github.com/MobAI-App/ios-builder",
-        "stars": 170
+        "stars": 171
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3087,7 +3087,7 @@
       "parent": {
         "name": "karpathy/autoresearch",
         "url": "https://github.com/karpathy/autoresearch",
-        "stars": 25907
+        "stars": 25976
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3675,7 +3675,7 @@
       "parent": {
         "name": "nearai/ironclaw",
         "url": "https://github.com/nearai/ironclaw",
-        "stars": 9416
+        "stars": 9420
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3810,7 +3810,7 @@
       "parent": {
         "name": "shiahonb777/web-to-app",
         "url": "https://github.com/shiahonb777/web-to-app",
-        "stars": 1484
+        "stars": 1486
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4956,7 +4956,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 18544
+        "stars": 18602
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -5471,7 +5471,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182608
+        "stars": 182609
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5943,7 +5943,7 @@
       "parent": {
         "name": "ItzCrazyKns/Vane",
         "url": "https://github.com/ItzCrazyKns/Vane",
-        "stars": 32737
+        "stars": 32742
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6389,7 +6389,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 10752
+        "stars": 10754
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7000,7 +7000,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 13327
+        "stars": 13332
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7220,7 +7220,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 13780
+        "stars": 13785
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7912,7 +7912,7 @@
       "parent": {
         "name": "AUTOMATIC1111/stable-diffusion-webui",
         "url": "https://github.com/AUTOMATIC1111/stable-diffusion-webui",
-        "stars": 161675
+        "stars": 161676
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7997,7 +7997,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 4094
+        "stars": 4097
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8228,7 +8228,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 11817
+        "stars": 11820
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8500,7 +8500,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 38686
+        "stars": 38688
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -8818,7 +8818,7 @@
       "parent": {
         "name": "FalkorDB/FalkorDB",
         "url": "https://github.com/FalkorDB/FalkorDB",
-        "stars": 3696
+        "stars": 3697
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8939,7 +8939,7 @@
       "parent": {
         "name": "getzep/graphiti",
         "url": "https://github.com/getzep/graphiti",
-        "stars": 23587
+        "stars": 23588
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9027,7 +9027,7 @@
       "parent": {
         "name": "HunxByts/GhostTrack",
         "url": "https://github.com/HunxByts/GhostTrack",
-        "stars": 8045
+        "stars": 8046
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -9475,7 +9475,7 @@
       "parent": {
         "name": "QwenLM/Qwen3-Coder",
         "url": "https://github.com/QwenLM/Qwen3-Coder",
-        "stars": 15944
+        "stars": 15945
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -9569,7 +9569,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 21757
+        "stars": 21760
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -11217,7 +11217,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 303651
+        "stars": 303687
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13120,7 +13120,7 @@
       "parent": {
         "name": "mindsdb/mindsdb",
         "url": "https://github.com/mindsdb/mindsdb",
-        "stars": 38674
+        "stars": 38675
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13616,7 +13616,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 6767
+        "stars": 6783
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -13683,7 +13683,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 6353
+        "stars": 6356
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13778,7 +13778,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 8852
+        "stars": 8853
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -13866,7 +13866,7 @@
       "parent": {
         "name": "accomplish-ai/accomplish",
         "url": "https://github.com/accomplish-ai/accomplish",
-        "stars": 9747
+        "stars": 9748
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -13995,7 +13995,7 @@
       "parent": {
         "name": "unitedbyai/droidclaw",
         "url": "https://github.com/unitedbyai/droidclaw",
-        "stars": 1161
+        "stars": 1162
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -14393,7 +14393,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 64660
+        "stars": 64661
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -14665,7 +14665,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4448
+        "stars": 4449
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -16308,7 +16308,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 34985
+        "stars": 35007
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -16383,7 +16383,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 23021
+        "stars": 23023
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -16901,7 +16901,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 15241
+        "stars": 15242
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -17368,7 +17368,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 23958
+        "stars": 23968
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -17692,7 +17692,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 3137
+        "stars": 3139
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -18932,7 +18932,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 6175
+        "stars": 6176
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -19276,7 +19276,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 23514
+        "stars": 23519
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -19650,7 +19650,7 @@
       "parent": {
         "name": "needle-tools/md-browse",
         "url": "https://github.com/needle-tools/md-browse",
-        "stars": 228
+        "stars": 229
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -19876,7 +19876,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 32430
+        "stars": 32437
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -20338,7 +20338,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 9216
+        "stars": 9217
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -22254,7 +22254,7 @@
       "parent": {
         "name": "virattt/dexter",
         "url": "https://github.com/virattt/dexter",
-        "stars": 17676
+        "stars": 17677
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -23113,7 +23113,7 @@
       "parent": {
         "name": "Hawksight-AI/semantica",
         "url": "https://github.com/Hawksight-AI/semantica",
-        "stars": 798
+        "stars": 800
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -23359,7 +23359,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 101632
+        "stars": 101635
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -24640,7 +24640,7 @@
       "parent": {
         "name": "github/gh-aw",
         "url": "https://github.com/github/gh-aw",
-        "stars": 4050
+        "stars": 4051
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -25644,7 +25644,7 @@
       "parent": {
         "name": "winfunc/opcode",
         "url": "https://github.com/winfunc/opcode",
-        "stars": 20879
+        "stars": 20878
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -26426,7 +26426,7 @@
       "parent": {
         "name": "AtsushiSakai/PythonRobotics",
         "url": "https://github.com/AtsushiSakai/PythonRobotics",
-        "stars": 28832
+        "stars": 28831
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -26516,7 +26516,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 31829
+        "stars": 31832
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -27136,7 +27136,7 @@
       "parent": {
         "name": "poloclub/transformer-explainer",
         "url": "https://github.com/poloclub/transformer-explainer",
-        "stars": 6905
+        "stars": 6906
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -29007,7 +29007,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 30048
+        "stars": 30115
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -29396,7 +29396,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 126760
+        "stars": 126762
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -31774,7 +31774,7 @@
       "parent": {
         "name": "freelensapp/freelens",
         "url": "https://github.com/freelensapp/freelens",
-        "stars": 4705
+        "stars": 4706
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -31917,7 +31917,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 5978
+        "stars": 5979
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -32168,7 +32168,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 130257
+        "stars": 130261
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -32634,7 +32634,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15965
+        "stars": 15966
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -33419,7 +33419,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 9744
+        "stars": 9746
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -33685,7 +33685,7 @@
       "parent": {
         "name": "ln-dev7/square-ui",
         "url": "https://github.com/ln-dev7/square-ui",
-        "stars": 5024
+        "stars": 5026
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -34290,7 +34290,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7726
+        "stars": 7727
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -35181,7 +35181,7 @@
       "parent": {
         "name": "apify/crawlee",
         "url": "https://github.com/apify/crawlee",
-        "stars": 22235
+        "stars": 22236
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -37083,7 +37083,7 @@
       "parent": {
         "name": "vercel-labs/json-render",
         "url": "https://github.com/vercel-labs/json-render",
-        "stars": 12280
+        "stars": 12282
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -37323,7 +37323,7 @@
       "parent": {
         "name": "eigent-ai/eigent",
         "url": "https://github.com/eigent-ai/eigent",
-        "stars": 12937
+        "stars": 12938
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -38255,7 +38255,7 @@
       "parent": {
         "name": "supermemoryai/supermemory",
         "url": "https://github.com/supermemoryai/supermemory",
-        "stars": 16874
+        "stars": 16875
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -39262,7 +39262,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 18505
+        "stars": 18506
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -39377,7 +39377,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 120300
+        "stars": 120310
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -40776,7 +40776,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 29448
+        "stars": 29449
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -41129,7 +41129,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 20965
+        "stars": 20971
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -41259,7 +41259,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22767
+        "stars": 22768
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -41913,7 +41913,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 97635
+        "stars": 97638
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -43065,7 +43065,7 @@
       "parent": {
         "name": "Significant-Gravitas/AutoGPT",
         "url": "https://github.com/Significant-Gravitas/AutoGPT",
-        "stars": 182363
+        "stars": 182364
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
