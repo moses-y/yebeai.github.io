@@ -1,14 +1,75 @@
 {
-  "lastUpdated": "2026-03-13T19:55:11.163Z",
+  "lastUpdated": "2026-03-13T20:29:21.339Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 433,
+  "totalRepos": 434,
   "progress": {
     "aiGenerated": 433,
-    "fallback": 0,
+    "fallback": 1,
     "pending": 0,
     "complete": true
   },
   "forks": [
+    {
+      "id": 1181136091,
+      "name": "GH_AntiDebug_Bypass_Practice_Tool",
+      "displayName": "GH AntiDebug Bypass Practice Tool",
+      "description": "Guided Hacking's official tool to practice bypassing anti-debug techniques.",
+      "summary": "Practicing Anti-Debugging Bypass with GHAntiDebugBypassPracticeTool\n\nThe Problem\n\nIf you've ever tried to reverse engineer software, you know the pain: anti-debugging. Developers put these annoying little traps in their software to detect and block debugging attempts, and they can range from trivial to downright infuriating. The problem? If you want to get better at bypassing these techniques, you need a safe environment to practice them. That's where the GHAntiDebugBypassPracticeTool comes in—it’s a playground for reverse engineers to test their skills against common anti-debugging methods without bricking a live app or getting lost in the weeds.\n\nWhat This Does\n\nThis tool is a Windows application loaded with a buffet of anti-debugging techniques, all neatly implemented in src/Methods/. It's got the classics like IsDebuggerPresent and CheckRemoteDebuggerPresent (files like MethodIsDebuggerPresent.h) and more advanced tricks like SEHTrapFlag (MethodTrapFlag.h) and TimerDetection.h. The idea is simple: fire up the app, attach a debugger, and pick your poison. Each method is implemented as a function that gets plugged into the main loop via the AddMethod function in anti-debugging.cpp.\n\nThe project even makes it easy to extend. Want to add your own custom anti-debugging trick? Just drop a new .h file into the src/Methods/ folder, write a function that returns a bool (true if a debugger is detected), and register it in the AddControls function. Boom, your method is live.\n\nIt's all organized in a straightforward structure—src holds the code, resources has the images/icons, and the root directory carries the project files (anti-debugging.sln, .vcxproj) and some documentation. Nothing fancy, but it gets the job done.\n\nReal-World Use\n\nImagine you're reverse engineering a game and you hit a wall because some jerk dev decided to sprinkle IsDebuggerPresent checks everywhere. You could waste hours fumbling around in IDA or Ghidra trying to patch every single call, or you could fire up this tool, enable the IsDebuggerPresent method, and experiment with different bypass strategies in a controlled environment.\n\nFor example, you could patch the IsDebuggerPresent function in memory to always return false. Or you could experiment with breakpoint detection using the timing checks (TimerDetection.h). The tool’s modular design makes it easy to isolate and focus on specific techniques.\n\nThe Bottom Line\n\nThe GHAntiDebugBypassPractice_Tool is a solid sandbox for anyone diving into reverse engineering or game hacking. It's well-organized, extendable, and practical. Just don’t expect a polished product—this is a learning tool, not a commercial app. If you're scared of Visual Studio or C++, this might not be for you, but if you're serious about your debugging skills, give this a spin.",
+      "url": "https://github.com/moses-y/GH_AntiDebug_Bypass_Practice_Tool",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "guidedhacking/GH_AntiDebug_Bypass_Practice_Tool",
+        "url": "https://github.com/guidedhacking/GH_AntiDebug_Bypass_Practice_Tool",
+        "stars": 320
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 13, 2026",
+      "updatedAt": "March 13, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 53,
+        "directories": {
+          "(root)": 8,
+          "resources": 3,
+          "src": 42
+        },
+        "languages": {
+          "Markdown": 1,
+          "C++": 10,
+          "C/C++ Header": 29
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [],
+        "configFiles": [],
+        "dependencies": [],
+        "testFiles": [],
+        "docs": [
+          "LICENSE",
+          "README.md"
+        ],
+        "fileTypes": {
+          ".md": 1,
+          ".sln": 1,
+          ".vcxproj": 1,
+          ".filters": 1,
+          ".png": 2,
+          ".ico": 1,
+          ".bmp": 1,
+          ".cpp": 10,
+          ".h": 29,
+          ".hpp": 2,
+          ".rc": 1
+        }
+      }
+    },
     {
       "id": 1180971778,
       "name": "qmd",
@@ -23,7 +84,7 @@
       "parent": {
         "name": "tobi/qmd",
         "url": "https://github.com/tobi/qmd",
-        "stars": 15124
+        "stars": 15128
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -245,7 +306,7 @@
       "parent": {
         "name": "googleworkspace/cli",
         "url": "https://github.com/googleworkspace/cli",
-        "stars": 19933
+        "stars": 19938
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -333,20 +394,20 @@
       }
     },
     {
-      "id": 1181136091,
-      "name": "GH_AntiDebug_Bypass_Practice_Tool",
-      "displayName": "GH AntiDebug Bypass Practice Tool",
-      "description": "Guided Hacking's official tool to practice bypassing anti-debug techniques.",
-      "summary": "Practicing Anti-Debugging Bypass with GHAntiDebugBypassPracticeTool\n\nThe Problem\n\nIf you've ever tried to reverse engineer software, you know the pain: anti-debugging. Developers put these annoying little traps in their software to detect and block debugging attempts, and they can range from trivial to downright infuriating. The problem? If you want to get better at bypassing these techniques, you need a safe environment to practice them. That's where the GHAntiDebugBypassPracticeTool comes in—it’s a playground for reverse engineers to test their skills against common anti-debugging methods without bricking a live app or getting lost in the weeds.\n\nWhat This Does\n\nThis tool is a Windows application loaded with a buffet of anti-debugging techniques, all neatly implemented in src/Methods/. It's got the classics like IsDebuggerPresent and CheckRemoteDebuggerPresent (files like MethodIsDebuggerPresent.h) and more advanced tricks like SEHTrapFlag (MethodTrapFlag.h) and TimerDetection.h. The idea is simple: fire up the app, attach a debugger, and pick your poison. Each method is implemented as a function that gets plugged into the main loop via the AddMethod function in anti-debugging.cpp.\n\nThe project even makes it easy to extend. Want to add your own custom anti-debugging trick? Just drop a new .h file into the src/Methods/ folder, write a function that returns a bool (true if a debugger is detected), and register it in the AddControls function. Boom, your method is live.\n\nIt's all organized in a straightforward structure—src holds the code, resources has the images/icons, and the root directory carries the project files (anti-debugging.sln, .vcxproj) and some documentation. Nothing fancy, but it gets the job done.\n\nReal-World Use\n\nImagine you're reverse engineering a game and you hit a wall because some jerk dev decided to sprinkle IsDebuggerPresent checks everywhere. You could waste hours fumbling around in IDA or Ghidra trying to patch every single call, or you could fire up this tool, enable the IsDebuggerPresent method, and experiment with different bypass strategies in a controlled environment.\n\nFor example, you could patch the IsDebuggerPresent function in memory to always return false. Or you could experiment with breakpoint detection using the timing checks (TimerDetection.h). The tool’s modular design makes it easy to isolate and focus on specific techniques.\n\nThe Bottom Line\n\nThe GHAntiDebugBypassPractice_Tool is a solid sandbox for anyone diving into reverse engineering or game hacking. It's well-organized, extendable, and practical. Just don’t expect a polished product—this is a learning tool, not a commercial app. If you're scared of Visual Studio or C++, this might not be for you, but if you're serious about your debugging skills, give this a spin.",
-      "url": "https://github.com/moses-y/GH_AntiDebug_Bypass_Practice_Tool",
+      "id": 1181159734,
+      "name": "cashclaw",
+      "displayName": "cashclaw",
+      "description": "An autonomous agent that takes work, does work, gets paid, and gets better at it.",
+      "summary": "The Problem\n\nFreelancers and gig workers spend a ton of time managing repetitive tasks: finding gigs, bidding, negotiating, delivering work, and chasing payment. Multiply that by dozens of clients, and suddenly half your day is admin hell. If you're into automation, you’ve probably dreamed of a bot that just handles the grind while you focus on the creative stuff. Enter cashclaw.\n\nWhat This Does\n\ncashclaw is an autonomous agent that handles your freelance gigs like a robotic personal assistant. It connects to the moltlaunch marketplace, scans for tasks, evaluates the scope, submits bids, completes the work using an LLM, collects feedback, and even gets smarter over time. The main brain lives in src/loop/index.ts, a multi-turn loop that uses tools to interact with tasks (e.g., quotetask, submitwork) and improve itself via feedback (src/memory/feedback.ts).\n\nOut of the box, it spins up a React-based dashboard (src/ui) on http://localhost:3777 where you can configure your wallet (src/ui/pages/setup/WalletStep.tsx), register your agent, and connect your LLM of choice (Anthropic, OpenAI, or OpenRouter). The rest of the heavy lifting happens in the background: WebSocket listeners (see src/heartbeat.ts) watch for new tasks, while study sessions (src/loop/study.ts) update the agent’s knowledge base between gigs.\n\nIf you’re not into moltlaunch, don’t worry. The README straight-up encourages you to rip out the marketplace integration (src/moltlaunch) and wire the agent to your own clients. It's just Node.js and TypeScript—hack away.\n\nReal-World Use\n\nLet’s say you’re a designer. You configure cashclaw with your skill set, preferred rates, and an OpenAI API key. Once connected to Moltlaunch, it starts watching for design tasks. A new logo design gig pops up, and the agent evaluates the requirements using its LLM via the src/llm/index.ts module. It calculates a price, submits a quote with quote_task, and—if the client accepts—fires up the multi-turn agent loop to generate drafts, message the client, and refine the work. When the task is done, it collects client feedback, stores it in src/memory/feedback.ts, and runs a study session (src/loop/study.ts) to improve its future performance.\n\nThe Bottom Line\n\ncashclaw is slick as hell for automating repetitive freelance work, especially if you’re already deep in the LLM and crypto rabbit holes. But let’s be real: this thing isn’t for casual users. You’ll need to know your way around TypeScript, LLM APIs, and possibly Moltlaunch's ecosystem to get the most out of it. If that’s your jam, though, this could be a game-changer for solo hustlers. If not, keep grinding—or hire someone to set it up for you.",
+      "url": "https://github.com/moses-y/cashclaw",
       "language": null,
       "stars": 0,
       "forks": 0,
       "topics": [],
       "parent": {
-        "name": "guidedhacking/GH_AntiDebug_Bypass_Practice_Tool",
-        "url": "https://github.com/guidedhacking/GH_AntiDebug_Bypass_Practice_Tool",
-        "stars": 320
+        "name": "moltlaunch/cashclaw",
+        "url": "https://github.com/moltlaunch/cashclaw",
+        "stars": 61
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -354,42 +415,62 @@
       "updatedAt": "March 13, 2026",
       "readTime": 3,
       "knowledgeGraph": {
-        "totalFiles": 53,
+        "totalFiles": 49,
         "directories": {
-          "(root)": 8,
-          "resources": 3,
-          "src": 42
+          "(root)": 9,
+          "assets": 3,
+          "src": 36,
+          "test": 1
         },
         "languages": {
           "Markdown": 1,
-          "C++": 10,
-          "C/C++ Header": 29
+          "JSON": 3,
+          "TypeScript": 27,
+          "TSX": 11,
+          "CSS": 1,
+          "HTML": 1
         },
-        "frameworks": [],
-        "packageManager": null,
+        "frameworks": [
+          "React"
+        ],
+        "packageManager": "npm",
         "hasDocker": false,
         "hasCI": false,
         "ciPlatform": null,
-        "entryPoints": [],
-        "configFiles": [],
-        "dependencies": [],
-        "testFiles": [],
+        "entryPoints": [
+          "src/index.ts",
+          "src/llm/index.ts",
+          "src/loop/index.ts",
+          "src/moltlaunch/cli.ts",
+          "src/ui/App.tsx",
+          "src/ui/index.html"
+        ],
+        "configFiles": [
+          "package.json",
+          "tsconfig.json",
+          "vite.config.ts"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json"
+        ],
+        "testFiles": [
+          "src/ui/pages/setup/SpecializationStep.tsx",
+          "test/loop.test.ts",
+          "vitest.config.ts"
+        ],
         "docs": [
           "LICENSE",
           "README.md"
         ],
         "fileTypes": {
           ".md": 1,
-          ".sln": 1,
-          ".vcxproj": 1,
-          ".filters": 1,
-          ".png": 2,
-          ".ico": 1,
-          ".bmp": 1,
-          ".cpp": 10,
-          ".h": 29,
-          ".hpp": 2,
-          ".rc": 1
+          ".png": 3,
+          ".json": 3,
+          ".ts": 27,
+          ".tsx": 11,
+          ".css": 1,
+          ".html": 1
         }
       }
     },
@@ -847,7 +928,7 @@
       "parent": {
         "name": "openai/symphony",
         "url": "https://github.com/openai/symphony",
-        "stars": 12206
+        "stars": 12210
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -962,7 +1043,7 @@
       "parent": {
         "name": "dimensionalOS/dimos",
         "url": "https://github.com/dimensionalOS/dimos",
-        "stars": 662
+        "stars": 664
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1968,7 +2049,7 @@
       "parent": {
         "name": "wimpysworld/ia-get",
         "url": "https://github.com/wimpysworld/ia-get",
-        "stars": 225
+        "stars": 226
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2325,7 +2406,7 @@
       "parent": {
         "name": "kite-org/kite",
         "url": "https://github.com/kite-org/kite",
-        "stars": 2361
+        "stars": 2362
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -2696,7 +2777,7 @@
       "parent": {
         "name": "MemMachine/MemMachine",
         "url": "https://github.com/MemMachine/MemMachine",
-        "stars": 4848
+        "stars": 4849
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3239,7 +3320,7 @@
       "parent": {
         "name": "Intent-Lab/VisionClaw",
         "url": "https://github.com/Intent-Lab/VisionClaw",
-        "stars": 1602
+        "stars": 1603
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3306,7 +3387,7 @@
       "parent": {
         "name": "bytedance/deer-flow",
         "url": "https://github.com/bytedance/deer-flow",
-        "stars": 30212
+        "stars": 30216
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3439,7 +3520,7 @@
       "parent": {
         "name": "affaan-m/everything-claude-code",
         "url": "https://github.com/affaan-m/everything-claude-code",
-        "stars": 74637
+        "stars": 74646
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3773,7 +3854,7 @@
       "parent": {
         "name": "public-apis/public-apis",
         "url": "https://github.com/public-apis/public-apis",
-        "stars": 409255
+        "stars": 409286
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -3842,7 +3923,7 @@
       "parent": {
         "name": "SimoneAvogadro/android-reverse-engineering-skill",
         "url": "https://github.com/SimoneAvogadro/android-reverse-engineering-skill",
-        "stars": 921
+        "stars": 922
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4075,7 +4156,7 @@
       "parent": {
         "name": "jayin92/Skyfall-GS",
         "url": "https://github.com/jayin92/Skyfall-GS",
-        "stars": 759
+        "stars": 760
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4153,7 +4234,7 @@
       "parent": {
         "name": "karpathy/autoresearch",
         "url": "https://github.com/karpathy/autoresearch",
-        "stars": 31173
+        "stars": 31226
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4741,7 +4822,7 @@
       "parent": {
         "name": "nearai/ironclaw",
         "url": "https://github.com/nearai/ironclaw",
-        "stars": 9892
+        "stars": 9893
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -4876,7 +4957,7 @@
       "parent": {
         "name": "shiahonb777/web-to-app",
         "url": "https://github.com/shiahonb777/web-to-app",
-        "stars": 1546
+        "stars": 1547
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5446,7 +5527,7 @@
       "parent": {
         "name": "avinash201199/founders-kit",
         "url": "https://github.com/avinash201199/founders-kit",
-        "stars": 1001
+        "stars": 1003
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5549,7 +5630,7 @@
       "parent": {
         "name": "drawdb-io/drawdb",
         "url": "https://github.com/drawdb-io/drawdb",
-        "stars": 36881
+        "stars": 36882
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -6022,7 +6103,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 22185
+        "stars": 22201
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -6469,7 +6550,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 202335
+        "stars": 202336
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -6537,7 +6618,7 @@
       "parent": {
         "name": "microsoft/vscode",
         "url": "https://github.com/microsoft/vscode",
-        "stars": 182605
+        "stars": 182607
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6668,7 +6749,7 @@
       "parent": {
         "name": "dbt-labs/dbt-agent-skills",
         "url": "https://github.com/dbt-labs/dbt-agent-skills",
-        "stars": 270
+        "stars": 271
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7009,7 +7090,7 @@
       "parent": {
         "name": "ItzCrazyKns/Vane",
         "url": "https://github.com/ItzCrazyKns/Vane",
-        "stars": 32898
+        "stars": 32900
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7589,7 +7670,7 @@
       "parent": {
         "name": "rishikanthc/Scriberr",
         "url": "https://github.com/rishikanthc/Scriberr",
-        "stars": 2430
+        "stars": 2431
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -7919,7 +8000,7 @@
       "parent": {
         "name": "maderix/ANE",
         "url": "https://github.com/maderix/ANE",
-        "stars": 6158
+        "stars": 6160
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8066,7 +8147,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 13655
+        "stars": 13658
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8286,7 +8367,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 14168
+        "stars": 14171
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9063,7 +9144,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 4288
+        "stars": 4290
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9294,7 +9375,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 12479
+        "stars": 12485
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9566,7 +9647,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 38970
+        "stars": 38971
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -10635,7 +10716,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 22374
+        "stars": 22386
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -10789,7 +10870,7 @@
       "parent": {
         "name": "RunMaestro/Maestro",
         "url": "https://github.com/RunMaestro/Maestro",
-        "stars": 2480
+        "stars": 2481
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -11460,7 +11541,7 @@
       "parent": {
         "name": "HKUDS/ClawWork",
         "url": "https://github.com/HKUDS/ClawWork",
-        "stars": 7151
+        "stars": 7152
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -12283,7 +12364,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 310494
+        "stars": 310523
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -13727,7 +13808,7 @@
       "parent": {
         "name": "alichherawalla/off-grid-mobile-ai",
         "url": "https://github.com/alichherawalla/off-grid-mobile-ai",
-        "stars": 968
+        "stars": 969
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -14004,7 +14085,7 @@
       "parent": {
         "name": "freemocap/freemocap",
         "url": "https://github.com/freemocap/freemocap",
-        "stars": 6144
+        "stars": 6145
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -14489,7 +14570,7 @@
       "parent": {
         "name": "spacedriveapp/spacebot",
         "url": "https://github.com/spacedriveapp/spacebot",
-        "stars": 1753
+        "stars": 1755
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -14682,7 +14763,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 7421
+        "stars": 7429
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -14749,7 +14830,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 6471
+        "stars": 6472
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15393,7 +15474,7 @@
       "parent": {
         "name": "PurpleAILAB/Decepticon",
         "url": "https://github.com/PurpleAILAB/Decepticon",
-        "stars": 906
+        "stars": 908
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -15459,7 +15540,7 @@
       "parent": {
         "name": "openai/codex",
         "url": "https://github.com/openai/codex",
-        "stars": 65100
+        "stars": 65101
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15535,7 +15616,7 @@
       "parent": {
         "name": "MemTensor/MemOS",
         "url": "https://github.com/MemTensor/MemOS",
-        "stars": 6827
+        "stars": 6828
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -15731,7 +15812,7 @@
       "parent": {
         "name": "breaking-brake/cc-wf-studio",
         "url": "https://github.com/breaking-brake/cc-wf-studio",
-        "stars": 4468
+        "stars": 4469
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -16713,7 +16794,7 @@
       "parent": {
         "name": "Serial-Studio/Serial-Studio",
         "url": "https://github.com/Serial-Studio/Serial-Studio",
-        "stars": 6693
+        "stars": 6692
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -17151,7 +17232,7 @@
       "parent": {
         "name": "crowdsecurity/crowdsec",
         "url": "https://github.com/crowdsecurity/crowdsec",
-        "stars": 12768
+        "stars": 12769
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -17374,7 +17455,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 36151
+        "stars": 36158
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -17449,7 +17530,7 @@
       "parent": {
         "name": "langfuse/langfuse",
         "url": "https://github.com/langfuse/langfuse",
-        "stars": 23126
+        "stars": 23127
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -18434,7 +18515,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 24519
+        "stars": 24522
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -18758,7 +18839,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 3218
+        "stars": 3219
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -19388,7 +19469,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 34682
+        "stars": 34681
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -19509,7 +19590,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 10076
+        "stars": 10079
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -19784,7 +19865,7 @@
       "parent": {
         "name": "BrowserOperator/browser-operator-core",
         "url": "https://github.com/BrowserOperator/browser-operator-core",
-        "stars": 469
+        "stars": 470
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -19998,7 +20079,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 6226
+        "stars": 6227
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -20342,7 +20423,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 24395
+        "stars": 24398
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -20942,7 +21023,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 33213
+        "stars": 33217
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -21181,7 +21262,7 @@
       "parent": {
         "name": "ComposioHQ/composio",
         "url": "https://github.com/ComposioHQ/composio",
-        "stars": 27360
+        "stars": 27361
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -21404,7 +21485,7 @@
       "parent": {
         "name": "Arindam200/awesome-ai-apps",
         "url": "https://github.com/Arindam200/awesome-ai-apps",
-        "stars": 9226
+        "stars": 9227
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -21976,7 +22057,7 @@
       "parent": {
         "name": "PrimeIntellect-ai/verifiers",
         "url": "https://github.com/PrimeIntellect-ai/verifiers",
-        "stars": 3898
+        "stars": 3899
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80",
@@ -22335,7 +22416,7 @@
       "parent": {
         "name": "OpenBMB/VoxCPM",
         "url": "https://github.com/OpenBMB/VoxCPM",
-        "stars": 6124
+        "stars": 6125
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -24425,7 +24506,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 101954
+        "stars": 101957
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -26195,7 +26276,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44792
+        "stars": 44793
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -27656,7 +27737,7 @@
       "parent": {
         "name": "0xSojalSec/airllm",
         "url": "https://github.com/0xSojalSec/airllm",
-        "stars": 2707
+        "stars": 2706
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -28728,7 +28809,7 @@
       "parent": {
         "name": "reconurge/flowsint",
         "url": "https://github.com/reconurge/flowsint",
-        "stars": 2640
+        "stars": 2639
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -29054,7 +29135,7 @@
       "parent": {
         "name": "xenodium/agent-shell",
         "url": "https://github.com/xenodium/agent-shell",
-        "stars": 842
+        "stars": 843
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -30073,7 +30154,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 33735
+        "stars": 33763
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -30462,7 +30543,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 127051
+        "stars": 127053
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -30557,7 +30638,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 7362
+        "stars": 7363
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -32840,7 +32921,7 @@
       "parent": {
         "name": "freelensapp/freelens",
         "url": "https://github.com/freelensapp/freelens",
-        "stars": 4726
+        "stars": 4727
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -32983,7 +33064,7 @@
       "parent": {
         "name": "tonyantony300/alt-sendme",
         "url": "https://github.com/tonyantony300/alt-sendme",
-        "stars": 6031
+        "stars": 6032
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -33234,7 +33315,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 130735
+        "stars": 130747
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -33700,7 +33781,7 @@
       "parent": {
         "name": "xai-org/x-algorithm",
         "url": "https://github.com/xai-org/x-algorithm",
-        "stars": 15991
+        "stars": 15993
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -33848,7 +33929,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 11936
+        "stars": 11938
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -34177,7 +34258,7 @@
       "parent": {
         "name": "EthanLipnik/MirageKit",
         "url": "https://github.com/EthanLipnik/MirageKit",
-        "stars": 515
+        "stars": 516
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -34485,7 +34566,7 @@
       "parent": {
         "name": "danielmiessler/Personal_AI_Infrastructure",
         "url": "https://github.com/danielmiessler/Personal_AI_Infrastructure",
-        "stars": 9853
+        "stars": 9854
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -35356,7 +35437,7 @@
       "parent": {
         "name": "github/copilot-sdk",
         "url": "https://github.com/github/copilot-sdk",
-        "stars": 7795
+        "stars": 7796
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -35714,7 +35795,7 @@
       "parent": {
         "name": "toon-format/toon",
         "url": "https://github.com/toon-format/toon",
-        "stars": 23222
+        "stars": 23223
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=400&fit=crop&q=80",
@@ -40328,7 +40409,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 18696
+        "stars": 18697
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -40443,7 +40524,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 121584
+        "stars": 121596
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -42195,7 +42276,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 21647
+        "stars": 21655
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -42325,7 +42406,7 @@
       "parent": {
         "name": "vercel-labs/agent-skills",
         "url": "https://github.com/vercel-labs/agent-skills",
-        "stars": 22940
+        "stars": 22941
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -42979,7 +43060,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 97827
+        "stars": 97831
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
