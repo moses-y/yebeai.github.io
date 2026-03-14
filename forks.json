@@ -1,260 +1,14 @@
 {
-  "lastUpdated": "2026-03-14T21:22:40.171Z",
+  "lastUpdated": "2026-03-14T21:48:54.118Z",
   "generatedWith": "GitHub Models API (GPT-4o, GPT-4o-mini, GPT-4.1)",
-  "totalRepos": 438,
+  "totalRepos": 439,
   "progress": {
-    "aiGenerated": 438,
+    "aiGenerated": 439,
     "fallback": 0,
     "pending": 0,
     "complete": true
   },
   "forks": [
-    {
-      "id": 1181479019,
-      "name": "hermes-agent",
-      "displayName": "hermes agent",
-      "description": "The agent that grows with you",
-      "summary": "The Problem\nManaging AI agents that can learn and adapt over time is a headache. You want an agent that grows with your needs, but most solutions either lock you into a specific platform or require constant manual intervention. If you're tired of babysitting your bots, you need something that self-improves and keeps pace with your workflow.\n\nWhat This Does\nEnter the hermes-agent. This bad boy allows you to run a self-improving AI agent across various platforms like Telegram, Discord, and Slack, all managed through a single gateway process. The gateway folder contains the core logic for communication across these channels, while the agent directory holds all the heavy lifting for skill creation, context management, and session handling.\n\nThe built-in learning loop is a standout feature. It creates skills from experience and nudges itself to retain knowledge. Check out acp_adapter for the adapters that connect your agent's brain to different APIs and tools. The cron folder even handles scheduled tasks, automating daily reports or backups without your intervention.\n\nReal-World Use\nImagine you want to automate daily status reports in Slack and track user interactions over time. You can set up your cron/jobs.py to run a job that pulls data and sends messages. A simple command like hermes report can trigger a skill that compiles the necessary information, leveraging the agent's memory to ensure it uses the most relevant data. If you need to adjust the reporting frequency, just tweak the YAML config in cli-config.yaml.example.\n\nThe Bottom Line\nhermes-agent is a solid choice for anyone looking to build a scalable AI assistant without the usual vendor lock-in. The combination of a full terminal interface, multi-platform support, and self-improving capabilities is impressive for a project still gaining traction. However, if you’re just looking for a simple bot to handle basic tasks, this might feel like overkill. Save it for when your needs evolve beyond the ordinary.",
-      "url": "https://github.com/moses-y/hermes-agent",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "NousResearch/hermes-agent",
-        "url": "https://github.com/NousResearch/hermes-agent",
-        "stars": 7097
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 14, 2026",
-      "updatedAt": "March 14, 2026",
-      "readTime": 2,
-      "knowledgeGraph": {
-        "totalFiles": 200,
-        "directories": {
-          "(root)": 24,
-          ".github": 7,
-          ".plans": 2,
-          "acp_adapter": 9,
-          "acp_registry": 2,
-          "agent": 12,
-          "assets": 1,
-          "cron": 3,
-          "datagen-config-examples": 4,
-          "docs": 5,
-          "environments": 43,
-          "gateway": 21,
-          "hermes_cli": 26,
-          "honcho_integration": 4,
-          "landingpage": 11,
-          "optional-skills": 19,
-          "plans": 1,
-          "scripts": 6
-        },
-        "languages": {
-          "YAML": 16,
-          "Markdown": 32,
-          "Python": 117,
-          "JSON": 3,
-          "Shell": 6,
-          "HTML": 2,
-          "JavaScript": 1,
-          "CSS": 1,
-          "TOML": 1
-        },
-        "frameworks": [
-          "React",
-          "Flask"
-        ],
-        "packageManager": "pip",
-        "hasDocker": false,
-        "hasCI": true,
-        "ciPlatform": "GitHub Actions",
-        "entryPoints": [
-          "acp_adapter/__main__.py",
-          "acp_adapter/server.py",
-          "cli.py",
-          "hermes_cli/main.py",
-          "hermes_cli/setup.py",
-          "honcho_integration/cli.py",
-          "landingpage/index.html"
-        ],
-        "configFiles": [
-          ".env.example",
-          "hermes_cli/setup.py",
-          "package.json",
-          "pyproject.toml",
-          "requirements.txt"
-        ],
-        "dependencies": [
-          "package-lock.json",
-          "package.json",
-          "pyproject.toml",
-          "requirements.txt"
-        ],
-        "testFiles": [
-          ".github/workflows/tests.yml",
-          "docs/honcho-integration-spec.html",
-          "docs/honcho-integration-spec.md",
-          "environments/terminal_test_env/__init__.py",
-          "environments/terminal_test_env/default.yaml",
-          "environments/terminal_test_env/terminal_test_env.py"
-        ],
-        "docs": [
-          "CONTRIBUTING.md",
-          "LICENSE",
-          "README.md",
-          "docs/acp-setup.md",
-          "docs/honcho-integration-spec.html",
-          "docs/honcho-integration-spec.md",
-          "docs/migration/openclaw.md",
-          "docs/skins/example-skin.yaml",
-          "environments/README.md",
-          "environments/benchmarks/tblite/README.md",
-          "environments/benchmarks/yc_bench/README.md"
-        ],
-        "fileTypes": {
-          ".example": 2,
-          ".yml": 6,
-          ".md": 32,
-          ".py": 117,
-          ".json": 3,
-          ".svg": 1,
-          ".png": 8,
-          ".jsonl": 1,
-          ".sh": 6,
-          ".yaml": 10,
-          ".html": 2,
-          ".ico": 1,
-          ".js": 1,
-          ".css": 1,
-          ".toml": 1,
-          ".txt": 1,
-          ".cmd": 1,
-          ".ps1": 1
-        }
-      }
-    },
-    {
-      "id": 1181429877,
-      "name": "ssheasy",
-      "displayName": "ssheasy",
-      "description": "ssh, sftp client running in the browser powered by golang and wasm",
-      "summary": "Building an SSH and SFTP Client in the Browser with ssheasy\n\nThe Problem\n\nSetting up SSH and SFTP access can be a pain, especially when you're not on your own machine. Installing a terminal client, configuring keys, and managing credentials can be a hassle. And if you're on a locked-down machine (hello, corporate laptops), you're out of luck. Wouldn't it be easier if you could just fire up a browser and connect to your remote machines directly?\n\nWhat This Does\n\nssheasy is an SSH and SFTP client that runs entirely in your browser. It's built using Go and WebAssembly (WASM), with a React frontend and a golang backend. The project marries a web/ directory full of TypeScript and Angular-filemanager hacks with a proxy/ written in Go to tunnel TCP connections through WebSockets.\n\nThe real magic happens in web/main.go, where the WASM-based SSH/SFTP client is implemented. This bad boy handles the heavy lifting of SSH connections, while the proxy/main.go Go server does the dirty work of translating WebSocket traffic into actual SSH commands. There's also an nginx/ directory that helps serve the frontend and route traffic properly.\n\nBonus points for including monitoring out of the box with Prometheus and Grafana dashboards (grafana/provisioning/dashboards/proxy.json). It’s like DevOps-lite for your browser-based SSH client.\n\nReal-World Use\n\nLet’s say you’re on a Chromebook at a coffee shop. You need to SSH into a server but don’t have a terminal client handy because, well, it’s a Chromebook. No problem—just spin up the Docker stack (docker-compose up), point your browser to http://localhost:8080, and use the /connect endpoint to log into your server. For example:\n\nWant to test it locally? The docker-compose.yaml spins up an sshd container for testing. Use the host testssh with root/root credentials. There's even WebAuthn support for key-based authentication, which is a nice touch if you're into modern security practices.\n\nFile management? That’s covered too. The project includes a Frankenstein version of angular-filemanager (check web/html/node_modules/angular-filemanager). It’s been hacked to replace backend API calls with the WASM SFTP client, so you can manage remote files directly in the browser.\n\nThe Bottom Line\n\nssheasy is a niche but clever tool. If you’re in a pinch and need SSH/SFTP from a browser, it gets the job done. The tech stack is over-engineered for what it does (React + Go + WASM + Docker + Prometheus + Grafana for an SSH client? Really?), but if you’re into tinkering with modern tools, this repo is worth a look. Just don’t expect polished docs or robust testing—it’s very much a DIY playground.",
-      "url": "https://github.com/moses-y/ssheasy",
-      "language": null,
-      "stars": 0,
-      "forks": 0,
-      "topics": [],
-      "parent": {
-        "name": "hullarb/ssheasy",
-        "url": "https://github.com/hullarb/ssheasy",
-        "stars": 376
-      },
-      "type": "fork",
-      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
-      "forkedAt": "March 14, 2026",
-      "updatedAt": "March 14, 2026",
-      "readTime": 3,
-      "knowledgeGraph": {
-        "totalFiles": 179,
-        "directories": {
-          "(root)": 4,
-          "doc": 1,
-          "grafana": 1,
-          "nginx": 2,
-          "prometheus": 1,
-          "proxy": 7,
-          "ssh_conf": 2,
-          "web": 161
-        },
-        "languages": {
-          "Markdown": 6,
-          "YAML": 2,
-          "JSON": 7,
-          "Go": 8,
-          "Shell": 1,
-          "HTML": 3,
-          "JavaScript": 13,
-          "TypeScript": 109,
-          "CSS": 3
-        },
-        "frameworks": [
-          "React",
-          "Docker"
-        ],
-        "packageManager": "go modules",
-        "hasDocker": true,
-        "hasCI": false,
-        "ciPlatform": null,
-        "entryPoints": [
-          "proxy/main.go",
-          "web/html/index.html",
-          "web/main.go"
-        ],
-        "configFiles": [
-          "docker-compose.yaml",
-          "nginx/Dockerfile",
-          "proxy/Dockerfile",
-          "proxy/go.mod",
-          "web/go.mod",
-          "web/html/node_modules/@xterm/addon-fit/package.json",
-          "web/html/node_modules/@xterm/addon-search/package.json",
-          "web/html/node_modules/@xterm/addon-serialize/package.json",
-          "web/html/node_modules/@xterm/addon-web-links/package.json",
-          "web/html/node_modules/@xterm/xterm/package.json"
-        ],
-        "dependencies": [
-          "proxy/go.mod",
-          "web/go.mod",
-          "web/html/node_modules/@xterm/addon-fit/package.json",
-          "web/html/node_modules/@xterm/addon-search/package.json",
-          "web/html/node_modules/@xterm/addon-serialize/package.json",
-          "web/html/node_modules/@xterm/addon-web-links/package.json",
-          "web/html/node_modules/@xterm/xterm/package.json"
-        ],
-        "testFiles": [
-          "proxy/main_test.go"
-        ],
-        "docs": [
-          "LICENSE",
-          "README.md",
-          "doc/tunnel.gif",
-          "web/html/node_modules/@xterm/addon-fit/LICENSE",
-          "web/html/node_modules/@xterm/addon-fit/README.md",
-          "web/html/node_modules/@xterm/addon-search/LICENSE",
-          "web/html/node_modules/@xterm/addon-search/README.md",
-          "web/html/node_modules/@xterm/addon-serialize/README.md",
-          "web/html/node_modules/@xterm/addon-web-links/LICENSE",
-          "web/html/node_modules/@xterm/addon-web-links/README.md",
-          "web/html/node_modules/@xterm/xterm/LICENSE",
-          "web/html/node_modules/@xterm/xterm/README.md"
-        ],
-        "fileTypes": {
-          ".md": 6,
-          ".gif": 1,
-          ".yaml": 1,
-          ".json": 7,
-          ".conf": 1,
-          ".yml": 1,
-          ".go": 8,
-          ".mod": 2,
-          ".sum": 2,
-          ".sh": 1,
-          ".html": 3,
-          ".js": 13,
-          ".map": 5,
-          ".ts": 109,
-          ".css": 3,
-          ".eot": 1,
-          ".svg": 1,
-          ".ttf": 1,
-          ".woff": 1,
-          ".woff2": 1
-        }
-      }
-    },
     {
       "id": 1181956884,
       "name": "openrouteservice",
@@ -269,7 +23,7 @@
       "parent": {
         "name": "GIScience/openrouteservice",
         "url": "https://github.com/GIScience/openrouteservice",
-        "stars": 1841
+        "stars": 1844
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -588,6 +342,324 @@
       }
     },
     {
+      "id": 1181479019,
+      "name": "hermes-agent",
+      "displayName": "hermes agent",
+      "description": "The agent that grows with you",
+      "summary": "The Problem\nManaging AI agents that can learn and adapt over time is a headache. You want an agent that grows with your needs, but most solutions either lock you into a specific platform or require constant manual intervention. If you're tired of babysitting your bots, you need something that self-improves and keeps pace with your workflow.\n\nWhat This Does\nEnter the hermes-agent. This bad boy allows you to run a self-improving AI agent across various platforms like Telegram, Discord, and Slack, all managed through a single gateway process. The gateway folder contains the core logic for communication across these channels, while the agent directory holds all the heavy lifting for skill creation, context management, and session handling.\n\nThe built-in learning loop is a standout feature. It creates skills from experience and nudges itself to retain knowledge. Check out acp_adapter for the adapters that connect your agent's brain to different APIs and tools. The cron folder even handles scheduled tasks, automating daily reports or backups without your intervention.\n\nReal-World Use\nImagine you want to automate daily status reports in Slack and track user interactions over time. You can set up your cron/jobs.py to run a job that pulls data and sends messages. A simple command like hermes report can trigger a skill that compiles the necessary information, leveraging the agent's memory to ensure it uses the most relevant data. If you need to adjust the reporting frequency, just tweak the YAML config in cli-config.yaml.example.\n\nThe Bottom Line\nhermes-agent is a solid choice for anyone looking to build a scalable AI assistant without the usual vendor lock-in. The combination of a full terminal interface, multi-platform support, and self-improving capabilities is impressive for a project still gaining traction. However, if you’re just looking for a simple bot to handle basic tasks, this might feel like overkill. Save it for when your needs evolve beyond the ordinary.",
+      "url": "https://github.com/moses-y/hermes-agent",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "NousResearch/hermes-agent",
+        "url": "https://github.com/NousResearch/hermes-agent",
+        "stars": 7102
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 14, 2026",
+      "updatedAt": "March 14, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 200,
+        "directories": {
+          "(root)": 24,
+          ".github": 7,
+          ".plans": 2,
+          "acp_adapter": 9,
+          "acp_registry": 2,
+          "agent": 12,
+          "assets": 1,
+          "cron": 3,
+          "datagen-config-examples": 4,
+          "docs": 5,
+          "environments": 43,
+          "gateway": 21,
+          "hermes_cli": 26,
+          "honcho_integration": 4,
+          "landingpage": 11,
+          "optional-skills": 19,
+          "plans": 1,
+          "scripts": 6
+        },
+        "languages": {
+          "YAML": 16,
+          "Markdown": 32,
+          "Python": 117,
+          "JSON": 3,
+          "Shell": 6,
+          "HTML": 2,
+          "JavaScript": 1,
+          "CSS": 1,
+          "TOML": 1
+        },
+        "frameworks": [
+          "React",
+          "Flask"
+        ],
+        "packageManager": "pip",
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [
+          "acp_adapter/__main__.py",
+          "acp_adapter/server.py",
+          "cli.py",
+          "hermes_cli/main.py",
+          "hermes_cli/setup.py",
+          "honcho_integration/cli.py",
+          "landingpage/index.html"
+        ],
+        "configFiles": [
+          ".env.example",
+          "hermes_cli/setup.py",
+          "package.json",
+          "pyproject.toml",
+          "requirements.txt"
+        ],
+        "dependencies": [
+          "package-lock.json",
+          "package.json",
+          "pyproject.toml",
+          "requirements.txt"
+        ],
+        "testFiles": [
+          ".github/workflows/tests.yml",
+          "docs/honcho-integration-spec.html",
+          "docs/honcho-integration-spec.md",
+          "environments/terminal_test_env/__init__.py",
+          "environments/terminal_test_env/default.yaml",
+          "environments/terminal_test_env/terminal_test_env.py"
+        ],
+        "docs": [
+          "CONTRIBUTING.md",
+          "LICENSE",
+          "README.md",
+          "docs/acp-setup.md",
+          "docs/honcho-integration-spec.html",
+          "docs/honcho-integration-spec.md",
+          "docs/migration/openclaw.md",
+          "docs/skins/example-skin.yaml",
+          "environments/README.md",
+          "environments/benchmarks/tblite/README.md",
+          "environments/benchmarks/yc_bench/README.md"
+        ],
+        "fileTypes": {
+          ".example": 2,
+          ".yml": 6,
+          ".md": 32,
+          ".py": 117,
+          ".json": 3,
+          ".svg": 1,
+          ".png": 8,
+          ".jsonl": 1,
+          ".sh": 6,
+          ".yaml": 10,
+          ".html": 2,
+          ".ico": 1,
+          ".js": 1,
+          ".css": 1,
+          ".toml": 1,
+          ".txt": 1,
+          ".cmd": 1,
+          ".ps1": 1
+        }
+      }
+    },
+    {
+      "id": 1181429877,
+      "name": "ssheasy",
+      "displayName": "ssheasy",
+      "description": "ssh, sftp client running in the browser powered by golang and wasm",
+      "summary": "Building an SSH and SFTP Client in the Browser with ssheasy\n\nThe Problem\n\nSetting up SSH and SFTP access can be a pain, especially when you're not on your own machine. Installing a terminal client, configuring keys, and managing credentials can be a hassle. And if you're on a locked-down machine (hello, corporate laptops), you're out of luck. Wouldn't it be easier if you could just fire up a browser and connect to your remote machines directly?\n\nWhat This Does\n\nssheasy is an SSH and SFTP client that runs entirely in your browser. It's built using Go and WebAssembly (WASM), with a React frontend and a golang backend. The project marries a web/ directory full of TypeScript and Angular-filemanager hacks with a proxy/ written in Go to tunnel TCP connections through WebSockets.\n\nThe real magic happens in web/main.go, where the WASM-based SSH/SFTP client is implemented. This bad boy handles the heavy lifting of SSH connections, while the proxy/main.go Go server does the dirty work of translating WebSocket traffic into actual SSH commands. There's also an nginx/ directory that helps serve the frontend and route traffic properly.\n\nBonus points for including monitoring out of the box with Prometheus and Grafana dashboards (grafana/provisioning/dashboards/proxy.json). It’s like DevOps-lite for your browser-based SSH client.\n\nReal-World Use\n\nLet’s say you’re on a Chromebook at a coffee shop. You need to SSH into a server but don’t have a terminal client handy because, well, it’s a Chromebook. No problem—just spin up the Docker stack (docker-compose up), point your browser to http://localhost:8080, and use the /connect endpoint to log into your server. For example:\n\nWant to test it locally? The docker-compose.yaml spins up an sshd container for testing. Use the host testssh with root/root credentials. There's even WebAuthn support for key-based authentication, which is a nice touch if you're into modern security practices.\n\nFile management? That’s covered too. The project includes a Frankenstein version of angular-filemanager (check web/html/node_modules/angular-filemanager). It’s been hacked to replace backend API calls with the WASM SFTP client, so you can manage remote files directly in the browser.\n\nThe Bottom Line\n\nssheasy is a niche but clever tool. If you’re in a pinch and need SSH/SFTP from a browser, it gets the job done. The tech stack is over-engineered for what it does (React + Go + WASM + Docker + Prometheus + Grafana for an SSH client? Really?), but if you’re into tinkering with modern tools, this repo is worth a look. Just don’t expect polished docs or robust testing—it’s very much a DIY playground.",
+      "url": "https://github.com/moses-y/ssheasy",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "hullarb/ssheasy",
+        "url": "https://github.com/hullarb/ssheasy",
+        "stars": 376
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 14, 2026",
+      "updatedAt": "March 14, 2026",
+      "readTime": 3,
+      "knowledgeGraph": {
+        "totalFiles": 179,
+        "directories": {
+          "(root)": 4,
+          "doc": 1,
+          "grafana": 1,
+          "nginx": 2,
+          "prometheus": 1,
+          "proxy": 7,
+          "ssh_conf": 2,
+          "web": 161
+        },
+        "languages": {
+          "Markdown": 6,
+          "YAML": 2,
+          "JSON": 7,
+          "Go": 8,
+          "Shell": 1,
+          "HTML": 3,
+          "JavaScript": 13,
+          "TypeScript": 109,
+          "CSS": 3
+        },
+        "frameworks": [
+          "React",
+          "Docker"
+        ],
+        "packageManager": "go modules",
+        "hasDocker": true,
+        "hasCI": false,
+        "ciPlatform": null,
+        "entryPoints": [
+          "proxy/main.go",
+          "web/html/index.html",
+          "web/main.go"
+        ],
+        "configFiles": [
+          "docker-compose.yaml",
+          "nginx/Dockerfile",
+          "proxy/Dockerfile",
+          "proxy/go.mod",
+          "web/go.mod",
+          "web/html/node_modules/@xterm/addon-fit/package.json",
+          "web/html/node_modules/@xterm/addon-search/package.json",
+          "web/html/node_modules/@xterm/addon-serialize/package.json",
+          "web/html/node_modules/@xterm/addon-web-links/package.json",
+          "web/html/node_modules/@xterm/xterm/package.json"
+        ],
+        "dependencies": [
+          "proxy/go.mod",
+          "web/go.mod",
+          "web/html/node_modules/@xterm/addon-fit/package.json",
+          "web/html/node_modules/@xterm/addon-search/package.json",
+          "web/html/node_modules/@xterm/addon-serialize/package.json",
+          "web/html/node_modules/@xterm/addon-web-links/package.json",
+          "web/html/node_modules/@xterm/xterm/package.json"
+        ],
+        "testFiles": [
+          "proxy/main_test.go"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "doc/tunnel.gif",
+          "web/html/node_modules/@xterm/addon-fit/LICENSE",
+          "web/html/node_modules/@xterm/addon-fit/README.md",
+          "web/html/node_modules/@xterm/addon-search/LICENSE",
+          "web/html/node_modules/@xterm/addon-search/README.md",
+          "web/html/node_modules/@xterm/addon-serialize/README.md",
+          "web/html/node_modules/@xterm/addon-web-links/LICENSE",
+          "web/html/node_modules/@xterm/addon-web-links/README.md",
+          "web/html/node_modules/@xterm/xterm/LICENSE",
+          "web/html/node_modules/@xterm/xterm/README.md"
+        ],
+        "fileTypes": {
+          ".md": 6,
+          ".gif": 1,
+          ".yaml": 1,
+          ".json": 7,
+          ".conf": 1,
+          ".yml": 1,
+          ".go": 8,
+          ".mod": 2,
+          ".sum": 2,
+          ".sh": 1,
+          ".html": 3,
+          ".js": 13,
+          ".map": 5,
+          ".ts": 109,
+          ".css": 3,
+          ".eot": 1,
+          ".svg": 1,
+          ".ttf": 1,
+          ".woff": 1,
+          ".woff2": 1
+        }
+      }
+    },
+    {
+      "id": 1181962466,
+      "name": "neutts",
+      "displayName": "neutts",
+      "description": "On-device TTS model by Neuphonic",
+      "summary": "NeuTTS: On-Device TTS That Doesn’t Suck  \n\nThe Problem  \nText-to-speech (TTS) is everywhere—voice assistants, audiobooks, accessibility tools—but most solutions require hitting some cloud API. That’s great until you care about latency, privacy, or running offline. And good luck deploying those massive server-grade models on a Raspberry Pi. You either get terrible audio quality on smaller models or pay for a giant, overkill cloud solution that eats your wallet.  \n\nWhat This Does  \nneutts gives you a library of open-source TTS models optimized for on-device use. These models are small enough to run locally on phones, laptops, or even embedded devices like Raspberry Pis, but they still produce natural, human-like voices.  \n\nThe repo is cleanly structured. The examples/ folder is where you’ll want to start—there’s a working basicexample.py script for simple TTS and interactiveexample.ipynb if you’re into notebooks. Need speaker cloning? Check out examples/encodereference.py. The main meat of the library is in neutts/, with neutts.py handling the heavy lifting and phonemizers.py managing the text-to-phoneme conversion.  \n\nFor deployment, the models are already quantized into GGUF format (Q8 and Q4 variants). These are great for squeezing out performance on smaller hardware. If you're into CI/CD (or just want to see how they handle releases), there’s a publish.yaml workflow in .github/workflows/.  \n\nReal-World Use  \nWant to clone your voice in three seconds and make your Raspberry Pi whisper sweet nothings to you? Grab a sample audio file, load the examples/encodereference.py script, and point it to a samples/*.pt file. Then, fire up basicexample.py and feed it some text.  \n\n  \nBoom. You’ve got a .wav file that sounds eerily human.  \n\nThe Bottom Line  \nIf you need lightweight, offline TTS with voice cloning, neutts is the real deal. It’s well-documented, easy to play with, and the audio quality is shockingly good for the model size. That said, the repo is sparse on tests (tests/testneutts.py is doing all the work here), and if you’re not already comfortable with Python, the setup might be a bit intimidating.  \n\nFor hackers, indie devs, and anyone building on-device voice applications, this is a no-brainer. For massive enterprise projects, go pay for cloud APIs—this isn’t for you.",
+      "url": "https://github.com/moses-y/neutts",
+      "language": null,
+      "stars": 0,
+      "forks": 0,
+      "topics": [],
+      "parent": {
+        "name": "neuphonic/neutts",
+        "url": "https://github.com/neuphonic/neutts",
+        "stars": 4934
+      },
+      "type": "fork",
+      "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
+      "forkedAt": "March 14, 2026",
+      "updatedAt": "March 14, 2026",
+      "readTime": 2,
+      "knowledgeGraph": {
+        "totalFiles": 42,
+        "directories": {
+          ".github": 1,
+          "(root)": 10,
+          "examples": 9,
+          "neutts": 3,
+          "neuttsair": 2,
+          "samples": 15,
+          "tests": 2
+        },
+        "languages": {
+          "YAML": 3,
+          "Markdown": 3,
+          "Python": 14,
+          "TOML": 1
+        },
+        "frameworks": [],
+        "packageManager": null,
+        "hasDocker": false,
+        "hasCI": true,
+        "ciPlatform": "GitHub Actions",
+        "entryPoints": [],
+        "configFiles": [
+          "CMakeLists.txt",
+          "pyproject.toml"
+        ],
+        "dependencies": [
+          "pyproject.toml"
+        ],
+        "testFiles": [
+          "tests/__init__.py",
+          "tests/test_neutts.py"
+        ],
+        "docs": [
+          "LICENSE",
+          "README.md",
+          "examples/README.md"
+        ],
+        "fileTypes": {
+          ".yaml": 3,
+          ".txt": 7,
+          ".md": 3,
+          ".py": 14,
+          ".ipynb": 1,
+          ".wav": 6,
+          ".toml": 1,
+          ".pt": 5
+        }
+      }
+    },
+    {
       "id": 1181159734,
       "name": "cashclaw",
       "displayName": "cashclaw",
@@ -601,7 +673,7 @@
       "parent": {
         "name": "moltlaunch/cashclaw",
         "url": "https://github.com/moltlaunch/cashclaw",
-        "stars": 490
+        "stars": 494
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -743,7 +815,7 @@
       "parent": {
         "name": "tobi/qmd",
         "url": "https://github.com/tobi/qmd",
-        "stars": 15325
+        "stars": 15329
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -965,7 +1037,7 @@
       "parent": {
         "name": "googleworkspace/cli",
         "url": "https://github.com/googleworkspace/cli",
-        "stars": 20267
+        "stars": 20275
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1506,7 +1578,7 @@
       "parent": {
         "name": "openai/symphony",
         "url": "https://github.com/openai/symphony",
-        "stars": 12556
+        "stars": 12555
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -1621,7 +1693,7 @@
       "parent": {
         "name": "dimensionalOS/dimos",
         "url": "https://github.com/dimensionalOS/dimos",
-        "stars": 822
+        "stars": 827
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -1748,7 +1820,7 @@
       "parent": {
         "name": "PrimeIntellect-ai/prime-rl",
         "url": "https://github.com/PrimeIntellect-ai/prime-rl",
-        "stars": 1143
+        "stars": 1144
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3355,7 +3427,7 @@
       "parent": {
         "name": "MemMachine/MemMachine",
         "url": "https://github.com/MemMachine/MemMachine",
-        "stars": 4897
+        "stars": 4898
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -3582,7 +3654,7 @@
       "parent": {
         "name": "joshyattridge/smart-money-concepts",
         "url": "https://github.com/joshyattridge/smart-money-concepts",
-        "stars": 1387
+        "stars": 1388
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -3898,7 +3970,7 @@
       "parent": {
         "name": "Intent-Lab/VisionClaw",
         "url": "https://github.com/Intent-Lab/VisionClaw",
-        "stars": 1619
+        "stars": 1621
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -3965,7 +4037,7 @@
       "parent": {
         "name": "bytedance/deer-flow",
         "url": "https://github.com/bytedance/deer-flow",
-        "stars": 30518
+        "stars": 30530
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4098,7 +4170,7 @@
       "parent": {
         "name": "affaan-m/everything-claude-code",
         "url": "https://github.com/affaan-m/everything-claude-code",
-        "stars": 75773
+        "stars": 75792
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4432,7 +4504,7 @@
       "parent": {
         "name": "public-apis/public-apis",
         "url": "https://github.com/public-apis/public-apis",
-        "stars": 410189
+        "stars": 410192
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -4635,7 +4707,7 @@
       "parent": {
         "name": "br-g/openf1",
         "url": "https://github.com/br-g/openf1",
-        "stars": 1300
+        "stars": 1301
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -4812,7 +4884,7 @@
       "parent": {
         "name": "karpathy/autoresearch",
         "url": "https://github.com/karpathy/autoresearch",
-        "stars": 33875
+        "stars": 33905
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5097,7 +5169,7 @@
       "parent": {
         "name": "banteg/takopi",
         "url": "https://github.com/banteg/takopi",
-        "stars": 895
+        "stars": 897
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -5400,7 +5472,7 @@
       "parent": {
         "name": "nearai/ironclaw",
         "url": "https://github.com/nearai/ironclaw",
-        "stars": 10001
+        "stars": 10004
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -5535,7 +5607,7 @@
       "parent": {
         "name": "shiahonb777/web-to-app",
         "url": "https://github.com/shiahonb777/web-to-app",
-        "stars": 1574
+        "stars": 1575
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -6681,7 +6753,7 @@
       "parent": {
         "name": "paperclipai/paperclip",
         "url": "https://github.com/paperclipai/paperclip",
-        "stars": 23212
+        "stars": 23223
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -7128,7 +7200,7 @@
       "parent": {
         "name": "ossu/computer-science",
         "url": "https://github.com/ossu/computer-science",
-        "stars": 202353
+        "stars": 202352
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -7443,7 +7515,7 @@
       "parent": {
         "name": "Yeachan-Heo/oh-my-codex",
         "url": "https://github.com/Yeachan-Heo/oh-my-codex",
-        "stars": 1998
+        "stars": 1999
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -7668,7 +7740,7 @@
       "parent": {
         "name": "ItzCrazyKns/Vane",
         "url": "https://github.com/ItzCrazyKns/Vane",
-        "stars": 32957
+        "stars": 32960
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8114,7 +8186,7 @@
       "parent": {
         "name": "agentscope-ai/CoPaw",
         "url": "https://github.com/agentscope-ai/CoPaw",
-        "stars": 11332
+        "stars": 11352
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -8725,7 +8797,7 @@
       "parent": {
         "name": "kepano/obsidian-skills",
         "url": "https://github.com/kepano/obsidian-skills",
-        "stars": 13780
+        "stars": 13781
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -8945,7 +9017,7 @@
       "parent": {
         "name": "RightNow-AI/openfang",
         "url": "https://github.com/RightNow-AI/openfang",
-        "stars": 14388
+        "stars": 14389
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9509,7 +9581,7 @@
       "parent": {
         "name": "katanemo/plano",
         "url": "https://github.com/katanemo/plano",
-        "stars": 5957
+        "stars": 5958
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -9722,7 +9794,7 @@
       "parent": {
         "name": "ComposioHQ/agent-orchestrator",
         "url": "https://github.com/ComposioHQ/agent-orchestrator",
-        "stars": 4347
+        "stars": 4348
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -9953,7 +10025,7 @@
       "parent": {
         "name": "abhigyanpatwari/GitNexus",
         "url": "https://github.com/abhigyanpatwari/GitNexus",
-        "stars": 12935
+        "stars": 12946
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -10225,7 +10297,7 @@
       "parent": {
         "name": "BerriAI/litellm",
         "url": "https://github.com/BerriAI/litellm",
-        "stars": 39054
+        "stars": 39057
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -11294,7 +11366,7 @@
       "parent": {
         "name": "qwibitai/nanoclaw",
         "url": "https://github.com/qwibitai/nanoclaw",
-        "stars": 22843
+        "stars": 22851
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -12942,7 +13014,7 @@
       "parent": {
         "name": "openclaw/openclaw",
         "url": "https://github.com/openclaw/openclaw",
-        "stars": 312842
+        "stars": 312861
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15148,7 +15220,7 @@
       "parent": {
         "name": "spacedriveapp/spacebot",
         "url": "https://github.com/spacedriveapp/spacebot",
-        "stars": 1785
+        "stars": 1787
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15341,7 +15413,7 @@
       "parent": {
         "name": "pinchtab/pinchtab",
         "url": "https://github.com/pinchtab/pinchtab",
-        "stars": 7547
+        "stars": 7549
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -15408,7 +15480,7 @@
       "parent": {
         "name": "nicobailon/visual-explainer",
         "url": "https://github.com/nicobailon/visual-explainer",
-        "stars": 6524
+        "stars": 6525
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -15503,7 +15575,7 @@
       "parent": {
         "name": "alibaba/zvec",
         "url": "https://github.com/alibaba/zvec",
-        "stars": 8929
+        "stars": 8930
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -15720,7 +15792,7 @@
       "parent": {
         "name": "unitedbyai/droidclaw",
         "url": "https://github.com/unitedbyai/droidclaw",
-        "stars": 1190
+        "stars": 1191
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -18033,7 +18105,7 @@
       "parent": {
         "name": "ruvnet/RuView",
         "url": "https://github.com/ruvnet/RuView",
-        "stars": 36591
+        "stars": 36597
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -18626,7 +18698,7 @@
       "parent": {
         "name": "getmaxun/maxun",
         "url": "https://github.com/getmaxun/maxun",
-        "stars": 15257
+        "stars": 15256
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -18925,7 +18997,7 @@
       "parent": {
         "name": "R44VC0RP/pgrok",
         "url": "https://github.com/R44VC0RP/pgrok",
-        "stars": 855
+        "stars": 856
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -19093,7 +19165,7 @@
       "parent": {
         "name": "sipeed/picoclaw",
         "url": "https://github.com/sipeed/picoclaw",
-        "stars": 24699
+        "stars": 24701
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -19417,7 +19489,7 @@
       "parent": {
         "name": "max-sixty/worktrunk",
         "url": "https://github.com/max-sixty/worktrunk",
-        "stars": 3303
+        "stars": 3305
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -19586,7 +19658,7 @@
       "parent": {
         "name": "subframe7536/maple-font",
         "url": "https://github.com/subframe7536/maple-font",
-        "stars": 24428
+        "stars": 24429
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -20047,7 +20119,7 @@
       "parent": {
         "name": "google/langextract",
         "url": "https://github.com/google/langextract",
-        "stars": 34700
+        "stars": 34701
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -20168,7 +20240,7 @@
       "parent": {
         "name": "vercel-labs/skills",
         "url": "https://github.com/vercel-labs/skills",
-        "stars": 10224
+        "stars": 10226
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -20657,7 +20729,7 @@
       "parent": {
         "name": "pydantic/monty",
         "url": "https://github.com/pydantic/monty",
-        "stars": 6253
+        "stars": 6254
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -20879,7 +20951,7 @@
       "parent": {
         "name": "evinjohnn/natively-cluely-ai-assistant",
         "url": "https://github.com/evinjohnn/natively-cluely-ai-assistant",
-        "stars": 686
+        "stars": 685
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -21001,7 +21073,7 @@
       "parent": {
         "name": "hesamsheikh/awesome-openclaw-usecases",
         "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
-        "stars": 24730
+        "stars": 24732
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -21601,7 +21673,7 @@
       "parent": {
         "name": "HKUDS/nanobot",
         "url": "https://github.com/HKUDS/nanobot",
-        "stars": 33465
+        "stars": 33466
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -25084,7 +25156,7 @@
       "parent": {
         "name": "Shubhamsaboo/awesome-llm-apps",
         "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
-        "stars": 102099
+        "stars": 102101
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -26787,7 +26859,7 @@
       "parent": {
         "name": "4ian/GDevelop",
         "url": "https://github.com/4ian/GDevelop",
-        "stars": 21251
+        "stars": 21252
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80",
@@ -26854,7 +26926,7 @@
       "parent": {
         "name": "slidevjs/slidev",
         "url": "https://github.com/slidevjs/slidev",
-        "stars": 44828
+        "stars": 44830
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=400&fit=crop&q=80",
@@ -27473,7 +27545,7 @@
       "parent": {
         "name": "fastrepl/char",
         "url": "https://github.com/fastrepl/char",
-        "stars": 7947
+        "stars": 7948
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -28241,7 +28313,7 @@
       "parent": {
         "name": "TauricResearch/TradingAgents",
         "url": "https://github.com/TauricResearch/TradingAgents",
-        "stars": 32066
+        "stars": 32067
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -29387,7 +29459,7 @@
       "parent": {
         "name": "reconurge/flowsint",
         "url": "https://github.com/reconurge/flowsint",
-        "stars": 2673
+        "stars": 2674
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=400&fit=crop&q=80",
@@ -30732,7 +30804,7 @@
       "parent": {
         "name": "microsoft/BitNet",
         "url": "https://github.com/microsoft/BitNet",
-        "stars": 34532
+        "stars": 34535
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -31121,7 +31193,7 @@
       "parent": {
         "name": "open-webui/open-webui",
         "url": "https://github.com/open-webui/open-webui",
-        "stars": 127184
+        "stars": 127186
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -31216,7 +31288,7 @@
       "parent": {
         "name": "forrestchang/andrej-karpathy-skills",
         "url": "https://github.com/forrestchang/andrej-karpathy-skills",
-        "stars": 7376
+        "stars": 7377
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -31879,7 +31951,7 @@
       "parent": {
         "name": "EuniAI/Prometheus",
         "url": "https://github.com/EuniAI/Prometheus",
-        "stars": 958
+        "stars": 959
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -33893,7 +33965,7 @@
       "parent": {
         "name": "x1xhlol/system-prompts-and-models-of-ai-tools",
         "url": "https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools",
-        "stars": 130983
+        "stars": 130987
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -34507,7 +34579,7 @@
       "parent": {
         "name": "originalankur/maptoposter",
         "url": "https://github.com/originalankur/maptoposter",
-        "stars": 12039
+        "stars": 12038
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -34568,7 +34640,7 @@
       "parent": {
         "name": "nautechsystems/nautilus_trader",
         "url": "https://github.com/nautechsystems/nautilus_trader",
-        "stars": 21138
+        "stars": 21139
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80",
@@ -39891,7 +39963,7 @@
       "parent": {
         "name": "midday-ai/midday",
         "url": "https://github.com/midday-ai/midday",
-        "stars": 14094
+        "stars": 14095
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -40309,7 +40381,7 @@
       "parent": {
         "name": "pocketbase/pocketbase",
         "url": "https://github.com/pocketbase/pocketbase",
-        "stars": 56741
+        "stars": 56742
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=800&h=400&fit=crop&q=80",
@@ -40987,7 +41059,7 @@
       "parent": {
         "name": "iOfficeAI/AionUi",
         "url": "https://github.com/iOfficeAI/AionUi",
-        "stars": 18762
+        "stars": 18763
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=400&fit=crop&q=80",
@@ -41102,7 +41174,7 @@
       "parent": {
         "name": "anomalyco/opencode",
         "url": "https://github.com/anomalyco/opencode",
-        "stars": 122137
+        "stars": 122143
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
@@ -41566,7 +41638,7 @@
       "parent": {
         "name": "HQarroum/awesome-iot",
         "url": "https://github.com/HQarroum/awesome-iot",
-        "stars": 3868
+        "stars": 3869
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop&q=80",
@@ -42501,7 +42573,7 @@
       "parent": {
         "name": "musistudio/claude-code-router",
         "url": "https://github.com/musistudio/claude-code-router",
-        "stars": 29649
+        "stars": 29650
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=400&fit=crop&q=80",
@@ -42854,7 +42926,7 @@
       "parent": {
         "name": "vercel-labs/agent-browser",
         "url": "https://github.com/vercel-labs/agent-browser",
-        "stars": 22000
+        "stars": 22004
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=400&fit=crop&q=80",
@@ -43638,7 +43710,7 @@
       "parent": {
         "name": "ggml-org/llama.cpp",
         "url": "https://github.com/ggml-org/llama.cpp",
-        "stars": 97919
+        "stars": 97920
       },
       "type": "fork",
       "image": "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=400&fit=crop&q=80",
