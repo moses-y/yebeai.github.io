@@ -135,11 +135,11 @@ Keeper: **Lead-Generation** (C, 60.8). Mean grade across the 3 audited members i
 
 Crosses a domain boundary: 2 Systems & Infra, 1 AI & Data. That is the interesting case - the same shape of problem solved in two different parts of the estate.
 
-Keeper: **iwe** (C+, 69.3). Mean grade across the 3 audited members is 62.6. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **iwe** (C+, 69.2). Mean grade across the 3 audited members is 62.5. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
-| **iwe** | Systems & Infra | Rust | C+ 69.3 | 248 |
+| **iwe** | Systems & Infra | Rust | C+ 69.2 | 248 |
 | MemMachine | AI & Data | Python | C 62.5 | 706 |
 | shodh-memory | Systems & Infra | Rust | C- 55.9 | 305 |
 
@@ -192,11 +192,11 @@ Keeper: **macrodata** (C+, 65.4). Mean grade across the 2 audited members is 63.
 
 Crosses a domain boundary: 1 AI & Data, 1 Mobile. That is the interesting case - the same shape of problem solved in two different parts of the estate.
 
-Keeper: **mlx-audio** (B-, 70.2). Mean grade across the 2 audited members is 69.2. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **mlx-audio** (B-, 70.1). Mean grade across the 2 audited members is 69.2. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
-| **mlx-audio** | AI & Data | Python | B- 70.2 | 574 |
+| **mlx-audio** | AI & Data | Python | B- 70.1 | 574 |
 | mlx-audio-swift | Mobile | Swift | C+ 68.2 | 97 |
 
 ### c035 - 2 repositories
@@ -230,7 +230,7 @@ Keeper: **terminal-browser** (C-, 50.7). Mean grade across the 2 audited members
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **terminal-browser** | Web & Interfaces | TypeScript | C- 50.7 | 219 |
-| carbonyl | Systems & Infra | Rust | C- 50.1 | 105 |
+| carbonyl | Systems & Infra | Rust | C- 50 | 105 |
 
 ### c046 - 2 repositories
 
@@ -496,11 +496,11 @@ Keeper: **awesome-ai-apps** (D, 48). Mean grade across the 2 audited members is 
 
 All 2 in Mobile.
 
-Keeper: **FluidVoice** (C, 62.1). Mean grade across the 2 audited members is 59. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **FluidVoice** (C, 61.9). Mean grade across the 2 audited members is 59. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
-| **FluidVoice** | Mobile | Swift | C 62.1 | 186 |
+| **FluidVoice** | Mobile | Swift | C 61.9 | 186 |
 | VoiceInk | Mobile | Swift | C- 56 | 231 |
 
 ### c032 - 2 repositories
@@ -622,7 +622,7 @@ Keeper: **freqtrade** (C-, 55.1). Mean grade across the 2 audited members is 53.
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **freqtrade** | AI & Data | Python | C- 55.1 | 772 |
-| hummingbot | AI & Data | Python | C- 52.3 | 1696 |
+| hummingbot | AI & Data | Python | C- 52.2 | 1696 |
 
 ### c047 - 2 repositories
 
