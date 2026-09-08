@@ -130,10 +130,86 @@ python -m artemis</code></pre>
                 </div>
 
                 
+                <div class="an-block">
+                    <span class="an-lab">Architecture</span>
+                    <p class="an-note">Top-level areas of the codebase, sized by module count. Arrows show how many imports cross from one area into another.</p>
+                    <div class="mermaid">graph TD
+  g0[&quot;artemis&lt;br/&gt;253 modules&quot;]
+  g1[&quot;tests&lt;br/&gt;208 modules&quot;]
+  g2[&quot;apps&lt;br/&gt;72 modules&quot;]
+  g3[&quot;mcp_server&lt;br/&gt;22 modules&quot;]
+  g4[&quot;packages&lt;br/&gt;8 modules&quot;]
+  g5[&quot;scripts&lt;br/&gt;6 modules&quot;]
+  g6[&quot;docs&lt;br/&gt;2 modules&quot;]
+  g1 --&gt;|515| g0
+  g2 --&gt;|46| g0
+  g1 --&gt;|32| g2
+  g3 --&gt;|24| g0
+  g1 --&gt;|20| g3
+  g5 --&gt;|19| g0
+  g0 --&gt;|4| g3
+  g0 --&gt;|2| g2
+  g2 --&gt;|1| g3
+  g5 --&gt;|1| g2</div>
+                </div>
 
                 
+                <div class="an-block">
+                    <span class="an-lab">Module dependencies</span>
+                    <p class="an-note">The 10 most depended-upon modules of 572, from static import analysis. Red outline marks a module in an import cycle.</p>
+                    <div class="mermaid">graph LR
+  n0_artemis_context[&quot;context&quot;]
+  n1_artemis_utils_logger[&quot;logger&quot;]
+  n2_artemis_config___init__[&quot;__init__&quot;]
+  n3_artemis_graph_state[&quot;state&quot;]
+  n4_artemis_data_engine_trace[&quot;trace&quot;]
+  n5_artemis_tools_base[&quot;base&quot;]
+  n6_artemis_runtime___init__[&quot;__init__&quot;]
+  n7_artemis_drivers_base[&quot;base&quot;]
+  n8_artemis_tools_tool_wrapper[&quot;tool_wrapper&quot;]
+  n9_artemis_services_llm[&quot;llm&quot;]
+  n0_artemis_context --&gt; n2_artemis_config___init__
+  n0_artemis_context --&gt; n1_artemis_utils_logger
+  n4_artemis_data_engine_trace --&gt; n0_artemis_context
+  n3_artemis_graph_state --&gt; n1_artemis_utils_logger
+  n9_artemis_services_llm --&gt; n2_artemis_config___init__
+  n9_artemis_services_llm --&gt; n0_artemis_context
+  n9_artemis_services_llm --&gt; n4_artemis_data_engine_trace
+  n9_artemis_services_llm --&gt; n1_artemis_utils_logger
+  n5_artemis_tools_base --&gt; n7_artemis_drivers_base
+  n5_artemis_tools_base --&gt; n1_artemis_utils_logger
+  n8_artemis_tools_tool_wrapper --&gt; n0_artemis_context
+  n8_artemis_tools_tool_wrapper --&gt; n4_artemis_data_engine_trace
+  n8_artemis_tools_tool_wrapper --&gt; n3_artemis_graph_state
+  classDef cyc stroke:#ef4444,stroke-width:2px;
+  class n0_artemis_context,n4_artemis_data_engine_trace cyc;</div>
+                </div>
 
                 
+                <div class="an-block">
+                    <span class="an-lab">Dependencies</span>
+                    <p class="an-note"><strong>13</strong> of 64 declared dependencies are a major version behind. Resolved 64 of 64 against the registry.</p>
+                    <table class="tbl an-deps">
+                        <tr><th>Package</th><th>Declared</th><th>Latest</th><th>Behind</th></tr>
+                        <tr><td><code>websockets</code></td>
+                            <td>&gt;=12.0</td><td>17.0.1</td>
+                            <td class="beh">5 major</td></tr><tr><td><code>posthog</code></td>
+                            <td>&gt;=3.5.0</td><td>7.39.1</td>
+                            <td class="beh">4 major</td></tr><tr><td><code>jasmine-core</code></td>
+                            <td>~5.6.0</td><td>7.0.1</td>
+                            <td class="beh">2 major</td></tr><tr><td><code>google-genai</code></td>
+                            <td>&gt;=0.1.1</td><td>2.18.1</td>
+                            <td class="beh">2 major</td></tr><tr><td><code>rich</code></td>
+                            <td>&gt;=13.7.0</td><td>15.0.0</td>
+                            <td class="beh">2 major</td></tr><tr><td><code>pillow</code></td>
+                            <td>&gt;=10.0.0</td><td>12.3.0</td>
+                            <td class="beh">2 major</td></tr><tr><td><code>psutil</code></td>
+                            <td>&gt;=5.9.0</td><td>7.2.2</td>
+                            <td class="beh">2 major</td></tr><tr><td><code>@types/jasmine</code></td>
+                            <td>~5.1.0</td><td>6.0.0</td>
+                            <td class="beh">1 major</td></tr>
+                    </table>
+                </div>
 
                 
 
@@ -143,7 +219,7 @@ python -m artemis</code></pre>
                 </p>
             </section>
 
-            
+            <section class="analysis rpt" aria-label="Code health audit"><h2 class="an-h">What would stop me shipping this</h2><p class="an-note">Ranked by severity &times; confidence &times; production reach. Reach is the honest discriminator across a collection that is mostly other people's code: the same finding matters more in something that ships.</p><div class="bars"><div class="bar"><span class="name">high</span><span class="track"><span class="fill high" style="width:17%"></span></span><span class="n">1</span></div><div class="bar"><span class="name">medium</span><span class="track"><span class="fill medium" style="width:100%"></span></span><span class="n">6</span></div></div><div class="finding high"><div class="head"><span class="ttl">Pin third-party GitHub Actions to a commit SHA</span><span class="chip">high</span></div><div class="loc">.github/workflows</div><div class="ev">astral-sh/setup-uv@v6</div><div class="ev">A tag can be moved, so the action running with your token and secrets is whatever its owner last pushed; this is how tj-actions/changed-files leaked secrets from thousands of repos.</div><div class="rec"><b>Fix:</b> Replace each @vN with the 40-character commit SHA, keep # vN as a comment, and let Dependabot bump the SHAs.</div></div><div class="finding medium"><div class="head"><span class="ttl">Enable Dependabot or Renovate</span><span class="chip">medium</span></div><div class="ev">3 manifest(s), no update bot configured</div><div class="ev">Without a bot a published advisory sits unpatched until someone audits by hand, which across 1,322 repositories means never.</div><div class="rec"><b>Fix:</b> Commit .github/dependabot.yml covering the repo ecosystems plus github-actions.</div></div><div class="finding medium"><div class="head"><span class="ttl">Pin the container base image by digest</span><span class="chip">medium</span><span class="rankchip">3 occurrences</span></div><div class="loc">Dockerfile</div><div class="ev">node:22-bookworm-slim, python:3.12-slim, python:3.12-slim</div><div class="ev">An untagged or mutable base means today's build and last month's contain different libc and a different CVE set, with no record of which shipped.</div><div class="rec"><b>Fix:</b> Use image:tag@sha256:&lt;digest&gt; and enable Dependabot's docker ecosystem.</div></div><div class="finding medium"><div class="head"><span class="ttl">Gate pull requests on a dependency vulnerability scan</span><span class="chip">medium</span></div><div class="loc">.github/workflows</div><div class="ev">no dependency scan in CI</div><div class="ev">This is the one gate that would catch a known-vulnerable package before it reaches a build, and no repository in the sample had it.</div><div class="rec"><b>Fix:</b> Add dependency-review-action on pull_request, or osv-scanner on push and a schedule.</div></div><div class="finding medium"><div class="head"><span class="ttl">Move large binaries to Git LFS or out of the repository</span><span class="chip">medium</span><span class="rankchip">2 occurrences</span></div><div class="loc">tests/tools/inputs/recording.mp4</div><div class="ev">2 blobs over 5MB: recording.mp4 6.7MB, demo.gif 5.8MB</div><div class="ev">One repository here carries twenty blobs over 5MB including a 10.9MB spreadsheet, so every clone and every CI checkout pays for data nobody diffs.</div><div class="rec"><b>Fix:</b> Track those extensions with LFS, or move datasets to object storage and fetch them in a setup step.</div></div><div class="finding medium"><div class="head"><span class="ttl">Set persist-credentials: false on checkout</span><span class="chip">medium</span></div><div class="loc">.github/workflows/ci.yml</div><div class="ev">checkout keeps the token, then dependencies are installed</div><div class="ev">The token stays in .git/config for every later step, so a malicious postinstall script reads a pushable credential without one ever being passed to it.</div><div class="rec"><b>Fix:</b> Add with: persist-credentials: false, and pass an explicit token only to the step that pushes.</div></div><div class="finding medium"><div class="head"><span class="ttl">Add a non-root USER to the image</span><span class="chip">medium</span></div><div class="loc">Dockerfile</div><div class="ev">CMD or ENTRYPOINT with no USER directive</div><div class="ev">A process running as root in the container is root against every mounted volume, and it turns any container escape or writable-mount mistake from a contained problem into a host one.</div><div class="rec"><b>Fix:</b> Create an unprivileged user, chown what it needs, and end the Dockerfile with USER.</div></div><p class="an-note">Checked deterministically against the repository tree and a bounded set of its files: committed credentials, unpinned actions and base images, missing lockfiles and update bots, workflows that discard failures, published advisories against the declared dependencies, runtime configuration, licensing and notebook reproducibility. No language model is involved in this section.</p></section>
 
             
 
