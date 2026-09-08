@@ -4,14 +4,14 @@
   "B": 75,
   "B+": 25,
   "B-": 172,
-  "C": 277,
+  "C": 278,
   "C+": 235,
   "C-": 538,
   "D": 178,
   "F": 14
  },
- "generated": "2026-09-08T10:18:39.576Z",
- "graded": 1516,
+ "generated": "2026-09-08T14:21:14.452Z",
+ "graded": 1517,
  "mean": 60.7,
  "repos": {
   "482038562": {
@@ -189257,6 +189257,133 @@
    "partial": false,
    "profile": "frontend",
    "score": 75.2
+  },
+  "1360449632": {
+   "audited": true,
+   "categories": [
+    {
+     "charged": [
+      {
+       "cost": 100,
+       "id": "ci-absent-entirely",
+       "severity": "high",
+       "title": "Add a workflow that builds and tests this repository"
+      },
+      {
+       "cost": 51.4,
+       "id": "deploy-artifacts-without-ci",
+       "severity": "high",
+       "title": "Add a build gate for the deployable artifacts here"
+      }
+     ],
+     "evidence": "no CI configuration",
+     "key": "cicd",
+     "label": "CI/CD Maturity",
+     "partial": false,
+     "score": 0,
+     "weight": 10
+    },
+    {
+     "charged": [
+      {
+       "cost": 20,
+       "id": "no-automated-dependency-updates",
+       "severity": "medium",
+       "title": "Enable Dependabot or Renovate"
+      },
+      {
+       "cost": 15,
+       "id": "dockerfile-base-image-unpinned",
+       "severity": "medium",
+       "title": "Pin the container base image by digest"
+      }
+     ],
+     "evidence": "lockfile present · 38 open advisories",
+     "key": "deps",
+     "label": "Dependency Health",
+     "partial": false,
+     "score": 0,
+     "weight": 10
+    },
+    {
+     "charged": [
+      {
+       "cost": 35,
+       "id": "no-license",
+       "severity": "high",
+       "title": "Add a LICENSE; redistribution rights are undefined"
+      }
+     ],
+     "evidence": "README present + 5 doc files",
+     "key": "docs",
+     "label": "Docs & Onboarding",
+     "partial": false,
+     "score": 47.5,
+     "weight": 14
+    },
+    {
+     "charged": [
+      {
+       "cost": 12,
+       "id": "container-runs-as-root",
+       "severity": "medium",
+       "title": "Add a non-root USER to the image"
+      }
+     ],
+     "evidence": "no secret or runtime check fired",
+     "key": "security",
+     "label": "Security Hygiene",
+     "partial": false,
+     "score": 78,
+     "weight": 8
+    },
+    {
+     "charged": [],
+     "evidence": "11 test files against 126 files",
+     "key": "tests",
+     "label": "Test Coverage",
+     "partial": false,
+     "score": 81.8,
+     "weight": 12
+    },
+    {
+     "charged": [],
+     "evidence": "8 medium and 0 low findings across 94 modules",
+     "key": "cleanliness",
+     "label": "Code Cleanliness",
+     "partial": false,
+     "score": 87.3,
+     "weight": 17
+    },
+    {
+     "charged": [],
+     "evidence": "94 modules · 0 in cycles · 1 high-severity structural findings",
+     "key": "architecture",
+     "label": "Architecture & Robustness",
+     "partial": false,
+     "score": 89.7,
+     "weight": 21
+    },
+    {
+     "charged": [],
+     "evidence": "last pushed 1 days before the audit",
+     "key": "history",
+     "label": "History & Maintenance",
+     "partial": false,
+     "score": 95,
+     "weight": 8
+    }
+   ],
+   "id": 1360449632,
+   "letter": "C",
+   "name": "docengine",
+   "next": {
+    "letter": "C+",
+    "points": 1
+   },
+   "partial": false,
+   "profile": "frontend",
+   "score": 64
   },
   "1361127058": {
    "audited": true,
