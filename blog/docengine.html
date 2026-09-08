@@ -60,7 +60,7 @@
             <div class="post-header">
                 <div class="post-meta">
                     <span>September 8, 2026</span>
-                    <span>2 min read</span>
+                    <span>3 min read</span>
                     <span class="post-language">Python</span>
                     <span class="post-type">original</span>
                 </div>
@@ -79,9 +79,32 @@
                 <span class="listen-progress" id="listen-progress" aria-live="polite"></span>
             </div>
 
-            <div class="post-content" id="post-content">
-                
-                <p>docengine is a Python project that demonstrates thoughtful software design. While exploring the codebase, I found patterns and implementations that could accelerate similar projects. Worth investigating if you&#39;re working with Python or interested in clean, maintainable code architecture.</p>
+            <div class="post-content numbered" id="post-content">
+                <nav class="post-toc" aria-label="Sections"><span class="post-toc-lab">Sections</span><a href="#the-problem">The Problem</a><a href="#what-this-does">What This Does</a><a href="#how-it-is-wired">How It Is Wired</a><a href="#how-to-use-it">How To Use It</a><a href="#real-world-use">Real-World Use</a><a href="#code-health-issues">Code Health &amp; Issues</a><a href="#the-bottom-line">The Bottom Line</a></nav>
+                <h3 id="the-problem">The Problem</h3>
+<p>Collaborative document editing usually means signing up for a heavyweight SaaS product or wiring together half a dozen services. This repo is a self-contained, Dockerized alternative: a lightweight editor with import, sharing, and attachments that runs entirely on your own infrastructure.</p>
+<h3 id="what-this-does">What This Does</h3>
+<p>DocEngine is a full-stack document editor. The backend (<code>backend/app/</code>) is a FastAPI service with Postgres persistence, Alembic migrations, JWT auth, and role-based permissions. The frontend (<code>frontend/src/</code>) is a React 18 + TypeScript SPA using TipTap for rich-text editing. Documents autosave 800ms after typing stops, with conflict detection.</p>
+<p>Import supports <code>.txt</code>, <code>.md</code>, and <code>.docx</code> (images/tables dropped, stated up front). Sharing grants <code>viewer</code> or <code>editor</code> roles by email. The repo includes a seed script (<code>backend/app/seed.py</code>) that creates four demo users with pre-populated documents.</p>
+<h3 id="how-it-is-wired">How It Is Wired</h3>
+<p>Execution starts at <code>backend/app/main.py</code> for the API and <code>frontend/src/main.tsx</code> for the SPA. The frontend routes through <code>frontend/src/api/client.ts</code> (8 modules depend on it) to REST endpoints handled by routers in <code>backend/app/routers/</code>. Services in <code>backend/app/services/</code> contain business logic — <code>document_service.py</code> and <code>permission_service.py</code> are the core. Repositories (<code>backend/app/repositories/</code>) abstract SQLAlchemy queries.</p>
+<p>The module graph shows <code>frontend/src/types/index.ts</code> as the hub: 14 modules import it, so changes there ripple widely. <code>frontend/src/pages/DocumentEditorPage.tsx</code> has the highest cognitive load (10 imports, instability 0.91) — it&#39;s where editor state, autosave, and sharing converge. The graph is clean: 94 modules, 76 edges, zero circular dependencies.</p>
+<p>The system touches Postgres (documents, users, shares, versions, attachments), the filesystem (<code>storage/uploads/</code> for attachments), and the network (JWT auth, import file uploads).</p>
+<h3 id="how-to-use-it">How To Use It</h3>
+<pre data-lang="bash"><code>git clone https://github.com/moses-y/docengine
+cd docengine
+cp .env.example .env
+docker compose up --build</code></pre>
+<p>Open <code>http://localhost:5173</code>. Login with <code>alice@ajaia.test</code> / <code>demo1234</code>. The API container runs migrations and seeding automatically on startup.</p>
+<p>Local dev without Docker: backend uses <code>uvicorn app.main:app --reload</code> from <code>backend/</code>; frontend uses <code>npm run dev</code> from <code>frontend/</code>. Tests: <code>pytest -q</code> in <code>backend/</code> (integration tests self-skip without Docker), <code>npm test</code> in <code>frontend/</code>.</p>
+<h3 id="real-world-use">Real-World Use</h3>
+<p>A small team or internal tool needing document editing without external SaaS dependencies. The seeded users and permission matrix (404 for strangers, 403 for under-privileged viewers — tested exhaustively in <code>tests/test_permissions.py</code>) make it suitable as a starting point for a production internal knowledge base or report-generation tool.</p>
+<h3 id="code-health-issues">Code Health &amp; Issues</h3>
+<p>Static analysis found 9 findings (1 high, 8 medium):</p>
+<ul><li><strong>High — deep nesting</strong> in <code>backend/app/seed.py</code> and <code>backend/tests/test_sanitize.py</code> (indentation depth 8). Flatten with guard clauses.</li><li><strong>Medium — hub module</strong> <code>frontend/src/types/index.ts</code> (14 dependents). Keep stable.</li><li><strong>Medium — duplicated code</strong> across <code>backend/app/database.py</code>, <code>backend/app/models/</code> files. Extract shared helpers.</li><li><strong>Medium — broad exception handling</strong> in <code>database.py</code>, <code>security.py</code>, and integration <code>conftest.py</code>. Catch specific exceptions.</li></ul>
+<p>SDLC gaps: no CI workflow, no LICENSE file (all rights reserved by default), and the backend Dockerfile runs as root with an unpinned <code>python:3.12-slim</code> base image. Dependencies are stale — 17 of 31 packages are multiple major versions behind (jsdom is 5 majors behind).</p>
+<h3 id="the-bottom-line">The Bottom Line</h3>
+<p>Solid, well-structured full-stack project with good test coverage and clean module boundaries. The gaps are operational — CI, licensing, container hardening — not architectural. Worth using as a reference for FastAPI + React patterns, or as a starting point for a self-hosted document tool if you add the missing SDLC plumbing.</p>
             </div>
 
             
@@ -109,8 +132,56 @@
                 
 
                 
+                <div class="an-block">
+                    <span class="an-lab">Module dependencies</span>
+                    <p class="an-note">The 10 most depended-upon modules of 94, from static import analysis. Red outline marks a module in an import cycle.</p>
+                    <div class="mermaid">graph LR
+  n0_frontend_src_types_index[&quot;index&quot;]
+  n1_frontend_src_api_client[&quot;client&quot;]
+  n2_src_components_common_Button[&quot;Button&quot;]
+  n3_frontend_src_api_documents[&quot;documents&quot;]
+  n4_omponents_common_ErrorBanner[&quot;ErrorBanner&quot;]
+  n5_frontend_src_lib_constants[&quot;constants&quot;]
+  n6_rc_components_common_Spinner[&quot;Spinner&quot;]
+  n7_ontend_src_hooks_useAutosave[&quot;useAutosave&quot;]
+  n8_ponents_editor_SaveIndicator[&quot;SaveIndicator&quot;]
+  n9_rc_components_editor_Toolbar[&quot;Toolbar&quot;]
+  n1_frontend_src_api_client --&gt; n5_frontend_src_lib_constants
+  n1_frontend_src_api_client --&gt; n0_frontend_src_types_index
+  n3_frontend_src_api_documents --&gt; n1_frontend_src_api_client
+  n3_frontend_src_api_documents --&gt; n0_frontend_src_types_index
+  n8_ponents_editor_SaveIndicator --&gt; n7_ontend_src_hooks_useAutosave
+  n7_ontend_src_hooks_useAutosave --&gt; n3_frontend_src_api_documents
+  n7_ontend_src_hooks_useAutosave --&gt; n1_frontend_src_api_client
+  n7_ontend_src_hooks_useAutosave --&gt; n5_frontend_src_lib_constants
+  n7_ontend_src_hooks_useAutosave --&gt; n0_frontend_src_types_index</div>
+                </div>
 
                 
+                <div class="an-block">
+                    <span class="an-lab">Dependencies</span>
+                    <p class="an-note"><strong>17</strong> of 31 declared dependencies are a major version behind. Resolved 31 of 31 against the registry.</p>
+                    <table class="tbl an-deps">
+                        <tr><th>Package</th><th>Declared</th><th>Latest</th><th>Behind</th></tr>
+                        <tr><td><code>jsdom</code></td>
+                            <td>^25.0.1</td><td>30.0.1</td>
+                            <td class="beh">5 major</td></tr><tr><td><code>vite</code></td>
+                            <td>^5.4.8</td><td>8.2.1</td>
+                            <td class="beh">3 major</td></tr><tr><td><code>argon2-cffi</code></td>
+                            <td>&gt;=23.1</td><td>25.1.0</td>
+                            <td class="beh">2 major</td></tr><tr><td><code>structlog</code></td>
+                            <td>&gt;=24.4</td><td>26.1.0</td>
+                            <td class="beh">2 major</td></tr><tr><td><code>@vitejs/plugin-react</code></td>
+                            <td>^4.3.2</td><td>6.0.5</td>
+                            <td class="beh">2 major</td></tr><tr><td><code>typescript</code></td>
+                            <td>^5.6.3</td><td>7.0.2</td>
+                            <td class="beh">2 major</td></tr><tr><td><code>vitest</code></td>
+                            <td>^2.1.2</td><td>4.1.10</td>
+                            <td class="beh">2 major</td></tr><tr><td><code>markdown-it-py</code></td>
+                            <td>&gt;=3.0</td><td>4.2.0</td>
+                            <td class="beh">1 major</td></tr>
+                    </table>
+                </div>
 
                 
                 <div class="an-block">
@@ -126,7 +197,7 @@
                 </p>
             </section>
 
-            
+            <section class="analysis rpt" aria-label="Code health audit"><h2 class="an-h">What would stop me shipping this</h2><p class="an-note">Ranked by severity &times; confidence &times; production reach. Reach is the honest discriminator across a collection that is mostly other people's code: the same finding matters more in something that ships.</p><div class="bars"><div class="bar"><span class="name">high</span><span class="track"><span class="fill high" style="width:100%"></span></span><span class="n">3</span></div><div class="bar"><span class="name">medium</span><span class="track"><span class="fill medium" style="width:100%"></span></span><span class="n">3</span></div></div><div class="finding high"><div class="head"><span class="ttl">Add a LICENSE; redistribution rights are undefined</span><span class="chip">high</span></div><div class="ev">no licence file at the repository root</div><div class="ev">With no licence the default is all rights reserved, so this code cannot legally be reused, which matters most for the owner's own work carried into client engagements.</div><div class="rec"><b>Fix:</b> Add MIT or Apache-2.0 at the repository root.</div></div><div class="finding high"><div class="head"><span class="ttl">Add a workflow that builds and tests this repository</span><span class="chip">high</span></div><div class="ev">94 source files, no CI configuration</div><div class="ev">Every change merges with nobody having run the build once, which across this estate is 499 repositories.</div><div class="rec"><b>Fix:</b> Add a workflow running the project build and test command on push and pull_request.</div></div><div class="finding high"><div class="head"><span class="ttl">Add a build gate for the deployable artifacts here</span><span class="chip">high</span><span class="rankchip">3 occurrences</span></div><div class="loc">backend/Dockerfile</div><div class="ev">deployment artifacts with no workflow</div><div class="ev">Something in the repo is meant to reach a server and no automated step has ever validated it, which is the state of 125 repositories here.</div><div class="rec"><b>Fix:</b> Add a workflow that at least builds the image and validates the manifests.</div></div><div class="finding medium"><div class="head"><span class="ttl">Enable Dependabot or Renovate</span><span class="chip">medium</span></div><div class="ev">5 manifest(s), no update bot configured</div><div class="ev">Without a bot a published advisory sits unpatched until someone audits by hand, which across 1,322 repositories means never.</div><div class="rec"><b>Fix:</b> Commit .github/dependabot.yml covering the repo ecosystems plus github-actions.</div></div><div class="finding medium"><div class="head"><span class="ttl">Pin the container base image by digest</span><span class="chip">medium</span></div><div class="loc">backend/Dockerfile</div><div class="ev">python:3.12-slim</div><div class="ev">An untagged or mutable base means today's build and last month's contain different libc and a different CVE set, with no record of which shipped.</div><div class="rec"><b>Fix:</b> Use image:tag@sha256:&lt;digest&gt; and enable Dependabot's docker ecosystem.</div></div><div class="finding medium"><div class="head"><span class="ttl">Add a non-root USER to the image</span><span class="chip">medium</span></div><div class="loc">backend/Dockerfile</div><div class="ev">CMD or ENTRYPOINT with no USER directive</div><div class="ev">A process running as root in the container is root against every mounted volume, and it turns any container escape or writable-mount mistake from a contained problem into a host one.</div><div class="rec"><b>Fix:</b> Create an unprivileged user, chown what it needs, and end the Dockerfile with USER.</div></div><p class="an-note">Checked deterministically against the repository tree and a bounded set of its files: committed credentials, unpinned actions and base images, missing lockfiles and update bots, workflows that discard failures, published advisories against the declared dependencies, runtime configuration, licensing and notebook reproducibility. No language model is involved in this section.</p></section>
 
             
 
