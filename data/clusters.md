@@ -36,7 +36,7 @@ Keeper: **openskills** (B+, 82.5). Mean grade across the 15 audited members is 7
 | ai-design-skills | Agent Skills & Plugins |  | B- 71.1 | 4 |
 | best-practices | Agent Skills & Plugins |  | B- 70.9 | 23 |
 | agent-skills | Agent Skills & Plugins | Shell | C+ 68.7 | 56 |
-| dbt-agent-skills | AI & Data | Python | C+ 68.2 | 123 |
+| dbt-agent-skills | AI & Data | Python | C+ 68 | 123 |
 | SkillNet | AI & Data | Python | C- 54.9 | 380 |
 | OpenSpace | AI & Data | Python | F 38.4 | 1310 |
 
@@ -73,7 +73,7 @@ Keeper: **ai-job-search** (B+, 82.3). Mean grade across the 6 audited members is
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **ai-job-search** | Agent Skills & Plugins | TypeScript | B+ 82.3 | 212 |
-| marketplace | Agent Skills & Plugins | Shell | B 78.4 | 351 |
+| marketplace | Agent Skills & Plugins | Shell | B 78.3 | 351 |
 | everything-claude-code | Agent Skills & Plugins | JavaScript | B- 74.6 | 795 |
 | claude-code-router | Web & Interfaces | TypeScript | C- 56.3 | 352 |
 | agentic-flow | Web & Interfaces | TypeScript | C- 56.1 | 4455 |
@@ -203,11 +203,11 @@ Keeper: **mlx-audio** (B-, 70.1). Mean grade across the 2 audited members is 69.
 
 Crosses a domain boundary: 1 Systems & Infra, 1 Web & Interfaces. That is the interesting case - the same shape of problem solved in two different parts of the estate.
 
-Keeper: **wormhole** (C, 62). Mean grade across the 2 audited members is 56.4. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **wormhole** (C, 61.9). Mean grade across the 2 audited members is 56.3. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
-| **wormhole** | Systems & Infra | Go | C 62 | 47 |
+| **wormhole** | Systems & Infra | Go | C 61.9 | 47 |
 | pgrok | Web & Interfaces | TypeScript | C- 50.8 | 26 |
 
 ### c039 - 2 repositories
@@ -573,12 +573,12 @@ Keeper: **bare-lm** (C+, 69.7). Mean grade across the 2 audited members is 66.8.
 
 All 2 in Web & Interfaces.
 
-Keeper: **node-banana** (C+, 68.3). Mean grade across the 2 audited members is 59.9. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **node-banana** (C+, 68.3). Mean grade across the 2 audited members is 59.8. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **node-banana** | Web & Interfaces | TypeScript | C+ 68.3 | 395 |
-| tersa | Web & Interfaces | TSX | C- 51.5 | 103 |
+| tersa | Web & Interfaces | TSX | C- 51.4 | 103 |
 
 ### c041 - 2 repositories
 
@@ -600,7 +600,7 @@ Keeper: **hermes-webui** (C, 60.8). Mean grade across the 2 audited members is 5
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **hermes-webui** | AI & Data | Python | C 60.8 | 232 |
-| hermes-agent | AI & Data | Python | C- 57.3 | 894 |
+| hermes-agent | AI & Data | Python | C- 57.2 | 894 |
 
 ### c043 - 2 repositories
 
