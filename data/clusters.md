@@ -192,12 +192,12 @@ Keeper: **macrodata** (C+, 65.4). Mean grade across the 2 audited members is 63.
 
 Crosses a domain boundary: 1 AI & Data, 1 Mobile. That is the interesting case - the same shape of problem solved in two different parts of the estate.
 
-Keeper: **mlx-audio** (B-, 70.1). Mean grade across the 2 audited members is 69.2. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **mlx-audio** (B-, 70.1). Mean grade across the 2 audited members is 69.1. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **mlx-audio** | AI & Data | Python | B- 70.1 | 574 |
-| mlx-audio-swift | Mobile | Swift | C+ 68.2 | 97 |
+| mlx-audio-swift | Mobile | Swift | C+ 68.1 | 97 |
 
 ### c035 - 2 repositories
 
