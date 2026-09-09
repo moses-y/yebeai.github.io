@@ -53,16 +53,16 @@ Keeper: **openwiki** (B+, 82.7). Mean grade across the 15 audited members is 63.
 | magnitude | Web & Interfaces | TypeScript | C+ 67.9 | 1862 |
 | zero-agent | Systems & Infra | Go | C+ 67.2 | 1438 |
 | t1code | Web & Interfaces | TypeScript | C 64.8 | 600 |
-| vscode | Web & Interfaces | TypeScript | C 63.5 | 9809 |
+| vscode | Web & Interfaces | TypeScript | C 63.4 | 9809 |
 | sandbox-agent | Web & Interfaces | TypeScript | C 63.3 | 785 |
-| sharedcontext | Web & Interfaces | TypeScript | C 62.7 | 42 |
+| sharedcontext | Web & Interfaces | TypeScript | C 62.6 | 42 |
 | terminal-code | Web & Interfaces | TypeScript | C 61.1 | 134 |
 | sie | AI & Data | Python | C- 59.5 | 1847 |
 | OpenContext | Web & Interfaces | JavaScript | C- 56.2 | 242 |
 | whoami | Web & Interfaces | TypeScript | C- 56 | 316 |
 | anywhere-agents | AI & Data | Python | C- 55.8 | 291 |
 | opencode | Web & Interfaces | TypeScript | C- 53.5 | 2755 |
-| Maestro | Web & Interfaces | TypeScript | C- 53.3 | 1456 |
+| Maestro | Web & Interfaces | TypeScript | C- 53.2 | 1456 |
 
 ### c003 - 6 repositories
 
@@ -219,7 +219,7 @@ Keeper: **android-sms-gateway** (C-, 58.6). Mean grade across the 2 audited memb
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **android-sms-gateway** | Mobile | Kotlin | C- 58.6 | 335 |
-| httpsms | Systems & Infra | Go | D 44 | 430 |
+| httpsms | Systems & Infra | Go | D 43.9 | 430 |
 
 ### c044 - 2 repositories
 
@@ -346,7 +346,7 @@ Keeper: **codex-security** (B, 75.3). Mean grade across the 3 audited members is
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **codex-security** | Web & Interfaces | TypeScript | B 75.3 | 173 |
-| oh-my-codex | Web & Interfaces | TypeScript | B- 72.7 | 410 |
+| oh-my-codex | Web & Interfaces | TypeScript | B- 72.6 | 410 |
 | oh-my-openagent | Web & Interfaces | TypeScript | C 60.5 | 6746 |
 
 ### c014 - 2 repositories
@@ -540,12 +540,12 @@ Keeper: **MemOS** (B, 75.3). Mean grade across the 2 audited members is 57.5. Ev
 
 All 2 in AI & Data.
 
-Keeper: **OpenLLM** (B-, 74.1). Mean grade across the 2 audited members is 65.6. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **OpenLLM** (B-, 74.1). Mean grade across the 2 audited members is 65.5. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **OpenLLM** | AI & Data | Python | B- 74.1 | 40 |
-| litellm | AI & Data | Python | C- 57.1 | 7169 |
+| litellm | AI & Data | Python | C- 57 | 7169 |
 
 ### c037 - 2 repositories
 
@@ -567,7 +567,7 @@ Keeper: **bare-lm** (C+, 69.7). Mean grade across the 2 audited members is 66.8.
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **bare-lm** | Systems & Infra | C | C+ 69.7 | 13 |
-| tensor.h | Systems & Infra | C | C 64 | 9 |
+| tensor.h | Systems & Infra | C | C 63.9 | 9 |
 
 ### c040 - 2 repositories
 
