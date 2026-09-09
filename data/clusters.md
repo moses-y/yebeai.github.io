@@ -54,7 +54,7 @@ Keeper: **openwiki** (B+, 82.7). Mean grade across the 15 audited members is 63.
 | zero-agent | Systems & Infra | Go | C+ 67.2 | 1438 |
 | t1code | Web & Interfaces | TypeScript | C 64.8 | 600 |
 | vscode | Web & Interfaces | TypeScript | C 63.5 | 9809 |
-| sandbox-agent | Web & Interfaces | TypeScript | C 63.4 | 785 |
+| sandbox-agent | Web & Interfaces | TypeScript | C 63.3 | 785 |
 | sharedcontext | Web & Interfaces | TypeScript | C 62.7 | 42 |
 | terminal-code | Web & Interfaces | TypeScript | C 61.1 | 134 |
 | sie | AI & Data | Python | C- 59.5 | 1847 |
@@ -74,7 +74,7 @@ Keeper: **ai-job-search** (B+, 82.3). Mean grade across the 6 audited members is
 | --- | --- | --- | --- | --- |
 | **ai-job-search** | Agent Skills & Plugins | TypeScript | B+ 82.3 | 212 |
 | marketplace | Agent Skills & Plugins | Shell | B 78.4 | 351 |
-| everything-claude-code | Agent Skills & Plugins | JavaScript | B- 74.8 | 795 |
+| everything-claude-code | Agent Skills & Plugins | JavaScript | B- 74.6 | 795 |
 | claude-code-router | Web & Interfaces | TypeScript | C- 56.3 | 352 |
 | agentic-flow | Web & Interfaces | TypeScript | C- 56.1 | 4455 |
 | career-ops | Systems & Infra | Go | C- 54.2 | 99 |
@@ -116,7 +116,7 @@ Keeper: **local-voice-ai** (B-, 70.7). Mean grade across the 3 audited members i
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **local-voice-ai** | Web & Interfaces | TSX | B- 70.7 | 100 |
-| speech-to-speech | AI & Data | Python | C- 55.1 | 70 |
+| speech-to-speech | AI & Data | Python | C- 54.9 | 70 |
 | VoiceAI | Web & Interfaces | TSX | D 49.8 | 358 |
 
 ### c010 - 3 repositories
@@ -135,13 +135,13 @@ Keeper: **Lead-Generation** (C, 60.8). Mean grade across the 3 audited members i
 
 Crosses a domain boundary: 2 Systems & Infra, 1 AI & Data. That is the interesting case - the same shape of problem solved in two different parts of the estate.
 
-Keeper: **iwe** (C+, 69.2). Mean grade across the 3 audited members is 62.5. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **iwe** (C+, 69.2). Mean grade across the 3 audited members is 62.4. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **iwe** | Systems & Infra | Rust | C+ 69.2 | 248 |
-| MemMachine | AI & Data | Python | C 62.5 | 706 |
-| shodh-memory | Systems & Infra | Rust | C- 55.9 | 305 |
+| MemMachine | AI & Data | Python | C 62.3 | 706 |
+| shodh-memory | Systems & Infra | Rust | C- 55.8 | 305 |
 
 ### c013 - 3 repositories
 
@@ -214,11 +214,11 @@ Keeper: **wormhole** (C, 62). Mean grade across the 2 audited members is 56.4. E
 
 Crosses a domain boundary: 1 Mobile, 1 Systems & Infra. That is the interesting case - the same shape of problem solved in two different parts of the estate.
 
-Keeper: **android-sms-gateway** (C-, 58.7). Mean grade across the 2 audited members is 51.4. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **android-sms-gateway** (C-, 58.6). Mean grade across the 2 audited members is 51.3. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
-| **android-sms-gateway** | Mobile | Kotlin | C- 58.7 | 335 |
+| **android-sms-gateway** | Mobile | Kotlin | C- 58.6 | 335 |
 | httpsms | Systems & Infra | Go | D 44 | 430 |
 
 ### c044 - 2 repositories
@@ -468,7 +468,7 @@ Keeper: **tsl-node-editor** (C, 63.9). Mean grade across the 2 audited members i
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **tsl-node-editor** | Web & Interfaces | TypeScript | C 63.9 | 23 |
-| editor | Web & Interfaces | TSX | C- 50.8 | 664 |
+| editor | Web & Interfaces | TSX | C- 50.6 | 664 |
 
 ### c028 - 2 repositories
 
@@ -584,11 +584,11 @@ Keeper: **node-banana** (C+, 68.3). Mean grade across the 2 audited members is 5
 
 All 2 in AI & Data.
 
-Keeper: **shotgun** (C, 64.3). Mean grade across the 2 audited members is 63.1. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **shotgun** (C, 64.2). Mean grade across the 2 audited members is 63.1. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
-| **shotgun** | AI & Data | Python | C 64.3 | 616 |
+| **shotgun** | AI & Data | Python | C 64.2 | 616 |
 | spec-kit | AI & Data | Python | C 62 | 482 |
 
 ### c042 - 2 repositories
@@ -606,12 +606,12 @@ Keeper: **hermes-webui** (C, 60.8). Mean grade across the 2 audited members is 5
 
 All 2 in Web & Interfaces.
 
-Keeper: **easy-agent** (C, 62.9). Mean grade across the 2 audited members is 60.4. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **easy-agent** (C, 62.9). Mean grade across the 2 audited members is 60.3. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
 | **easy-agent** | Web & Interfaces | TypeScript | C 62.9 | 356 |
-| claude-code-remote | Web & Interfaces | TypeScript | C- 57.9 | 34 |
+| claude-code-remote | Web & Interfaces | TypeScript | C- 57.8 | 34 |
 
 ### c045 - 2 repositories
 
@@ -736,4 +736,4 @@ Keeper: **awesome-agents** (C+, 68.1). Mean grade across the 2 audited members i
 
 ---
 
-Generated from data/clusters.json built 2026-09-08. Regenerate with `node src/stages/build-relations.js`.
+Generated from data/clusters.json built 2026-09-09. Regenerate with `node src/stages/build-relations.js`.
