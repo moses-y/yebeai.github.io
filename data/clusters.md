@@ -129,7 +129,7 @@ Keeper: **Lead-Generation** (C, 60.8). Mean grade across the 3 audited members i
 | --- | --- | --- | --- | --- |
 | **Lead-Generation** | AI & Data | Python | C 60.8 | 56 |
 | googlemaps-scraper | Knowledge & Content |  | C- 58.6 | 93 |
-| google-maps-scraper | Systems & Infra | Go | C- 56.1 | 90 |
+| google-maps-scraper | Systems & Infra | Go | C- 56 | 90 |
 
 ### c012 - 3 repositories
 
@@ -529,11 +529,11 @@ Keeper: **pluely** (C-, 59.6). Mean grade across the 2 audited members is 49.8. 
 
 All 2 in AI & Data.
 
-Keeper: **MemOS** (B, 75.3). Mean grade across the 2 audited members is 57.5. Every member is audited, so the choice of keeper rests on evidence.
+Keeper: **MemOS** (B, 75.1). Mean grade across the 2 audited members is 57.4. Every member is audited, so the choice of keeper rests on evidence.
 
 | repository | domain | language | grade | files |
 | --- | --- | --- | --- | --- |
-| **MemOS** | AI & Data | Python | B 75.3 | 862 |
+| **MemOS** | AI & Data | Python | B 75.1 | 862 |
 | MemoryOS | AI & Data | Python | F 39.8 | 73 |
 
 ### c036 - 2 repositories
